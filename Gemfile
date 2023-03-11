@@ -25,7 +25,3 @@ group :jekyll_plugins do
   gem 'jekyll-sitemap'
   gem 'hawkins'
 end
-
-group :jekyll_plugins do
-  gem "jekyll-pdf-embed"
-end
