@@ -1,0 +1,27 @@
+"NAME_2" = 'Devon' OR "NAME_2" = 'Dorset' OR "NAME_2" = 'Somerset' OR "NAME_2" = 
+
+
+
+"NAME_2" = 'Derby' or "NAME_2" = 'Derbishire'  or  "NAME_2" = 'Nottinghamshire' or "NAME_2" = 'Nottingham' or "NAME_2"= 'Leicestershire' OR "NAME_3"= 'Leicester' 
+
+"NAME_3" = 'Doncaster' or "NAME_3" = 'Sheffield' or "NAME_3" = 'Barnsley' or "NAME_3" ='Rotherham'
+
+"NAME_3" = 'Calderdale' or "NAME_3" = 'Kirklees' or "NAME_3"= 'Bradford' or "NAME_3"= 'Leeds' or "NAME_3"= 'Wakefield'
+
+"NAME_3" = 'Beverley' or "NAME_3" = 'Bridlington' or "NAME_3" = 'Driffield' or "NAME_3" = 'Howden' or "NAME_3" = 'Hull' or "NAME_3" = 'Patrington' or "NAME_3" = 'Pocklington' or "NAME_3" = 'Sculcoates' or "NAME_3" = 'Skirlaugh' or "NAME_3" = 'York' or "NAME_2" = 'Beverley' or "NAME_2" = 'Bridlington' or "NAME_2" = 'Driffield' or "NAME_2" = 'Howden' or "NAME_2" = 'Hull' or "NAME_2" = 'Patrington' or "NAME_2" = 'Pocklington' or "NAME_2" = 'Sculcoates' or "NAME_2" = 'Skirlaugh' or "NAME_2" = 'York'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
