@@ -8,7 +8,7 @@
 
 <meta name="author" content="Bogdan G. Popescu">
 
-<title>Lab 7: Statistics</title>
+<title>Lab 8: Statistics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -87,16 +87,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </style>
 
 
-<script src="lab7_questions_files/libs/clipboard/clipboard.min.js"></script>
-<script src="lab7_questions_files/libs/quarto-html/quarto.js"></script>
-<script src="lab7_questions_files/libs/quarto-html/popper.min.js"></script>
-<script src="lab7_questions_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="lab7_questions_files/libs/quarto-html/anchor.min.js"></script>
-<link href="lab7_questions_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="lab7_questions_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="lab7_questions_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="lab7_questions_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="lab7_questions_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="lab8_questions_files/libs/clipboard/clipboard.min.js"></script>
+<script src="lab8_questions_files/libs/quarto-html/quarto.js"></script>
+<script src="lab8_questions_files/libs/quarto-html/popper.min.js"></script>
+<script src="lab8_questions_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="lab8_questions_files/libs/quarto-html/anchor.min.js"></script>
+<link href="lab8_questions_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="lab8_questions_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="lab8_questions_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="lab8_questions_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="lab8_questions_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <style>html{ scroll-behavior: smooth; }</style>
 
 
@@ -124,8 +124,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lab 7: Statistics</h1>
-<p class="subtitle lead">T-Tests and Correlations</p>
+<h1 class="title">Lab 8: Statistics</h1>
+<p class="subtitle lead">T-Tests, Choropleth Maps, and Correlations</p>
 </div>
 
 
@@ -174,7 +174,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Let us re-examine the distribution of our life expectancy dataset by making a histogram. We need to first load the data:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Setting path</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">"/Users/bgpopescu/Dropbox/john_cabot/teaching/stats/lab7/"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">"/Users/bgpopescu/Dropbox/john_cabot/teaching/stats/lab8/"</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#Step1: Loading the data</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>life_expectancy <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">'./life-expectancy.csv'</span>)</span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>urbanization <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">'./share-of-population-urban.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -249,7 +249,7 @@ $ life_expectancy &lt;dbl&gt; 70.25972, 45.38333, 45.08466, 69.44028, 68.28611, 
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_sf</span>() <span class="sc">+</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_sf</span>(<span class="at">data =</span> world)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="lab7_questions_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
+<p><img src="lab8_questions_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>But let us also look more closely at the attribute table of this spatial dataframe.</p>
@@ -441,7 +441,7 @@ $ geometry        &lt;MULTIPOLYGON [°]&gt; MULTIPOLYGON (((-69.89912 1..., MULT
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_sf</span>() <span class="sc">+</span></span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_sf</span>(<span class="at">data =</span> merged, <span class="fu">aes</span>(<span class="at">fill =</span> life_expectancy))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="lab7_questions_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid" width="672"></p>
+<p><img src="lab8_questions_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>We have a just made a choropleth map, which indicates intensity of a variable. Let us now add a few embellishments to make our map nicer.</p>
@@ -453,7 +453,7 @@ $ geometry        &lt;MULTIPOLYGON [°]&gt; MULTIPOLYGON (((-69.89912 1..., MULT
 <span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">xlab</span>(<span class="st">"X - Longitude"</span>) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">"Y - Latitude"</span>)<span class="sc">+</span></span>
 <span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_y_continuous</span>(<span class="at">breaks=</span><span class="fu">seq</span>(<span class="sc">-</span><span class="dv">90</span>, <span class="dv">90</span>, <span class="at">by =</span> <span class="dv">10</span>), <span class="at">limits =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">90</span>,<span class="dv">90</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="lab7_questions_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid" width="672"></p>
+<p><img src="lab8_questions_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>A map like this has exactly the same structure of regular ggplot graph. The difference is that X is now longitude and Y is latitude.</p>
@@ -482,7 +482,7 @@ $ geometry        &lt;MULTIPOLYGON [°]&gt; MULTIPOLYGON (((-69.89912 1..., MULT
 <span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_bw</span>()<span class="sc">+</span></span>
 <span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">xlab</span>(<span class="st">"X - Longitude"</span>) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">"Y - Latitude"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="lab7_questions_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid" width="672"></p>
+<p><img src="lab8_questions_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>We are now ready to perform a t-test to see if the life expectancy in Latin America is different from life expectancy around the world. We should perform one more step: excluding Latin America from our world sample so that we are not comparing the Latin American sample to the world sample (which includes Latin America).</p>
@@ -574,7 +574,7 @@ mean of x
 <span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>() <span class="sc">+</span></span>
 <span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="lab7_questions_files/figure-html/unnamed-chunk-28-1.png" class="img-fluid" width="672"></p>
+<p><img src="lab8_questions_files/figure-html/unnamed-chunk-28-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section>
@@ -718,7 +718,7 @@ mean of x
 <span id="cb62-10"><a href="#cb62-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">units =</span> <span class="st">"cm"</span>, <span class="at">dpi =</span> <span class="dv">300</span>)</span>
 <span id="cb62-11"><a href="#cb62-11" aria-hidden="true" tabindex="-1"></a>figure1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="lab7_questions_files/figure-html/unnamed-chunk-37-1.png" class="img-fluid" width="672"></p>
+<p><img src="lab8_questions_files/figure-html/unnamed-chunk-37-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>Let us also visualize the points that we calculated. But to make things easier, we should create a df.</p>
@@ -751,7 +751,7 @@ mean of x
 <span id="cb65-12"><a href="#cb65-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb65-13"><a href="#cb65-13" aria-hidden="true" tabindex="-1"></a>figure1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="lab7_questions_files/figure-html/unnamed-chunk-39-1.png" class="img-fluid" width="672"></p>
+<p><img src="lab8_questions_files/figure-html/unnamed-chunk-39-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>This looks pretty good. Next step is to redo the merge in our data. Remember that we calculated average life expectancy for the entire period: historical years up to the present day. Thus, we need to do a new merge in which we merge the spatial dataframe to the specific year on life expectancy.</p>
@@ -784,7 +784,7 @@ $ geometry               &lt;MULTIPOLYGON [°]&gt; MULTIPOLYGON (((-69.89912 1..
 <span id="cb68-5"><a href="#cb68-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">coord_sf</span>(<span class="at">xlim =</span> <span class="fu">c</span>(min_lon_x, max_lon_x), <span class="at">ylim =</span> <span class="fu">c</span>(min_lat_y, max_lat_y), <span class="at">expand =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb68-6"><a href="#cb68-6" aria-hidden="true" tabindex="-1"></a>figure2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="lab7_questions_files/figure-html/unnamed-chunk-41-1.png" class="img-fluid" width="672"></p>
+<p><img src="lab8_questions_files/figure-html/unnamed-chunk-41-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>Let us map life expectancy in 2020.</p>
@@ -814,14 +814,14 @@ $ geometry               &lt;MULTIPOLYGON [°]&gt; MULTIPOLYGON (((-69.89912 1..
 <span id="cb71-6"><a href="#cb71-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">coord_sf</span>(<span class="at">xlim =</span> <span class="fu">c</span>(min_lon_x, max_lon_x), <span class="at">ylim =</span> <span class="fu">c</span>(min_lat_y, max_lat_y), <span class="at">expand =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb71-7"><a href="#cb71-7" aria-hidden="true" tabindex="-1"></a>figure3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="lab7_questions_files/figure-html/unnamed-chunk-43-1.png" class="img-fluid" width="672"></p>
+<p><img src="lab8_questions_files/figure-html/unnamed-chunk-43-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>Let us put them side by side.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(figure2, figure3, <span class="at">ncol=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="lab7_questions_files/figure-html/unnamed-chunk-44-1.png" class="img-fluid" width="672"></p>
+<p><img src="lab8_questions_files/figure-html/unnamed-chunk-44-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>We don’t see much of a difference because we also need to fix the color scheme in a way that has the same minmum and maximum. This is how we do this:</p>
@@ -861,7 +861,7 @@ $ geometry               &lt;MULTIPOLYGON [°]&gt; MULTIPOLYGON (((-69.89912 1..
 <span id="cb77-20"><a href="#cb77-20" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb77-21"><a href="#cb77-21" aria-hidden="true" tabindex="-1"></a><span class="fu">ggarrange</span>(figure2, figure3, <span class="at">ncol=</span><span class="dv">2</span>, <span class="at">common.legend =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="lab7_questions_files/figure-html/unnamed-chunk-46-1.png" class="img-fluid" width="672"></p>
+<p><img src="lab8_questions_files/figure-html/unnamed-chunk-46-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>Now, the differences are more visible. What if were interested in plotting the change in life expectancy between 1950 and 2020?</p>
@@ -906,7 +906,7 @@ $ geometry   &lt;MULTIPOLYGON [°]&gt; MULTIPOLYGON (((-69.89912 1..., MULTIPOLY
 <span id="cb82-7"><a href="#cb82-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_gradient</span>(<span class="at">limits=</span><span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">35</span>))</span>
 <span id="cb82-8"><a href="#cb82-8" aria-hidden="true" tabindex="-1"></a>figure4</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="lab7_questions_files/figure-html/unnamed-chunk-49-1.png" class="img-fluid" width="672"></p>
+<p><img src="lab8_questions_files/figure-html/unnamed-chunk-49-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>What is the country in Europe with the highest change in life expectancy between 1950 and 2020?</p>
@@ -1088,5 +1088,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<script src="lab7_questions_files/libs/quarto-html/zenscroll-min.js"></script>
+<script src="lab8_questions_files/libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
