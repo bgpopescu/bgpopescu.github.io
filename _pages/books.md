@@ -15,7 +15,7 @@ author_profile: true
   gtag('config', 'G-7DSN63Y1JH');
 </script>
 
-<h2><b>Imperial Borderlands: Institutions and Legacies of the Habsburg Military Frontier- forthcoming with <em>Cambridge University Press</em>. [Pre-order here](https://www.cambridge.org/core/books/imperial-borderlands/6845856BB6A18B8B8EC2EE66B9013AAC#fndtn-information){:target="_blank"}. </b></h2>
+<h2><b>Imperial Borderlands: Institutions and Legacies of the Habsburg Military Frontier - forthcoming with <em>Cambridge University Press</em>, 2023.</b></h2>
 
 <img src="/images/book_cover2.jpg" alt="Imperial Borderlands" width="350" align="left" hspace="12" vspace="12"/>
 
