@@ -15,7 +15,7 @@ author_profile: true
   gtag('config', 'G-7DSN63Y1JH');
 </script>
 
-<h2><b>Imperial Borderlands: Institutions and Legacies of the Habsburg Military Frontier- forthcoming with <em>Cambridge University Press</em></b></h2>
+<h2><b>Imperial Borderlands: Institutions and Legacies of the Habsburg Military Frontier- forthcoming with <em>Cambridge University Press</em>. [Pre-order here](https://www.cambridge.org/core/books/imperial-borderlands/6845856BB6A18B8B8EC2EE66B9013AAC#fndtn-information){:target="_blank"}. </b></h2>
 
 <img src="/images/book_cover2.jpg" alt="Imperial Borderlands" width="350" align="left" hspace="12" vspace="12"/>
 
@@ -23,10 +23,7 @@ Extractive institutions are a key factor associated with colonialism whereby his
 
 I propose a conceptual framework for understanding the ambivalent effect of extractive institutions, which depends on the three factors: investment, property rights, and violence. The worst outcomes for development are cases of extractivism with low state investment in infrastructure, high transformation of local society by removing property rights, and high physical coercion. To substantiate these claims, this book draws from a diversity of historical and modern data sources, tracing the evolution of Habsburg Military Colonialism, an institution that the central state created in 1500s over vast territories in Central and Eastern Europe.
 
-A book workshop took place on September 17, 2021. Kristin Fabbe (Harvard Business School), Mark Dincecco (Michigan), Grigore Pop-Eleches (Princeton), and Tomáš Cvrček (University College London) discussed the manuscript. The book is forthcoming with Cambridge University Press, Economic History series. The expected publication date is 2023.
-
-You can download the [introduction and table of contents](https://www.dropbox.com/s/k10asxzhjjag523/popescu_book_2022_01_02_compressed_c1.pdf?dl=0){:target="_blank"}.
-
+A book workshop took place on September 17, 2021. Kristin Fabbe (Harvard Business School), Mark Dincecco (Michigan), Grigore Pop-Eleches (Princeton), and Tomáš Cvrček (University College London) discussed the manuscript. The book is forthcoming with Cambridge University Press, Economic History series. You can download the [introduction and table of contents](https://www.dropbox.com/s/k10asxzhjjag523/popescu_book_2022_01_02_compressed_c1.pdf?dl=0){:target="_blank"}. You can [pre-order here](https://www.cambridge.org/core/books/imperial-borderlands/6845856BB6A18B8B8EC2EE66B9013AAC#fndtn-information){:target="_blank"}.
 
 <h2><b>Islam, Sultans, and the Printing Press: How Absence of the Printed Word Limited Development - <em>manuscript in progress</em></b></h2>
 
