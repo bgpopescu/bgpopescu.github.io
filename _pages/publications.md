@@ -19,10 +19,11 @@ My research centers on state responses to political threats and the long-term co
 
 <h3><b>Book – <em>Imperial Borderlands: Institutions and Legacies of the Habsburg Military Frontier</em></b></h3>
 
-Forthcoming with Cambridge University Press, 2023. Book workshop held on September 17, 2021. You can read more about the project on the book page. You can download the [introduction and table of contents](https://www.dropbox.com/s/k10asxzhjjag523/popescu_book_2022_01_02_compressed_c1.pdf?dl=0){:target="_blank"}.
+Forthcoming with [Cambridge University Press, 2023](https://www.cambridge.org/core/books/imperial-borderlands/6845856BB6A18B8B8EC2EE66B9013AAC#fndtn-information){:target="_blank"}. Book workshop held on September 17, 2021. 
 
 <h3><b>Peer-Reviewed Publications</b></h3>
-Bogdan G. Popescu. 2023. "The Developmental Legacies of Border Buffer Zones: the Case of Military Colonialism." <em>Journal of Historical Political Economy</em>. Forthcoming. [PDF](https://www.dropbox.com/s/2tyn90rmq0upg0q/popescu_legacies_2022_12_11_small.pdf?dl=0){:target="_blank"}
+Bogdan G. Popescu. 2023. "The Developmental Legacies of Border Buffer Zones: the Case of Military Colonialism." <em>Journal of Historical Political Economy</em>.  Vol. 3: No. 1, pp 31-63.
+[Journal Version](http://dx.doi.org/10.1561/115.00000045){:target="_blank"} &#124; [PDF](https://www.dropbox.com/s/2tyn90rmq0upg0q/popescu_legacies_2022_12_11_small.pdf?dl=0){:target="_blank"}
 
 Bogdan G. Popescu and Mircea Popa. 2022. "Imperial Rule and Long-run Development: Evidence on the Role of Human Capital in the Ottoman Europe."  <em>Comparative Political Studies</em>. Vol. 55: No. 11, pp. 1910-1946. [Journal Version](https://journals.sagepub.com/doi/full/10.1177/00104140211060283){:target="_blank"} &#124; [PDF](https://www.dropbox.com/s/cvbpxktiuspjjmq/Legacies_Project_RNR2_compressed_fixed.pdf?dl=0){:target="_blank"}
 
