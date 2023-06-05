@@ -38,8 +38,6 @@ Mike Albertus and Bogdan G. Popescu, 2020. "Does Equalizing Assets Spur Developm
 
 [Cuius Regio, Eius Religio: Indirect Rule and Conversion to Islam in the Early Ottoman Empire](https://www.dropbox.com/s/9gk4nym9ps6mdq0/popescu_statement_2021_10_15_compressed.pdf?dl=0){:target="_blank"}
 
-
-
 Communism and Development: Legacies of Collectivization in Romania (with Leonid Peisakhin (NYU))
 
-God Save the King’s English: the Economic Origins of Class, Language, and Politics in Britain. [Slides](/files/research/language_uk/presentation.html){:target="_blank"}
+God Save the King’s English: the Economic Origins of Class, Language, and Politics in Britain
