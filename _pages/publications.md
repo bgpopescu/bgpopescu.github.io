@@ -34,7 +34,11 @@ Mike Albertus and Bogdan G. Popescu, 2020. "Does Equalizing Assets Spur Developm
 <h3><b>Working Papers</b></h3>
 [Bureaucratic Shuffling, Regime Type, and Public Good Provision](https://www.dropbox.com/s/lzqxsuz8yxvjtm9/Turkish_Governors.pdf?dl=0){:target="_blank"} (with Güneş Tezcür (UCF) and Yusuf Mağiya (Columbia)) - R&R
 
+[Civic Associations, Populism, and (Un-)Civic Behavior: Evidence from Germany](https://www.dropbox.com/s/z7i1hk0kk9x4nio/covid_paper_compressed.pdf?dl=0){:target="_blank"}
+
 [Cuius Regio, Eius Religio: Indirect Rule and Conversion to Islam in the Early Ottoman Empire](https://www.dropbox.com/s/9gk4nym9ps6mdq0/popescu_statement_2021_10_15_compressed.pdf?dl=0){:target="_blank"}
+
+
 
 Communism and Development: Legacies of Collectivization in Romania (with Leonid Peisakhin (NYU))
 
