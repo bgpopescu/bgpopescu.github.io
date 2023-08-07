@@ -27,6 +27,8 @@ Bogdan G. Popescu. 2023. "The Developmental Legacies of Border Buffer Zones: the
 
 Bogdan G. Popescu and Mircea Popa. 2022. "Imperial Rule and Long-run Development: Evidence on the Role of Human Capital in the Ottoman Europe."  <em>Comparative Political Studies</em>. Vol. 55: No. 11, pp. 1910-1946. [Journal Version](https://journals.sagepub.com/doi/full/10.1177/00104140211060283){:target="_blank"} &#124; [PDF](https://www.dropbox.com/s/cvbpxktiuspjjmq/Legacies_Project_RNR2_compressed_fixed.pdf?dl=0){:target="_blank"}
 
+&nbsp;&nbsp;&nbsp;James Caporaso Award for Best Article published in CPS in 2022
+
 Maura Cremin and Bogdan G. Popescu. 2021. "Sticks and Stones? Connecting Insurgent Propaganda with Violent Outcomes," <em>Journal of Conflict Resolution </em>. Vol. 66: No. 3, pp 504-528. [Journal Version](https://journals.sagepub.com/doi/10.1177/00220027211027291){:target="_blank"} &#124; [PDF](https://www.dropbox.com/s/7pr3ag5y5n5f8eg/cremin_popescu_2021_sticks_and_stones_compressed.pdf?dl=0){:target="_blank"}
 
 Mike Albertus and Bogdan G. Popescu, 2020. "Does Equalizing Assets Spur Development? Evidence From Large-Scale Land Reform in Peru," <em>Quarterly Journal of Political Science</em>. Vol. 15: No. 2, pp 255-295. [Journal Version](https://www.nowpublishers.com/article/Details/QJPS-19033){:target="_blank"} &#124; [PDF](https://www.dropbox.com/s/osqfwx5c464m01w/paper_and_appendix_12.2.2019_small.pdf?dl=0){:target="_blank"}
