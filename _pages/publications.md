@@ -23,7 +23,7 @@ Forthcoming with [Cambridge University Press, 2023](https://www.cambridge.org/co
 
 <h3><b>Peer-Reviewed Publications</b></h3>
 Bogdan G. Popescu. 2023. "The Developmental Legacies of Border Buffer Zones: the Case of Military Colonialism." <em>Journal of Historical Political Economy</em>.  Vol. 3: No. 1, pp 31-63.
-[Journal Version](http://dx.doi.org/10.1561/115.00000045){:target="_blank"} &#124; [PDF](https://www.dropbox.com/s/2tyn90rmq0upg0q/popescu_legacies_2022_12_11_small.pdf?dl=0){:target="_blank"}
+[Journal Version](http://dx.doi.org/10.1561/115.00000045){:target="_blank"} &#124; [PDF](https://www.dropbox.com/scl/fi/00ojw0iwrewmtb8m09gcp/Legacies_Project_RNR_compressed.pdf?rlkey=bmlp6mb042coghp5s1ky1rvph&dl=0){:target="_blank"}
 
 Bogdan G. Popescu and Mircea Popa. 2022. "Imperial Rule and Long-run Development: Evidence on the Role of Human Capital in the Ottoman Europe."  <em>Comparative Political Studies</em>. Vol. 55: No. 11, pp. 1910-1946. [Journal Version](https://journals.sagepub.com/doi/full/10.1177/00104140211060283){:target="_blank"} &#124; [PDF](https://www.dropbox.com/s/5dq2pa43xcjkvvy/Legacies_Project_RNR2_compressed.pdf?dl=0){:target="_blank"}
 
