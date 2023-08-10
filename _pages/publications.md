@@ -36,7 +36,7 @@ Maura Cremin and Bogdan G. Popescu. 2021. "Sticks and Stones? Connecting Insurge
 Mike Albertus and Bogdan G. Popescu, 2020. "Does Equalizing Assets Spur Development? Evidence From Large-Scale Land Reform in Peru," <em>Quarterly Journal of Political Science</em>. Vol. 15: No. 2, pp 255-295. [Journal Version](https://www.nowpublishers.com/article/Details/QJPS-19033){:target="_blank"} &#124; [PDF](https://www.dropbox.com/s/osqfwx5c464m01w/paper_and_appendix_12.2.2019_small.pdf?dl=0){:target="_blank"}
 
 <h3><b>Working Papers</b></h3>
-[Bureaucratic Shuffling, Regime Type, and Public Good Provision](https://www.dropbox.com/s/lzqxsuz8yxvjtm9/Turkish_Governors.pdf?dl=0){:target="_blank"} (with Güneş Tezcür (UCF) and Yusuf Mağiya (Columbia)) - Revise and Resubmit at *Comparative Political Studies*
+[Bureaucratic Shuffling, Regime Type, and Public Good Provision](https://www.dropbox.com/scl/fi/saxlpnu054hs0g0giox21/Turkish_Governors-4.pdf?rlkey=xtma577igvfgtgh94kvnhxryy&dl=0){:target="_blank"} (with Güneş Tezcür (UCF) and Yusuf Mağiya (Columbia)) - Revise and Resubmit at *Comparative Political Studies*
 
 [Civic Associations, Populism, and (Un-)Civic Behavior: Evidence from Germany](https://www.dropbox.com/s/z7i1hk0kk9x4nio/covid_paper_compressed.pdf?dl=0){:target="_blank"} (with Marlene Jugl (Bocconi)) - Revise and Resubmit at *Political Science Research and Methods*
 
