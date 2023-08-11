@@ -19,7 +19,7 @@ My research centers on state responses to political threats and the long-term co
 
 <h3><b>Books</b></h3>
 
-Bogdan G. Popescu. 2023. <em>Imperial Borderlands: Institutions and Legacies of the Habsburg Military Frontier</em>. [Cambridge University Press, 2023](https://www.cambridge.org/core/books/imperial-borderlands/6845856BB6A18B8B8EC2EE66B9013AAC#fndtn-information){:target="_blank"}. Read the [table of contents and intro](https://www.dropbox.com/scl/fi/6n11cbdrn4p3v8d3f8h6l/sample.pdf?rlkey=mjufjsoklde8408lz8gfwwtcl&dl=0){:target="_blank"}.
+Bogdan G. Popescu. 2023. <em>Imperial Borderlands: Institutions and Legacies of the Habsburg Military Frontier</em>. [Cambridge University Press](https://www.cambridge.org/core/books/imperial-borderlands/6845856BB6A18B8B8EC2EE66B9013AAC#fndtn-information){:target="_blank"}. Read the [table of contents and intro](https://www.dropbox.com/scl/fi/6n11cbdrn4p3v8d3f8h6l/sample.pdf?rlkey=mjufjsoklde8408lz8gfwwtcl&dl=0){:target="_blank"}.
 
 Bogdan G. Popescu. <em>Islam, Sultans, and the Printing Press</em>. Manuscript in Progress. Read the [table of contents and intro](https://www.dropbox.com/scl/fi/es0q72ymoqsem11vhb5pw/sample.pdf?rlkey=udeufrfdan1s82rivoj7njl1m&dl=0){:target="_blank"}.
 
