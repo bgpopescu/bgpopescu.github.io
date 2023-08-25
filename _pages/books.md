@@ -17,7 +17,7 @@ author_profile: true
 
 <h2><b>Imperial Borderlands: Institutions and Legacies of the Habsburg Military Frontier<em>. Cambridge University Press</em>, 2023.</b></h2>
 
-<img src="/images/book_cover2.jpg" alt="Imperial Borderlands" width="350" align="left" hspace="12" vspace="12"/>
+<img src="/images/book_cover3.jpg" alt="Imperial Borderlands" width="350" align="left" hspace="12" vspace="12"/>
 
 Extractive institutions are a key factor associated with colonialism whereby historical states exploited local populations for the benefit of the former. A whole range of studies investigate the negative effect of Western extractivism, while more recent works indicate that extractivism can in fact be good. This book argues that these views are incomplete. The reason for these contrasting views is that both of these sides take the concept of extractive institutions as monolithic, omitting that extractive institutions could in fact entail a variety of dimensions including imperial investment, transformation of the local property rights regime, and coercion, which could directly impact development.
 
