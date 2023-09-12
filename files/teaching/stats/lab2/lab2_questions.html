@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Bogdan G. Popescu">
 
-<title>PL208 Statistical Analysis for Political Science</title>
+<title>Lab 2</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +21,69 @@ width: 0.8em;
 margin: 0 0.8em 0.2em -1.6em;
 vertical-align: middle;
 }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
 </style>
 
 
@@ -2545,27 +2609,26 @@ vertical-align: -.125em;
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#details" id="toc-details" class="nav-link active" data-scroll-target="#details"><span class="toc-section-number">1</span>  Details</a></li>
-  <li><a href="#course-description" id="toc-course-description" class="nav-link" data-scroll-target="#course-description"><span class="toc-section-number">2</span>  Course Description</a></li>
-  <li><a href="#summary-of-course-content" id="toc-summary-of-course-content" class="nav-link" data-scroll-target="#summary-of-course-content"><span class="toc-section-number">3</span>  Summary of Course Content</a></li>
-  <li><a href="#learning-outcomes" id="toc-learning-outcomes" class="nav-link" data-scroll-target="#learning-outcomes"><span class="toc-section-number">4</span>  Learning Outcomes</a></li>
-  <li><a href="#assessment" id="toc-assessment" class="nav-link" data-scroll-target="#assessment"><span class="toc-section-number">5</span>  Assessment</a></li>
-  <li><a href="#required-books" id="toc-required-books" class="nav-link" data-scroll-target="#required-books"><span class="toc-section-number">6</span>  Required Books</a></li>
-  <li><a href="#week-1" id="toc-week-1" class="nav-link" data-scroll-target="#week-1">Week 1</a></li>
-  <li><a href="#week-2" id="toc-week-2" class="nav-link" data-scroll-target="#week-2">Week 2</a></li>
-  <li><a href="#week-3" id="toc-week-3" class="nav-link" data-scroll-target="#week-3">Week 3</a></li>
-  <li><a href="#week-4" id="toc-week-4" class="nav-link" data-scroll-target="#week-4">Week 4</a></li>
-  <li><a href="#week-5" id="toc-week-5" class="nav-link" data-scroll-target="#week-5">Week 5</a></li>
-  <li><a href="#week-6" id="toc-week-6" class="nav-link" data-scroll-target="#week-6">Week 6</a></li>
-  <li><a href="#week-7" id="toc-week-7" class="nav-link" data-scroll-target="#week-7">Week 7</a></li>
-  <li><a href="#week-8" id="toc-week-8" class="nav-link" data-scroll-target="#week-8">Week 8</a></li>
-  <li><a href="#week-9" id="toc-week-9" class="nav-link" data-scroll-target="#week-9">Week 9</a></li>
-  <li><a href="#week-10" id="toc-week-10" class="nav-link" data-scroll-target="#week-10">Week 10</a></li>
-  <li><a href="#week-11" id="toc-week-11" class="nav-link" data-scroll-target="#week-11">Week 11</a></li>
-  <li><a href="#week-12" id="toc-week-12" class="nav-link" data-scroll-target="#week-12">Week 12</a></li>
-  <li><a href="#week-13" id="toc-week-13" class="nav-link" data-scroll-target="#week-13">Week 13</a></li>
-  <li><a href="#week-14" id="toc-week-14" class="nav-link" data-scroll-target="#week-14">Week 14</a></li>
-  <li><a href="#week-15" id="toc-week-15" class="nav-link" data-scroll-target="#week-15">Week 15</a></li>
+  <li><a href="#instructions" id="toc-instructions" class="nav-link active" data-scroll-target="#instructions">Instructions</a>
+  <ul class="collapse">
+  <li><a href="#question-1" id="toc-question-1" class="nav-link" data-scroll-target="#question-1">Question 1</a></li>
+  <li><a href="#question-2" id="toc-question-2" class="nav-link" data-scroll-target="#question-2">Question 2</a></li>
+  <li><a href="#question-3" id="toc-question-3" class="nav-link" data-scroll-target="#question-3">Question 3</a></li>
+  <li><a href="#question-4" id="toc-question-4" class="nav-link" data-scroll-target="#question-4">Question 4</a></li>
+  <li><a href="#question-5" id="toc-question-5" class="nav-link" data-scroll-target="#question-5">Question 5</a></li>
+  <li><a href="#question-6" id="toc-question-6" class="nav-link" data-scroll-target="#question-6">Question 6</a></li>
+  <li><a href="#question-7" id="toc-question-7" class="nav-link" data-scroll-target="#question-7">Question 7</a></li>
+  <li><a href="#question-8" id="toc-question-8" class="nav-link" data-scroll-target="#question-8">Question 8</a></li>
+  <li><a href="#question-9" id="toc-question-9" class="nav-link" data-scroll-target="#question-9">Question 9</a></li>
+  <li><a href="#question-10" id="toc-question-10" class="nav-link" data-scroll-target="#question-10">Question 10</a></li>
+  <li><a href="#question-11" id="toc-question-11" class="nav-link" data-scroll-target="#question-11">Question 11</a></li>
+  <li><a href="#question-12" id="toc-question-12" class="nav-link" data-scroll-target="#question-12">Question 12</a></li>
+  <li><a href="#question-13" id="toc-question-13" class="nav-link" data-scroll-target="#question-13">Question 13</a></li>
+  <li><a href="#question-14" id="toc-question-14" class="nav-link" data-scroll-target="#question-14">Question 14</a></li>
+  <li><a href="#question-15" id="toc-question-15" class="nav-link" data-scroll-target="#question-15">Question 15</a></li>
+  <li><a href="#question-16" id="toc-question-16" class="nav-link" data-scroll-target="#question-16">Question 16</a></li>
+  <li><a href="#question-17" id="toc-question-17" class="nav-link" data-scroll-target="#question-17">Question 17</a></li>
+  </ul></li>
   </ul>
 </nav>
 </div>
@@ -2573,13 +2636,19 @@ vertical-align: -.125em;
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">PL208 Statistical Analysis for Political Science</h1>
+<h1 class="title">Lab 2</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Bogdan G. Popescu </p>
+          </div>
+  </div>
     
   
     
@@ -2588,406 +2657,228 @@ vertical-align: -.125em;
 
 </header>
 
-<section id="details" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="details"><span class="header-section-number">1</span> Details</h2>
-<p>Instructor: Bogdan G. Popescu<br>
-Hours: MW 03:00-04:15AM<br>
-Total Hours of Contact: 2:30 per week<br>
-Room: F.2.6-Frohring Campus, Second Floor, Room 6<br>
-</p>
-<p>Credits: 3<br>
-Prerequisites: None<br>
-Office Hours: TBA<br>
-</p>
-</section>
-<section id="course-description" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="course-description"><span class="header-section-number">2</span> Course Description</h2>
-<p>This is an applied course on statistical methods commonly used in social science research (including political science and sociology) and provides the necessary foundation to conduct your analysis and to help you interpret the numbers presented in the media. Students will learn how to read statistics in a research context, what data to use for different research topics, adopt research designs relevant to the research question, use statistical tests, and draw conclusions based on statistical tests. Students will also learn to carry out statistical tests using statistical packages and interpret results based on their analyses.</p>
-</section>
-<section id="summary-of-course-content" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="summary-of-course-content"><span class="header-section-number">3</span> Summary of Course Content</h2>
-<p>The course will convene twice a week. There will be lectures covering statistical concepts applied to political science and practical lab sessions where students will use statistical software to conduct the tests. There will be assignments that have to be completed every week. The grades will be 30% midterm, 30% final exam, and 40% weekly assignments.</p>
-</section>
-<section id="learning-outcomes" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="learning-outcomes"><span class="header-section-number">4</span> Learning Outcomes</h2>
-<p>Upon successful completion of this course the students will be able to:</p>
+<section id="instructions" class="level1 unnumbered">
+<h1 class="unnumbered">Instructions</h1>
 <ul>
-<li>Use statistical core terminology accurately.</li>
-<li>Organize data using both numerical and graphical methods.</li>
-<li>Use measures of central tendency and variability to summarize a data set.</li>
-<li>Carry out tests of hypothesis about population parameters.</li>
-</ul>
-</section>
-<section id="assessment" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="assessment"><span class="header-section-number">5</span> Assessment</h2>
-<p>You will be graded on five problem sets during the semester (40% of your grade) and two exams (each 30% of your grade). For the problem sets, you should work within a group. You will independently work on the problem sets for optimal learning and submit that version to me. You will then check the responses with the other team members and offer the updated responses to the problem set. After you tried the answers independently, you should go back to the team, write down the correct answer, and submit your assignment. Your final grade for that assignment will be an average of what you submitted originally and the submission after you consulted with your group. Your colleagues will also grade how much you contributed to helping your fellow students. Thus, part of the grade for the problems set will also be how much you help your colleagues.</p>
-<p>There will also be a midterm and a final exam each worth 30%.</p>
-<p>A major exam (midterm or final) cannot be made up without the permission of the Dean’s Office. The Dean’s Office will grant such permission only when the absence was caused by a serious impediment, such as a documented illness, hospitalization or death in the immediate family (in which you must attend the funeral) or other situations of similar gravity. Absences due to other meaningful conflicts, such as job interviews, family celebrations, travel difficulties, student misunderstandings or personal convenience, will not be excused. Students who will be absent from a major exam must notify the Dean’s Office prior to that exam. Absences from class due to the observance of a religious holiday will normally be excused. Individual students who will have to miss class to observe a religious holiday should notify the instructor by the end of the Add/Drop period to make prior arrangements for making up any work that will be missed.</p>
-</section>
-<section id="required-books" class="level2" data-number="6">
-<h2 data-number="6" class="anchored" data-anchor-id="required-books"><span class="header-section-number">6</span> Required Books</h2>
-<p>Ismay, Chester, and Albert Y. Kim. 2019. <em>Statistical Inference via Data Science: A ModernDive into R and the Tidyverse.</em> Chapman and Hall / CRC. <a href="https://moderndive.com/" target="_blank">https://moderndive.com/</a>.</p>
-<p>Huntington-Klein, Nick. 2021. The Effect: An Introduction to Research Design and Causality. Boca Raton, Florida: Chapman and Hall / CRC. <a href="https://theeffectbook.net/" target="_blank">https://theeffectbook.net/</a>.</p>
-<p>Llaudet, Elena and Imai, Kosuke. 2023 “Data Analysis for Social Science.” Princeton: Oxford University Press.</p>
-<p>Warne, Russel T. 2018. “Statistics for the Social Sciences. A General Linear Model Approach.” London: Cambridge University Press.</p>
-<p>Fogarty, Brian J. 2019. “Quantitative Social Science Data with R. An Introduction” London: Sage.</p>
-</section>
-<section id="optional-books" class="level2 unlisted unnumbered">
-<h2 class="unlisted unnumbered anchored" data-anchor-id="optional-books">Optional Books</h2>
-<p>Bauer, Paul C. and Dennis Cohen. 2023. <em>Applied Causal Analysis (with R)</em> <a href="https://bookdown.org/paul/applied-causal-analysis/" target="_blank">https://bookdown.org/paul/applied-causal-analysis/</a>.</p>
-<p>Lovelace, Robin, Nowosad, Jakub, and Jannes Muenchow. 2021. <em>Geocomputation with R</em>. <a href="https://bookdown.org/robinlovelace/geocompr/" target="_blank">https://bookdown.org/robinlovelace/geocompr/</a>.</p>
-<p>Mieno, Tara. 2023. <em>R as GIS for Economists</em>. <a href="https://tmieno2.github.io/R-as-GIS-for-Economists/" target="_blank">https://tmieno2.github.io/R-as-GIS-for-Economists/</a>.</p>
-</section>
-<section id="week-1" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="week-1">Week 1</h2>
-<p><strong>Class 1: Overview of Statistics</strong><br>
-9/4/2023 - Mon - <a href="https://www.dropbox.com/s/s7k4xupo57pedb7/Stats_undergrad1.pdf?dl=0" target="_blank">Lecture</a><br>
-</p>
-<ul>
-<li>What are variables?</li>
-<li>Measuring variables</li>
-<li>Population versus sample</li>
-</ul>
-<p><strong>Class 2: Overview of Statistics</strong><br>
-9/6/2023 - Wed - Lab<br>
-</p>
-<ul>
-<li>Intro to R and R Studio</li>
-<li>Data management in R</li>
-</ul>
-<p><strong><em>Reading</em></strong><br>
-</p>
-<ul>
-<li>Warne (2018) - C1: Statistics and Models<br>
+<li>Download the *.qmd file from <a href="https://www.dropbox.com/scl/fi/ijxh28fxsqxwqlv7j2t81/lab2_model.qmd?rlkey=8q60w64z6snjsr99wim69a577&amp;dl=0" target="_blank">here</a><br>
 </li>
-<li>Fogarty (2019) - C1: Introduction and C2: Introduction to R and RStudio<br>
-</li>
+<li>Place it in the relavant folder “Lab 2”</li>
+<li>Open the *.qmd file</li>
 </ul>
+<section id="question-1" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="question-1">Question 1</h2>
+<p>Extract the word “literature” from the following vector and create a new object</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>list_fields <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;politics&quot;</span>, <span class="st">&quot;philosophy&quot;</span>, <span class="st">&quot;literature&quot;</span>, <span class="st">&quot;chemistry&quot;</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>new_list <span class="ot">&lt;-</span> list_fields[list_fields<span class="sc">!=</span><span class="st">&quot;literature&quot;</span>]</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>new_list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] &quot;politics&quot;   &quot;philosophy&quot; &quot;chemistry&quot; </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>new_list <span class="ot">&lt;-</span> list_fields[list_fields<span class="sc">!=</span><span class="st">&quot;chemistry&quot;</span>]</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>new_list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] &quot;politics&quot;   &quot;philosophy&quot; &quot;literature&quot;</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>new_list <span class="ot">&lt;-</span> list_fields[list_fields<span class="sc">==</span><span class="st">&quot;philosophy&quot;</span>]</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>new_list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] &quot;philosophy&quot;</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>new_list <span class="ot">&lt;-</span> list_fields[list_fields<span class="sc">==</span><span class="st">&quot;philosophy&quot;</span> <span class="sc">|</span> list_fields<span class="sc">==</span><span class="st">&quot;chemistry&quot;</span>]</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>new_list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] &quot;philosophy&quot; &quot;chemistry&quot; </code></pre>
+</div>
+</div>
 </section>
-<section id="week-2" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="week-2">Week 2</h2>
-<p><strong>Class 1: Levels of Data</strong><br>
-9/11/2023 - Mon - <a href="https://www.dropbox.com/s/99dsrh7l9whju82/stats_undergrad2.pdf?dl=0" target="_blank">Lecture</a><br>
-</p>
-<ul>
-<li>Conceptual operationalization and validity</li>
-<li>Types of data: nominal, ordinal, interval, ratio</li>
-</ul>
-<p><strong>Class 2: Levels of Data</strong><br>
-9/13/2023 - Wed - <a href="/files/teaching/stats/lab2/lab2_questions.html" target="_blank">Lab</a><br>
-</p>
-<ul>
-<li>Reading datasets in R</li>
-<li>Further data management in R: indices, recoding variables, variable transformation</li>
-</ul>
-<p><strong><em>Reading</em></strong><br>
-</p>
-<ul>
-<li>Warne (2018) - C3: Visual Models<br>
-</li>
-<li>Warne (2018) - C4: Models of Central Tendency and Variability<br>
-</li>
-</ul>
-<p><strong><em>Assignment 1</em></strong><br>
-<!--[***Assignment 1***](/files/teaching/stats/assignments/assignment1_questions.html){target="_blank"}\--></p>
+<section id="question-2" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="question-2">Question 2</h2>
+<p>Remove from the following list all the numbers between 13 and 15 (inclusive)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>list_no<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">11</span>, <span class="dv">12</span>, <span class="dv">13</span>, <span class="dv">14</span>, <span class="dv">15</span>, <span class="dv">16</span>, <span class="dv">17</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>new_list<span class="ot">&lt;-</span>list_no[list_no<span class="sc">&lt;</span><span class="dv">13</span> <span class="sc">|</span> list_no<span class="sc">&gt;</span><span class="dv">15</span>]</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>new_list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 11 12 16 17</code></pre>
+</div>
+</div>
 </section>
-<section id="week-3" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="week-3">Week 3</h2>
-<p><strong>Class 1: Descriptive statistics</strong><br>
-9/18/2023 - Mon - <a href="https://www.dropbox.com/s/nyv86u208w77u59/stats_undergrad3.pdf?dl=0" target="_blank">Lecture</a><br>
-</p>
-<ul>
-<li>Frequency tables and histograms</li>
-<li>Measures of central tendency: mean, mode, median, standard deviation</li>
-<li>Data visualization: bar plots, line graphs, and scatterplots</li>
-<li>Hypotheses</li>
-</ul>
-<p><strong>Class 2: Descriptive statistics</strong><br>
-9/20/2023 - Wed - Lab<br>
-</p>
-<ul>
-<li>Frequency tables and histograms</li>
-<li>Measures of central tendency: mean, mode, median, standard deviation</li>
-<li>Data visualization: bar plots, line graphs, and pie charts, scatterplots</li>
-</ul>
-<p><strong><em>Reading</em></strong><br>
-</p>
-<ul>
-<li>Fogarty (2019) - C6: Developing hypotheses</li>
-<li>Fogarty (2019) - C7: Univariate and descriptive statistics</li>
-</ul>
+<section id="question-3" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="question-3">Question 3</h2>
+<p>Remove the following elements using the %in% operator from the list: “word”, “sentence”</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>list_words<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">&quot;random&quot;</span>, <span class="st">&quot;word&quot;</span>, <span class="st">&quot;sentence&quot;</span>, <span class="st">&quot;books&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="week-4" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="week-4">Week 4</h2>
-<p><strong>Class 1: Probability - I</strong><br>
-9/25/2023 - Mon - <a href="https://www.dropbox.com/s/bmt8ca9lenizlvc/stats_undergrad4-5.pdf?dl=0" target="_blank">Lecture</a><br>
+<section id="question-4" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="question-4">Question 4</h2>
+<p>Explain in your words: Why does the following return “four” &gt; “five” return TRUE</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;four&quot;</span> <span class="sc">&gt;</span> <span class="st">&quot;five&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+</div>
+</section>
+<section id="question-5" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="question-5">Question 5</h2>
+<p>Remove the missing data from the following list</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>list_no <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="cn">NA</span>, <span class="dv">5</span>, <span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="question-6" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="question-6">Question 6</h2>
+<p>Calculate the mean and median from the following list of numbers</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>list_no<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">30</span>, <span class="dv">12</span>, <span class="cn">NA</span>, <span class="dv">14</span>, <span class="cn">NA</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="question-7" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="question-7">Question 7</h2>
+<p>Create the following dataframe</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">student=</span><span class="fu">c</span>(<span class="st">&#39;Alex&#39;</span>, <span class="st">&#39;Jane&#39;</span>, <span class="st">&#39;Tom&#39;</span>, <span class="st">&#39;Lilly&#39;</span>, <span class="st">&#39;Turner&#39;</span>, <span class="st">&#39;Ruby&#39;</span>, <span class="st">&#39;Nick&#39;</span>),</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>                 <span class="at">grade=</span><span class="fu">c</span>(<span class="dv">77</span>, <span class="dv">81</span>, <span class="dv">89</span>, <span class="dv">83</span>, <span class="dv">99</span>, <span class="dv">92</span>, <span class="dv">97</span>))</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  student grade
+1    Alex    77
+2    Jane    81
+3     Tom    89
+4   Lilly    83
+5  Turner    99
+6    Ruby    92
+7    Nick    97</code></pre>
+</div>
+</div>
+</section>
+<section id="question-8" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="question-8">Question 8</h2>
+<p>Create a new dataframe with only Alex, Jane and Turner</p>
+<div class="cell">
+
+</div>
+</section>
+<section id="question-9" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="question-9">Question 9</h2>
+<p>What is the average grade for the entire class</p>
+<div class="cell">
+
+</div>
+</section>
+<section id="question-10" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="question-10">Question 10</h2>
+<p>What is the mean of Alex, Jane, and Turner’s grades</p>
+<div class="cell">
+
+</div>
+</section>
+<section id="question-11" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="question-11">Question 11</h2>
+<p>What is the highest grade?</p>
+<div class="cell">
+
+</div>
+</section>
+<section id="question-12" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="question-12">Question 12</h2>
+<p>What is the lowest grade?</p>
+<div class="cell">
+
+</div>
+</section>
+<section id="question-13" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="question-13">Question 13</h2>
+<p>Who is student with the highest grade?</p>
+<div class="cell">
+
+</div>
+</section>
+<section id="question-14" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="question-14">Question 14</h2>
+<p>Who is the student with the lowest grade?</p>
+<div class="cell">
+
+</div>
+</section>
+<section id="question-15" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="question-15">Question 15</h2>
+<p>Extract the second element from the following list</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>list_new<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">&quot;el1&quot;</span>, <span class="st">&quot;el2&quot;</span>, <span class="st">&quot;el3&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="question-16" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="question-16">Question 16</h2>
+<p>Extract the last element from the following list</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>list_new<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">&quot;el1&quot;</span>, <span class="st">&quot;el2&quot;</span>, <span class="st">&quot;el3&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="question-17" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="question-17">Question 17</h2>
+<p>Merging Datsets<br>
 </p>
+<ol type="a">
+<li>Load the life_expectancy and urbanization datasets</li>
+</ol>
 <ul>
-<li>Probability distributions</li>
-<li>Joint probabilities</li>
-<li>Theoretical vs. empirical probability</li>
-</ul>
-<p><strong>Class 2: Probability - I</strong><br>
-9/27/2023 - Wed - <a href="/files/teaching/stats/lab4/lab4_questions.html" target="_blank">Lab</a><br>
-</p>
-<ul>
-<li>Data visualization with with ggplot</li>
-<li>Barplots, line graphs, and scatterplots</li>
-</ul>
-<p><strong><em>Reading</em></strong><br>
-</p>
-<ul>
-<li>Warne (2018) - C6: Probability and Central Limit Theorem<br>
+<li><a href="https://www.dropbox.com/scl/fi/3h5vr0ak3xobzqb4k3jt3/life-expectancy.csv?rlkey=w6iwbjdd1dkyuck6z3h0w1tql&amp;dl=0" target="_blank">Life Expectancy</a><br>
 </li>
-</ul>
-<p><strong><em>Assignment 2</em></strong><br>
-<!--[***Assignment 2***](/files/teaching/stats/assignments/assignment2_questions.html){target="_blank"}\--></p>
-</section>
-<section id="week-5" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="week-5">Week 5</h2>
-<p><strong>Class 1: Probability - II</strong><br>
-10/2/2023 - Mon - <a href="https://www.dropbox.com/s/bmt8ca9lenizlvc/stats_undergrad4-5.pdf?dl=0" target="_blank">Lecture</a><br>
-</p>
-<ul>
-<li>Probability Mass Functions (PMFs)</li>
-<li>Probability Distribution Functions (PDFs)</li>
-<li>Cumulative Distribution Functions (CDFs)</li>
-</ul>
-<p><strong>Class 2: Probability - II</strong><br>
-10/4/2023 - Wed - <a href="/files/teaching/stats/lab5/lab5_questions.html" target="_blank">Lab</a><br>
-</p>
-<ul>
-<li>Probability distributions: binomial, Poisson, normal, F, Student t</li>
-</ul>
-<p><strong><em>Reading</em></strong><br>
-</p>
-<ul>
-<li>Warne (2018) - C6: Probability and Central Limit Theorem<br>
+<li><a href="https://www.dropbox.com/scl/fi/8uj8h6y8itijctd80tb61/share-of-population-urban.csv?rlkey=5ajqwhox3gl9lmt0bku8zb54q&amp;dl=0" target="_blank">Urbanization</a><br>
 </li>
 </ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Setting path</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;/Users/bgpopescu/Dropbox/john_cabot/teaching/stats/lab2/&quot;</span>)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>life_expectancy <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">&#39;./life-expectancy.csv&#39;</span>)</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>urbanization <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">&#39;./share-of-population-urban.csv&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="2" type="a">
+<li>Calculating mean by country for life_expectancy</li>
+</ol>
+<div class="cell">
+
+</div>
+<ol start="3" type="a">
+<li>Remove the countries which have missing continents</li>
+</ol>
+<div class="cell">
+
+</div>
+<ol start="4" type="a">
+<li>Calculating mean by country for urbanization</li>
+</ol>
+<div class="cell">
+
+</div>
+<ol start="5" type="a">
+<li>Remove the countries which have missing continents</li>
+</ol>
+<div class="cell">
+
+</div>
+<ol start="6" type="a">
+<li>Perform a left merge</li>
+</ol>
+<div class="cell">
+
+</div>
+<ol start="7" type="a">
+<li>Removing NA values</li>
+</ol>
+<div class="cell">
+
+</div>
+<ol start="8" type="a">
+<li>Creating a scatterplot</li>
+</ol>
+<div class="cell">
+
+</div>
 </section>
-<section id="week-6" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="week-6">Week 6</h2>
-<p><strong>Class 1: Statistical significance testing and z-tests</strong><br>
-10/9/2023 - Mon - <a href="https://www.dropbox.com/s/1f9no5wr11slvzi/stats_undergrad5.pdf?dl=0" target="_blank">Lecture</a><br>
-</p>
-<ul>
-<li>Null hypotheses</li>
-<li>One vs.two-tailed tests</li>
-<li>Type 1 and Type 2 errors</li>
-</ul>
-<p><strong>Class 2: Hypothesis testing</strong><br>
-10/11/2023 - Wed - <a href="/files/teaching/stats/lab6/lab6_questions.html" target="_blank">Lab</a><br>
-</p>
-<ul>
-<li>Hypothesis testing</li>
-</ul>
-<p><strong><em>Reading</em></strong><br>
-</p>
-<ul>
-<li>Warne (2018) - C8: One-Sample t-Tests</li>
-<li>Warne (2018) - C9: Paired-Samples t-Tests</li>
-<li>Warne (2018) - C10: Unpaired Two Sample t-Tests</li>
-<li>Fogarty (2019) - C9: Hypothesis Testing</li>
-</ul>
-</section>
-<section id="week-7" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="week-7">Week 7</h2>
-<p><strong>Class 1: Correlation</strong><br>
-10/16/2023 - Mon - <a href="https://www.dropbox.com/s/fdwlnx8kujk3puv/Stats_undergrad6.pdf?dl=0" target="_blank">Lecture</a><br>
-</p>
-<ul>
-<li>Pearson correlation coefficient</li>
-<li>Visualizing correlations</li>
-<li>Correlation vs. causation</li>
-</ul>
-<p><strong>Class 2: Midterm Revision</strong><br>
-10/18/2023 - Wed - <a href="https://www.dropbox.com/s/7bq9pu0ns3znn0x/stats_revision_midterm.pdf?dl=0" target="_blank">Lecture</a><br>
-</p>
-<p><strong>Class 3: MIDTERM</strong><br>
-10/20/2023 - Fri<br>
-</p>
-<p><strong><em>Reading</em></strong><br>
-</p>
-<ul>
-<li>Fogarty (2019) - C10: Bivariate Analysis</li>
-<li>Fogarty (2019) - C11: Linear Regression and Model building</li>
-</ul>
-</section>
-<section id="week-8" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="week-8">Week 8</h2>
-<p><strong>Class 1: Hypothesis testing</strong><br>
-</p>
-<p>10/23/2023 - Mon - <a href="/files/teaching/stats/lab8/lab8_questions.html" target="_blank">Lab</a><br>
-</p>
-<ul>
-<li>Hypothesis testing</li>
-<li>Visualizing differences: boxplots</li>
-<li>Choropleth Maps</li>
-</ul>
-<p><strong>Class 2: Univariate regression</strong><br>
-10/25/2023 - Wed - <a href="https://www.dropbox.com/s/9tjgo8dkeqkcgd6/Stats_undergrad7.pdf?dl=0" target="_blank">Lecture</a><br>
-</p>
-<ul>
-<li>Purpose</li>
-<li>Regression line</li>
-<li>Coefficients</li>
-<li>Standard errors</li>
-<li>Goodness of fit</li>
-</ul>
-<p><strong><em>Reading</em></strong><br>
-</p>
-<ul>
-<li>Warne (2018) - C10: Unpaired Two Sample t-Tests</li>
-<li>Fogarty (2019) - C9: Hypothesis Testing</li>
-</ul>
-<p><strong><em>Assignment 3</em></strong> <!--[***Assignment 3***](/files/teaching/stats/assignments/assignment3_questions.html){target="_blank"}\--></p>
-</section>
-<section id="week-9" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="week-9">Week 9</h2>
-<p><strong>Class 1: bivariate regression</strong><br>
-</p>
-<p>10/30/2023 - Mon - <a href="/files/teaching/stats/lab9/lab9_questions.html" target="_blank">Lab</a><br>
-</p>
-<ul>
-<li>Running bivariate regressions in R</li>
-<li>Interpreting results</li>
-<li>Making tables</li>
-<li>Coefficient plots</li>
-<li>Predicted values and Residuals</li>
-</ul>
-<p>11/01/2023 - Wed<br>
-NO CLASS<br>
-</p>
-<p><strong><em>Reading</em></strong><br>
-</p>
-<ul>
-<li>Warne (2018) - C13: Regression</li>
-<li>Warne (2018) - C15: Applying Statistics to Research</li>
-</ul>
-</section>
-<section id="week-10" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="week-10">Week 10</h2>
-<p><strong>Class 1: Univariate and Multivariate regressions</strong><br>
-11/6/2023 - Mon - <a href="https://www.dropbox.com/s/0gk58cslnlftzq5/Stats_undergrad10.pdf?dl=0" target="_blank">Lecture</a><br>
-</p>
-<ul>
-<li>Assumptions of OLS</li>
-<li>Regression with a Binary Independent Variable</li>
-<li>Counterfactuals</li>
-<li>Multivariate regressions</li>
-<li>Interaction Effects</li>
-</ul>
-<p><strong>Class 2: RCT Data</strong><br>
-11/08/2023 - Wed - <a href="/files/teaching/stats/lab10/lab_malaria_exp.html" target="_blank">Lab</a><br>
-</p>
-<ul>
-<li>Analysis of RCT Data</li>
-<li>Mapping Rasters and Shapefiles</li>
-<li>Interactive Maps with leaflet</li>
-<li>Summary Statistics</li>
-<li>Covariate Balance</li>
-<li>Plotting Average Treatment Effects</li>
-</ul>
-<p><strong><em>Reading</em></strong><br>
-</p>
-<ul>
-<li>Ismay, Chester, and Albert Y. Kim. 2019. Statistical Inference via Data Science: A ModernDive into R and the Tidyverse. Chapman and Hall / CRC. <a href="https://moderndive.com/6-multiple-regression.html" target="_blank">Chapter 6</a></li>
-<li>Huntington-Klein, Nick. 2021. The Effect: An Introduction to Research Design and Causality. Boca Raton, Florida: Chapman and Hall / CRC. https://theeffectbook.net/. <a href="https://theeffectbook.net/ch-StatisticalAdjustment.html" target="_blank">Chapter 13</a></li>
-</ul>
-<p><strong><em>Assignment 4</em></strong><br>
-<!--[***Assignment 4***](/files/teaching/stats/assignments/rome_assignment_questions.html){target="_blank"}\--></p>
-</section>
-<section id="week-11" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="week-11">Week 11</h2>
-<p><strong>Class 1: Multivariate regressions</strong><br>
-11/13/2023 - Mon - <a href="https://www.dropbox.com/s/0gk58cslnlftzq5/Stats_undergrad10.pdf?dl=0" target="_blank">Lecture</a><br>
-</p>
-<ul>
-<li>Steps to Exploratory Data Analysis</li>
-<li>Coefficient Plots</li>
-<li>Adjusted R squared</li>
-<li>Gauss-Markov Assumptions</li>
-</ul>
-<p><strong>Class 2: Multivariate regressions</strong><br>
-11/15/2023 - Wed - Lab</p>
-</section>
-<section id="week-12" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="week-12">Week 12</h2>
-<p><strong>Class 1: Theories of Change</strong><br>
-11/20/2023 - Mon - <a href="https://www.dropbox.com/s/oqn1uoml1j88z9n/Stats_undergrad11.pdf?dl=0" target="_blank">Lecture</a><br>
-</p>
-<ul>
-<li>Causal Diagrams - DAGs</li>
-<li>Confounders, Colliders, Mediators</li>
-<li>The Fundamental Problem of Causal Inference</li>
-<li>Selection Bias</li>
-<li>Randomization and RCTs</li>
-</ul>
-<p><strong>Class 2: Theories of Change</strong><br>
-11/22/2023 - Wed - Lab</p>
-<p><strong><em>Reading</em></strong><br>
-</p>
-<ul>
-<li>Huntington-Klein, Nick. 2021. The Effect: An Introduction to Research Design and Causality. Boca Raton, Florida: Chapman and Hall / CRC. https://theeffectbook.net/. <a href="https://theeffectbook.net/ch-Identification.html" target="_blank">Chapter 5</a></li>
-</ul>
-</section>
-<section id="week-13" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="week-13">Week 13</h2>
-<p><strong>Class 1: Threats to Validity </strong><br>
-11/27/2023 - Mon - <a href="https://www.dropbox.com/s/4arvuz99isjc60j/stats_undergrad12.pdf?dl=0" target="_blank">Lecture</a><br>
-</p>
-<ul>
-<li>Construct Validity</li>
-<li>Statistical Conclusion Validity</li>
-<li>Internal and External Validity</li>
-<li>Matching</li>
-</ul>
-<p><strong>Class 2: DAGs</strong> 11/29/2023 - Wed - <a href="/files/teaching/stats/lab13/lab13_class.html" target="_blank">Lab</a><br>
-</p>
-<ul>
-<li>DAGs (Directed acyclic graphs)</li>
-<li>Nearest Neighbor Matching based on Mahalanobis Distance</li>
-<li>Matching based on Inverse Probability Weights</li>
-</ul>
-<p><strong>Reading</strong><br>
-</p>
-<ul>
-<li><p>DAGS: Huntington-Klein, Nick. 2021. The Effect: An Introduction to Research Design and Causality. Boca Raton, Florida: Chapman and Hall / CRC. https://theeffectbook.net/. <a href="https://theeffectbook.net/ch-CausalDiagrams.html" target="_blank">Chapter 6</a>, <a href="https://theeffectbook.net/ch-DrawingCausalDiagrams.html" target="_blank">Chapter 7</a>, <a href="https://theeffectbook.net/ch-CausalPaths.html" target="_blank">Chapter 8</a></p></li>
-<li><p>Matching: Huntington-Klein, Nick. 2021. The Effect: An Introduction to Research Design and Causality. Boca Raton, Florida: Chapman and Hall / CRC. https://theeffectbook.net/. <a href="https://theeffectbook.net/ch-Matching.html" target="_blank">Chapter 14</a></p></li>
-</ul>
-<p><strong><em>Assignment 5</em></strong><br>
-<!--[***Assignment 5***](/files/teaching/stats/assignments/rome_assignment_dif_questions.html){target="_blank"}\--></p>
-</section>
-<section id="week-14" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="week-14">Week 14</h2>
-<p><strong>Class 1: Differences in Differences</strong><br>
-12/04/2023 - Mon - <a href="https://www.dropbox.com/s/dz4e8k3wa5kyuu1/stats_undergrad13.pdf?dl=0" target="_blank">Lecture</a><br>
-</p>
-<ul>
-<li>Quasi-Natural Experiments</li>
-<li>Indicators and Interactions</li>
-<li>Differences in Differences</li>
-<li>Assumptions</li>
-</ul>
-<p><strong>Class 2: Differences in Differences</strong><br>
-12/06/2023 - Wed - <a href="/files/teaching/stats/lab14/lab_malaria_exp_dif.html" target="_blank">Lab</a><br>
-</p>
-<ul>
-<li>Analysis of Differences in Differences</li>
-<li>Event-Study Analyses</li>
-</ul>
-<p><strong><em>Reading</em></strong><br>
-</p>
-<p>Huntington-Klein, Nick. 2021. The Effect: An Introduction to Research Design and Causality. Boca Raton, Florida: Chapman and Hall / CRC. https://theeffectbook.net/. <a href="https://theeffectbook.net/ch-DifferenceinDifference.html" target="_blank">Chapter 18</a></p>
-</section>
-<section id="week-15" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="week-15">Week 15</h2>
-<p><strong>Class 1: Revision for Final Exam</strong><br>
-12/11/2023 - Mon - <a href="https://www.dropbox.com/s/dk6f4h9hnjimpl8/stats_undergrad14.pdf?dl=0" target="_blank">Lecture</a><br>
-</p>
-<p><strong>Class 2: Final Exam</strong><br>
-12/13/2023 - Wed - FINAL EXAM</p>
 </section>
 
 </main>
