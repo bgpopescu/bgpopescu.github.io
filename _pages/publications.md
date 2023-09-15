@@ -24,6 +24,8 @@ Bogdan G. Popescu. 2023. <em>Imperial Borderlands: Institutions and Legacies of 
 Bogdan G. Popescu. <em>Islam, Sultans, and the Printing Press</em>. Manuscript in Progress. Read the [table of contents and intro](https://www.dropbox.com/scl/fi/es0q72ymoqsem11vhb5pw/sample.pdf?rlkey=udeufrfdan1s82rivoj7njl1m&dl=0){:target="_blank"}.
 
 <h3><b>Peer-Reviewed Publications</b></h3>
+Yusuf Mağiya, Bogdan G. Popescu, and Güneş Tezcür. 2023. Bureaucratic Shuffling, Regime Type, and Public Good Provision{:target="_blank"} <em>Comparative Political Studies</em>. Conditionally accepted. [PDF] (https://www.dropbox.com/scl/fi/saxlpnu054hs0g0giox21/Turkish_Governors-4.pdf?rlkey=xtma577igvfgtgh94kvnhxryy&dl=0){:target="_blank"}
+
 Bogdan G. Popescu. 2023. "The Developmental Legacies of Border Buffer Zones: the Case of Military Colonialism." <em>Journal of Historical Political Economy</em>.  Vol. 3: No. 1, pp 31-63.
 [Journal Version](http://dx.doi.org/10.1561/115.00000045){:target="_blank"} &#124; [PDF](https://www.dropbox.com/scl/fi/00ojw0iwrewmtb8m09gcp/Legacies_Project_RNR_compressed.pdf?rlkey=bmlp6mb042coghp5s1ky1rvph&dl=0){:target="_blank"}
 
@@ -36,7 +38,6 @@ Maura Cremin and Bogdan G. Popescu. 2021. "Sticks and Stones? Connecting Insurge
 Mike Albertus and Bogdan G. Popescu, 2020. "Does Equalizing Assets Spur Development? Evidence From Large-Scale Land Reform in Peru," <em>Quarterly Journal of Political Science</em>. Vol. 15: No. 2, pp 255-295. [Journal Version](https://www.nowpublishers.com/article/Details/QJPS-19033){:target="_blank"} &#124; [PDF](https://www.dropbox.com/s/osqfwx5c464m01w/paper_and_appendix_12.2.2019_small.pdf?dl=0){:target="_blank"}
 
 <h3><b>Working Papers</b></h3>
-[Bureaucratic Shuffling, Regime Type, and Public Good Provision](https://www.dropbox.com/scl/fi/saxlpnu054hs0g0giox21/Turkish_Governors-4.pdf?rlkey=xtma577igvfgtgh94kvnhxryy&dl=0){:target="_blank"} (with Güneş Tezcür (UCF) and Yusuf Mağiya (Columbia)) - Revise and Resubmit at *Comparative Political Studies*
 
 [Civic Associations, Populism, and (Un-)Civic Behavior: Evidence from Germany](https://www.dropbox.com/s/z7i1hk0kk9x4nio/covid_paper_compressed.pdf?dl=0){:target="_blank"} (with Marlene Jugl (Bocconi)) - Revise and Resubmit at *Political Science Research and Methods*
 
