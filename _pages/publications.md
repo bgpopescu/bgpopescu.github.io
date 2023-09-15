@@ -32,7 +32,9 @@ My research centers on state responses to political threats and the long-term co
 
 03. **Bogdan G. Popescu** and Mircea Popa. 2022. "Imperial Rule and Long-run Development: Evidence on the Role of Human Capital in the Ottoman Europe."  <em>Comparative Political Studies</em>. Vol. 55: No. 11, pp. 1910-1946. [Journal Version](https://journals.sagepub.com/doi/full/10.1177/00104140211060283){:target="_blank"} &#124; [PDF](https://www.dropbox.com/s/5dq2pa43xcjkvvy/Legacies_Project_RNR2_compressed.pdf?dl=0){:target="_blank"}
 
-<p>James Caporaso Award for Best Article published in CPS in 2022</p>
+<ul style="list-style: none;">
+ <li>James Caporaso Award for Best Article published in CPS in 2022</li>
+</ul>
 
 04. Maura Cremin and **Bogdan G. Popescu**. 2021. "Sticks and Stones? Connecting Insurgent Propaganda with Violent Outcomes," <em>Journal of Conflict Resolution </em>. Vol. 66: No. 3, pp 504-528. [Journal Version](https://journals.sagepub.com/doi/10.1177/00220027211027291){:target="_blank"} &#124; [PDF](https://www.dropbox.com/s/7pr3ag5y5n5f8eg/cremin_popescu_2021_sticks_and_stones_compressed.pdf?dl=0){:target="_blank"}
 
