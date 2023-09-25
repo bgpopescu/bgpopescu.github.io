@@ -25,7 +25,7 @@ My research centers on state responses to political threats and the long-term co
 
 <h3><b>Peer-Reviewed Publications</b></h3>
 
-1) Yusuf Mağiya, **Bogdan G. Popescu**, and Güneş Tezcür. 2023. All the Sultan's Men: Regime Type, Insecurity, and the Shuffling of Governors. <em>Comparative Political Studies</em>. [PDF](https://www.dropbox.com/scl/fi/saxlpnu054hs0g0giox21/Turkish_Governors-4.pdf?rlkey=xtma577igvfgtgh94kvnhxryy&dl=0){:target="_blank"}
+1) Yusuf Mağiya, **Bogdan G. Popescu**, and Güneş Tezcür. 2023. All the Sultan's Men: Regime Type, Insecurity, and the Shuffling of Governors. <em>Comparative Political Studies</em>. [PDF](https://www.dropbox.com/scl/fi/qfdzysdfdd0uy60op4qyn/Turkish_Governors_2023_09_25.pdf?rlkey=wex0iaf7zvs7172jkrlibpn69&dl=0){:target="_blank"}
 
 2) **Bogdan G. Popescu**. 2023. "The Developmental Legacies of Border Buffer Zones: the Case of Military Colonialism." <em>Journal of Historical Political Economy</em>.  Vol. 3: No. 1, pp 31-63.
 [Journal Version](http://dx.doi.org/10.1561/115.00000045){:target="_blank"} &#124; [PDF](https://www.dropbox.com/scl/fi/00ojw0iwrewmtb8m09gcp/Legacies_Project_RNR_compressed.pdf?rlkey=bmlp6mb042coghp5s1ky1rvph&dl=0){:target="_blank"}
