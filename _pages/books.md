@@ -25,6 +25,19 @@ I propose a conceptual framework for understanding the ambivalent effect of extr
 
 A book workshop took place on September 17, 2021. Kristin Fabbe (Harvard Business School), Mark Dincecco (Michigan), Grigore Pop-Eleches (Princeton), and Tomáš Cvrček (University College London) discussed the manuscript. The book is forthcoming with Cambridge University Press, Economic History series. You can download the [introduction and table of contents](https://www.dropbox.com/scl/fi/6n11cbdrn4p3v8d3f8h6l/sample.pdf?rlkey=mjufjsoklde8408lz8gfwwtcl&dl=0){:target="_blank"}. You can [order here](https://www.cambridge.org/core/books/imperial-borderlands/6845856BB6A18B8B8EC2EE66B9013AAC#fndtn-information){:target="_blank"}.
 
+
+"A new theory of why states are divided into a core and periphery. Pathbreaking." **James Robinson, University of Chicago**
+
+"How do empires govern their colonial territories? Which are the consequences of their legal and social institutions for development, democracy and collective trust? In this extremely smart book, Bogdan Popescu exploits a trove of historical and contemporary data on the territories controlled by the Habsburgs to offer a sophisticated examination of imperialism and colonialism. Going beyond its intrinsic interest for Europeanists, Imperial Borderlands will be a must-read for researchers on the political economy of development." **Carles Boix, Princeton University**
+
+"This innovative study illuminates one of the most consequential border zones in world history and traces its institutional legacy into the present day. It also has many wise things to say about extractive institutions more widely." **Sheilagh Ogilvie, Oxford University**
+
+"What are the long-term effects of military colonization on the colonized? Through a detailed study of the Habsburg Empire Bogdan Popescu discovers persistent attitudes and behaviors characteristic of pre-capitalist family and property relations. Anyone interested in European victims of colonization or colonial legacies more generally should read this book."" **Jason Wittenberg, University of California Berkeley**
+
+"This thought-provoking book sheds new light on the negative long-run impacts of “internal” military imperialism on socioeconomic development in central Europe. To make his case, Popescu employs a clever mix of archival, econometric, and narrative evidence. A well-crafted study." **Mark Dincecco, University of Michigan**
+
+
+
 <h2><b>Islam, Sultans, and the Printing Press: How Absence of the Printed Word Limited Development - <em>Manuscript in Progress</em></b></h2>
 
 <img src="/images/book_cover_second_book.jpg" alt="Islam, Sultans, and the Printing Press" width="350" align="left" hspace="12" vspace="12"/>
