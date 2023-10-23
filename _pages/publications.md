@@ -43,15 +43,13 @@ My research centers on state responses to political threats and the long-term co
 
 <h3><b>Working Papers</b></h3>
 
-[Civic Associations, Populism, and (Un-)Civic Behavior: Evidence from Germany](https://www.dropbox.com/s/z7i1hk0kk9x4nio/covid_paper_compressed.pdf?dl=0){:target="_blank"} (with Marlene Jugl (Bocconi)) - Revise and Resubmit at *Political Science Research and Methods*
+[Civic Associations, Populism, and (Un-)Civic Behavior: Evidence from Germany](https://www.dropbox.com/scl/fi/pkhb38h503t6bw1anvke6/paper_compressed.pdf?rlkey=1yorqh8wtg8dxt12qcud29wzl&dl=0){:target="_blank"} (with Marlene Jugl (Bocconi)) - Revised and Resubmitted at *Political Science Research and Methods*
 
 [Frontiers of Resilience: Borders as Strategic Buffers](https://www.dropbox.com/scl/fi/1ctq14qla4imydet8s4if/popescu_et_al_borders_paper_2023_07_25_compressed.pdf?rlkey=wgydqvatw8zs5yo3egiwk3qgx&dl=0){:target="_blank"} (with Harunobu Saijo (Hiroshima University), Crystal Jing Xu (Chinese University of Hong Kong), Anna Zhang (Facebook))
 
 [Cuius Regio, Eius Religio: Indirect Rule and Conversion to Islam in the Early Ottoman Empire](https://www.dropbox.com/s/9gk4nym9ps6mdq0/popescu_statement_2021_10_15_compressed.pdf?dl=0){:target="_blank"}
 
 [God Save the Queen’s English! How Migration Shaped the English Language](https://www.dropbox.com/scl/fi/lxwqka4zta43gb9vumqae/paper.pdf?rlkey=g69nodpyz99st777jdu7hbghp&dl=0){:target="_blank"}
-
-
 
 
 Communism and Development: Legacies of Collectivization in Romania (with Leonid Peisakhin (NYU))
