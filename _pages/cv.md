@@ -18,4 +18,4 @@ redirect_from:
 </script>
 
 {% include base_path %}
-Download my <a href="https://www.dropbox.com/scl/fi/4aefeb81kep7g3hmyt2xk/bogdan-popescu-cv_2023_10_23.pdf?rlkey=8quadau0v7r70n0h3pzx3ldlm&dl=0" target="_blank">CV</a>.
+Download my <a href="https://www.dropbox.com/scl/fi/uottrdimwbzkzs1gjtaaz/bogdan-popescu-cv_2023_10_24.pdf?rlkey=oyq2j6wpm78wn4wyrd2fkr5qp&dl=0" target="_blank">CV</a>.
