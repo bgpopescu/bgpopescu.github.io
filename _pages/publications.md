@@ -49,7 +49,7 @@ My research centers on state responses to political threats and the long-term co
 
 [Cuius Regio, Eius Religio: Indirect Rule and Conversion to Islam in the Early Ottoman Empire](https://www.dropbox.com/s/9gk4nym9ps6mdq0/popescu_statement_2021_10_15_compressed.pdf?dl=0){:target="_blank"}
 
-[God Save the Queen’s English! How Migration Shaped the English Language](https://www.dropbox.com/scl/fi/lxwqka4zta43gb9vumqae/paper.pdf?rlkey=g69nodpyz99st777jdu7hbghp&dl=0){:target="_blank"}
+[God Save the Queen’s English! How Industrial Revolution Migration Shaped the English Language](https://www.dropbox.com/scl/fi/lxwqka4zta43gb9vumqae/paper.pdf?rlkey=g69nodpyz99st777jdu7hbghp&dl=0){:target="_blank"}
 
 
 Communism and Development: Legacies of Collectivization in Romania (with Leonid Peisakhin (NYU))
