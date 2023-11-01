@@ -25,7 +25,7 @@ My research centers on state responses to political threats and the long-term co
 
 <h3><b>Peer-Reviewed Publications</b></h3>
 
-1) Yusuf Mağiya, **Bogdan G. Popescu**, and Güneş Tezcür. 2023. "All the Sultan's Men: Regime Type, Insecurity, and the Shuffling of Governors." <em>Comparative Political Studies</em>. Online First.
+1) Yusuf Mağiya, **Bogdan G. Popescu**, and Güneş Tezcür. 2023. "All the Sultan's Men: Regime Type, Insecurity, and the Shuffling of Governors." <em>Comparative Political Studies</em>. OnlineFirst.
 [Journal Version](https://doi.org/10.1177/00104140231209963){:target="_blank"} &#124;
 [PDF](https://www.dropbox.com/scl/fi/qfdzysdfdd0uy60op4qyn/Turkish_Governors_2023_09_25.pdf?rlkey=wex0iaf7zvs7172jkrlibpn69&dl=0){:target="_blank"}
 
