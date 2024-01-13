@@ -2999,7 +2999,7 @@ vertical-align: -.125em;
   <ul class="collapse">
   <li><a href="#assessment-methods" id="toc-assessment-methods" class="nav-link" data-scroll-target="#assessment-methods"><span class="header-section-number">6.1</span> Assessment methods:</a></li>
   <li><a href="#problem-sets" id="toc-problem-sets" class="nav-link" data-scroll-target="#problem-sets"><span class="header-section-number">6.2</span> Problem Sets</a></li>
-  <li><a href="#take-home-midterm-and-final-exam" id="toc-take-home-midterm-and-final-exam" class="nav-link" data-scroll-target="#take-home-midterm-and-final-exam"><span class="header-section-number">6.3</span> Take-home Midterm and Final exam</a></li>
+  <li><a href="#final-project" id="toc-final-project" class="nav-link" data-scroll-target="#final-project"><span class="header-section-number">6.3</span> Final Project</a></li>
   </ul></li>
   <li><a href="#attendance-requirements" id="toc-attendance-requirements" class="nav-link" data-scroll-target="#attendance-requirements"><span class="header-section-number">7</span> Attendance Requirements</a></li>
   <li><a href="#academic-honesty" id="toc-academic-honesty" class="nav-link" data-scroll-target="#academic-honesty"><span class="header-section-number">8</span> Academic Honesty</a></li>
@@ -3029,6 +3029,7 @@ vertical-align: -.125em;
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Applied Computational Methods for Social Sciences</h1>
+<p class="subtitle lead">Introduction to Spatial Data Programming with R</p>
 </div>
 
 
@@ -3043,28 +3044,26 @@ vertical-align: -.125em;
 
 </header>
 
-<p>This page is work in progress. Do not take any of the contents on this page as final.</p>
 <section id="details" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Details</h1>
 <p>Instructor: Bogdan G. Popescu<br>
-Hours: TBA<br>
+Hours: MW 10:00-11:15AM<br>
 Total Hours of Contact: 2:30 per week<br>
+Room: G.K.1.4-Guarini Campus, Kushlan Wing, First Floor, Room 4<br>
 </p>
 <p>Credits: 3<br>
 Prerequisites: None<br>
 Office Hours: TBA<br>
-<!--Course Website: [http://bgpopescu.net/files/teaching/big_data/big_data_syllabus.html](http://bgpopescu.net/files/teaching/big_data/big_data_syllabus.html){target="_blank"}--></p>
+</p>
+<!--Course Website: [http://bgpopescu.net/files/teaching/big_data/big_data_syllabus.html](http://bgpopescu.net/files/teaching/big_data/big_data_syllabus.html){target="_blank"}-->
 </section>
 <section id="course-description" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Course Description</h1>
-<p>Computational social science is an interdisciplinary field that combines computer science and information technology methods with theories and concepts from the social sciences to analyze and understand social phenomena. It uses computational methods like spatial and text analysis to collect, process, and analyze datasets from various sources, such as social media, surveys, and government databases. The tools that you will learn in this course have wide applicability to geography, sociology, public policy, economics, and political science. Computational social science aims to use these methods to understand social behavior and social systems better and predict future social phenomena. This course will help students develop foundational skills in spatial and text analysis and an awareness of advanced methodologies in social sciences.</p>
+<p>This is an introductory course to spatial data in R, a free programming language and environment developed for statistical computing and graphics. The first part of the course will introduce you to the R programming language. The second part will focus on the R’s ability to manipulate spatial data: including how to process vector layers, and rasters. Through hands-on exercises, this course introduces students to the concepts and applications of geographic information systems (GIS). It provides a basic foundation of spatial analysis and GIS with laboratory applications in particular techniques and methodology utilizing R. Students will learn to perform spatial analyses and communicate their results through cartography, along with introduction to concepts such as spatial data collection, remote sensing, and spatial statistics.</p>
 </section>
 <section id="summary-of-course-content" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> Summary of Course Content</h1>
-<p>The course introduces students to applied computational social sciences. It aims to provide a framework in which students can implement their research ideas and it equips them with a foundational understanding of R - a free programming language for statistical computing and graphics. Lessons cover elementary programming techniques (e.g., loops, conditional statements, user-defined functions), how to generate clean code, use external libraries, develop reproducible research with R Quarto, and visualize and analyze spatial and textual data.</p>
-<p>At the end of the course, students have the essential computational skills and awareness of relevant programming libraries to conduct their research.</p>
-<p><strong>Required course materials/study visits and expected expenditure for the students</strong><br>
-Links to relevant reading materials are available here. You will download R on your computers for free.</p>
+<p>This introductory course on spatial data in R offers a comprehensive exploration of the R programming language’s capabilities in statistical computing and graphics, with a specific focus on spatial data manipulation. The initial segment of the course acquaints students with the fundamentals of the R programming language, emphasizing its status as a versatile and free tool. Subsequently, the course delves into R’s ability to handle spatial data, covering the processing of both vector layers and raster data. Participants learn to perform spatial analyses using R, with a particular emphasis on laboratory applications that apply techniques and methodologies to real-world scenarios.A critical component of the course is the integration of cartography, enabling students to visually communicate spatial analyses results through map creation. The practical applications extend to various domains, allowing students to develop a solid foundation in spatial analysis skills. Overall, this course equips students with a robust skill set for handling spatial data, making it valuable for those entering fields such as geography, environmental science, and urban planning.</p>
 </section>
 <section id="learning-outcomes" class="level1" data-number="4">
 <h1 data-number="4"><span class="header-section-number">4</span> Learning Outcomes</h1>
@@ -3073,15 +3072,12 @@ Links to relevant reading materials are available here. You will download R on y
 <ul>
 <li>execute basic programming tasks in R (e.g. loops, conditional statements, while statements, etc.)<br>
 </li>
-<li>analyze spatial data<br>
+<li>understand basic GIS terms and concepts<br>
 </li>
+<li>utilize GIS for conducting spatial analyses.<br>
+</li>
+<li>appreciate the design and structure of a geographic information system (GIS) as a decision-making tool.</li>
 <li>produce maps<br>
-</li>
-<li>analyze text documents<br>
-</li>
-<li>produce text analysis reports<br>
-</li>
-<li>implement statistical analysis<br>
 </li>
 </ul>
 </section>
@@ -3093,29 +3089,42 @@ Links to relevant reading materials are available here. You will download R on y
 <h1 data-number="6"><span class="header-section-number">6</span> Assessment</h1>
 <section id="assessment-methods" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="assessment-methods"><span class="header-section-number">6.1</span> Assessment methods:</h2>
-<p>You will be graded on five problem sets during the semester (35% of your grade), the extent to which you help your colleagues for the problem sets (5%) and two exams (each 30% of your grade).</p>
+<p>You will be graded on four problem sets during the semester (50% of your grade) and a final report and presentation (each 30% of your grade).</p>
 <ul>
-<li>5 problem sets: 35% of the final grade (7% each)</li>
-<li>Mid term exam: 30% of the final grade</li>
-<li>Final exam: 30% of the final grade</li>
+<li>4 problem sets: 50% of the final grade (12.5% each)</li>
+<li>final presentation: 25% of the final grade</li>
+<li>final project report: 25% of the final grade</li>
 </ul>
 </section>
 <section id="problem-sets" class="level2" data-number="6.2">
 <h2 data-number="6.2" class="anchored" data-anchor-id="problem-sets"><span class="header-section-number">6.2</span> Problem Sets</h2>
 <p>1.<strong>Initial Individual Submission</strong>: This component contributes 50% of the overall grade for the problem set. When you complete the problem set independently and submit it to the instructor, your grade for this component will be calculated based on the quality of your independent work. This grade will be weighted at 50% of the total assignment grade.</p>
 <p>2.<strong>Final Submission After Group Consultation</strong>: This component also contributes 50% of the overall grade for the problem sets. After discussing the problem set with your group members and documenting the correct answers, you will submit this revised version. Your grade for this component will be based on the quality of your final submission after group consultation. This grade will also be weighted 50% of the total assignment grade.</p>
-<p>3.<strong>Colleague Evaluation</strong>: Your colleagues will assess how much you contributed to helping them with the problem sets. This evaluation is separate from the individual and group submissions. It measures your ability to assist your fellow students. While the specific weight assigned to this evaluation is not mentioned in the text, this evaluation will likely influence your final grade for the problem sets. This component will count towards your final grade (5%).</p>
 </section>
-<section id="take-home-midterm-and-final-exam" class="level2" data-number="6.3">
-<h2 data-number="6.3" class="anchored" data-anchor-id="take-home-midterm-and-final-exam"><span class="header-section-number">6.3</span> Take-home Midterm and Final exam</h2>
-<p>A take-home midterm and final exam with open questions based on a dataset will also be included. Each is worth 30%.</p>
+<section id="final-project" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="final-project"><span class="header-section-number">6.3</span> Final Project</h2>
+<p>Students will undertake a GIS project that emphasizes practical application of spatial analysis techniques using the R programming language. This project offers an opportunity to showcase the acquired skills in manipulating spatial data and conducting meaningful analyses. Participants are encouraged to choose a topic of interest or relevance, either utilizing datasets provided in the course or exploring new ones. The projects entails a few steps</p>
+<ul>
+<li>choosing a topic that involves spatial data</li>
+<li>acquire data either from the course materials or from external sources</li>
+<li>employ at least five GIS procedures in R</li>
+<li>craft a well-structured two-page report containing: intro to the problem, objectives, data sources, methodology, results, and conclusion</li>
+<li>appendix with the R code for the GIS procedures.</li>
+</ul>
+<p>Students have two submit a two-page report and give and a 20-minute, in-class presentation.</p>
+<p>Grading Criteria for the project:</p>
+<ul>
+<li>Relevance</li>
+<li>Methodology: demonstration of at least five distinct GIS procedures in R.</li>
+<li>Analysis</li>
+<li>Presentation</li>
+<li>Code Quality</li>
+</ul>
 </section>
 </section>
 <section id="attendance-requirements" class="level1" data-number="7">
 <h1 data-number="7"><span class="header-section-number">7</span> Attendance Requirements</h1>
 <p>Students are required to attend classes following the University’s policies. Students with more than four unexcused absences (two weeks) will get an F on the course. Thus, students must attend classes.</p>
-<p><strong>Examination policy</strong></p>
-<p>A major exam (midterm or final) cannot be made up without the permission of the Dean’s Office. The Dean’s Office will grant such permission only when the absence was caused by a serious impediment, such as a documented illness, hospitalization or death in the immediate family (in which you must attend the funeral) or other situations of similar gravity. Absences due to other meaningful conflicts, such as job interviews, family celebrations, travel difficulties, student misunderstandings or personal convenience, will not be excused. Students who will be absent from a major exam must notify the Dean’s Office prior to that exam. Absences from class due to the observance of a religious holiday will normally be excused. Individual students who will have to miss class to observe a religious holiday should notify the instructor by the end of the Add/Drop period to make prior arrangements for making up any work that will be missed.</p>
 </section>
 <section id="academic-honesty" class="level1" data-number="8">
 <h1 data-number="8"><span class="header-section-number">8</span> Academic Honesty</h1>
@@ -3165,427 +3174,228 @@ James, Gareth, Witten, Daniela, Hastie, Trevor, and Tibshirani, Robert. 2017. *A
 <p>Edzer Pebesma, Roger Bivand. 2023 <em>Spatial Data Science</em>. Chapman and Hall. <a href="https://r-spatial.org/book/" target="_blank">https://r-spatial.org/book/</a></p>
 <p>Gimond, Manuel. 2023 <em>Intro to GIS and Spatial Analysis</em>. <a href="https://mgimond.github.io/Spatial/index.html" target="_blank">https://mgimond.github.io/Spatial/index.html</a></p>
 <p>Lovelace Robin, Nowosad, Robin, and Muenchow, Jannes. 2023. <em>Geocomputation with R</em>.<a href="https://r.geocompx.org" target="_blank">https://r.geocompx.org</a></p>
-<p><strong>Text as Data</strong></p>
-<p>Silge, Julia and Robinson, David, 2020. <em>Tidy Text Mining with R. O’Riley</em>. <a href="https://www.tidytextmining.com" target="_blank">https://www.tidytextmining.com</a></p>
-<p><strong>Statistics</strong></p>
-<p>Thulin, Måns. 2021. <em>Modern Statistics with R</em>. <a href="https://www.modernstatisticswithr.com" target="_blank">https://www.modernstatisticswithr.com</a></p>
+<!--
+**Text as Data**
+
+Silge, Julia and Robinson, David, 2020. *Tidy Text Mining with R. O’Riley*. [https://www.tidytextmining.com](https://www.tidytextmining.com){target="_blank"}
+
+**Statistics**
+
+Thulin, Måns. 2021. *Modern Statistics with R*. [https://www.modernstatisticswithr.com](https://www.modernstatisticswithr.com){target="_blank"}
+-->
 </section>
 </section>
 <section id="week-1" class="level1 unnumbered">
 <h1 class="unnumbered">Week 1</h1>
-<p><strong>Class 1: Intro to Computational Social Science</strong><br>
-Date - Day - <a href="/files/teaching/big_data/week1/presentation.html" target="_blank">Lecture</a><br>
+<p><strong>Class 1: Intro to R and GIS</strong><br>
+01/15/2024 - Mon - <a href="/files/teaching/big_data/week1/lecture1" target="_blank">Lecture</a><br>
 <!--
 [Inspiration](https://info5940.infosci.cornell.edu/slides/introduction-to-computing-for-information-science/#45){target="_blank"}--></p>
 <ul>
 <li>Introduction and course overview</li>
-<li>What is computational social science?</li>
-<li>Introduction to the basic principles of data science workflow and programming</li>
+<li>What is R and GIS</li>
+<li>Programming in R</li>
 </ul>
 <p><strong><em>Reading</em></strong><br>
 Good Enough Practices in Scientific Computing, <em>Good Enough Practices in Scientific Computing</em>. PLoS Comput Biol 13(6): e1005510.<br>
 Wickham, Hadley and Grolemund, Garett, 2023. <em>R for Data Science. O’Riley</em>. <a href="https://r4ds.hadley.nz" target="_blank">https://r4ds.hadley.nz</a>. C1-4</p>
-<p><strong>Class 2: Intro to Computational Social Science</strong><br>
-Date - Day - Lab<br>
+<p><strong>Class 2: Intro to R, Quarto, and R evironments</strong><br>
 </p>
 <ul>
-<li>Intro to R</li>
-<li>Installing and loading libraries</li>
-<li>Reading data</li>
+<li>Installing R</li>
+<li>Quarto files: notebooks vs. presentations</li>
+<li>The R environment</li>
 </ul>
 </section>
 <section id="week-2" class="level1 unnumbered">
 <h1 class="unnumbered">Week 2</h1>
-<p><strong>Class 1: Data Wrangling</strong><br>
-Date - Day - <a href="/files/teaching/big_data/week2/presentation.html" target="_blank">Lecture</a><br>
+<p><strong>Classes, Vectors, Operations, Matrices, Dataframe</strong><br>
+01/22/2024 - Mon - <a href="/files/teaching/big_data/week2/lecture2" target="_blank">Lecture</a><br>
 <!--
 [Working directories](https://info5940.infosci.cornell.edu/slides/reproducible-workflow/){target="_blank"}
 [Inspiration](https://info5940.infosci.cornell.edu/slides/data-transformation/#27){target="_blank"}--></p>
 <ul>
-<li>Working Directories: Relative and Absolute Paths</li>
 <li>Numeric and string objects</li>
 <li>Vectors, Matrices, and Dataframes</li>
-<li>Reading and Writing Data</li>
-<li>Filtering and Piping</li>
+<li>Conditionals</li>
+<li>Functions</li>
+<li>Loops</li>
 </ul>
 <p><strong><em>Reading</em></strong><br>
-</p>
-<p>Wickham, Hadley and Grolemund, Garett, 2023. <em>R for Data Science</em>. C. Import. <a href="https://r4ds.hadley.nz/spreadsheets" target="_blank">https://r4ds.hadley.nz/spreadsheets</a>.<br>
-Wickham, Hadley and Grolemund, Garett, 2023. <em>R for Data Science</em>. C. Data Transformation. O’Riley. <a href="https://r4ds.hadley.nz/data-transform" target="_blank">https://r4ds.hadley.nz/data-transform</a>.<br>
-Wickham, Hadley and Grolemund, Garett, 2023. <em>R for Data Science</em>. C. Transform. O’Riley. <a href="https://r4ds.hadley.nz/transform" target="_blank">https://r4ds.hadley.nz/transform</a>. Thulin, Måns. 2021. <em>Modern Statistics with R</em>. C. Dealing with messy data. <a href="https://www.modernstatisticswithr.com/messychapter.html" target="_blank">https://www.modernstatisticswithr.com/messychapter.html</a></p>
-<p><strong>Class 2: Data Wrangling</strong><br>
-Date - Day - Lab</p>
-<ul>
-<li>Lists, vectors, dataframes</li>
-<li>Reading and Writing Data</li>
-<li>Filtering and Piping</li>
-</ul>
+Wickham, Hadley and Grolemund, Garett, 2023. <em>R for Data Science. O’Riley</em>. C. Program <a href="https://r4ds.hadley.nz/program" target="_blank">https://r4ds.hadley.nz/program</a><br>
+Thulin, Måns. 2021. <em>Modern Statistics with R</em>. C6 R programming <a href="https://www.modernstatisticswithr.com/progchapter.html" target="_blank">https://www.modernstatisticswithr.com/progchapter.html</a></p>
+<!--
+***Reading***\
+
+Wickham, Hadley and Grolemund, Garett, 2023. *R for Data Science*. C. Import. [https://r4ds.hadley.nz/spreadsheets](https://r4ds.hadley.nz/spreadsheets){target="_blank"}.\
+Wickham, Hadley and Grolemund, Garett, 2023. *R for Data Science*. C. Data Transformation. O’Riley. [https://r4ds.hadley.nz/data-transform](https://r4ds.hadley.nz/data-transform){target="_blank"}.\
+Wickham, Hadley and Grolemund, Garett, 2023. *R for Data Science*. C. Transform. O’Riley. [https://r4ds.hadley.nz/transform](https://r4ds.hadley.nz/transform){target="_blank"}. 
+Thulin, Måns. 2021. *Modern Statistics with R*. C. Dealing with messy data. [https://www.modernstatisticswithr.com/messychapter.html](https://www.modernstatisticswithr.com/messychapter.html){target="_blank"}-->
 <p><strong><em>Assignment 1</em></strong><br>
 <!--[***Assignment 2***](/files/teaching/stats/assignments/assignment2_questions.html){target="_blank"}\--></p>
 </section>
 <section id="week-3" class="level1 unnumbered">
 <h1 class="unnumbered">Week 3</h1>
+<p><strong>Classes, Vectors, Operations, Matrices, Dataframe</strong><br>
+01/29/2024 - Mon - <a href="/files/teaching/big_data/week3/lecture3" target="_blank">Lecture</a><br>
+</p>
+<ul>
+<li>Reading Data in R</li>
+<li>Relative vs. Absolute Paths</li>
+<li>Importing data in R</li>
+<li>Tidy Data</li>
+<li>Missing Values</li>
+<li>Joins</li>
+<li>Date objects</li>
+</ul>
 <!--
 [Inspiration](https://info5940.infosci.cornell.edu/slides/data-wrangling-tidy-data/#7){target="_blank"}
 [Inspiration](https://info5940.infosci.cornell.edu/slides/data-wrangling-relational-data-and-factors/#7){target="_blank"}-->
-<p><strong>Class 1: Reading Data</strong><br>
-Date - Day - <a href="/files/teaching/big_data/week3/presentation.html" target="_blank">Lecture</a><br>
-</p>
-<ul>
-<li>Reading data in R</li>
-<li>Tidy Data</li>
-<li>Pivoting, Separating, Uniting</li>
-<li>Missing Data</li>
-<li>Relational Data: left join, right join, full join, semi join, and anti join</li>
-</ul>
 <p><strong><em>Reading</em></strong><br>
 Wickham, Hadley and Grolemund, Garett, 2023. <em>R for Data Science. O’Riley</em>. C. Transform <a href="https://r4ds.hadley.nz/transform" target="_blank">https://r4ds.hadley.nz/transform</a><br>
 Thulin, Måns. 2021. <em>Modern Statistics with R</em>. C. Exploratory data analysis and unsupervised learning. <a href="https://www.modernstatisticswithr.com/eda.html#outliers-and-missing-data" target="_blank">https://www.modernstatisticswithr.com/eda.html#outliers-and-missing-data</a></p>
-<p><strong>Class 2: Data Wrangling</strong><br>
-Date - Day - Lab</p>
-<ul>
-<li>Reading data in R</li>
-<li>Pivoting, Separating, Uniting</li>
-<li>Relational Data</li>
-</ul>
 </section>
 <section id="week-4" class="level1 unnumbered">
 <h1 class="unnumbered">Week 4</h1>
-<!--
-**Functions and Pipes**
-[Inspiration](https://info5940.infosci.cornell.edu/slides/pipes-and-functions-in-r/#22){target="_blank"}
-[Inspiration](https://info5940.infosci.cornell.edu/slides/vectors-and-iteration/#7){target="_blank"}-->
-<p><strong>Class 1: Functions and Pipes</strong><br>
-Date - Day - <a href="/files/teaching/big_data/week4/presentation.html" target="_blank">Lecture</a><br>
+<p><strong>Data Visualizations</strong><br>
+02/05/2024 - Mon - <a href="/files/teaching/big_data/week4/lecture4" target="_blank">Lecture</a><br>
 </p>
 <ul>
-<li>The Pipe operator</li>
-<li>Conditional executions</li>
-<li>Vectors and Iterations</li>
-<li>Lists</li>
-<li>For loops and Map functions</li>
-</ul>
-<p><strong><em>Reading</em></strong><br>
-Wickham, Hadley and Grolemund, Garett, 2023. <em>R for Data Science. O’Riley</em>. C. Program <a href="https://r4ds.hadley.nz/program" target="_blank">https://r4ds.hadley.nz/program</a><br>
-Thulin, Måns. 2021. <em>Modern Statistics with R</em>. C6 R programming <a href="https://www.modernstatisticswithr.com/progchapter.html" target="_blank">https://www.modernstatisticswithr.com/progchapter.html</a></p>
-<p><strong>Class 2: Functions and Pipes</strong><br>
-Date - Day - Lab<br>
-</p>
-<ul>
-<li>The Pipe operator</li>
-<li>Functions</li>
-<li>Conditional executions</li>
-</ul>
-</section>
-<section id="week-5" class="level1 unnumbered">
-<h1 class="unnumbered">Week 5</h1>
-<!--**Visualization and the Syntax of Graphics**
-[Inspiration](https://info5940.infosci.cornell.edu/slides/visualizations-and-the-grammar-of-graphics/#17){target="_blank"}
-[Inspiration](https://info5940.infosci.cornell.edu/syllabus/interactive-reporting/){target="_blank"}
-[Inspiration](https://info5940.infosci.cornell.edu/slides/interactive-visualization/#1){target="_blank"}-->
-<p><strong>Class 1: Visualization and the Syntax of Graphics</strong><br>
-Date - Day - <a href="/files/teaching/big_data/week5/presentation.html" target="_blank">Lecture</a><br>
-</p>
-<ul>
-<li>The importance of graphics in conveying information</li>
-<li>Defining and interpreting the grammar of graphics Practicing and generating graphics using ggplot</li>
+<li>Intro to <code>ggplot</code></li>
+<li>Barplots and Distributions</li>
+<li>Boxplots</li>
+<li>Categorical variables and facets</li>
+<li>Temporal Plots</li>
 </ul>
 <p><strong><em>Reading</em></strong><br>
 Wickham, Hadley and Grolemund, Garett, 2023. <em>R for Data Science. O’Riley</em>. <a href="https://r4ds.hadley.nz" target="_blank">https://r4ds.hadley.nz</a>. C5-8<br>
 Wickham, Hadley. <em>2023. ggplot2. Elegant Graphics for Data Analysis</em>. Springer. <a href="https://ggplot2-book.org/index.html" target="_blank">https://ggplot2-book.org/index.html</a></p>
-<p><strong>Class 2: Visualization and the Syntax of Graphics</strong><br>
-Date - Day - Lab<br>
+<p><strong>Assignment 2</strong><br>
+</p>
+</section>
+<section id="week-5" class="level1 unnumbered">
+<h1 class="unnumbered">Week 5</h1>
+<p><strong>Vectors in GIS</strong><br>
+02/12/2024 - Mon - <a href="/files/teaching/big_data/week5/lecture5" target="_blank">Lecture</a><br>
 </p>
 <ul>
-<li>Basics of ggplot</li>
-<li>Scatterplots</li>
-<li>Options in ggplot</li>
+<li>The Cartesian System</li>
+<li>Coordinate Reference Systems</li>
+<li>Vectors: points, lines, polygons</li>
+<li>Vector file formats</li>
+<li>The <code>sf</code> package</li>
+<li>EPSG codes</li>
+<li>Creating point layers</li>
+<li>Reading Vector layers</li>
 </ul>
-<p><strong><em>Assignment 2</em></strong><br>
-<!--[***Assignment 2***](/files/teaching/stats/assignments/assignment2_questions.html){target="_blank"}\--></p>
 </section>
 <section id="week-6" class="level1 unnumbered">
 <h1 class="unnumbered">Week 6</h1>
-<!--**Spatial Data**
-[Inspiration](https://r-spatial.org/book/){target="_blank"}-->
-<p><strong>Class 1: Spatial Data 1</strong></p>
-<p>Date - Day - <a href="/files/teaching/big_data/week6/presentation.html" target="_blank">Lecture</a><br>
+<p><strong>Georefrencing and Creating Shapefiles</strong><br>
+02/19/2024 - Mon - <a href="/files/teaching/big_data/week6/lecture6" target="_blank">Lecture</a><br>
 </p>
 <ul>
-<li>Coordinate Systems</li>
-<li>Vectors vs. Rasters</li>
-<li>Shapefiles</li>
+<li>Georeferencing Maps</li>
+<li>Intro to QGIS</li>
+<li>Plotting the shapefile into R</li>
+</ul>
+<!--[***Assignment 2***](/files/teaching/stats/assignments/assignment2_questions.html){target="_blank"}\-->
+<p>Spring Break 02/26/2024 - 03/03/2024</p>
+</section>
+<section id="week-7" class="level1 unnumbered">
+<h1 class="unnumbered">Week 7</h1>
+<p><strong>Fundamentals of Mapping</strong><br>
+03/04/2024 - Mon <a href="/files/teaching/big_data/week7/lecture7" target="_blank">Lecture</a><br>
+</p>
+<ul>
+<li>Mapping points, lines, polygons</li>
 <li>Choropleth Maps</li>
+<li>Colors Choice for Choropleth Maps</li>
+<li>Statistical Maps: quantile, interquantile, standard deviation, outlier maps</li>
 </ul>
 <p><strong><em>Reading</em></strong><br>
 Gimond, Manuel. 2023 <em>Intro to GIS and Spatial Analysis</em>. C3. GIS Data Management. <a href="https://mgimond.github.io/Spatial/gis-data-management.html" target="_blank">https://mgimond.github.io/Spatial/gis-data-management.html</a><br>
 Gimond, Manuel. 2023 <em>Intro to GIS and Spatial Analysis</em>. C7. Good Map Making Tips. <a href="https://mgimond.github.io/Spatial/good-map-making-tips.html#elements-of-a-map" target="_blank">https://mgimond.github.io/Spatial/good-map-making-tips.html#elements-of-a-map</a><br>
 Gimond, Manuel. 2023 <em>Intro to GIS and Spatial Analysis</em>. C9. Coordinate Systems. <a href="https://mgimond.github.io/Spatial/chp09_0.html" target="_blank">https://mgimond.github.io/Spatial/chp09_0.html</a></p>
-<p><strong>Class 2: Spatial Data 1</strong></p>
-<p>Date - Day - Lab<br>
-</p>
-<ul>
-<li>Shapefiles</li>
-<li>Choropleth Maps</li>
-</ul>
-</section>
-<section id="week-7" class="level1 unnumbered">
-<h1 class="unnumbered">Week 7</h1>
-<!--**Spatial Data**
-[Inspiration](https://r-spatial.org/book/){target="_blank"}-->
-<p><strong>Class 1: Spatial Data 2</strong></p>
-<p>Date - Day - Lecture<br>
-</p>
-<ul>
-<li>Spatial Joins</li>
-<li>Buffers, Clipping, Splitting, Erasing</li>
-<li>Union, Intersect, Point Count</li>
-</ul>
-<p><strong><em>Reading</em></strong><br>
-Lovelace Robin, Nowosad, Robin, and Muenchow, Jannes. 2023. <em>Geocomputation with R</em>. C. Geometry operations. <a href="https://r.geocompx.org/geometry-operations" target="_blank">https://r.geocompx.org/geometry-operations</a></p>
-<p><strong>Class 2: Spatial Data 2</strong></p>
-<p>Date - Day - Lab<br>
-</p>
-<ul>
-<li>Spatial Joins</li>
-<li>Buffers, Clipping, Splitting, Erasing</li>
-<li>Union, Intersect, Point Count</li>
-</ul>
 </section>
 <section id="week-8" class="level1 unnumbered">
 <h1 class="unnumbered">Week 8</h1>
-<!--**Spatial Data**
-[Inspiration](https://r-spatial.org/book/){target="_blank"}-->
-<p><strong>Class 1: Spatial Data 3</strong></p>
-<p>Date - Day - Lecture<br>
+<p><strong>Geometric Operations with Vectors</strong><br>
+03/11/2024 - Mon <a href="/files/teaching/big_data/week8/lecture8" target="_blank">Lecture</a><br>
 </p>
 <ul>
-<li>Density Maps</li>
-<li>Satellite Imagery Classification</li>
+<li>Spatial Joins</li>
+<li>Geometric Calculations</li>
+<li>Distance</li>
+<li>Centroids</li>
+<li>Combining and Dissolving</li>
+<li>Buffers</li>
+<li>Vector Layer Aggregation</li>
+</ul>
+<p><strong><em>Reading</em></strong><br>
+Lovelace Robin, Nowosad, Robin, and Muenchow, Jannes. 2023. <em>Geocomputation with R</em>. C. Geometry operations. <a href="https://r.geocompx.org/geometry-operations" target="_blank">https://r.geocompx.org/geometry-operations</a></p>
+<p><strong>Assignment 3</strong><br>
+</p>
+</section>
+<section id="week-9" class="level1 unnumbered">
+<h1 class="unnumbered">Week 9</h1>
+<p><strong>Rasters and Raster Algebra</strong><br>
+03/11/2024 - Mon <a href="/files/teaching/big_data/week9/lecture9" target="_blank">Lecture</a><br>
+</p>
+<ul>
+<li>Reading Rasters</li>
+<li>Raster Attributes</li>
 <li>Raster Algebra</li>
-<li>Distances</li>
+<li>Satellite luminosity</li>
+<li>Writing rasters</li>
+<li>Temperature</li>
 </ul>
 <p><strong><em>Reading</em></strong><br>
 Gimond, Manuel. 2023 <em>Intro to GIS and Spatial Analysis</em>. C. Raster operations in R. <a href="https://mgimond.github.io/Spatial/raster-operations-in-r.html" target="_blank">https://mgimond.github.io/Spatial/raster-operations-in-r.html</a><br>
 Gimond, Manuel. 2023 <em>Intro to GIS and Spatial Analysis</em>. C. Raster operations in R. <a href="https://mgimond.github.io/Spatial/raster-operations-in-r.html" target="_blank">https://mgimond.github.io/Spatial/raster-operations-in-r.html</a><br>
 Lovelace Robin, Nowosad, Robin, and Muenchow, Jannes. 2023. <em>Spatial data operations</em>. C. <a href="https://r.geocompx.org/spatial-operations" target="_blank">https://r.geocompx.org/spatial-operations</a></p>
-<p><strong>Class 2: Spatial Data 3</strong></p>
-<p>Date - Day - Lab<br>
-</p>
-<ul>
-<li>Density Maps</li>
-<li>Satellite Imagery Classification</li>
-<li>Raster Algebra</li>
-<li>Distances</li>
-</ul>
-<p><strong><em>Assignment 3</em></strong> <!--[***Assignment 3***](/files/teaching/stats/assignments/assignment3_questions.html){target="_blank"}\--></p>
-</section>
-<section id="week-9" class="level1 unnumbered">
-<h1 class="unnumbered">Week 9</h1>
-<!--**Fundamentals of Text Analysis**
-[Inspiration](https://info5940.infosci.cornell.edu/slides/text-analysis-fundamentals-and-sentiment-analysis/){target="_blank"}
-[Inspiration](https://info5940.infosci.cornell.edu/slides/text-analysis-classification-and-topic-modeling/#21){target="_blank"}-->
-<p><strong>Class 1: Fundamentals of Text Analysis</strong></p>
-<p>Date - Day - <a href="/files/teaching/big_data/week9/presentation.html" target="_blank">Lecture</a><br>
-</p>
-<ul>
-<li>Workflow of Text Analysis</li>
-<li>Tidy text</li>
-<li>Sentiment Analysis</li>
-</ul>
-<p><strong><em>Reading</em></strong><br>
-Silge, Julia and Robinson, David, 2020. O’Riley. Tidy Text Mining with R. <a href="https://www.tidytextmining.com" target="_blank">https://www.tidytextmining.com</a>. C5-6<br>
-Blaydes et al. 2018. Mirrors for Princes and Sultans: Advice on the Art of Governance in the Medieval Christian and Islamic Worlds. <em>Journal of Politics</em>, Vol. 80, No. 4,</p>
-<p><strong>Class 2: Fundamentals of Text Analysis</strong></p>
-<p>Date - Day - Lab<br>
-</p>
-<ul>
-<li>Workflow of Text Analysis</li>
-<li>Tidy text</li>
-<li>Sentiment Analysis</li>
-</ul>
 </section>
 <section id="week-10" class="level1 unnumbered">
 <h1 class="unnumbered">Week 10</h1>
-<p><strong>Class 1: Intermediate Text Analysis</strong></p>
-<p>Date - Day - Lecture<br>
+<p><strong>Geometric operations with rasters</strong><br>
+03/25/2024 - Mon <a href="/files/teaching/big_data/week10/lecture10" target="_blank">Lecture</a><br>
 </p>
 <ul>
-<li>Intro to topic modeling</li>
-<li>Latent Dirichlet allocation (LDA)</li>
-<li>Using LDA to recover topic structure from a set of topics</li>
+<li>Mosaicking</li>
+<li>Resampling</li>
+<li>Reprojecting</li>
+<li>Raster classification</li>
 </ul>
-<p><strong><em>Reading</em></strong><br>
-Silge, Julia and Robinson, David, 2020. O’Riley. Tidy Text Mining with R. <a href="https://www.tidytextmining.com" target="_blank">https://www.tidytextmining.com</a>. C6-7</p>
-<p><strong>Class 2: Intermediate Text Analysis</strong></p>
-<p>Date - Day - Lab<br>
-</p>
-<ul>
-<li>Intro to topic modeling</li>
-<li>Latent Dirichlet allocation (LDA)</li>
-<li>Using LDA to recover topic structure from a set of topics</li>
-</ul>
-<p><strong><em>Assignment 4</em></strong><br>
-<!--[***Assignment 4***](/files/teaching/stats/assignments/rome_assignment_questions.html){target="_blank"}\--></p>
 </section>
 <section id="week-11" class="level1 unnumbered">
 <h1 class="unnumbered">Week 11</h1>
-<p><strong>Class 1: Applied Text Analysis</strong></p>
-<p>Date - Day - Lecture<br>
-</p>
+<p><strong>Combining rasters and Vectors</strong><br>
+04/01/2024 - Mon</p>
 <ul>
-<li>Application of text analysis</li>
+<li>Masking and Cropping Rasters</li>
+<li>Vector to Raster</li>
+<li>Raster to Polygons</li>
+<li>Raster to Points</li>
+<li>Distance to Nearest Points</li>
+<li>Extracting Raster Values</li>
 </ul>
-<p><strong>Class 2: Applied Text Analysis</strong></p>
-<p>Date - Day - Lab<br>
+<p><strong>Assignment 4</strong><br>
 </p>
-<ul>
-<li>Application of text analysis</li>
-</ul>
 </section>
 <section id="week-12" class="level1 unnumbered">
 <h1 class="unnumbered">Week 12</h1>
-<p><strong>Class 1: Basic Statistics</strong></p>
-<p>Date - Day - Lecture<br>
-</p>
-<ul>
-<li>Running regressions in R</li>
-<li>Making tables</li>
-<li>Scatter Plots</li>
-</ul>
-<p><strong><em>Reading</em></strong><br>
-Mike Nguyen, 2023. <em>A Guide on Data Analysis</em>. C. Linear Regression. <a href="https://bookdown.org/mike/data_analysis/linear-regression.html/" target="_blank">https://bookdown.org/mike/data_analysis/linear-regression.html/</a></p>
-<p><strong>Class 2: Basic Statistics</strong></p>
-<p>Date - Day - Lab<br>
-</p>
-<ul>
-<li>Running regressions in R</li>
-<li>Making tables</li>
-<li>Scatter Plots</li>
-</ul>
+<p><strong>Applications</strong><br>
+04/08/2024 - Mon</p>
 </section>
 <section id="week-13" class="level1 unnumbered">
 <h1 class="unnumbered">Week 13</h1>
-<p><strong>Class 1: Intermediate Statistics</strong></p>
-<p>Date - Day - Lecture<br>
-</p>
-<ul>
-<li>Multivariate regressions</li>
-<li>Coefficient Plots</li>
-</ul>
-<p><strong>Class 2: Intermediate Statistics</strong></p>
-<p>Date - Day - Lab<br>
-</p>
-<ul>
-<li>Multivariate regressions</li>
-<li>Coefficient Plots</li>
-</ul>
-<p><strong><em>Assignment 5</em></strong><br>
-<!--[***Assignment 5***](/files/teaching/stats/assignments/rome_assignment_dif_questions.html){target="_blank"}\--></p>
+<p><strong>Applications</strong><br>
+04/15/2024 - Mon</p>
 </section>
 <section id="week-14" class="level1 unnumbered">
 <h1 class="unnumbered">Week 14</h1>
-<p><strong>Class 1: Applications</strong></p>
-<p>Date - Day - Lecture<br>
-</p>
-<ul>
-<li>Statistical Applications to Spatial Data</li>
-<li>Statistical Applications to Text as Data</li>
-</ul>
-<p><strong>Class 2: Applications</strong></p>
-<p>Date - Day - Lab<br>
-</p>
-<ul>
-<li>Statistical Applications to Spatial Data</li>
-<li>Statistical Applications to Text as Data</li>
-</ul>
-<!--
-# Week 7 {-}
-**Good Programming rules**
-[Inspiration](https://info5940.infosci.cornell.edu/slides/debugging-and-defensive-programming/#14){target="_blank"}
-[Inspiration](https://info5940.infosci.cornell.edu/slides/reproducible-examples/#11){target="_blank"}
-
-
-- Debugging
-- Writing code
-- Object names
-- Indentation
-
-
-
-# Week 8 {-}
-*Reproducibility and and replication**
-[Inspiration](https://info5940.infosci.cornell.edu/slides/a-deep-dive-into-quarto/#1){target="_blank"}
-[Inspiration](https://info5940.infosci.cornell.edu/slides/publishing-reproducible-documents/#/output-location-column-fragment){target="_blank"}
-
-
-- Introduction to Quarto
-
-
-# Week 9 {-}
-**Exploratory Data Analysis**
-[Inspiration](https://info5940.infosci.cornell.edu/slides/exploratory-data-analysis/){target="_blank"}
-
-- Transforming a set of distinct analytical ideas into computational tasks
-- Identify the main verbs for data manipulation
-- Exploratory Data Analysis
-- Interpreting Graphs
-
-**Reading**\
-Wickham, Hadley and Grolemund, Garett, 2023. *R for Data Science. O’Riley*. [https://r4ds.hadley.nz](https://r4ds.hadley.nz){target="_blank"}. C9-13, 20-21
-
-
-# Week 10 {-}
-**Machine Learning**
-[Inspiration](https://info5940.infosci.cornell.edu/slides/machine-learning/){target="_blank"}
-
-- Intro to Machine Learning
-- Parsnip models
-- Logistic regressions
-- Building models
-- Training and testing
-- Cross validation
-- Stratified sampling
-- ROC curve
-
-# Week 11 {-}
-**Training Data**
-[Inspiration](https://info5940.infosci.cornell.edu/slides/build-better-training-data){target="_blank"}
-[Inspiration](https://info5940.infosci.cornell.edu/slides/tune-better-models/){target="_blank"}
-
-- K Nearest neighbors
-- Workflows
-- Tuning models
-- Decision trees
-- Random Forests
--->
-<!-- # Week 7 {-} -->
-<!-- **Intro to Python** -->
-<!-- - Intro to Python -->
-<!-- - Differences between R and Python -->
-<!-- - Data types in R and Python -->
-<!-- - Writing basic code in Python -->
-<!-- - Dataframes in Python -->
-<!-- - Pandas and Numpy -->
-<!-- **Reading**\ -->
-<!-- DataQuest. October 21, 2020. R vs Python for Data Analysis —An Objective Comparison.  -->
-<!-- [https://www.dataquest.io/blog/python-vs-r/](https://www.dataquest.io/blog/python-vs-r/){target="_blank"}\ -->
-<!-- Downey, Allen, 2023. Think Python. O’Riley. [https://greenteapress.com/wp/think-python/](https://greenteapress.com/wp/think-python/){target="_blank"} C: 8, 10 -->
-<!--
-# Week 13 {-}
-**Basics of Web-scraping**
-
-[Inspiration](https://info5940.infosci.cornell.edu/slides/getting-data-from-the-web-api-access/){target="_blank"}
-[Inspiration](https://info5940.infosci.cornell.edu/slides/getting-data-from-the-web-scraping/){target="_blank"}
-
-
-- Intro to APIs
-- Identifying methods to interact with APIs
-- JSON files
-- Dealing with mess data
-
-**Reading**\
-Silge, Julia and Robinson, David, 2020. O’Riley. Tidy Text Mining with R. [https://www.tidytextmining.com](https://www.tidytextmining.com){target="_blank"}. C1-4-->
+<p><strong>Presentations</strong><br>
+04/22/2024 - Mon</p>
 </section>
 
 </main>
