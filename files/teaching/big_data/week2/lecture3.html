@@ -444,7 +444,7 @@
   <meta name="generator" content="quarto-1.3.450">
 
   <meta name="author" content="Bogdan G. Popescu">
-  <title>L4: Matrices, Dataframes</title>
+  <title>L3: Matrices, Dataframes</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -1207,7 +1207,7 @@ margin-right: 0; }
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">L4: Matrices, Dataframes</h1>
+  <h1 class="title">L3: Matrices, Dataframes</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -1922,6 +1922,68 @@ $ height      &lt;dbl&gt; 168, 177, 177, 177, 178, 172, 165, 171, 178, 170</code
 <p>We should however create a function for that.</p>
 </section>
 
+<section id="exercise-1" class="title-slide slide level1 center">
+<h1>Exercise 1</h1>
+<p><strong>Objectives</strong> Write an R script that classifies a given number into one of three categories:</p>
+<ul>
+<li>Positive: If the number is greater than 0</li>
+<li>Negative: If the number is less than 0</li>
+<li>Zero: If the number is exactly 0</li>
+</ul>
+<p>Let’s say the number is 3.</p>
+<p><strong>Instructions</strong> Use if-else statements to classify the number into one of the categories. The output should look like below:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb91"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a href="#cb91-1"></a>number<span class="ot">&lt;-</span><span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] &quot;The number is Positive.&quot;</code></pre>
+</div>
+</div>
+</section>
+
+<section id="exercise-2" class="title-slide slide level1 center">
+<h1>Exercise 2</h1>
+<p><strong>Objective</strong> Write an R script that classifies a person into different age groups based on the following criteria:</p>
+<ul>
+<li>Child: 0 to 12 years old</li>
+<li>Teenager: 13 to 19 years old</li>
+<li>Adult: 20 to 59 years old</li>
+<li>Senior: 60 years old and above</li>
+</ul>
+<p>Let’s say the age is is 15.</p>
+<p><strong>Instructions</strong></p>
+<p>Use if-else statements to classify the age into one of the age groups.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb93"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb93-1"><a href="#cb93-1"></a>age<span class="ot">&lt;-</span><span class="dv">15</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] &quot;You are a Teenager.&quot;</code></pre>
+</div>
+</div>
+</section>
+
+<section id="exercise-3" class="title-slide slide level1 center">
+<h1>Exercise 3</h1>
+<p><strong>Objective</strong> Write an R script that classifies temperatures into different categories based on the following criteria:</p>
+<ul>
+<li>Cold: Less than 50 degrees Fahrenheit</li>
+<li>Moderate: 50 to 75 degrees Fahrenheit</li>
+<li>Warm: 76 to 90 degrees Fahrenheit</li>
+<li>Hot: More than 90 degrees Fahrenheit</li>
+</ul>
+<p><strong>Instructions</strong> 1. Use if-else statements to classify the temperature into one of the categories.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb95"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb95-1"><a href="#cb95-1"></a>temperature<span class="ot">&lt;-</span><span class="dv">50</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] &quot;The temperature is Moderate.&quot;</code></pre>
+</div>
+</div>
+</section>
+
 <section id="functions" class="title-slide slide level1 center">
 <h1>Functions</h1>
 <p>A function is a block of code which only runs when it is called.</p>
@@ -1948,12 +2010,12 @@ $ height      &lt;dbl&gt; 168, 177, 177, 177, 178, 172, 165, 171, 178, 170</code
 <p>The function evaluates a statement and produces an output</p>
 <p>This what we had before</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb91"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb91-1" class="hljs-ln-code"><a href="#cb91-1"></a>x <span class="ot">=</span> <span class="sc">-</span><span class="dv">5</span></span>
-<span id="cb91-2" class="hljs-ln-code"><a href="#cb91-2"></a><span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
-<span id="cb91-3" class="hljs-ln-code"><a href="#cb91-3"></a>  <span class="fu">print</span>(<span class="st">&#39;x is positive!&#39;</span>)</span>
-<span id="cb91-4" class="hljs-ln-code"><a href="#cb91-4"></a>}<span class="cf">else</span>{</span>
-<span id="cb91-5" class="hljs-ln-code"><a href="#cb91-5"></a>  <span class="fu">print</span>(<span class="st">&#39;x is negative or zero!&#39;</span>)</span>
-<span id="cb91-6" class="hljs-ln-code"><a href="#cb91-6"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb97"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb97-1" class="hljs-ln-code"><a href="#cb97-1"></a>x <span class="ot">=</span> <span class="sc">-</span><span class="dv">5</span></span>
+<span id="cb97-2" class="hljs-ln-code"><a href="#cb97-2"></a><span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb97-3" class="hljs-ln-code"><a href="#cb97-3"></a>  <span class="fu">print</span>(<span class="st">&#39;x is positive!&#39;</span>)</span>
+<span id="cb97-4" class="hljs-ln-code"><a href="#cb97-4"></a>}<span class="cf">else</span>{</span>
+<span id="cb97-5" class="hljs-ln-code"><a href="#cb97-5"></a>  <span class="fu">print</span>(<span class="st">&#39;x is negative or zero!&#39;</span>)</span>
+<span id="cb97-6" class="hljs-ln-code"><a href="#cb97-6"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] &quot;x is negative or zero!&quot;</code></pre>
 </div>
@@ -1961,51 +2023,6 @@ $ height      &lt;dbl&gt; 168, 177, 177, 177, 178, 172, 165, 171, 178, 170</code
 </section>
 
 <section id="functions-examples-3" class="title-slide slide level1 center" data-auto-animate="true" data-visibility="uncounted">
-<h1 data-id="quarto-animate-title">Functions Examples</h1>
-<p>Here is for example a function.</p>
-<p>The function evaluates a statement and produces an output</p>
-<p>This what we had before</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb93"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb93-1"><a href="#cb93-1"></a>x <span class="ot">=</span> <span class="sc">-</span><span class="dv">5</span></span>
-<span id="cb93-2"><a href="#cb93-2"></a><span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
-<span id="cb93-3"><a href="#cb93-3"></a>  <span class="fu">print</span>(<span class="st">&#39;x is positive!&#39;</span>)</span>
-<span id="cb93-4"><a href="#cb93-4"></a>}<span class="cf">else</span>{</span>
-<span id="cb93-5"><a href="#cb93-5"></a>  <span class="fu">print</span>(<span class="st">&#39;x is negative or zero!&#39;</span>)</span>
-<span id="cb93-6"><a href="#cb93-6"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] &quot;x is negative or zero!&quot;</code></pre>
-</div>
-</div>
-<p>This is how we write this as a function</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb95"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb95-1"><a href="#cb95-1"></a>eval_function<span class="ot">&lt;-</span><span class="cf">function</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-
-<section id="functions-examples-4" class="title-slide slide level1 center" data-auto-animate="true">
-<h1 data-id="quarto-animate-title">Functions Examples</h1>
-<p>Here is for example a function.</p>
-<p>The function evaluates a statement and produces an output</p>
-<p>This what we had before</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb96"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb96-1"><a href="#cb96-1"></a>x <span class="ot">=</span> <span class="sc">-</span><span class="dv">5</span></span>
-<span id="cb96-2"><a href="#cb96-2"></a><span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
-<span id="cb96-3"><a href="#cb96-3"></a>  <span class="fu">print</span>(<span class="st">&#39;x is positive!&#39;</span>)</span>
-<span id="cb96-4"><a href="#cb96-4"></a>}<span class="cf">else</span>{</span>
-<span id="cb96-5"><a href="#cb96-5"></a>  <span class="fu">print</span>(<span class="st">&#39;x is negative or zero!&#39;</span>)</span>
-<span id="cb96-6"><a href="#cb96-6"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] &quot;x is negative or zero!&quot;</code></pre>
-</div>
-</div>
-<p>This is how we write this as a function</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb98"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb98-1"><a href="#cb98-1"></a>eval_function<span class="ot">&lt;-</span><span class="cf">function</span>(x) {</span>
-<span id="cb98-2"><a href="#cb98-2"></a>  <span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-
-<section id="functions-examples-5" class="title-slide slide level1 center" data-auto-animate="true" data-visibility="uncounted">
 <h1 data-id="quarto-animate-title">Functions Examples</h1>
 <p>Here is for example a function.</p>
 <p>The function evaluates a statement and produces an output</p>
@@ -2023,14 +2040,11 @@ $ height      &lt;dbl&gt; 168, 177, 177, 177, 178, 172, 165, 171, 178, 170</code
 </div>
 <p>This is how we write this as a function</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb101"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb101-1"><a href="#cb101-1"></a>eval_function<span class="ot">&lt;-</span><span class="cf">function</span>(x) {</span>
-<span id="cb101-2"><a href="#cb101-2"></a>  <span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
-<span id="cb101-3"><a href="#cb101-3"></a>    <span class="fu">return</span>(<span class="st">&#39;x is positive!&#39;</span>)</span>
-<span id="cb101-4"><a href="#cb101-4"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb101"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb101-1"><a href="#cb101-1"></a>eval_function<span class="ot">&lt;-</span><span class="cf">function</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 
-<section id="functions-examples-6" class="title-slide slide level1 center" data-auto-animate="true" data-visibility="uncounted">
+<section id="functions-examples-4" class="title-slide slide level1 center" data-auto-animate="true">
 <h1 data-id="quarto-animate-title">Functions Examples</h1>
 <p>Here is for example a function.</p>
 <p>The function evaluates a statement and produces an output</p>
@@ -2049,14 +2063,11 @@ $ height      &lt;dbl&gt; 168, 177, 177, 177, 178, 172, 165, 171, 178, 170</code
 <p>This is how we write this as a function</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb104"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb104-1"><a href="#cb104-1"></a>eval_function<span class="ot">&lt;-</span><span class="cf">function</span>(x) {</span>
-<span id="cb104-2"><a href="#cb104-2"></a>  <span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
-<span id="cb104-3"><a href="#cb104-3"></a>    <span class="fu">return</span>(<span class="st">&#39;x is positive!&#39;</span>)</span>
-<span id="cb104-4"><a href="#cb104-4"></a>    }</span>
-<span id="cb104-5"><a href="#cb104-5"></a><span class="cf">else</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb104-2"><a href="#cb104-2"></a>  <span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 
-<section id="functions-examples-7" class="title-slide slide level1 center" data-auto-animate="true" data-visibility="uncounted">
+<section id="functions-examples-5" class="title-slide slide level1 center" data-auto-animate="true" data-visibility="uncounted">
 <h1 data-id="quarto-animate-title">Functions Examples</h1>
 <p>Here is for example a function.</p>
 <p>The function evaluates a statement and produces an output</p>
@@ -2065,7 +2076,7 @@ $ height      &lt;dbl&gt; 168, 177, 177, 177, 178, 172, 165, 171, 178, 170</code
 <div class="sourceCode cell-code" id="cb105"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb105-1"><a href="#cb105-1"></a>x <span class="ot">=</span> <span class="sc">-</span><span class="dv">5</span></span>
 <span id="cb105-2"><a href="#cb105-2"></a><span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
 <span id="cb105-3"><a href="#cb105-3"></a>  <span class="fu">print</span>(<span class="st">&#39;x is positive!&#39;</span>)</span>
-<span id="cb105-4"><a href="#cb105-4"></a>  }<span class="cf">else</span>{</span>
+<span id="cb105-4"><a href="#cb105-4"></a>}<span class="cf">else</span>{</span>
 <span id="cb105-5"><a href="#cb105-5"></a>  <span class="fu">print</span>(<span class="st">&#39;x is negative or zero!&#39;</span>)</span>
 <span id="cb105-6"><a href="#cb105-6"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -2077,10 +2088,61 @@ $ height      &lt;dbl&gt; 168, 177, 177, 177, 178, 172, 165, 171, 178, 170</code
 <div class="sourceCode cell-code" id="cb107"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb107-1"><a href="#cb107-1"></a>eval_function<span class="ot">&lt;-</span><span class="cf">function</span>(x) {</span>
 <span id="cb107-2"><a href="#cb107-2"></a>  <span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
 <span id="cb107-3"><a href="#cb107-3"></a>    <span class="fu">return</span>(<span class="st">&#39;x is positive!&#39;</span>)</span>
-<span id="cb107-4"><a href="#cb107-4"></a>    }</span>
-<span id="cb107-5"><a href="#cb107-5"></a>  <span class="cf">else</span>{</span>
-<span id="cb107-6"><a href="#cb107-6"></a>    <span class="fu">return</span>(<span class="st">&#39;x is negative or zero!&#39;</span>)</span>
-<span id="cb107-7"><a href="#cb107-7"></a>}}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb107-4"><a href="#cb107-4"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+
+<section id="functions-examples-6" class="title-slide slide level1 center" data-auto-animate="true" data-visibility="uncounted">
+<h1 data-id="quarto-animate-title">Functions Examples</h1>
+<p>Here is for example a function.</p>
+<p>The function evaluates a statement and produces an output</p>
+<p>This what we had before</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb108"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb108-1"><a href="#cb108-1"></a>x <span class="ot">=</span> <span class="sc">-</span><span class="dv">5</span></span>
+<span id="cb108-2"><a href="#cb108-2"></a><span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb108-3"><a href="#cb108-3"></a>  <span class="fu">print</span>(<span class="st">&#39;x is positive!&#39;</span>)</span>
+<span id="cb108-4"><a href="#cb108-4"></a>}<span class="cf">else</span>{</span>
+<span id="cb108-5"><a href="#cb108-5"></a>  <span class="fu">print</span>(<span class="st">&#39;x is negative or zero!&#39;</span>)</span>
+<span id="cb108-6"><a href="#cb108-6"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] &quot;x is negative or zero!&quot;</code></pre>
+</div>
+</div>
+<p>This is how we write this as a function</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb110"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb110-1"><a href="#cb110-1"></a>eval_function<span class="ot">&lt;-</span><span class="cf">function</span>(x) {</span>
+<span id="cb110-2"><a href="#cb110-2"></a>  <span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb110-3"><a href="#cb110-3"></a>    <span class="fu">return</span>(<span class="st">&#39;x is positive!&#39;</span>)</span>
+<span id="cb110-4"><a href="#cb110-4"></a>    }</span>
+<span id="cb110-5"><a href="#cb110-5"></a><span class="cf">else</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+
+<section id="functions-examples-7" class="title-slide slide level1 center" data-auto-animate="true" data-visibility="uncounted">
+<h1 data-id="quarto-animate-title">Functions Examples</h1>
+<p>Here is for example a function.</p>
+<p>The function evaluates a statement and produces an output</p>
+<p>This what we had before</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb111"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb111-1"><a href="#cb111-1"></a>x <span class="ot">=</span> <span class="sc">-</span><span class="dv">5</span></span>
+<span id="cb111-2"><a href="#cb111-2"></a><span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb111-3"><a href="#cb111-3"></a>  <span class="fu">print</span>(<span class="st">&#39;x is positive!&#39;</span>)</span>
+<span id="cb111-4"><a href="#cb111-4"></a>  }<span class="cf">else</span>{</span>
+<span id="cb111-5"><a href="#cb111-5"></a>  <span class="fu">print</span>(<span class="st">&#39;x is negative or zero!&#39;</span>)</span>
+<span id="cb111-6"><a href="#cb111-6"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] &quot;x is negative or zero!&quot;</code></pre>
+</div>
+</div>
+<p>This is how we write this as a function</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb113"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb113-1"><a href="#cb113-1"></a>eval_function<span class="ot">&lt;-</span><span class="cf">function</span>(x) {</span>
+<span id="cb113-2"><a href="#cb113-2"></a>  <span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb113-3"><a href="#cb113-3"></a>    <span class="fu">return</span>(<span class="st">&#39;x is positive!&#39;</span>)</span>
+<span id="cb113-4"><a href="#cb113-4"></a>    }</span>
+<span id="cb113-5"><a href="#cb113-5"></a>  <span class="cf">else</span>{</span>
+<span id="cb113-6"><a href="#cb113-6"></a>    <span class="fu">return</span>(<span class="st">&#39;x is negative or zero!&#39;</span>)</span>
+<span id="cb113-7"><a href="#cb113-7"></a>}}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 
@@ -2088,14 +2150,14 @@ $ height      &lt;dbl&gt; 168, 177, 177, 177, 178, 172, 165, 171, 178, 170</code
 <h1 data-id="quarto-animate-title">Functions Examples</h1>
 <p>This is how we use this function:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb108"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb108-1" class="hljs-ln-code"><a href="#cb108-1"></a>eval_function<span class="ot">&lt;-</span><span class="cf">function</span>(x) {</span>
-<span id="cb108-2" class="hljs-ln-code"><a href="#cb108-2"></a>  <span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
-<span id="cb108-3" class="hljs-ln-code"><a href="#cb108-3"></a>    <span class="fu">return</span>(<span class="st">&#39;x is positive!&#39;</span>)</span>
-<span id="cb108-4" class="hljs-ln-code"><a href="#cb108-4"></a>    }</span>
-<span id="cb108-5" class="hljs-ln-code"><a href="#cb108-5"></a>  <span class="cf">else</span>{</span>
-<span id="cb108-6" class="hljs-ln-code"><a href="#cb108-6"></a>    <span class="fu">return</span>(<span class="st">&#39;x is negative or zero!&#39;</span>)</span>
-<span id="cb108-7" class="hljs-ln-code"><a href="#cb108-7"></a>}}</span>
-<span id="cb108-8" class="hljs-ln-code"><a href="#cb108-8"></a><span class="fu">eval_function</span>(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb114"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb114-1" class="hljs-ln-code"><a href="#cb114-1"></a>eval_function<span class="ot">&lt;-</span><span class="cf">function</span>(x) {</span>
+<span id="cb114-2" class="hljs-ln-code"><a href="#cb114-2"></a>  <span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb114-3" class="hljs-ln-code"><a href="#cb114-3"></a>    <span class="fu">return</span>(<span class="st">&#39;x is positive!&#39;</span>)</span>
+<span id="cb114-4" class="hljs-ln-code"><a href="#cb114-4"></a>    }</span>
+<span id="cb114-5" class="hljs-ln-code"><a href="#cb114-5"></a>  <span class="cf">else</span>{</span>
+<span id="cb114-6" class="hljs-ln-code"><a href="#cb114-6"></a>    <span class="fu">return</span>(<span class="st">&#39;x is negative or zero!&#39;</span>)</span>
+<span id="cb114-7" class="hljs-ln-code"><a href="#cb114-7"></a>}}</span>
+<span id="cb114-8" class="hljs-ln-code"><a href="#cb114-8"></a><span class="fu">eval_function</span>(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 
@@ -2103,14 +2165,14 @@ $ height      &lt;dbl&gt; 168, 177, 177, 177, 178, 172, 165, 171, 178, 170</code
 <h1 data-id="quarto-animate-title">Functions Examples</h1>
 <p>This is how we use this function:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb109"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb109-1" class="hljs-ln-code"><a href="#cb109-1"></a>eval_function<span class="ot">&lt;-</span><span class="cf">function</span>(x) {</span>
-<span id="cb109-2" class="hljs-ln-code"><a href="#cb109-2"></a>  <span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
-<span id="cb109-3" class="hljs-ln-code"><a href="#cb109-3"></a>    <span class="fu">return</span>(<span class="st">&#39;x is positive!&#39;</span>)</span>
-<span id="cb109-4" class="hljs-ln-code"><a href="#cb109-4"></a>    }</span>
-<span id="cb109-5" class="hljs-ln-code"><a href="#cb109-5"></a>  <span class="cf">else</span>{</span>
-<span id="cb109-6" class="hljs-ln-code"><a href="#cb109-6"></a>    <span class="fu">return</span>(<span class="st">&#39;x is negative or zero!&#39;</span>)</span>
-<span id="cb109-7" class="hljs-ln-code"><a href="#cb109-7"></a>}}</span>
-<span id="cb109-8" class="hljs-ln-code"><a href="#cb109-8"></a><span class="fu">eval_function</span>(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb115"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb115-1" class="hljs-ln-code"><a href="#cb115-1"></a>eval_function<span class="ot">&lt;-</span><span class="cf">function</span>(x) {</span>
+<span id="cb115-2" class="hljs-ln-code"><a href="#cb115-2"></a>  <span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb115-3" class="hljs-ln-code"><a href="#cb115-3"></a>    <span class="fu">return</span>(<span class="st">&#39;x is positive!&#39;</span>)</span>
+<span id="cb115-4" class="hljs-ln-code"><a href="#cb115-4"></a>    }</span>
+<span id="cb115-5" class="hljs-ln-code"><a href="#cb115-5"></a>  <span class="cf">else</span>{</span>
+<span id="cb115-6" class="hljs-ln-code"><a href="#cb115-6"></a>    <span class="fu">return</span>(<span class="st">&#39;x is negative or zero!&#39;</span>)</span>
+<span id="cb115-7" class="hljs-ln-code"><a href="#cb115-7"></a>}}</span>
+<span id="cb115-8" class="hljs-ln-code"><a href="#cb115-8"></a><span class="fu">eval_function</span>(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>What is the output of this command?</p>
 </section>
@@ -2119,14 +2181,14 @@ $ height      &lt;dbl&gt; 168, 177, 177, 177, 178, 172, 165, 171, 178, 170</code
 <h1 data-id="quarto-animate-title">Functions Examples</h1>
 <p>This is how we use this function:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb110"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb110-1" class="hljs-ln-code"><a href="#cb110-1"></a>eval_function<span class="ot">&lt;-</span><span class="cf">function</span>(x) {</span>
-<span id="cb110-2" class="hljs-ln-code"><a href="#cb110-2"></a>  <span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
-<span id="cb110-3" class="hljs-ln-code"><a href="#cb110-3"></a>    <span class="fu">return</span>(<span class="st">&#39;x is positive!&#39;</span>)</span>
-<span id="cb110-4" class="hljs-ln-code"><a href="#cb110-4"></a>    }</span>
-<span id="cb110-5" class="hljs-ln-code"><a href="#cb110-5"></a>  <span class="cf">else</span>{</span>
-<span id="cb110-6" class="hljs-ln-code"><a href="#cb110-6"></a>    <span class="fu">return</span>(<span class="st">&#39;x is negative or zero!&#39;</span>)</span>
-<span id="cb110-7" class="hljs-ln-code"><a href="#cb110-7"></a>}}</span>
-<span id="cb110-8" class="hljs-ln-code"><a href="#cb110-8"></a><span class="fu">eval_function</span>(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb116"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb116-1" class="hljs-ln-code"><a href="#cb116-1"></a>eval_function<span class="ot">&lt;-</span><span class="cf">function</span>(x) {</span>
+<span id="cb116-2" class="hljs-ln-code"><a href="#cb116-2"></a>  <span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb116-3" class="hljs-ln-code"><a href="#cb116-3"></a>    <span class="fu">return</span>(<span class="st">&#39;x is positive!&#39;</span>)</span>
+<span id="cb116-4" class="hljs-ln-code"><a href="#cb116-4"></a>    }</span>
+<span id="cb116-5" class="hljs-ln-code"><a href="#cb116-5"></a>  <span class="cf">else</span>{</span>
+<span id="cb116-6" class="hljs-ln-code"><a href="#cb116-6"></a>    <span class="fu">return</span>(<span class="st">&#39;x is negative or zero!&#39;</span>)</span>
+<span id="cb116-7" class="hljs-ln-code"><a href="#cb116-7"></a>}}</span>
+<span id="cb116-8" class="hljs-ln-code"><a href="#cb116-8"></a><span class="fu">eval_function</span>(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] &quot;x is positive!&quot;</code></pre>
 </div>
@@ -2138,14 +2200,14 @@ $ height      &lt;dbl&gt; 168, 177, 177, 177, 178, 172, 165, 171, 178, 170</code
 <h1 data-id="quarto-animate-title">Functions Examples</h1>
 <p>This is how we use this function:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb112"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb112-1" class="hljs-ln-code"><a href="#cb112-1"></a>eval_function<span class="ot">&lt;-</span><span class="cf">function</span>(x) {</span>
-<span id="cb112-2" class="hljs-ln-code"><a href="#cb112-2"></a>  <span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
-<span id="cb112-3" class="hljs-ln-code"><a href="#cb112-3"></a>    <span class="fu">return</span>(<span class="st">&#39;x is positive!&#39;</span>)</span>
-<span id="cb112-4" class="hljs-ln-code"><a href="#cb112-4"></a>    }</span>
-<span id="cb112-5" class="hljs-ln-code"><a href="#cb112-5"></a>  <span class="cf">else</span>{</span>
-<span id="cb112-6" class="hljs-ln-code"><a href="#cb112-6"></a>    <span class="fu">return</span>(<span class="st">&#39;x is negative or zero!&#39;</span>)</span>
-<span id="cb112-7" class="hljs-ln-code"><a href="#cb112-7"></a>}}</span>
-<span id="cb112-8" class="hljs-ln-code"><a href="#cb112-8"></a><span class="fu">eval_function</span>(<span class="sc">-</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb118"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb118-1" class="hljs-ln-code"><a href="#cb118-1"></a>eval_function<span class="ot">&lt;-</span><span class="cf">function</span>(x) {</span>
+<span id="cb118-2" class="hljs-ln-code"><a href="#cb118-2"></a>  <span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb118-3" class="hljs-ln-code"><a href="#cb118-3"></a>    <span class="fu">return</span>(<span class="st">&#39;x is positive!&#39;</span>)</span>
+<span id="cb118-4" class="hljs-ln-code"><a href="#cb118-4"></a>    }</span>
+<span id="cb118-5" class="hljs-ln-code"><a href="#cb118-5"></a>  <span class="cf">else</span>{</span>
+<span id="cb118-6" class="hljs-ln-code"><a href="#cb118-6"></a>    <span class="fu">return</span>(<span class="st">&#39;x is negative or zero!&#39;</span>)</span>
+<span id="cb118-7" class="hljs-ln-code"><a href="#cb118-7"></a>}}</span>
+<span id="cb118-8" class="hljs-ln-code"><a href="#cb118-8"></a><span class="fu">eval_function</span>(<span class="sc">-</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>What is the output of this command?</p>
 </section>
@@ -2154,14 +2216,14 @@ $ height      &lt;dbl&gt; 168, 177, 177, 177, 178, 172, 165, 171, 178, 170</code
 <h1 data-id="quarto-animate-title">Functions Examples</h1>
 <p>This is how we use this function:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb113"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb113-1" class="hljs-ln-code"><a href="#cb113-1"></a>eval_function<span class="ot">&lt;-</span><span class="cf">function</span>(x) {</span>
-<span id="cb113-2" class="hljs-ln-code"><a href="#cb113-2"></a>  <span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
-<span id="cb113-3" class="hljs-ln-code"><a href="#cb113-3"></a>    <span class="fu">return</span>(<span class="st">&#39;x is positive!&#39;</span>)</span>
-<span id="cb113-4" class="hljs-ln-code"><a href="#cb113-4"></a>    }</span>
-<span id="cb113-5" class="hljs-ln-code"><a href="#cb113-5"></a>  <span class="cf">else</span>{</span>
-<span id="cb113-6" class="hljs-ln-code"><a href="#cb113-6"></a>    <span class="fu">return</span>(<span class="st">&#39;x is negative or zero!&#39;</span>)</span>
-<span id="cb113-7" class="hljs-ln-code"><a href="#cb113-7"></a>}}</span>
-<span id="cb113-8" class="hljs-ln-code"><a href="#cb113-8"></a><span class="fu">eval_function</span>(<span class="sc">-</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb119"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb119-1" class="hljs-ln-code"><a href="#cb119-1"></a>eval_function<span class="ot">&lt;-</span><span class="cf">function</span>(x) {</span>
+<span id="cb119-2" class="hljs-ln-code"><a href="#cb119-2"></a>  <span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb119-3" class="hljs-ln-code"><a href="#cb119-3"></a>    <span class="fu">return</span>(<span class="st">&#39;x is positive!&#39;</span>)</span>
+<span id="cb119-4" class="hljs-ln-code"><a href="#cb119-4"></a>    }</span>
+<span id="cb119-5" class="hljs-ln-code"><a href="#cb119-5"></a>  <span class="cf">else</span>{</span>
+<span id="cb119-6" class="hljs-ln-code"><a href="#cb119-6"></a>    <span class="fu">return</span>(<span class="st">&#39;x is negative or zero!&#39;</span>)</span>
+<span id="cb119-7" class="hljs-ln-code"><a href="#cb119-7"></a>}}</span>
+<span id="cb119-8" class="hljs-ln-code"><a href="#cb119-8"></a><span class="fu">eval_function</span>(<span class="sc">-</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] &quot;x is negative or zero!&quot;</code></pre>
 </div>
@@ -2178,10 +2240,10 @@ $ height      &lt;dbl&gt; 168, 177, 177, 177, 178, 172, 165, 171, 178, 170</code
 <h1 data-id="quarto-animate-title">Functions Examples</h1>
 <p>Let us now create a third codition: <code>x==0</code></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb115"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb115-1" class="hljs-ln-code"><a href="#cb115-1"></a>eval_function<span class="ot">&lt;-</span><span class="cf">function</span>(x) {</span>
-<span id="cb115-2" class="hljs-ln-code"><a href="#cb115-2"></a>  <span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
-<span id="cb115-3" class="hljs-ln-code"><a href="#cb115-3"></a>    <span class="fu">return</span>(<span class="st">&#39;x is positive!&#39;</span>)</span>
-<span id="cb115-4" class="hljs-ln-code"><a href="#cb115-4"></a>  }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb121"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb121-1" class="hljs-ln-code"><a href="#cb121-1"></a>eval_function<span class="ot">&lt;-</span><span class="cf">function</span>(x) {</span>
+<span id="cb121-2" class="hljs-ln-code"><a href="#cb121-2"></a>  <span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb121-3" class="hljs-ln-code"><a href="#cb121-3"></a>    <span class="fu">return</span>(<span class="st">&#39;x is positive!&#39;</span>)</span>
+<span id="cb121-4" class="hljs-ln-code"><a href="#cb121-4"></a>  }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 
@@ -2189,13 +2251,13 @@ $ height      &lt;dbl&gt; 168, 177, 177, 177, 178, 172, 165, 171, 178, 170</code
 <h1 data-id="quarto-animate-title">Functions Examples</h1>
 <p>Let us now create a third codition: <code>x==0</code></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb116"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb116-1" class="hljs-ln-code"><a href="#cb116-1"></a>eval_function<span class="ot">&lt;-</span><span class="cf">function</span>(x) {</span>
-<span id="cb116-2" class="hljs-ln-code"><a href="#cb116-2"></a>  <span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
-<span id="cb116-3" class="hljs-ln-code"><a href="#cb116-3"></a>    <span class="fu">return</span>(<span class="st">&#39;x is positive!&#39;</span>)</span>
-<span id="cb116-4" class="hljs-ln-code"><a href="#cb116-4"></a>  }</span>
-<span id="cb116-5" class="hljs-ln-code"><a href="#cb116-5"></a>  <span class="cf">if</span>(x<span class="sc">==</span><span class="dv">0</span>){</span>
-<span id="cb116-6" class="hljs-ln-code"><a href="#cb116-6"></a>    <span class="fu">return</span>(<span class="st">&#39;x is zero!&#39;</span>)</span>
-<span id="cb116-7" class="hljs-ln-code"><a href="#cb116-7"></a>  }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb122"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb122-1" class="hljs-ln-code"><a href="#cb122-1"></a>eval_function<span class="ot">&lt;-</span><span class="cf">function</span>(x) {</span>
+<span id="cb122-2" class="hljs-ln-code"><a href="#cb122-2"></a>  <span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb122-3" class="hljs-ln-code"><a href="#cb122-3"></a>    <span class="fu">return</span>(<span class="st">&#39;x is positive!&#39;</span>)</span>
+<span id="cb122-4" class="hljs-ln-code"><a href="#cb122-4"></a>  }</span>
+<span id="cb122-5" class="hljs-ln-code"><a href="#cb122-5"></a>  <span class="cf">if</span>(x<span class="sc">==</span><span class="dv">0</span>){</span>
+<span id="cb122-6" class="hljs-ln-code"><a href="#cb122-6"></a>    <span class="fu">return</span>(<span class="st">&#39;x is zero!&#39;</span>)</span>
+<span id="cb122-7" class="hljs-ln-code"><a href="#cb122-7"></a>  }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 
@@ -2203,16 +2265,16 @@ $ height      &lt;dbl&gt; 168, 177, 177, 177, 178, 172, 165, 171, 178, 170</code
 <h1 data-id="quarto-animate-title">Functions Examples</h1>
 <p>Let us now create a third codition: <code>x==0</code></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb117"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb117-1" class="hljs-ln-code"><a href="#cb117-1"></a>eval_function<span class="ot">&lt;-</span><span class="cf">function</span>(x) {</span>
-<span id="cb117-2" class="hljs-ln-code"><a href="#cb117-2"></a>  <span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
-<span id="cb117-3" class="hljs-ln-code"><a href="#cb117-3"></a>    <span class="fu">return</span>(<span class="st">&#39;x is positive!&#39;</span>)</span>
-<span id="cb117-4" class="hljs-ln-code"><a href="#cb117-4"></a>  }</span>
-<span id="cb117-5" class="hljs-ln-code"><a href="#cb117-5"></a>  <span class="cf">if</span>(x<span class="sc">==</span><span class="dv">0</span>){</span>
-<span id="cb117-6" class="hljs-ln-code"><a href="#cb117-6"></a>    <span class="fu">return</span>(<span class="st">&#39;x is zero!&#39;</span>)</span>
-<span id="cb117-7" class="hljs-ln-code"><a href="#cb117-7"></a>  }</span>
-<span id="cb117-8" class="hljs-ln-code"><a href="#cb117-8"></a>  <span class="cf">else</span>{</span>
-<span id="cb117-9" class="hljs-ln-code"><a href="#cb117-9"></a>    <span class="fu">return</span>(<span class="st">&#39;x is negative or zero!&#39;</span>)</span>
-<span id="cb117-10" class="hljs-ln-code"><a href="#cb117-10"></a>}}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb123"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb123-1" class="hljs-ln-code"><a href="#cb123-1"></a>eval_function<span class="ot">&lt;-</span><span class="cf">function</span>(x) {</span>
+<span id="cb123-2" class="hljs-ln-code"><a href="#cb123-2"></a>  <span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb123-3" class="hljs-ln-code"><a href="#cb123-3"></a>    <span class="fu">return</span>(<span class="st">&#39;x is positive!&#39;</span>)</span>
+<span id="cb123-4" class="hljs-ln-code"><a href="#cb123-4"></a>  }</span>
+<span id="cb123-5" class="hljs-ln-code"><a href="#cb123-5"></a>  <span class="cf">if</span>(x<span class="sc">==</span><span class="dv">0</span>){</span>
+<span id="cb123-6" class="hljs-ln-code"><a href="#cb123-6"></a>    <span class="fu">return</span>(<span class="st">&#39;x is zero!&#39;</span>)</span>
+<span id="cb123-7" class="hljs-ln-code"><a href="#cb123-7"></a>  }</span>
+<span id="cb123-8" class="hljs-ln-code"><a href="#cb123-8"></a>  <span class="cf">else</span>{</span>
+<span id="cb123-9" class="hljs-ln-code"><a href="#cb123-9"></a>    <span class="fu">return</span>(<span class="st">&#39;x is negative or zero!&#39;</span>)</span>
+<span id="cb123-10" class="hljs-ln-code"><a href="#cb123-10"></a>}}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 
@@ -2220,17 +2282,17 @@ $ height      &lt;dbl&gt; 168, 177, 177, 177, 178, 172, 165, 171, 178, 170</code
 <h1 data-id="quarto-animate-title">Functions Examples</h1>
 <p>Let us now create a third codition: <code>x==0</code></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb118"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb118-1" class="hljs-ln-code"><a href="#cb118-1"></a>eval_function<span class="ot">&lt;-</span><span class="cf">function</span>(x) {</span>
-<span id="cb118-2" class="hljs-ln-code"><a href="#cb118-2"></a>  <span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
-<span id="cb118-3" class="hljs-ln-code"><a href="#cb118-3"></a>    <span class="fu">return</span>(<span class="st">&#39;x is positive!&#39;</span>)</span>
-<span id="cb118-4" class="hljs-ln-code"><a href="#cb118-4"></a>  }</span>
-<span id="cb118-5" class="hljs-ln-code"><a href="#cb118-5"></a>  <span class="cf">if</span>(x<span class="sc">==</span><span class="dv">0</span>){</span>
-<span id="cb118-6" class="hljs-ln-code"><a href="#cb118-6"></a>    <span class="fu">return</span>(<span class="st">&#39;x is zero!&#39;</span>)</span>
-<span id="cb118-7" class="hljs-ln-code"><a href="#cb118-7"></a>  }</span>
-<span id="cb118-8" class="hljs-ln-code"><a href="#cb118-8"></a>  <span class="cf">else</span>{</span>
-<span id="cb118-9" class="hljs-ln-code"><a href="#cb118-9"></a>    <span class="fu">return</span>(<span class="st">&#39;x is negative or zero!&#39;</span>)</span>
-<span id="cb118-10" class="hljs-ln-code"><a href="#cb118-10"></a>}}</span>
-<span id="cb118-11" class="hljs-ln-code"><a href="#cb118-11"></a><span class="fu">eval_function</span>(<span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb124"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb124-1" class="hljs-ln-code"><a href="#cb124-1"></a>eval_function<span class="ot">&lt;-</span><span class="cf">function</span>(x) {</span>
+<span id="cb124-2" class="hljs-ln-code"><a href="#cb124-2"></a>  <span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb124-3" class="hljs-ln-code"><a href="#cb124-3"></a>    <span class="fu">return</span>(<span class="st">&#39;x is positive!&#39;</span>)</span>
+<span id="cb124-4" class="hljs-ln-code"><a href="#cb124-4"></a>  }</span>
+<span id="cb124-5" class="hljs-ln-code"><a href="#cb124-5"></a>  <span class="cf">if</span>(x<span class="sc">==</span><span class="dv">0</span>){</span>
+<span id="cb124-6" class="hljs-ln-code"><a href="#cb124-6"></a>    <span class="fu">return</span>(<span class="st">&#39;x is zero!&#39;</span>)</span>
+<span id="cb124-7" class="hljs-ln-code"><a href="#cb124-7"></a>  }</span>
+<span id="cb124-8" class="hljs-ln-code"><a href="#cb124-8"></a>  <span class="cf">else</span>{</span>
+<span id="cb124-9" class="hljs-ln-code"><a href="#cb124-9"></a>    <span class="fu">return</span>(<span class="st">&#39;x is negative or zero!&#39;</span>)</span>
+<span id="cb124-10" class="hljs-ln-code"><a href="#cb124-10"></a>}}</span>
+<span id="cb124-11" class="hljs-ln-code"><a href="#cb124-11"></a><span class="fu">eval_function</span>(<span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] &quot;x is zero!&quot;</code></pre>
 </div>
@@ -2243,20 +2305,20 @@ $ height      &lt;dbl&gt; 168, 177, 177, 177, 178, 172, 165, 171, 178, 170</code
 <p>We create a function called <code>add_five</code> that has one parameter <code>x</code>.</p>
 <p>The function calculates and returns the sum of <code>x</code> and <code>5</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb120"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb120-1"><a href="#cb120-1"></a>add_five <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb120-2"><a href="#cb120-2"></a>  x_plus_five <span class="ot">=</span> x <span class="sc">+</span> <span class="dv">5</span></span>
-<span id="cb120-3"><a href="#cb120-3"></a>  <span class="fu">return</span>(x_plus_five)</span>
-<span id="cb120-4"><a href="#cb120-4"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb126"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb126-1"><a href="#cb126-1"></a>add_five <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb126-2"><a href="#cb126-2"></a>  x_plus_five <span class="ot">=</span> x <span class="sc">+</span> <span class="dv">5</span></span>
+<span id="cb126-3"><a href="#cb126-3"></a>  <span class="fu">return</span>(x_plus_five)</span>
+<span id="cb126-4"><a href="#cb126-4"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 
 <section id="functions-examples-19" class="title-slide slide level1 center">
 <h1>Functions Examples</h1>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb121"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb121-1"><a href="#cb121-1"></a>add_five <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb121-2"><a href="#cb121-2"></a>  x_plus_five <span class="ot">=</span> x <span class="sc">+</span> <span class="dv">5</span></span>
-<span id="cb121-3"><a href="#cb121-3"></a>  <span class="fu">return</span>(x_plus_five)</span>
-<span id="cb121-4"><a href="#cb121-4"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb127"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb127-1"><a href="#cb127-1"></a>add_five <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb127-2"><a href="#cb127-2"></a>  x_plus_five <span class="ot">=</span> x <span class="sc">+</span> <span class="dv">5</span></span>
+<span id="cb127-3"><a href="#cb127-3"></a>  <span class="fu">return</span>(x_plus_five)</span>
+<span id="cb127-4"><a href="#cb127-4"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Here are the elements of the function:</p>
 <ul>
@@ -2275,24 +2337,24 @@ $ height      &lt;dbl&gt; 168, 177, 177, 177, 178, 172, 165, 171, 178, 170</code
 <h1>Functions Examples</h1>
 <p>The function <code>add_five</code>, can be used to calculate the sum of various numbers and five</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb122"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb122-1"><a href="#cb122-1"></a><span class="co"># Function definition</span></span>
-<span id="cb122-2"><a href="#cb122-2"></a>add_five <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb122-3"><a href="#cb122-3"></a>  x_plus_five <span class="ot">=</span> x <span class="sc">+</span> <span class="dv">5</span></span>
-<span id="cb122-4"><a href="#cb122-4"></a>  <span class="fu">return</span>(x_plus_five)</span>
-<span id="cb122-5"><a href="#cb122-5"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb128"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb128-1"><a href="#cb128-1"></a><span class="co"># Function definition</span></span>
+<span id="cb128-2"><a href="#cb128-2"></a>add_five <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb128-3"><a href="#cb128-3"></a>  x_plus_five <span class="ot">=</span> x <span class="sc">+</span> <span class="dv">5</span></span>
+<span id="cb128-4"><a href="#cb128-4"></a>  <span class="fu">return</span>(x_plus_five)</span>
+<span id="cb128-5"><a href="#cb128-5"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Here is what happens if we use <code>5</code> as a parameter</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb123"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb123-1"><a href="#cb123-1"></a><span class="co"># Function call, with argument 5</span></span>
-<span id="cb123-2"><a href="#cb123-2"></a><span class="fu">add_five</span>(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb129"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb129-1"><a href="#cb129-1"></a><span class="co"># Function call, with argument 5</span></span>
+<span id="cb129-2"><a href="#cb129-2"></a><span class="fu">add_five</span>(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 10</code></pre>
 </div>
 </div>
 <p>Here is what happens if we use <code>77</code> as a parameter</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb125"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb125-1"><a href="#cb125-1"></a><span class="co"># Function call, with argument 77</span></span>
-<span id="cb125-2"><a href="#cb125-2"></a><span class="fu">add_five</span>(<span class="dv">77</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb131"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb131-1"><a href="#cb131-1"></a><span class="co"># Function call, with argument 77</span></span>
+<span id="cb131-2"><a href="#cb131-2"></a><span class="fu">add_five</span>(<span class="dv">77</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 82</code></pre>
 </div>
@@ -2303,30 +2365,30 @@ $ height      &lt;dbl&gt; 168, 177, 177, 177, 178, 172, 165, 171, 178, 170</code
 <h1>Functions Examples</h1>
 <p>We can of course assign the result of a function to an object.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb127"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb127-1"><a href="#cb127-1"></a><span class="co"># Function call, with argument 77</span></span>
-<span id="cb127-2"><a href="#cb127-2"></a>x<span class="ot">&lt;-</span><span class="fu">add_five</span>(<span class="dv">77</span>)</span>
-<span id="cb127-3"><a href="#cb127-3"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb133"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb133-1"><a href="#cb133-1"></a><span class="co"># Function call, with argument 77</span></span>
+<span id="cb133-2"><a href="#cb133-2"></a>x<span class="ot">&lt;-</span><span class="fu">add_five</span>(<span class="dv">77</span>)</span>
+<span id="cb133-3"><a href="#cb133-3"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 82</code></pre>
 </div>
 </div>
 <p>We can write the same function in a different way</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb129"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb129-1"><a href="#cb129-1"></a><span class="co"># Original Function</span></span>
-<span id="cb129-2"><a href="#cb129-2"></a>add_five <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb129-3"><a href="#cb129-3"></a>  x_plus_five <span class="ot">=</span> x <span class="sc">+</span> <span class="dv">5</span></span>
-<span id="cb129-4"><a href="#cb129-4"></a>  <span class="fu">return</span>(x_plus_five)</span>
-<span id="cb129-5"><a href="#cb129-5"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb135"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb135-1"><a href="#cb135-1"></a><span class="co"># Original Function</span></span>
+<span id="cb135-2"><a href="#cb135-2"></a>add_five <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb135-3"><a href="#cb135-3"></a>  x_plus_five <span class="ot">=</span> x <span class="sc">+</span> <span class="dv">5</span></span>
+<span id="cb135-4"><a href="#cb135-4"></a>  <span class="fu">return</span>(x_plus_five)</span>
+<span id="cb135-5"><a href="#cb135-5"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb130"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb130-1"><a href="#cb130-1"></a><span class="co"># Version 2</span></span>
-<span id="cb130-2"><a href="#cb130-2"></a>add_five <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb130-3"><a href="#cb130-3"></a>  x <span class="sc">+</span> <span class="dv">5</span></span>
-<span id="cb130-4"><a href="#cb130-4"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb136"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb136-1"><a href="#cb136-1"></a><span class="co"># Version 2</span></span>
+<span id="cb136-2"><a href="#cb136-2"></a>add_five <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb136-3"><a href="#cb136-3"></a>  x <span class="sc">+</span> <span class="dv">5</span></span>
+<span id="cb136-4"><a href="#cb136-4"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb131"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb131-1"><a href="#cb131-1"></a><span class="co"># Version 3</span></span>
-<span id="cb131-2"><a href="#cb131-2"></a>add_five <span class="ot">&lt;-</span> <span class="cf">function</span>(x) x <span class="sc">+</span> <span class="dv">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb137"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb137-1"><a href="#cb137-1"></a><span class="co"># Version 3</span></span>
+<span id="cb137-2"><a href="#cb137-2"></a>add_five <span class="ot">&lt;-</span> <span class="cf">function</span>(x) x <span class="sc">+</span> <span class="dv">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 
@@ -2336,15 +2398,15 @@ $ height      &lt;dbl&gt; 168, 177, 177, 177, 178, 172, 165, 171, 178, 170</code
 <p>For example, the following definition <code>add_five</code> does not specify a default value for <code>x</code></p>
 <p>Thus, trying to call <code>add_five</code> without passing an argument for <code>x</code> gives an error</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb132"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb132-1"><a href="#cb132-1"></a>add_five <span class="ot">&lt;-</span> <span class="cf">function</span>(x) x <span class="sc">+</span> <span class="dv">5</span></span>
-<span id="cb132-2"><a href="#cb132-2"></a><span class="fu">add_five</span>()</span>
-<span id="cb132-3"><a href="#cb132-3"></a><span class="do">## Error in add_five(): argument &quot;x&quot; is missing, with no default</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb138"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb138-1"><a href="#cb138-1"></a>add_five <span class="ot">&lt;-</span> <span class="cf">function</span>(x) x <span class="sc">+</span> <span class="dv">5</span></span>
+<span id="cb138-2"><a href="#cb138-2"></a><span class="fu">add_five</span>()</span>
+<span id="cb138-3"><a href="#cb138-3"></a><span class="do">## Error in add_five(): argument &quot;x&quot; is missing, with no default</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The following, an alternative definition, does specify the default value of 1 for <code>x</code></p>
 <p>The default value is then used when calling the function without specifying <code>x</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb133"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb133-1"><a href="#cb133-1"></a>add_five <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">x =</span> <span class="dv">1</span>) x <span class="sc">+</span> <span class="dv">5</span></span>
-<span id="cb133-2"><a href="#cb133-2"></a><span class="fu">add_five</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb139"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb139-1"><a href="#cb139-1"></a>add_five <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">x =</span> <span class="dv">1</span>) x <span class="sc">+</span> <span class="dv">5</span></span>
+<span id="cb139-2"><a href="#cb139-2"></a><span class="fu">add_five</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 6</code></pre>
 </div>
@@ -2355,9 +2417,71 @@ $ height      &lt;dbl&gt; 168, 177, 177, 177, 178, 172, 165, 171, 178, 170</code
 <h1>Default arguments</h1>
 <p>The following argument will also yield an error</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb135"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb135-1"><a href="#cb135-1"></a>add_five <span class="ot">&lt;-</span> <span class="cf">function</span>(x) x <span class="sc">+</span> <span class="dv">5</span></span>
-<span id="cb135-2"><a href="#cb135-2"></a><span class="fu">add_five</span>(<span class="st">&quot;five&quot;</span>)</span>
-<span id="cb135-3"><a href="#cb135-3"></a><span class="do">## Error in x + 5: non-numeric argument to binary operator</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb141"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb141-1"><a href="#cb141-1"></a>add_five <span class="ot">&lt;-</span> <span class="cf">function</span>(x) x <span class="sc">+</span> <span class="dv">5</span></span>
+<span id="cb141-2"><a href="#cb141-2"></a><span class="fu">add_five</span>(<span class="st">&quot;five&quot;</span>)</span>
+<span id="cb141-3"><a href="#cb141-3"></a><span class="do">## Error in x + 5: non-numeric argument to binary operator</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+
+<section id="exercises-with-functions-1" class="title-slide slide level1 center">
+<h1>Exercises with Functions 1</h1>
+<p><strong>Objectives</strong> Write an R script that classifies a given number into one of three categories using a function:</p>
+<ul>
+<li>Positive: If the number is greater than 0</li>
+<li>Negative: If the number is less than 0</li>
+<li>Zero: If the number is exactly 0</li>
+</ul>
+<p>Let’s say the number is 3.</p>
+<p><strong>Instructions</strong> Use a function to classify the number into one of the categories. The output should look like below:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb142"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb142-1"><a href="#cb142-1"></a>number<span class="ot">&lt;-</span><span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>The number is Positive .</code></pre>
+</div>
+</div>
+</section>
+
+<section id="exercises-with-functions-2" class="title-slide slide level1 center">
+<h1>Exercises with Functions 2</h1>
+<p><strong>Objective</strong> Write an R script that classifies a person into different age groups using a function, based on the following criteria:</p>
+<ul>
+<li>Child: 0 to 12 years old</li>
+<li>Teenager: 13 to 19 years old</li>
+<li>Adult: 20 to 59 years old</li>
+<li>Senior: 60 years old and above</li>
+</ul>
+<p>Let’s say the age is is 15.</p>
+<p><strong>Instructions</strong></p>
+<p>Use if-else statements to classify the age into one of the age groups within a function.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb144"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb144-1"><a href="#cb144-1"></a>age<span class="ot">&lt;-</span><span class="dv">15</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] &quot;You are a Teenager.&quot;</code></pre>
+</div>
+</div>
+</section>
+
+<section id="exercises-with-functions-3" class="title-slide slide level1 center">
+<h1>Exercises with functions 3</h1>
+<p><strong>Objective</strong> Write an R script that classifies temperatures into different categories using a function based on the following criteria:</p>
+<ul>
+<li>Cold: Less than 50 degrees Fahrenheit</li>
+<li>Moderate: 50 to 75 degrees Fahrenheit</li>
+<li>Warm: 76 to 90 degrees Fahrenheit</li>
+<li>Hot: More than 90 degrees Fahrenheit</li>
+</ul>
+<p><strong>Instructions</strong> 1. Use if-else statements within a fucntion to classify the temperature into one of the categories.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb146"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb146-1"><a href="#cb146-1"></a>temperature<span class="ot">&lt;-</span><span class="dv">50</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] &quot;The temperature is Moderate.&quot;</code></pre>
+</div>
 </div>
 </section>
 
@@ -2374,9 +2498,9 @@ $ height      &lt;dbl&gt; 168, 177, 177, 177, 178, 172, 165, 171, 178, 170</code
 </ul>
 <p>This is the syntax in a <code>for</code> loop</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb136"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb136-1"><a href="#cb136-1"></a><span class="cf">for</span>(symbol <span class="cf">in</span> sequence) {</span>
-<span id="cb136-2"><a href="#cb136-2"></a>  expressions</span>
-<span id="cb136-3"><a href="#cb136-3"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb148"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb148-1"><a href="#cb148-1"></a><span class="cf">for</span>(symbol <span class="cf">in</span> sequence) {</span>
+<span id="cb148-2"><a href="#cb148-2"></a>  expressions</span>
+<span id="cb148-3"><a href="#cb148-3"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 
@@ -2384,7 +2508,7 @@ $ height      &lt;dbl&gt; 168, 177, 177, 177, 178, 172, 165, 171, 178, 170</code
 <h1 data-id="quarto-animate-title">Loops Example</h1>
 <p>This is an example of a <code>for</code> loop:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb137"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb137-1" class="hljs-ln-code"><a href="#cb137-1"></a>x <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb149"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb149-1" class="hljs-ln-code"><a href="#cb149-1"></a>x <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 
@@ -2392,8 +2516,8 @@ $ height      &lt;dbl&gt; 168, 177, 177, 177, 178, 172, 165, 171, 178, 170</code
 <h1 data-id="quarto-animate-title">Loops Example</h1>
 <p>This is an example of a <code>for</code> loop:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb138"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb138-1" class="hljs-ln-code"><a href="#cb138-1"></a>x <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
-<span id="cb138-2" class="hljs-ln-code"><a href="#cb138-2"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb150"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb150-1" class="hljs-ln-code"><a href="#cb150-1"></a>x <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
+<span id="cb150-2" class="hljs-ln-code"><a href="#cb150-2"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1 2 3</code></pre>
 </div>
@@ -2404,10 +2528,10 @@ $ height      &lt;dbl&gt; 168, 177, 177, 177, 178, 172, 165, 171, 178, 170</code
 <h1 data-id="quarto-animate-title">Loops Example</h1>
 <p>This is an example of a <code>for</code> loop:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb140"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb140-1" class="hljs-ln-code"><a href="#cb140-1"></a>x <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
-<span id="cb140-2" class="hljs-ln-code"><a href="#cb140-2"></a>x</span>
-<span id="cb140-3" class="hljs-ln-code"><a href="#cb140-3"></a></span>
-<span id="cb140-4" class="hljs-ln-code"><a href="#cb140-4"></a><span class="cf">for</span> (i <span class="cf">in</span> x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb152"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb152-1" class="hljs-ln-code"><a href="#cb152-1"></a>x <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
+<span id="cb152-2" class="hljs-ln-code"><a href="#cb152-2"></a>x</span>
+<span id="cb152-3" class="hljs-ln-code"><a href="#cb152-3"></a></span>
+<span id="cb152-4" class="hljs-ln-code"><a href="#cb152-4"></a><span class="cf">for</span> (i <span class="cf">in</span> x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 
@@ -2415,12 +2539,12 @@ $ height      &lt;dbl&gt; 168, 177, 177, 177, 178, 172, 165, 171, 178, 170</code
 <h1 data-id="quarto-animate-title">Loops Example</h1>
 <p>This is an example of a <code>for</code> loop:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb141"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb141-1" class="hljs-ln-code"><a href="#cb141-1"></a>x <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
-<span id="cb141-2" class="hljs-ln-code"><a href="#cb141-2"></a>x</span>
-<span id="cb141-3" class="hljs-ln-code"><a href="#cb141-3"></a></span>
-<span id="cb141-4" class="hljs-ln-code"><a href="#cb141-4"></a><span class="cf">for</span> (i <span class="cf">in</span> x) {</span>
-<span id="cb141-5" class="hljs-ln-code"><a href="#cb141-5"></a>  <span class="fu">print</span>(i)</span>
-<span id="cb141-6" class="hljs-ln-code"><a href="#cb141-6"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb153"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb153-1" class="hljs-ln-code"><a href="#cb153-1"></a>x <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
+<span id="cb153-2" class="hljs-ln-code"><a href="#cb153-2"></a>x</span>
+<span id="cb153-3" class="hljs-ln-code"><a href="#cb153-3"></a></span>
+<span id="cb153-4" class="hljs-ln-code"><a href="#cb153-4"></a><span class="cf">for</span> (i <span class="cf">in</span> x) {</span>
+<span id="cb153-5" class="hljs-ln-code"><a href="#cb153-5"></a>  <span class="fu">print</span>(i)</span>
+<span id="cb153-6" class="hljs-ln-code"><a href="#cb153-6"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 
@@ -2428,14 +2552,14 @@ $ height      &lt;dbl&gt; 168, 177, 177, 177, 178, 172, 165, 171, 178, 170</code
 <h1 data-id="quarto-animate-title">Loops Example</h1>
 <p>This is an example of a <code>for</code> loop:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb142"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb142-1"><a href="#cb142-1"></a>x <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
-<span id="cb142-2"><a href="#cb142-2"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb154"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb154-1"><a href="#cb154-1"></a>x <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
+<span id="cb154-2"><a href="#cb154-2"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1 2 3</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb144"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb144-1"><a href="#cb144-1"></a><span class="cf">for</span> (i <span class="cf">in</span> x) {</span>
-<span id="cb144-2"><a href="#cb144-2"></a>  <span class="fu">print</span>(i)</span>
-<span id="cb144-3"><a href="#cb144-3"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb156"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb156-1"><a href="#cb156-1"></a><span class="cf">for</span> (i <span class="cf">in</span> x) {</span>
+<span id="cb156-2"><a href="#cb156-2"></a>  <span class="fu">print</span>(i)</span>
+<span id="cb156-3"><a href="#cb156-3"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1
 [1] 2
@@ -2453,8 +2577,8 @@ $ height      &lt;dbl&gt; 168, 177, 177, 177, 178, 172, 165, 171, 178, 170</code
 <h1 data-id="quarto-animate-title">Loops Example</h1>
 <p>Here is another example with strings:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb146"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb146-1" class="hljs-ln-code"><a href="#cb146-1"></a>x <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">&quot;one&quot;</span>, <span class="st">&quot;two&quot;</span>, <span class="st">&quot;three&quot;</span>)</span>
-<span id="cb146-2" class="hljs-ln-code"><a href="#cb146-2"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb158"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb158-1" class="hljs-ln-code"><a href="#cb158-1"></a>x <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">&quot;one&quot;</span>, <span class="st">&quot;two&quot;</span>, <span class="st">&quot;three&quot;</span>)</span>
+<span id="cb158-2" class="hljs-ln-code"><a href="#cb158-2"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] &quot;one&quot;   &quot;two&quot;   &quot;three&quot;</code></pre>
 </div>
@@ -2465,14 +2589,14 @@ $ height      &lt;dbl&gt; 168, 177, 177, 177, 178, 172, 165, 171, 178, 170</code
 <h1 data-id="quarto-animate-title">Loops Example</h1>
 <p>Here is another example with strings:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb148"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb148-1"><a href="#cb148-1"></a>x <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">&quot;one&quot;</span>, <span class="st">&quot;two&quot;</span>, <span class="st">&quot;three&quot;</span>)</span>
-<span id="cb148-2"><a href="#cb148-2"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb160"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb160-1"><a href="#cb160-1"></a>x <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">&quot;one&quot;</span>, <span class="st">&quot;two&quot;</span>, <span class="st">&quot;three&quot;</span>)</span>
+<span id="cb160-2"><a href="#cb160-2"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] &quot;one&quot;   &quot;two&quot;   &quot;three&quot;</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb150"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb150-1"><a href="#cb150-1"></a><span class="cf">for</span> (i <span class="cf">in</span> x) {</span>
-<span id="cb150-2"><a href="#cb150-2"></a>  <span class="fu">print</span>(i)</span>
-<span id="cb150-3"><a href="#cb150-3"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb162"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb162-1"><a href="#cb162-1"></a><span class="cf">for</span> (i <span class="cf">in</span> x) {</span>
+<span id="cb162-2"><a href="#cb162-2"></a>  <span class="fu">print</span>(i)</span>
+<span id="cb162-3"><a href="#cb162-3"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] &quot;one&quot;
 [1] &quot;two&quot;
@@ -2490,7 +2614,7 @@ $ height      &lt;dbl&gt; 168, 177, 177, 177, 178, 172, 165, 171, 178, 170</code
 <h1 data-id="quarto-animate-title">Loops Example</h1>
 <p>Here is another example:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb152"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb152-1" class="hljs-ln-code"><a href="#cb152-1"></a>x <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb164"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb164-1" class="hljs-ln-code"><a href="#cb164-1"></a>x <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 
@@ -2498,11 +2622,11 @@ $ height      &lt;dbl&gt; 168, 177, 177, 177, 178, 172, 165, 171, 178, 170</code
 <h1 data-id="quarto-animate-title">Loops Example</h1>
 <p>Here is another example:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb153"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb153-1" class="hljs-ln-code"><a href="#cb153-1"></a>x <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
-<span id="cb153-2" class="hljs-ln-code"><a href="#cb153-2"></a></span>
-<span id="cb153-3" class="hljs-ln-code"><a href="#cb153-3"></a><span class="cf">for</span> (i <span class="cf">in</span> x) {</span>
-<span id="cb153-4" class="hljs-ln-code"><a href="#cb153-4"></a>  <span class="fu">print</span>(i<span class="sc">*</span><span class="dv">2</span>)</span>
-<span id="cb153-5" class="hljs-ln-code"><a href="#cb153-5"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb165"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb165-1" class="hljs-ln-code"><a href="#cb165-1"></a>x <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
+<span id="cb165-2" class="hljs-ln-code"><a href="#cb165-2"></a></span>
+<span id="cb165-3" class="hljs-ln-code"><a href="#cb165-3"></a><span class="cf">for</span> (i <span class="cf">in</span> x) {</span>
+<span id="cb165-4" class="hljs-ln-code"><a href="#cb165-4"></a>  <span class="fu">print</span>(i<span class="sc">*</span><span class="dv">2</span>)</span>
+<span id="cb165-5" class="hljs-ln-code"><a href="#cb165-5"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 
@@ -2510,11 +2634,11 @@ $ height      &lt;dbl&gt; 168, 177, 177, 177, 178, 172, 165, 171, 178, 170</code
 <h1 data-id="quarto-animate-title">Loops Example</h1>
 <p>Here is another example:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb154"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb154-1" class="hljs-ln-code"><a href="#cb154-1"></a>x <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
-<span id="cb154-2" class="hljs-ln-code"><a href="#cb154-2"></a></span>
-<span id="cb154-3" class="hljs-ln-code"><a href="#cb154-3"></a><span class="cf">for</span> (i <span class="cf">in</span> x) {</span>
-<span id="cb154-4" class="hljs-ln-code"><a href="#cb154-4"></a>  <span class="fu">print</span>(i<span class="sc">*</span><span class="dv">2</span>)</span>
-<span id="cb154-5" class="hljs-ln-code"><a href="#cb154-5"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb166"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb166-1" class="hljs-ln-code"><a href="#cb166-1"></a>x <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
+<span id="cb166-2" class="hljs-ln-code"><a href="#cb166-2"></a></span>
+<span id="cb166-3" class="hljs-ln-code"><a href="#cb166-3"></a><span class="cf">for</span> (i <span class="cf">in</span> x) {</span>
+<span id="cb166-4" class="hljs-ln-code"><a href="#cb166-4"></a>  <span class="fu">print</span>(i<span class="sc">*</span><span class="dv">2</span>)</span>
+<span id="cb166-5" class="hljs-ln-code"><a href="#cb166-5"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 2
 [1] 4
@@ -2534,7 +2658,7 @@ $ height      &lt;dbl&gt; 168, 177, 177, 177, 178, 172, 165, 171, 178, 170</code
 <p>The <code>%in%</code> operator returns a logical vector indicating the presence of each element of x in y</p>
 <p>For example:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb156"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb156-1" class="hljs-ln-code"><a href="#cb156-1"></a>x <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb168"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb168-1" class="hljs-ln-code"><a href="#cb168-1"></a>x <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 
@@ -2543,8 +2667,8 @@ $ height      &lt;dbl&gt; 168, 177, 177, 177, 178, 172, 165, 171, 178, 170</code
 <p>The <code>%in%</code> operator returns a logical vector indicating the presence of each element of x in y</p>
 <p>For example:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb157"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb157-1" class="hljs-ln-code"><a href="#cb157-1"></a>x <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
-<span id="cb157-2" class="hljs-ln-code"><a href="#cb157-2"></a>y <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb169"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb169-1" class="hljs-ln-code"><a href="#cb169-1"></a>x <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
+<span id="cb169-2" class="hljs-ln-code"><a href="#cb169-2"></a>y <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 
@@ -2553,9 +2677,9 @@ $ height      &lt;dbl&gt; 168, 177, 177, 177, 178, 172, 165, 171, 178, 170</code
 <p>The <code>%in%</code> operator returns a logical vector indicating the presence of each element of x in y</p>
 <p>For example:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb158"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb158-1" class="hljs-ln-code"><a href="#cb158-1"></a>x <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
-<span id="cb158-2" class="hljs-ln-code"><a href="#cb158-2"></a>y <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>)</span>
-<span id="cb158-3" class="hljs-ln-code"><a href="#cb158-3"></a>x <span class="sc">%in%</span> y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb170"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb170-1" class="hljs-ln-code"><a href="#cb170-1"></a>x <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
+<span id="cb170-2" class="hljs-ln-code"><a href="#cb170-2"></a>y <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>)</span>
+<span id="cb170-3" class="hljs-ln-code"><a href="#cb170-3"></a>x <span class="sc">%in%</span> y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 
@@ -2564,9 +2688,9 @@ $ height      &lt;dbl&gt; 168, 177, 177, 177, 178, 172, 165, 171, 178, 170</code
 <p>The <code>%in%</code> operator returns a logical vector indicating the presence of each element of x in y</p>
 <p>For example:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb159"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb159-1" class="hljs-ln-code"><a href="#cb159-1"></a>x <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
-<span id="cb159-2" class="hljs-ln-code"><a href="#cb159-2"></a>y <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>)</span>
-<span id="cb159-3" class="hljs-ln-code"><a href="#cb159-3"></a>x <span class="sc">%in%</span> y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb171"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb171-1" class="hljs-ln-code"><a href="#cb171-1"></a>x <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
+<span id="cb171-2" class="hljs-ln-code"><a href="#cb171-2"></a>y <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>)</span>
+<span id="cb171-3" class="hljs-ln-code"><a href="#cb171-3"></a>x <span class="sc">%in%</span> y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] TRUE TRUE TRUE</code></pre>
 </div>
@@ -3016,7 +3140,7 @@ data
 
 -->
 <div class="footer footer-default">
-<p>Popescu (JCU): Lecture 2</p>
+<p>Popescu (JCU): Lecture 3</p>
 </div>
 </section>
     </div>
