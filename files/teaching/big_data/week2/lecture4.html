@@ -1280,7 +1280,7 @@ Bogdan G. Popescu
 </div>
 <p>This is how we write this as a function</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>eval_function<span class="ot">&lt;-</span><span class="cf">function</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>is_this_no_positive<span class="ot">&lt;-</span><span class="cf">function</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 
@@ -1302,7 +1302,7 @@ Bogdan G. Popescu
 </div>
 <p>This is how we write this as a function</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>eval_function<span class="ot">&lt;-</span><span class="cf">function</span>(x) {</span>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>is_this_no_positive<span class="ot">&lt;-</span><span class="cf">function</span>(x) {</span>
 <span id="cb8-2"><a href="#cb8-2"></a>  <span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
@@ -1325,7 +1325,7 @@ Bogdan G. Popescu
 </div>
 <p>This is how we write this as a function</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>eval_function<span class="ot">&lt;-</span><span class="cf">function</span>(x) {</span>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>is_this_no_positive<span class="ot">&lt;-</span><span class="cf">function</span>(x) {</span>
 <span id="cb11-2"><a href="#cb11-2"></a>  <span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
 <span id="cb11-3"><a href="#cb11-3"></a>    <span class="fu">return</span>(<span class="st">&#39;x is positive!&#39;</span>)</span>
 <span id="cb11-4"><a href="#cb11-4"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1350,7 +1350,7 @@ Bogdan G. Popescu
 </div>
 <p>This is how we write this as a function</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>eval_function<span class="ot">&lt;-</span><span class="cf">function</span>(x) {</span>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>is_this_no_positive<span class="ot">&lt;-</span><span class="cf">function</span>(x) {</span>
 <span id="cb14-2"><a href="#cb14-2"></a>  <span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
 <span id="cb14-3"><a href="#cb14-3"></a>    <span class="fu">return</span>(<span class="st">&#39;x is positive!&#39;</span>)</span>
 <span id="cb14-4"><a href="#cb14-4"></a>    }</span>
@@ -1374,9 +1374,9 @@ Bogdan G. Popescu
 <pre><code>[1] &quot;x is negative or zero!&quot;</code></pre>
 </div>
 </div>
-<p>This is how we write this as a function</p>
+<p>This is how we write this as a function, called “is_this_no_positive”</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>eval_function<span class="ot">&lt;-</span><span class="cf">function</span>(x) {</span>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>is_this_no_positive<span class="ot">&lt;-</span><span class="cf">function</span>(x) {</span>
 <span id="cb17-2"><a href="#cb17-2"></a>  <span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
 <span id="cb17-3"><a href="#cb17-3"></a>    <span class="fu">return</span>(<span class="st">&#39;x is positive!&#39;</span>)</span>
 <span id="cb17-4"><a href="#cb17-4"></a>    }</span>
@@ -1390,14 +1390,14 @@ Bogdan G. Popescu
 <h1 data-id="quarto-animate-title">Functions Examples</h1>
 <p>This is how we use this function:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb18-1" class="hljs-ln-code"><a href="#cb18-1"></a>eval_function<span class="ot">&lt;-</span><span class="cf">function</span>(x) {</span>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb18-1" class="hljs-ln-code"><a href="#cb18-1"></a>is_this_no_positive<span class="ot">&lt;-</span><span class="cf">function</span>(x) {</span>
 <span id="cb18-2" class="hljs-ln-code"><a href="#cb18-2"></a>  <span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
 <span id="cb18-3" class="hljs-ln-code"><a href="#cb18-3"></a>    <span class="fu">return</span>(<span class="st">&#39;x is positive!&#39;</span>)</span>
 <span id="cb18-4" class="hljs-ln-code"><a href="#cb18-4"></a>    }</span>
 <span id="cb18-5" class="hljs-ln-code"><a href="#cb18-5"></a>  <span class="cf">else</span>{</span>
 <span id="cb18-6" class="hljs-ln-code"><a href="#cb18-6"></a>    <span class="fu">return</span>(<span class="st">&#39;x is negative or zero!&#39;</span>)</span>
 <span id="cb18-7" class="hljs-ln-code"><a href="#cb18-7"></a>}}</span>
-<span id="cb18-8" class="hljs-ln-code"><a href="#cb18-8"></a><span class="fu">eval_function</span>(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb18-8" class="hljs-ln-code"><a href="#cb18-8"></a><span class="fu">is_this_no_positive</span>(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 
@@ -1405,14 +1405,14 @@ Bogdan G. Popescu
 <h1 data-id="quarto-animate-title">Functions Examples</h1>
 <p>This is how we use this function:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb19-1" class="hljs-ln-code"><a href="#cb19-1"></a>eval_function<span class="ot">&lt;-</span><span class="cf">function</span>(x) {</span>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb19-1" class="hljs-ln-code"><a href="#cb19-1"></a>is_this_no_positive<span class="ot">&lt;-</span><span class="cf">function</span>(x) {</span>
 <span id="cb19-2" class="hljs-ln-code"><a href="#cb19-2"></a>  <span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
 <span id="cb19-3" class="hljs-ln-code"><a href="#cb19-3"></a>    <span class="fu">return</span>(<span class="st">&#39;x is positive!&#39;</span>)</span>
 <span id="cb19-4" class="hljs-ln-code"><a href="#cb19-4"></a>    }</span>
 <span id="cb19-5" class="hljs-ln-code"><a href="#cb19-5"></a>  <span class="cf">else</span>{</span>
 <span id="cb19-6" class="hljs-ln-code"><a href="#cb19-6"></a>    <span class="fu">return</span>(<span class="st">&#39;x is negative or zero!&#39;</span>)</span>
 <span id="cb19-7" class="hljs-ln-code"><a href="#cb19-7"></a>}}</span>
-<span id="cb19-8" class="hljs-ln-code"><a href="#cb19-8"></a><span class="fu">eval_function</span>(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb19-8" class="hljs-ln-code"><a href="#cb19-8"></a><span class="fu">is_this_no_positive</span>(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>What is the output of this command?</p>
 </section>
@@ -1421,14 +1421,14 @@ Bogdan G. Popescu
 <h1 data-id="quarto-animate-title">Functions Examples</h1>
 <p>This is how we use this function:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb20-1" class="hljs-ln-code"><a href="#cb20-1"></a>eval_function<span class="ot">&lt;-</span><span class="cf">function</span>(x) {</span>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb20-1" class="hljs-ln-code"><a href="#cb20-1"></a>is_this_no_positive<span class="ot">&lt;-</span><span class="cf">function</span>(x) {</span>
 <span id="cb20-2" class="hljs-ln-code"><a href="#cb20-2"></a>  <span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
 <span id="cb20-3" class="hljs-ln-code"><a href="#cb20-3"></a>    <span class="fu">return</span>(<span class="st">&#39;x is positive!&#39;</span>)</span>
 <span id="cb20-4" class="hljs-ln-code"><a href="#cb20-4"></a>    }</span>
 <span id="cb20-5" class="hljs-ln-code"><a href="#cb20-5"></a>  <span class="cf">else</span>{</span>
 <span id="cb20-6" class="hljs-ln-code"><a href="#cb20-6"></a>    <span class="fu">return</span>(<span class="st">&#39;x is negative or zero!&#39;</span>)</span>
 <span id="cb20-7" class="hljs-ln-code"><a href="#cb20-7"></a>}}</span>
-<span id="cb20-8" class="hljs-ln-code"><a href="#cb20-8"></a><span class="fu">eval_function</span>(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb20-8" class="hljs-ln-code"><a href="#cb20-8"></a><span class="fu">is_this_no_positive</span>(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] &quot;x is positive!&quot;</code></pre>
 </div>
@@ -1440,14 +1440,14 @@ Bogdan G. Popescu
 <h1 data-id="quarto-animate-title">Functions Examples</h1>
 <p>This is how we use this function:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb22-1" class="hljs-ln-code"><a href="#cb22-1"></a>eval_function<span class="ot">&lt;-</span><span class="cf">function</span>(x) {</span>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb22-1" class="hljs-ln-code"><a href="#cb22-1"></a>is_this_no_positive<span class="ot">&lt;-</span><span class="cf">function</span>(x) {</span>
 <span id="cb22-2" class="hljs-ln-code"><a href="#cb22-2"></a>  <span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
 <span id="cb22-3" class="hljs-ln-code"><a href="#cb22-3"></a>    <span class="fu">return</span>(<span class="st">&#39;x is positive!&#39;</span>)</span>
 <span id="cb22-4" class="hljs-ln-code"><a href="#cb22-4"></a>    }</span>
 <span id="cb22-5" class="hljs-ln-code"><a href="#cb22-5"></a>  <span class="cf">else</span>{</span>
 <span id="cb22-6" class="hljs-ln-code"><a href="#cb22-6"></a>    <span class="fu">return</span>(<span class="st">&#39;x is negative or zero!&#39;</span>)</span>
 <span id="cb22-7" class="hljs-ln-code"><a href="#cb22-7"></a>}}</span>
-<span id="cb22-8" class="hljs-ln-code"><a href="#cb22-8"></a><span class="fu">eval_function</span>(<span class="sc">-</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb22-8" class="hljs-ln-code"><a href="#cb22-8"></a><span class="fu">is_this_no_positive</span>(<span class="sc">-</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>What is the output of this command?</p>
 </section>
@@ -1456,14 +1456,14 @@ Bogdan G. Popescu
 <h1 data-id="quarto-animate-title">Functions Examples</h1>
 <p>This is how we use this function:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb23-1" class="hljs-ln-code"><a href="#cb23-1"></a>eval_function<span class="ot">&lt;-</span><span class="cf">function</span>(x) {</span>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb23-1" class="hljs-ln-code"><a href="#cb23-1"></a>is_this_no_positive<span class="ot">&lt;-</span><span class="cf">function</span>(x) {</span>
 <span id="cb23-2" class="hljs-ln-code"><a href="#cb23-2"></a>  <span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
 <span id="cb23-3" class="hljs-ln-code"><a href="#cb23-3"></a>    <span class="fu">return</span>(<span class="st">&#39;x is positive!&#39;</span>)</span>
 <span id="cb23-4" class="hljs-ln-code"><a href="#cb23-4"></a>    }</span>
 <span id="cb23-5" class="hljs-ln-code"><a href="#cb23-5"></a>  <span class="cf">else</span>{</span>
 <span id="cb23-6" class="hljs-ln-code"><a href="#cb23-6"></a>    <span class="fu">return</span>(<span class="st">&#39;x is negative or zero!&#39;</span>)</span>
 <span id="cb23-7" class="hljs-ln-code"><a href="#cb23-7"></a>}}</span>
-<span id="cb23-8" class="hljs-ln-code"><a href="#cb23-8"></a><span class="fu">eval_function</span>(<span class="sc">-</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb23-8" class="hljs-ln-code"><a href="#cb23-8"></a><span class="fu">is_this_no_positive</span>(<span class="sc">-</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] &quot;x is negative or zero!&quot;</code></pre>
 </div>
@@ -1473,14 +1473,14 @@ Bogdan G. Popescu
 
 <section id="functions-examples-13" class="title-slide slide level1 center" data-auto-animate="true">
 <h1 data-id="quarto-animate-title">Functions Examples</h1>
-<p>Let us now create a third codition: <code>x=0</code></p>
+<p>Let us now create a third condition: <code>x=0</code></p>
 </section>
 
 <section id="functions-examples-14" class="title-slide slide level1 center" data-auto-animate="true" data-visibility="uncounted">
 <h1 data-id="quarto-animate-title">Functions Examples</h1>
 <p>Let us now create a third codition: <code>x==0</code></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb25-1" class="hljs-ln-code"><a href="#cb25-1"></a>eval_function<span class="ot">&lt;-</span><span class="cf">function</span>(x) {</span>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb25-1" class="hljs-ln-code"><a href="#cb25-1"></a>is_this_no_positive<span class="ot">&lt;-</span><span class="cf">function</span>(x) {</span>
 <span id="cb25-2" class="hljs-ln-code"><a href="#cb25-2"></a>  <span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
 <span id="cb25-3" class="hljs-ln-code"><a href="#cb25-3"></a>    <span class="fu">return</span>(<span class="st">&#39;x is positive!&#39;</span>)</span>
 <span id="cb25-4" class="hljs-ln-code"><a href="#cb25-4"></a>  }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1491,7 +1491,7 @@ Bogdan G. Popescu
 <h1 data-id="quarto-animate-title">Functions Examples</h1>
 <p>Let us now create a third codition: <code>x==0</code></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb26-1" class="hljs-ln-code"><a href="#cb26-1"></a>eval_function<span class="ot">&lt;-</span><span class="cf">function</span>(x) {</span>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb26-1" class="hljs-ln-code"><a href="#cb26-1"></a>is_this_no_positive<span class="ot">&lt;-</span><span class="cf">function</span>(x) {</span>
 <span id="cb26-2" class="hljs-ln-code"><a href="#cb26-2"></a>  <span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
 <span id="cb26-3" class="hljs-ln-code"><a href="#cb26-3"></a>    <span class="fu">return</span>(<span class="st">&#39;x is positive!&#39;</span>)</span>
 <span id="cb26-4" class="hljs-ln-code"><a href="#cb26-4"></a>  }</span>
@@ -1505,7 +1505,7 @@ Bogdan G. Popescu
 <h1 data-id="quarto-animate-title">Functions Examples</h1>
 <p>Let us now create a third codition: <code>x==0</code></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb27-1" class="hljs-ln-code"><a href="#cb27-1"></a>eval_function<span class="ot">&lt;-</span><span class="cf">function</span>(x) {</span>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb27-1" class="hljs-ln-code"><a href="#cb27-1"></a>is_this_no_positive<span class="ot">&lt;-</span><span class="cf">function</span>(x) {</span>
 <span id="cb27-2" class="hljs-ln-code"><a href="#cb27-2"></a>  <span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
 <span id="cb27-3" class="hljs-ln-code"><a href="#cb27-3"></a>    <span class="fu">return</span>(<span class="st">&#39;x is positive!&#39;</span>)</span>
 <span id="cb27-4" class="hljs-ln-code"><a href="#cb27-4"></a>  }</span>
@@ -1522,7 +1522,7 @@ Bogdan G. Popescu
 <h1 data-id="quarto-animate-title">Functions Examples</h1>
 <p>Let us now create a third codition: <code>x==0</code></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb28-1" class="hljs-ln-code"><a href="#cb28-1"></a>eval_function<span class="ot">&lt;-</span><span class="cf">function</span>(x) {</span>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb28-1" class="hljs-ln-code"><a href="#cb28-1"></a>is_this_no_positive<span class="ot">&lt;-</span><span class="cf">function</span>(x) {</span>
 <span id="cb28-2" class="hljs-ln-code"><a href="#cb28-2"></a>  <span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
 <span id="cb28-3" class="hljs-ln-code"><a href="#cb28-3"></a>    <span class="fu">return</span>(<span class="st">&#39;x is positive!&#39;</span>)</span>
 <span id="cb28-4" class="hljs-ln-code"><a href="#cb28-4"></a>  }</span>
@@ -1532,7 +1532,7 @@ Bogdan G. Popescu
 <span id="cb28-8" class="hljs-ln-code"><a href="#cb28-8"></a>  <span class="cf">else</span>{</span>
 <span id="cb28-9" class="hljs-ln-code"><a href="#cb28-9"></a>    <span class="fu">return</span>(<span class="st">&#39;x is negative or zero!&#39;</span>)</span>
 <span id="cb28-10" class="hljs-ln-code"><a href="#cb28-10"></a>}}</span>
-<span id="cb28-11" class="hljs-ln-code"><a href="#cb28-11"></a><span class="fu">eval_function</span>(<span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb28-11" class="hljs-ln-code"><a href="#cb28-11"></a><span class="fu">is_this_no_positive</span>(<span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] &quot;x is zero!&quot;</code></pre>
 </div>
