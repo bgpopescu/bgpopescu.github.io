@@ -3597,22 +3597,21 @@ Attaching package: &#39;gridExtra&#39;</code></pre>
 </div>
 <p>What is the year with the second lowest life expectancy for the US?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="co">#We need to save the second highest year with a low life expectancy</span></span>
-<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>df_us_after1900[<span class="fu">order</span>(df_us_after1900<span class="sc">$</span>life_expectancy, <span class="fu">rev</span>(df_us_after1900<span class="sc">$</span>life_expectancy), <span class="at">decreasing =</span> <span class="cn">FALSE</span>), ][<span class="dv">2</span>,<span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 1901</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>second_lowest<span class="ot">&lt;-</span>df_us_after1900[<span class="fu">order</span>(df_us_after1900<span class="sc">$</span>life_expectancy, <span class="fu">rev</span>(df_us_after1900<span class="sc">$</span>life_expectancy), <span class="at">decreasing =</span> <span class="cn">FALSE</span>), ][<span class="dv">2</span>,<span class="dv">3</span>]</span>
-<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a>second_lowest</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Arranging and creating a new dataframe</span></span>
+<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df_us_after1900 <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(life_expectancy)</span>
+<span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a><span class="co">#Selecting the second lowest</span></span>
+<span id="cb65-4"><a href="#cb65-4" aria-hidden="true" tabindex="-1"></a>second_highest_life_expectancy <span class="ot">&lt;-</span> df<span class="sc">$</span>life_expectancy[<span class="dv">2</span>]</span>
+<span id="cb65-5"><a href="#cb65-5" aria-hidden="true" tabindex="-1"></a><span class="co">#Selecting the year with the second lowest</span></span>
+<span id="cb65-6"><a href="#cb65-6" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>Year[df<span class="sc">$</span>life_expectancy<span class="sc">==</span>second_highest_life_expectancy]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1901</code></pre>
 </div>
 </div>
 <p>What is the year with the lowest life expectancy for the UK?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Creating a new df with the UK</span></span>
-<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a>df_uk_after1900<span class="ot">&lt;-</span><span class="fu">subset</span>(df_us_uk_after1900, Entity<span class="sc">==</span><span class="st">&quot;United Kingdom&quot;</span>)</span>
-<span id="cb69-3"><a href="#cb69-3" aria-hidden="true" tabindex="-1"></a>df_uk_after1900<span class="sc">$</span>Year[df_uk_after1900<span class="sc">$</span>life_expectancy<span class="sc">==</span><span class="fu">min</span>(df_uk_after1900<span class="sc">$</span>life_expectancy)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Creating a new df with the UK</span></span>
+<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a>df_uk_after1900<span class="ot">&lt;-</span><span class="fu">subset</span>(df_us_uk_after1900, Entity<span class="sc">==</span><span class="st">&quot;United Kingdom&quot;</span>)</span>
+<span id="cb67-3"><a href="#cb67-3" aria-hidden="true" tabindex="-1"></a>df_uk_after1900<span class="sc">$</span>Year[df_uk_after1900<span class="sc">$</span>life_expectancy<span class="sc">==</span><span class="fu">min</span>(df_uk_after1900<span class="sc">$</span>life_expectancy)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1901</code></pre>
 </div>
