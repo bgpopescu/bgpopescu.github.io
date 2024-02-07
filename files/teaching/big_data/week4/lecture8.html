@@ -1,0 +1,2253 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="lecture8_files/libs/clipboard/clipboard.min.js"></script>
+<script src="lecture8_files/libs/quarto-html/tabby.min.js"></script>
+<script src="lecture8_files/libs/quarto-html/popper.min.js"></script>
+<script src="lecture8_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="lecture8_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="lecture8_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="lecture8_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="lecture8_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.3.450">
+
+  <meta name="author" content="Bogdan G. Popescu">
+  <title>L8: Data Visualization 2</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="lecture8_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="lecture8_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="lecture8_files/libs/revealjs/dist/theme/quarto.css">
+  <link href="lecture8_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="lecture8_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="lecture8_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="lecture8_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+
+  .callout {
+    margin-top: 1em;
+    margin-bottom: 1em;  
+    border-radius: .25rem;
+  }
+
+  .callout.callout-style-simple { 
+    padding: 0em 0.5em;
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+    display: flex;
+  }
+
+  .callout.callout-style-default {
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+  }
+
+  .callout .callout-body-container {
+    flex-grow: 1;
+  }
+
+  .callout.callout-style-simple .callout-body {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-style-default .callout-body {
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-titled.callout-style-simple .callout-body {
+    margin-top: 0.2em;
+  }
+
+  .callout:not(.callout-titled) .callout-body {
+      display: flex;
+  }
+
+  .callout:not(.no-icon).callout-titled.callout-style-simple .callout-content {
+    padding-left: 1.6em;
+  }
+
+  .callout.callout-titled .callout-header {
+    padding-top: 0.2em;
+    margin-bottom: -0.2em;
+  }
+
+  .callout.callout-titled .callout-title  p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+    
+  .callout.callout-titled.callout-style-simple .callout-content  p {
+    margin-top: 0;
+  }
+
+  .callout.callout-titled.callout-style-default .callout-content  p {
+    margin-top: 0.7em;
+  }
+
+  .callout.callout-style-simple div.callout-title {
+    border-bottom: none;
+    font-size: .9rem;
+    font-weight: 600;
+    opacity: 75%;
+  }
+
+  .callout.callout-style-default  div.callout-title {
+    border-bottom: none;
+    font-weight: 600;
+    opacity: 85%;
+    font-size: 0.9rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-default div.callout-content {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-simple .callout-icon::before {
+    height: 1rem;
+    width: 1rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+  }
+
+  .callout.callout-style-default .callout-icon::before {
+    height: 0.9rem;
+    width: 0.9rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 0.9rem 0.9rem;
+  }
+
+  .callout-title {
+    display: flex
+  }
+    
+  .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  .callout.no-icon::before {
+    display: none !important;
+  }
+
+  .callout.callout-titled .callout-body > .callout-content > :last-child {
+    margin-bottom: 0.5rem;
+  }
+
+  .callout.callout-titled .callout-icon::before {
+    margin-top: .5rem;
+    padding-right: .5rem;
+  }
+
+  .callout:not(.callout-titled) .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  /* Callout Types */
+
+  div.callout-note {
+    border-left-color: #4582ec !important;
+  }
+
+  div.callout-note .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEU0lEQVRYCcVXTWhcVRQ+586kSUMMxkyaElstCto2SIhitS5Ek8xUKV2poatCcVHtUlFQk8mbaaziwpWgglJwVaquitBOfhQXFlqlzSJpFSpIYyXNjBNiTCck7x2/8/LeNDOZxDuEkgOXe++553zfefee+/OYLOXFk3+1LLrRdiO81yNqZ6K9cG0P3MeFaMIQjXssE8Z1JzLO9ls20MBZX7oG8w9GxB0goaPrW5aNMp1yOZIa7Wv6o2ykpLtmAPs/vrG14Z+6d4jpbSKuhdcSyq9wGMPXjonwmESXrriLzFGOdDBLB8Y6MNYBu0dRokSygMA/mrun8MGFN3behm6VVAwg4WR3i6FvYK1T7MHo9BK7ydH+1uurECoouk5MPRyVSBrBHMYwVobG2aOXM07sWrn5qgB60rc6mcwIDJtQrnrEr44kmy+UO9r0u9O5/YbkS9juQckLed3DyW2XV/qWBBB3ptvI8EUY3I9p/67OW+g967TNr3Sotn3IuVlfMLVnsBwH4fsnebJvyGm5GeIUA3jljERmrv49SizPYuq+z7c2H/jlGC+Ghhupn/hcapqmcudB9jwJ/3jvnvu6vu5lVzF1fXyZuZZ7U8nRmVzytvT+H3kilYvH09mLWrQdwFSsFEsxFVs5fK7A0g8gMZjbif4ACpKbjv7gNGaD8bUrlk8x+KRflttr22JEMRUbTUwwDQScyzPgedQHZT0xnx7ujw2jfVfExwYHwOsDTjLdJ2ebmeQIlJ7neo41s/DrsL3kl+W2lWvAga0tR3zueGr6GL78M3ifH0rGXrBC2aAR8uYcIA5gwV8zIE8onoh8u0Fca/ciF7j1uOzEnqcIm59sEXoGc0+z6+H45V1CvAvHcD7THztu669cnp+L0okAeIc6zjbM/24LgGM1gZk7jnRu1aQWoU9sfUOuhrmtaPIO3YY1KLLWZaEO5TKUbMY5zx8W9UJ6elpLwKXbsaZ4EFl7B4bMtDv0iRipKoDQT2sNQI9b1utXFdYisi+wzZ/ri/1m7QfDgEuvgUUEIJPq3DhX/5DWNqIXDOweC2wvIR90Oq3lDpdMIgD2r0dXvGdsEW5H6x6HLRJYU7C69VefO1x8Gde1ZFSJLfWS1jbCnhtOPxmpfv2LXOA2Xk2tvnwKKPFuZ/oRmwBwqRQDcKNeVQkYcOjtWVBuM/JuYw5b6isojIkYxyYAFn5K7ZBF10fea52y8QltAg6jnMqNHFBmGkQ1j+U43HMi2xMar1Nv0zGsf1s8nUsmUtPOOrbFIR8bHFDMB5zL13Gmr/kGlCkUzedTzzmzsaJXhYawnA3UmARpiYj5ooJZiUoxFRtK3X6pgNPv+IZVPcnwbOl6f+aBaO1CNvPW9n9LmCp01nuSaTRF2YxHqZ8DYQT6WsXT+RD6eUztwYLZ8rM+rcPxamv1VQzFUkzFXvkiVrySGQgJNvXHJAxiU3/NwiC03rSf05VBaPtu/Z7/B8Yn/w7eguloAAAAAElFTkSuQmCC');
+  }
+
+  div.callout-note.callout-style-default .callout-title {
+    background-color: #dae6fb
+  }
+
+  div.callout-important {
+    border-left-color: #d9534f !important;
+  }
+
+  div.callout-important .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEKklEQVRYCcVXTWhcVRS+575MJym48A+hSRFr00ySRQhURRfd2HYjk2SSTokuBCkU2o0LoSKKraKIBTcuFCoidGFD08nkBzdREbpQ1EDNIv8qSGMFUboImMSZd4/f9zJv8ibJMC8xJQfO3HPPPef7zrvvvnvviIkpC9nsw0UttFunbUhpFzFtarSd6WJkStVMw5xyVqYTvkwfzuf/5FgtkVoB0729j1rjXwThS7Vio+Mo6DNnvLfahoZ+i/o32lULuJ3NNiz7q6+pyAUkJaFF6JwaM2lUJlV0MlnQn5aTRbEu0SEqHUa0A4AdiGuB1kFXRfVyg5d87+Dg4DL6m2TLAub60ilj7A1Ec4odSAc8X95sHh7+ZRPCFo6Fnp7HfU/fBng/hi10CjCnWnJjsxvDNxWw0NfV6Rv5GgP3I3jGWXumdTD/3cbEOP2ZbOZp69yniG3FQ9z1jD7bnBu9Fc2tKGC2q+uAJOQHBDRiZX1x36o7fWBs7J9ownbtO+n0/qWkvW7UPIfc37WgT6ZGR++EOJyeQDSb9UB+DZ1G6DdLDzyS+b/kBCYGsYgJbSQHuThGKRcw5xdeQf8YdNHsc6ePXrlSYMBuSIAFTGAtQo+VuALo4BX83N190NWZWbynBjhOHsmNfFWLeL6v+ynsA58zDvvAC8j5PkbOcXCMg2PZFk3q8MjI7WAG/Dp9AwP7jdGBOOQkAvlFUB+irtm16I1Zw9YBcpGTGXYmk3kQIC/Cds55l+iMI3jqhjAuaoe+am2Jw5GT3Nbz3CkE12NavmzN5+erJW7046n/CH1RO/RVa8lBLozXk9uqykkGAyRXLWlLv5jyp4RFsG5vGVzpDLnIjTWgnRy2Rr+tDKvRc7Y8AyZq10jj8DqXdnIRNtFZb+t/ZRtXcDiVnzpqx8mPcDWxgARUqx0W1QB9MeUZiNrV4qP+Ehc+BpNgATsTX8ozYKL2NtFYAHc84fG7ndxUPr+AR/iQSns7uSUufAymwDOb2+NjK27lEFocm/EE2WpyIy/Hi66MWuMKJn8RvxIcj87IM5Vh9663ziW36kR0HNenXuxmfaD8JC7tfKbrhFr7LiZCrMjrzTeGx+PmkosrkNzW94ObzwocJ7A1HokLolY+AvkTiD/q1H0cN48c5EL8Crkttsa/AXQVDmutfyku0E7jShx49XqV3MFK8IryDhYVbj7Sj2P2eBxwcXoe8T8idsKKPRcnZw1b+slFTubwUwhktrfnAt7J++jwQtLZcm3sr9LQrjRzz6cfMv9aLvgmnAGvpoaGLxM4mAEaLV7iAzQ3oU0IvD5x9ix3yF2RAAuYAOO2f7PEFWCXZ4C9Pb2UsgDeVnFSpbFK7/IWu7TPTvBqzbGdCHOJQSxiEjt6IyZmxQyEJHv6xyQsYk//moVFsN2zP6fRImjfq7/n/wFDguUQFNEwugAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-important.callout-style-default .callout-title {
+    background-color: #f7dddc
+  }
+
+  div.callout-warning {
+    border-left-color: #f0ad4e !important;
+  }
+
+  div.callout-warning .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAETklEQVRYCeVWW2gcVRg+58yaTUnizqbipZeX4uWhBEniBaoUX1Ioze52t7sRq6APio9V9MEaoWlVsFasRq0gltaAPuxms8lu0gcviE/FFOstVbSIxgcv6SU7EZqmdc7v9+9mJtNks51NTUH84ed889/PP+cmxP+d5FIbMJmNbpREu4WUkiTtCicKny0l1pIKmBzovF2S+hIJHX8iEu3hZJ5lNZGqyRrGSIQpq15AzF28jgpeY6yk6GVdrfFqdrD6Iw+QlB8g0YS2g7dyQmXM/IDhBhT0UCiRf59lfqmmDvzRt6kByV/m4JjtzuaujMUM2c5Z2d6JdKrRb3K2q6mA+oYVz8JnDdKPmmNthzkAk/lN63sYPgevrguc72aZX/L9C6x09GYyxBgCX4NlvyGUHOKELlm5rXeR1kchuChJt4SSwyddZRXgvwMGvYo4QSlk3/zkHD8UHxwVJA6zjZZqP8v8kK8OWLnIZtLyCAJagYC4rTGW/9Pqj92N/c+LUaAj27movwbi19tk/whRCIE7Q9vyI6yvRpftAKVTdUjOW40X3h5OXsKCdmFcx0xlLJoSuQngnrJe7Kcjm4OMq9FlC7CMmScQANuNvjfP3PjGXDBaUQmbp296S5L4DrpbrHN1T87ZVEZVCzg1FF0Ft+dKrlLukI+/c9ENo+TvlTDbYFvuKPtQ9+l052rXrgKoWkDAFnvh0wTOmYn8R5f4k/jN/fZiCM1tQx9jQQ4ANhqG4hiL0qIFTGViG9DKB7GYzgubnpofgYRwO+DFjh0Zin2m4b/97EDkXkc+f6xYAPX0KK2I/7fUQuwzuwo/L3AkcjugPNixC8cHf0FyPjWlItmLxWw4Ou9YsQCr5fijMGoD/zpdRy95HRysyXA74MWOnscpO4j2y3HAVisw85hX5+AFBRSHt4ShfLFkIMXTqyKFc46xdzQM6XbAi702a7sy04J0+feReMFKp5q9esYLCqAZYw/k14E/xcLLsFElaornTuJB0svMuJINy8xkIYuL+xPAlWRceH6+HX7THJ0djLUom46zREu7tTkxwmf/FdOZ/sh6Q8qvEAiHpm4PJ4a/doJe0gH1t+aHRgCzOvBvJedEK5OFE5jpm4AGP2a8Dxe3gGJ/pAutug9Gp6he92CsSsWBaEcxGx0FHytmIpuqGkOpldqNYQK8cSoXvd+xLxXADw0kf6UkJNFtdo5MOgaLjiQOQHcn+A6h5NuL2s0qsC2LOM75PcF3yr5STuBSAcGG+meA14K/CI21HcS4LBT6tv0QAh8Dr5l93AhZzG5ZJ4VxAqdZUEl9z7WJ4aN+svMvwHHL21UKTd1mqvChH7/Za5xzXBBKrUcB0TQ+Ulgkfbi/H/YT5EptrGzsEK7tR1B7ln9BBwckYfMiuSqklSznIuoIIOM42MQO+QnduCoFCI0bpkzjCjddHPN/F+2Yu+sd9bKNpVwHhbS3LluK/0zgfwD0xYI5dXuzlQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-warning.callout-style-default .callout-title {
+    background-color: #fcefdc
+  }
+
+  div.callout-tip {
+    border-left-color: #02b875 !important;
+  }
+
+  div.callout-tip .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAADr0lEQVRYCe1XTWgTQRj9ZjZV8a9SPIkKgj8I1bMHsUWrqYLVg4Ue6v9BwZOxSYsIerFao7UiUryIqJcqgtpimhbBXoSCVxUFe9CTiogUrUp2Pt+3aUI2u5vdNh4dmMzOzHvvezuz8xNFM0mjnbXaNu1MvFWRXkXEyE6aYOYJpdW4IXuA4r0fo8qqSMDBU0v1HJUgVieAXxzCsdE/YJTdFcVIZQNMyhruOMJKXYFoLfIfIvVIMWdsrd+Rpd86ZmyzzjJmLStqRn0v8lzkb4rVIXvnpScOJuAn2ACC65FkPzEdEy4TPWRLJ2h7z4cArXzzaOdKlbOvKKX25Wl00jSnrwVxAg3o4dRxhO13RBSdNvH0xSARv3adTXbBdTf64IWO2vH0LT+cv4GR1DJt+DUItaQogeBX/chhbTBxEiZ6gftlDNXTrvT7co4ub5A6gp9HIcHvzTa46OS5fBeP87Qm0fQkr4FsYgVQ7Qg+ZayaDg9jhg1GkWj8RG6lkeSacrrHgDaxdoBiZPg+NXV/KifMuB6//JmYH4CntVEHy/keA6x4h4CU5oFy8GzrBS18cLJMXcljAKB6INjWsRcuZBWVaS3GDrqB7rdapVIeA+isQ57Eev9eCqzqOa81CY05VLd6SamW2wA2H3SiTbnbSxmzfp7WtKZkqy4mdyAlGx7ennghYf8voqp9cLSgKdqNfa6RdRsAAkPwRuJZNbpByn+RrJi1RXTwdi8RQF6ymDwGMAtZ6TVE+4uoKh+MYkcLsT0Hk8eAienbiGdjJHZTpmNjlbFJNKDVAp2fJlYju6IreQxQ08UJDNYdoLSl6AadO+fFuCQqVMB1NJwPm69T04Wv5WhfcWyfXQB+wXRs1pt+nCknRa0LVzSA/2B+a9+zQJadb7IyyV24YAxKp2Jqs3emZTuNnKxsah+uabKbMk7CbTgJx/zIgQYErIeTKRQ9yD9wxVof5YolPHqaWo7TD6tJlh7jQnK5z2n3+fGdggIOx2kaa2YI9QWarc5Ce1ipNWMKeSG4DysFF52KBmTNMmn5HqCFkwy34rDg05gDwgH3bBi+sgFhN/e8QvRn8kbamCOhgrZ9GJhFDgfcMHzFb6BAtjKpFhzTjwv1KCVuxHvCbsSiEz4CANnj84cwHdFXAbAOJ4LTSAawGWFn5tDhLMYz6nWeU2wJfIhmIJBefcd/A5FWQWGgrWzyORZ3Q6HuV+Jf0Bj+BTX69fm1zWgK7By1YTXchFDORywnfQ7GpzOo6S+qECrsx2ifVQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-tip.callout-style-default .callout-title {
+    background-color: #ccf1e3
+  }
+
+  div.callout-caution {
+    border-left-color: #fd7e14 !important;
+  }
+
+  div.callout-caution .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAACV0lEQVRYCdVWzWoUQRCuqp2ICBLJXgITZL1EfQDBW/bkzUMUD7klD+ATSHBEfAIfQO+iXsWDxJsHL96EHAwhgzlkg8nBg25XWb0zIb0zs9muYYWkoKeru+vn664fBqElyZNuyh167NXJ8Ut8McjbmEraKHkd7uAnAFku+VWdb3reSmRV8PKSLfZ0Gjn3a6Xlcq9YGb6tADjn+lUfTXtVmaZ1KwBIvFI11rRXlWlatwIAAv2asaa9mlB9wwygiDX26qaw1yYPzFXg2N1GgG0FMF8Oj+VIx7E/03lHx8UhvYyNZLN7BwSPgekXXLribw7w5/c8EF+DBK5idvDVYtEEwMeYefjjLAdEyQ3M9nfOkgnPTEkYU+sxMq0BxNR6jExrAI31H1rzvLEfRIdgcv1XEdj6QTQAS2wtstEALLG1yEZ3QhH6oDX7ExBSFEkFINXH98NTrme5IOaaA7kIfiu2L8A3qhH9zRbukdCqdsA98TdElyeMe5BI8Rs2xHRIsoTSSVFfCFCWGPn9XHb4cdobRIWABNf0add9jakDjQJpJ1bTXOJXnnRXHRf+dNL1ZV1MBRCXhMbaHqGI1JkKIL7+i8uffuP6wVQAzO7+qVEbF6NbS0LJureYcWXUUhH66nLR5rYmva+2tjRFtojkM2aD76HEGAD3tPtKM309FJg5j/K682ywcWJ3PASCcycH/22u+Bh7Aa0ehM2Fu4z0SAE81HF9RkB21c5bEn4Dzw+/qNOyXr3DCTQDMBOdhi4nAgiFDGCinIa2owCEChUwD8qzd03PG+qdW/4fDzjUMcE1ZpIAAAAASUVORK5CYII=');
+  }
+
+  div.callout-caution.callout-style-default .callout-title {
+    background-color: #ffe5d0
+  }
+
+  </style>
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">L8: Data Visualization 2</h1>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Bogdan G. Popescu 
+</div>
+<div class="quarto-title-author-email">
+<a href="mailto:bogdan.popescu@johncabot.edu">bogdan.popescu@johncabot.edu</a>
+</div>
+        <p class="quarto-title-affiliation">
+            John Cabot University
+          </p>
+    </div>
+</div>
+
+</section>
+<section id="intro" class="title-slide slide level1 center">
+<h1>Intro</h1>
+<p>Previously, we covered quite some ground:</p>
+<div class="fragment">
+<ul>
+<li>importance of <strong>color choices</strong></li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>mapping data to aesthetics: points</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>facets, coordinates, labels, themes</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>theme option manipulation</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>using histograms, violin, boxplot</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>creating time animations</li>
+</ul>
+</div>
+</section>
+
+<section id="preparing-the-data" class="title-slide slide level1 center">
+<h1>Preparing the Data</h1>
+<div class="fragment">
+<p>Before we use ggplot, our data has to be tidy</p>
+</div>
+<div class="fragment">
+<p>This means:</p>
+</div>
+<div class="fragment">
+<ul>
+<li>Each variable is a column</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Each observation has its own row</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Each value has its own cell</li>
+</ul>
+</div>
+<div class="fragment">
+<p><img data-src="figures_lecture8/tidy_data.png" style="width:90.0%"></p>
+</div>
+</section>
+
+<section id="plotting-quantities" class="title-slide slide level1 center">
+<h1>Plotting Quantities</h1>
+<p>People are better at seeing height differences than angle and area differences</p>
+<div class="columns">
+<div class="column" style="width:49%;">
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="lecture8_files/figure-revealjs/unnamed-chunk-2-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:49%;">
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="lecture8_files/figure-revealjs/unnamed-chunk-3-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="plotting-quantities-1" class="title-slide slide level1 center" data-visibility="uncounted">
+<h1>Plotting Quantities</h1>
+<p>People are better at seeing height differences than angle and area differences.</p>
+<p>This how to obtain the same plots.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co">#Step1: Loading the library</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-3"><a href="#cb1-3"></a></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="co">#Step2: Create a simple dataframe</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb1-6"><a href="#cb1-6"></a>  <span class="at">name=</span><span class="fu">c</span>(<span class="st">"A"</span>,<span class="st">"B"</span>,<span class="st">"C"</span>,<span class="st">"D"</span>,<span class="st">"E"</span>) ,  </span>
+<span id="cb1-7"><a href="#cb1-7"></a>  <span class="at">value=</span><span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">12</span>,<span class="dv">5</span>,<span class="dv">18</span>,<span class="dv">45</span>)</span>
+<span id="cb1-8"><a href="#cb1-8"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+
+<section id="plotting-quantities-2" class="title-slide slide level1 center" data-visibility="uncounted">
+<h1>Plotting Quantities</h1>
+<p>People are better at seeing height differences than angle and area differences</p>
+<p>This how to obtain the same plots.</p>
+<div class="columns">
+<div class="column" style="width:49%;">
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> <span class="st">""</span>, </span>
+<span id="cb2-2"><a href="#cb2-2"></a>                 <span class="at">y =</span> value, </span>
+<span id="cb2-3"><a href="#cb2-3"></a>                 <span class="at">fill =</span> name)) <span class="sc">+</span></span>
+<span id="cb2-4"><a href="#cb2-4"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb2-5"><a href="#cb2-5"></a>  <span class="fu">coord_polar</span>(<span class="at">theta =</span> <span class="st">"y"</span>) <span class="sc">+</span></span>
+<span id="cb2-6"><a href="#cb2-6"></a>  <span class="fu">labs</span>(<span class="at">fill =</span> <span class="st">"Individual"</span>) <span class="sc">+</span></span>
+<span id="cb2-7"><a href="#cb2-7"></a>  <span class="fu">theme_void</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div><div class="column" style="width:49%;">
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> name, </span>
+<span id="cb3-2"><a href="#cb3-2"></a>                 <span class="at">y =</span> value, </span>
+<span id="cb3-3"><a href="#cb3-3"></a>                 <span class="at">fill =</span> name)) <span class="sc">+</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb3-5"><a href="#cb3-5"></a>  <span class="fu">labs</span>(<span class="at">fill =</span> <span class="st">"Individual"</span>) <span class="sc">+</span></span>
+<span id="cb3-6"><a href="#cb3-6"></a>  <span class="fu">theme_void</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="advice-for-barplots" class="title-slide slide level1 center">
+<h1>Advice for Barplots</h1>
+<div class="fragment">
+<ul>
+<li>Always start at zero to be transparent about your data</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>It may sometimes be more informative to visualize data using other tools than barplots</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Let us download again: <a href="https://www.dropbox.com/scl/fo/00mczry8jfk6x12b7ih5j/h?rlkey=xu89lzlhscn9trnep9ezrbd4e&amp;dl=0" target="_blank">Life expectancy and Urbanization Data</a></li>
+</ul>
+</div>
+</section>
+
+<section id="advice-for-barplots-1" class="title-slide slide level1 center" data-visibility="uncounted">
+<h1>Advice for Barplots</h1>
+<p>For example, let’s say we want to compare life expectancy in Latin America with EU</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4" data-code-line-numbers="1-3|4-6|7-8|9-10|11-12|13-14|15-16|17-18|19-21|22-23|24-52|54-76|78-81"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co">#Setting path</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="fu">library</span>(<span class="st">"dplyr"</span>)</span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="fu">setwd</span>(<span class="st">"/Users/bgpopescu/Library/CloudStorage/Dropbox/john_cabot/teaching/big_data/week4/data/"</span>)</span>
+<span id="cb4-4"><a href="#cb4-4"></a><span class="co">#Step1: Loading the data</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a>life_expectancy <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">'./life-expectancy.csv'</span>)</span>
+<span id="cb4-6"><a href="#cb4-6"></a>urbanization <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">'./share-of-population-urban.csv'</span>)</span>
+<span id="cb4-7"><a href="#cb4-7"></a><span class="co">#Step2: Removing continents</span></span>
+<span id="cb4-8"><a href="#cb4-8"></a>life_expectancy2<span class="ot">&lt;-</span><span class="fu">subset</span>(life_expectancy, Code<span class="sc">!=</span><span class="st">""</span>)</span>
+<span id="cb4-9"><a href="#cb4-9"></a><span class="co">#Step3: Changing variable name</span></span>
+<span id="cb4-10"><a href="#cb4-10"></a><span class="fu">names</span>(life_expectancy2)[<span class="fu">names</span>(life_expectancy2)<span class="sc">==</span><span class="st">"Life.expectancy.at.birth..historical."</span>]<span class="ot">&lt;-</span><span class="st">"life_exp"</span></span>
+<span id="cb4-11"><a href="#cb4-11"></a><span class="co">#Step4: Changing variable name</span></span>
+<span id="cb4-12"><a href="#cb4-12"></a>life_expectancy3<span class="ot">&lt;-</span><span class="fu">subset</span>(life_expectancy2, <span class="at">selec=</span><span class="fu">c</span>(<span class="st">"Entity"</span>, <span class="st">"Code"</span>, <span class="st">"Year"</span>, <span class="st">"life_exp"</span>))</span>
+<span id="cb4-13"><a href="#cb4-13"></a><span class="co">#Step5: Removing continents</span></span>
+<span id="cb4-14"><a href="#cb4-14"></a>urbanization2<span class="ot">&lt;-</span><span class="fu">subset</span>(urbanization, Code<span class="sc">!=</span><span class="st">""</span>)</span>
+<span id="cb4-15"><a href="#cb4-15"></a><span class="co">#Step6: Changing variable name</span></span>
+<span id="cb4-16"><a href="#cb4-16"></a><span class="fu">names</span>(urbanization2)[<span class="fu">names</span>(urbanization2)<span class="sc">==</span><span class="st">"Urban.population....of.total.population."</span>]<span class="ot">&lt;-</span><span class="st">"urb"</span></span>
+<span id="cb4-17"><a href="#cb4-17"></a><span class="co">#Step7: Keeping only relevant vars</span></span>
+<span id="cb4-18"><a href="#cb4-18"></a>urbanization3<span class="ot">&lt;-</span><span class="fu">subset</span>(urbanization2, <span class="at">selec=</span><span class="fu">c</span>(<span class="st">"Code"</span>, <span class="st">"Year"</span>, <span class="st">"urb"</span>))</span>
+<span id="cb4-19"><a href="#cb4-19"></a><span class="co">#Step8: Performing a merge</span></span>
+<span id="cb4-20"><a href="#cb4-20"></a>final<span class="ot">&lt;-</span><span class="fu">left_join</span>(life_expectancy3, urbanization3, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"Code"</span><span class="ot">=</span><span class="st">"Code"</span>,</span>
+<span id="cb4-21"><a href="#cb4-21"></a>                                                         <span class="st">"Year"</span><span class="ot">=</span><span class="st">"Year"</span>))</span>
+<span id="cb4-22"><a href="#cb4-22"></a><span class="co">#Step9: Removing NAs</span></span>
+<span id="cb4-23"><a href="#cb4-23"></a>final2<span class="ot">&lt;-</span>final[<span class="fu">complete.cases</span>(final), ]</span>
+<span id="cb4-24"><a href="#cb4-24"></a><span class="co">#Step10: Defining continents</span></span>
+<span id="cb4-25"><a href="#cb4-25"></a><span class="co">#EU Countries</span></span>
+<span id="cb4-26"><a href="#cb4-26"></a>eu_countries<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">"Austria"</span>,</span>
+<span id="cb4-27"><a href="#cb4-27"></a>                <span class="st">"Belgium"</span>,</span>
+<span id="cb4-28"><a href="#cb4-28"></a>                <span class="st">"Bulgaria"</span>,</span>
+<span id="cb4-29"><a href="#cb4-29"></a>                <span class="st">"Croatia"</span>,</span>
+<span id="cb4-30"><a href="#cb4-30"></a>                <span class="st">"Cyprus"</span>,</span>
+<span id="cb4-31"><a href="#cb4-31"></a>                <span class="st">"Czechia"</span>,</span>
+<span id="cb4-32"><a href="#cb4-32"></a>                <span class="st">"Denmark"</span>,</span>
+<span id="cb4-33"><a href="#cb4-33"></a>                <span class="st">"Estonia"</span>,</span>
+<span id="cb4-34"><a href="#cb4-34"></a>                <span class="st">"Finland"</span>,</span>
+<span id="cb4-35"><a href="#cb4-35"></a>                <span class="st">"France"</span>,</span>
+<span id="cb4-36"><a href="#cb4-36"></a>                <span class="st">"Germany"</span>,</span>
+<span id="cb4-37"><a href="#cb4-37"></a>                <span class="st">"Greece"</span>,</span>
+<span id="cb4-38"><a href="#cb4-38"></a>                <span class="st">"Hungary"</span>,</span>
+<span id="cb4-39"><a href="#cb4-39"></a>                <span class="st">"Ireland"</span>,</span>
+<span id="cb4-40"><a href="#cb4-40"></a>                <span class="st">"Italy"</span>,</span>
+<span id="cb4-41"><a href="#cb4-41"></a>                <span class="st">"Latvia"</span>,</span>
+<span id="cb4-42"><a href="#cb4-42"></a>                <span class="st">"Lithuania"</span>,</span>
+<span id="cb4-43"><a href="#cb4-43"></a>                <span class="st">"Luxembourg"</span>,</span>
+<span id="cb4-44"><a href="#cb4-44"></a>                <span class="st">"Malta"</span>,</span>
+<span id="cb4-45"><a href="#cb4-45"></a>                <span class="st">"Netherlands"</span>,</span>
+<span id="cb4-46"><a href="#cb4-46"></a>                <span class="st">"Poland"</span>,</span>
+<span id="cb4-47"><a href="#cb4-47"></a>                <span class="st">"Portugal"</span>,</span>
+<span id="cb4-48"><a href="#cb4-48"></a>                <span class="st">"Romania"</span>,</span>
+<span id="cb4-49"><a href="#cb4-49"></a>                <span class="st">"Slovakia"</span>,</span>
+<span id="cb4-50"><a href="#cb4-50"></a>                <span class="st">"Slovenia"</span>,</span>
+<span id="cb4-51"><a href="#cb4-51"></a>                <span class="st">"Spain"</span>,</span>
+<span id="cb4-52"><a href="#cb4-52"></a>                <span class="st">"Sweden"</span>)</span>
+<span id="cb4-53"><a href="#cb4-53"></a></span>
+<span id="cb4-54"><a href="#cb4-54"></a>latam_countries<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">"Belize"</span>,</span>
+<span id="cb4-55"><a href="#cb4-55"></a>                   <span class="st">"Costa Rica"</span>,</span>
+<span id="cb4-56"><a href="#cb4-56"></a>                   <span class="st">"El Salvador"</span>,</span>
+<span id="cb4-57"><a href="#cb4-57"></a>                   <span class="st">"Guatemala"</span>,</span>
+<span id="cb4-58"><a href="#cb4-58"></a>                   <span class="st">"Honduras"</span>,</span>
+<span id="cb4-59"><a href="#cb4-59"></a>                   <span class="st">"Mexico"</span>,</span>
+<span id="cb4-60"><a href="#cb4-60"></a>                   <span class="st">"Nicaragua"</span>,</span>
+<span id="cb4-61"><a href="#cb4-61"></a>                   <span class="st">"Panama"</span>,</span>
+<span id="cb4-62"><a href="#cb4-62"></a>                   <span class="st">"Argentina"</span>,</span>
+<span id="cb4-63"><a href="#cb4-63"></a>                   <span class="st">"Bolivia"</span>,</span>
+<span id="cb4-64"><a href="#cb4-64"></a>                   <span class="st">"Brazil"</span>,</span>
+<span id="cb4-65"><a href="#cb4-65"></a>                   <span class="st">"Chile"</span>,</span>
+<span id="cb4-66"><a href="#cb4-66"></a>                   <span class="st">"Colombia"</span>,</span>
+<span id="cb4-67"><a href="#cb4-67"></a>                   <span class="st">"Ecuador"</span>,</span>
+<span id="cb4-68"><a href="#cb4-68"></a>                   <span class="st">"Guyana"</span>,</span>
+<span id="cb4-69"><a href="#cb4-69"></a>                   <span class="st">"Paraguay"</span>,</span>
+<span id="cb4-70"><a href="#cb4-70"></a>                   <span class="st">"Peru"</span>,</span>
+<span id="cb4-71"><a href="#cb4-71"></a>                   <span class="st">"Suriname"</span>,</span>
+<span id="cb4-72"><a href="#cb4-72"></a>                   <span class="st">"Uruguay"</span>,</span>
+<span id="cb4-73"><a href="#cb4-73"></a>                   <span class="st">"Venezuela"</span>,</span>
+<span id="cb4-74"><a href="#cb4-74"></a>                   <span class="st">"Cuba"</span>,</span>
+<span id="cb4-75"><a href="#cb4-75"></a>                   <span class="st">"Dominican Republic"</span>,</span>
+<span id="cb4-76"><a href="#cb4-76"></a>                   <span class="st">"Haiti"</span>)</span>
+<span id="cb4-77"><a href="#cb4-77"></a></span>
+<span id="cb4-78"><a href="#cb4-78"></a><span class="co">#Step11: Labeling continents </span></span>
+<span id="cb4-79"><a href="#cb4-79"></a>final2<span class="sc">$</span>continent[final2<span class="sc">$</span>Entity  <span class="sc">%in%</span> eu_countries]<span class="ot">&lt;-</span><span class="st">"EU"</span></span>
+<span id="cb4-80"><a href="#cb4-80"></a>final2<span class="sc">$</span>continent[final2<span class="sc">$</span>Entity  <span class="sc">%in%</span> latam_countries]<span class="ot">&lt;-</span><span class="st">"Latin America"</span></span>
+<span id="cb4-81"><a href="#cb4-81"></a>final2<span class="sc">$</span>continent[<span class="fu">is.na</span>(final2<span class="sc">$</span>continent)]<span class="ot">&lt;-</span><span class="st">"Everything Else"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+
+<section id="advice-for-barplots-2" class="title-slide slide level1 center" data-visibility="uncounted">
+<h1>Advice for Barplots</h1>
+<p>For example, let’s say we want to compare life expectancy in Latin America with EU</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb5-2"><a href="#cb5-2"></a>averages<span class="ot">&lt;-</span>final2<span class="sc">%&gt;%</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a>  <span class="fu">group_by</span>(continent)<span class="sc">%&gt;%</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a>  dplyr<span class="sc">::</span><span class="fu">summarize</span>(<span class="at">mean_life_exp=</span><span class="fu">mean</span>(life_exp, <span class="at">na.rm=</span><span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+
+<section id="advice-for-barplots-3" class="title-slide slide level1 center" data-visibility="uncounted">
+<h1>Advice for Barplots</h1>
+<p>For example, let’s say we want to compare life expectancy in Latin America, EU, and the Rest of the World</p>
+<div class="columns">
+<div class="column" style="width:49%;">
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">ggplot</span>(averages, <span class="fu">aes</span>(<span class="at">x =</span> continent, </span>
+<span id="cb6-2"><a href="#cb6-2"></a>                 <span class="at">y =</span> mean_life_exp, </span>
+<span id="cb6-3"><a href="#cb6-3"></a>                 <span class="at">fill =</span> continent)) <span class="sc">+</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb6-5"><a href="#cb6-5"></a>  <span class="fu">labs</span>(<span class="at">fill =</span> <span class="st">"Individual"</span>) <span class="sc">+</span></span>
+<span id="cb6-6"><a href="#cb6-6"></a>  <span class="fu">theme_void</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div><div class="column" style="width:49%;">
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="lecture8_files/figure-revealjs/unnamed-chunk-10-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="advice-for-barplots-4" class="title-slide slide level1 center" data-visibility="uncounted">
+<h1>Advice for Barplots</h1>
+<p>A more compelling way is: boxplots with points</p>
+<div class="columns">
+<div class="column" style="width:49%;">
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">ggplot</span>(final2, <span class="fu">aes</span>(<span class="at">x =</span> continent, </span>
+<span id="cb7-2"><a href="#cb7-2"></a>                   <span class="at">y =</span> life_exp,</span>
+<span id="cb7-3"><a href="#cb7-3"></a>                   <span class="at">color =</span> continent)) <span class="sc">+</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a>  <span class="fu">geom_boxplot</span>(<span class="at">width =</span> <span class="fl">0.5</span>)<span class="sc">+</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a>  <span class="fu">geom_point</span>(<span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="at">height =</span> <span class="dv">0</span>), </span>
+<span id="cb7-6"><a href="#cb7-6"></a>             <span class="at">size =</span> <span class="dv">1</span>, <span class="at">alpha =</span> <span class="fl">0.05</span>) <span class="sc">+</span></span>
+<span id="cb7-7"><a href="#cb7-7"></a>  <span class="fu">guides</span>(<span class="at">color =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div><div class="column" style="width:49%;">
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="lecture8_files/figure-revealjs/unnamed-chunk-12-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="advice-for-barplots-5" class="title-slide slide level1 center" data-visibility="uncounted">
+<h1>Advice for Barplots</h1>
+<p>Another way is to combine violin with points</p>
+<div class="columns">
+<div class="column" style="width:49%;">
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">ggplot</span>(final2, <span class="fu">aes</span>(<span class="at">x =</span> continent, </span>
+<span id="cb8-2"><a href="#cb8-2"></a>                   <span class="at">y =</span> life_exp,</span>
+<span id="cb8-3"><a href="#cb8-3"></a>                   <span class="at">color =</span> continent)) <span class="sc">+</span></span>
+<span id="cb8-4"><a href="#cb8-4"></a>  <span class="fu">geom_violin</span>(<span class="at">width =</span> <span class="fl">0.5</span>)<span class="sc">+</span></span>
+<span id="cb8-5"><a href="#cb8-5"></a>  <span class="fu">geom_point</span>(<span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="at">height =</span> <span class="dv">0</span>), </span>
+<span id="cb8-6"><a href="#cb8-6"></a>             <span class="at">size =</span> <span class="dv">1</span>, <span class="at">alpha =</span> <span class="fl">0.05</span>) <span class="sc">+</span></span>
+<span id="cb8-7"><a href="#cb8-7"></a>  <span class="fu">guides</span>(<span class="at">color =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div><div class="column" style="width:49%;">
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="lecture8_files/figure-revealjs/unnamed-chunk-14-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="advice-for-barplots-6" class="title-slide slide level1 center" data-visibility="uncounted">
+<h1>Advice for Barplots</h1>
+<p>Another way is to have overlapping ridgeplots</p>
+<div class="columns">
+<div class="column" style="width:49%;">
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">library</span>(ggridges)</span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="fu">ggplot</span>(final2, <span class="fu">aes</span>(<span class="at">x =</span> life_exp, </span>
+<span id="cb9-3"><a href="#cb9-3"></a>                   <span class="at">y =</span> continent,</span>
+<span id="cb9-4"><a href="#cb9-4"></a>                   <span class="at">fill =</span> continent)) <span class="sc">+</span></span>
+<span id="cb9-5"><a href="#cb9-5"></a>  <span class="fu">geom_density_ridges</span>() <span class="sc">+</span></span>
+<span id="cb9-6"><a href="#cb9-6"></a>  <span class="fu">guides</span>(<span class="at">color =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div><div class="column" style="width:49%;">
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="lecture8_files/figure-revealjs/unnamed-chunk-16-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="advice-for-barplots-7" class="title-slide slide level1 center" data-visibility="uncounted">
+<h1>Advice for Barplots</h1>
+<p>Another way is to have all of them superimposed</p>
+<div class="columns">
+<div class="column" style="width:49%;">
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">library</span>(ggridges)</span>
+<span id="cb10-2"><a href="#cb10-2"></a><span class="fu">ggplot</span>(final2, <span class="fu">aes</span>(<span class="at">x =</span> life_exp, </span>
+<span id="cb10-3"><a href="#cb10-3"></a>                   <span class="at">fill =</span> continent)) <span class="sc">+</span></span>
+<span id="cb10-4"><a href="#cb10-4"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>)<span class="sc">+</span></span>
+<span id="cb10-5"><a href="#cb10-5"></a>  <span class="fu">guides</span>(<span class="at">color =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div><div class="column" style="width:49%;">
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="lecture8_files/figure-revealjs/unnamed-chunk-18-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="plotting-uncertainty" class="title-slide slide level1 center">
+<h1>Plotting Uncertainty</h1>
+<p>As discussed it is good to add more information to your graphs to display the whole distribution of numbers</p>
+<p>For example, the right is better than the left</p>
+<div class="columns">
+<div class="column" style="width:49%;">
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="lecture8_files/figure-revealjs/unnamed-chunk-19-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:49%;">
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="lecture8_files/figure-revealjs/unnamed-chunk-20-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="plotting-uncertainty-1" class="title-slide slide level1 center">
+<h1>Plotting Uncertainty</h1>
+<p>This is the code for left and right</p>
+<div class="columns">
+<div class="column" style="width:49%;">
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">ggplot</span>(averages, <span class="fu">aes</span>(<span class="at">x =</span> continent, </span>
+<span id="cb11-2"><a href="#cb11-2"></a>                 <span class="at">y =</span> mean_life_exp, </span>
+<span id="cb11-3"><a href="#cb11-3"></a>                 <span class="at">fill =</span> continent)) <span class="sc">+</span></span>
+<span id="cb11-4"><a href="#cb11-4"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb11-5"><a href="#cb11-5"></a>  <span class="fu">labs</span>(<span class="at">fill =</span> <span class="st">"Individual"</span>) <span class="sc">+</span></span>
+<span id="cb11-6"><a href="#cb11-6"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div><div class="column" style="width:49%;">
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">ggplot</span>(final2, <span class="fu">aes</span>(<span class="at">x =</span> life_exp, </span>
+<span id="cb12-2"><a href="#cb12-2"></a>                   <span class="at">fill =</span> continent)) <span class="sc">+</span></span>
+<span id="cb12-3"><a href="#cb12-3"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">2</span>, </span>
+<span id="cb12-4"><a href="#cb12-4"></a>                 <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb12-5"><a href="#cb12-5"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>) <span class="sc">+</span>  <span class="co"># Turn off legend</span></span>
+<span id="cb12-6"><a href="#cb12-6"></a>  <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(continent))<span class="sc">+</span></span>
+<span id="cb12-7"><a href="#cb12-7"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="plotting-uncertainty-2" class="title-slide slide level1 center" data-visibility="uncounted">
+<h1>Plotting Uncertainty</h1>
+<p>It could also be helpful to play with the binwidth: <code>binwidth = 2</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="fu">ggplot</span>(final2, <span class="fu">aes</span>(<span class="at">x =</span> life_exp, </span>
+<span id="cb13-2"><a href="#cb13-2"></a>                   <span class="at">fill =</span> continent)) <span class="sc">+</span></span>
+<span id="cb13-3"><a href="#cb13-3"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">2</span>, </span>
+<span id="cb13-4"><a href="#cb13-4"></a>                 <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb13-5"><a href="#cb13-5"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>) <span class="sc">+</span>  <span class="co"># Turn off legend</span></span>
+<span id="cb13-6"><a href="#cb13-6"></a>  <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(continent))<span class="sc">+</span></span>
+<span id="cb13-7"><a href="#cb13-7"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-23-1.png" width="960" class="r-stretch"></section>
+
+<section id="plotting-uncertainty-3" class="title-slide slide level1 center" data-visibility="uncounted">
+<h1>Plotting Uncertainty</h1>
+<p>It could also be helpful to play with the binwidth: <code>binwidth = 10</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">ggplot</span>(final2, <span class="fu">aes</span>(<span class="at">x =</span> life_exp, </span>
+<span id="cb14-2"><a href="#cb14-2"></a>                   <span class="at">fill =</span> continent)) <span class="sc">+</span></span>
+<span id="cb14-3"><a href="#cb14-3"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">10</span>, </span>
+<span id="cb14-4"><a href="#cb14-4"></a>                 <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb14-5"><a href="#cb14-5"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>) <span class="sc">+</span>  <span class="co"># Turn off legend</span></span>
+<span id="cb14-6"><a href="#cb14-6"></a>  <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(continent))<span class="sc">+</span></span>
+<span id="cb14-7"><a href="#cb14-7"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-24-1.png" width="960" class="r-stretch"></section>
+
+<section id="plotting-uncertainty-4" class="title-slide slide level1 center" data-visibility="uncounted">
+<h1>Plotting Uncertainty</h1>
+<p>We can obtain something similar with densities</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="fu">ggplot</span>(final2, <span class="fu">aes</span>(<span class="at">x =</span> life_exp, </span>
+<span id="cb15-2"><a href="#cb15-2"></a>                   <span class="at">fill =</span> continent)) <span class="sc">+</span></span>
+<span id="cb15-3"><a href="#cb15-3"></a>  <span class="fu">geom_density</span>() <span class="sc">+</span></span>
+<span id="cb15-4"><a href="#cb15-4"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>) <span class="sc">+</span>  <span class="co"># Turn off legend</span></span>
+<span id="cb15-5"><a href="#cb15-5"></a>  <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(continent))<span class="sc">+</span></span>
+<span id="cb15-6"><a href="#cb15-6"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-25-1.png" width="960" class="r-stretch"></section>
+
+<section id="plotting-uncertainty-5" class="title-slide slide level1 center" data-visibility="uncounted">
+<h1>Plotting Uncertainty</h1>
+<p>The difference is that one should count and the other one density.</p>
+<p>The second shows the probability density function (PDF) of the variable: use calculus to find the probability of each x value</p>
+<div class="columns">
+<div class="column" style="width:49%;">
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="lecture8_files/figure-revealjs/unnamed-chunk-26-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:49%;">
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="lecture8_files/figure-revealjs/unnamed-chunk-27-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="box-plots" class="title-slide slide level1 center">
+<h1>Box Plots</h1>
+<p>Here is a boxlot for life expectancy for the entire dataset</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">ggplot</span>(final2, <span class="fu">aes</span>(<span class="at">x =</span> life_exp)) <span class="sc">+</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a>  <span class="fu">geom_boxplot</span>(<span class="at">width =</span> <span class="fl">0.5</span>)<span class="sc">+</span></span>
+<span id="cb16-3"><a href="#cb16-3"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Life Expectancy"</span>) <span class="sc">+</span></span>
+<span id="cb16-4"><a href="#cb16-4"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-28-1.png" width="960" class="r-stretch"></section>
+
+<section id="box-plots-1" class="title-slide slide level1 center" data-visibility="uncounted">
+<h1>Box Plots</h1>
+<p>Here is the interpretation</p>
+
+<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-29-1.png" width="960" class="r-stretch"></section>
+
+<section id="box-plots-2" class="title-slide slide level1 center" data-visibility="uncounted">
+<h1>Box Plots</h1>
+<p>This is what the histogram look like:</p>
+
+<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-30-1.png" width="960" class="r-stretch"></section>
+
+<section id="box-plots-3" class="title-slide slide level1 center" data-visibility="uncounted">
+<h1>Box Plots</h1>
+<p>This is what the actual values look like:</p>
+
+<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-31-1.png" width="960" class="r-stretch"></section>
+
+<section id="box-plots-4" class="title-slide slide level1 center" data-visibility="uncounted">
+<h1>Box Plots</h1>
+<p>And this is what they look like together:</p>
+
+<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-32-1.png" width="960" class="r-stretch"></section>
+
+<section id="violin-plots" class="title-slide slide level1 center">
+<h1>Violin Plots</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">ggplot</span>(final2, <span class="fu">aes</span>(<span class="at">x =</span> life_exp, <span class="at">y=</span><span class="st">""</span>)) <span class="sc">+</span></span>
+<span id="cb17-2"><a href="#cb17-2"></a>  <span class="fu">geom_violin</span>()<span class="sc">+</span></span>
+<span id="cb17-3"><a href="#cb17-3"></a>  <span class="fu">geom_boxplot</span>(<span class="at">width =</span> <span class="fl">0.5</span>)<span class="sc">+</span></span>
+<span id="cb17-4"><a href="#cb17-4"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Life Expectancy"</span>) <span class="sc">+</span></span>
+<span id="cb17-5"><a href="#cb17-5"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-33-1.png" width="960" class="r-stretch"></section>
+
+<section id="plotting-uncertainty-in-scatterplots" class="title-slide slide level1 center">
+<h1>Plotting Uncertainty in Scatterplots</h1>
+<p>We have already covered this, but here is the relationship between urbanization and life expectancy</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="fu">setwd</span>(<span class="st">"/Users/bgpopescu/Library/CloudStorage/Dropbox/john_cabot/teaching/big_data/week4/data/"</span>)</span>
+<span id="cb18-2"><a href="#cb18-2"></a><span class="co">#Step1: Loading the data</span></span>
+<span id="cb18-3"><a href="#cb18-3"></a>life_exp_urb <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">'./life_exp_urb.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+
+<section id="plotting-uncertainty-in-scatterplots-1" class="title-slide slide level1 center" data-visibility="uncounted">
+<h1>Plotting Uncertainty in Scatterplots</h1>
+<p>We have already covered this, but here is the relationship between urbanization and life expectancy</p>
+<div class="columns">
+<div class="column" style="width:49%;">
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> life_exp_urb, </span>
+<span id="cb19-2"><a href="#cb19-2"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>urbanization, </span>
+<span id="cb19-3"><a href="#cb19-3"></a>                <span class="at">y=</span>life_expectancy, </span>
+<span id="cb19-4"><a href="#cb19-4"></a>                <span class="at">color =</span> type))<span class="sc">+</span></span>
+<span id="cb19-5"><a href="#cb19-5"></a>    <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div><div class="column" style="width:49%;">
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="lecture8_files/figure-revealjs/unnamed-chunk-36-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="plotting-uncertainty-in-scatterplots-2" class="title-slide slide level1 center" data-visibility="uncounted">
+<h1>Plotting Uncertainty in Scatterplots</h1>
+<p>And here are the slopes for the three groups</p>
+<div class="columns">
+<div class="column" style="width:49%;">
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> life_exp_urb, </span>
+<span id="cb20-2"><a href="#cb20-2"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>urbanization, </span>
+<span id="cb20-3"><a href="#cb20-3"></a>                <span class="at">y=</span>life_expectancy, </span>
+<span id="cb20-4"><a href="#cb20-4"></a>                <span class="at">color =</span> type))<span class="sc">+</span></span>
+<span id="cb20-5"><a href="#cb20-5"></a>    <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb20-6"><a href="#cb20-6"></a>    <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div><div class="column" style="width:49%;">
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="lecture8_files/figure-revealjs/unnamed-chunk-38-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="plotting-uncertainty-in-scatterplots-3" class="title-slide slide level1 center" data-visibility="uncounted">
+<h1>Plotting Uncertainty in Scatterplots</h1>
+<p>And here are the confidence intervals for the three slopes</p>
+<div class="columns">
+<div class="column" style="width:49%;">
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> life_exp_urb, </span>
+<span id="cb21-2"><a href="#cb21-2"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>urbanization, </span>
+<span id="cb21-3"><a href="#cb21-3"></a>                <span class="at">y=</span>life_expectancy, </span>
+<span id="cb21-4"><a href="#cb21-4"></a>                <span class="at">color =</span> type))<span class="sc">+</span></span>
+<span id="cb21-5"><a href="#cb21-5"></a>    <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb21-6"><a href="#cb21-6"></a>    <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div><div class="column" style="width:49%;">
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="lecture8_files/figure-revealjs/unnamed-chunk-40-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="annotations" class="title-slide slide level1 center">
+<h1>Annotations</h1>
+<div class="fragment">
+<p>We also need to discuss text in plots</p>
+</div>
+<div class="fragment">
+<p>On the most basic level, we can label actual data points with the help of options such as:</p>
+</div>
+<div class="fragment">
+<ul>
+<li><p><code>geom_text()</code></p></li>
+<li><p><code>geom_label()</code></p></li>
+<li><p><code>geom_text_repel()</code></p></li>
+</ul>
+</div>
+<div class="fragment">
+<p>We can also add annotations with <code>annotate()</code></p>
+</div>
+</section>
+
+<section id="annotations-1" class="title-slide slide level1 center">
+<h1>Annotations</h1>
+<p><code>geom_text</code> is not great when we have too many points</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> life_exp_urb, </span>
+<span id="cb22-2"><a href="#cb22-2"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>urbanization, </span>
+<span id="cb22-3"><a href="#cb22-3"></a>                <span class="at">y=</span>life_expectancy, </span>
+<span id="cb22-4"><a href="#cb22-4"></a>                <span class="at">color =</span> type))<span class="sc">+</span></span>
+<span id="cb22-5"><a href="#cb22-5"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb22-6"><a href="#cb22-6"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> Entity))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-41-1.png" width="960" class="r-stretch"></section>
+
+<section id="annotations-2" class="title-slide slide level1 center">
+<h1>Annotations</h1>
+<p><code>geom_label</code> is not great when we have too many points. It covers the points</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> life_exp_urb, </span>
+<span id="cb23-2"><a href="#cb23-2"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>urbanization, </span>
+<span id="cb23-3"><a href="#cb23-3"></a>                <span class="at">y=</span>life_expectancy, </span>
+<span id="cb23-4"><a href="#cb23-4"></a>                <span class="at">color =</span> type))<span class="sc">+</span></span>
+<span id="cb23-5"><a href="#cb23-5"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb23-6"><a href="#cb23-6"></a>  <span class="fu">geom_label</span>(<span class="fu">aes</span>(<span class="at">label =</span> Entity))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-42-1.png" width="960" class="r-stretch"></section>
+
+<section id="annotations-3" class="title-slide slide level1 center">
+<h1>Annotations</h1>
+<p><code>ggrepel</code> is one solution: <code>geom_text_repel</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="fu">library</span>(ggrepel)</span>
+<span id="cb24-2"><a href="#cb24-2"></a><span class="fu">ggplot</span>(<span class="at">data =</span> life_exp_urb, </span>
+<span id="cb24-3"><a href="#cb24-3"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>urbanization, </span>
+<span id="cb24-4"><a href="#cb24-4"></a>                <span class="at">y=</span>life_expectancy, </span>
+<span id="cb24-5"><a href="#cb24-5"></a>                <span class="at">color =</span> type))<span class="sc">+</span></span>
+<span id="cb24-6"><a href="#cb24-6"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb24-7"><a href="#cb24-7"></a>  <span class="fu">geom_text_repel</span>(<span class="fu">aes</span>(<span class="at">label =</span> Entity))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-43-1.png" width="960" class="r-stretch"></section>
+
+<section id="annotations-4" class="title-slide slide level1 center">
+<h1>Annotations</h1>
+<p><code>ggrepel</code> is one solution: <code>geom_label_repel</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="fu">library</span>(ggrepel)</span>
+<span id="cb25-2"><a href="#cb25-2"></a><span class="fu">ggplot</span>(<span class="at">data =</span> life_exp_urb, </span>
+<span id="cb25-3"><a href="#cb25-3"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>urbanization, </span>
+<span id="cb25-4"><a href="#cb25-4"></a>                <span class="at">y=</span>life_expectancy, </span>
+<span id="cb25-5"><a href="#cb25-5"></a>                <span class="at">color =</span> type))<span class="sc">+</span></span>
+<span id="cb25-6"><a href="#cb25-6"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb25-7"><a href="#cb25-7"></a>  <span class="fu">geom_label_repel</span>(<span class="fu">aes</span>(<span class="at">label =</span> Entity))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-44-1.png" width="960" class="r-stretch"></section>
+
+<section id="highlighting" class="title-slide slide level1 center">
+<h1>Highlighting</h1>
+<p>We can highlight specific observations in our data</p>
+<div class="columns">
+<div class="column" style="width:49%;">
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="co">#Creating a Variable to Identify Obs</span></span>
+<span id="cb26-2"><a href="#cb26-2"></a>life_exp_urb<span class="sc">$</span>eu<span class="ot">&lt;-</span><span class="fu">ifelse</span>(life_exp_urb<span class="sc">$</span>type<span class="sc">==</span><span class="st">"EU"</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="cb26-3"><a href="#cb26-3"></a><span class="co">#Making the variable a factor</span></span>
+<span id="cb26-4"><a href="#cb26-4"></a>life_exp_urb<span class="sc">$</span>eu<span class="ot">&lt;-</span><span class="fu">as.factor</span>(life_exp_urb<span class="sc">$</span>eu)</span>
+<span id="cb26-5"><a href="#cb26-5"></a><span class="co">#Plotting</span></span>
+<span id="cb26-6"><a href="#cb26-6"></a><span class="fu">ggplot</span>(<span class="at">data =</span> life_exp_urb, </span>
+<span id="cb26-7"><a href="#cb26-7"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>urbanization, </span>
+<span id="cb26-8"><a href="#cb26-8"></a>                <span class="at">y=</span>life_expectancy, </span>
+<span id="cb26-9"><a href="#cb26-9"></a>                <span class="at">color =</span> eu))<span class="sc">+</span></span>
+<span id="cb26-10"><a href="#cb26-10"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb26-11"><a href="#cb26-11"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"grey70"</span>, </span>
+<span id="cb26-12"><a href="#cb26-12"></a>                                <span class="st">"red"</span>))<span class="sc">+</span></span>
+<span id="cb26-13"><a href="#cb26-13"></a>  <span class="fu">guides</span>(<span class="at">color =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div><div class="column" style="width:49%;">
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="lecture8_files/figure-revealjs/unnamed-chunk-46-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="annotating-graphs" class="title-slide slide level1 center" data-visibility="uncounted">
+<h1>Annotating Graphs</h1>
+<p>This is how we can add text in the graph</p>
+<div class="columns">
+<div class="column" style="width:49%;">
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> life_exp_urb, </span>
+<span id="cb27-2"><a href="#cb27-2"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>urbanization, </span>
+<span id="cb27-3"><a href="#cb27-3"></a>                <span class="at">y=</span>life_expectancy, </span>
+<span id="cb27-4"><a href="#cb27-4"></a>                <span class="at">color =</span> eu))<span class="sc">+</span></span>
+<span id="cb27-5"><a href="#cb27-5"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb27-6"><a href="#cb27-6"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"grey70"</span>, </span>
+<span id="cb27-7"><a href="#cb27-7"></a>                                <span class="st">"red"</span>))<span class="sc">+</span></span>
+<span id="cb27-8"><a href="#cb27-8"></a>  <span class="fu">guides</span>(<span class="at">color =</span> <span class="st">"none"</span>)<span class="sc">+</span></span>
+<span id="cb27-9"><a href="#cb27-9"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">"text"</span>,</span>
+<span id="cb27-10"><a href="#cb27-10"></a>           <span class="at">x =</span> <span class="dv">75</span>, <span class="at">y =</span> <span class="dv">45</span>,</span>
+<span id="cb27-11"><a href="#cb27-11"></a>           <span class="at">label =</span> <span class="st">"EU Countries"</span>, <span class="at">color=</span><span class="st">"red"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div><div class="column" style="width:49%;">
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="lecture8_files/figure-revealjs/unnamed-chunk-48-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="annotating-graphs-1" class="title-slide slide level1 center" data-visibility="uncounted">
+<h1>Annotating Graphs</h1>
+<p>This is how we can add a rectangle around our points of interest</p>
+<div class="columns">
+<div class="column" style="width:49%;">
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a>xmin_val<span class="ot">&lt;-</span><span class="fu">min</span>(life_exp_urb<span class="sc">$</span>urbanization[life_exp_urb<span class="sc">$</span>eu<span class="sc">==</span><span class="dv">1</span>])</span>
+<span id="cb28-2"><a href="#cb28-2"></a>xmax_val<span class="ot">&lt;-</span><span class="fu">max</span>(life_exp_urb<span class="sc">$</span>urbanization[life_exp_urb<span class="sc">$</span>eu<span class="sc">==</span><span class="dv">1</span>])</span>
+<span id="cb28-3"><a href="#cb28-3"></a>ymin_val<span class="ot">&lt;-</span><span class="fu">min</span>(life_exp_urb<span class="sc">$</span>life_expectancy[life_exp_urb<span class="sc">$</span>eu<span class="sc">==</span><span class="dv">1</span>])</span>
+<span id="cb28-4"><a href="#cb28-4"></a>ymax_val<span class="ot">&lt;-</span><span class="fu">max</span>(life_exp_urb<span class="sc">$</span>life_expectancy[life_exp_urb<span class="sc">$</span>eu<span class="sc">==</span><span class="dv">1</span>])</span>
+<span id="cb28-5"><a href="#cb28-5"></a></span>
+<span id="cb28-6"><a href="#cb28-6"></a><span class="fu">ggplot</span>(<span class="at">data =</span> life_exp_urb, </span>
+<span id="cb28-7"><a href="#cb28-7"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>urbanization, </span>
+<span id="cb28-8"><a href="#cb28-8"></a>                <span class="at">y=</span>life_expectancy, </span>
+<span id="cb28-9"><a href="#cb28-9"></a>                <span class="at">color =</span> eu))<span class="sc">+</span></span>
+<span id="cb28-10"><a href="#cb28-10"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb28-11"><a href="#cb28-11"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"grey70"</span>, </span>
+<span id="cb28-12"><a href="#cb28-12"></a>                                <span class="st">"red"</span>))<span class="sc">+</span></span>
+<span id="cb28-13"><a href="#cb28-13"></a>  <span class="fu">guides</span>(<span class="at">color =</span> <span class="st">"none"</span>)<span class="sc">+</span></span>
+<span id="cb28-14"><a href="#cb28-14"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">"text"</span>,</span>
+<span id="cb28-15"><a href="#cb28-15"></a>           <span class="at">x =</span> <span class="dv">75</span>, <span class="at">y =</span> <span class="dv">45</span>,</span>
+<span id="cb28-16"><a href="#cb28-16"></a>           <span class="at">label =</span> <span class="st">"EU Countries"</span>, <span class="at">color=</span><span class="st">"red"</span>)<span class="sc">+</span></span>
+<span id="cb28-17"><a href="#cb28-17"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">"rect"</span>, </span>
+<span id="cb28-18"><a href="#cb28-18"></a>           <span class="at">xmin =</span> xmin_val, </span>
+<span id="cb28-19"><a href="#cb28-19"></a>           <span class="at">xmax =</span> xmax_val,</span>
+<span id="cb28-20"><a href="#cb28-20"></a>           <span class="at">ymin =</span> ymin_val, </span>
+<span id="cb28-21"><a href="#cb28-21"></a>           <span class="at">ymax =</span> ymax_val,</span>
+<span id="cb28-22"><a href="#cb28-22"></a>           <span class="at">fill =</span> <span class="st">"red"</span>, <span class="at">alpha =</span> <span class="fl">0.2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div><div class="column" style="width:49%;">
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="lecture8_files/figure-revealjs/unnamed-chunk-50-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="annotating-graphs-2" class="title-slide slide level1 center" data-visibility="uncounted">
+<h1>Annotating Graphs</h1>
+<p>This is how we can add an arrow towards the rectangle</p>
+<div class="columns">
+<div class="column" style="width:49%;">
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> life_exp_urb, </span>
+<span id="cb29-2"><a href="#cb29-2"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>urbanization, </span>
+<span id="cb29-3"><a href="#cb29-3"></a>                <span class="at">y=</span>life_expectancy, </span>
+<span id="cb29-4"><a href="#cb29-4"></a>                <span class="at">color =</span> eu))<span class="sc">+</span></span>
+<span id="cb29-5"><a href="#cb29-5"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb29-6"><a href="#cb29-6"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"grey70"</span>, </span>
+<span id="cb29-7"><a href="#cb29-7"></a>                                <span class="st">"red"</span>))<span class="sc">+</span></span>
+<span id="cb29-8"><a href="#cb29-8"></a>  <span class="fu">guides</span>(<span class="at">color =</span> <span class="st">"none"</span>)<span class="sc">+</span></span>
+<span id="cb29-9"><a href="#cb29-9"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">"text"</span>,</span>
+<span id="cb29-10"><a href="#cb29-10"></a>           <span class="at">x =</span> <span class="dv">75</span>, <span class="at">y =</span> <span class="dv">45</span>,</span>
+<span id="cb29-11"><a href="#cb29-11"></a>           <span class="at">label =</span> <span class="st">"EU Countries"</span>, <span class="at">color=</span><span class="st">"red"</span>)<span class="sc">+</span></span>
+<span id="cb29-12"><a href="#cb29-12"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">"rect"</span>, </span>
+<span id="cb29-13"><a href="#cb29-13"></a>           <span class="at">xmin =</span> xmin_val, </span>
+<span id="cb29-14"><a href="#cb29-14"></a>           <span class="at">xmax =</span> xmax_val,</span>
+<span id="cb29-15"><a href="#cb29-15"></a>           <span class="at">ymin =</span> ymin_val, </span>
+<span id="cb29-16"><a href="#cb29-16"></a>           <span class="at">ymax =</span> ymax_val,</span>
+<span id="cb29-17"><a href="#cb29-17"></a>           <span class="at">fill =</span> <span class="st">"red"</span>, <span class="at">alpha =</span> <span class="fl">0.2</span>)<span class="sc">+</span></span>
+<span id="cb29-18"><a href="#cb29-18"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">"segment"</span>, </span>
+<span id="cb29-19"><a href="#cb29-19"></a>           <span class="at">x =</span> <span class="dv">75</span>, </span>
+<span id="cb29-20"><a href="#cb29-20"></a>           <span class="at">xend =</span> <span class="dv">75</span>, </span>
+<span id="cb29-21"><a href="#cb29-21"></a>           <span class="at">y =</span> <span class="dv">45</span>, </span>
+<span id="cb29-22"><a href="#cb29-22"></a>           <span class="at">yend =</span> ymin_val,</span>
+<span id="cb29-23"><a href="#cb29-23"></a>           <span class="at">arrow =</span> <span class="fu">arrow</span>(</span>
+<span id="cb29-24"><a href="#cb29-24"></a>             <span class="at">length =</span> <span class="fu">unit</span>(<span class="fl">0.1</span>, <span class="st">"in"</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div><div class="column" style="width:49%;">
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="lecture8_files/figure-revealjs/unnamed-chunk-52-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="annotating-graphs-3" class="title-slide slide level1 center" data-visibility="uncounted">
+<h1>Annotating Graphs</h1>
+<p>Or let’s turn the text into a label</p>
+<div class="columns">
+<div class="column" style="width:49%;">
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> life_exp_urb, </span>
+<span id="cb30-2"><a href="#cb30-2"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>urbanization, </span>
+<span id="cb30-3"><a href="#cb30-3"></a>                <span class="at">y=</span>life_expectancy, </span>
+<span id="cb30-4"><a href="#cb30-4"></a>                <span class="at">color =</span> eu))<span class="sc">+</span></span>
+<span id="cb30-5"><a href="#cb30-5"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb30-6"><a href="#cb30-6"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"grey70"</span>, </span>
+<span id="cb30-7"><a href="#cb30-7"></a>                                <span class="st">"red"</span>))<span class="sc">+</span></span>
+<span id="cb30-8"><a href="#cb30-8"></a>  <span class="fu">guides</span>(<span class="at">color =</span> <span class="st">"none"</span>)<span class="sc">+</span></span>
+<span id="cb30-9"><a href="#cb30-9"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">"label"</span>,</span>
+<span id="cb30-10"><a href="#cb30-10"></a>           <span class="at">x =</span> <span class="dv">75</span>, </span>
+<span id="cb30-11"><a href="#cb30-11"></a>           <span class="at">y =</span> <span class="dv">45</span>,</span>
+<span id="cb30-12"><a href="#cb30-12"></a>           <span class="at">label =</span> <span class="st">"EU Countries"</span>, </span>
+<span id="cb30-13"><a href="#cb30-13"></a>           <span class="at">color=</span><span class="st">"red"</span>)<span class="sc">+</span></span>
+<span id="cb30-14"><a href="#cb30-14"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">"rect"</span>, </span>
+<span id="cb30-15"><a href="#cb30-15"></a>           <span class="at">xmin =</span> xmin_val, </span>
+<span id="cb30-16"><a href="#cb30-16"></a>           <span class="at">xmax =</span> xmax_val,</span>
+<span id="cb30-17"><a href="#cb30-17"></a>           <span class="at">ymin =</span> ymin_val, </span>
+<span id="cb30-18"><a href="#cb30-18"></a>           <span class="at">ymax =</span> ymax_val,</span>
+<span id="cb30-19"><a href="#cb30-19"></a>           <span class="at">fill =</span> <span class="st">"red"</span>, <span class="at">alpha =</span> <span class="fl">0.2</span>)<span class="sc">+</span></span>
+<span id="cb30-20"><a href="#cb30-20"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">"segment"</span>, </span>
+<span id="cb30-21"><a href="#cb30-21"></a>           <span class="at">x =</span> <span class="dv">75</span>, </span>
+<span id="cb30-22"><a href="#cb30-22"></a>           <span class="at">xend =</span> <span class="dv">75</span>, </span>
+<span id="cb30-23"><a href="#cb30-23"></a>           <span class="at">y =</span> <span class="dv">45</span>, </span>
+<span id="cb30-24"><a href="#cb30-24"></a>           <span class="at">yend =</span> ymin_val,</span>
+<span id="cb30-25"><a href="#cb30-25"></a>           <span class="at">arrow =</span> <span class="fu">arrow</span>(</span>
+<span id="cb30-26"><a href="#cb30-26"></a>             <span class="at">length =</span> <span class="fu">unit</span>(<span class="fl">0.1</span>, <span class="st">"in"</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div><div class="column" style="width:49%;">
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="lecture8_files/figure-revealjs/unnamed-chunk-54-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="visualizing-time" class="title-slide slide level1 center">
+<h1>Visualizing Time</h1>
+<div class="fragment">
+<p>You may also want to plot temporal data</p>
+</div>
+<div class="fragment">
+<p>To do that we need to load the life expectancy data over time</p>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="co">#Step1: Setting path</span></span>
+<span id="cb31-2"><a href="#cb31-2"></a><span class="fu">setwd</span>(<span class="st">"/Users/bgpopescu/Library/CloudStorage/Dropbox/john_cabot/teaching/big_data/week4/data/"</span>)</span>
+<span id="cb31-3"><a href="#cb31-3"></a><span class="co">#Step2: Loading the data</span></span>
+<span id="cb31-4"><a href="#cb31-4"></a>life_expectancy <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">'./life-expectancy.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+
+<section id="visualizing-time-1" class="title-slide slide level1 center">
+<h1>Visualizing Time</h1>
+<div class="fragment">
+<p>Let us look again at the data</p>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="fu">head</span>(life_expectancy, <span class="at">n=</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       Entity Code Year Life.expectancy.at.birth..historical.
+1 Afghanistan  AFG 1950                                  27.7
+2 Afghanistan  AFG 1951                                  28.0
+3 Afghanistan  AFG 1952                                  28.4</code></pre>
+</div>
+</div>
+</div>
+</section>
+
+<section id="temporal-data" class="title-slide slide level1 center">
+<h1>Temporal Data</h1>
+<div class="fragment">
+<p>Let us imagine that we want to plot life expectancy over time</p>
+</div>
+<div class="fragment">
+<p>We first need to calculate average by year</p>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a>life_expectancy2<span class="ot">&lt;-</span>life_expectancy<span class="sc">%&gt;%</span></span>
+<span id="cb34-2"><a href="#cb34-2"></a>  <span class="fu">group_by</span>(Year)<span class="sc">%&gt;%</span></span>
+<span id="cb34-3"><a href="#cb34-3"></a>  dplyr<span class="sc">::</span><span class="fu">summarize</span>(<span class="at">mean_life_exp=</span><span class="fu">mean</span>(Life.expectancy.at.birth..historical.))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="fragment">
+<p>Let us look at the transformed data.</p>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="fu">head</span>(life_expectancy2, <span class="at">n=</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+   Year mean_life_exp
+  &lt;int&gt;         &lt;dbl&gt;
+1  1543          33.9
+2  1548          38.8
+3  1553          39.6</code></pre>
+</div>
+</div>
+</div>
+</section>
+
+<section id="temporal-data-1" class="title-slide slide level1 center">
+<h1>Temporal Data</h1>
+<div class="fragment">
+<p>We are now read to plot the time trend</p>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a><span class="fu">ggplot</span>(life_expectancy2, <span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> mean_life_exp)) <span class="sc">+</span></span>
+<span id="cb37-2"><a href="#cb37-2"></a>  <span class="fu">geom_line</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img data-src="lecture8_files/figure-revealjs/unnamed-chunk-59-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="temporal-data-2" class="title-slide slide level1 center">
+<h1>Temporal Data</h1>
+<p>We can also produce an animation</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a><span class="fu">library</span>(gganimate)</span>
+<span id="cb38-2"><a href="#cb38-2"></a><span class="fu">ggplot</span>(life_expectancy2, <span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> mean_life_exp)) <span class="sc">+</span></span>
+<span id="cb38-3"><a href="#cb38-3"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
+<span id="cb38-4"><a href="#cb38-4"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">'Year: {frame_along}'</span>, </span>
+<span id="cb38-5"><a href="#cb38-5"></a>       <span class="at">x =</span> <span class="st">'Urbanization'</span>, </span>
+<span id="cb38-6"><a href="#cb38-6"></a>       <span class="at">y =</span> <span class="st">'Life Expectancy'</span>) <span class="sc">+</span></span>
+<span id="cb38-7"><a href="#cb38-7"></a>  <span class="fu">transition_reveal</span>(Year)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-60-1.gif" class="r-stretch"></section>
+
+<section id="temporal-data-3" class="title-slide slide level1 center" data-visibility="uncounted">
+<h1>Temporal Data</h1>
+<p>To view the upward sloping trend in life expectancy, it might be worth aggregating some of the years.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a><span class="fu">ggplot</span>(life_expectancy2, <span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> mean_life_exp)) <span class="sc">+</span></span>
+<span id="cb39-2"><a href="#cb39-2"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
+<span id="cb39-3"><a href="#cb39-3"></a>  <span class="fu">geom_smooth</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-61-1.png" width="960" class="r-stretch"></section>
+
+<section id="temporal-data-two-countries" class="title-slide slide level1 center">
+<h1>Temporal Data: Two Countries</h1>
+<div class="fragment">
+<p>Let us imagine that we want to compare Italy and the US in life expectancy</p>
+</div>
+<div class="fragment">
+<p>This means we go back to the original file and select the US and Italy</p>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a><span class="co">#Subsetting the data</span></span>
+<span id="cb40-2"><a href="#cb40-2"></a>life_expectancy_itus<span class="ot">&lt;-</span><span class="fu">subset</span>(life_expectancy, Entity <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Italy"</span>, <span class="st">"United States"</span>))</span>
+<span id="cb40-3"><a href="#cb40-3"></a><span class="co">#Selecting only after 1900</span></span>
+<span id="cb40-4"><a href="#cb40-4"></a>life_expectancy_itus<span class="ot">&lt;-</span><span class="fu">subset</span>(life_expectancy_itus, Year<span class="sc">&gt;</span><span class="dv">1899</span>)</span>
+<span id="cb40-5"><a href="#cb40-5"></a><span class="co">#Renaming life expectancy variable</span></span>
+<span id="cb40-6"><a href="#cb40-6"></a><span class="fu">names</span>(life_expectancy_itus)[<span class="fu">names</span>(life_expectancy_itus)<span class="sc">==</span><span class="st">"Life.expectancy.at.birth..historical."</span>]<span class="ot">&lt;-</span><span class="st">"life_exp"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="fragment">
+<p>Let’s examine the data</p>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a><span class="fu">head</span>(life_expectancy_itus, <span class="at">n=</span><span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     Entity Code Year life_exp
+8583  Italy  ITA 1900    41.67
+8584  Italy  ITA 1901    43.54
+8585  Italy  ITA 1902    42.99
+8586  Italy  ITA 1903    43.11</code></pre>
+</div>
+</div>
+</div>
+</section>
+
+<section id="temporal-data-two-countries-1" class="title-slide slide level1 center">
+<h1>Temporal Data: Two Countries</h1>
+<p>We can now plot life expectancy for the two countries over time</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a><span class="co">#Plotting</span></span>
+<span id="cb43-2"><a href="#cb43-2"></a><span class="fu">ggplot</span>(life_expectancy_itus, </span>
+<span id="cb43-3"><a href="#cb43-3"></a>       <span class="fu">aes</span>(<span class="at">x=</span>Year, <span class="at">y=</span> life_exp, <span class="at">color =</span> Entity))<span class="sc">+</span></span>
+<span id="cb43-4"><a href="#cb43-4"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
+<span id="cb43-5"><a href="#cb43-5"></a>  <span class="fu">scale_colour_viridis_d</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-64-1.png" width="960" class="r-stretch"></section>
+
+<section id="temporal-data-two-countries-2" class="title-slide slide level1 center">
+<h1>Temporal Data: Two Countries</h1>
+<p>Changing the starting value of our y-axis can change the appearance of our data</p>
+<div class="columns">
+<div class="column" style="width:49%;">
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="lecture8_files/figure-revealjs/unnamed-chunk-65-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:49%;">
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="lecture8_files/figure-revealjs/unnamed-chunk-66-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="temporal-data-two-countries-3" class="title-slide slide level1 center" data-visibility="uncounted">
+<h1>Temporal Data: Two Countries</h1>
+<p>Changing the starting value of our y-axis can change the appearance of our data</p>
+<div class="columns">
+<div class="column" style="width:49%;">
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a><span class="fu">ggplot</span>(life_expectancy_itus, </span>
+<span id="cb44-2"><a href="#cb44-2"></a>       <span class="fu">aes</span>(<span class="at">x=</span>Year, </span>
+<span id="cb44-3"><a href="#cb44-3"></a>           <span class="at">y=</span> life_exp, </span>
+<span id="cb44-4"><a href="#cb44-4"></a>           <span class="at">color =</span> Entity))<span class="sc">+</span></span>
+<span id="cb44-5"><a href="#cb44-5"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
+<span id="cb44-6"><a href="#cb44-6"></a>  <span class="fu">scale_colour_viridis_d</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div><div class="column" style="width:49%;">
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a><span class="fu">ggplot</span>(life_expectancy_itus, </span>
+<span id="cb45-2"><a href="#cb45-2"></a>       <span class="fu">aes</span>(<span class="at">x=</span>Year, </span>
+<span id="cb45-3"><a href="#cb45-3"></a>           <span class="at">y=</span> life_exp, </span>
+<span id="cb45-4"><a href="#cb45-4"></a>           <span class="at">color =</span> Entity))<span class="sc">+</span></span>
+<span id="cb45-5"><a href="#cb45-5"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
+<span id="cb45-6"><a href="#cb45-6"></a>  <span class="fu">scale_colour_viridis_d</span>()<span class="sc">+</span></span>
+<span id="cb45-7"><a href="#cb45-7"></a>  <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="cn">NA</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="temporal-data-annotations" class="title-slide slide level1 center">
+<h1>Temporal Data Annotations</h1>
+<p>Annotations work very well with temporal data</p>
+<div class="columns">
+<div class="column" style="width:49%;">
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a><span class="fu">ggplot</span>(life_expectancy_itus, </span>
+<span id="cb46-2"><a href="#cb46-2"></a>       <span class="fu">aes</span>(<span class="at">x=</span>Year, </span>
+<span id="cb46-3"><a href="#cb46-3"></a>           <span class="at">y=</span> life_exp, </span>
+<span id="cb46-4"><a href="#cb46-4"></a>           <span class="at">color =</span> Entity))<span class="sc">+</span></span>
+<span id="cb46-5"><a href="#cb46-5"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
+<span id="cb46-6"><a href="#cb46-6"></a>  <span class="fu">scale_colour_viridis_d</span>()<span class="sc">+</span></span>
+<span id="cb46-7"><a href="#cb46-7"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">"label"</span>,</span>
+<span id="cb46-8"><a href="#cb46-8"></a>           <span class="at">x =</span> <span class="dv">1918</span>, <span class="at">y =</span> <span class="dv">80</span>,</span>
+<span id="cb46-9"><a href="#cb46-9"></a>           <span class="at">label =</span> <span class="st">"WW1"</span>, </span>
+<span id="cb46-10"><a href="#cb46-10"></a>           <span class="at">color=</span><span class="st">"red"</span>)<span class="sc">+</span></span>
+<span id="cb46-11"><a href="#cb46-11"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">"rect"</span>, </span>
+<span id="cb46-12"><a href="#cb46-12"></a>           <span class="at">xmin =</span> <span class="dv">1917</span>, </span>
+<span id="cb46-13"><a href="#cb46-13"></a>           <span class="at">xmax =</span> <span class="dv">1920</span>,</span>
+<span id="cb46-14"><a href="#cb46-14"></a>           <span class="at">ymin =</span> <span class="dv">0</span>, </span>
+<span id="cb46-15"><a href="#cb46-15"></a>           <span class="at">ymax =</span> <span class="cn">Inf</span>,</span>
+<span id="cb46-16"><a href="#cb46-16"></a>           <span class="at">fill =</span> <span class="st">"red"</span>, </span>
+<span id="cb46-17"><a href="#cb46-17"></a>           <span class="at">alpha =</span> <span class="fl">0.2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div><div class="column" style="width:49%;">
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="lecture8_files/figure-revealjs/unnamed-chunk-70-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="visualizing-time-2" class="title-slide slide level1 center">
+<h1>Visualizing Time</h1>
+<p>Another cool way to visualize data is to create density ridges for every year</p>
+<p>We will however want fewer years to make the graph easier to read</p>
+</section>
+
+<section id="visualizing-time-3" class="title-slide slide level1 center">
+<h1>Visualizing Time</h1>
+<p>Here is how we go about it:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb47" data-code-line-numbers="1-2|3-4|5-6|7-14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a><span class="co">#Step1: Load the library</span></span>
+<span id="cb47-2"><a href="#cb47-2"></a><span class="fu">library</span>(<span class="st">"forcats"</span>)</span>
+<span id="cb47-3"><a href="#cb47-3"></a><span class="co">#Step2: Subset the data to fewer years</span></span>
+<span id="cb47-4"><a href="#cb47-4"></a>final3<span class="ot">&lt;-</span><span class="fu">subset</span>(final2, Year<span class="sc">&gt;</span><span class="dv">1980</span>)</span>
+<span id="cb47-5"><a href="#cb47-5"></a><span class="co">#Step3: Turn year into factor</span></span>
+<span id="cb47-6"><a href="#cb47-6"></a>final3<span class="sc">$</span>year_factor<span class="ot">&lt;-</span><span class="fu">as.factor</span>(final3<span class="sc">$</span>Year)</span>
+<span id="cb47-7"><a href="#cb47-7"></a><span class="co">#Step4: Plot</span></span>
+<span id="cb47-8"><a href="#cb47-8"></a><span class="fu">ggplot</span>(final3, </span>
+<span id="cb47-9"><a href="#cb47-9"></a>       <span class="fu">aes</span>(<span class="at">x =</span> life_exp, </span>
+<span id="cb47-10"><a href="#cb47-10"></a>           <span class="at">y =</span> <span class="fu">fct_rev</span>(<span class="fu">as.factor</span>(Year)), <span class="at">fill =</span> ..x..))<span class="sc">+</span></span>
+<span id="cb47-11"><a href="#cb47-11"></a>  <span class="fu">geom_density_ridges_gradient</span>(<span class="at">color =</span> <span class="st">"white"</span>, </span>
+<span id="cb47-12"><a href="#cb47-12"></a>                               <span class="at">quantile_lines =</span> <span class="cn">TRUE</span>)<span class="sc">+</span></span>
+<span id="cb47-13"><a href="#cb47-13"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Life expectancy"</span>, <span class="at">y =</span> <span class="cn">NULL</span>, <span class="at">fill =</span> <span class="cn">NULL</span>)<span class="sc">+</span></span>
+<span id="cb47-14"><a href="#cb47-14"></a>  <span class="fu">scale_fill_viridis_c</span>(<span class="at">name =</span> <span class="st">""</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+
+<section id="visualizing-time-4" class="title-slide slide level1 center">
+<h1>Visualizing Time</h1>
+<p>This produces:</p>
+
+<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-72-1.png" width="960" class="r-stretch"></section>
+
+<section id="visualizing-time-5" class="title-slide slide level1 center" data-visibility="uncounted">
+<h1>Visualizing Time</h1>
+<p>We can see this way the first, second, and third quartile</p>
+
+<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-73-1.png" width="960" class="r-stretch"></section>
+
+<section>
+<section id="visualizing-time-6" class="title-slide slide level1 center" data-visibility="uncounted">
+<h1>Visualizing Time</h1>
+<p>We also see that the life expectancy gets narrower over time: most people live longer lives</p>
+
+<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-74-1.png" width="960" class="r-stretch"></section>
+<section id="saving-figures" class="slide level2">
+<h2>Saving Figures</h2>
+<p>One final aspect related to visualization is how we save the data</p>
+<p>The command for this <code>ggsave</code></p>
+<p>Let us look at a few options</p>
+</section>
+<section id="saving-figures-1" class="slide level2">
+<h2>Saving Figures</h2>
+<p>Let’s imagine we want to save the following plot</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1"></a><span class="fu">ggplot</span>(life_expectancy_itus, </span>
+<span id="cb48-2"><a href="#cb48-2"></a>       <span class="fu">aes</span>(<span class="at">x=</span>Year, </span>
+<span id="cb48-3"><a href="#cb48-3"></a>           <span class="at">y=</span> life_exp, </span>
+<span id="cb48-4"><a href="#cb48-4"></a>           <span class="at">color =</span> Entity))<span class="sc">+</span></span>
+<span id="cb48-5"><a href="#cb48-5"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
+<span id="cb48-6"><a href="#cb48-6"></a>  <span class="fu">scale_colour_viridis_d</span>()<span class="sc">+</span></span>
+<span id="cb48-7"><a href="#cb48-7"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">"label"</span>,</span>
+<span id="cb48-8"><a href="#cb48-8"></a>           <span class="at">x =</span> <span class="dv">1918</span>, <span class="at">y =</span> <span class="dv">80</span>,</span>
+<span id="cb48-9"><a href="#cb48-9"></a>           <span class="at">label =</span> <span class="st">"WW1"</span>, </span>
+<span id="cb48-10"><a href="#cb48-10"></a>           <span class="at">color=</span><span class="st">"red"</span>)<span class="sc">+</span></span>
+<span id="cb48-11"><a href="#cb48-11"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">"rect"</span>, </span>
+<span id="cb48-12"><a href="#cb48-12"></a>           <span class="at">xmin =</span> <span class="dv">1917</span>, </span>
+<span id="cb48-13"><a href="#cb48-13"></a>           <span class="at">xmax =</span> <span class="dv">1920</span>,</span>
+<span id="cb48-14"><a href="#cb48-14"></a>           <span class="at">ymin =</span> <span class="dv">0</span>, </span>
+<span id="cb48-15"><a href="#cb48-15"></a>           <span class="at">ymax =</span> <span class="cn">Inf</span>,</span>
+<span id="cb48-16"><a href="#cb48-16"></a>           <span class="at">fill =</span> <span class="st">"red"</span>, </span>
+<span id="cb48-17"><a href="#cb48-17"></a>           <span class="at">alpha =</span> <span class="fl">0.2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="saving-figures-2" class="slide level2" data-visibility="uncounted">
+<h2>Saving Figures</h2>
+<p>Let’s imagine we want to save the following plot</p>
+
+<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-76-1.png" width="960" class="r-stretch"></section>
+<section id="saving-figures-3" class="slide level2" data-visibility="uncounted">
+<h2>Saving Figures</h2>
+<p>Let’s imagine we want to save the following plot</p>
+<p>We first create an object: pic1</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1"></a>pic1<span class="ot">&lt;-</span><span class="fu">ggplot</span>(life_expectancy_itus, </span>
+<span id="cb49-2"><a href="#cb49-2"></a>       <span class="fu">aes</span>(<span class="at">x=</span>Year, </span>
+<span id="cb49-3"><a href="#cb49-3"></a>           <span class="at">y=</span> life_exp, </span>
+<span id="cb49-4"><a href="#cb49-4"></a>           <span class="at">color =</span> Entity))<span class="sc">+</span></span>
+<span id="cb49-5"><a href="#cb49-5"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
+<span id="cb49-6"><a href="#cb49-6"></a>  <span class="fu">scale_colour_viridis_d</span>()<span class="sc">+</span></span>
+<span id="cb49-7"><a href="#cb49-7"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">"label"</span>,</span>
+<span id="cb49-8"><a href="#cb49-8"></a>           <span class="at">x =</span> <span class="dv">1918</span>, <span class="at">y =</span> <span class="dv">80</span>,</span>
+<span id="cb49-9"><a href="#cb49-9"></a>           <span class="at">label =</span> <span class="st">"WW1"</span>, </span>
+<span id="cb49-10"><a href="#cb49-10"></a>           <span class="at">color=</span><span class="st">"red"</span>)<span class="sc">+</span></span>
+<span id="cb49-11"><a href="#cb49-11"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">"rect"</span>, </span>
+<span id="cb49-12"><a href="#cb49-12"></a>           <span class="at">xmin =</span> <span class="dv">1917</span>, </span>
+<span id="cb49-13"><a href="#cb49-13"></a>           <span class="at">xmax =</span> <span class="dv">1920</span>,</span>
+<span id="cb49-14"><a href="#cb49-14"></a>           <span class="at">ymin =</span> <span class="dv">0</span>, </span>
+<span id="cb49-15"><a href="#cb49-15"></a>           <span class="at">ymax =</span> <span class="cn">Inf</span>,</span>
+<span id="cb49-16"><a href="#cb49-16"></a>           <span class="at">fill =</span> <span class="st">"red"</span>, </span>
+<span id="cb49-17"><a href="#cb49-17"></a>           <span class="at">alpha =</span> <span class="fl">0.2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="saving-figures-4" class="slide level2" data-visibility="uncounted">
+<h2>Saving Figures</h2>
+<p>The next step is to use the <code>ggsave</code> function.</p>
+<p>This will save the object in your directory</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1"></a><span class="co">#Saving as PDF</span></span>
+<span id="cb50-2"><a href="#cb50-2"></a><span class="fu">ggsave</span>(pic1, <span class="at">filename =</span> <span class="st">"./figures_lecture8/pic1.pdf"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1"></a><span class="co">#Saving as PNG</span></span>
+<span id="cb51-2"><a href="#cb51-2"></a><span class="fu">ggsave</span>(pic1, <span class="at">filename =</span> <span class="st">"./figures_lecture8/pic1.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1"></a><span class="co">#Saving as JPG</span></span>
+<span id="cb52-2"><a href="#cb52-2"></a><span class="fu">ggsave</span>(pic1, <span class="at">filename =</span> <span class="st">"./figures_lecture8/pic1.jpg"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="saving-figures-5" class="slide level2">
+<h2>Saving Figures</h2>
+<p>It is important to be aware how much space these files take</p>
+<ul>
+<li><p>pic1.pdf - 7KB</p></li>
+<li><p>pic1.png - 119KB</p></li>
+<li><p>pic.jpg - 410KB</p></li>
+</ul>
+</section>
+<section id="saving-figures-6" class="slide level2">
+<h2>Saving Figures</h2>
+<p>Depending on your goal, you may want to opt for one of the three</p>
+<p>For web, pngs are good</p>
+<p>For academic publications, jpgs are acceptable</p>
+</section>
+<section id="saving-figures-7" class="slide level2">
+<h2>Saving Figures</h2>
+<p>One should also be aware that width and heigh options, as part of the <code>ggsave</code> function will alter the appearance of your figure</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1"></a><span class="co">#Saving as JPG</span></span>
+<span id="cb53-2"><a href="#cb53-2"></a><span class="fu">ggsave</span>(pic1, <span class="at">filename =</span> <span class="st">"./figures_lecture8/pic1_square.jpg"</span>, </span>
+<span id="cb53-3"><a href="#cb53-3"></a>       <span class="at">width =</span> <span class="dv">20</span>, </span>
+<span id="cb53-4"><a href="#cb53-4"></a>       <span class="at">height =</span> <span class="dv">20</span>, </span>
+<span id="cb53-5"><a href="#cb53-5"></a>       <span class="at">units =</span> <span class="st">"cm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1"></a><span class="co">#Saving as JPG</span></span>
+<span id="cb54-2"><a href="#cb54-2"></a><span class="fu">ggsave</span>(pic1, <span class="at">filename =</span> <span class="st">"./figures_lecture8/pic1_rect.jpg"</span>, </span>
+<span id="cb54-3"><a href="#cb54-3"></a>       <span class="at">width =</span> <span class="dv">20</span>, </span>
+<span id="cb54-4"><a href="#cb54-4"></a>       <span class="at">height =</span> <span class="dv">10</span>, </span>
+<span id="cb54-5"><a href="#cb54-5"></a>       <span class="at">units =</span> <span class="st">"cm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="saving-figures-8" class="slide level2">
+<h2>Saving Figures</h2>
+<p>Here is what they look like:</p>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="figures_lecture8/pic1_square.jpg" style="width:45.0%"> <img data-src="figures_lecture8/pic1_rect.jpg" style="width:45.0%"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="saving-figures-9" class="slide level2">
+<h2>Saving Figures</h2>
+<p>For publication quality figures, you should use a dpi of 300</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1"></a><span class="co">#Saving as JPG</span></span>
+<span id="cb55-2"><a href="#cb55-2"></a><span class="fu">ggsave</span>(pic1, <span class="at">filename =</span> <span class="st">"./figures_lecture8/pic1_300dpi.jpg"</span>, </span>
+<span id="cb55-3"><a href="#cb55-3"></a>       <span class="at">width =</span> <span class="dv">20</span>, </span>
+<span id="cb55-4"><a href="#cb55-4"></a>       <span class="at">height =</span> <span class="dv">20</span>, </span>
+<span id="cb55-5"><a href="#cb55-5"></a>       <span class="at">units =</span> <span class="st">"cm"</span>,</span>
+<span id="cb55-6"><a href="#cb55-6"></a>       <span class="at">dpi=</span><span class="dv">300</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>And here is 50 dpi</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1"></a><span class="co">#Saving as JPG</span></span>
+<span id="cb56-2"><a href="#cb56-2"></a><span class="fu">ggsave</span>(pic1, <span class="at">filename =</span> <span class="st">"./figures_lecture8/pic1_50dpi.jpg"</span>, </span>
+<span id="cb56-3"><a href="#cb56-3"></a>       <span class="at">width =</span> <span class="dv">20</span>, </span>
+<span id="cb56-4"><a href="#cb56-4"></a>       <span class="at">height =</span> <span class="dv">20</span>, </span>
+<span id="cb56-5"><a href="#cb56-5"></a>       <span class="at">units =</span> <span class="st">"cm"</span>,</span>
+<span id="cb56-6"><a href="#cb56-6"></a>       <span class="at">dpi=</span><span class="dv">50</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="saving-figures-10" class="slide level2">
+<h2>Saving Figures</h2>
+<p>Here is what they look like:</p>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="figures_lecture8/pic1_300dpi.jpg" style="width:45.0%"> <img data-src="figures_lecture8/pic1_50dpi.jpg" style="width:45.0%"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="saving-figures-11" class="slide level2">
+<h2>Saving Figures</h2>
+<p>The take-away is that higher dpi result in greater clarity at the expense of space</p>
+<p>Lower dpi means lower clarity and lower space:</p>
+<ul>
+<li><p>pic1_50dpi - 25KB</p></li>
+<li><p>pic1_300dpi - 471KB</p></li>
+</ul>
+</section>
+<section id="exercise-1-function-for-scatter-plot" class="slide level2">
+<h2>Exercise 1: Function for Scatter Plot</h2>
+<p>Write a function called <code>scatter_plot</code> that takes two vectors <code>x</code> and <code>y</code> as inputs and generates a scatter plot using <code>ggplot2</code>.</p>
+<p>The <code>x</code> and <code>y</code> look like:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1"></a><span class="co"># Example usage:</span></span>
+<span id="cb57-2"><a href="#cb57-2"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
+<span id="cb57-3"><a href="#cb57-3"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">11</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1"></a><span class="fu">scatter_plot</span>(x, y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-89-1.png" width="960" class="r-stretch"></section>
+<section id="exercise-2-function-for-histogram" class="slide level2">
+<h2>Exercise 2: Function for Histogram</h2>
+<p>Write a function called <code>histogram_plot</code> that takes a vector data as input and generates a histogram using <code>ggplot2</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb59-2"><a href="#cb59-2"></a>data <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
+<span id="cb59-3"><a href="#cb59-3"></a><span class="fu">histogram_plot</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-91-1.png" width="960" class="r-stretch"></section>
+<section id="exercise-3-produce-a-time-visualization-like-below" class="slide level2">
+<h2>Exercise 3: Produce a time visualization like below:</h2>
+
+<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-92-1.gif" class="r-stretch"></section>
+<section id="exercise-4" class="slide level2">
+<h2>Exercise 4:</h2>
+<p>Create the following dataframe:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1"></a><span class="co"># Load required library</span></span>
+<span id="cb60-2"><a href="#cb60-2"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb60-3"><a href="#cb60-3"></a></span>
+<span id="cb60-4"><a href="#cb60-4"></a><span class="co"># Generate a fun dataset</span></span>
+<span id="cb60-5"><a href="#cb60-5"></a><span class="fu">set.seed</span>(<span class="dv">123</span>) <span class="co"># for reproducibility</span></span>
+<span id="cb60-6"><a href="#cb60-6"></a>n_creatures <span class="ot">&lt;-</span> <span class="dv">50</span></span>
+<span id="cb60-7"><a href="#cb60-7"></a></span>
+<span id="cb60-8"><a href="#cb60-8"></a>creatures <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb60-9"><a href="#cb60-9"></a>  <span class="at">type =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Dragon"</span>, <span class="st">"Unicorn"</span>, <span class="st">"Yeti"</span>), <span class="at">each =</span> n_creatures),</span>
+<span id="cb60-10"><a href="#cb60-10"></a>  <span class="at">cuteness =</span> <span class="fu">c</span>(<span class="fu">rnorm</span>(n_creatures, <span class="at">mean =</span> <span class="dv">8</span>, <span class="at">sd =</span> <span class="dv">2</span>),</span>
+<span id="cb60-11"><a href="#cb60-11"></a>               <span class="fu">rnorm</span>(n_creatures, <span class="at">mean =</span> <span class="dv">7</span>, <span class="at">sd =</span> <span class="dv">2</span>),</span>
+<span id="cb60-12"><a href="#cb60-12"></a>               <span class="fu">rnorm</span>(n_creatures, <span class="at">mean =</span> <span class="dv">5</span>, <span class="at">sd =</span> <span class="dv">2</span>)),</span>
+<span id="cb60-13"><a href="#cb60-13"></a>  <span class="at">fierceness =</span> <span class="fu">c</span>(<span class="fu">rnorm</span>(n_creatures, <span class="at">mean =</span> <span class="dv">7</span>, <span class="at">sd =</span> <span class="dv">2</span>),</span>
+<span id="cb60-14"><a href="#cb60-14"></a>                 <span class="fu">rnorm</span>(n_creatures, <span class="at">mean =</span> <span class="dv">5</span>, <span class="at">sd =</span> <span class="dv">2</span>),</span>
+<span id="cb60-15"><a href="#cb60-15"></a>                 <span class="fu">rnorm</span>(n_creatures, <span class="at">mean =</span> <span class="dv">8</span>, <span class="at">sd =</span> <span class="dv">2</span>))</span>
+<span id="cb60-16"><a href="#cb60-16"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="exercise-4-1" class="slide level2">
+<h2>Exercise 4:</h2>
+<p>Produce the following graph</p>
+
+<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-94-1.png" width="960" class="r-stretch"><div class="footer footer-default">
+<p>Popescu (JCU): Lecture 8</p>
+</div>
+</section></section>
+    </div>
+  </div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="lecture8_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="lecture8_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="lecture8_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="lecture8_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="lecture8_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="lecture8_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="lecture8_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="lecture8_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="lecture8_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="lecture8_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': true,
+'smaller': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button', {
+        text: function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+      });
+      clipboard.on('success', function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      });
+      function tippyHover(el, contentFn) {
+        const config = {
+          allowHTML: true,
+          content: contentFn,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start'
+        };
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          return note.innerHTML;
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>
