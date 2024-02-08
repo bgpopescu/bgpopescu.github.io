@@ -45,7 +45,7 @@ My research centers on state responses to political threats and the long-term co
 
 <h3><b>Working Papers</b></h3>
 
-[Civic Associations, Populism, and (Un-)Civic Behavior: Evidence from Germany](https://www.dropbox.com/scl/fi/93sun7m3ssxad96c12dyh/paper_compressed.pdf?rlkey=wv17vfa6w5kj0omttqct9ucnh&dl=0){:target="_blank"} (with Marlene Jugl (Bocconi)) - Revised and Resubmitted at *Political Science Research and Methods*
+[Civic Associations, Populism, and (Un-)Civic Behavior: Evidence from Germany](https://www.dropbox.com/s/z7i1hk0kk9x4nio/covid_paper_compressed.pdf?dl=0){:target="_blank"} (with Marlene Jugl (Bocconi)) - Revised and Resubmitted at *Political Science Research and Methods*
 
 [Frontiers of Resilience: Borders as Strategic Buffers](https://www.dropbox.com/scl/fi/1ctq14qla4imydet8s4if/popescu_et_al_borders_paper_2023_07_25_compressed.pdf?rlkey=wgydqvatw8zs5yo3egiwk3qgx&dl=0){:target="_blank"} (with Harunobu Saijo (Hiroshima University), Crystal Jing Xu (Chinese University of Hong Kong), Anna Zhang (Facebook))
 
