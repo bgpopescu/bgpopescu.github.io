@@ -1840,20 +1840,73 @@ Minimal
 </div>
 </section>
 
-<section id="describing-graphs-with-grammar-1" class="title-slide slide level1 center">
-<h1>Describing graphs with grammar</h1>
-<p>We can map continent to the x-axis, life expectancy to the y-axis, add violin plots and semi-transparent boxplots, fill and facet by continent</p>
+<section id="what-is-a-histogram" class="title-slide slide level1 center">
+<h1>What is a histogram?</h1>
+<div class="fragment">
+<p>Histograms allow us to better understand how frequently or infrequently certain values occur in our dataset.</p>
+</div>
+<div class="fragment">
+<p>Imagine a set of values that are spaced out along a number line.</p>
+</div>
+<div class="fragment">
+<p><img data-src="figures_lecture7/01-histogram-description.gif" style="width:38.0%"></p>
+</div>
+</section>
+
+<section id="what-is-a-histogram-1" class="title-slide slide level1 center">
+<h1>What is a histogram?</h1>
+<div class="fragment">
+<p>To construct a histogram, a section of the number line is divided into equal chunks, called bins.</p>
+</div>
+<div class="fragment">
+<p>Next, count how many data points sit inside each bin, and draw bars, one for each bin</p>
+</div>
+<div class="fragment">
+<p>The heights of the weights correspond to the number of data points.</p>
+</div>
+<div class="fragment">
+<p><img data-src="figures_lecture7/02-histogram-description.gif" style="width:38.0%"></p>
+</div>
+</section>
+
+<section id="what-is-a-histogram-2" class="title-slide slide level1 center">
+<h1>What is a histogram?</h1>
+<div class="fragment">
+<p>Label the data (in the example below each data point is an SAT score)</p>
+</div>
+<div class="fragment">
+<p>Draw in a y-axis which counts the number of data points in each bin</p>
+</div>
+<div class="fragment">
+<p>Finally label your bins.</p>
+</div>
+<div class="fragment">
+<p><img data-src="figures_lecture7/03-histogram-description.gif" style="width:38.0%"></p>
+</div>
+</section>
+
+<section id="what-is-a-histogram-3" class="title-slide slide level1 center">
+<h1>What is a histogram?</h1>
+<p>This how it all looks together</p>
+<p><img data-src="figures_lecture7/01-histogram-description.gif" style="width:38.0%"></p>
+<p><img data-src="figures_lecture7/02-histogram-description.gif" style="width:38.0%"></p>
+<p><img data-src="figures_lecture7/03-histogram-description.gif" style="width:38.0%"></p>
+</section>
+
+<section id="what-is-a-histogram-4" class="title-slide slide level1 center">
+<h1>What is a histogram?</h1>
+<p>And these are three histograms applied to our data.</p>
 <div class="columns">
 <div class="column" style="width:49%;">
 <div class="fragment">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> life_exp_urb, </span>
-<span id="cb34-2"><a href="#cb34-2"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> type,</span>
-<span id="cb34-3"><a href="#cb34-3"></a>                     <span class="at">y =</span> life_expectancy,</span>
-<span id="cb34-4"><a href="#cb34-4"></a>                     <span class="at">fill =</span> type)) <span class="sc">+</span></span>
-<span id="cb34-5"><a href="#cb34-5"></a>  <span class="fu">geom_violin</span>() <span class="sc">+</span></span>
-<span id="cb34-6"><a href="#cb34-6"></a>  <span class="fu">geom_boxplot</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb34-7"><a href="#cb34-7"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>)  <span class="co"># Turn off legend</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb34-2"><a href="#cb34-2"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> life_expectancy,</span>
+<span id="cb34-3"><a href="#cb34-3"></a>                     <span class="at">fill =</span> type)) <span class="sc">+</span></span>
+<span id="cb34-4"><a href="#cb34-4"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">5</span>, </span>
+<span id="cb34-5"><a href="#cb34-5"></a>                 <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb34-6"><a href="#cb34-6"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>) <span class="sc">+</span>  <span class="co"># Turn off legend</span></span>
+<span id="cb34-7"><a href="#cb34-7"></a>  <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(type))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div><div class="column" style="width:49%;">
@@ -1868,36 +1921,64 @@ Minimal
 </div>
 </section>
 
-<section id="adding-a-time-dimension" class="title-slide slide level1 center">
-<h1>Adding a Time Dimension</h1>
+<section id="describing-graphs-with-grammar-1" class="title-slide slide level1 center">
+<h1>Describing graphs with grammar</h1>
+<p>We can map continent to the x-axis, life expectancy to the y-axis, add violin plots and semi-transparent boxplots, fill and facet by continent</p>
 <div class="columns">
 <div class="column" style="width:49%;">
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="fu">library</span>(<span class="st">"gganimate"</span>)</span>
-<span id="cb35-2"><a href="#cb35-2"></a><span class="fu">ggplot</span>(final2, <span class="fu">aes</span>(<span class="at">x =</span> urb, </span>
-<span id="cb35-3"><a href="#cb35-3"></a>                   <span class="at">y =</span> life_exp, </span>
-<span id="cb35-4"><a href="#cb35-4"></a>                  <span class="at">size =</span> urb, </span>
-<span id="cb35-5"><a href="#cb35-5"></a>                  <span class="at">color=</span>Entity)) <span class="sc">+</span></span>
-<span id="cb35-6"><a href="#cb35-6"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
-<span id="cb35-7"><a href="#cb35-7"></a>  <span class="fu">scale_size</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">12</span>)) <span class="sc">+</span></span>
-<span id="cb35-8"><a href="#cb35-8"></a>  <span class="fu">guides</span>(<span class="at">size =</span> <span class="st">"none"</span>, </span>
-<span id="cb35-9"><a href="#cb35-9"></a>         <span class="at">color =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
-<span id="cb35-10"><a href="#cb35-10"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>continent)<span class="sc">+</span></span>
-<span id="cb35-11"><a href="#cb35-11"></a>  <span class="fu">scale_color_viridis_d</span>()<span class="sc">+</span></span>
-<span id="cb35-12"><a href="#cb35-12"></a>  <span class="co">#animate arguments</span></span>
-<span id="cb35-13"><a href="#cb35-13"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">'Year: {frame_time}'</span>, </span>
-<span id="cb35-14"><a href="#cb35-14"></a>       <span class="at">x =</span> <span class="st">'Urbanization'</span>, </span>
-<span id="cb35-15"><a href="#cb35-15"></a>       <span class="at">y =</span> <span class="st">'Life Expectancy'</span>) <span class="sc">+</span></span>
-<span id="cb35-16"><a href="#cb35-16"></a>  <span class="fu">transition_time</span>(Year) <span class="sc">+</span></span>
-<span id="cb35-17"><a href="#cb35-17"></a>  <span class="fu">ease_aes</span>(<span class="st">'linear'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> life_exp_urb, </span>
+<span id="cb35-2"><a href="#cb35-2"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> type,</span>
+<span id="cb35-3"><a href="#cb35-3"></a>                     <span class="at">y =</span> life_expectancy,</span>
+<span id="cb35-4"><a href="#cb35-4"></a>                     <span class="at">fill =</span> type)) <span class="sc">+</span></span>
+<span id="cb35-5"><a href="#cb35-5"></a>  <span class="fu">geom_violin</span>() <span class="sc">+</span></span>
+<span id="cb35-6"><a href="#cb35-6"></a>  <span class="fu">geom_boxplot</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb35-7"><a href="#cb35-7"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>)  <span class="co"># Turn off legend</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div><div class="column" style="width:49%;">
 <div class="fragment">
 <div class="cell">
 <div class="cell-output-display">
-<p><img data-src="lecture7_files/figure-revealjs/unnamed-chunk-57-1.gif"></p>
+<p><img data-src="lecture7_files/figure-revealjs/unnamed-chunk-56-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="adding-a-time-dimension" class="title-slide slide level1 center">
+<h1>Adding a Time Dimension</h1>
+<div class="columns">
+<div class="column" style="width:49%;">
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a><span class="fu">library</span>(<span class="st">"gganimate"</span>)</span>
+<span id="cb36-2"><a href="#cb36-2"></a><span class="fu">ggplot</span>(final2, <span class="fu">aes</span>(<span class="at">x =</span> urb, </span>
+<span id="cb36-3"><a href="#cb36-3"></a>                   <span class="at">y =</span> life_exp, </span>
+<span id="cb36-4"><a href="#cb36-4"></a>                  <span class="at">size =</span> urb, </span>
+<span id="cb36-5"><a href="#cb36-5"></a>                  <span class="at">color=</span>Entity)) <span class="sc">+</span></span>
+<span id="cb36-6"><a href="#cb36-6"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb36-7"><a href="#cb36-7"></a>  <span class="fu">scale_size</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">12</span>)) <span class="sc">+</span></span>
+<span id="cb36-8"><a href="#cb36-8"></a>  <span class="fu">guides</span>(<span class="at">size =</span> <span class="st">"none"</span>, </span>
+<span id="cb36-9"><a href="#cb36-9"></a>         <span class="at">color =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
+<span id="cb36-10"><a href="#cb36-10"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>continent)<span class="sc">+</span></span>
+<span id="cb36-11"><a href="#cb36-11"></a>  <span class="fu">scale_color_viridis_d</span>()<span class="sc">+</span></span>
+<span id="cb36-12"><a href="#cb36-12"></a>  <span class="co">#animate arguments</span></span>
+<span id="cb36-13"><a href="#cb36-13"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">'Year: {frame_time}'</span>, </span>
+<span id="cb36-14"><a href="#cb36-14"></a>       <span class="at">x =</span> <span class="st">'Urbanization'</span>, </span>
+<span id="cb36-15"><a href="#cb36-15"></a>       <span class="at">y =</span> <span class="st">'Life Expectancy'</span>) <span class="sc">+</span></span>
+<span id="cb36-16"><a href="#cb36-16"></a>  <span class="fu">transition_time</span>(Year) <span class="sc">+</span></span>
+<span id="cb36-17"><a href="#cb36-17"></a>  <span class="fu">ease_aes</span>(<span class="st">'linear'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div><div class="column" style="width:49%;">
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="lecture7_files/figure-revealjs/unnamed-chunk-59-1.gif"></p>
 </div>
 </div>
 </div>
@@ -1909,87 +1990,87 @@ Minimal
 <h1>Adding a Time Dimension</h1>
 <p>Here is how I obtained the <code>final2</code> dataframe:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36" data-code-line-numbers="1-3|4-6|7-8|9-10|11-12|13-14|15-16|17-18|19-21|22-23|24-52|54-76|78-81"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a><span class="co">#Setting path</span></span>
-<span id="cb36-2"><a href="#cb36-2"></a><span class="fu">library</span>(<span class="st">"dplyr"</span>)</span>
-<span id="cb36-3"><a href="#cb36-3"></a><span class="fu">setwd</span>(<span class="st">"/Users/bgpopescu/Library/CloudStorage/Dropbox/john_cabot/teaching/big_data/week4/data/"</span>)</span>
-<span id="cb36-4"><a href="#cb36-4"></a><span class="co">#Step1: Loading the data</span></span>
-<span id="cb36-5"><a href="#cb36-5"></a>life_expectancy <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">'./life-expectancy.csv'</span>)</span>
-<span id="cb36-6"><a href="#cb36-6"></a>urbanization <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">'./share-of-population-urban.csv'</span>)</span>
-<span id="cb36-7"><a href="#cb36-7"></a><span class="co">#Step2: Removing continents</span></span>
-<span id="cb36-8"><a href="#cb36-8"></a>life_expectancy2<span class="ot">&lt;-</span><span class="fu">subset</span>(life_expectancy, Code<span class="sc">!=</span><span class="st">""</span>)</span>
-<span id="cb36-9"><a href="#cb36-9"></a><span class="co">#Step3: Changing variable name</span></span>
-<span id="cb36-10"><a href="#cb36-10"></a><span class="fu">names</span>(life_expectancy2)[<span class="fu">names</span>(life_expectancy2)<span class="sc">==</span><span class="st">"Life.expectancy.at.birth..historical."</span>]<span class="ot">&lt;-</span><span class="st">"life_exp"</span></span>
-<span id="cb36-11"><a href="#cb36-11"></a><span class="co">#Step4: Changing variable name</span></span>
-<span id="cb36-12"><a href="#cb36-12"></a>life_expectancy3<span class="ot">&lt;-</span><span class="fu">subset</span>(life_expectancy2, <span class="at">selec=</span><span class="fu">c</span>(<span class="st">"Entity"</span>, <span class="st">"Code"</span>, <span class="st">"Year"</span>, <span class="st">"life_exp"</span>))</span>
-<span id="cb36-13"><a href="#cb36-13"></a><span class="co">#Step5: Removing continents</span></span>
-<span id="cb36-14"><a href="#cb36-14"></a>urbanization2<span class="ot">&lt;-</span><span class="fu">subset</span>(urbanization, Code<span class="sc">!=</span><span class="st">""</span>)</span>
-<span id="cb36-15"><a href="#cb36-15"></a><span class="co">#Step6: Changing variable name</span></span>
-<span id="cb36-16"><a href="#cb36-16"></a><span class="fu">names</span>(urbanization2)[<span class="fu">names</span>(urbanization2)<span class="sc">==</span><span class="st">"Urban.population....of.total.population."</span>]<span class="ot">&lt;-</span><span class="st">"urb"</span></span>
-<span id="cb36-17"><a href="#cb36-17"></a><span class="co">#Step7: Keeping only relevant vars</span></span>
-<span id="cb36-18"><a href="#cb36-18"></a>urbanization3<span class="ot">&lt;-</span><span class="fu">subset</span>(urbanization2, <span class="at">selec=</span><span class="fu">c</span>(<span class="st">"Code"</span>, <span class="st">"Year"</span>, <span class="st">"urb"</span>))</span>
-<span id="cb36-19"><a href="#cb36-19"></a><span class="co">#Step8: Performing a merge</span></span>
-<span id="cb36-20"><a href="#cb36-20"></a>final<span class="ot">&lt;-</span><span class="fu">left_join</span>(life_expectancy3, urbanization3, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"Code"</span><span class="ot">=</span><span class="st">"Code"</span>,</span>
-<span id="cb36-21"><a href="#cb36-21"></a>                                                         <span class="st">"Year"</span><span class="ot">=</span><span class="st">"Year"</span>))</span>
-<span id="cb36-22"><a href="#cb36-22"></a><span class="co">#Step9: Removing NAs</span></span>
-<span id="cb36-23"><a href="#cb36-23"></a>final2<span class="ot">&lt;-</span>final[<span class="fu">complete.cases</span>(final), ]</span>
-<span id="cb36-24"><a href="#cb36-24"></a><span class="co">#Step10: Defining continents</span></span>
-<span id="cb36-25"><a href="#cb36-25"></a><span class="co">#EU Countries</span></span>
-<span id="cb36-26"><a href="#cb36-26"></a>eu_countries<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">"Austria"</span>,</span>
-<span id="cb36-27"><a href="#cb36-27"></a>                <span class="st">"Belgium"</span>,</span>
-<span id="cb36-28"><a href="#cb36-28"></a>                <span class="st">"Bulgaria"</span>,</span>
-<span id="cb36-29"><a href="#cb36-29"></a>                <span class="st">"Croatia"</span>,</span>
-<span id="cb36-30"><a href="#cb36-30"></a>                <span class="st">"Cyprus"</span>,</span>
-<span id="cb36-31"><a href="#cb36-31"></a>                <span class="st">"Czechia"</span>,</span>
-<span id="cb36-32"><a href="#cb36-32"></a>                <span class="st">"Denmark"</span>,</span>
-<span id="cb36-33"><a href="#cb36-33"></a>                <span class="st">"Estonia"</span>,</span>
-<span id="cb36-34"><a href="#cb36-34"></a>                <span class="st">"Finland"</span>,</span>
-<span id="cb36-35"><a href="#cb36-35"></a>                <span class="st">"France"</span>,</span>
-<span id="cb36-36"><a href="#cb36-36"></a>                <span class="st">"Germany"</span>,</span>
-<span id="cb36-37"><a href="#cb36-37"></a>                <span class="st">"Greece"</span>,</span>
-<span id="cb36-38"><a href="#cb36-38"></a>                <span class="st">"Hungary"</span>,</span>
-<span id="cb36-39"><a href="#cb36-39"></a>                <span class="st">"Ireland"</span>,</span>
-<span id="cb36-40"><a href="#cb36-40"></a>                <span class="st">"Italy"</span>,</span>
-<span id="cb36-41"><a href="#cb36-41"></a>                <span class="st">"Latvia"</span>,</span>
-<span id="cb36-42"><a href="#cb36-42"></a>                <span class="st">"Lithuania"</span>,</span>
-<span id="cb36-43"><a href="#cb36-43"></a>                <span class="st">"Luxembourg"</span>,</span>
-<span id="cb36-44"><a href="#cb36-44"></a>                <span class="st">"Malta"</span>,</span>
-<span id="cb36-45"><a href="#cb36-45"></a>                <span class="st">"Netherlands"</span>,</span>
-<span id="cb36-46"><a href="#cb36-46"></a>                <span class="st">"Poland"</span>,</span>
-<span id="cb36-47"><a href="#cb36-47"></a>                <span class="st">"Portugal"</span>,</span>
-<span id="cb36-48"><a href="#cb36-48"></a>                <span class="st">"Romania"</span>,</span>
-<span id="cb36-49"><a href="#cb36-49"></a>                <span class="st">"Slovakia"</span>,</span>
-<span id="cb36-50"><a href="#cb36-50"></a>                <span class="st">"Slovenia"</span>,</span>
-<span id="cb36-51"><a href="#cb36-51"></a>                <span class="st">"Spain"</span>,</span>
-<span id="cb36-52"><a href="#cb36-52"></a>                <span class="st">"Sweden"</span>)</span>
-<span id="cb36-53"><a href="#cb36-53"></a></span>
-<span id="cb36-54"><a href="#cb36-54"></a>latam_countries<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">"Belize"</span>,</span>
-<span id="cb36-55"><a href="#cb36-55"></a>                   <span class="st">"Costa Rica"</span>,</span>
-<span id="cb36-56"><a href="#cb36-56"></a>                   <span class="st">"El Salvador"</span>,</span>
-<span id="cb36-57"><a href="#cb36-57"></a>                   <span class="st">"Guatemala"</span>,</span>
-<span id="cb36-58"><a href="#cb36-58"></a>                   <span class="st">"Honduras"</span>,</span>
-<span id="cb36-59"><a href="#cb36-59"></a>                   <span class="st">"Mexico"</span>,</span>
-<span id="cb36-60"><a href="#cb36-60"></a>                   <span class="st">"Nicaragua"</span>,</span>
-<span id="cb36-61"><a href="#cb36-61"></a>                   <span class="st">"Panama"</span>,</span>
-<span id="cb36-62"><a href="#cb36-62"></a>                   <span class="st">"Argentina"</span>,</span>
-<span id="cb36-63"><a href="#cb36-63"></a>                   <span class="st">"Bolivia"</span>,</span>
-<span id="cb36-64"><a href="#cb36-64"></a>                   <span class="st">"Brazil"</span>,</span>
-<span id="cb36-65"><a href="#cb36-65"></a>                   <span class="st">"Chile"</span>,</span>
-<span id="cb36-66"><a href="#cb36-66"></a>                   <span class="st">"Colombia"</span>,</span>
-<span id="cb36-67"><a href="#cb36-67"></a>                   <span class="st">"Ecuador"</span>,</span>
-<span id="cb36-68"><a href="#cb36-68"></a>                   <span class="st">"Guyana"</span>,</span>
-<span id="cb36-69"><a href="#cb36-69"></a>                   <span class="st">"Paraguay"</span>,</span>
-<span id="cb36-70"><a href="#cb36-70"></a>                   <span class="st">"Peru"</span>,</span>
-<span id="cb36-71"><a href="#cb36-71"></a>                   <span class="st">"Suriname"</span>,</span>
-<span id="cb36-72"><a href="#cb36-72"></a>                   <span class="st">"Uruguay"</span>,</span>
-<span id="cb36-73"><a href="#cb36-73"></a>                   <span class="st">"Venezuela"</span>,</span>
-<span id="cb36-74"><a href="#cb36-74"></a>                   <span class="st">"Cuba"</span>,</span>
-<span id="cb36-75"><a href="#cb36-75"></a>                   <span class="st">"Dominican Republic"</span>,</span>
-<span id="cb36-76"><a href="#cb36-76"></a>                   <span class="st">"Haiti"</span>)</span>
-<span id="cb36-77"><a href="#cb36-77"></a></span>
-<span id="cb36-78"><a href="#cb36-78"></a><span class="co">#Step11: Labeling continents </span></span>
-<span id="cb36-79"><a href="#cb36-79"></a>final2<span class="sc">$</span>continent[final2<span class="sc">$</span>Entity  <span class="sc">%in%</span> eu_countries]<span class="ot">&lt;-</span><span class="st">"EU"</span></span>
-<span id="cb36-80"><a href="#cb36-80"></a>final2<span class="sc">$</span>continent[final2<span class="sc">$</span>Entity  <span class="sc">%in%</span> latam_countries]<span class="ot">&lt;-</span><span class="st">"Latin America"</span></span>
-<span id="cb36-81"><a href="#cb36-81"></a>final2<span class="sc">$</span>continent[<span class="fu">is.na</span>(final2<span class="sc">$</span>continent)]<span class="ot">&lt;-</span><span class="st">"Everything Else"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37" data-code-line-numbers="1-3|4-6|7-8|9-10|11-12|13-14|15-16|17-18|19-21|22-23|24-52|54-76|78-81"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a><span class="co">#Setting path</span></span>
+<span id="cb37-2"><a href="#cb37-2"></a><span class="fu">library</span>(<span class="st">"dplyr"</span>)</span>
+<span id="cb37-3"><a href="#cb37-3"></a><span class="fu">setwd</span>(<span class="st">"/Users/bgpopescu/Library/CloudStorage/Dropbox/john_cabot/teaching/big_data/week4/data/"</span>)</span>
+<span id="cb37-4"><a href="#cb37-4"></a><span class="co">#Step1: Loading the data</span></span>
+<span id="cb37-5"><a href="#cb37-5"></a>life_expectancy <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">'./life-expectancy.csv'</span>)</span>
+<span id="cb37-6"><a href="#cb37-6"></a>urbanization <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">'./share-of-population-urban.csv'</span>)</span>
+<span id="cb37-7"><a href="#cb37-7"></a><span class="co">#Step2: Removing continents</span></span>
+<span id="cb37-8"><a href="#cb37-8"></a>life_expectancy2<span class="ot">&lt;-</span><span class="fu">subset</span>(life_expectancy, Code<span class="sc">!=</span><span class="st">""</span>)</span>
+<span id="cb37-9"><a href="#cb37-9"></a><span class="co">#Step3: Changing variable name</span></span>
+<span id="cb37-10"><a href="#cb37-10"></a><span class="fu">names</span>(life_expectancy2)[<span class="fu">names</span>(life_expectancy2)<span class="sc">==</span><span class="st">"Life.expectancy.at.birth..historical."</span>]<span class="ot">&lt;-</span><span class="st">"life_exp"</span></span>
+<span id="cb37-11"><a href="#cb37-11"></a><span class="co">#Step4: Changing variable name</span></span>
+<span id="cb37-12"><a href="#cb37-12"></a>life_expectancy3<span class="ot">&lt;-</span><span class="fu">subset</span>(life_expectancy2, <span class="at">selec=</span><span class="fu">c</span>(<span class="st">"Entity"</span>, <span class="st">"Code"</span>, <span class="st">"Year"</span>, <span class="st">"life_exp"</span>))</span>
+<span id="cb37-13"><a href="#cb37-13"></a><span class="co">#Step5: Removing continents</span></span>
+<span id="cb37-14"><a href="#cb37-14"></a>urbanization2<span class="ot">&lt;-</span><span class="fu">subset</span>(urbanization, Code<span class="sc">!=</span><span class="st">""</span>)</span>
+<span id="cb37-15"><a href="#cb37-15"></a><span class="co">#Step6: Changing variable name</span></span>
+<span id="cb37-16"><a href="#cb37-16"></a><span class="fu">names</span>(urbanization2)[<span class="fu">names</span>(urbanization2)<span class="sc">==</span><span class="st">"Urban.population....of.total.population."</span>]<span class="ot">&lt;-</span><span class="st">"urb"</span></span>
+<span id="cb37-17"><a href="#cb37-17"></a><span class="co">#Step7: Keeping only relevant vars</span></span>
+<span id="cb37-18"><a href="#cb37-18"></a>urbanization3<span class="ot">&lt;-</span><span class="fu">subset</span>(urbanization2, <span class="at">selec=</span><span class="fu">c</span>(<span class="st">"Code"</span>, <span class="st">"Year"</span>, <span class="st">"urb"</span>))</span>
+<span id="cb37-19"><a href="#cb37-19"></a><span class="co">#Step8: Performing a merge</span></span>
+<span id="cb37-20"><a href="#cb37-20"></a>final<span class="ot">&lt;-</span><span class="fu">left_join</span>(life_expectancy3, urbanization3, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"Code"</span><span class="ot">=</span><span class="st">"Code"</span>,</span>
+<span id="cb37-21"><a href="#cb37-21"></a>                                                         <span class="st">"Year"</span><span class="ot">=</span><span class="st">"Year"</span>))</span>
+<span id="cb37-22"><a href="#cb37-22"></a><span class="co">#Step9: Removing NAs</span></span>
+<span id="cb37-23"><a href="#cb37-23"></a>final2<span class="ot">&lt;-</span>final[<span class="fu">complete.cases</span>(final), ]</span>
+<span id="cb37-24"><a href="#cb37-24"></a><span class="co">#Step10: Defining continents</span></span>
+<span id="cb37-25"><a href="#cb37-25"></a><span class="co">#EU Countries</span></span>
+<span id="cb37-26"><a href="#cb37-26"></a>eu_countries<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">"Austria"</span>,</span>
+<span id="cb37-27"><a href="#cb37-27"></a>                <span class="st">"Belgium"</span>,</span>
+<span id="cb37-28"><a href="#cb37-28"></a>                <span class="st">"Bulgaria"</span>,</span>
+<span id="cb37-29"><a href="#cb37-29"></a>                <span class="st">"Croatia"</span>,</span>
+<span id="cb37-30"><a href="#cb37-30"></a>                <span class="st">"Cyprus"</span>,</span>
+<span id="cb37-31"><a href="#cb37-31"></a>                <span class="st">"Czechia"</span>,</span>
+<span id="cb37-32"><a href="#cb37-32"></a>                <span class="st">"Denmark"</span>,</span>
+<span id="cb37-33"><a href="#cb37-33"></a>                <span class="st">"Estonia"</span>,</span>
+<span id="cb37-34"><a href="#cb37-34"></a>                <span class="st">"Finland"</span>,</span>
+<span id="cb37-35"><a href="#cb37-35"></a>                <span class="st">"France"</span>,</span>
+<span id="cb37-36"><a href="#cb37-36"></a>                <span class="st">"Germany"</span>,</span>
+<span id="cb37-37"><a href="#cb37-37"></a>                <span class="st">"Greece"</span>,</span>
+<span id="cb37-38"><a href="#cb37-38"></a>                <span class="st">"Hungary"</span>,</span>
+<span id="cb37-39"><a href="#cb37-39"></a>                <span class="st">"Ireland"</span>,</span>
+<span id="cb37-40"><a href="#cb37-40"></a>                <span class="st">"Italy"</span>,</span>
+<span id="cb37-41"><a href="#cb37-41"></a>                <span class="st">"Latvia"</span>,</span>
+<span id="cb37-42"><a href="#cb37-42"></a>                <span class="st">"Lithuania"</span>,</span>
+<span id="cb37-43"><a href="#cb37-43"></a>                <span class="st">"Luxembourg"</span>,</span>
+<span id="cb37-44"><a href="#cb37-44"></a>                <span class="st">"Malta"</span>,</span>
+<span id="cb37-45"><a href="#cb37-45"></a>                <span class="st">"Netherlands"</span>,</span>
+<span id="cb37-46"><a href="#cb37-46"></a>                <span class="st">"Poland"</span>,</span>
+<span id="cb37-47"><a href="#cb37-47"></a>                <span class="st">"Portugal"</span>,</span>
+<span id="cb37-48"><a href="#cb37-48"></a>                <span class="st">"Romania"</span>,</span>
+<span id="cb37-49"><a href="#cb37-49"></a>                <span class="st">"Slovakia"</span>,</span>
+<span id="cb37-50"><a href="#cb37-50"></a>                <span class="st">"Slovenia"</span>,</span>
+<span id="cb37-51"><a href="#cb37-51"></a>                <span class="st">"Spain"</span>,</span>
+<span id="cb37-52"><a href="#cb37-52"></a>                <span class="st">"Sweden"</span>)</span>
+<span id="cb37-53"><a href="#cb37-53"></a></span>
+<span id="cb37-54"><a href="#cb37-54"></a>latam_countries<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">"Belize"</span>,</span>
+<span id="cb37-55"><a href="#cb37-55"></a>                   <span class="st">"Costa Rica"</span>,</span>
+<span id="cb37-56"><a href="#cb37-56"></a>                   <span class="st">"El Salvador"</span>,</span>
+<span id="cb37-57"><a href="#cb37-57"></a>                   <span class="st">"Guatemala"</span>,</span>
+<span id="cb37-58"><a href="#cb37-58"></a>                   <span class="st">"Honduras"</span>,</span>
+<span id="cb37-59"><a href="#cb37-59"></a>                   <span class="st">"Mexico"</span>,</span>
+<span id="cb37-60"><a href="#cb37-60"></a>                   <span class="st">"Nicaragua"</span>,</span>
+<span id="cb37-61"><a href="#cb37-61"></a>                   <span class="st">"Panama"</span>,</span>
+<span id="cb37-62"><a href="#cb37-62"></a>                   <span class="st">"Argentina"</span>,</span>
+<span id="cb37-63"><a href="#cb37-63"></a>                   <span class="st">"Bolivia"</span>,</span>
+<span id="cb37-64"><a href="#cb37-64"></a>                   <span class="st">"Brazil"</span>,</span>
+<span id="cb37-65"><a href="#cb37-65"></a>                   <span class="st">"Chile"</span>,</span>
+<span id="cb37-66"><a href="#cb37-66"></a>                   <span class="st">"Colombia"</span>,</span>
+<span id="cb37-67"><a href="#cb37-67"></a>                   <span class="st">"Ecuador"</span>,</span>
+<span id="cb37-68"><a href="#cb37-68"></a>                   <span class="st">"Guyana"</span>,</span>
+<span id="cb37-69"><a href="#cb37-69"></a>                   <span class="st">"Paraguay"</span>,</span>
+<span id="cb37-70"><a href="#cb37-70"></a>                   <span class="st">"Peru"</span>,</span>
+<span id="cb37-71"><a href="#cb37-71"></a>                   <span class="st">"Suriname"</span>,</span>
+<span id="cb37-72"><a href="#cb37-72"></a>                   <span class="st">"Uruguay"</span>,</span>
+<span id="cb37-73"><a href="#cb37-73"></a>                   <span class="st">"Venezuela"</span>,</span>
+<span id="cb37-74"><a href="#cb37-74"></a>                   <span class="st">"Cuba"</span>,</span>
+<span id="cb37-75"><a href="#cb37-75"></a>                   <span class="st">"Dominican Republic"</span>,</span>
+<span id="cb37-76"><a href="#cb37-76"></a>                   <span class="st">"Haiti"</span>)</span>
+<span id="cb37-77"><a href="#cb37-77"></a></span>
+<span id="cb37-78"><a href="#cb37-78"></a><span class="co">#Step11: Labeling continents </span></span>
+<span id="cb37-79"><a href="#cb37-79"></a>final2<span class="sc">$</span>continent[final2<span class="sc">$</span>Entity  <span class="sc">%in%</span> eu_countries]<span class="ot">&lt;-</span><span class="st">"EU"</span></span>
+<span id="cb37-80"><a href="#cb37-80"></a>final2<span class="sc">$</span>continent[final2<span class="sc">$</span>Entity  <span class="sc">%in%</span> latam_countries]<span class="ot">&lt;-</span><span class="st">"Latin America"</span></span>
+<span id="cb37-81"><a href="#cb37-81"></a>final2<span class="sc">$</span>continent[<span class="fu">is.na</span>(final2<span class="sc">$</span>continent)]<span class="ot">&lt;-</span><span class="st">"Everything Else"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 
