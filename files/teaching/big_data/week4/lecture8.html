@@ -884,7 +884,7 @@ Bogdan G. Popescu
 
 <section id="plotting-uncertainty-4" class="title-slide slide level1 center" data-visibility="uncounted">
 <h1>Plotting Uncertainty</h1>
-<p>We can obtain something similar with densities</p>
+<p>We can obtain something similar with densities: they are a smoothed version of the histogram.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="fu">ggplot</span>(final2, <span class="fu">aes</span>(<span class="at">x =</span> life_exp, </span>
 <span id="cb15-2"><a href="#cb15-2"></a>                   <span class="at">fill =</span> continent)) <span class="sc">+</span></span>
@@ -921,61 +921,143 @@ Bogdan G. Popescu
 </div>
 </section>
 
+<section id="plotting-uncertainty-6" class="title-slide slide level1 center" data-visibility="uncounted">
+<h1>Plotting Uncertainty</h1>
+<p>We can obviously also plot them together</p>
+<div class="columns">
+<div class="column" style="width:49%;">
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">ggplot</span>(final2, <span class="fu">aes</span>(<span class="at">x =</span> life_exp, </span>
+<span id="cb16-2"><a href="#cb16-2"></a>                   <span class="at">fill =</span> continent)) <span class="sc">+</span></span>
+<span id="cb16-3"><a href="#cb16-3"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">2</span>, </span>
+<span id="cb16-4"><a href="#cb16-4"></a>                 <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb16-5"><a href="#cb16-5"></a>  <span class="co">#scale the density to a similar scale to the histogram:</span></span>
+<span id="cb16-6"><a href="#cb16-6"></a>  <span class="co">#in this case, I multiply by 4000</span></span>
+<span id="cb16-7"><a href="#cb16-7"></a>  <span class="co">#note also aes(y = ..density..* 4000)</span></span>
+<span id="cb16-8"><a href="#cb16-8"></a>  <span class="fu">geom_density</span>(<span class="fu">aes</span>(<span class="at">y =</span> ..density..<span class="sc">*</span> <span class="dv">4000</span>), </span>
+<span id="cb16-9"><a href="#cb16-9"></a>               <span class="at">alpha =</span> <span class="fl">0.5</span>)<span class="sc">+</span></span>
+<span id="cb16-10"><a href="#cb16-10"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>) <span class="sc">+</span>  <span class="co"># Turn off legend</span></span>
+<span id="cb16-11"><a href="#cb16-11"></a>  <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(continent))<span class="sc">+</span></span>
+<span id="cb16-12"><a href="#cb16-12"></a>  <span class="fu">theme_bw</span>()<span class="sc">+</span></span>
+<span id="cb16-13"><a href="#cb16-13"></a>  <span class="co">#Adding a secondary axis</span></span>
+<span id="cb16-14"><a href="#cb16-14"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">name =</span> <span class="st">"count"</span>,</span>
+<span id="cb16-15"><a href="#cb16-15"></a>                     <span class="at">sec.axis =</span> </span>
+<span id="cb16-16"><a href="#cb16-16"></a>                       <span class="fu">sec_axis</span>(<span class="sc">~</span>.x<span class="sc">/</span><span class="dv">4000</span>, </span>
+<span id="cb16-17"><a href="#cb16-17"></a>                                <span class="at">name =</span> <span class="st">"density"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div><div class="column" style="width:49%;">
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="lecture8_files/figure-revealjs/unnamed-chunk-29-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="plotting-uncertainty-7" class="title-slide slide level1 center" data-visibility="uncounted">
+<h1>Plotting Uncertainty</h1>
+<p>Having a closer look at the code</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17" data-code-line-numbers="1-2|3-5|6-13|14-16|17-21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">ggplot</span>(final2, <span class="fu">aes</span>(<span class="at">x =</span> life_exp, </span>
+<span id="cb17-2"><a href="#cb17-2"></a>                   <span class="at">fill =</span> continent)) <span class="sc">+</span></span>
+<span id="cb17-3"><a href="#cb17-3"></a>  <span class="co">#geom_histogram with the same parameters</span></span>
+<span id="cb17-4"><a href="#cb17-4"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">2</span>, </span>
+<span id="cb17-5"><a href="#cb17-5"></a>                 <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb17-6"><a href="#cb17-6"></a>  <span class="co">#note the aes(y = ..density..* 4000)</span></span>
+<span id="cb17-7"><a href="#cb17-7"></a>  <span class="co">#scale the density to a similar scale to the histogram</span></span>
+<span id="cb17-8"><a href="#cb17-8"></a>  <span class="co">#in this case, I multiply by 4000</span></span>
+<span id="cb17-9"><a href="#cb17-9"></a>  <span class="co">#otherwise it will not be visible</span></span>
+<span id="cb17-10"><a href="#cb17-10"></a>  <span class="co">#density calculates relative frequency:</span></span>
+<span id="cb17-11"><a href="#cb17-11"></a>  <span class="co">#count / sum(count): e.g. 385/1403</span></span>
+<span id="cb17-12"><a href="#cb17-12"></a>  <span class="fu">geom_density</span>(<span class="fu">aes</span>(<span class="at">y =</span> ..density..<span class="sc">*</span> <span class="dv">4000</span>), </span>
+<span id="cb17-13"><a href="#cb17-13"></a>               <span class="at">alpha =</span> <span class="fl">0.5</span>)<span class="sc">+</span></span>
+<span id="cb17-14"><a href="#cb17-14"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>) <span class="sc">+</span>  <span class="co"># Turn off legend</span></span>
+<span id="cb17-15"><a href="#cb17-15"></a>  <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(continent))<span class="sc">+</span></span>
+<span id="cb17-16"><a href="#cb17-16"></a>  <span class="fu">theme_bw</span>()<span class="sc">+</span></span>
+<span id="cb17-17"><a href="#cb17-17"></a>  <span class="co">#Adding a secondary axis</span></span>
+<span id="cb17-18"><a href="#cb17-18"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">name =</span> <span class="st">"count"</span>,</span>
+<span id="cb17-19"><a href="#cb17-19"></a>                     <span class="at">sec.axis =</span> </span>
+<span id="cb17-20"><a href="#cb17-20"></a>                       <span class="fu">sec_axis</span>(<span class="sc">~</span>.x<span class="sc">/</span><span class="dv">4000</span>, </span>
+<span id="cb17-21"><a href="#cb17-21"></a>                                <span class="at">name =</span> <span class="st">"density"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+
+<section id="why-use-a-density-curve-vs.-a-histogram" class="title-slide slide level1 center">
+<h1>Why use a density curve vs.&nbsp;a histogram?</h1>
+<div class="fragment">
+<ul>
+<li><p>A histogram shows the counts of values in each range</p></li>
+<li><p>It is made up of bars that touch each other</p></li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><p>A density plot shows the proportion of values in each range</p></li>
+<li><p>It is a smooth curve that shows the distribution of the data in a more continuous way</p></li>
+</ul>
+</div>
+</section>
+
 <section id="box-plots" class="title-slide slide level1 center">
 <h1>Box Plots</h1>
 <p>Here is a boxlot for life expectancy for the entire dataset</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">ggplot</span>(final2, <span class="fu">aes</span>(<span class="at">x =</span> life_exp)) <span class="sc">+</span></span>
-<span id="cb16-2"><a href="#cb16-2"></a>  <span class="fu">geom_boxplot</span>(<span class="at">width =</span> <span class="fl">0.5</span>)<span class="sc">+</span></span>
-<span id="cb16-3"><a href="#cb16-3"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Life Expectancy"</span>) <span class="sc">+</span></span>
-<span id="cb16-4"><a href="#cb16-4"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="fu">ggplot</span>(final2, <span class="fu">aes</span>(<span class="at">x =</span> life_exp)) <span class="sc">+</span></span>
+<span id="cb18-2"><a href="#cb18-2"></a>  <span class="fu">geom_boxplot</span>(<span class="at">width =</span> <span class="fl">0.5</span>)<span class="sc">+</span></span>
+<span id="cb18-3"><a href="#cb18-3"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Life Expectancy"</span>) <span class="sc">+</span></span>
+<span id="cb18-4"><a href="#cb18-4"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-28-1.png" width="960" class="r-stretch"></section>
+<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-31-1.png" width="960" class="r-stretch"></section>
 
 <section id="box-plots-1" class="title-slide slide level1 center" data-visibility="uncounted">
 <h1>Box Plots</h1>
 <p>Here is the interpretation</p>
 
-<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-29-1.png" width="960" class="r-stretch"></section>
+<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-32-1.png" width="960" class="r-stretch"></section>
 
 <section id="box-plots-2" class="title-slide slide level1 center" data-visibility="uncounted">
 <h1>Box Plots</h1>
 <p>This is what the histogram look like:</p>
 
-<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-30-1.png" width="960" class="r-stretch"></section>
+<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-33-1.png" width="960" class="r-stretch"></section>
 
 <section id="box-plots-3" class="title-slide slide level1 center" data-visibility="uncounted">
 <h1>Box Plots</h1>
 <p>This is what the actual values look like:</p>
 
-<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-31-1.png" width="960" class="r-stretch"></section>
+<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-34-1.png" width="960" class="r-stretch"></section>
 
 <section id="box-plots-4" class="title-slide slide level1 center" data-visibility="uncounted">
 <h1>Box Plots</h1>
 <p>And this is what they look like together:</p>
 
-<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-32-1.png" width="960" class="r-stretch"></section>
+<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-35-1.png" width="960" class="r-stretch"></section>
 
 <section id="violin-plots" class="title-slide slide level1 center">
 <h1>Violin Plots</h1>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">ggplot</span>(final2, <span class="fu">aes</span>(<span class="at">x =</span> life_exp, <span class="at">y=</span><span class="st">""</span>)) <span class="sc">+</span></span>
-<span id="cb17-2"><a href="#cb17-2"></a>  <span class="fu">geom_violin</span>()<span class="sc">+</span></span>
-<span id="cb17-3"><a href="#cb17-3"></a>  <span class="fu">geom_boxplot</span>(<span class="at">width =</span> <span class="fl">0.5</span>)<span class="sc">+</span></span>
-<span id="cb17-4"><a href="#cb17-4"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Life Expectancy"</span>) <span class="sc">+</span></span>
-<span id="cb17-5"><a href="#cb17-5"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">ggplot</span>(final2, <span class="fu">aes</span>(<span class="at">x =</span> life_exp, <span class="at">y=</span><span class="st">""</span>)) <span class="sc">+</span></span>
+<span id="cb19-2"><a href="#cb19-2"></a>  <span class="fu">geom_violin</span>()<span class="sc">+</span></span>
+<span id="cb19-3"><a href="#cb19-3"></a>  <span class="fu">geom_boxplot</span>(<span class="at">width =</span> <span class="fl">0.5</span>)<span class="sc">+</span></span>
+<span id="cb19-4"><a href="#cb19-4"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Life Expectancy"</span>) <span class="sc">+</span></span>
+<span id="cb19-5"><a href="#cb19-5"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-33-1.png" width="960" class="r-stretch"></section>
+<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-36-1.png" width="960" class="r-stretch"></section>
 
 <section id="plotting-uncertainty-in-scatterplots" class="title-slide slide level1 center">
 <h1>Plotting Uncertainty in Scatterplots</h1>
 <p>We have already covered this, but here is the relationship between urbanization and life expectancy</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="fu">setwd</span>(<span class="st">"/Users/bgpopescu/Library/CloudStorage/Dropbox/john_cabot/teaching/big_data/week4/data/"</span>)</span>
-<span id="cb18-2"><a href="#cb18-2"></a><span class="co">#Step1: Loading the data</span></span>
-<span id="cb18-3"><a href="#cb18-3"></a>life_exp_urb <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">'./life_exp_urb.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="fu">setwd</span>(<span class="st">"/Users/bgpopescu/Library/CloudStorage/Dropbox/john_cabot/teaching/big_data/week4/data/"</span>)</span>
+<span id="cb20-2"><a href="#cb20-2"></a><span class="co">#Step1: Loading the data</span></span>
+<span id="cb20-3"><a href="#cb20-3"></a>life_exp_urb <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">'./life_exp_urb.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 
@@ -986,18 +1068,18 @@ Bogdan G. Popescu
 <div class="column" style="width:49%;">
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> life_exp_urb, </span>
-<span id="cb19-2"><a href="#cb19-2"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>urbanization, </span>
-<span id="cb19-3"><a href="#cb19-3"></a>                <span class="at">y=</span>life_expectancy, </span>
-<span id="cb19-4"><a href="#cb19-4"></a>                <span class="at">color =</span> type))<span class="sc">+</span></span>
-<span id="cb19-5"><a href="#cb19-5"></a>    <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> life_exp_urb, </span>
+<span id="cb21-2"><a href="#cb21-2"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>urbanization, </span>
+<span id="cb21-3"><a href="#cb21-3"></a>                <span class="at">y=</span>life_expectancy, </span>
+<span id="cb21-4"><a href="#cb21-4"></a>                <span class="at">color =</span> type))<span class="sc">+</span></span>
+<span id="cb21-5"><a href="#cb21-5"></a>    <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div><div class="column" style="width:49%;">
 <div class="fragment">
 <div class="cell">
 <div class="cell-output-display">
-<p><img data-src="lecture8_files/figure-revealjs/unnamed-chunk-36-1.png" width="960"></p>
+<p><img data-src="lecture8_files/figure-revealjs/unnamed-chunk-39-1.png" width="960"></p>
 </div>
 </div>
 </div>
@@ -1012,19 +1094,19 @@ Bogdan G. Popescu
 <div class="column" style="width:49%;">
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> life_exp_urb, </span>
-<span id="cb20-2"><a href="#cb20-2"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>urbanization, </span>
-<span id="cb20-3"><a href="#cb20-3"></a>                <span class="at">y=</span>life_expectancy, </span>
-<span id="cb20-4"><a href="#cb20-4"></a>                <span class="at">color =</span> type))<span class="sc">+</span></span>
-<span id="cb20-5"><a href="#cb20-5"></a>    <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb20-6"><a href="#cb20-6"></a>    <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> life_exp_urb, </span>
+<span id="cb22-2"><a href="#cb22-2"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>urbanization, </span>
+<span id="cb22-3"><a href="#cb22-3"></a>                <span class="at">y=</span>life_expectancy, </span>
+<span id="cb22-4"><a href="#cb22-4"></a>                <span class="at">color =</span> type))<span class="sc">+</span></span>
+<span id="cb22-5"><a href="#cb22-5"></a>    <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb22-6"><a href="#cb22-6"></a>    <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div><div class="column" style="width:49%;">
 <div class="fragment">
 <div class="cell">
 <div class="cell-output-display">
-<p><img data-src="lecture8_files/figure-revealjs/unnamed-chunk-38-1.png" width="960"></p>
+<p><img data-src="lecture8_files/figure-revealjs/unnamed-chunk-41-1.png" width="960"></p>
 </div>
 </div>
 </div>
@@ -1039,19 +1121,19 @@ Bogdan G. Popescu
 <div class="column" style="width:49%;">
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> life_exp_urb, </span>
-<span id="cb21-2"><a href="#cb21-2"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>urbanization, </span>
-<span id="cb21-3"><a href="#cb21-3"></a>                <span class="at">y=</span>life_expectancy, </span>
-<span id="cb21-4"><a href="#cb21-4"></a>                <span class="at">color =</span> type))<span class="sc">+</span></span>
-<span id="cb21-5"><a href="#cb21-5"></a>    <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb21-6"><a href="#cb21-6"></a>    <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> life_exp_urb, </span>
+<span id="cb23-2"><a href="#cb23-2"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>urbanization, </span>
+<span id="cb23-3"><a href="#cb23-3"></a>                <span class="at">y=</span>life_expectancy, </span>
+<span id="cb23-4"><a href="#cb23-4"></a>                <span class="at">color =</span> type))<span class="sc">+</span></span>
+<span id="cb23-5"><a href="#cb23-5"></a>    <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb23-6"><a href="#cb23-6"></a>    <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div><div class="column" style="width:49%;">
 <div class="fragment">
 <div class="cell">
 <div class="cell-output-display">
-<p><img data-src="lecture8_files/figure-revealjs/unnamed-chunk-40-1.png" width="960"></p>
+<p><img data-src="lecture8_files/figure-revealjs/unnamed-chunk-43-1.png" width="960"></p>
 </div>
 </div>
 </div>
@@ -1083,59 +1165,59 @@ Bogdan G. Popescu
 <h1>Annotations</h1>
 <p><code>geom_text</code> is not great when we have too many points</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> life_exp_urb, </span>
-<span id="cb22-2"><a href="#cb22-2"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>urbanization, </span>
-<span id="cb22-3"><a href="#cb22-3"></a>                <span class="at">y=</span>life_expectancy, </span>
-<span id="cb22-4"><a href="#cb22-4"></a>                <span class="at">color =</span> type))<span class="sc">+</span></span>
-<span id="cb22-5"><a href="#cb22-5"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb22-6"><a href="#cb22-6"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> Entity))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> life_exp_urb, </span>
+<span id="cb24-2"><a href="#cb24-2"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>urbanization, </span>
+<span id="cb24-3"><a href="#cb24-3"></a>                <span class="at">y=</span>life_expectancy, </span>
+<span id="cb24-4"><a href="#cb24-4"></a>                <span class="at">color =</span> type))<span class="sc">+</span></span>
+<span id="cb24-5"><a href="#cb24-5"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb24-6"><a href="#cb24-6"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> Entity))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-41-1.png" width="960" class="r-stretch"></section>
+<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-44-1.png" width="960" class="r-stretch"></section>
 
 <section id="annotations-2" class="title-slide slide level1 center">
 <h1>Annotations</h1>
 <p><code>geom_label</code> is not great when we have too many points. It covers the points</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> life_exp_urb, </span>
-<span id="cb23-2"><a href="#cb23-2"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>urbanization, </span>
-<span id="cb23-3"><a href="#cb23-3"></a>                <span class="at">y=</span>life_expectancy, </span>
-<span id="cb23-4"><a href="#cb23-4"></a>                <span class="at">color =</span> type))<span class="sc">+</span></span>
-<span id="cb23-5"><a href="#cb23-5"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb23-6"><a href="#cb23-6"></a>  <span class="fu">geom_label</span>(<span class="fu">aes</span>(<span class="at">label =</span> Entity))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> life_exp_urb, </span>
+<span id="cb25-2"><a href="#cb25-2"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>urbanization, </span>
+<span id="cb25-3"><a href="#cb25-3"></a>                <span class="at">y=</span>life_expectancy, </span>
+<span id="cb25-4"><a href="#cb25-4"></a>                <span class="at">color =</span> type))<span class="sc">+</span></span>
+<span id="cb25-5"><a href="#cb25-5"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb25-6"><a href="#cb25-6"></a>  <span class="fu">geom_label</span>(<span class="fu">aes</span>(<span class="at">label =</span> Entity))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-42-1.png" width="960" class="r-stretch"></section>
+<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-45-1.png" width="960" class="r-stretch"></section>
 
 <section id="annotations-3" class="title-slide slide level1 center">
 <h1>Annotations</h1>
 <p><code>ggrepel</code> is one solution: <code>geom_text_repel</code></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="fu">library</span>(ggrepel)</span>
-<span id="cb24-2"><a href="#cb24-2"></a><span class="fu">ggplot</span>(<span class="at">data =</span> life_exp_urb, </span>
-<span id="cb24-3"><a href="#cb24-3"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>urbanization, </span>
-<span id="cb24-4"><a href="#cb24-4"></a>                <span class="at">y=</span>life_expectancy, </span>
-<span id="cb24-5"><a href="#cb24-5"></a>                <span class="at">color =</span> type))<span class="sc">+</span></span>
-<span id="cb24-6"><a href="#cb24-6"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb24-7"><a href="#cb24-7"></a>  <span class="fu">geom_text_repel</span>(<span class="fu">aes</span>(<span class="at">label =</span> Entity))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="fu">library</span>(ggrepel)</span>
+<span id="cb26-2"><a href="#cb26-2"></a><span class="fu">ggplot</span>(<span class="at">data =</span> life_exp_urb, </span>
+<span id="cb26-3"><a href="#cb26-3"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>urbanization, </span>
+<span id="cb26-4"><a href="#cb26-4"></a>                <span class="at">y=</span>life_expectancy, </span>
+<span id="cb26-5"><a href="#cb26-5"></a>                <span class="at">color =</span> type))<span class="sc">+</span></span>
+<span id="cb26-6"><a href="#cb26-6"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb26-7"><a href="#cb26-7"></a>  <span class="fu">geom_text_repel</span>(<span class="fu">aes</span>(<span class="at">label =</span> Entity))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-43-1.png" width="960" class="r-stretch"></section>
+<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-46-1.png" width="960" class="r-stretch"></section>
 
 <section id="annotations-4" class="title-slide slide level1 center">
 <h1>Annotations</h1>
 <p><code>ggrepel</code> is one solution: <code>geom_label_repel</code></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="fu">library</span>(ggrepel)</span>
-<span id="cb25-2"><a href="#cb25-2"></a><span class="fu">ggplot</span>(<span class="at">data =</span> life_exp_urb, </span>
-<span id="cb25-3"><a href="#cb25-3"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>urbanization, </span>
-<span id="cb25-4"><a href="#cb25-4"></a>                <span class="at">y=</span>life_expectancy, </span>
-<span id="cb25-5"><a href="#cb25-5"></a>                <span class="at">color =</span> type))<span class="sc">+</span></span>
-<span id="cb25-6"><a href="#cb25-6"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb25-7"><a href="#cb25-7"></a>  <span class="fu">geom_label_repel</span>(<span class="fu">aes</span>(<span class="at">label =</span> Entity))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="fu">library</span>(ggrepel)</span>
+<span id="cb27-2"><a href="#cb27-2"></a><span class="fu">ggplot</span>(<span class="at">data =</span> life_exp_urb, </span>
+<span id="cb27-3"><a href="#cb27-3"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>urbanization, </span>
+<span id="cb27-4"><a href="#cb27-4"></a>                <span class="at">y=</span>life_expectancy, </span>
+<span id="cb27-5"><a href="#cb27-5"></a>                <span class="at">color =</span> type))<span class="sc">+</span></span>
+<span id="cb27-6"><a href="#cb27-6"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb27-7"><a href="#cb27-7"></a>  <span class="fu">geom_label_repel</span>(<span class="fu">aes</span>(<span class="at">label =</span> Entity))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-44-1.png" width="960" class="r-stretch"></section>
+<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-47-1.png" width="960" class="r-stretch"></section>
 
 <section id="highlighting" class="title-slide slide level1 center">
 <h1>Highlighting</h1>
@@ -1144,26 +1226,26 @@ Bogdan G. Popescu
 <div class="column" style="width:49%;">
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="co">#Creating a Variable to Identify Obs</span></span>
-<span id="cb26-2"><a href="#cb26-2"></a>life_exp_urb<span class="sc">$</span>eu<span class="ot">&lt;-</span><span class="fu">ifelse</span>(life_exp_urb<span class="sc">$</span>type<span class="sc">==</span><span class="st">"EU"</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span>
-<span id="cb26-3"><a href="#cb26-3"></a><span class="co">#Making the variable a factor</span></span>
-<span id="cb26-4"><a href="#cb26-4"></a>life_exp_urb<span class="sc">$</span>eu<span class="ot">&lt;-</span><span class="fu">as.factor</span>(life_exp_urb<span class="sc">$</span>eu)</span>
-<span id="cb26-5"><a href="#cb26-5"></a><span class="co">#Plotting</span></span>
-<span id="cb26-6"><a href="#cb26-6"></a><span class="fu">ggplot</span>(<span class="at">data =</span> life_exp_urb, </span>
-<span id="cb26-7"><a href="#cb26-7"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>urbanization, </span>
-<span id="cb26-8"><a href="#cb26-8"></a>                <span class="at">y=</span>life_expectancy, </span>
-<span id="cb26-9"><a href="#cb26-9"></a>                <span class="at">color =</span> eu))<span class="sc">+</span></span>
-<span id="cb26-10"><a href="#cb26-10"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb26-11"><a href="#cb26-11"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"grey70"</span>, </span>
-<span id="cb26-12"><a href="#cb26-12"></a>                                <span class="st">"red"</span>))<span class="sc">+</span></span>
-<span id="cb26-13"><a href="#cb26-13"></a>  <span class="fu">guides</span>(<span class="at">color =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="co">#Creating a Variable to Identify Obs</span></span>
+<span id="cb28-2"><a href="#cb28-2"></a>life_exp_urb<span class="sc">$</span>eu<span class="ot">&lt;-</span><span class="fu">ifelse</span>(life_exp_urb<span class="sc">$</span>type<span class="sc">==</span><span class="st">"EU"</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="cb28-3"><a href="#cb28-3"></a><span class="co">#Making the variable a factor</span></span>
+<span id="cb28-4"><a href="#cb28-4"></a>life_exp_urb<span class="sc">$</span>eu<span class="ot">&lt;-</span><span class="fu">as.factor</span>(life_exp_urb<span class="sc">$</span>eu)</span>
+<span id="cb28-5"><a href="#cb28-5"></a><span class="co">#Plotting</span></span>
+<span id="cb28-6"><a href="#cb28-6"></a><span class="fu">ggplot</span>(<span class="at">data =</span> life_exp_urb, </span>
+<span id="cb28-7"><a href="#cb28-7"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>urbanization, </span>
+<span id="cb28-8"><a href="#cb28-8"></a>                <span class="at">y=</span>life_expectancy, </span>
+<span id="cb28-9"><a href="#cb28-9"></a>                <span class="at">color =</span> eu))<span class="sc">+</span></span>
+<span id="cb28-10"><a href="#cb28-10"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb28-11"><a href="#cb28-11"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"grey70"</span>, </span>
+<span id="cb28-12"><a href="#cb28-12"></a>                                <span class="st">"red"</span>))<span class="sc">+</span></span>
+<span id="cb28-13"><a href="#cb28-13"></a>  <span class="fu">guides</span>(<span class="at">color =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div><div class="column" style="width:49%;">
 <div class="fragment">
 <div class="cell">
 <div class="cell-output-display">
-<p><img data-src="lecture8_files/figure-revealjs/unnamed-chunk-46-1.png" width="960"></p>
+<p><img data-src="lecture8_files/figure-revealjs/unnamed-chunk-49-1.png" width="960"></p>
 </div>
 </div>
 </div>
@@ -1178,24 +1260,24 @@ Bogdan G. Popescu
 <div class="column" style="width:49%;">
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> life_exp_urb, </span>
-<span id="cb27-2"><a href="#cb27-2"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>urbanization, </span>
-<span id="cb27-3"><a href="#cb27-3"></a>                <span class="at">y=</span>life_expectancy, </span>
-<span id="cb27-4"><a href="#cb27-4"></a>                <span class="at">color =</span> eu))<span class="sc">+</span></span>
-<span id="cb27-5"><a href="#cb27-5"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb27-6"><a href="#cb27-6"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"grey70"</span>, </span>
-<span id="cb27-7"><a href="#cb27-7"></a>                                <span class="st">"red"</span>))<span class="sc">+</span></span>
-<span id="cb27-8"><a href="#cb27-8"></a>  <span class="fu">guides</span>(<span class="at">color =</span> <span class="st">"none"</span>)<span class="sc">+</span></span>
-<span id="cb27-9"><a href="#cb27-9"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">"text"</span>,</span>
-<span id="cb27-10"><a href="#cb27-10"></a>           <span class="at">x =</span> <span class="dv">75</span>, <span class="at">y =</span> <span class="dv">45</span>,</span>
-<span id="cb27-11"><a href="#cb27-11"></a>           <span class="at">label =</span> <span class="st">"EU Countries"</span>, <span class="at">color=</span><span class="st">"red"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> life_exp_urb, </span>
+<span id="cb29-2"><a href="#cb29-2"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>urbanization, </span>
+<span id="cb29-3"><a href="#cb29-3"></a>                <span class="at">y=</span>life_expectancy, </span>
+<span id="cb29-4"><a href="#cb29-4"></a>                <span class="at">color =</span> eu))<span class="sc">+</span></span>
+<span id="cb29-5"><a href="#cb29-5"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb29-6"><a href="#cb29-6"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"grey70"</span>, </span>
+<span id="cb29-7"><a href="#cb29-7"></a>                                <span class="st">"red"</span>))<span class="sc">+</span></span>
+<span id="cb29-8"><a href="#cb29-8"></a>  <span class="fu">guides</span>(<span class="at">color =</span> <span class="st">"none"</span>)<span class="sc">+</span></span>
+<span id="cb29-9"><a href="#cb29-9"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">"text"</span>,</span>
+<span id="cb29-10"><a href="#cb29-10"></a>           <span class="at">x =</span> <span class="dv">75</span>, <span class="at">y =</span> <span class="dv">45</span>,</span>
+<span id="cb29-11"><a href="#cb29-11"></a>           <span class="at">label =</span> <span class="st">"EU Countries"</span>, <span class="at">color=</span><span class="st">"red"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div><div class="column" style="width:49%;">
 <div class="fragment">
 <div class="cell">
 <div class="cell-output-display">
-<p><img data-src="lecture8_files/figure-revealjs/unnamed-chunk-48-1.png" width="960"></p>
+<p><img data-src="lecture8_files/figure-revealjs/unnamed-chunk-51-1.png" width="960"></p>
 </div>
 </div>
 </div>
@@ -1210,35 +1292,35 @@ Bogdan G. Popescu
 <div class="column" style="width:49%;">
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a>xmin_val<span class="ot">&lt;-</span><span class="fu">min</span>(life_exp_urb<span class="sc">$</span>urbanization[life_exp_urb<span class="sc">$</span>eu<span class="sc">==</span><span class="dv">1</span>])</span>
-<span id="cb28-2"><a href="#cb28-2"></a>xmax_val<span class="ot">&lt;-</span><span class="fu">max</span>(life_exp_urb<span class="sc">$</span>urbanization[life_exp_urb<span class="sc">$</span>eu<span class="sc">==</span><span class="dv">1</span>])</span>
-<span id="cb28-3"><a href="#cb28-3"></a>ymin_val<span class="ot">&lt;-</span><span class="fu">min</span>(life_exp_urb<span class="sc">$</span>life_expectancy[life_exp_urb<span class="sc">$</span>eu<span class="sc">==</span><span class="dv">1</span>])</span>
-<span id="cb28-4"><a href="#cb28-4"></a>ymax_val<span class="ot">&lt;-</span><span class="fu">max</span>(life_exp_urb<span class="sc">$</span>life_expectancy[life_exp_urb<span class="sc">$</span>eu<span class="sc">==</span><span class="dv">1</span>])</span>
-<span id="cb28-5"><a href="#cb28-5"></a></span>
-<span id="cb28-6"><a href="#cb28-6"></a><span class="fu">ggplot</span>(<span class="at">data =</span> life_exp_urb, </span>
-<span id="cb28-7"><a href="#cb28-7"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>urbanization, </span>
-<span id="cb28-8"><a href="#cb28-8"></a>                <span class="at">y=</span>life_expectancy, </span>
-<span id="cb28-9"><a href="#cb28-9"></a>                <span class="at">color =</span> eu))<span class="sc">+</span></span>
-<span id="cb28-10"><a href="#cb28-10"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb28-11"><a href="#cb28-11"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"grey70"</span>, </span>
-<span id="cb28-12"><a href="#cb28-12"></a>                                <span class="st">"red"</span>))<span class="sc">+</span></span>
-<span id="cb28-13"><a href="#cb28-13"></a>  <span class="fu">guides</span>(<span class="at">color =</span> <span class="st">"none"</span>)<span class="sc">+</span></span>
-<span id="cb28-14"><a href="#cb28-14"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">"text"</span>,</span>
-<span id="cb28-15"><a href="#cb28-15"></a>           <span class="at">x =</span> <span class="dv">75</span>, <span class="at">y =</span> <span class="dv">45</span>,</span>
-<span id="cb28-16"><a href="#cb28-16"></a>           <span class="at">label =</span> <span class="st">"EU Countries"</span>, <span class="at">color=</span><span class="st">"red"</span>)<span class="sc">+</span></span>
-<span id="cb28-17"><a href="#cb28-17"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">"rect"</span>, </span>
-<span id="cb28-18"><a href="#cb28-18"></a>           <span class="at">xmin =</span> xmin_val, </span>
-<span id="cb28-19"><a href="#cb28-19"></a>           <span class="at">xmax =</span> xmax_val,</span>
-<span id="cb28-20"><a href="#cb28-20"></a>           <span class="at">ymin =</span> ymin_val, </span>
-<span id="cb28-21"><a href="#cb28-21"></a>           <span class="at">ymax =</span> ymax_val,</span>
-<span id="cb28-22"><a href="#cb28-22"></a>           <span class="at">fill =</span> <span class="st">"red"</span>, <span class="at">alpha =</span> <span class="fl">0.2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a>xmin_val<span class="ot">&lt;-</span><span class="fu">min</span>(life_exp_urb<span class="sc">$</span>urbanization[life_exp_urb<span class="sc">$</span>eu<span class="sc">==</span><span class="dv">1</span>])</span>
+<span id="cb30-2"><a href="#cb30-2"></a>xmax_val<span class="ot">&lt;-</span><span class="fu">max</span>(life_exp_urb<span class="sc">$</span>urbanization[life_exp_urb<span class="sc">$</span>eu<span class="sc">==</span><span class="dv">1</span>])</span>
+<span id="cb30-3"><a href="#cb30-3"></a>ymin_val<span class="ot">&lt;-</span><span class="fu">min</span>(life_exp_urb<span class="sc">$</span>life_expectancy[life_exp_urb<span class="sc">$</span>eu<span class="sc">==</span><span class="dv">1</span>])</span>
+<span id="cb30-4"><a href="#cb30-4"></a>ymax_val<span class="ot">&lt;-</span><span class="fu">max</span>(life_exp_urb<span class="sc">$</span>life_expectancy[life_exp_urb<span class="sc">$</span>eu<span class="sc">==</span><span class="dv">1</span>])</span>
+<span id="cb30-5"><a href="#cb30-5"></a></span>
+<span id="cb30-6"><a href="#cb30-6"></a><span class="fu">ggplot</span>(<span class="at">data =</span> life_exp_urb, </span>
+<span id="cb30-7"><a href="#cb30-7"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>urbanization, </span>
+<span id="cb30-8"><a href="#cb30-8"></a>                <span class="at">y=</span>life_expectancy, </span>
+<span id="cb30-9"><a href="#cb30-9"></a>                <span class="at">color =</span> eu))<span class="sc">+</span></span>
+<span id="cb30-10"><a href="#cb30-10"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb30-11"><a href="#cb30-11"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"grey70"</span>, </span>
+<span id="cb30-12"><a href="#cb30-12"></a>                                <span class="st">"red"</span>))<span class="sc">+</span></span>
+<span id="cb30-13"><a href="#cb30-13"></a>  <span class="fu">guides</span>(<span class="at">color =</span> <span class="st">"none"</span>)<span class="sc">+</span></span>
+<span id="cb30-14"><a href="#cb30-14"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">"text"</span>,</span>
+<span id="cb30-15"><a href="#cb30-15"></a>           <span class="at">x =</span> <span class="dv">75</span>, <span class="at">y =</span> <span class="dv">45</span>,</span>
+<span id="cb30-16"><a href="#cb30-16"></a>           <span class="at">label =</span> <span class="st">"EU Countries"</span>, <span class="at">color=</span><span class="st">"red"</span>)<span class="sc">+</span></span>
+<span id="cb30-17"><a href="#cb30-17"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">"rect"</span>, </span>
+<span id="cb30-18"><a href="#cb30-18"></a>           <span class="at">xmin =</span> xmin_val, </span>
+<span id="cb30-19"><a href="#cb30-19"></a>           <span class="at">xmax =</span> xmax_val,</span>
+<span id="cb30-20"><a href="#cb30-20"></a>           <span class="at">ymin =</span> ymin_val, </span>
+<span id="cb30-21"><a href="#cb30-21"></a>           <span class="at">ymax =</span> ymax_val,</span>
+<span id="cb30-22"><a href="#cb30-22"></a>           <span class="at">fill =</span> <span class="st">"red"</span>, <span class="at">alpha =</span> <span class="fl">0.2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div><div class="column" style="width:49%;">
 <div class="fragment">
 <div class="cell">
 <div class="cell-output-display">
-<p><img data-src="lecture8_files/figure-revealjs/unnamed-chunk-50-1.png" width="960"></p>
+<p><img data-src="lecture8_files/figure-revealjs/unnamed-chunk-53-1.png" width="960"></p>
 </div>
 </div>
 </div>
@@ -1253,37 +1335,37 @@ Bogdan G. Popescu
 <div class="column" style="width:49%;">
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> life_exp_urb, </span>
-<span id="cb29-2"><a href="#cb29-2"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>urbanization, </span>
-<span id="cb29-3"><a href="#cb29-3"></a>                <span class="at">y=</span>life_expectancy, </span>
-<span id="cb29-4"><a href="#cb29-4"></a>                <span class="at">color =</span> eu))<span class="sc">+</span></span>
-<span id="cb29-5"><a href="#cb29-5"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb29-6"><a href="#cb29-6"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"grey70"</span>, </span>
-<span id="cb29-7"><a href="#cb29-7"></a>                                <span class="st">"red"</span>))<span class="sc">+</span></span>
-<span id="cb29-8"><a href="#cb29-8"></a>  <span class="fu">guides</span>(<span class="at">color =</span> <span class="st">"none"</span>)<span class="sc">+</span></span>
-<span id="cb29-9"><a href="#cb29-9"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">"text"</span>,</span>
-<span id="cb29-10"><a href="#cb29-10"></a>           <span class="at">x =</span> <span class="dv">75</span>, <span class="at">y =</span> <span class="dv">45</span>,</span>
-<span id="cb29-11"><a href="#cb29-11"></a>           <span class="at">label =</span> <span class="st">"EU Countries"</span>, <span class="at">color=</span><span class="st">"red"</span>)<span class="sc">+</span></span>
-<span id="cb29-12"><a href="#cb29-12"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">"rect"</span>, </span>
-<span id="cb29-13"><a href="#cb29-13"></a>           <span class="at">xmin =</span> xmin_val, </span>
-<span id="cb29-14"><a href="#cb29-14"></a>           <span class="at">xmax =</span> xmax_val,</span>
-<span id="cb29-15"><a href="#cb29-15"></a>           <span class="at">ymin =</span> ymin_val, </span>
-<span id="cb29-16"><a href="#cb29-16"></a>           <span class="at">ymax =</span> ymax_val,</span>
-<span id="cb29-17"><a href="#cb29-17"></a>           <span class="at">fill =</span> <span class="st">"red"</span>, <span class="at">alpha =</span> <span class="fl">0.2</span>)<span class="sc">+</span></span>
-<span id="cb29-18"><a href="#cb29-18"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">"segment"</span>, </span>
-<span id="cb29-19"><a href="#cb29-19"></a>           <span class="at">x =</span> <span class="dv">75</span>, </span>
-<span id="cb29-20"><a href="#cb29-20"></a>           <span class="at">xend =</span> <span class="dv">75</span>, </span>
-<span id="cb29-21"><a href="#cb29-21"></a>           <span class="at">y =</span> <span class="dv">45</span>, </span>
-<span id="cb29-22"><a href="#cb29-22"></a>           <span class="at">yend =</span> ymin_val,</span>
-<span id="cb29-23"><a href="#cb29-23"></a>           <span class="at">arrow =</span> <span class="fu">arrow</span>(</span>
-<span id="cb29-24"><a href="#cb29-24"></a>             <span class="at">length =</span> <span class="fu">unit</span>(<span class="fl">0.1</span>, <span class="st">"in"</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> life_exp_urb, </span>
+<span id="cb31-2"><a href="#cb31-2"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>urbanization, </span>
+<span id="cb31-3"><a href="#cb31-3"></a>                <span class="at">y=</span>life_expectancy, </span>
+<span id="cb31-4"><a href="#cb31-4"></a>                <span class="at">color =</span> eu))<span class="sc">+</span></span>
+<span id="cb31-5"><a href="#cb31-5"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb31-6"><a href="#cb31-6"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"grey70"</span>, </span>
+<span id="cb31-7"><a href="#cb31-7"></a>                                <span class="st">"red"</span>))<span class="sc">+</span></span>
+<span id="cb31-8"><a href="#cb31-8"></a>  <span class="fu">guides</span>(<span class="at">color =</span> <span class="st">"none"</span>)<span class="sc">+</span></span>
+<span id="cb31-9"><a href="#cb31-9"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">"text"</span>,</span>
+<span id="cb31-10"><a href="#cb31-10"></a>           <span class="at">x =</span> <span class="dv">75</span>, <span class="at">y =</span> <span class="dv">45</span>,</span>
+<span id="cb31-11"><a href="#cb31-11"></a>           <span class="at">label =</span> <span class="st">"EU Countries"</span>, <span class="at">color=</span><span class="st">"red"</span>)<span class="sc">+</span></span>
+<span id="cb31-12"><a href="#cb31-12"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">"rect"</span>, </span>
+<span id="cb31-13"><a href="#cb31-13"></a>           <span class="at">xmin =</span> xmin_val, </span>
+<span id="cb31-14"><a href="#cb31-14"></a>           <span class="at">xmax =</span> xmax_val,</span>
+<span id="cb31-15"><a href="#cb31-15"></a>           <span class="at">ymin =</span> ymin_val, </span>
+<span id="cb31-16"><a href="#cb31-16"></a>           <span class="at">ymax =</span> ymax_val,</span>
+<span id="cb31-17"><a href="#cb31-17"></a>           <span class="at">fill =</span> <span class="st">"red"</span>, <span class="at">alpha =</span> <span class="fl">0.2</span>)<span class="sc">+</span></span>
+<span id="cb31-18"><a href="#cb31-18"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">"segment"</span>, </span>
+<span id="cb31-19"><a href="#cb31-19"></a>           <span class="at">x =</span> <span class="dv">75</span>, </span>
+<span id="cb31-20"><a href="#cb31-20"></a>           <span class="at">xend =</span> <span class="dv">75</span>, </span>
+<span id="cb31-21"><a href="#cb31-21"></a>           <span class="at">y =</span> <span class="dv">45</span>, </span>
+<span id="cb31-22"><a href="#cb31-22"></a>           <span class="at">yend =</span> ymin_val,</span>
+<span id="cb31-23"><a href="#cb31-23"></a>           <span class="at">arrow =</span> <span class="fu">arrow</span>(</span>
+<span id="cb31-24"><a href="#cb31-24"></a>             <span class="at">length =</span> <span class="fu">unit</span>(<span class="fl">0.1</span>, <span class="st">"in"</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div><div class="column" style="width:49%;">
 <div class="fragment">
 <div class="cell">
 <div class="cell-output-display">
-<p><img data-src="lecture8_files/figure-revealjs/unnamed-chunk-52-1.png" width="960"></p>
+<p><img data-src="lecture8_files/figure-revealjs/unnamed-chunk-55-1.png" width="960"></p>
 </div>
 </div>
 </div>
@@ -1298,39 +1380,39 @@ Bogdan G. Popescu
 <div class="column" style="width:49%;">
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> life_exp_urb, </span>
-<span id="cb30-2"><a href="#cb30-2"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>urbanization, </span>
-<span id="cb30-3"><a href="#cb30-3"></a>                <span class="at">y=</span>life_expectancy, </span>
-<span id="cb30-4"><a href="#cb30-4"></a>                <span class="at">color =</span> eu))<span class="sc">+</span></span>
-<span id="cb30-5"><a href="#cb30-5"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb30-6"><a href="#cb30-6"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"grey70"</span>, </span>
-<span id="cb30-7"><a href="#cb30-7"></a>                                <span class="st">"red"</span>))<span class="sc">+</span></span>
-<span id="cb30-8"><a href="#cb30-8"></a>  <span class="fu">guides</span>(<span class="at">color =</span> <span class="st">"none"</span>)<span class="sc">+</span></span>
-<span id="cb30-9"><a href="#cb30-9"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">"label"</span>,</span>
-<span id="cb30-10"><a href="#cb30-10"></a>           <span class="at">x =</span> <span class="dv">75</span>, </span>
-<span id="cb30-11"><a href="#cb30-11"></a>           <span class="at">y =</span> <span class="dv">45</span>,</span>
-<span id="cb30-12"><a href="#cb30-12"></a>           <span class="at">label =</span> <span class="st">"EU Countries"</span>, </span>
-<span id="cb30-13"><a href="#cb30-13"></a>           <span class="at">color=</span><span class="st">"red"</span>)<span class="sc">+</span></span>
-<span id="cb30-14"><a href="#cb30-14"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">"rect"</span>, </span>
-<span id="cb30-15"><a href="#cb30-15"></a>           <span class="at">xmin =</span> xmin_val, </span>
-<span id="cb30-16"><a href="#cb30-16"></a>           <span class="at">xmax =</span> xmax_val,</span>
-<span id="cb30-17"><a href="#cb30-17"></a>           <span class="at">ymin =</span> ymin_val, </span>
-<span id="cb30-18"><a href="#cb30-18"></a>           <span class="at">ymax =</span> ymax_val,</span>
-<span id="cb30-19"><a href="#cb30-19"></a>           <span class="at">fill =</span> <span class="st">"red"</span>, <span class="at">alpha =</span> <span class="fl">0.2</span>)<span class="sc">+</span></span>
-<span id="cb30-20"><a href="#cb30-20"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">"segment"</span>, </span>
-<span id="cb30-21"><a href="#cb30-21"></a>           <span class="at">x =</span> <span class="dv">75</span>, </span>
-<span id="cb30-22"><a href="#cb30-22"></a>           <span class="at">xend =</span> <span class="dv">75</span>, </span>
-<span id="cb30-23"><a href="#cb30-23"></a>           <span class="at">y =</span> <span class="dv">45</span>, </span>
-<span id="cb30-24"><a href="#cb30-24"></a>           <span class="at">yend =</span> ymin_val,</span>
-<span id="cb30-25"><a href="#cb30-25"></a>           <span class="at">arrow =</span> <span class="fu">arrow</span>(</span>
-<span id="cb30-26"><a href="#cb30-26"></a>             <span class="at">length =</span> <span class="fu">unit</span>(<span class="fl">0.1</span>, <span class="st">"in"</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> life_exp_urb, </span>
+<span id="cb32-2"><a href="#cb32-2"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>urbanization, </span>
+<span id="cb32-3"><a href="#cb32-3"></a>                <span class="at">y=</span>life_expectancy, </span>
+<span id="cb32-4"><a href="#cb32-4"></a>                <span class="at">color =</span> eu))<span class="sc">+</span></span>
+<span id="cb32-5"><a href="#cb32-5"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb32-6"><a href="#cb32-6"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"grey70"</span>, </span>
+<span id="cb32-7"><a href="#cb32-7"></a>                                <span class="st">"red"</span>))<span class="sc">+</span></span>
+<span id="cb32-8"><a href="#cb32-8"></a>  <span class="fu">guides</span>(<span class="at">color =</span> <span class="st">"none"</span>)<span class="sc">+</span></span>
+<span id="cb32-9"><a href="#cb32-9"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">"label"</span>,</span>
+<span id="cb32-10"><a href="#cb32-10"></a>           <span class="at">x =</span> <span class="dv">75</span>, </span>
+<span id="cb32-11"><a href="#cb32-11"></a>           <span class="at">y =</span> <span class="dv">45</span>,</span>
+<span id="cb32-12"><a href="#cb32-12"></a>           <span class="at">label =</span> <span class="st">"EU Countries"</span>, </span>
+<span id="cb32-13"><a href="#cb32-13"></a>           <span class="at">color=</span><span class="st">"red"</span>)<span class="sc">+</span></span>
+<span id="cb32-14"><a href="#cb32-14"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">"rect"</span>, </span>
+<span id="cb32-15"><a href="#cb32-15"></a>           <span class="at">xmin =</span> xmin_val, </span>
+<span id="cb32-16"><a href="#cb32-16"></a>           <span class="at">xmax =</span> xmax_val,</span>
+<span id="cb32-17"><a href="#cb32-17"></a>           <span class="at">ymin =</span> ymin_val, </span>
+<span id="cb32-18"><a href="#cb32-18"></a>           <span class="at">ymax =</span> ymax_val,</span>
+<span id="cb32-19"><a href="#cb32-19"></a>           <span class="at">fill =</span> <span class="st">"red"</span>, <span class="at">alpha =</span> <span class="fl">0.2</span>)<span class="sc">+</span></span>
+<span id="cb32-20"><a href="#cb32-20"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">"segment"</span>, </span>
+<span id="cb32-21"><a href="#cb32-21"></a>           <span class="at">x =</span> <span class="dv">75</span>, </span>
+<span id="cb32-22"><a href="#cb32-22"></a>           <span class="at">xend =</span> <span class="dv">75</span>, </span>
+<span id="cb32-23"><a href="#cb32-23"></a>           <span class="at">y =</span> <span class="dv">45</span>, </span>
+<span id="cb32-24"><a href="#cb32-24"></a>           <span class="at">yend =</span> ymin_val,</span>
+<span id="cb32-25"><a href="#cb32-25"></a>           <span class="at">arrow =</span> <span class="fu">arrow</span>(</span>
+<span id="cb32-26"><a href="#cb32-26"></a>             <span class="at">length =</span> <span class="fu">unit</span>(<span class="fl">0.1</span>, <span class="st">"in"</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div><div class="column" style="width:49%;">
 <div class="fragment">
 <div class="cell">
 <div class="cell-output-display">
-<p><img data-src="lecture8_files/figure-revealjs/unnamed-chunk-54-1.png" width="960"></p>
+<p><img data-src="lecture8_files/figure-revealjs/unnamed-chunk-57-1.png" width="960"></p>
 </div>
 </div>
 </div>
@@ -1348,10 +1430,10 @@ Bogdan G. Popescu
 </div>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="co">#Step1: Setting path</span></span>
-<span id="cb31-2"><a href="#cb31-2"></a><span class="fu">setwd</span>(<span class="st">"/Users/bgpopescu/Library/CloudStorage/Dropbox/john_cabot/teaching/big_data/week4/data/"</span>)</span>
-<span id="cb31-3"><a href="#cb31-3"></a><span class="co">#Step2: Loading the data</span></span>
-<span id="cb31-4"><a href="#cb31-4"></a>life_expectancy <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">'./life-expectancy.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a><span class="co">#Step1: Setting path</span></span>
+<span id="cb33-2"><a href="#cb33-2"></a><span class="fu">setwd</span>(<span class="st">"/Users/bgpopescu/Library/CloudStorage/Dropbox/john_cabot/teaching/big_data/week4/data/"</span>)</span>
+<span id="cb33-3"><a href="#cb33-3"></a><span class="co">#Step2: Loading the data</span></span>
+<span id="cb33-4"><a href="#cb33-4"></a>life_expectancy <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">'./life-expectancy.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </section>
@@ -1363,7 +1445,7 @@ Bogdan G. Popescu
 </div>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="fu">head</span>(life_expectancy, <span class="at">n=</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="fu">head</span>(life_expectancy, <span class="at">n=</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>       Entity Code Year Life.expectancy.at.birth..historical.
 1 Afghanistan  AFG 1950                                  27.7
@@ -1384,9 +1466,9 @@ Bogdan G. Popescu
 </div>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a>life_expectancy2<span class="ot">&lt;-</span>life_expectancy<span class="sc">%&gt;%</span></span>
-<span id="cb34-2"><a href="#cb34-2"></a>  <span class="fu">group_by</span>(Year)<span class="sc">%&gt;%</span></span>
-<span id="cb34-3"><a href="#cb34-3"></a>  dplyr<span class="sc">::</span><span class="fu">summarize</span>(<span class="at">mean_life_exp=</span><span class="fu">mean</span>(Life.expectancy.at.birth..historical.))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>life_expectancy2<span class="ot">&lt;-</span>life_expectancy<span class="sc">%&gt;%</span></span>
+<span id="cb36-2"><a href="#cb36-2"></a>  <span class="fu">group_by</span>(Year)<span class="sc">%&gt;%</span></span>
+<span id="cb36-3"><a href="#cb36-3"></a>  dplyr<span class="sc">::</span><span class="fu">summarize</span>(<span class="at">mean_life_exp=</span><span class="fu">mean</span>(Life.expectancy.at.birth..historical.))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="fragment">
@@ -1394,7 +1476,7 @@ Bogdan G. Popescu
 </div>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="fu">head</span>(life_expectancy2, <span class="at">n=</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a><span class="fu">head</span>(life_expectancy2, <span class="at">n=</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 2
    Year mean_life_exp
@@ -1414,10 +1496,10 @@ Bogdan G. Popescu
 </div>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a><span class="fu">ggplot</span>(life_expectancy2, <span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> mean_life_exp)) <span class="sc">+</span></span>
-<span id="cb37-2"><a href="#cb37-2"></a>  <span class="fu">geom_line</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a><span class="fu">ggplot</span>(life_expectancy2, <span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> mean_life_exp)) <span class="sc">+</span></span>
+<span id="cb39-2"><a href="#cb39-2"></a>  <span class="fu">geom_line</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img data-src="lecture8_files/figure-revealjs/unnamed-chunk-59-1.png" width="960"></p>
+<p><img data-src="lecture8_files/figure-revealjs/unnamed-chunk-62-1.png" width="960"></p>
 </div>
 </div>
 </div>
@@ -1427,27 +1509,27 @@ Bogdan G. Popescu
 <h1>Temporal Data</h1>
 <p>We can also produce an animation</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a><span class="fu">library</span>(gganimate)</span>
-<span id="cb38-2"><a href="#cb38-2"></a><span class="fu">ggplot</span>(life_expectancy2, <span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> mean_life_exp)) <span class="sc">+</span></span>
-<span id="cb38-3"><a href="#cb38-3"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
-<span id="cb38-4"><a href="#cb38-4"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">'Year: {frame_along}'</span>, </span>
-<span id="cb38-5"><a href="#cb38-5"></a>       <span class="at">x =</span> <span class="st">'Urbanization'</span>, </span>
-<span id="cb38-6"><a href="#cb38-6"></a>       <span class="at">y =</span> <span class="st">'Life Expectancy'</span>) <span class="sc">+</span></span>
-<span id="cb38-7"><a href="#cb38-7"></a>  <span class="fu">transition_reveal</span>(Year)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a><span class="fu">library</span>(gganimate)</span>
+<span id="cb40-2"><a href="#cb40-2"></a><span class="fu">ggplot</span>(life_expectancy2, <span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> mean_life_exp)) <span class="sc">+</span></span>
+<span id="cb40-3"><a href="#cb40-3"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
+<span id="cb40-4"><a href="#cb40-4"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">'Year: {frame_along}'</span>, </span>
+<span id="cb40-5"><a href="#cb40-5"></a>       <span class="at">x =</span> <span class="st">'Urbanization'</span>, </span>
+<span id="cb40-6"><a href="#cb40-6"></a>       <span class="at">y =</span> <span class="st">'Life Expectancy'</span>) <span class="sc">+</span></span>
+<span id="cb40-7"><a href="#cb40-7"></a>  <span class="fu">transition_reveal</span>(Year)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-60-1.gif" class="r-stretch"></section>
+<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-63-1.gif" class="r-stretch"></section>
 
 <section id="temporal-data-3" class="title-slide slide level1 center" data-visibility="uncounted">
 <h1>Temporal Data</h1>
 <p>To view the upward sloping trend in life expectancy, it might be worth aggregating some of the years.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a><span class="fu">ggplot</span>(life_expectancy2, <span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> mean_life_exp)) <span class="sc">+</span></span>
-<span id="cb39-2"><a href="#cb39-2"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
-<span id="cb39-3"><a href="#cb39-3"></a>  <span class="fu">geom_smooth</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a><span class="fu">ggplot</span>(life_expectancy2, <span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> mean_life_exp)) <span class="sc">+</span></span>
+<span id="cb41-2"><a href="#cb41-2"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
+<span id="cb41-3"><a href="#cb41-3"></a>  <span class="fu">geom_smooth</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-61-1.png" width="960" class="r-stretch"></section>
+<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-64-1.png" width="960" class="r-stretch"></section>
 
 <section id="temporal-data-two-countries" class="title-slide slide level1 center">
 <h1>Temporal Data: Two Countries</h1>
@@ -1459,12 +1541,12 @@ Bogdan G. Popescu
 </div>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a><span class="co">#Subsetting the data</span></span>
-<span id="cb40-2"><a href="#cb40-2"></a>life_expectancy_itus<span class="ot">&lt;-</span><span class="fu">subset</span>(life_expectancy, Entity <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Italy"</span>, <span class="st">"United States"</span>))</span>
-<span id="cb40-3"><a href="#cb40-3"></a><span class="co">#Selecting only after 1900</span></span>
-<span id="cb40-4"><a href="#cb40-4"></a>life_expectancy_itus<span class="ot">&lt;-</span><span class="fu">subset</span>(life_expectancy_itus, Year<span class="sc">&gt;</span><span class="dv">1899</span>)</span>
-<span id="cb40-5"><a href="#cb40-5"></a><span class="co">#Renaming life expectancy variable</span></span>
-<span id="cb40-6"><a href="#cb40-6"></a><span class="fu">names</span>(life_expectancy_itus)[<span class="fu">names</span>(life_expectancy_itus)<span class="sc">==</span><span class="st">"Life.expectancy.at.birth..historical."</span>]<span class="ot">&lt;-</span><span class="st">"life_exp"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a><span class="co">#Subsetting the data</span></span>
+<span id="cb42-2"><a href="#cb42-2"></a>life_expectancy_itus<span class="ot">&lt;-</span><span class="fu">subset</span>(life_expectancy, Entity <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Italy"</span>, <span class="st">"United States"</span>))</span>
+<span id="cb42-3"><a href="#cb42-3"></a><span class="co">#Selecting only after 1900</span></span>
+<span id="cb42-4"><a href="#cb42-4"></a>life_expectancy_itus<span class="ot">&lt;-</span><span class="fu">subset</span>(life_expectancy_itus, Year<span class="sc">&gt;</span><span class="dv">1899</span>)</span>
+<span id="cb42-5"><a href="#cb42-5"></a><span class="co">#Renaming life expectancy variable</span></span>
+<span id="cb42-6"><a href="#cb42-6"></a><span class="fu">names</span>(life_expectancy_itus)[<span class="fu">names</span>(life_expectancy_itus)<span class="sc">==</span><span class="st">"Life.expectancy.at.birth..historical."</span>]<span class="ot">&lt;-</span><span class="st">"life_exp"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="fragment">
@@ -1472,7 +1554,7 @@ Bogdan G. Popescu
 </div>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a><span class="fu">head</span>(life_expectancy_itus, <span class="at">n=</span><span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a><span class="fu">head</span>(life_expectancy_itus, <span class="at">n=</span><span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     Entity Code Year life_exp
 8583  Italy  ITA 1900    41.67
@@ -1488,14 +1570,14 @@ Bogdan G. Popescu
 <h1>Temporal Data: Two Countries</h1>
 <p>We can now plot life expectancy for the two countries over time</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a><span class="co">#Plotting</span></span>
-<span id="cb43-2"><a href="#cb43-2"></a><span class="fu">ggplot</span>(life_expectancy_itus, </span>
-<span id="cb43-3"><a href="#cb43-3"></a>       <span class="fu">aes</span>(<span class="at">x=</span>Year, <span class="at">y=</span> life_exp, <span class="at">color =</span> Entity))<span class="sc">+</span></span>
-<span id="cb43-4"><a href="#cb43-4"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
-<span id="cb43-5"><a href="#cb43-5"></a>  <span class="fu">scale_colour_viridis_d</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a><span class="co">#Plotting</span></span>
+<span id="cb45-2"><a href="#cb45-2"></a><span class="fu">ggplot</span>(life_expectancy_itus, </span>
+<span id="cb45-3"><a href="#cb45-3"></a>       <span class="fu">aes</span>(<span class="at">x=</span>Year, <span class="at">y=</span> life_exp, <span class="at">color =</span> Entity))<span class="sc">+</span></span>
+<span id="cb45-4"><a href="#cb45-4"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
+<span id="cb45-5"><a href="#cb45-5"></a>  <span class="fu">scale_colour_viridis_d</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-64-1.png" width="960" class="r-stretch"></section>
+<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-67-1.png" width="960" class="r-stretch"></section>
 
 <section id="temporal-data-two-countries-2" class="title-slide slide level1 center">
 <h1>Temporal Data: Two Countries</h1>
@@ -1505,7 +1587,7 @@ Bogdan G. Popescu
 <div class="fragment">
 <div class="cell">
 <div class="cell-output-display">
-<p><img data-src="lecture8_files/figure-revealjs/unnamed-chunk-65-1.png" width="960"></p>
+<p><img data-src="lecture8_files/figure-revealjs/unnamed-chunk-68-1.png" width="960"></p>
 </div>
 </div>
 </div>
@@ -1513,7 +1595,7 @@ Bogdan G. Popescu
 <div class="fragment">
 <div class="cell">
 <div class="cell-output-display">
-<p><img data-src="lecture8_files/figure-revealjs/unnamed-chunk-66-1.png" width="960"></p>
+<p><img data-src="lecture8_files/figure-revealjs/unnamed-chunk-69-1.png" width="960"></p>
 </div>
 </div>
 </div>
@@ -1528,24 +1610,24 @@ Bogdan G. Popescu
 <div class="column" style="width:49%;">
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a><span class="fu">ggplot</span>(life_expectancy_itus, </span>
-<span id="cb44-2"><a href="#cb44-2"></a>       <span class="fu">aes</span>(<span class="at">x=</span>Year, </span>
-<span id="cb44-3"><a href="#cb44-3"></a>           <span class="at">y=</span> life_exp, </span>
-<span id="cb44-4"><a href="#cb44-4"></a>           <span class="at">color =</span> Entity))<span class="sc">+</span></span>
-<span id="cb44-5"><a href="#cb44-5"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
-<span id="cb44-6"><a href="#cb44-6"></a>  <span class="fu">scale_colour_viridis_d</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a><span class="fu">ggplot</span>(life_expectancy_itus, </span>
+<span id="cb46-2"><a href="#cb46-2"></a>       <span class="fu">aes</span>(<span class="at">x=</span>Year, </span>
+<span id="cb46-3"><a href="#cb46-3"></a>           <span class="at">y=</span> life_exp, </span>
+<span id="cb46-4"><a href="#cb46-4"></a>           <span class="at">color =</span> Entity))<span class="sc">+</span></span>
+<span id="cb46-5"><a href="#cb46-5"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
+<span id="cb46-6"><a href="#cb46-6"></a>  <span class="fu">scale_colour_viridis_d</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div><div class="column" style="width:49%;">
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a><span class="fu">ggplot</span>(life_expectancy_itus, </span>
-<span id="cb45-2"><a href="#cb45-2"></a>       <span class="fu">aes</span>(<span class="at">x=</span>Year, </span>
-<span id="cb45-3"><a href="#cb45-3"></a>           <span class="at">y=</span> life_exp, </span>
-<span id="cb45-4"><a href="#cb45-4"></a>           <span class="at">color =</span> Entity))<span class="sc">+</span></span>
-<span id="cb45-5"><a href="#cb45-5"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
-<span id="cb45-6"><a href="#cb45-6"></a>  <span class="fu">scale_colour_viridis_d</span>()<span class="sc">+</span></span>
-<span id="cb45-7"><a href="#cb45-7"></a>  <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="cn">NA</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a><span class="fu">ggplot</span>(life_expectancy_itus, </span>
+<span id="cb47-2"><a href="#cb47-2"></a>       <span class="fu">aes</span>(<span class="at">x=</span>Year, </span>
+<span id="cb47-3"><a href="#cb47-3"></a>           <span class="at">y=</span> life_exp, </span>
+<span id="cb47-4"><a href="#cb47-4"></a>           <span class="at">color =</span> Entity))<span class="sc">+</span></span>
+<span id="cb47-5"><a href="#cb47-5"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
+<span id="cb47-6"><a href="#cb47-6"></a>  <span class="fu">scale_colour_viridis_d</span>()<span class="sc">+</span></span>
+<span id="cb47-7"><a href="#cb47-7"></a>  <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="cn">NA</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1558,92 +1640,6 @@ Bogdan G. Popescu
 <div class="columns">
 <div class="column" style="width:49%;">
 <div class="fragment">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a><span class="fu">ggplot</span>(life_expectancy_itus, </span>
-<span id="cb46-2"><a href="#cb46-2"></a>       <span class="fu">aes</span>(<span class="at">x=</span>Year, </span>
-<span id="cb46-3"><a href="#cb46-3"></a>           <span class="at">y=</span> life_exp, </span>
-<span id="cb46-4"><a href="#cb46-4"></a>           <span class="at">color =</span> Entity))<span class="sc">+</span></span>
-<span id="cb46-5"><a href="#cb46-5"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
-<span id="cb46-6"><a href="#cb46-6"></a>  <span class="fu">scale_colour_viridis_d</span>()<span class="sc">+</span></span>
-<span id="cb46-7"><a href="#cb46-7"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">"label"</span>,</span>
-<span id="cb46-8"><a href="#cb46-8"></a>           <span class="at">x =</span> <span class="dv">1918</span>, <span class="at">y =</span> <span class="dv">80</span>,</span>
-<span id="cb46-9"><a href="#cb46-9"></a>           <span class="at">label =</span> <span class="st">"WW1"</span>, </span>
-<span id="cb46-10"><a href="#cb46-10"></a>           <span class="at">color=</span><span class="st">"red"</span>)<span class="sc">+</span></span>
-<span id="cb46-11"><a href="#cb46-11"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">"rect"</span>, </span>
-<span id="cb46-12"><a href="#cb46-12"></a>           <span class="at">xmin =</span> <span class="dv">1917</span>, </span>
-<span id="cb46-13"><a href="#cb46-13"></a>           <span class="at">xmax =</span> <span class="dv">1920</span>,</span>
-<span id="cb46-14"><a href="#cb46-14"></a>           <span class="at">ymin =</span> <span class="dv">0</span>, </span>
-<span id="cb46-15"><a href="#cb46-15"></a>           <span class="at">ymax =</span> <span class="cn">Inf</span>,</span>
-<span id="cb46-16"><a href="#cb46-16"></a>           <span class="at">fill =</span> <span class="st">"red"</span>, </span>
-<span id="cb46-17"><a href="#cb46-17"></a>           <span class="at">alpha =</span> <span class="fl">0.2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div><div class="column" style="width:49%;">
-<div class="fragment">
-<div class="cell">
-<div class="cell-output-display">
-<p><img data-src="lecture8_files/figure-revealjs/unnamed-chunk-70-1.png" width="960"></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-<section id="visualizing-time-2" class="title-slide slide level1 center">
-<h1>Visualizing Time</h1>
-<p>Another cool way to visualize data is to create density ridges for every year</p>
-<p>We will however want fewer years to make the graph easier to read</p>
-</section>
-
-<section id="visualizing-time-3" class="title-slide slide level1 center">
-<h1>Visualizing Time</h1>
-<p>Here is how we go about it:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb47" data-code-line-numbers="1-2|3-4|5-6|7-14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a><span class="co">#Step1: Load the library</span></span>
-<span id="cb47-2"><a href="#cb47-2"></a><span class="fu">library</span>(<span class="st">"forcats"</span>)</span>
-<span id="cb47-3"><a href="#cb47-3"></a><span class="co">#Step2: Subset the data to fewer years</span></span>
-<span id="cb47-4"><a href="#cb47-4"></a>final3<span class="ot">&lt;-</span><span class="fu">subset</span>(final2, Year<span class="sc">&gt;</span><span class="dv">1980</span>)</span>
-<span id="cb47-5"><a href="#cb47-5"></a><span class="co">#Step3: Turn year into factor</span></span>
-<span id="cb47-6"><a href="#cb47-6"></a>final3<span class="sc">$</span>year_factor<span class="ot">&lt;-</span><span class="fu">as.factor</span>(final3<span class="sc">$</span>Year)</span>
-<span id="cb47-7"><a href="#cb47-7"></a><span class="co">#Step4: Plot</span></span>
-<span id="cb47-8"><a href="#cb47-8"></a><span class="fu">ggplot</span>(final3, </span>
-<span id="cb47-9"><a href="#cb47-9"></a>       <span class="fu">aes</span>(<span class="at">x =</span> life_exp, </span>
-<span id="cb47-10"><a href="#cb47-10"></a>           <span class="at">y =</span> <span class="fu">fct_rev</span>(<span class="fu">as.factor</span>(Year)), <span class="at">fill =</span> ..x..))<span class="sc">+</span></span>
-<span id="cb47-11"><a href="#cb47-11"></a>  <span class="fu">geom_density_ridges_gradient</span>(<span class="at">color =</span> <span class="st">"white"</span>, </span>
-<span id="cb47-12"><a href="#cb47-12"></a>                               <span class="at">quantile_lines =</span> <span class="cn">TRUE</span>)<span class="sc">+</span></span>
-<span id="cb47-13"><a href="#cb47-13"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Life expectancy"</span>, <span class="at">y =</span> <span class="cn">NULL</span>, <span class="at">fill =</span> <span class="cn">NULL</span>)<span class="sc">+</span></span>
-<span id="cb47-14"><a href="#cb47-14"></a>  <span class="fu">scale_fill_viridis_c</span>(<span class="at">name =</span> <span class="st">""</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-
-<section id="visualizing-time-4" class="title-slide slide level1 center">
-<h1>Visualizing Time</h1>
-<p>This produces:</p>
-
-<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-72-1.png" width="960" class="r-stretch"></section>
-
-<section id="visualizing-time-5" class="title-slide slide level1 center" data-visibility="uncounted">
-<h1>Visualizing Time</h1>
-<p>We can see this way the first, second, and third quartile</p>
-
-<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-73-1.png" width="960" class="r-stretch"></section>
-
-<section>
-<section id="visualizing-time-6" class="title-slide slide level1 center" data-visibility="uncounted">
-<h1>Visualizing Time</h1>
-<p>We also see that the life expectancy gets narrower over time: most people live longer lives</p>
-
-<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-74-1.png" width="960" class="r-stretch"></section>
-<section id="saving-figures" class="slide level2">
-<h2>Saving Figures</h2>
-<p>One final aspect related to visualization is how we save the data</p>
-<p>The command for this <code>ggsave</code></p>
-<p>Let us look at a few options</p>
-</section>
-<section id="saving-figures-1" class="slide level2">
-<h2>Saving Figures</h2>
-<p>Let’s imagine we want to save the following plot</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1"></a><span class="fu">ggplot</span>(life_expectancy_itus, </span>
 <span id="cb48-2"><a href="#cb48-2"></a>       <span class="fu">aes</span>(<span class="at">x=</span>Year, </span>
@@ -1663,34 +1659,120 @@ Bogdan G. Popescu
 <span id="cb48-16"><a href="#cb48-16"></a>           <span class="at">fill =</span> <span class="st">"red"</span>, </span>
 <span id="cb48-17"><a href="#cb48-17"></a>           <span class="at">alpha =</span> <span class="fl">0.2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
+</div><div class="column" style="width:49%;">
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="lecture8_files/figure-revealjs/unnamed-chunk-73-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="visualizing-time-2" class="title-slide slide level1 center">
+<h1>Visualizing Time</h1>
+<p>Another cool way to visualize data is to create density ridges for every year</p>
+<p>We will however want fewer years to make the graph easier to read</p>
+</section>
+
+<section id="visualizing-time-3" class="title-slide slide level1 center">
+<h1>Visualizing Time</h1>
+<p>Here is how we go about it:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb49" data-code-line-numbers="1-2|3-4|5-6|7-14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1"></a><span class="co">#Step1: Load the library</span></span>
+<span id="cb49-2"><a href="#cb49-2"></a><span class="fu">library</span>(<span class="st">"forcats"</span>)</span>
+<span id="cb49-3"><a href="#cb49-3"></a><span class="co">#Step2: Subset the data to fewer years</span></span>
+<span id="cb49-4"><a href="#cb49-4"></a>final3<span class="ot">&lt;-</span><span class="fu">subset</span>(final2, Year<span class="sc">&gt;</span><span class="dv">1980</span>)</span>
+<span id="cb49-5"><a href="#cb49-5"></a><span class="co">#Step3: Turn year into factor</span></span>
+<span id="cb49-6"><a href="#cb49-6"></a>final3<span class="sc">$</span>year_factor<span class="ot">&lt;-</span><span class="fu">as.factor</span>(final3<span class="sc">$</span>Year)</span>
+<span id="cb49-7"><a href="#cb49-7"></a><span class="co">#Step4: Plot</span></span>
+<span id="cb49-8"><a href="#cb49-8"></a><span class="fu">ggplot</span>(final3, </span>
+<span id="cb49-9"><a href="#cb49-9"></a>       <span class="fu">aes</span>(<span class="at">x =</span> life_exp, </span>
+<span id="cb49-10"><a href="#cb49-10"></a>           <span class="at">y =</span> <span class="fu">fct_rev</span>(<span class="fu">as.factor</span>(Year)), <span class="at">fill =</span> ..x..))<span class="sc">+</span></span>
+<span id="cb49-11"><a href="#cb49-11"></a>  <span class="fu">geom_density_ridges_gradient</span>(<span class="at">color =</span> <span class="st">"white"</span>, </span>
+<span id="cb49-12"><a href="#cb49-12"></a>                               <span class="at">quantile_lines =</span> <span class="cn">TRUE</span>)<span class="sc">+</span></span>
+<span id="cb49-13"><a href="#cb49-13"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Life expectancy"</span>, <span class="at">y =</span> <span class="cn">NULL</span>, <span class="at">fill =</span> <span class="cn">NULL</span>)<span class="sc">+</span></span>
+<span id="cb49-14"><a href="#cb49-14"></a>  <span class="fu">scale_fill_viridis_c</span>(<span class="at">name =</span> <span class="st">""</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+
+<section id="visualizing-time-4" class="title-slide slide level1 center">
+<h1>Visualizing Time</h1>
+<p>This produces:</p>
+
+<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-75-1.png" width="960" class="r-stretch"></section>
+
+<section id="visualizing-time-5" class="title-slide slide level1 center" data-visibility="uncounted">
+<h1>Visualizing Time</h1>
+<p>We can see this way the first, second, and third quartile</p>
+
+<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-76-1.png" width="960" class="r-stretch"></section>
+
+<section>
+<section id="visualizing-time-6" class="title-slide slide level1 center" data-visibility="uncounted">
+<h1>Visualizing Time</h1>
+<p>We also see that the life expectancy gets narrower over time: most people live longer lives</p>
+
+<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-77-1.png" width="960" class="r-stretch"></section>
+<section id="saving-figures" class="slide level2">
+<h2>Saving Figures</h2>
+<p>One final aspect related to visualization is how we save the data</p>
+<p>The command for this <code>ggsave</code></p>
+<p>Let us look at a few options</p>
+</section>
+<section id="saving-figures-1" class="slide level2">
+<h2>Saving Figures</h2>
+<p>Let’s imagine we want to save the following plot</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1"></a><span class="fu">ggplot</span>(life_expectancy_itus, </span>
+<span id="cb50-2"><a href="#cb50-2"></a>       <span class="fu">aes</span>(<span class="at">x=</span>Year, </span>
+<span id="cb50-3"><a href="#cb50-3"></a>           <span class="at">y=</span> life_exp, </span>
+<span id="cb50-4"><a href="#cb50-4"></a>           <span class="at">color =</span> Entity))<span class="sc">+</span></span>
+<span id="cb50-5"><a href="#cb50-5"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
+<span id="cb50-6"><a href="#cb50-6"></a>  <span class="fu">scale_colour_viridis_d</span>()<span class="sc">+</span></span>
+<span id="cb50-7"><a href="#cb50-7"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">"label"</span>,</span>
+<span id="cb50-8"><a href="#cb50-8"></a>           <span class="at">x =</span> <span class="dv">1918</span>, <span class="at">y =</span> <span class="dv">80</span>,</span>
+<span id="cb50-9"><a href="#cb50-9"></a>           <span class="at">label =</span> <span class="st">"WW1"</span>, </span>
+<span id="cb50-10"><a href="#cb50-10"></a>           <span class="at">color=</span><span class="st">"red"</span>)<span class="sc">+</span></span>
+<span id="cb50-11"><a href="#cb50-11"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">"rect"</span>, </span>
+<span id="cb50-12"><a href="#cb50-12"></a>           <span class="at">xmin =</span> <span class="dv">1917</span>, </span>
+<span id="cb50-13"><a href="#cb50-13"></a>           <span class="at">xmax =</span> <span class="dv">1920</span>,</span>
+<span id="cb50-14"><a href="#cb50-14"></a>           <span class="at">ymin =</span> <span class="dv">0</span>, </span>
+<span id="cb50-15"><a href="#cb50-15"></a>           <span class="at">ymax =</span> <span class="cn">Inf</span>,</span>
+<span id="cb50-16"><a href="#cb50-16"></a>           <span class="at">fill =</span> <span class="st">"red"</span>, </span>
+<span id="cb50-17"><a href="#cb50-17"></a>           <span class="at">alpha =</span> <span class="fl">0.2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="saving-figures-2" class="slide level2" data-visibility="uncounted">
 <h2>Saving Figures</h2>
 <p>Let’s imagine we want to save the following plot</p>
 
-<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-76-1.png" width="960" class="r-stretch"></section>
+<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-79-1.png" width="960" class="r-stretch"></section>
 <section id="saving-figures-3" class="slide level2" data-visibility="uncounted">
 <h2>Saving Figures</h2>
 <p>Let’s imagine we want to save the following plot</p>
 <p>We first create an object: pic1</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1"></a>pic1<span class="ot">&lt;-</span><span class="fu">ggplot</span>(life_expectancy_itus, </span>
-<span id="cb49-2"><a href="#cb49-2"></a>       <span class="fu">aes</span>(<span class="at">x=</span>Year, </span>
-<span id="cb49-3"><a href="#cb49-3"></a>           <span class="at">y=</span> life_exp, </span>
-<span id="cb49-4"><a href="#cb49-4"></a>           <span class="at">color =</span> Entity))<span class="sc">+</span></span>
-<span id="cb49-5"><a href="#cb49-5"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
-<span id="cb49-6"><a href="#cb49-6"></a>  <span class="fu">scale_colour_viridis_d</span>()<span class="sc">+</span></span>
-<span id="cb49-7"><a href="#cb49-7"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">"label"</span>,</span>
-<span id="cb49-8"><a href="#cb49-8"></a>           <span class="at">x =</span> <span class="dv">1918</span>, <span class="at">y =</span> <span class="dv">80</span>,</span>
-<span id="cb49-9"><a href="#cb49-9"></a>           <span class="at">label =</span> <span class="st">"WW1"</span>, </span>
-<span id="cb49-10"><a href="#cb49-10"></a>           <span class="at">color=</span><span class="st">"red"</span>)<span class="sc">+</span></span>
-<span id="cb49-11"><a href="#cb49-11"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">"rect"</span>, </span>
-<span id="cb49-12"><a href="#cb49-12"></a>           <span class="at">xmin =</span> <span class="dv">1917</span>, </span>
-<span id="cb49-13"><a href="#cb49-13"></a>           <span class="at">xmax =</span> <span class="dv">1920</span>,</span>
-<span id="cb49-14"><a href="#cb49-14"></a>           <span class="at">ymin =</span> <span class="dv">0</span>, </span>
-<span id="cb49-15"><a href="#cb49-15"></a>           <span class="at">ymax =</span> <span class="cn">Inf</span>,</span>
-<span id="cb49-16"><a href="#cb49-16"></a>           <span class="at">fill =</span> <span class="st">"red"</span>, </span>
-<span id="cb49-17"><a href="#cb49-17"></a>           <span class="at">alpha =</span> <span class="fl">0.2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1"></a>pic1<span class="ot">&lt;-</span><span class="fu">ggplot</span>(life_expectancy_itus, </span>
+<span id="cb51-2"><a href="#cb51-2"></a>       <span class="fu">aes</span>(<span class="at">x=</span>Year, </span>
+<span id="cb51-3"><a href="#cb51-3"></a>           <span class="at">y=</span> life_exp, </span>
+<span id="cb51-4"><a href="#cb51-4"></a>           <span class="at">color =</span> Entity))<span class="sc">+</span></span>
+<span id="cb51-5"><a href="#cb51-5"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
+<span id="cb51-6"><a href="#cb51-6"></a>  <span class="fu">scale_colour_viridis_d</span>()<span class="sc">+</span></span>
+<span id="cb51-7"><a href="#cb51-7"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">"label"</span>,</span>
+<span id="cb51-8"><a href="#cb51-8"></a>           <span class="at">x =</span> <span class="dv">1918</span>, <span class="at">y =</span> <span class="dv">80</span>,</span>
+<span id="cb51-9"><a href="#cb51-9"></a>           <span class="at">label =</span> <span class="st">"WW1"</span>, </span>
+<span id="cb51-10"><a href="#cb51-10"></a>           <span class="at">color=</span><span class="st">"red"</span>)<span class="sc">+</span></span>
+<span id="cb51-11"><a href="#cb51-11"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">"rect"</span>, </span>
+<span id="cb51-12"><a href="#cb51-12"></a>           <span class="at">xmin =</span> <span class="dv">1917</span>, </span>
+<span id="cb51-13"><a href="#cb51-13"></a>           <span class="at">xmax =</span> <span class="dv">1920</span>,</span>
+<span id="cb51-14"><a href="#cb51-14"></a>           <span class="at">ymin =</span> <span class="dv">0</span>, </span>
+<span id="cb51-15"><a href="#cb51-15"></a>           <span class="at">ymax =</span> <span class="cn">Inf</span>,</span>
+<span id="cb51-16"><a href="#cb51-16"></a>           <span class="at">fill =</span> <span class="st">"red"</span>, </span>
+<span id="cb51-17"><a href="#cb51-17"></a>           <span class="at">alpha =</span> <span class="fl">0.2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="saving-figures-4" class="slide level2" data-visibility="uncounted">
@@ -1698,16 +1780,16 @@ Bogdan G. Popescu
 <p>The next step is to use the <code>ggsave</code> function.</p>
 <p>This will save the object in your directory</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1"></a><span class="co">#Saving as PDF</span></span>
-<span id="cb50-2"><a href="#cb50-2"></a><span class="fu">ggsave</span>(pic1, <span class="at">filename =</span> <span class="st">"./figures_lecture8/pic1.pdf"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1"></a><span class="co">#Saving as PDF</span></span>
+<span id="cb52-2"><a href="#cb52-2"></a><span class="fu">ggsave</span>(pic1, <span class="at">filename =</span> <span class="st">"./figures_lecture8/pic1.pdf"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1"></a><span class="co">#Saving as PNG</span></span>
-<span id="cb51-2"><a href="#cb51-2"></a><span class="fu">ggsave</span>(pic1, <span class="at">filename =</span> <span class="st">"./figures_lecture8/pic1.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1"></a><span class="co">#Saving as PNG</span></span>
+<span id="cb53-2"><a href="#cb53-2"></a><span class="fu">ggsave</span>(pic1, <span class="at">filename =</span> <span class="st">"./figures_lecture8/pic1.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1"></a><span class="co">#Saving as JPG</span></span>
-<span id="cb52-2"><a href="#cb52-2"></a><span class="fu">ggsave</span>(pic1, <span class="at">filename =</span> <span class="st">"./figures_lecture8/pic1.jpg"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1"></a><span class="co">#Saving as JPG</span></span>
+<span id="cb54-2"><a href="#cb54-2"></a><span class="fu">ggsave</span>(pic1, <span class="at">filename =</span> <span class="st">"./figures_lecture8/pic1.jpg"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="saving-figures-5" class="slide level2">
@@ -1729,18 +1811,18 @@ Bogdan G. Popescu
 <h2>Saving Figures</h2>
 <p>One should also be aware that width and heigh options, as part of the <code>ggsave</code> function will alter the appearance of your figure</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1"></a><span class="co">#Saving as JPG</span></span>
-<span id="cb53-2"><a href="#cb53-2"></a><span class="fu">ggsave</span>(pic1, <span class="at">filename =</span> <span class="st">"./figures_lecture8/pic1_square.jpg"</span>, </span>
-<span id="cb53-3"><a href="#cb53-3"></a>       <span class="at">width =</span> <span class="dv">20</span>, </span>
-<span id="cb53-4"><a href="#cb53-4"></a>       <span class="at">height =</span> <span class="dv">20</span>, </span>
-<span id="cb53-5"><a href="#cb53-5"></a>       <span class="at">units =</span> <span class="st">"cm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1"></a><span class="co">#Saving as JPG</span></span>
+<span id="cb55-2"><a href="#cb55-2"></a><span class="fu">ggsave</span>(pic1, <span class="at">filename =</span> <span class="st">"./figures_lecture8/pic1_square.jpg"</span>, </span>
+<span id="cb55-3"><a href="#cb55-3"></a>       <span class="at">width =</span> <span class="dv">20</span>, </span>
+<span id="cb55-4"><a href="#cb55-4"></a>       <span class="at">height =</span> <span class="dv">20</span>, </span>
+<span id="cb55-5"><a href="#cb55-5"></a>       <span class="at">units =</span> <span class="st">"cm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1"></a><span class="co">#Saving as JPG</span></span>
-<span id="cb54-2"><a href="#cb54-2"></a><span class="fu">ggsave</span>(pic1, <span class="at">filename =</span> <span class="st">"./figures_lecture8/pic1_rect.jpg"</span>, </span>
-<span id="cb54-3"><a href="#cb54-3"></a>       <span class="at">width =</span> <span class="dv">20</span>, </span>
-<span id="cb54-4"><a href="#cb54-4"></a>       <span class="at">height =</span> <span class="dv">10</span>, </span>
-<span id="cb54-5"><a href="#cb54-5"></a>       <span class="at">units =</span> <span class="st">"cm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1"></a><span class="co">#Saving as JPG</span></span>
+<span id="cb56-2"><a href="#cb56-2"></a><span class="fu">ggsave</span>(pic1, <span class="at">filename =</span> <span class="st">"./figures_lecture8/pic1_rect.jpg"</span>, </span>
+<span id="cb56-3"><a href="#cb56-3"></a>       <span class="at">width =</span> <span class="dv">20</span>, </span>
+<span id="cb56-4"><a href="#cb56-4"></a>       <span class="at">height =</span> <span class="dv">10</span>, </span>
+<span id="cb56-5"><a href="#cb56-5"></a>       <span class="at">units =</span> <span class="st">"cm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="saving-figures-8" class="slide level2">
@@ -1758,21 +1840,21 @@ Bogdan G. Popescu
 <h2>Saving Figures</h2>
 <p>For publication quality figures, you should use a dpi of 300</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1"></a><span class="co">#Saving as JPG</span></span>
-<span id="cb55-2"><a href="#cb55-2"></a><span class="fu">ggsave</span>(pic1, <span class="at">filename =</span> <span class="st">"./figures_lecture8/pic1_300dpi.jpg"</span>, </span>
-<span id="cb55-3"><a href="#cb55-3"></a>       <span class="at">width =</span> <span class="dv">20</span>, </span>
-<span id="cb55-4"><a href="#cb55-4"></a>       <span class="at">height =</span> <span class="dv">20</span>, </span>
-<span id="cb55-5"><a href="#cb55-5"></a>       <span class="at">units =</span> <span class="st">"cm"</span>,</span>
-<span id="cb55-6"><a href="#cb55-6"></a>       <span class="at">dpi=</span><span class="dv">300</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1"></a><span class="co">#Saving as JPG</span></span>
+<span id="cb57-2"><a href="#cb57-2"></a><span class="fu">ggsave</span>(pic1, <span class="at">filename =</span> <span class="st">"./figures_lecture8/pic1_300dpi.jpg"</span>, </span>
+<span id="cb57-3"><a href="#cb57-3"></a>       <span class="at">width =</span> <span class="dv">20</span>, </span>
+<span id="cb57-4"><a href="#cb57-4"></a>       <span class="at">height =</span> <span class="dv">20</span>, </span>
+<span id="cb57-5"><a href="#cb57-5"></a>       <span class="at">units =</span> <span class="st">"cm"</span>,</span>
+<span id="cb57-6"><a href="#cb57-6"></a>       <span class="at">dpi=</span><span class="dv">300</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>And here is 50 dpi</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1"></a><span class="co">#Saving as JPG</span></span>
-<span id="cb56-2"><a href="#cb56-2"></a><span class="fu">ggsave</span>(pic1, <span class="at">filename =</span> <span class="st">"./figures_lecture8/pic1_50dpi.jpg"</span>, </span>
-<span id="cb56-3"><a href="#cb56-3"></a>       <span class="at">width =</span> <span class="dv">20</span>, </span>
-<span id="cb56-4"><a href="#cb56-4"></a>       <span class="at">height =</span> <span class="dv">20</span>, </span>
-<span id="cb56-5"><a href="#cb56-5"></a>       <span class="at">units =</span> <span class="st">"cm"</span>,</span>
-<span id="cb56-6"><a href="#cb56-6"></a>       <span class="at">dpi=</span><span class="dv">50</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1"></a><span class="co">#Saving as JPG</span></span>
+<span id="cb58-2"><a href="#cb58-2"></a><span class="fu">ggsave</span>(pic1, <span class="at">filename =</span> <span class="st">"./figures_lecture8/pic1_50dpi.jpg"</span>, </span>
+<span id="cb58-3"><a href="#cb58-3"></a>       <span class="at">width =</span> <span class="dv">20</span>, </span>
+<span id="cb58-4"><a href="#cb58-4"></a>       <span class="at">height =</span> <span class="dv">20</span>, </span>
+<span id="cb58-5"><a href="#cb58-5"></a>       <span class="at">units =</span> <span class="st">"cm"</span>,</span>
+<span id="cb58-6"><a href="#cb58-6"></a>       <span class="at">dpi=</span><span class="dv">50</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="saving-figures-10" class="slide level2">
@@ -1800,56 +1882,56 @@ Bogdan G. Popescu
 <p>Write a function called <code>scatter_plot</code> that takes two vectors <code>x</code> and <code>y</code> as inputs and generates a scatter plot using <code>ggplot2</code>.</p>
 <p>The <code>x</code> and <code>y</code> look like:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1"></a><span class="co"># Example usage:</span></span>
-<span id="cb57-2"><a href="#cb57-2"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
-<span id="cb57-3"><a href="#cb57-3"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">11</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1"></a><span class="co"># Example usage:</span></span>
+<span id="cb59-2"><a href="#cb59-2"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
+<span id="cb59-3"><a href="#cb59-3"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">11</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1"></a><span class="fu">scatter_plot</span>(x, y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1"></a><span class="fu">scatter_plot</span>(x, y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-89-1.png" width="960" class="r-stretch"></section>
+<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-92-1.png" width="960" class="r-stretch"></section>
 <section id="exercise-2-function-for-histogram" class="slide level2">
 <h2>Exercise 2: Function for Histogram</h2>
 <p>Write a function called <code>histogram_plot</code> that takes a vector data as input and generates a histogram using <code>ggplot2</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb59-2"><a href="#cb59-2"></a>data <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
-<span id="cb59-3"><a href="#cb59-3"></a><span class="fu">histogram_plot</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb61-2"><a href="#cb61-2"></a>data <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
+<span id="cb61-3"><a href="#cb61-3"></a><span class="fu">histogram_plot</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-91-1.png" width="960" class="r-stretch"></section>
+<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-94-1.png" width="960" class="r-stretch"></section>
 <section id="exercise-3-produce-a-time-visualization-like-below" class="slide level2">
 <h2>Exercise 3: Produce a time visualization like below:</h2>
 
-<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-92-1.gif" class="r-stretch"></section>
+<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-95-1.gif" class="r-stretch"></section>
 <section id="exercise-4" class="slide level2">
 <h2>Exercise 4:</h2>
 <p>Create the following dataframe:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1"></a><span class="co"># Load required library</span></span>
-<span id="cb60-2"><a href="#cb60-2"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb60-3"><a href="#cb60-3"></a></span>
-<span id="cb60-4"><a href="#cb60-4"></a><span class="co"># Generate a fun dataset</span></span>
-<span id="cb60-5"><a href="#cb60-5"></a><span class="fu">set.seed</span>(<span class="dv">123</span>) <span class="co"># for reproducibility</span></span>
-<span id="cb60-6"><a href="#cb60-6"></a>n_creatures <span class="ot">&lt;-</span> <span class="dv">50</span></span>
-<span id="cb60-7"><a href="#cb60-7"></a></span>
-<span id="cb60-8"><a href="#cb60-8"></a>creatures <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb60-9"><a href="#cb60-9"></a>  <span class="at">type =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Dragon"</span>, <span class="st">"Unicorn"</span>, <span class="st">"Yeti"</span>), <span class="at">each =</span> n_creatures),</span>
-<span id="cb60-10"><a href="#cb60-10"></a>  <span class="at">cuteness =</span> <span class="fu">c</span>(<span class="fu">rnorm</span>(n_creatures, <span class="at">mean =</span> <span class="dv">8</span>, <span class="at">sd =</span> <span class="dv">2</span>),</span>
-<span id="cb60-11"><a href="#cb60-11"></a>               <span class="fu">rnorm</span>(n_creatures, <span class="at">mean =</span> <span class="dv">7</span>, <span class="at">sd =</span> <span class="dv">2</span>),</span>
-<span id="cb60-12"><a href="#cb60-12"></a>               <span class="fu">rnorm</span>(n_creatures, <span class="at">mean =</span> <span class="dv">5</span>, <span class="at">sd =</span> <span class="dv">2</span>)),</span>
-<span id="cb60-13"><a href="#cb60-13"></a>  <span class="at">fierceness =</span> <span class="fu">c</span>(<span class="fu">rnorm</span>(n_creatures, <span class="at">mean =</span> <span class="dv">7</span>, <span class="at">sd =</span> <span class="dv">2</span>),</span>
-<span id="cb60-14"><a href="#cb60-14"></a>                 <span class="fu">rnorm</span>(n_creatures, <span class="at">mean =</span> <span class="dv">5</span>, <span class="at">sd =</span> <span class="dv">2</span>),</span>
-<span id="cb60-15"><a href="#cb60-15"></a>                 <span class="fu">rnorm</span>(n_creatures, <span class="at">mean =</span> <span class="dv">8</span>, <span class="at">sd =</span> <span class="dv">2</span>))</span>
-<span id="cb60-16"><a href="#cb60-16"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1"></a><span class="co"># Load required library</span></span>
+<span id="cb62-2"><a href="#cb62-2"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb62-3"><a href="#cb62-3"></a></span>
+<span id="cb62-4"><a href="#cb62-4"></a><span class="co"># Generate a fun dataset</span></span>
+<span id="cb62-5"><a href="#cb62-5"></a><span class="fu">set.seed</span>(<span class="dv">123</span>) <span class="co"># for reproducibility</span></span>
+<span id="cb62-6"><a href="#cb62-6"></a>n_creatures <span class="ot">&lt;-</span> <span class="dv">50</span></span>
+<span id="cb62-7"><a href="#cb62-7"></a></span>
+<span id="cb62-8"><a href="#cb62-8"></a>creatures <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb62-9"><a href="#cb62-9"></a>  <span class="at">type =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Dragon"</span>, <span class="st">"Unicorn"</span>, <span class="st">"Yeti"</span>), <span class="at">each =</span> n_creatures),</span>
+<span id="cb62-10"><a href="#cb62-10"></a>  <span class="at">cuteness =</span> <span class="fu">c</span>(<span class="fu">rnorm</span>(n_creatures, <span class="at">mean =</span> <span class="dv">8</span>, <span class="at">sd =</span> <span class="dv">2</span>),</span>
+<span id="cb62-11"><a href="#cb62-11"></a>               <span class="fu">rnorm</span>(n_creatures, <span class="at">mean =</span> <span class="dv">7</span>, <span class="at">sd =</span> <span class="dv">2</span>),</span>
+<span id="cb62-12"><a href="#cb62-12"></a>               <span class="fu">rnorm</span>(n_creatures, <span class="at">mean =</span> <span class="dv">5</span>, <span class="at">sd =</span> <span class="dv">2</span>)),</span>
+<span id="cb62-13"><a href="#cb62-13"></a>  <span class="at">fierceness =</span> <span class="fu">c</span>(<span class="fu">rnorm</span>(n_creatures, <span class="at">mean =</span> <span class="dv">7</span>, <span class="at">sd =</span> <span class="dv">2</span>),</span>
+<span id="cb62-14"><a href="#cb62-14"></a>                 <span class="fu">rnorm</span>(n_creatures, <span class="at">mean =</span> <span class="dv">5</span>, <span class="at">sd =</span> <span class="dv">2</span>),</span>
+<span id="cb62-15"><a href="#cb62-15"></a>                 <span class="fu">rnorm</span>(n_creatures, <span class="at">mean =</span> <span class="dv">8</span>, <span class="at">sd =</span> <span class="dv">2</span>))</span>
+<span id="cb62-16"><a href="#cb62-16"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="exercise-4-1" class="slide level2">
 <h2>Exercise 4:</h2>
 <p>Produce the following graph</p>
 
-<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-94-1.png" width="960" class="r-stretch"><div class="footer footer-default">
+<img data-src="lecture8_files/figure-revealjs/unnamed-chunk-97-1.png" width="960" class="r-stretch"><div class="footer footer-default">
 <p>Popescu (JCU): Lecture 8</p>
 </div>
 </section></section>
