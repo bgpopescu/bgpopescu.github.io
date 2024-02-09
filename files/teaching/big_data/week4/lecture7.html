@@ -696,8 +696,14 @@ Bogdan G. Popescu
 <section id="adobe-color" class="title-slide slide level1 center">
 <h1>Adobe Color</h1>
 <p>One excellent free source for color choice is <a href="https://color.adobe.com" target="_blank">https://color.adobe.com</a></p>
-
-<img data-src="figures_lecture7/adobe_color.png" style="width:38.0%" class="r-stretch"></section>
+<p><img data-src="figures_lecture7/adobe_color.png" style="width:38.0%"><br>
+</p>
+<ul>
+<li><a href="https://color.adobe.com/create/color-wheel" target="_blank">Create color themes</a></li>
+<li><a href="https://color.adobe.com/create/image" target="_blank">Extract themes &amp; gradients</a></li>
+<li><a href="https://color.adobe.com/create/color-contrast-analyzer" target="_blank">Create Accessible themes</a></li>
+</ul>
+</section>
 
 <section id="adobe-color-1" class="title-slide slide level1 center">
 <h1>Adobe Color</h1>
@@ -1996,13 +2002,13 @@ Minimal
 <span id="cb37-4"><a href="#cb37-4"></a><span class="co">#Step1: Loading the data</span></span>
 <span id="cb37-5"><a href="#cb37-5"></a>life_expectancy <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">'./life-expectancy.csv'</span>)</span>
 <span id="cb37-6"><a href="#cb37-6"></a>urbanization <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">'./share-of-population-urban.csv'</span>)</span>
-<span id="cb37-7"><a href="#cb37-7"></a><span class="co">#Step2: Removing continents</span></span>
+<span id="cb37-7"><a href="#cb37-7"></a><span class="co">#Step2: Removing countries with no country code</span></span>
 <span id="cb37-8"><a href="#cb37-8"></a>life_expectancy2<span class="ot">&lt;-</span><span class="fu">subset</span>(life_expectancy, Code<span class="sc">!=</span><span class="st">""</span>)</span>
 <span id="cb37-9"><a href="#cb37-9"></a><span class="co">#Step3: Changing variable name</span></span>
 <span id="cb37-10"><a href="#cb37-10"></a><span class="fu">names</span>(life_expectancy2)[<span class="fu">names</span>(life_expectancy2)<span class="sc">==</span><span class="st">"Life.expectancy.at.birth..historical."</span>]<span class="ot">&lt;-</span><span class="st">"life_exp"</span></span>
-<span id="cb37-11"><a href="#cb37-11"></a><span class="co">#Step4: Changing variable name</span></span>
+<span id="cb37-11"><a href="#cb37-11"></a><span class="co">#Step4: Keeping only relevant vars</span></span>
 <span id="cb37-12"><a href="#cb37-12"></a>life_expectancy3<span class="ot">&lt;-</span><span class="fu">subset</span>(life_expectancy2, <span class="at">selec=</span><span class="fu">c</span>(<span class="st">"Entity"</span>, <span class="st">"Code"</span>, <span class="st">"Year"</span>, <span class="st">"life_exp"</span>))</span>
-<span id="cb37-13"><a href="#cb37-13"></a><span class="co">#Step5: Removing continents</span></span>
+<span id="cb37-13"><a href="#cb37-13"></a><span class="co">#Step5: Removing countries with no country code</span></span>
 <span id="cb37-14"><a href="#cb37-14"></a>urbanization2<span class="ot">&lt;-</span><span class="fu">subset</span>(urbanization, Code<span class="sc">!=</span><span class="st">""</span>)</span>
 <span id="cb37-15"><a href="#cb37-15"></a><span class="co">#Step6: Changing variable name</span></span>
 <span id="cb37-16"><a href="#cb37-16"></a><span class="fu">names</span>(urbanization2)[<span class="fu">names</span>(urbanization2)<span class="sc">==</span><span class="st">"Urban.population....of.total.population."</span>]<span class="ot">&lt;-</span><span class="st">"urb"</span></span>
