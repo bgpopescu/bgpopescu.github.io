@@ -15,7 +15,7 @@ author_profile: true
   gtag('config', 'G-7DSN63Y1JH');
 </script>
 
-My research centers on state responses to political threats and the long-term consequences of extractive institutions. I combine strong area expertise, GIS, archival digitization experience, and statistical skills to understand how political elites respond to domestic and international threats, the types of policies they adopt, and their long-run repercussions.
+My research centers on state responses to political threats and their enduring consequences. I leverage comprehensive area knowledge, proficiency in GIS, expertise in archival digitization, and statistical acumen to analyze how political elites react to both domestic and international threats. I investigate the policies they enact and explore the lasting consequences of their actions.
 
 <h3><b>Books</b></h3>
 
