@@ -31,7 +31,7 @@ My research centers on state responses to political threats and their enduring c
 [Journal Version](https://doi.org/10.1177/00104140231209963){:target="_blank"} &#124;
 [PDF](https://www.dropbox.com/scl/fi/qfdzysdfdd0uy60op4qyn/Turkish_Governors_2023_09_25.pdf?rlkey=wex0iaf7zvs7172jkrlibpn69&dl=0){:target="_blank"}
 
-3) **Popescu, Bogdan G.**. 2023. "The Developmental Legacies of Border Buffer Zones: the Case of Military Colonialism." <em>Journal of Historical Political Economy</em>.  Vol. 3: No. 1, pp 31-63.
+3) **Popescu, Bogdan G.** 2023. "The Developmental Legacies of Border Buffer Zones: the Case of Military Colonialism." <em>Journal of Historical Political Economy</em>.  Vol. 3: No. 1, pp 31-63.
 [Journal Version](http://dx.doi.org/10.1561/115.00000045){:target="_blank"} &#124; [PDF](https://www.dropbox.com/scl/fi/00ojw0iwrewmtb8m09gcp/Legacies_Project_RNR_compressed.pdf?rlkey=bmlp6mb042coghp5s1ky1rvph&dl=0){:target="_blank"}
 
 4) **Popescu, Bogdan G.** and Popa, Mircea. 2022. "Imperial Rule and Long-run Development: Evidence on the Role of Human Capital in the Ottoman Europe."  <em>Comparative Political Studies</em>. Vol. 55: No. 11, pp. 1910-1946. [Journal Version](https://journals.sagepub.com/doi/full/10.1177/00104140211060283){:target="_blank"} &#124; [PDF](https://www.dropbox.com/s/5dq2pa43xcjkvvy/Legacies_Project_RNR2_compressed.pdf?dl=0){:target="_blank"}
