@@ -19,9 +19,9 @@ My research centers on state responses to political threats and their enduring c
 
 <h3><b>Books</b></h3>
 
-1) **Popescu, Bogdan G.**. 2023. <em>Imperial Borderlands: Institutions and Legacies of the Habsburg Military Frontier</em>. [Cambridge University Press](https://www.cambridge.org/core/books/imperial-borderlands/6845856BB6A18B8B8EC2EE66B9013AAC#fndtn-information){:target="_blank"}. Read the [table of contents and intro](https://www.dropbox.com/scl/fi/npqqmzppb7fsh6m5cy5yl/Imperial-Borderlands_final_intro_comp.pdf?rlkey=af21iyb62cpkbnreiydcaqx1s&dl=0){:target="_blank"}.
+1) **Popescu, Bogdan G.** 2023. <em>Imperial Borderlands: Institutions and Legacies of the Habsburg Military Frontier</em>. [Cambridge University Press](https://www.cambridge.org/core/books/imperial-borderlands/6845856BB6A18B8B8EC2EE66B9013AAC#fndtn-information){:target="_blank"}. Read the [table of contents and intro](https://www.dropbox.com/scl/fi/npqqmzppb7fsh6m5cy5yl/Imperial-Borderlands_final_intro_comp.pdf?rlkey=af21iyb62cpkbnreiydcaqx1s&dl=0){:target="_blank"}.
 
-2) **Popescu, Bogdan G.**. <em>Islam, Sultans, and the Printing Press</em>. Under Review. Read the [table of contents and intro](https://www.dropbox.com/scl/fi/edeyisrkif33ee9yy4al4/popescu_chapter1_sample.pdf?rlkey=3bw3aw35lx2w7srgf38q3c5dw&dl=0){:target="_blank"}.
+2) **Popescu, Bogdan G.** <em>Islam, Sultans, and the Printing Press</em>. Under Review. Read the [table of contents and intro](https://www.dropbox.com/scl/fi/edeyisrkif33ee9yy4al4/popescu_chapter1_sample.pdf?rlkey=3bw3aw35lx2w7srgf38q3c5dw&dl=0){:target="_blank"}.
 
 <h3><b>Peer-Reviewed Publications</b></h3>
 
@@ -40,7 +40,7 @@ My research centers on state responses to political threats and their enduring c
  <li>James Caporaso Award for Best Article published in CPS in 2022</li>
 </ul>
 
-5) Cremin, Maura and **Popescu, Bogdan G.**. 2021. "Sticks and Stones? Connecting Insurgent Propaganda with Violent Outcomes," <em>Journal of Conflict Resolution </em>. Vol. 66: No. 3, pp 504-528. [Journal Version](https://journals.sagepub.com/doi/10.1177/00220027211027291){:target="_blank"} &#124; [PDF](https://www.dropbox.com/s/7pr3ag5y5n5f8eg/cremin_popescu_2021_sticks_and_stones_compressed.pdf?dl=0){:target="_blank"}
+5) Cremin, Maura and **Popescu, Bogdan G.**, 2021. "Sticks and Stones? Connecting Insurgent Propaganda with Violent Outcomes," <em>Journal of Conflict Resolution </em>. Vol. 66: No. 3, pp 504-528. [Journal Version](https://journals.sagepub.com/doi/10.1177/00220027211027291){:target="_blank"} &#124; [PDF](https://www.dropbox.com/s/7pr3ag5y5n5f8eg/cremin_popescu_2021_sticks_and_stones_compressed.pdf?dl=0){:target="_blank"}
 
 6) Albertus, Mike and **Popescu, Bogdan G.**, 2020. "Does Equalizing Assets Spur Development? Evidence From Large-Scale Land Reform in Peru," <em>Quarterly Journal of Political Science</em>. Vol. 15: No. 2, pp 255-295. [Journal Version](https://www.nowpublishers.com/article/Details/QJPS-19033){:target="_blank"} &#124; [PDF](https://www.dropbox.com/s/osqfwx5c464m01w/paper_and_appendix_12.2.2019_small.pdf?dl=0){:target="_blank"}
 
