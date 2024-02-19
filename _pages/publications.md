@@ -19,9 +19,9 @@ My research centers on state responses to political threats and the long-term co
 
 <h3><b>Books</b></h3>
 
-1) **Bogdan G. Popescu**. 2023. <em>Imperial Borderlands: Institutions and Legacies of the Habsburg Military Frontier</em>. [Cambridge University Press](https://www.cambridge.org/core/books/imperial-borderlands/6845856BB6A18B8B8EC2EE66B9013AAC#fndtn-information){:target="_blank"}. Read the [table of contents and intro](https://www.dropbox.com/scl/fi/npqqmzppb7fsh6m5cy5yl/Imperial-Borderlands_final_intro_comp.pdf?rlkey=af21iyb62cpkbnreiydcaqx1s&dl=0){:target="_blank"}.
+1) **Popescu, Bogdan G.**. 2023. <em>Imperial Borderlands: Institutions and Legacies of the Habsburg Military Frontier</em>. [Cambridge University Press](https://www.cambridge.org/core/books/imperial-borderlands/6845856BB6A18B8B8EC2EE66B9013AAC#fndtn-information){:target="_blank"}. Read the [table of contents and intro](https://www.dropbox.com/scl/fi/npqqmzppb7fsh6m5cy5yl/Imperial-Borderlands_final_intro_comp.pdf?rlkey=af21iyb62cpkbnreiydcaqx1s&dl=0){:target="_blank"}.
 
-2) **Bogdan G. Popescu**. <em>Islam, Sultans, and the Printing Press</em>. Under Review. Read the [table of contents and intro](https://www.dropbox.com/scl/fi/edeyisrkif33ee9yy4al4/popescu_chapter1_sample.pdf?rlkey=3bw3aw35lx2w7srgf38q3c5dw&dl=0){:target="_blank"}.
+2) **Popescu, Bogdan G.**. <em>Islam, Sultans, and the Printing Press</em>. Under Review. Read the [table of contents and intro](https://www.dropbox.com/scl/fi/edeyisrkif33ee9yy4al4/popescu_chapter1_sample.pdf?rlkey=3bw3aw35lx2w7srgf38q3c5dw&dl=0){:target="_blank"}.
 
 <h3><b>Peer-Reviewed Publications</b></h3>
 
