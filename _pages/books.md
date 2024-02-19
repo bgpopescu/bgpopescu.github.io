@@ -38,7 +38,7 @@ A book workshop took place on September 17, 2021. Kristin Fabbe (Harvard Busines
 </ul>
 
 
-<h2><b>Islam, Sultans, and the Printing Press: How Absence of the Printed Word Limited Development - <em>Manuscript in Progress</em></b></h2>
+<h2><b>Islam, Sultans, and the Printing Press: How Absence of the Printed Word Limited Development - <em>Manuscript under Review</em></b></h2>
 
 <img src="/images/book_cover_second_book.jpg" alt="Islam, Sultans, and the Printing Press" width="350" align="left" hspace="12" vspace="12"/>
 
