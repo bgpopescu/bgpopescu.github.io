@@ -3086,25 +3086,27 @@ vertical-align: -.125em;
 <p>Extract the word “literature” from the following vector and create a new object</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>list_fields <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;politics&quot;</span>, <span class="st">&quot;philosophy&quot;</span>, <span class="st">&quot;literature&quot;</span>, <span class="st">&quot;chemistry&quot;</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>new_list <span class="ot">&lt;-</span> list_fields[list_fields<span class="sc">!=</span><span class="st">&quot;literature&quot;</span>]</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>new_list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] &quot;politics&quot;   &quot;philosophy&quot; &quot;chemistry&quot; </code></pre>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>new_list <span class="ot">&lt;-</span> list_fields[list_fields<span class="sc">!=</span><span class="st">&quot;literature&quot;</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>new_list <span class="ot">&lt;-</span> list_fields[list_fields<span class="sc">!=</span><span class="st">&quot;chemistry&quot;</span>]</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>new_list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>new_list <span class="ot">&lt;-</span> list_fields[list_fields<span class="sc">!=</span><span class="st">&quot;chemistry&quot;</span>]</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>new_list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] &quot;politics&quot;   &quot;philosophy&quot; &quot;literature&quot;</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>new_list <span class="ot">&lt;-</span> list_fields[list_fields<span class="sc">==</span><span class="st">&quot;philosophy&quot;</span>]</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>new_list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>new_list <span class="ot">&lt;-</span> list_fields[list_fields<span class="sc">==</span><span class="st">&quot;philosophy&quot;</span>]</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>new_list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] &quot;philosophy&quot;</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>new_list <span class="ot">&lt;-</span> list_fields[list_fields<span class="sc">==</span><span class="st">&quot;philosophy&quot;</span> <span class="sc">|</span> list_fields<span class="sc">==</span><span class="st">&quot;chemistry&quot;</span>]</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>new_list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>new_list <span class="ot">&lt;-</span> list_fields[list_fields<span class="sc">==</span><span class="st">&quot;philosophy&quot;</span> <span class="sc">|</span> list_fields<span class="sc">==</span><span class="st">&quot;chemistry&quot;</span>]</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>new_list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] &quot;philosophy&quot; &quot;chemistry&quot; </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(new_list)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2</code></pre>
 </div>
 </div>
 </section>
@@ -3112,11 +3114,21 @@ vertical-align: -.125em;
 <h2 class="unnumbered anchored" data-anchor-id="question-2">Question 2</h2>
 <p>Remove from the following list all the numbers between 13 and 15 (inclusive)</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>list_no<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">11</span>, <span class="dv">12</span>, <span class="dv">13</span>, <span class="dv">14</span>, <span class="dv">15</span>, <span class="dv">16</span>, <span class="dv">17</span>)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>new_list_no <span class="ot">&lt;-</span> list_no[list_no <span class="sc">&lt;=</span> <span class="dv">13</span> <span class="sc">|</span> list_no <span class="sc">&gt;=</span> <span class="dv">15</span>]</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>new_list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>list_no<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">11</span>, <span class="dv">12</span>, <span class="dv">13</span>, <span class="dv">14</span>, <span class="dv">15</span>, <span class="dv">16</span>, <span class="dv">17</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>new_list_no <span class="ot">&lt;-</span> list_no[list_no <span class="sc">&lt;=</span> <span class="dv">12</span> <span class="sc">|</span> list_no <span class="sc">&gt;=</span> <span class="dv">16</span>]</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>new_list_no</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] &quot;philosophy&quot; &quot;chemistry&quot; </code></pre>
+<pre><code>[1] 11 12 16 17</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>new_list_no2 <span class="ot">&lt;-</span> list_no[list_no <span class="sc">!=</span> <span class="dv">13</span> <span class="sc">&amp;</span> list_no <span class="sc">!=</span> <span class="dv">14</span> <span class="sc">&amp;</span> list_no <span class="sc">!=</span> <span class="dv">15</span>]</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>new_list_no2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 11 12 16 17</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>filtered_list <span class="ot">&lt;-</span> list_no[<span class="sc">!</span>(list_no <span class="sc">&gt;=</span> <span class="dv">13</span> <span class="sc">&amp;</span> list_no <span class="sc">&lt;=</span> <span class="dv">15</span>)]</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>filtered_list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 11 12 16 17</code></pre>
 </div>
 </div>
 </section>
@@ -3124,14 +3136,14 @@ vertical-align: -.125em;
 <h2 class="unnumbered anchored" data-anchor-id="question-3">Question 3</h2>
 <p>Remove from the following list, “word”, “sentence”, “books” using the %in% operator.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>list_words<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">&quot;random&quot;</span>, <span class="st">&quot;word&quot;</span>, <span class="st">&quot;sentence&quot;</span>, <span class="st">&quot;books&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>list_words<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">&quot;random&quot;</span>, <span class="st">&quot;word&quot;</span>, <span class="st">&quot;sentence&quot;</span>, <span class="st">&quot;books&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="question-4" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="question-4">Question 4</h2>
 <p>Explain in your words: Why does the following “four” &gt; “five” return TRUE</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;four&quot;</span> <span class="sc">&gt;</span> <span class="st">&quot;five&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;four&quot;</span> <span class="sc">&gt;</span> <span class="st">&quot;five&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] TRUE</code></pre>
 </div>
@@ -3141,23 +3153,23 @@ vertical-align: -.125em;
 <h2 class="unnumbered anchored" data-anchor-id="question-5">Question 5</h2>
 <p>Remove the missing data from the following list</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>list_no <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="cn">NA</span>, <span class="dv">5</span>, <span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>list_no <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="cn">NA</span>, <span class="dv">5</span>, <span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="question-6" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="question-6">Question 6</h2>
 <p>Calculate the mean and median from the following list of numbers</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>list_no<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">30</span>, <span class="dv">12</span>, <span class="cn">NA</span>, <span class="dv">14</span>, <span class="cn">NA</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>list_no<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">30</span>, <span class="dv">12</span>, <span class="cn">NA</span>, <span class="dv">14</span>, <span class="cn">NA</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="question-7" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="question-7">Question 7</h2>
 <p>Create the following dataframe</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">student=</span><span class="fu">c</span>(<span class="st">&#39;Alex&#39;</span>, <span class="st">&#39;Jane&#39;</span>, <span class="st">&#39;Tom&#39;</span>, <span class="st">&#39;Lilly&#39;</span>, <span class="st">&#39;Turner&#39;</span>, <span class="st">&#39;Ruby&#39;</span>, <span class="st">&#39;Nick&#39;</span>),</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>                 <span class="at">grade=</span><span class="fu">c</span>(<span class="dv">77</span>, <span class="dv">81</span>, <span class="dv">89</span>, <span class="dv">83</span>, <span class="dv">99</span>, <span class="dv">92</span>, <span class="dv">97</span>))</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">student=</span><span class="fu">c</span>(<span class="st">&#39;Alex&#39;</span>, <span class="st">&#39;Jane&#39;</span>, <span class="st">&#39;Tom&#39;</span>, <span class="st">&#39;Lilly&#39;</span>, <span class="st">&#39;Turner&#39;</span>, <span class="st">&#39;Ruby&#39;</span>, <span class="st">&#39;Nick&#39;</span>),</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>                 <span class="at">grade=</span><span class="fu">c</span>(<span class="dv">77</span>, <span class="dv">81</span>, <span class="dv">89</span>, <span class="dv">83</span>, <span class="dv">99</span>, <span class="dv">92</span>, <span class="dv">97</span>))</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  student grade
 1    Alex    77
@@ -3202,14 +3214,14 @@ vertical-align: -.125em;
 <h2 class="unnumbered anchored" data-anchor-id="question-15">Question 15</h2>
 <p>Extract the second element from the following list</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>list_new<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">&quot;el1&quot;</span>, <span class="st">&quot;el2&quot;</span>, <span class="st">&quot;el3&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>list_new<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">&quot;el1&quot;</span>, <span class="st">&quot;el2&quot;</span>, <span class="st">&quot;el3&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="question-16" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="question-16">Question 16</h2>
 <p>Extract the last element from the following list</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>list_new<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">&quot;el1&quot;</span>, <span class="st">&quot;el2&quot;</span>, <span class="st">&quot;el3&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>list_new<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">&quot;el1&quot;</span>, <span class="st">&quot;el2&quot;</span>, <span class="st">&quot;el3&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="question-17" class="level2 unnumbered">
@@ -3226,10 +3238,10 @@ vertical-align: -.125em;
 </li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Setting path</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;/Users/bgpopescu/Dropbox/john_cabot/teaching/stats/lab2/&quot;</span>)</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>life_expectancy <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">&#39;./life-expectancy.csv&#39;</span>)</span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>urbanization <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">&#39;./share-of-population-urban.csv&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Setting path</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;/Users/bgpopescu/Dropbox/john_cabot/teaching/stats/lab2/&quot;</span>)</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>life_expectancy_df <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">&#39;./life-expectancy.csv&#39;</span>)</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>urbanization_df <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">&#39;./share-of-population-urban.csv&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="2" type="a">
 <li>Calculating mean by country for life_expectancy</li>
