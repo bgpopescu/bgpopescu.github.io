@@ -4770,7 +4770,7 @@ $ urb_mean      &lt;dbl&gt; 18.61175, 40.44416, 52.60921, 79.76249, 87.04302, 37
 <section id="correlation-between-urbanization-and-life-expectancy" class="level1" data-number="4">
 <h1 data-number="4"><span class="header-section-number">4</span> Correlation between urbanization and life expectancy</h1>
 <p>As we discussed in the previous lab, we can calculate correlations using the <code>cor</code> command. This is given by the following formula:</p>
-<p><span class="math display">\[\rho = \frac{\frac{\Sigma(X_{i} - \bar{X}) (Y_i - \bar{Y})}{n}}{s_X * s_Y}\]</span></p>
+<p><span class="math display">\[\rho = r = \frac{\frac{\Sigma(X_{i} - \bar{X}) (Y_i - \bar{Y})}{n}}{s_X * s_Y}\]</span></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>cor_coeff<span class="ot">&lt;-</span><span class="fu">cor</span>(merged_data2<span class="sc">$</span>urb_mean, merged_data2<span class="sc">$</span>life_exp_mean, <span class="at">method =</span> <span class="fu">c</span>(<span class="st">&quot;pearson&quot;</span>))</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>cor_coeff</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -4779,7 +4779,7 @@ $ urb_mean      &lt;dbl&gt; 18.61175, 40.44416, 52.60921, 79.76249, 87.04302, 37
 </div>
 </div>
 <p>We can use the correlation coefficient to calculate the b, following the formula:</p>
-<p><span class="math display">\[b = \rho \frac{s_Y}{s_X}\]</span></p>
+<p><span class="math display">\[b = r \frac{s_Y}{s_X}\]</span></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>b_res<span class="ot">&lt;-</span>cor_coeff<span class="sc">*</span>(<span class="fu">sd</span>(merged_data2<span class="sc">$</span>life_exp_mean)<span class="sc">/</span><span class="fu">sd</span>(merged_data2<span class="sc">$</span>urb_mean))</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>b_res</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
