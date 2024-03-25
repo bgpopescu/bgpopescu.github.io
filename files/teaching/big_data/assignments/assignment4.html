@@ -4351,9 +4351,8 @@ window.onload = function() {
 <section id="question" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Question</h1>
 <p>Total points: 2 points</p>
-<p>Download the provided <a href="https://www.dropbox.com/scl/fi/dpt3j3r04vgkwqpo1j9vo/annual_conc_by_monitor_2023.csv?rlkey=2b76mr8ia4e9pi1s5ldce57ac&amp;dl=0" target="_blank">dataset containing air quality measurements</a> from various monitoring stations in major cities in the US. Load in R using the `read.csv’ function. The original data is from the <a href="https://aqs.epa.gov/aqsweb/airdata/download_files.html" target="_blank">US Environmental Protection Agency</a>.</p>
-<p>Calculate the number of PM2.5 stations per state.</p>
-<p>Now create the following map (as close as possible to what you see below). To get full points you need to</p>
+<p>Download the provided <a href="https://www.dropbox.com/scl/fi/dpt3j3r04vgkwqpo1j9vo/annual_conc_by_monitor_2023.csv?rlkey=2b76mr8ia4e9pi1s5ldce57ac&amp;dl=0" target="_blank">dataset containing air quality measurements</a> from various monitoring stations in major cities in the US. Load it in R using the `read.csv’ function. The original data is from the <a href="https://aqs.epa.gov/aqsweb/airdata/download_files.html" target="_blank">US Environmental Protection Agency</a>.</p>
+<p>Calculate the number of PM2.5 stations per state. Your map should be as close as possible to what you see below. To get full points you need to</p>
 <ul>
 <li>Aggregate correctly the stations for the Pollutant Standard, “PM25 24-hour 2012” and for the Parameter Name “PM2.5 - Local Conditions” (1 point)</li>
 <li>Use a viridis scheme (1 point)</li>
@@ -4370,7 +4369,7 @@ window.onload = function() {
 <p>Total points: 2 points</p>
 <p>Calculate the average PM2.5 level per state.</p>
 <ul>
-<li>Calculate correctlty the mean (1 point)</li>
+<li>Calculate correctly the mean (1 point)</li>
 <li>Use a viridis scheme (1 point)</li>
 </ul>
 <p>Your output should looke like below.</p>
@@ -4406,14 +4405,14 @@ window.onload = function() {
 <section id="question-3" class="level1" data-number="4">
 <h1 data-number="4"><span class="header-section-number">4</span> Question</h1>
 <p>Total points: 5 points</p>
-<p>From 1992 to 2013, China underwent significant internal development across various sectors, resulting in transformative changes in its economy, society, and infrastructure. China continued its economic reforms initiated under Deng Xiaoping in the late 1970s. The country saw extensive industrialization, urbanization, and infrastructure development. Understanding which countries developed internally is important.</p>
-<p>For this exercise, we will use satellite luminosity to understand Chinese internal development.</p>
-<p>Now map luminosity in China in 1992</p>
-<p>To get full points you need to</p>
+<p>From 1992 to 2013, China underwent significant internal development across various sectors, resulting in transformative changes in its economy, society, and infrastructure. China continued its economic reforms initiated under Deng Xiaoping in the late 1970s. The country saw extensive industrialization, urbanization, and infrastructure development. Understanding which regions developed internally is important.</p>
+<p>For this exercise, we will use satellite luminosity to understand Chinese internal development. You can download the <a href="https://www.dropbox.com/scl/fi/e7827pg0ycn7s4sfl8azx/F101992.v4.tar?rlkey=8z8zdutimowkgfw2uaf7lpng1&amp;dl=0" target="_blank">world luminosity data in 1992</a> and the <a href="https://www.dropbox.com/scl/fi/hpiqjt63pge2jvqbykfjy/F182013.v4.tar?rlkey=asdudu4djaxyrg1gly44lxgz9&amp;dl=0" target="_blank">world luminosity data in 2013</a>.</p>
+<p>Now map luminosity in China in 1992.</p>
+<p>To get full points you need to:</p>
 <ul>
 <li>Load the China shapefile from relevant sources (1 point)</li>
-<li>Calculate corretcly the zonal statistic for 1992 (3 points)</li>
-<li>Mapping lumminosity adequately (1 point)</li>
+<li>Calculate correctly the zonal statistic for 1992 (3 points)</li>
+<li>Map luminosity adequately (1 point)</li>
 </ul>
 <div class="cell">
 <div class="cell-output-display">
@@ -4428,8 +4427,8 @@ window.onload = function() {
 <p>To get full points you need to</p>
 <ul>
 <li>Load the China shapefile from relevant sources (1 point)</li>
-<li>Calculate corretcly the zonal statistic for 1992 (3 points)</li>
-<li>Mapping lumminosity adequately (1 point)</li>
+<li>Calculate correctly the zonal statistic for 1992 (3 points)</li>
+<li>Map luminosity adequately (1 point)</li>
 </ul>
 <div class="cell">
 <div class="cell-output-display">
@@ -4470,14 +4469,14 @@ window.onload = function() {
 <section id="bonus-question" class="level1" data-number="9">
 <h1 data-number="9"><span class="header-section-number">9</span> Bonus Question</h1>
 <p>Total points: 10 points</p>
-<p>Write a function that calculates all the luminosity data from 1992 to 2013 for China</p>
+<p>Write a function that calculates all the luminosity data from 1992 to 2013 for China. You can <a href="https://www.dropbox.com/scl/fo/k5taap0y6kvoyueon29yr/h?rlkey=9tvty0cmcn8ng4jdb25zk6bu0&amp;dl=0" target="_blank">download the entire data for the whole world (1992-2013)</a> (8.16GB).</p>
 <p>Your function should:</p>
 <ul>
 <li>use operations with strings that automatically detecly the names and the location of the file</li>
-<li>unzips the archices automatically</li>
-<li>unzips further the relevant tiff files</li>
-<li>creates zonal statistic for every year for China</li>
-<li>merges back those statstics to the China shapefile.</li>
+<li>unzip the archives automatically</li>
+<li>unzip further the relevant tiff files</li>
+<li>create zonal statistic for every year for China</li>
+<li>merge back those stistics to the China shapefile.</li>
 </ul>
 </section>
 <section id="question-8" class="level1" data-number="10">
@@ -4489,7 +4488,7 @@ window.onload = function() {
 <li>correctly select the top 3 regions that grew (1 point)</li>
 <li>correctly select the bottom 3 regions that did not grow (1 point)</li>
 <li>produce the time trend (1 point)</li>
-<li>correctly manipulate the dataframe ti produce a long format (1 point)</li>
+<li>correctly manipulate the dataframe to produce a long format (1 point)</li>
 </ul>
 <div class="cell">
 <div class="cell-output-display">
