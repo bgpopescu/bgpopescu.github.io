@@ -25,7 +25,9 @@ My research centers on state responses to political threats and their enduring c
 
 <h3><b>Peer-Reviewed Publications</b></h3>
 
-1) **Popescu, Bogdan G.** and Jugl, Marlene, 2024. Civic Associations, Populism, and (Un-)Civic Behavior: Evidence from Germany. <em>Political Science Research and Methods</em>. Forthcoming. [PDF](https://www.dropbox.com/scl/fi/93sun7m3ssxad96c12dyh/paper_compressed.pdf?rlkey=wv17vfa6w5kj0omttqct9ucnh&dl=0){:target="_blank"}
+1) **Popescu, Bogdan G.** and Jugl, Marlene, 2024. Civic Associations, Populism, and (Un-)Civic Behavior: Evidence from Germany. <em>Political Science Research and Methods</em>. OnlineFirst.
+[Journal Version](https://doi.org/10.1017/psrm.2024.19){:target="_blank"} &#124;
+[PDF](https://www.dropbox.com/scl/fi/93sun7m3ssxad96c12dyh/paper_compressed.pdf?rlkey=wv17vfa6w5kj0omttqct9ucnh&dl=0){:target="_blank"}
 
 2) Mağiya, Yusuf, **Popescu, Bogdan G.**, and Tezcür, Güneş. 2023. "All the Sultan's Men: Regime Type, Insecurity, and the Shuffling of Governors." <em>Comparative Political Studies</em>. OnlineFirst.
 [Journal Version](https://doi.org/10.1177/00104140231209963){:target="_blank"} &#124;
