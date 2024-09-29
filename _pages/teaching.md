@@ -27,7 +27,7 @@ My teaching philosophy focuses on developing critical thinking skills, and acqui
 | European Politics and Society | Oxford, Autumn 2022, Graduate |
 | Comparative Government | Oxford, Autumn 2022, Undergraduate |
 | Comparative Political Economy | Oxford, Autumn 2022, Undergraduate |
-| [Political Economy of Corruption](https://bgpopescu.files.wordpress.com/2016/10/bpsyllabus.pdf){:target="_blank"} | Oxford, Autumn 2022, Undergraduate |
+| [Political Economy of Corruption](https://bgpopescu.files.wordpress.com/2016/10/bpsyllabus.pdf){:target="_blank"} | UChicago, Autumn 2015, Undergraduate |
 
 
 Other courses that I am ready to teach include:
