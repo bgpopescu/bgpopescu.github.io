@@ -28,3 +28,15 @@ My teaching philosophy focuses on developing critical thinking skills, and acqui
 | Comparative Government | Oxford, Autumn 2022, Undergraduate |
 | Comparative Political Economy | Oxford, Autumn 2022, Undergraduate |
 | [Political Economy of Corruption](https://bgpopescu.files.wordpress.com/2016/10/bpsyllabus.pdf){:target="_blank"} | Oxford, Autumn 2022, Undergraduate |
+
+
+Other courses that I am ready to teach include:
+
+- [State Formation and State Development](/files/teaching/state_capacity_dev/state_syllabus.html){:target="_blank"}
+- [Comparative Politics of Borders](/files/teaching/borders/borders_syllabus.html){:target="_blank"}
+- [Historical Political Economy](https://www.dropbox.com/s/d8llj89ijo4dwb8/his-pol-syllabus_2022.pdf?dl=0){:target="_blank"}
+- [Political Economy of Corruption](https://bgpopescu.files.wordpress.com/2016/10/bpsyllabus.pdf){:target="_blank"}
+- [Geographic Information Systems for Social Sciences](https://www.dropbox.com/s/2s8rzcly3gtdxh5/popescu-gis-syllabus2.pdf?dl=0){:target="_blank"}
+
+
+Teaching reviews available upon request.
