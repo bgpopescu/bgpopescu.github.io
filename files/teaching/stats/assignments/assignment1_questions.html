@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Your Name">
-<meta name="dcterms.date" content="2023-09-13">
+<meta name="dcterms.date" content="2024-09-13">
 
 <title>Assignment 1</title>
 <style>
@@ -3132,7 +3132,7 @@ vertical-align: -.125em;
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 13, 2023</p>
+      <p class="date">September 13, 2024</p>
     </div>
   </div>
   
@@ -3148,33 +3148,47 @@ vertical-align: -.125em;
 <h1 class="unnumbered">Instructions</h1>
 <p>Please download the following <a href="https://www.dropbox.com/scl/fi/cm5bbfhkfpzdxy247lyat/assignment1_questions.qmd?rlkey=di50ad72vc3hu4gg0hnk59829&amp;dl=0" target="_blank"><code>qmd</code> file</a> and save it in folder called “assignment1”. Complete the questions by adding the code under the relevant chunks.</p>
 <p>Please submit your assignment as html file to me via email. Please call your assignment: “yourlastname_assignment1.html”. For example, I would submit submit something called “popescu_assignment1.html”. Please make sure that it is all in lower case.</p>
+<p>To obtain the same look as this template, make sure that your you assignment preamble or YAML looks like below:</p>
+<pre><code>---
+title: &quot;Assignment 1&quot;
+author: &quot;Your Name&quot;
+date: &quot;September 13, 2024&quot;
+format:
+  html:
+    toc: true
+    number-sections: true
+    colorlinks: true
+    smooth-scroll: true
+    embed-resources: true
+---</code></pre>
+<p>Note that Headers such as “Question” need to be marked with <code>#</code> (i.e <code># Question</code> will appear as header in bold and larger font after you render the document. It will thus appear in the Table of Contents). Regular text can just be written one line underneath.</p>
 </section>
 <section id="question" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Question</h1>
 <p>Remove the word “mouse” from the following vector and create a new object</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>list_animals <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;mouse&quot;</span>, <span class="st">&quot;rat&quot;</span>, <span class="st">&quot;dog&quot;</span>, <span class="st">&quot;cat&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>list_animals <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;mouse&quot;</span>, <span class="st">&quot;rat&quot;</span>, <span class="st">&quot;dog&quot;</span>, <span class="st">&quot;cat&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="question-1" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Question</h1>
 <p>Remove from the following list all the numbers between 30 and 60 (inclusive)</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>list_no<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>, <span class="dv">60</span>, <span class="dv">70</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>list_no<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>, <span class="dv">60</span>, <span class="dv">70</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="question-2" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> Question</h1>
 <p>Remove the following elements using the %in% operator from the list: tigers, elephants, giraffes, monkeys</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>big_list_animals<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">&quot;cheetah&quot;</span>, <span class="st">&quot;tigers&quot;</span>, <span class="st">&quot;gorillas&quot;</span>, <span class="st">&quot;dolphins&quot;</span>, <span class="st">&quot;elephants&quot;</span>, <span class="st">&quot;giraffes&quot;</span>, <span class="st">&quot;monkeys&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>big_list_animals<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">&quot;cheetah&quot;</span>, <span class="st">&quot;tigers&quot;</span>, <span class="st">&quot;gorillas&quot;</span>, <span class="st">&quot;dolphins&quot;</span>, <span class="st">&quot;elephants&quot;</span>, <span class="st">&quot;giraffes&quot;</span>, <span class="st">&quot;monkeys&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="question-3" class="level1" data-number="4">
 <h1 data-number="4"><span class="header-section-number">4</span> Question</h1>
 <p>Explain in your words: Why does the following return “two” &gt; “ten” return TRUE</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;two&quot;</span> <span class="sc">&gt;</span> <span class="st">&quot;ten&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;two&quot;</span> <span class="sc">&gt;</span> <span class="st">&quot;ten&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] TRUE</code></pre>
 </div>
@@ -3184,21 +3198,21 @@ vertical-align: -.125em;
 <h1 data-number="5"><span class="header-section-number">5</span> Question</h1>
 <p>Remove the missing data from the following list</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>list_animals <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;mouse&quot;</span>, <span class="st">&quot;rat&quot;</span>, <span class="cn">NA</span>, <span class="st">&quot;dog&quot;</span>, <span class="st">&quot;cat&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>list_animals <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;mouse&quot;</span>, <span class="st">&quot;rat&quot;</span>, <span class="cn">NA</span>, <span class="st">&quot;dog&quot;</span>, <span class="st">&quot;cat&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="question-5" class="level1" data-number="6">
 <h1 data-number="6"><span class="header-section-number">6</span> Question</h1>
 <p>Calculate the mean from the following list of numbers</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>list_no<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="cn">NA</span>, <span class="dv">10</span>, <span class="dv">11</span>, <span class="cn">NA</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>list_no<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="cn">NA</span>, <span class="dv">10</span>, <span class="dv">11</span>, <span class="cn">NA</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="question-6" class="level1" data-number="7">
 <h1 data-number="7"><span class="header-section-number">7</span> Question</h1>
 <p>Calculate the median from the following list of numbers</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>list_no<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="cn">NA</span>, <span class="dv">10</span>, <span class="dv">11</span>, <span class="cn">NA</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>list_no<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="cn">NA</span>, <span class="dv">10</span>, <span class="dv">11</span>, <span class="cn">NA</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="question-7" class="level1" data-number="8">
@@ -3210,8 +3224,8 @@ vertical-align: -.125em;
 </li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;/Users/bgpopescu/Dropbox/john_cabot/teaching/stats/assignment1/&quot;</span>)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>life_expectancy <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">&#39;./life-expectancy.csv&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;/Users/bgpopescu/Dropbox/john_cabot/teaching/stats/assignment1/&quot;</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>life_expectancy <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">&#39;./life-expectancy.csv&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="question-8" class="level1" data-number="9">
