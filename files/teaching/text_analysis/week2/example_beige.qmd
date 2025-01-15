@@ -1,0 +1,9 @@
+---
+title: "Presentation"
+format:
+  revealjs: 
+    theme: beige
+    embed-resources: true
+---
+
+
