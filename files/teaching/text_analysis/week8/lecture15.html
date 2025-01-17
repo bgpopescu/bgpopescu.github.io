@@ -1085,39 +1085,60 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <h2>Setup An OpenAI Developer Account</h2>
 <p>To use GPT via the API, you need to import the <code>os</code> and <code>openai</code> Python packages.</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb1" data-code-line-numbers="1|2|3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href></a><span class="im">from</span> openai <span class="im">import</span> OpenAI</span>
 <span id="cb1-2"><a href></a>key_bp<span class="op">=</span> <span class="st">&quot;sk-proj-XXXX-Long-Code&quot;</span></span>
 <span id="cb1-3"><a href></a>client <span class="op">=</span> OpenAI(api_key<span class="op">=</span>key_bp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </section>
 <section id="the-code-pattern-for-calling-gpt-via-the-api" class="slide level2">
 <h2>The Code Pattern for Calling GPT via the API</h2>
 <p>The code pattern to call the OpenAI API and get a chat response is as follows:</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb2" data-code-line-numbers="1|2|3|4-5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href></a>response <span class="op">=</span> client.chat.completions.create(</span>
 <span id="cb2-2"><a href></a>           model<span class="op">=</span><span class="st">&quot;MODEL_NAME&quot;</span>,</span>
 <span id="cb2-3"><a href></a>           messages<span class="op">=</span>[{<span class="st">&quot;role&quot;</span>: <span class="st">&quot;system&quot;</span>, <span class="st">&quot;content&quot;</span>: <span class="st">&#39;SPECIFY HOW THE AI ASSISTANT SHOULD BEHAVE&#39;</span>},</span>
 <span id="cb2-4"><a href></a>                     {<span class="st">&quot;role&quot;</span>: <span class="st">&quot;user&quot;</span>, <span class="st">&quot;content&quot;</span>: <span class="st">&#39;SPECIFY WANT YOU WANT THE AI ASSISTANT TO SAY&#39;</span>}</span>
 <span id="cb2-5"><a href></a>              ])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
 </section>
 <section id="using-chatgpt-for-summarizing" class="slide level2">
 <h2>Using ChatGPT for Summarizing</h2>
 <p>One of the typical uses of ChatGBT is summarizing texts.</p>
-<p>This can be particularly useful in the context of long customer reviews.</p>
+<p>This can be particularly useful in the context of <a href="https://www.dropbox.com/scl/fi/dq1h2ey9d6o78t7o2ylse/ps_5reviews.csv?rlkey=v8qqv2p26z3spgcg9sepznspi&amp;st=9ocb8lpv&amp;dl=0" target="_blank">long customer reviews</a>.<br>
+</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb3-2"><a href></a>docs <span class="op">=</span> pd.read_csv(<span class="st">&quot;./data/ps_5reviews.csv&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </section>
 <section id="using-chatgpt-for-summarizing-1" class="slide level2">
 <h2>Using ChatGPT for Summarizing</h2>
 <p>This how we count the number of words:</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href></a><span class="co"># Adding a column with word counts</span></span>
 <span id="cb4-2"><a href></a>docs[<span class="st">&#39;word_count&#39;</span>] <span class="op">=</span> docs[<span class="st">&#39;review_text&#39;</span>].<span class="bu">str</span>.split().<span class="bu">apply</span>(<span class="bu">len</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell">
+</div>
+<div class="cell" data-filename="Python">
 <div class="cell-output-display">
 <p>
 </p><table class="dataframe caption-top" data-quarto-postprocess="true">
@@ -1192,13 +1213,22 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <h2>Using ChatGPT for Summarizing</h2>
 <p>We first load the library and define our key:</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb5" data-code-line-numbers="1|2|3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href></a><span class="im">from</span> openai <span class="im">import</span> OpenAI</span>
 <span id="cb5-2"><a href></a>key_bp<span class="op">=</span> <span class="st">&quot;sk-proj-XXXX-Long-Code&quot;</span></span>
 <span id="cb5-3"><a href></a>client <span class="op">=</span> OpenAI(api_key<span class="op">=</span>key_bp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
 <div class="fragment">
 <p>This is how we define our function:</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb6" data-code-line-numbers="1-3|4|5-6|7-9|10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href></a><span class="co"># Import the necessary OpenAI client library</span></span>
 <span id="cb6-2"><a href></a><span class="co"># Make sure you have installed the OpenAI Python package: `pip install openai`</span></span>
 <span id="cb6-3"><a href></a></span>
@@ -1211,14 +1241,20 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <span id="cb6-10"><a href></a>    <span class="cf">return</span> response.choices[<span class="dv">0</span>].message.content</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
+</div>
 </section>
 <section id="using-chatgpt-for-summarizing-5" class="slide level2">
 <h2>Using ChatGPT for Summarizing</h2>
 <p>Here is an example:</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href></a>get_completion(<span class="st">&quot;Tell me a joke&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-output cell-output-stdout">
-<pre><code>&quot;Why couldn&#39;t the bicycle stand up by itself?\n\nBecause it was two tired!&quot;</code></pre>
+<pre><code>&#39;Why did the scarecrow win an award? Because he was outstanding in his field!&#39;</code></pre>
 </div>
 </div>
 <div class="fragment">
@@ -1226,6 +1262,10 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 </div>
 <div class="fragment">
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb9" data-code-line-numbers="1|2-4|5|7|8|9|10|12|13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href></a><span class="co"># Assuming longest_review is defined and contains text</span></span>
 <span id="cb9-2"><a href></a>prompt_template <span class="op">=</span> <span class="st">&quot;&quot;&quot;</span></span>
 <span id="cb9-3"><a href></a><span class="st">Task: Summarize the e-commerce product review below.</span></span>
@@ -1242,12 +1282,17 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <span id="cb9-14"><a href></a><span class="st">&quot;&quot;&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
+</div>
 </section>
 <section id="using-chatgpt-for-summarizing-6" class="slide level2">
 <h2>Using ChatGPT for Summarizing</h2>
 <p>This is how we create a function o help us</p>
 <div class="fragment">
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href></a><span class="kw">def</span> summarize_review(prompt, review_text):</span>
 <span id="cb10-2"><a href></a>    <span class="co"># Replace placeholder in the prompt with the review text</span></span>
 <span id="cb10-3"><a href></a>    formatted_prompt <span class="op">=</span> prompt.replace(<span class="st">&quot;</span><span class="sc">{review_text_here}</span><span class="st">&quot;</span>, review_text)</span>
@@ -1257,13 +1302,19 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <span id="cb10-7"><a href></a>    <span class="cf">return</span> summary</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
+</div>
 <div class="fragment">
 <p>Here is our function in action:</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href></a>short_longest_review <span class="op">=</span> summarize_review(prompt<span class="op">=</span>prompt_template, review_text<span class="op">=</span>longest_review)</span>
 <span id="cb11-2"><a href></a><span class="bu">print</span>(short_longest_review)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-output cell-output-stdout">
-<pre><code>I recently switched from Xbox to the PS5 Bundle and I&#39;m thrilled. The design is sleek, with 1TB SSD storage and impressive performance. The DualSense controller is a game-changer, but limited storage and high price are drawbacks. Despite the challenges of finding the console, it&#39;s worth it for the gaming experience.</code></pre>
+<pre><code>I switched from Xbox to the PS5 Bundle and it&#39;s been amazing. The design is sleek, the performance is top-notch with 4K visuals and fast load times, and the DualSense controller is a game-changer. Limited storage and high price are drawbacks, but overall, it&#39;s worth the investment. Happy gaming!</code></pre>
 </div>
 </div>
 </div>
@@ -1273,8 +1324,13 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <p>Let’s say that we want to summarize all the reviews that have more than 100 words:</p>
 <div class="fragment">
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href></a>count_more_than_200 <span class="op">=</span> (docs[<span class="st">&quot;word_count&quot;</span>] <span class="op">&gt;</span> <span class="dv">200</span>).<span class="bu">sum</span>()</span>
 <span id="cb13-2"><a href></a><span class="bu">print</span>(count_more_than_200)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>7</code></pre>
 </div>
@@ -1286,6 +1342,10 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <p>This is how we summarize those:</p>
 <div class="fragment">
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb15" data-code-line-numbers="1|2|3|4-7|8|9-11|12-13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href></a><span class="co"># Apply the function only where word_count &gt; 200</span></span>
 <span id="cb15-2"><a href></a><span class="kw">def</span> process_row(row):</span>
 <span id="cb15-3"><a href></a>    <span class="cf">if</span> row[<span class="st">&quot;word_count&quot;</span>] <span class="op">&gt;</span> <span class="dv">200</span>:</span>
@@ -1301,15 +1361,21 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <span id="cb15-13"><a href></a>docs[<span class="st">&quot;summary&quot;</span>] <span class="op">=</span> docs.<span class="bu">apply</span>(process_row, axis<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
+</div>
 </section>
 <section id="using-chatgpt-for-summarizing-9" class="slide level2">
 <h2>Using ChatGPT for Summarizing</h2>
 <p>These are the first 3 entries:</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href></a>docs2<span class="op">=</span>docs.head(<span class="dv">4</span>)</span>
 <span id="cb16-2"><a href></a>docs2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell">
+</div>
+<div class="cell" data-filename="Python">
 <div class="cell-output-display">
 <p>
 </p><table class="dataframe caption-top" data-quarto-postprocess="true">
@@ -1364,7 +1430,7 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <td style="text-align: left; background-color: white; color: black; font-family: Century Gothic, sans-serif; font-size: medium; padding: 0px 20px 0px 0px; width: auto;">5.0 out of 5 stars\nEmbarking on a Next-Gen Adventure: An Honest Review of the PS5 Bundle\n</td>
 <td style="text-align: left; background-color: white; color: black; font-family: Century Gothic, sans-serif; font-size: medium; padding: 0px 20px 0px 0px; width: auto;">\nGreetings, fellow gamers! Gather &#39;round as I recount my leap into the realm of PlayStation with the illustrious PS5 Bundle. As someone who&#39;s long been immersed in the world of Xbox, I couldn&#39;t resist the allure of Sony&#39;s latest offering, and boy, am I glad I made the jump.Let&#39;s kick things off with a nod to the PS5&#39;s design. This thing is a marvel to behold, sleek and futuristic, commanding attention in my entertainment setup like a true centerpiece. And with a whopping 1TB of SSD storage, I&#39;ve got all the room I need for my ever-expanding library of games, without having to endure those dreaded load times.Now, onto the real meat of the matter – the performance. The PS5 doesn&#39;t pull any punches, delivering jaw-dropping 4K visuals and buttery-smooth frame rates that breathe new life into every game I play. And let&#39;s talk about that SSD – it&#39;s like greased lightning, ensuring I spend less time waiting and more time doing what I love: gaming.But hold onto your controllers, because the real star of the show is the DualSense. This thing is a game-changer in every sense of the word, with its immersive haptic feedback and adaptive triggers that elevate every gaming experience to new heights. And with backward compatibility, I can revisit old favorites with a fresh perspective, like catching up with old friends over a round of drinks.Of course, no review would be complete without addressing a few bumps along the road. The limited storage space is a bit of a downer, especially in today&#39;s world of massive game downloads. And let&#39;s not forget the price tag – while the PS5 is worth every penny in my book, it&#39;s definitely an investment.And then there&#39;s the hunt for the elusive console itself. Scouring the internet for availability felt like navigating a labyrinth, but let me tell you, the payoff was worth it. Sure, the PS5&#39;s size might be a tad imposing for some setups, but once you fire up that first game, you&#39;ll forget all about it.In conclusion, the PS5 Bundle has exceeded my wildest expectations, converting this die-hard Xbox fan into a true believer. So if you&#39;re on the fence, take the plunge – you won&#39;t regret it. Happy gaming, folks!\n</td>
 <td style="text-align: left; background-color: white; color: black; font-family: Century Gothic, sans-serif; font-size: medium; padding: 0px 20px 0px 0px; width: auto;">374</td>
-<td style="text-align: left; background-color: white; color: black; font-family: Century Gothic, sans-serif; font-size: medium; padding: 0px 20px 0px 0px; width: auto;">I recently switched from Xbox to the PS5 Bundle and I&#39;m thrilled. The design is sleek, with 1TB storage and fast load times. The performance is outstanding with 4K visuals and smooth frame rates. The DualSense controller is a game-changer. Limited storage and price are downsides, but overall, it&#39;s worth it. Happy gaming!</td>
+<td style="text-align: left; background-color: white; color: black; font-family: Century Gothic, sans-serif; font-size: medium; padding: 0px 20px 0px 0px; width: auto;">I recently switched from Xbox to the PS5 Bundle and I&#39;m thrilled. The design is sleek, storage is ample, and performance is top-notch with 4K visuals and fast load times. The DualSense controller is a game-changer. Limited storage and high price are drawbacks, but overall, it&#39;s worth the investment. Happy gaming!</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th" style="text-align: left; background-color: #D9E1F2; font-family: Century Gothic, sans-serif; font-size: medium; padding: 0px 20px 0px 0px; width: auto;">4</td>
@@ -1397,6 +1463,10 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <p>Let’s say that we want more targetted summaries to inform specific departments within companies.</p>
 <div class="fragment">
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb17" data-code-line-numbers="1|2-4|6|8-11|13-14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href></a><span class="co"># Assuming longest_review is defined and contains text</span></span>
 <span id="cb17-2"><a href></a>prompt_template2 <span class="op">=</span> <span class="st">&quot;&quot;&quot;</span></span>
 <span id="cb17-3"><a href></a><span class="st">Task: Summarize the e-commerce product review below, delimited by triple backticks,</span><span class="ch">\</span></span>
@@ -1414,20 +1484,31 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <span id="cb17-15"><a href></a><span class="st">&quot;&quot;&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
+</div>
 </section>
 <section id="using-chatgpt-for-targeted-summaries-1" class="slide level2">
 <h2>Using ChatGPT for Targeted Summaries</h2>
 <p>Let’s do this for the first 30 entries:</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href></a>docs_10 <span class="op">=</span> docs.head(<span class="dv">10</span>).copy()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <p>And these is how we define the function to process the reviews:</p>
 <div class="fragment">
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href></a><span class="kw">def</span> process_row(row):</span>
 <span id="cb19-2"><a href></a>    formatted_prompt <span class="op">=</span> prompt_template2.replace(<span class="st">&quot;</span><span class="sc">{review_text_here}</span><span class="st">&quot;</span>, row[<span class="st">&quot;review_text&quot;</span>])</span>
 <span id="cb19-3"><a href></a>    summary <span class="op">=</span> get_completion(formatted_prompt).strip()</span>
 <span id="cb19-4"><a href></a>    <span class="cf">return</span> summary</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </div>
 </section>
@@ -1436,17 +1517,22 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <p>And this is how we apply it to those entries:</p>
 <div class="fragment">
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href></a><span class="co"># Apply the function to process each row</span></span>
 <span id="cb20-2"><a href></a>docs_10[<span class="st">&quot;targeted_summary&quot;</span>] <span class="op">=</span> docs_10.<span class="bu">apply</span>(process_row, axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb20-3"><a href></a>docs_10_filtered <span class="op">=</span> docs_10[docs_10[<span class="st">&quot;targeted_summary&quot;</span>] <span class="op">!=</span> <span class="st">&quot;None&quot;</span>]</span>
 <span id="cb20-4"><a href></a>docs_10_filtered</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
+</div>
 </section>
 <section id="using-chatgpt-for-targeted-summaries-3" class="slide level2">
 <h2>Using ChatGPT for Targeted Summaries</h2>
 <p>And this is what the processed entried look like:</p>
-<div class="cell">
+<div class="cell" data-filename="Python">
 <div class="cell-output-display">
 <p>
 </p><table class="dataframe caption-top" data-quarto-postprocess="true">
@@ -1473,7 +1559,7 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <td style="text-align: left; background-color: #D9E1F2; font-family: Century Gothic, sans-serif; font-size: medium; padding: 0px 20px 0px 0px; width: auto;">\nNobody could get their hands on this until just recently. It&#39;s a PS5, the craftmanship is awesome.Operates well, system works well with store, everything is easy, this console is a masterpiece and I keep it close. Haven&#39;t got into too many games yet. It looks sexy as heck, it looks dumb in ads but in real life it&#39;s fantastic looking. And you can buy sexy plates for it as well.Controller feels great. Considering the upgrade controller, but I haven&#39;t decided. The game choices are phenomenal. It&#39;s official: XBOX lost, buy a Playstation.Playstation all the way.\n</td>
 <td style="text-align: left; background-color: #D9E1F2; font-family: Century Gothic, sans-serif; font-size: medium; padding: 0px 20px 0px 0px; width: auto;">95</td>
 <td style="text-align: left; background-color: #D9E1F2; font-family: Century Gothic, sans-serif; font-size: medium; padding: 0px 20px 0px 0px; width: auto;">None</td>
-<td style="text-align: left; background-color: #D9E1F2; font-family: Century Gothic, sans-serif; font-size: medium; padding: 0px 20px 0px 0px; width: auto;">The review praises the PS5&#39;s craftsmanship, ease of use, and aesthetics. Positive feedback on controller and game choices. Consider upgrading controller. No specific design or engineering issues mentioned.</td>
+<td style="text-align: left; background-color: #D9E1F2; font-family: Century Gothic, sans-serif; font-size: medium; padding: 0px 20px 0px 0px; width: auto;">The review praises the PS5&#39;s craftsmanship, ease of use, and aesthetics. Positive feedback on controller and game choices. Suggests considering an upgraded controller. No negative comments on design or engineering.</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th" style="text-align: left; background-color: white; color: black; font-family: Century Gothic, sans-serif; font-size: medium; padding: 0px 20px 0px 0px; width: auto;">3</td>
@@ -1483,7 +1569,7 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <td style="text-align: left; background-color: white; color: black; font-family: Century Gothic, sans-serif; font-size: medium; padding: 0px 20px 0px 0px; width: auto;">5.0 out of 5 stars\nEmbarking on a Next-Gen Adventure: An Honest Review of the PS5 Bundle\n</td>
 <td style="text-align: left; background-color: white; color: black; font-family: Century Gothic, sans-serif; font-size: medium; padding: 0px 20px 0px 0px; width: auto;">\nGreetings, fellow gamers! Gather &#39;round as I recount my leap into the realm of PlayStation with the illustrious PS5 Bundle. As someone who&#39;s long been immersed in the world of Xbox, I couldn&#39;t resist the allure of Sony&#39;s latest offering, and boy, am I glad I made the jump.Let&#39;s kick things off with a nod to the PS5&#39;s design. This thing is a marvel to behold, sleek and futuristic, commanding attention in my entertainment setup like a true centerpiece. And with a whopping 1TB of SSD storage, I&#39;ve got all the room I need for my ever-expanding library of games, without having to endure those dreaded load times.Now, onto the real meat of the matter – the performance. The PS5 doesn&#39;t pull any punches, delivering jaw-dropping 4K visuals and buttery-smooth frame rates that breathe new life into every game I play. And let&#39;s talk about that SSD – it&#39;s like greased lightning, ensuring I spend less time waiting and more time doing what I love: gaming.But hold onto your controllers, because the real star of the show is the DualSense. This thing is a game-changer in every sense of the word, with its immersive haptic feedback and adaptive triggers that elevate every gaming experience to new heights. And with backward compatibility, I can revisit old favorites with a fresh perspective, like catching up with old friends over a round of drinks.Of course, no review would be complete without addressing a few bumps along the road. The limited storage space is a bit of a downer, especially in today&#39;s world of massive game downloads. And let&#39;s not forget the price tag – while the PS5 is worth every penny in my book, it&#39;s definitely an investment.And then there&#39;s the hunt for the elusive console itself. Scouring the internet for availability felt like navigating a labyrinth, but let me tell you, the payoff was worth it. Sure, the PS5&#39;s size might be a tad imposing for some setups, but once you fire up that first game, you&#39;ll forget all about it.In conclusion, the PS5 Bundle has exceeded my wildest expectations, converting this die-hard Xbox fan into a true believer. So if you&#39;re on the fence, take the plunge – you won&#39;t regret it. Happy gaming, folks!\n</td>
 <td style="text-align: left; background-color: white; color: black; font-family: Century Gothic, sans-serif; font-size: medium; padding: 0px 20px 0px 0px; width: auto;">374</td>
-<td style="text-align: left; background-color: white; color: black; font-family: Century Gothic, sans-serif; font-size: medium; padding: 0px 20px 0px 0px; width: auto;">I recently switched from Xbox to the PS5 Bundle and I&#39;m thrilled. The design is sleek, with 1TB storage and fast load times. The performance is outstanding with 4K visuals and smooth frame rates. The DualSense controller is a game-changer. Limited storage and price are downsides, but overall, it&#39;s worth it. Happy gaming!</td>
+<td style="text-align: left; background-color: white; color: black; font-family: Century Gothic, sans-serif; font-size: medium; padding: 0px 20px 0px 0px; width: auto;">I recently switched from Xbox to the PS5 Bundle and I&#39;m thrilled. The design is sleek, storage is ample, and performance is top-notch with 4K visuals and fast load times. The DualSense controller is a game-changer. Limited storage and high price are drawbacks, but overall, it&#39;s worth the investment. Happy gaming!</td>
 <td style="text-align: left; background-color: white; color: black; font-family: Century Gothic, sans-serif; font-size: medium; padding: 0px 20px 0px 0px; width: auto;">The review praises the PS5&#39;s sleek design, fast SSD storage, impressive performance, and innovative DualSense controller. Criticisms include limited storage space, high price, and availability challenges.</td>
 </tr>
 </tbody>
@@ -1509,14 +1595,23 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <h3 id="sentiment-analysis">1. Sentiment Analysis</h3>
 <p>Here is how we can infer sentiment.</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href></a>review <span class="op">=</span> <span class="st">&quot;&quot;&quot;</span></span>
 <span id="cb21-2"><a href></a><span class="st">The PS5 is overpriced, has limited storage, poor backward compatibility,\ </span></span>
 <span id="cb21-3"><a href></a><span class="st">and lacks exclusive games to justify its hype.</span></span>
 <span id="cb21-4"><a href></a><span class="st">&quot;&quot;&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
 <div class="fragment">
 <p>This is how we write a prompt to evaluate sentiment:</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href></a>prompt <span class="op">=</span> <span class="ss">f&quot;&quot;&quot;</span></span>
 <span id="cb22-2"><a href></a><span class="ss">What is the sentiment of the following product review, which is delimited</span><span class="ch">\</span></span>
 <span id="cb22-3"><a href></a><span class="ss">with triple backticks?</span></span>
@@ -1526,14 +1621,20 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <span id="cb22-7"><a href></a><span class="ss">&quot;&quot;&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
+</div>
 </section>
 <section id="using-chatgpt-for-inferring-2" class="slide level2">
 <h2>Using ChatGPT for Inferring</h2>
 <h3 id="sentiment-analysis-1">1. Sentiment Analysis</h3>
 <p>And this is the reponse</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href></a>response <span class="op">=</span> get_completion(prompt)</span>
 <span id="cb23-2"><a href></a><span class="bu">print</span>(response)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>The sentiment of the review is negative.</code></pre>
 </div>
@@ -1544,6 +1645,10 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <h3 id="sentiment-analysis-2">1. Sentiment Analysis</h3>
 <p>We can make the prompt more concise</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href></a>prompt <span class="op">=</span> <span class="ss">f&quot;&quot;&quot;</span></span>
 <span id="cb25-2"><a href></a><span class="ss">What is the sentiment of the following product review, which is delimited with triple backticks?</span></span>
 <span id="cb25-3"><a href></a></span>
@@ -1553,11 +1658,17 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <span id="cb25-7"><a href></a><span class="ss">```</span><span class="sc">{</span>review<span class="sc">}</span><span class="ss">```</span></span>
 <span id="cb25-8"><a href></a><span class="ss">&quot;&quot;&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
 <div class="fragment">
 <p>And this is the reponse:</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href></a>response <span class="op">=</span> get_completion(prompt)</span>
 <span id="cb26-2"><a href></a><span class="bu">print</span>(response)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>negative</code></pre>
 </div>
@@ -1570,6 +1681,10 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <p>We might also be interested in identifying emotions in text.</p>
 <div class="fragment">
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href></a>text <span class="op">=</span> <span class="st">&quot;&quot;&quot;</span></span>
 <span id="cb28-2"><a href></a><span class="st">Needed a nice lamp for my bedroom, and this one had </span><span class="ch">\</span></span>
 <span id="cb28-3"><a href></a><span class="st">additional storage and not too high of a price point. </span><span class="ch">\</span></span>
@@ -1583,6 +1698,7 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <span id="cb28-11"><a href></a><span class="st">&quot;&quot;&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
+</div>
 </section>
 <section id="using-chatgpt-for-inferring-5" class="slide level2">
 <h2>Using ChatGPT for Inferring</h2>
@@ -1590,6 +1706,10 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <p>This is what our prompt could look like:</p>
 <div class="fragment">
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href></a>prompt <span class="op">=</span> <span class="ss">f&quot;&quot;&quot;</span></span>
 <span id="cb29-2"><a href></a><span class="ss">Identify a list of emotions that the writer of the </span><span class="ch">\</span></span>
 <span id="cb29-3"><a href></a><span class="ss">following review is expressing. Include no more than </span><span class="ch">\</span></span>
@@ -1597,58 +1717,96 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <span id="cb29-5"><a href></a><span class="ss">lower-case words separated by commas.</span></span>
 <span id="cb29-6"><a href></a></span>
 <span id="cb29-7"><a href></a><span class="ss">Review text: &#39;&#39;&#39;</span><span class="sc">{</span>text<span class="sc">}</span><span class="ss">&#39;&#39;&#39;</span></span>
-<span id="cb29-8"><a href></a><span class="ss">&quot;&quot;&quot;</span></span>
-<span id="cb29-9"><a href></a>response <span class="op">=</span> get_completion(prompt)</span>
-<span id="cb29-10"><a href></a><span class="bu">print</span>(response)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>happy, satisfied, grateful, impressed, content</code></pre>
+<span id="cb29-8"><a href></a><span class="ss">&quot;&quot;&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="using-chatgpt-for-inferring-6" class="slide level2">
 <h2>Using ChatGPT for Inferring</h2>
-<h3 id="detailed-emotion-analysis">3. Detailed Emotion Analysis</h3>
-<p>We can also obtain more information related to emotions from text.</p>
+<h3 id="emotion-analysis-2">2. Emotion Analysis</h3>
+<p>An this is the response:</p>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href></a>text <span class="op">=</span> <span class="st">&quot;&quot;&quot;</span></span>
-<span id="cb31-2"><a href></a><span class="st">Needed a nice lamp for my bedroom, and this one had </span><span class="ch">\</span></span>
-<span id="cb31-3"><a href></a><span class="st">additional storage and not too high of a price point. </span><span class="ch">\</span></span>
-<span id="cb31-4"><a href></a><span class="st">Got it fast.  The string to our lamp broke during the </span><span class="ch">\</span></span>
-<span id="cb31-5"><a href></a><span class="st">transit and the company happily sent over a new one. </span><span class="ch">\</span></span>
-<span id="cb31-6"><a href></a><span class="st">Came within a few days as well. It was easy to put </span><span class="ch">\</span></span>
-<span id="cb31-7"><a href></a><span class="st">together.  I had a missing part, so I contacted their </span><span class="ch">\</span></span>
-<span id="cb31-8"><a href></a><span class="st">support and they very quickly got me the missing piece! </span><span class="ch">\</span></span>
-<span id="cb31-9"><a href></a><span class="st">Lumina seems to me to be a great company that cares </span><span class="ch">\</span></span>
-<span id="cb31-10"><a href></a><span class="st">about their customers and products!!</span></span>
-<span id="cb31-11"><a href></a><span class="st">&quot;&quot;&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href></a>response <span class="op">=</span> get_completion(prompt)</span>
+<span id="cb30-2"><a href></a><span class="bu">print</span>(response)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>happy, satisfied, grateful, impressed, content</code></pre>
+</div>
 </div>
 </div>
 </section>
 <section id="using-chatgpt-for-inferring-7" class="slide level2">
 <h2>Using ChatGPT for Inferring</h2>
+<h3 id="detailed-emotion-analysis">3. Detailed Emotion Analysis</h3>
+<p>We can also obtain more information related to emotions from text.</p>
+<div class="fragment">
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href></a>text <span class="op">=</span> <span class="st">&quot;&quot;&quot;</span></span>
+<span id="cb32-2"><a href></a><span class="st">Needed a nice lamp for my bedroom, and this one had </span><span class="ch">\</span></span>
+<span id="cb32-3"><a href></a><span class="st">additional storage and not too high of a price point. </span><span class="ch">\</span></span>
+<span id="cb32-4"><a href></a><span class="st">Got it fast.  The string to our lamp broke during the </span><span class="ch">\</span></span>
+<span id="cb32-5"><a href></a><span class="st">transit and the company happily sent over a new one. </span><span class="ch">\</span></span>
+<span id="cb32-6"><a href></a><span class="st">Came within a few days as well. It was easy to put </span><span class="ch">\</span></span>
+<span id="cb32-7"><a href></a><span class="st">together.  I had a missing part, so I contacted their </span><span class="ch">\</span></span>
+<span id="cb32-8"><a href></a><span class="st">support and they very quickly got me the missing piece! </span><span class="ch">\</span></span>
+<span id="cb32-9"><a href></a><span class="st">Lumina seems to me to be a great company that cares </span><span class="ch">\</span></span>
+<span id="cb32-10"><a href></a><span class="st">about their customers and products!!</span></span>
+<span id="cb32-11"><a href></a><span class="st">&quot;&quot;&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="using-chatgpt-for-inferring-8" class="slide level2">
+<h2>Using ChatGPT for Inferring</h2>
 <h3 id="detailed-emotion-analysis-1">3. Detailed Emotion Analysis</h3>
 <p>This is what our prompt could look like:</p>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href></a>prompt <span class="op">=</span> <span class="ss">f&quot;&quot;&quot;</span></span>
-<span id="cb32-2"><a href></a><span class="ss">Identify the following items from the review text: </span></span>
-<span id="cb32-3"><a href></a><span class="ss">- Item purchased by reviewer</span></span>
-<span id="cb32-4"><a href></a><span class="ss">- Company that made the item</span></span>
-<span id="cb32-5"><a href></a></span>
-<span id="cb32-6"><a href></a><span class="ss">The review is delimited with triple backticks. </span><span class="ch">\</span></span>
-<span id="cb32-7"><a href></a><span class="ss">Format your response as a JSON object with </span><span class="ch">\</span></span>
-<span id="cb32-8"><a href></a><span class="ss">&quot;Item&quot; and &quot;Brand&quot; as the keys. </span></span>
-<span id="cb32-9"><a href></a><span class="ss">If the information isn&#39;t present, use &quot;unknown&quot; </span><span class="ch">\</span></span>
-<span id="cb32-10"><a href></a><span class="ss">as the value.</span></span>
-<span id="cb32-11"><a href></a><span class="ss">Make your response as short as possible.</span></span>
-<span id="cb32-12"><a href></a><span class="ss">  </span></span>
-<span id="cb32-13"><a href></a><span class="ss">Review text: &#39;&#39;&#39;</span><span class="sc">{</span>text<span class="sc">}</span><span class="ss">&#39;&#39;&#39;</span></span>
-<span id="cb32-14"><a href></a><span class="ss">&quot;&quot;&quot;</span></span>
-<span id="cb32-15"><a href></a></span>
-<span id="cb32-16"><a href></a>response <span class="op">=</span> get_completion(prompt)</span>
-<span id="cb32-17"><a href></a><span class="bu">print</span>(response)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href></a>prompt <span class="op">=</span> <span class="ss">f&quot;&quot;&quot;</span></span>
+<span id="cb33-2"><a href></a><span class="ss">Identify the following items from the review text: </span></span>
+<span id="cb33-3"><a href></a><span class="ss">- Item purchased by reviewer</span></span>
+<span id="cb33-4"><a href></a><span class="ss">- Company that made the item</span></span>
+<span id="cb33-5"><a href></a></span>
+<span id="cb33-6"><a href></a><span class="ss">The review is delimited with triple backticks. </span><span class="ch">\</span></span>
+<span id="cb33-7"><a href></a><span class="ss">Format your response as a JSON object with </span><span class="ch">\</span></span>
+<span id="cb33-8"><a href></a><span class="ss">&quot;Item&quot; and &quot;Brand&quot; as the keys. </span></span>
+<span id="cb33-9"><a href></a><span class="ss">If the information isn&#39;t present, use &quot;unknown&quot; </span><span class="ch">\</span></span>
+<span id="cb33-10"><a href></a><span class="ss">as the value.</span></span>
+<span id="cb33-11"><a href></a><span class="ss">Make your response as short as possible.</span></span>
+<span id="cb33-12"><a href></a><span class="ss">  </span></span>
+<span id="cb33-13"><a href></a><span class="ss">Review text: &#39;&#39;&#39;</span><span class="sc">{</span>text<span class="sc">}</span><span class="ss">&#39;&#39;&#39;</span></span>
+<span id="cb33-14"><a href></a><span class="ss">&quot;&quot;&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="using-chatgpt-for-inferring-9" class="slide level2">
+<h2>Using ChatGPT for Inferring</h2>
+<h3 id="detailed-emotion-analysis-2">3. Detailed Emotion Analysis</h3>
+<p>This is what our response looks like:</p>
+<div class="fragment">
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href></a>response <span class="op">=</span> get_completion(prompt)</span>
+<span id="cb34-2"><a href></a><span class="bu">print</span>(response)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>{
   &quot;Item&quot;: &quot;lamp&quot;,
@@ -1658,40 +1816,50 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 </div>
 </div>
 </section>
-<section id="using-chatgpt-for-inferring-8" class="slide level2">
+<section id="using-chatgpt-for-inferring-10" class="slide level2">
 <h2>Using ChatGPT for Inferring</h2>
-<h3 id="detailed-emotion-analysis-2">3. Detailed Emotion Analysis</h3>
+<h3 id="detailed-emotion-analysis-3">3. Detailed Emotion Analysis</h3>
 <p>We can thus perform multiple tasks within the same prompt:</p>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href></a>prompt <span class="op">=</span> <span class="ss">f&quot;&quot;&quot;</span></span>
-<span id="cb34-2"><a href></a><span class="ss">Identify the following items from the review text: </span></span>
-<span id="cb34-3"><a href></a><span class="ss">- Sentiment (positive or negative)</span></span>
-<span id="cb34-4"><a href></a><span class="ss">- Is the reviewer expressing anger? (true or false)</span></span>
-<span id="cb34-5"><a href></a><span class="ss">- Item purchased by reviewer</span></span>
-<span id="cb34-6"><a href></a><span class="ss">- Company that made the item</span></span>
-<span id="cb34-7"><a href></a></span>
-<span id="cb34-8"><a href></a><span class="ss">The review is delimited with triple backticks. </span><span class="ch">\</span></span>
-<span id="cb34-9"><a href></a><span class="ss">Format your response as a JSON object with </span><span class="ch">\</span></span>
-<span id="cb34-10"><a href></a><span class="ss">&quot;Sentiment&quot;, &quot;Anger&quot;, &quot;Item&quot; and &quot;Brand&quot; as the keys.</span></span>
-<span id="cb34-11"><a href></a><span class="ss">If the information isn&#39;t present, use &quot;unknown&quot; </span><span class="ch">\</span></span>
-<span id="cb34-12"><a href></a><span class="ss">as the value.</span></span>
-<span id="cb34-13"><a href></a><span class="ss">Make your response as short as possible.</span></span>
-<span id="cb34-14"><a href></a><span class="ss">Format the Anger value as a boolean.</span></span>
-<span id="cb34-15"><a href></a></span>
-<span id="cb34-16"><a href></a><span class="ss">Review text: &#39;&#39;&#39;</span><span class="sc">{</span>text<span class="sc">}</span><span class="ss">&#39;&#39;&#39;</span></span>
-<span id="cb34-17"><a href></a><span class="ss">&quot;&quot;&quot;</span></span>
-<span id="cb34-18"><a href></a>response <span class="op">=</span> get_completion(prompt)</span>
-<span id="cb34-19"><a href></a><span class="bu">print</span>(response)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href></a>prompt <span class="op">=</span> <span class="ss">f&quot;&quot;&quot;</span></span>
+<span id="cb36-2"><a href></a><span class="ss">Identify the following items from the review text: </span></span>
+<span id="cb36-3"><a href></a><span class="ss">- Sentiment (positive or negative)</span></span>
+<span id="cb36-4"><a href></a><span class="ss">- Is the reviewer expressing anger? (true or false)</span></span>
+<span id="cb36-5"><a href></a><span class="ss">- Item purchased by reviewer</span></span>
+<span id="cb36-6"><a href></a><span class="ss">- Company that made the item</span></span>
+<span id="cb36-7"><a href></a></span>
+<span id="cb36-8"><a href></a><span class="ss">The review is delimited with triple backticks. </span><span class="ch">\</span></span>
+<span id="cb36-9"><a href></a><span class="ss">Format your response as a JSON object with </span><span class="ch">\</span></span>
+<span id="cb36-10"><a href></a><span class="ss">&quot;Sentiment&quot;, &quot;Anger&quot;, &quot;Item&quot; and &quot;Brand&quot; as the keys.</span></span>
+<span id="cb36-11"><a href></a><span class="ss">If the information isn&#39;t present, use &quot;unknown&quot; </span><span class="ch">\</span></span>
+<span id="cb36-12"><a href></a><span class="ss">as the value.</span></span>
+<span id="cb36-13"><a href></a><span class="ss">Make your response as short as possible.</span></span>
+<span id="cb36-14"><a href></a><span class="ss">Format the Anger value as a boolean.</span></span>
+<span id="cb36-15"><a href></a></span>
+<span id="cb36-16"><a href></a><span class="ss">Review text: &#39;&#39;&#39;</span><span class="sc">{</span>text<span class="sc">}</span><span class="ss">&#39;&#39;&#39;</span></span>
+<span id="cb36-17"><a href></a><span class="ss">&quot;&quot;&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </div>
 </section>
-<section id="using-chatgpt-for-inferring-9" class="slide level2">
+<section id="using-chatgpt-for-inferring-11" class="slide level2">
 <h2>Using ChatGPT for Inferring</h2>
-<h3 id="detailed-emotion-analysis-3">3. Detailed Emotion Analysis</h3>
-<p>And this is the response</p>
+<h3 id="detailed-emotion-analysis-4">3. Detailed Emotion Analysis</h3>
+<p>And this is the response:</p>
 <div class="fragment">
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href></a>response <span class="op">=</span> get_completion(prompt)</span>
+<span id="cb37-2"><a href></a><span class="bu">print</span>(response)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>{
     &quot;Sentiment&quot;: &quot;positive&quot;,
@@ -1703,7 +1871,7 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 </div>
 </div>
 </section>
-<section id="using-chatgpt-for-inferring-10" class="slide level2">
+<section id="using-chatgpt-for-inferring-12" class="slide level2">
 <h2>Using ChatGPT for Inferring</h2>
 <h3 id="topics">4. Topics</h3>
 <p>Similar to LDA and word-embeddings, we can easily identify topics within a text.</p>
@@ -1718,50 +1886,74 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 </div>
 <div class="callout-content">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href></a>speech <span class="op">=</span> <span class="st">&quot;&quot;&quot;I am encouraged by the honourable Gentleman’s anger. His intervention bears no relationship</span><span class="ch">\</span></span>
-<span id="cb36-2"><a href></a><span class="st">to the reality in Britain or to reality for our European Union partners. His comment was important.\ </span></span>
-<span id="cb36-3"><a href></a><span class="st">I hope that it will be well circulated to his constituents. It is clear that this whole process is </span><span class="ch">\</span></span>
-<span id="cb36-4"><a href></a><span class="st">in a state of disarray. I welcomed the new Secretary of State for Transport. His main challenge is </span><span class="ch">\</span></span>
-<span id="cb36-5"><a href></a><span class="st">to persuade a number of his colleagues in the Cabinet that the whole process should be dumped. I want</span><span class="ch">\</span></span>
-<span id="cb36-6"><a href></a><span class="st">to finish on two points that sum up this fiasco. I am sure that the honourable Member for Ross,\ </span></span>
-<span id="cb36-7"><a href></a><span class="st">Cromarty and Skye will deal with the issue of sleeper services to Scotland. The Government and</span><span class="ch">\</span></span>
-<span id="cb36-8"><a href></a><span class="st">the British Railways Board were dragged into the courts in Scotland to be exposed for what they</span><span class="ch">\</span></span>
-<span id="cb36-9"><a href></a><span class="st">had shown to Scots - utter contempt for their rail network. They thought that, through stealth\ </span></span>
-<span id="cb36-10"><a href></a><span class="st">and the incompetence of the director of franchising, Mr. Roger Salmon, they could close services\ </span></span>
-<span id="cb36-11"><a href></a><span class="st">under the guise of consultation on a draft passenger service requirement. They were found out.</span><span class="ch">\</span></span>
-<span id="cb36-12"><a href></a><span class="st">Is it not a disgrace that railway policy is now going to be partly dictated in the courts of</span><span class="ch">\</span></span>
-<span id="cb36-13"><a href></a><span class="st">England and Scotland? That is a fiasco and the Government know it. The second issue is trans-European</span><span class="ch">\</span></span>
-<span id="cb36-14"><a href></a><span class="st">networks. It is an important issue for Britain because it involves integrating the major routes in Britain</span><span class="ch">\</span></span>
-<span id="cb36-15"><a href></a><span class="st">with those in Europe. It is absolutely right that that should be done. What did Ministers do</span><span class="ch">\</span></span>
-<span id="cb36-16"><a href></a><span class="st">when they went to Brussels? They sabotaged the proposals. We find that the European Union is</span><span class="ch">\</span></span>
-<span id="cb36-17"><a href></a><span class="st">giving no priority to schemes. It has thrown out environmental impact assessments and of course</span><span class="ch">\</span></span>
-<span id="cb36-18"><a href></a><span class="st">no cash is being provided by the European Union for such developments..</span></span>
-<span id="cb36-19"><a href></a><span class="st">&quot;&quot;&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href></a>speech <span class="op">=</span> <span class="st">&quot;&quot;&quot;I am encouraged by the honourable Gentleman’s anger. His intervention bears no relationship</span><span class="ch">\</span></span>
+<span id="cb39-2"><a href></a><span class="st">to the reality in Britain or to reality for our European Union partners. His comment was important.\ </span></span>
+<span id="cb39-3"><a href></a><span class="st">I hope that it will be well circulated to his constituents. It is clear that this whole process is </span><span class="ch">\</span></span>
+<span id="cb39-4"><a href></a><span class="st">in a state of disarray. I welcomed the new Secretary of State for Transport. His main challenge is </span><span class="ch">\</span></span>
+<span id="cb39-5"><a href></a><span class="st">to persuade a number of his colleagues in the Cabinet that the whole process should be dumped. I want</span><span class="ch">\</span></span>
+<span id="cb39-6"><a href></a><span class="st">to finish on two points that sum up this fiasco. I am sure that the honourable Member for Ross,\ </span></span>
+<span id="cb39-7"><a href></a><span class="st">Cromarty and Skye will deal with the issue of sleeper services to Scotland. The Government and</span><span class="ch">\</span></span>
+<span id="cb39-8"><a href></a><span class="st">the British Railways Board were dragged into the courts in Scotland to be exposed for what they</span><span class="ch">\</span></span>
+<span id="cb39-9"><a href></a><span class="st">had shown to Scots - utter contempt for their rail network. They thought that, through stealth\ </span></span>
+<span id="cb39-10"><a href></a><span class="st">and the incompetence of the director of franchising, Mr. Roger Salmon, they could close services\ </span></span>
+<span id="cb39-11"><a href></a><span class="st">under the guise of consultation on a draft passenger service requirement. They were found out.</span><span class="ch">\</span></span>
+<span id="cb39-12"><a href></a><span class="st">Is it not a disgrace that railway policy is now going to be partly dictated in the courts of</span><span class="ch">\</span></span>
+<span id="cb39-13"><a href></a><span class="st">England and Scotland? That is a fiasco and the Government know it. The second issue is trans-European</span><span class="ch">\</span></span>
+<span id="cb39-14"><a href></a><span class="st">networks. It is an important issue for Britain because it involves integrating the major routes in Britain</span><span class="ch">\</span></span>
+<span id="cb39-15"><a href></a><span class="st">with those in Europe. It is absolutely right that that should be done. What did Ministers do</span><span class="ch">\</span></span>
+<span id="cb39-16"><a href></a><span class="st">when they went to Brussels? They sabotaged the proposals. We find that the European Union is</span><span class="ch">\</span></span>
+<span id="cb39-17"><a href></a><span class="st">giving no priority to schemes. It has thrown out environmental impact assessments and of course</span><span class="ch">\</span></span>
+<span id="cb39-18"><a href></a><span class="st">no cash is being provided by the European Union for such developments..</span></span>
+<span id="cb39-19"><a href></a><span class="st">&quot;&quot;&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section id="using-chatgpt-for-inferring-11" class="slide level2">
+<section id="using-chatgpt-for-inferring-13" class="slide level2">
 <h2>Using ChatGPT for Inferring</h2>
 <h3 id="topics-1">4. Topics</h3>
 <p>This is what our prompt looks like:</p>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href></a>prompt <span class="op">=</span> <span class="ss">f&quot;&quot;&quot;</span></span>
-<span id="cb37-2"><a href></a><span class="ss">Determine five topics that are being discussed in the </span><span class="ch">\</span></span>
-<span id="cb37-3"><a href></a><span class="ss">following text, which is delimited by triple backticks.</span></span>
-<span id="cb37-4"><a href></a></span>
-<span id="cb37-5"><a href></a><span class="ss">Make each item one or two words long. </span></span>
-<span id="cb37-6"><a href></a></span>
-<span id="cb37-7"><a href></a><span class="ss">Format your response as a list of uncounted items separated by commas.</span></span>
-<span id="cb37-8"><a href></a></span>
-<span id="cb37-9"><a href></a><span class="ss">Text sample: </span></span>
-<span id="cb37-10"><a href></a><span class="ss">&#39;&#39;&#39;</span><span class="sc">{</span>speech<span class="sc">}</span><span class="ss">&#39;&#39;&#39;</span></span>
-<span id="cb37-11"><a href></a><span class="ss">&quot;&quot;&quot;</span></span>
-<span id="cb37-12"><a href></a>response <span class="op">=</span> get_completion(prompt)</span>
-<span id="cb37-13"><a href></a><span class="bu">print</span>(response)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href></a>prompt <span class="op">=</span> <span class="ss">f&quot;&quot;&quot;</span></span>
+<span id="cb40-2"><a href></a><span class="ss">Determine five topics that are being discussed in the </span><span class="ch">\</span></span>
+<span id="cb40-3"><a href></a><span class="ss">following text, which is delimited by triple backticks.</span></span>
+<span id="cb40-4"><a href></a></span>
+<span id="cb40-5"><a href></a><span class="ss">Make each item one or two words long. </span></span>
+<span id="cb40-6"><a href></a></span>
+<span id="cb40-7"><a href></a><span class="ss">Format your response as a list of uncounted items separated by commas.</span></span>
+<span id="cb40-8"><a href></a></span>
+<span id="cb40-9"><a href></a><span class="ss">Text sample: </span></span>
+<span id="cb40-10"><a href></a><span class="ss">&#39;&#39;&#39;</span><span class="sc">{</span>speech<span class="sc">}</span><span class="ss">&#39;&#39;&#39;</span></span>
+<span id="cb40-11"><a href></a><span class="ss">&quot;&quot;&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="using-chatgpt-for-inferring-14" class="slide level2">
+<h2>Using ChatGPT for Inferring</h2>
+<h3 id="topics-2">4. Topics</h3>
+<p>This is what our response looks like:</p>
+<div class="fragment">
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href></a>response <span class="op">=</span> get_completion(prompt)</span>
+<span id="cb41-2"><a href></a><span class="bu">print</span>(response)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Brexit, Transportation, European Union, Railway Policy, Trans-European Networks</code></pre>
 </div>
@@ -1770,50 +1962,70 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <div class="fragment">
 <p>This is how we make a list out of those topics:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href></a>response.split(sep<span class="op">=</span><span class="st">&#39;,&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href></a>response.split(sep<span class="op">=</span><span class="st">&#39;,&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[&#39;Brexit&#39;, &#39; Transportation&#39;, &#39; European Union&#39;, &#39; Railway Policy&#39;, &#39; Trans-European Networks&#39;]</code></pre>
 </div>
 </div>
 </div>
 </section>
-<section id="using-chatgpt-for-inferring-12" class="slide level2">
+<section id="using-chatgpt-for-inferring-15" class="slide level2">
 <h2>Using ChatGPT for Inferring</h2>
 <h3 id="topics-using-zero-shot-learning">5. Topics using Zero-Shot Learning</h3>
 <p>We might also be interested in identifying whether certain topics are present within texts.</p>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href></a>topic_list <span class="op">=</span> [<span class="st">&quot;brexit&quot;</span>, <span class="st">&quot;UK-EU relations&quot;</span>, <span class="st">&quot;rails&quot;</span>, <span class="st">&quot;transport&quot;</span>, <span class="st">&quot;aliens&quot;</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href></a>topic_list <span class="op">=</span> [<span class="st">&quot;brexit&quot;</span>, <span class="st">&quot;UK-EU relations&quot;</span>, <span class="st">&quot;rails&quot;</span>, <span class="st">&quot;transport&quot;</span>, <span class="st">&quot;aliens&quot;</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </div>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href></a>prompt <span class="op">=</span> <span class="ss">f&quot;&quot;&quot;</span></span>
-<span id="cb42-2"><a href></a><span class="ss">Determine whether each item in the following list of </span><span class="ch">\</span></span>
-<span id="cb42-3"><a href></a><span class="ss">topics is a topic in the text below, which</span></span>
-<span id="cb42-4"><a href></a><span class="ss">is delimited with triple backticks.</span></span>
-<span id="cb42-5"><a href></a></span>
-<span id="cb42-6"><a href></a><span class="ss">Format your response as a JSON object with </span><span class="ch">\</span></span>
-<span id="cb42-7"><a href></a><span class="ss">the topics as the keys.</span></span>
-<span id="cb42-8"><a href></a></span>
-<span id="cb42-9"><a href></a><span class="ss">Give your answer as follows:</span></span>
-<span id="cb42-10"><a href></a><span class="ss">item from the list: 0 or 1</span></span>
-<span id="cb42-11"><a href></a></span>
-<span id="cb42-12"><a href></a><span class="ss">List of topics: </span><span class="sc">{</span><span class="st">&quot;, &quot;</span><span class="sc">.</span>join(topic_list)<span class="sc">}</span></span>
-<span id="cb42-13"><a href></a></span>
-<span id="cb42-14"><a href></a><span class="ss">Text sample: &#39;&#39;&#39;</span><span class="sc">{</span>speech<span class="sc">}</span><span class="ss">&#39;&#39;&#39;</span></span>
-<span id="cb42-15"><a href></a><span class="ss">&quot;&quot;&quot;</span></span>
-<span id="cb42-16"><a href></a>response <span class="op">=</span> get_completion(prompt)</span>
-<span id="cb42-17"><a href></a><span class="bu">print</span>(response)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href></a>prompt <span class="op">=</span> <span class="ss">f&quot;&quot;&quot;</span></span>
+<span id="cb46-2"><a href></a><span class="ss">Determine whether each item in the following list of </span><span class="ch">\</span></span>
+<span id="cb46-3"><a href></a><span class="ss">topics is a topic in the text below, which</span></span>
+<span id="cb46-4"><a href></a><span class="ss">is delimited with triple backticks.</span></span>
+<span id="cb46-5"><a href></a></span>
+<span id="cb46-6"><a href></a><span class="ss">Format your response as a JSON object with </span><span class="ch">\</span></span>
+<span id="cb46-7"><a href></a><span class="ss">the topics as the keys.</span></span>
+<span id="cb46-8"><a href></a></span>
+<span id="cb46-9"><a href></a><span class="ss">Give your answer as follows:</span></span>
+<span id="cb46-10"><a href></a><span class="ss">item from the list: 0 or 1</span></span>
+<span id="cb46-11"><a href></a></span>
+<span id="cb46-12"><a href></a><span class="ss">List of topics: </span><span class="sc">{</span><span class="st">&quot;, &quot;</span><span class="sc">.</span>join(topic_list)<span class="sc">}</span></span>
+<span id="cb46-13"><a href></a></span>
+<span id="cb46-14"><a href></a><span class="ss">Text sample: &#39;&#39;&#39;</span><span class="sc">{</span>speech<span class="sc">}</span><span class="ss">&#39;&#39;&#39;</span></span>
+<span id="cb46-15"><a href></a><span class="ss">&quot;&quot;&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </div>
 </section>
-<section id="using-chatgpt-for-inferring-13" class="slide level2">
+<section id="using-chatgpt-for-inferring-16" class="slide level2">
 <h2>Using ChatGPT for Inferring</h2>
 <h3 id="topics-using-zero-shot-learning-1">5. Topics using Zero-Shot Learning</h3>
 <p>And this is the response:</p>
 <div class="fragment">
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href></a>response <span class="op">=</span> get_completion(prompt)</span>
+<span id="cb47-2"><a href></a><span class="bu">print</span>(response)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>{
   &quot;brexit&quot;: 0,
@@ -1826,110 +2038,159 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 </div>
 </div>
 </section>
-<section id="using-chatgpt-for-inferring-14" class="slide level2">
+<section id="using-chatgpt-for-inferring-17" class="slide level2">
 <h2>Using ChatGPT for Inferring</h2>
 <h3 id="language">6. Language</h3>
 <p>We can also use ChatGPT to translate.</p>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href></a>text_to_translate <span class="op">=</span> <span class="st">&quot;I love what I can do with ChatGPT OpenAI.&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href></a>text_to_translate <span class="op">=</span> <span class="st">&quot;I love what I can do with ChatGPT OpenAI.&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </div>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href></a>prompt <span class="op">=</span> <span class="ss">f&quot;&quot;&quot;</span></span>
-<span id="cb45-2"><a href></a><span class="ss">Translate the following English text to Italian which</span></span>
-<span id="cb45-3"><a href></a><span class="ss">is delimited with triple backticks.:</span><span class="ch">\</span></span>
-<span id="cb45-4"><a href></a></span>
-<span id="cb45-5"><a href></a><span class="ss">Text sample: &#39;&#39;&#39;</span><span class="sc">{</span>text_to_translate<span class="sc">}</span><span class="ss">&#39;&#39;&#39;</span></span>
-<span id="cb45-6"><a href></a><span class="ss">&quot;&quot;&quot;</span></span>
-<span id="cb45-7"><a href></a>response <span class="op">=</span> get_completion(prompt)</span>
-<span id="cb45-8"><a href></a><span class="bu">print</span>(response)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href></a>prompt <span class="op">=</span> <span class="ss">f&quot;&quot;&quot;</span></span>
+<span id="cb50-2"><a href></a><span class="ss">Translate the following English text to Italian which</span></span>
+<span id="cb50-3"><a href></a><span class="ss">is delimited with triple backticks.:</span><span class="ch">\</span></span>
+<span id="cb50-4"><a href></a></span>
+<span id="cb50-5"><a href></a><span class="ss">Text sample: &#39;&#39;&#39;</span><span class="sc">{</span>text_to_translate<span class="sc">}</span><span class="ss">&#39;&#39;&#39;</span></span>
+<span id="cb50-6"><a href></a><span class="ss">&quot;&quot;&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="using-chatgpt-for-inferring-18" class="slide level2">
+<h2>Using ChatGPT for Inferring</h2>
+<h3 id="language-1">6. Language</h3>
+<p>And this is what the response could look like:</p>
+<div class="fragment">
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href></a>response <span class="op">=</span> get_completion(prompt)</span>
+<span id="cb51-2"><a href></a><span class="bu">print</span>(response)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&#39;&#39;&#39;Amo ciò che posso fare con ChatGPT OpenAI.&#39;&#39;&#39;</code></pre>
 </div>
 </div>
 </div>
 </section>
-<section id="using-chatgpt-for-inferring-15" class="slide level2 smaller">
+<section id="using-chatgpt-for-inferring-19" class="slide level2 smaller">
 <h2>Using ChatGPT for Inferring</h2>
-<h3 id="language-1">6. Language</h3>
+<h3 id="language-2">6. Language</h3>
 <p>We can also use ChatGPT to translate to multiple language.</p>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href></a>text_to_translate <span class="op">=</span> <span class="st">&quot;I love what I can do with ChatGPT OpenAI.&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href></a>text_to_translate <span class="op">=</span> <span class="st">&quot;I love what I can do with ChatGPT OpenAI.&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </div>
 <div class="fragment">
 <p>This is what the prompt looks like:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href></a>prompt <span class="op">=</span> <span class="ss">f&quot;&quot;&quot;</span></span>
-<span id="cb48-2"><a href></a><span class="ss">Translate the following English text to Italian and Spanish, which</span></span>
-<span id="cb48-3"><a href></a><span class="ss">is delimited with triple backticks.:</span><span class="ch">\</span></span>
-<span id="cb48-4"><a href></a></span>
-<span id="cb48-5"><a href></a><span class="ss">Format your response as a JSON object with </span><span class="ch">\</span></span>
-<span id="cb48-6"><a href></a><span class="ss">the languages as the keys.</span></span>
-<span id="cb48-7"><a href></a></span>
-<span id="cb48-8"><a href></a><span class="ss">Text sample: &#39;&#39;&#39;</span><span class="sc">{</span>text_to_translate<span class="sc">}</span><span class="ss">&#39;&#39;&#39;</span></span>
-<span id="cb48-9"><a href></a><span class="ss">&quot;&quot;&quot;</span></span>
-<span id="cb48-10"><a href></a>response <span class="op">=</span> get_completion(prompt)</span>
-<span id="cb48-11"><a href></a><span class="bu">print</span>(response)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href></a>prompt <span class="op">=</span> <span class="ss">f&quot;&quot;&quot;</span></span>
+<span id="cb54-2"><a href></a><span class="ss">Translate the following English text to Italian and Spanish, which</span></span>
+<span id="cb54-3"><a href></a><span class="ss">is delimited with triple backticks.:</span><span class="ch">\</span></span>
+<span id="cb54-4"><a href></a></span>
+<span id="cb54-5"><a href></a><span class="ss">Format your response as a JSON object with </span><span class="ch">\</span></span>
+<span id="cb54-6"><a href></a><span class="ss">the languages as the keys.</span></span>
+<span id="cb54-7"><a href></a></span>
+<span id="cb54-8"><a href></a><span class="ss">Text sample: &#39;&#39;&#39;</span><span class="sc">{</span>text_to_translate<span class="sc">}</span><span class="ss">&#39;&#39;&#39;</span></span>
+<span id="cb54-9"><a href></a><span class="ss">&quot;&quot;&quot;</span></span>
+<span id="cb54-10"><a href></a>response <span class="op">=</span> get_completion(prompt)</span>
+<span id="cb54-11"><a href></a><span class="bu">print</span>(response)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>{
   &quot;Italian&quot;: {
-    &quot;text&quot;: &quot;Adoro ciò che posso fare con ChatGPT OpenAI.&quot;
+    &quot;text&quot;: &quot;Amo ciò che posso fare con ChatGPT OpenAI.&quot;
   },
   &quot;Spanish&quot;: {
-    &quot;text&quot;: &quot;Me encanta lo que puedo hacer con ChatGPT OpenAI.&quot;
+    &quot;text&quot;: &quot;Amo lo que puedo hacer con ChatGPT OpenAI.&quot;
   }
 }</code></pre>
 </div>
 </div>
 </div>
 </section>
-<section id="using-chatgpt-for-inferring-16" class="slide level2">
+<section id="using-chatgpt-for-inferring-20" class="slide level2">
 <h2>Using ChatGPT for Inferring</h2>
 <h3 id="grammar-and-spelling">7. Grammar and Spelling</h3>
 <p>We can also use ChatGPT to proofread and fix grammar mistakes.</p>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href></a>text_to_fix <span class="op">=</span> <span class="st">&quot;&quot;&quot;</span></span>
-<span id="cb50-2"><a href></a><span class="st">This is a mock short paragraf to see how ChatGPT performs when it comes to\ </span></span>
-<span id="cb50-3"><a href></a><span class="st">grammer and spelling. These is a wrong sentence. Speling is of.</span></span>
-<span id="cb50-4"><a href></a><span class="st">&quot;&quot;&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href></a>text_to_fix <span class="op">=</span> <span class="st">&quot;&quot;&quot;</span></span>
+<span id="cb56-2"><a href></a><span class="st">This is a mock short paragraf to see how ChatGPT performs when it comes to\ </span></span>
+<span id="cb56-3"><a href></a><span class="st">grammer and spelling. These is a wrong sentence. Speling is of.</span></span>
+<span id="cb56-4"><a href></a><span class="st">&quot;&quot;&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </div>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href></a>prompt <span class="op">=</span> <span class="ss">f&quot;&quot;&quot;</span></span>
-<span id="cb51-2"><a href></a><span class="ss">Proofread and correct the following text, which</span></span>
-<span id="cb51-3"><a href></a><span class="ss">is delimited with triple backticks.</span></span>
-<span id="cb51-4"><a href></a></span>
-<span id="cb51-5"><a href></a><span class="ss">Rewrite the corrected version a simple string.</span></span>
-<span id="cb51-6"><a href></a></span>
-<span id="cb51-7"><a href></a><span class="ss">If you don&#39;t find and errors, leave as such.</span></span>
-<span id="cb51-8"><a href></a></span>
-<span id="cb51-9"><a href></a><span class="ss">```</span><span class="sc">{</span>text_to_fix<span class="sc">}</span><span class="ss">```</span></span>
-<span id="cb51-10"><a href></a><span class="ss">&quot;&quot;&quot;</span></span>
-<span id="cb51-11"><a href></a>response <span class="op">=</span> get_completion(prompt)</span>
-<span id="cb51-12"><a href></a><span class="bu">print</span>(response)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href></a>prompt <span class="op">=</span> <span class="ss">f&quot;&quot;&quot;</span></span>
+<span id="cb57-2"><a href></a><span class="ss">Proofread and correct the following text, which</span></span>
+<span id="cb57-3"><a href></a><span class="ss">is delimited with triple backticks.</span></span>
+<span id="cb57-4"><a href></a></span>
+<span id="cb57-5"><a href></a><span class="ss">Rewrite the corrected version a simple string.</span></span>
+<span id="cb57-6"><a href></a></span>
+<span id="cb57-7"><a href></a><span class="ss">If you don&#39;t find and errors, leave as such.</span></span>
+<span id="cb57-8"><a href></a></span>
+<span id="cb57-9"><a href></a><span class="ss">```</span><span class="sc">{</span>text_to_fix<span class="sc">}</span><span class="ss">```</span></span>
+<span id="cb57-10"><a href></a><span class="ss">&quot;&quot;&quot;</span></span>
+<span id="cb57-11"><a href></a>response <span class="op">=</span> get_completion(prompt)</span>
+<span id="cb57-12"><a href></a><span class="bu">print</span>(response)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>This is a mock short paragraph to see how ChatGPT performs when it comes to grammar and spelling. There is a wrong sentence. Spelling is off.</code></pre>
 </div>
 </div>
 </div>
 </section>
-<section id="using-chatgpt-for-inferring-17" class="slide level2">
+<section id="using-chatgpt-for-inferring-21" class="slide level2">
 <h2>Using ChatGPT for Inferring</h2>
 <h3 id="grammar-and-spelling-1">7. Grammar and Spelling</h3>
 <p>This is how we can see better the fixes:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href></a><span class="im">import</span> markdown</span>
-<span id="cb53-2"><a href></a><span class="im">from</span> IPython.display <span class="im">import</span> display, HTML</span>
-<span id="cb53-3"><a href></a><span class="im">from</span> redlines <span class="im">import</span> Redlines</span>
-<span id="cb53-4"><a href></a>diff <span class="op">=</span> Redlines(text_to_fix, response)</span>
-<span id="cb53-5"><a href></a>html_obj <span class="op">=</span> markdown.markdown(diff.output_markdown).strip(<span class="st">&#39;&quot;&#39;</span>)</span>
-<span id="cb53-6"><a href></a>HTML(html_obj)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href></a><span class="im">import</span> markdown</span>
+<span id="cb59-2"><a href></a><span class="im">from</span> IPython.display <span class="im">import</span> display, HTML</span>
+<span id="cb59-3"><a href></a><span class="im">from</span> redlines <span class="im">import</span> Redlines</span>
+<span id="cb59-4"><a href></a>diff <span class="op">=</span> Redlines(text_to_fix, response)</span>
+<span id="cb59-5"><a href></a>html_obj <span class="op">=</span> markdown.markdown(diff.output_markdown).strip(<span class="st">&#39;&quot;&#39;</span>)</span>
+<span id="cb59-6"><a href></a>HTML(html_obj)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-output-display">
 <p>This is a mock short <span style="color:red;font-weight:700;text-decoration:line-through;">paragraf </span><span style="color:green;font-weight:700;">paragraph </span>to see how ChatGPT performs when it comes <span style="color:red;font-weight:700;text-decoration:line-through;">to\ ¶ grammer </span><span style="color:green;font-weight:700;">to grammar </span>and spelling. <span style="color:red;font-weight:700;text-decoration:line-through;">These </span><span style="color:green;font-weight:700;">There </span>is a wrong sentence. <span style="color:red;font-weight:700;text-decoration:line-through;">Speling </span><span style="color:green;font-weight:700;">Spelling </span>is <span style="color:red;font-weight:700;text-decoration:line-through;">of.</span><span style="color:green;font-weight:700;">off.</span></p>
 </div>

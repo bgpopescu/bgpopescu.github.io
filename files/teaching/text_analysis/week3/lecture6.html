@@ -1087,6 +1087,10 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <h2>While Loops</h2>
 <h3 id="while-syntax"><code>while</code> syntax</h3>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb1" data-code-line-numbers="1-2|4-9|10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href></a><span class="co"># Set an initial condition.</span></span>
 <span id="cb1-2"><a href></a>game_active <span class="op">=</span> <span class="va">True</span></span>
 <span id="cb1-3"><a href></a></span>
@@ -1097,6 +1101,7 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <span id="cb1-8"><a href></a>    game_active <span class="op">=</span> <span class="va">False</span></span>
 <span id="cb1-9"><a href></a></span>
 <span id="cb1-10"><a href></a><span class="co"># Do anything else you want to be done after the loop runs.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </section>
 <section id="while-loops-2" class="slide level2">
@@ -1131,6 +1136,10 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <h3 id="example">Example</h3>
 <p>A game stays active as long as the player has enough power.</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb2" data-code-line-numbers="1-2|4-5|6|7-9|11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href></a><span class="co"># The character&#39;s health starts at 10.</span></span>
 <span id="cb2-2"><a href></a>health <span class="op">=</span> <span class="dv">5</span></span>
 <span id="cb2-3"><a href></a></span>
@@ -1142,6 +1151,7 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <span id="cb2-9"><a href></a>    health <span class="op">-=</span> <span class="dv">1</span></span>
 <span id="cb2-10"><a href></a></span>
 <span id="cb2-11"><a href></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Oh no, your health dropped to 0! You can no longer continue the adventure.&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </section>
 <section id="while-loops-4" class="slide level2">
@@ -1159,6 +1169,10 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <h2>While Loops</h2>
 <h3 data-visibility="uncounted" id="exercise-1">Exercise</h3>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb3" data-code-line-numbers="1-2|4|5|6-8|9-10|11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href></a><span class="co"># Start the countdown from 10.</span></span>
 <span id="cb3-2"><a href></a>count <span class="op">=</span> <span class="dv">10</span></span>
 <span id="cb3-3"><a href></a></span>
@@ -1171,8 +1185,9 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <span id="cb3-10"><a href></a><span class="co"># Print the end message when the countdown reaches 0.</span></span>
 <span id="cb3-11"><a href></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Time&#39;s up!&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
 <div class="fragment">
-<div class="cell">
+<div class="cell" data-filename="Python">
 <div class="cell-output cell-output-stdout">
 <pre><code>Current count is 10.
 Current count is 9.
@@ -1216,6 +1231,10 @@ Time&#39;s up!</code></pre>
 <h2>While Loops</h2>
 <h3 id="using-while-loops-to-process-items-in-a-list-1">Using while loops to process items in a list</h3>
 <div class="cell output">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb6" data-code-line-numbers="1-3|5-6|8-10|12-13|15-17"><pre class="sourceCode numberSource python output number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href></a><span class="co"># Start with a list of unconfirmed users and an empty list of confirmed users.</span></span>
 <span id="cb6-2"><a href></a>unconfirmed_users <span class="op">=</span> [<span class="st">&#39;Ada&#39;</span>, <span class="st">&#39;Billy&#39;</span>, <span class="st">&#39;Clarence&#39;</span>, <span class="st">&#39;Daria&#39;</span>]</span>
 <span id="cb6-3"><a href></a>confirmed_users <span class="op">=</span> []</span>
@@ -1234,7 +1253,8 @@ Time&#39;s up!</code></pre>
 <span id="cb6-16"><a href></a><span class="cf">for</span> user <span class="kw">in</span> confirmed_users:</span>
 <span id="cb6-17"><a href></a>    <span class="bu">print</span>(<span class="st">&#39;- &#39;</span> <span class="op">+</span> user)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell">
+</div>
+<div class="cell" data-filename="Python">
 <div class="cell-output cell-output-stdout">
 <pre><code>Confirming user Daria...confirmed!
 Confirming user Clarence...confirmed!
@@ -1261,13 +1281,18 @@ Confirming user Ada...confirmed!</code></pre>
 </div>
 <div class="fragment">
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href></a>current_number <span class="op">=</span> <span class="dv">1</span></span>
 <span id="cb10-2"><a href></a></span>
 <span id="cb10-3"><a href></a><span class="co"># Count up to 5, printing the number each time.</span></span>
 <span id="cb10-4"><a href></a><span class="cf">while</span> current_number <span class="op">&lt;=</span> <span class="dv">5</span>:</span>
 <span id="cb10-5"><a href></a>    <span class="bu">print</span>(current_number)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell">
+</div>
+<div class="cell" data-filename="Python">
 <div class="cell-output cell-output-stdout">
 <pre><code>1
 1
@@ -1288,6 +1313,10 @@ Confirming user Ada...confirmed!</code></pre>
 <div class="fragment">
 <p>The following is, for example, a way to fix the infinite loop:</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href></a>current_number <span class="op">=</span> <span class="dv">1</span></span>
 <span id="cb12-2"><a href></a></span>
 <span id="cb12-3"><a href></a><span class="co"># Count up to 5, printing the number 1 each time.</span></span>
@@ -1295,6 +1324,7 @@ Confirming user Ada...confirmed!</code></pre>
 <span id="cb12-5"><a href></a><span class="cf">while</span> count <span class="op">&lt;</span> <span class="dv">5</span>:</span>
 <span id="cb12-6"><a href></a>    <span class="bu">print</span>(current_number)</span>
 <span id="cb12-7"><a href></a>    count <span class="op">+=</span> <span class="dv">1</span>  <span class="co"># Increment the count</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>1
 1
@@ -1309,6 +1339,10 @@ Confirming user Ada...confirmed!</code></pre>
 <h2>While Loops</h2>
 <h3 id="accidental-infinite-loops-2">Accidental infinite loops</h3>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href></a>current_number <span class="op">=</span> <span class="dv">1</span></span>
 <span id="cb14-2"><a href></a></span>
 <span id="cb14-3"><a href></a><span class="co"># Count up to 5, printing the number 1 each time.</span></span>
@@ -1316,6 +1350,7 @@ Confirming user Ada...confirmed!</code></pre>
 <span id="cb14-5"><a href></a><span class="cf">while</span> count <span class="op">&lt;</span> <span class="dv">5</span>:</span>
 <span id="cb14-6"><a href></a>    <span class="bu">print</span>(current_number)</span>
 <span id="cb14-7"><a href></a>    count <span class="op">+=</span> <span class="dv">1</span>  <span class="co"># Increment the count</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <div class="fragment">
 <ul>
@@ -1380,6 +1415,10 @@ Confirming user Ada...confirmed!</code></pre>
 <h3 id="introduction-functions">Introduction Functions</h3>
 <p>This is what a function looks like</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href></a><span class="kw">def</span> my_function(argument_one, argument_two):</span>
 <span id="cb15-2"><a href></a>    <span class="co">&#39;&#39;&#39;</span></span>
 <span id="cb15-3"><a href></a><span class="co">    Do something interesting with my function.</span></span>
@@ -1395,6 +1434,7 @@ Confirming user Ada...confirmed!</code></pre>
 <span id="cb15-13"><a href></a>    <span class="op">&lt;</span>statements<span class="op">&gt;</span></span>
 <span id="cb15-14"><a href></a>    </span>
 <span id="cb15-15"><a href></a>    <span class="cf">return</span> <span class="op">&lt;</span>return_value<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </section>
 <section id="functions-5" class="slide level2">
@@ -1447,11 +1487,16 @@ Confirming user Ada...confirmed!</code></pre>
 <p>The function evaluates a statement and produces an output.</p>
 <p>This is what we had before using an if-else statement</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href></a>x <span class="op">=</span> <span class="op">-</span><span class="dv">5</span></span>
 <span id="cb16-2"><a href></a><span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">0</span>:</span>
 <span id="cb16-3"><a href></a>  <span class="bu">print</span>(<span class="st">&#39;x is positive!&#39;</span>)</span>
 <span id="cb16-4"><a href></a><span class="cf">else</span>:</span>
 <span id="cb16-5"><a href></a>  <span class="bu">print</span>(<span class="st">&#39;x is negative or zero!&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>x is negative or zero!</code></pre>
 </div>
@@ -1467,7 +1512,12 @@ Confirming user Ada...confirmed!</code></pre>
 <h3 data-auto-animate="true" id="examples-4">Examples</h3>
 <p>This is how we write this as a function called <code>check_positive</code></p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href></a><span class="kw">def</span> check_positive(x):</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </section>
 <section id="functions-11" class="slide level2">
@@ -1475,8 +1525,13 @@ Confirming user Ada...confirmed!</code></pre>
 <h3 data-auto-animate="true" id="examples-5">Examples</h3>
 <p>This is how we write this as a function called <code>check_positive</code></p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href></a><span class="kw">def</span> check_positive(x):</span>
 <span id="cb19-2"><a href></a>    <span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">0</span>:</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </section>
 <section id="functions-12" class="slide level2">
@@ -1484,9 +1539,14 @@ Confirming user Ada...confirmed!</code></pre>
 <h3 data-auto-animate="true" data-visibility="uncounted" id="examples-6">Examples</h3>
 <p>This is how we write this as a function called <code>check_positive</code></p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href></a><span class="kw">def</span> check_positive(x):</span>
 <span id="cb20-2"><a href></a>    <span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">0</span>:</span>
 <span id="cb20-3"><a href></a>        message <span class="op">=</span> <span class="st">&#39;x is positive!&#39;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </section>
 <section id="functions-13" class="slide level2">
@@ -1494,10 +1554,15 @@ Confirming user Ada...confirmed!</code></pre>
 <h3 data-auto-animate="true" data-visibility="uncounted" id="examples-7">Examples</h3>
 <p>This is how we write this as a function called <code>check_positive</code></p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href></a><span class="kw">def</span> check_positive(x):</span>
 <span id="cb21-2"><a href></a>    <span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">0</span>:</span>
 <span id="cb21-3"><a href></a>        message <span class="op">=</span> <span class="st">&#39;x is positive!&#39;</span></span>
 <span id="cb21-4"><a href></a>    <span class="cf">else</span>:</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </section>
 <section id="functions-14" class="slide level2">
@@ -1505,6 +1570,10 @@ Confirming user Ada...confirmed!</code></pre>
 <h3 data-auto-animate="true" data-visibility="uncounted" id="examples-8">Examples</h3>
 <p>This is how we write this as a function called <code>check_positive</code></p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href></a><span class="kw">def</span> check_positive(x):</span>
 <span id="cb22-2"><a href></a>    <span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">0</span>:</span>
 <span id="cb22-3"><a href></a>        message <span class="op">=</span> <span class="st">&#39;x is positive!&#39;</span></span>
@@ -1512,12 +1581,17 @@ Confirming user Ada...confirmed!</code></pre>
 <span id="cb22-5"><a href></a>        message <span class="op">=</span> <span class="st">&#39;x is negative or zero!&#39;</span></span>
 <span id="cb22-6"><a href></a>    <span class="cf">return</span> message</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
 </section>
 <section id="functions-15" class="slide level2">
 <h2>Functions</h2>
 <h3 id="examples-9">Examples</h3>
 <p>This is how we write this as a function called <code>check_positive</code></p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href></a><span class="kw">def</span> check_positive(x):</span>
 <span id="cb23-2"><a href></a>    <span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">0</span>:</span>
 <span id="cb23-3"><a href></a>        message <span class="op">=</span> <span class="st">&#39;x is positive!&#39;</span></span>
@@ -1525,9 +1599,15 @@ Confirming user Ada...confirmed!</code></pre>
 <span id="cb23-5"><a href></a>        message <span class="op">=</span> <span class="st">&#39;x is negative or zero!&#39;</span></span>
 <span id="cb23-6"><a href></a>    <span class="cf">return</span> message</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
 <p>What will the following return?</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href></a>check_positive(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </section>
 <section id="functions-16" class="slide level2">
@@ -1535,6 +1615,10 @@ Confirming user Ada...confirmed!</code></pre>
 <h3 data-auto-animate="true" data-visibility="uncounted" id="examples-10">Examples</h3>
 <p>This is how we write this as a function called <code>check_positive</code></p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href></a><span class="kw">def</span> check_positive(x):</span>
 <span id="cb25-2"><a href></a>    <span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">0</span>:</span>
 <span id="cb25-3"><a href></a>        message <span class="op">=</span> <span class="st">&#39;x is positive!&#39;</span></span>
@@ -1542,9 +1626,15 @@ Confirming user Ada...confirmed!</code></pre>
 <span id="cb25-5"><a href></a>        message <span class="op">=</span> <span class="st">&#39;x is negative or zero!&#39;</span></span>
 <span id="cb25-6"><a href></a>    <span class="cf">return</span> message</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
 <p>What will the following return?</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href></a>check_positive(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&#39;x is positive!&#39;</code></pre>
 </div>
@@ -1555,6 +1645,10 @@ Confirming user Ada...confirmed!</code></pre>
 <h3 id="examples-11">Examples</h3>
 <p>This is how we write this as a function called <code>check_positive</code></p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href></a><span class="kw">def</span> check_positive(x):</span>
 <span id="cb28-2"><a href></a>    <span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">0</span>:</span>
 <span id="cb28-3"><a href></a>        message <span class="op">=</span> <span class="st">&#39;x is positive!&#39;</span></span>
@@ -1562,9 +1656,15 @@ Confirming user Ada...confirmed!</code></pre>
 <span id="cb28-5"><a href></a>        message <span class="op">=</span> <span class="st">&#39;x is negative or zero!&#39;</span></span>
 <span id="cb28-6"><a href></a>    <span class="cf">return</span> message</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
 <p>What about the following?</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href></a>check_positive(<span class="op">-</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </section>
 <section id="functions-18" class="slide level2">
@@ -1572,6 +1672,10 @@ Confirming user Ada...confirmed!</code></pre>
 <h3 data-auto-animate="true" data-visibility="uncounted" id="examples-12">Examples</h3>
 <p>This is how we write this as a function called <code>check_positive</code></p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href></a><span class="kw">def</span> check_positive(x):</span>
 <span id="cb30-2"><a href></a>    <span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">0</span>:</span>
 <span id="cb30-3"><a href></a>        message <span class="op">=</span> <span class="st">&#39;x is positive!&#39;</span></span>
@@ -1579,9 +1683,15 @@ Confirming user Ada...confirmed!</code></pre>
 <span id="cb30-5"><a href></a>        message <span class="op">=</span> <span class="st">&#39;x is negative or zero!&#39;</span></span>
 <span id="cb30-6"><a href></a>    <span class="cf">return</span> message</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
 <p>What about the following?</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href></a>check_positive(<span class="op">-</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&#39;x is negative or zero!&#39;</code></pre>
 </div>
@@ -1592,6 +1702,10 @@ Confirming user Ada...confirmed!</code></pre>
 <h3 id="examples-13">Examples</h3>
 <p>This is how we write this as a function called <code>check_positive</code></p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href></a><span class="kw">def</span> check_positive(x):</span>
 <span id="cb33-2"><a href></a>    <span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">0</span>:</span>
 <span id="cb33-3"><a href></a>        message <span class="op">=</span> <span class="st">&#39;x is positive!&#39;</span></span>
@@ -1599,9 +1713,15 @@ Confirming user Ada...confirmed!</code></pre>
 <span id="cb33-5"><a href></a>        message <span class="op">=</span> <span class="st">&#39;x is negative or zero!&#39;</span></span>
 <span id="cb33-6"><a href></a>    <span class="cf">return</span> message</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
 <p>What about the following?</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href></a>check_positive(<span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </section>
 <section id="functions-20" class="slide level2">
@@ -1609,6 +1729,10 @@ Confirming user Ada...confirmed!</code></pre>
 <h3 data-auto-animate="true" data-visibility="uncounted" id="examples-14">Examples</h3>
 <p>This is how we write this as a function called <code>check_positive</code></p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href></a><span class="kw">def</span> check_positive(x):</span>
 <span id="cb35-2"><a href></a>    <span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">0</span>:</span>
 <span id="cb35-3"><a href></a>        message <span class="op">=</span> <span class="st">&#39;x is positive!&#39;</span></span>
@@ -1616,9 +1740,15 @@ Confirming user Ada...confirmed!</code></pre>
 <span id="cb35-5"><a href></a>        message <span class="op">=</span> <span class="st">&#39;x is negative or zero!&#39;</span></span>
 <span id="cb35-6"><a href></a>    <span class="cf">return</span> message</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
 <p>What about the following?</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href></a>check_positive(<span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&#39;x is negative or zero!&#39;</code></pre>
 </div>
@@ -1634,9 +1764,14 @@ Confirming user Ada...confirmed!</code></pre>
 <h3 data-auto-animate="true" data-visibility="uncounted" id="examples-16">Examples</h3>
 <p>Let us now create a third condition: <code>x==0</code></p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href></a><span class="kw">def</span> check_positive(x):</span>
 <span id="cb38-2"><a href></a>    <span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">0</span>:</span>
 <span id="cb38-3"><a href></a>        message <span class="op">=</span> <span class="st">&#39;x is positive!&#39;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </section>
 <section id="functions-23" class="slide level2">
@@ -1644,11 +1779,16 @@ Confirming user Ada...confirmed!</code></pre>
 <h3 data-auto-animate="true" data-visibility="uncounted" id="examples-17">Examples</h3>
 <p>Let us now create a third condition: <code>x==0</code></p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href></a><span class="kw">def</span> check_positive(x):</span>
 <span id="cb39-2"><a href></a>    <span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">0</span>:</span>
 <span id="cb39-3"><a href></a>        message <span class="op">=</span> <span class="st">&#39;x is positive!&#39;</span></span>
 <span id="cb39-4"><a href></a>    <span class="cf">if</span> x <span class="op">==</span> <span class="dv">0</span>:</span>
 <span id="cb39-5"><a href></a>        message <span class="op">=</span> <span class="st">&#39;x is zero!&#39;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </section>
 <section id="functions-24" class="slide level2">
@@ -1656,6 +1796,10 @@ Confirming user Ada...confirmed!</code></pre>
 <h3 data-auto-animate="true" data-visibility="uncounted" id="examples-18">Examples</h3>
 <p>Let us now create a third condition: <code>x==0</code></p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href></a><span class="kw">def</span> check_positive(x):</span>
 <span id="cb40-2"><a href></a>    <span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">0</span>:</span>
 <span id="cb40-3"><a href></a>        message <span class="op">=</span> <span class="st">&#39;x is positive!&#39;</span></span>
@@ -1665,12 +1809,17 @@ Confirming user Ada...confirmed!</code></pre>
 <span id="cb40-7"><a href></a>        message <span class="op">=</span> <span class="st">&#39;x is negative or zero!&#39;</span></span>
 <span id="cb40-8"><a href></a>    <span class="cf">return</span> message</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
 </section>
 <section id="functions-25" class="slide level2">
 <h2>Functions</h2>
 <h3 data-auto-animate="true" data-visibility="uncounted" id="examples-19">Examples</h3>
 <p>Let us now create a third condition: <code>x==0</code></p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href></a><span class="kw">def</span> check_positive(x):</span>
 <span id="cb41-2"><a href></a>    <span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">0</span>:</span>
 <span id="cb41-3"><a href></a>        message <span class="op">=</span> <span class="st">&#39;x is positive!&#39;</span></span>
@@ -1680,6 +1829,7 @@ Confirming user Ada...confirmed!</code></pre>
 <span id="cb41-7"><a href></a>        message <span class="op">=</span> <span class="st">&#39;x is negative or zero!&#39;</span></span>
 <span id="cb41-8"><a href></a>    <span class="cf">return</span> message</span>
 <span id="cb41-9"><a href></a>check_positive(<span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&#39;x is zero!&#39;</code></pre>
 </div>
@@ -1704,18 +1854,28 @@ Confirming user Ada...confirmed!</code></pre>
 <p>We create a function called <code>add_five</code> with one parameter <code>x</code>.</p>
 <p>The function calculates and returns the sum of <code>x</code> and <code>5</code>.</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href></a><span class="kw">def</span> add_five(x):</span>
 <span id="cb43-2"><a href></a>    x_plus_five <span class="op">=</span> x <span class="op">+</span> <span class="dv">5</span></span>
 <span id="cb43-3"><a href></a>    <span class="cf">return</span> x_plus_five</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </section>
 <section id="functions-28" class="slide level2">
 <h2>Functions</h2>
 <h3 id="examples-21">Examples</h3>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href></a><span class="kw">def</span> add_five(x):</span>
 <span id="cb44-2"><a href></a>    x_plus_five <span class="op">=</span> x <span class="op">+</span> <span class="dv">5</span></span>
 <span id="cb44-3"><a href></a>    <span class="cf">return</span> x_plus_five</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <p>Here are the elements of the function:</p>
 <div class="fragment">
@@ -1738,9 +1898,14 @@ Confirming user Ada...confirmed!</code></pre>
 <h2>Functions</h2>
 <h3 id="examples-22">Examples</h3>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href></a><span class="kw">def</span> add_five(x):</span>
 <span id="cb45-2"><a href></a>    x_plus_five <span class="op">=</span> x <span class="op">+</span> <span class="dv">5</span></span>
 <span id="cb45-3"><a href></a>    <span class="cf">return</span> x_plus_five</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <p>Here are the elements of the function:</p>
 <div class="fragment">
@@ -1760,29 +1925,29 @@ Confirming user Ada...confirmed!</code></pre>
 <p>The function <code>add_five</code>, can be used to calculate the sum of various numbers and five.</p>
 <div class="fragment">
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href></a><span class="co"># Function definition</span></span>
 <span id="cb46-2"><a href></a><span class="kw">def</span> add_five(x):</span>
 <span id="cb46-3"><a href></a>    x_plus_five <span class="op">=</span> x <span class="op">+</span> <span class="dv">5</span></span>
 <span id="cb46-4"><a href></a>    <span class="cf">return</span> x_plus_five</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
+</div>
 <div class="fragment">
 <p>Here is what happens if we use <code>5</code> as a parameter</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href></a><span class="co"># Function call, with argument 5</span></span>
 <span id="cb47-2"><a href></a>add_five(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>10</code></pre>
-</div>
-</div>
-</div>
-<div class="fragment">
-<p>Here is what happens if we use <code>77</code> as a parameter</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href></a><span class="co"># Function call, with argument 77</span></span>
-<span id="cb49-2"><a href></a>add_five(<span class="dv">77</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>82</code></pre>
 </div>
 </div>
 </div>
@@ -1790,12 +1955,35 @@ Confirming user Ada...confirmed!</code></pre>
 <section id="functions-31" class="slide level2">
 <h2>Functions</h2>
 <h3 id="examples-24">Examples</h3>
+<p>The function <code>add_five</code>, can be used to calculate the sum of various numbers and five.</p>
+<p>Here is what happens if we use <code>77</code> as a parameter</p>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href></a><span class="co"># Function call, with argument 77</span></span>
+<span id="cb49-2"><a href></a>add_five(<span class="dv">77</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>82</code></pre>
+</div>
+</div>
+</section>
+<section id="functions-32" class="slide level2">
+<h2>Functions</h2>
+<h3 id="examples-25">Examples</h3>
 <p>We can, of course, assign the result of a function to an object.</p>
 <div class="fragment">
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href></a><span class="co"># Function call, with argument 77</span></span>
 <span id="cb51-2"><a href></a>x<span class="op">=</span>add_five(<span class="dv">77</span>)</span>
 <span id="cb51-3"><a href></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>82</code></pre>
 </div>
@@ -1804,25 +1992,35 @@ Confirming user Ada...confirmed!</code></pre>
 <div class="fragment">
 <p>We can write the same function in a different way</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href></a><span class="co"># Original Function</span></span>
 <span id="cb53-2"><a href></a><span class="kw">def</span> add_five(x):</span>
 <span id="cb53-3"><a href></a>    x_plus_five <span class="op">=</span> x <span class="op">+</span> <span class="dv">5</span></span>
 <span id="cb53-4"><a href></a>    <span class="cf">return</span> x_plus_five</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
+</div>
 <div class="fragment">
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href></a><span class="co"># Version 2</span></span>
 <span id="cb54-2"><a href></a><span class="kw">def</span> add_five(x):</span>
 <span id="cb54-3"><a href></a>  <span class="cf">return</span> x <span class="op">+</span> <span class="dv">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
+</div>
 </section>
-<section id="functions-32" class="slide level2">
+<section id="functions-33" class="slide level2">
 <h2>Functions</h2>
 <h3 id="exercises-with-functions-1">Exercises with Functions 1</h3>
 <p><strong>Objectives</strong><br>
-Write an R script that classifies a given number into one of three categories using a function:</p>
+Write a function that classifies a given number into one of three categories:</p>
 <ul>
 <li>Positive: If the number is greater than 0</li>
 <li>Negative: If the number is less than 0</li>
@@ -1831,17 +2029,22 @@ Write an R script that classifies a given number into one of three categories us
 <p>Let’s say the number is 3.</p>
 <p>The output should look like the following:</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href></a>classify_number(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>The number is Positive.</code></pre>
 </div>
 </div>
 </section>
-<section id="functions-33" class="slide level2">
+<section id="functions-34" class="slide level2">
 <h2>Functions</h2>
 <h3 id="exercises-with-functions-1-1">Exercises with Functions 1</h3>
 <p><strong>Objectives</strong><br>
-Write an R script that classifies a given number into one of three categories using a function:</p>
+Write a function that classifies a given number into one of three categories:</p>
 <div style="font-size: 75%;">
 <ul>
 <li>Positive: If the number is greater than 0</li>
@@ -1850,9 +2053,18 @@ Write an R script that classifies a given number into one of three categories us
 </ul>
 </div>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href></a>number <span class="op">=</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href></a><span class="kw">def</span> classify_number(number):</span>
 <span id="cb58-2"><a href></a>    <span class="cf">if</span> number <span class="op">&gt;</span> <span class="dv">0</span>:</span>
 <span id="cb58-3"><a href></a>        category <span class="op">=</span> <span class="st">&quot;Positive&quot;</span></span>
@@ -1863,14 +2075,33 @@ Write an R script that classifies a given number into one of three categories us
 <span id="cb58-8"><a href></a></span>
 <span id="cb58-9"><a href></a>    <span class="bu">print</span>(<span class="ss">f&quot;The number is </span><span class="sc">{</span>category<span class="sc">}</span><span class="ss">.&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
+</section>
+<section id="functions-35" class="slide level2">
+<h2>Functions</h2>
+<h3 id="exercises-with-functions-1-2">Exercises with Functions 1</h3>
+<p><strong>Objectives</strong><br>
+Write a function that classifies a given number into one of three categories:</p>
+<div style="font-size: 75%;">
+<ul>
+<li>Positive: If the number is greater than 0</li>
+<li>Negative: If the number is less than 0</li>
+<li>Zero: If the number is exactly 0</li>
+</ul>
+</div>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href></a>classify_number(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>The number is Positive.</code></pre>
 </div>
 </div>
 </section>
-<section id="functions-34" class="slide level2">
+<section id="functions-36" class="slide level2">
 <h2>Functions</h2>
 <h3 id="exercises-with-functions-2">Exercises with Functions 2</h3>
 <p><strong>Objective</strong><br>
@@ -1883,15 +2114,24 @@ Write an R script that classifies a person into different age groups using a fun
 </ul>
 <p>Let’s say the age is 15.</p>
 </section>
-<section id="functions-35" class="slide level2">
+<section id="functions-37" class="slide level2">
 <h2>Functions</h2>
 <h3 id="exercises-with-functions-2-1">Exercises with Functions 2</h3>
 <p><strong>Instructions</strong><br>
 Write an R script that classifies a person into different age groups using a function based on the following criteria:</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href></a>age <span class="op">=</span> <span class="dv">15</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href></a><span class="kw">def</span> classify_age(age):</span>
 <span id="cb62-2"><a href></a>    <span class="cf">if</span> <span class="dv">0</span> <span class="op">&lt;=</span> age <span class="op">&lt;=</span> <span class="dv">12</span>:</span>
 <span id="cb62-3"><a href></a>        age_group <span class="op">=</span> <span class="st">&quot;Child&quot;</span></span>
@@ -1904,14 +2144,26 @@ Write an R script that classifies a person into different age groups using a fun
 <span id="cb62-10"><a href></a>    </span>
 <span id="cb62-11"><a href></a>    <span class="cf">return</span> <span class="ss">f&quot;You are a </span><span class="sc">{</span>age_group<span class="sc">}</span><span class="ss">.&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
+</section>
+<section id="functions-38" class="slide level2">
+<h2>Functions</h2>
+<h3 id="exercises-with-functions-2-2">Exercises with Functions 2</h3>
+<p><strong>Instructions</strong><br>
+Write an R script that classifies a person into different age groups using a function based on the following criteria:</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href></a>classify_age(age)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&#39;You are a Teenager.&#39;</code></pre>
 </div>
 </div>
 </section>
-<section id="functions-36" class="slide level2">
+<section id="functions-39" class="slide level2">
 <h2>Functions</h2>
 <h3 id="exercises-with-functions-3">Exercises with Functions 3</h3>
 <p><strong>Objective</strong><br>
@@ -1923,14 +2175,23 @@ Write an R script that classifies temperatures into different categories using a
 <li>Hot: More than 90 degrees Fahrenheit</li>
 </ul>
 </section>
-<section id="functions-37" class="slide level2">
+<section id="functions-40" class="slide level2">
 <h2>Functions</h2>
 <h3 id="exercises-with-functions-3-1">Exercises with Functions 3</h3>
 <p>Use if-else statements within a function to classify the temperature into one of the categories.</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href></a>temperature <span class="op">=</span> <span class="dv">50</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href></a><span class="kw">def</span> classify_temperature(temperature):</span>
 <span id="cb66-2"><a href></a>    <span class="cf">if</span> temperature <span class="op">&lt;</span> <span class="dv">50</span>:</span>
 <span id="cb66-3"><a href></a>        category <span class="op">=</span> <span class="st">&quot;Cold&quot;</span></span>
@@ -1943,14 +2204,25 @@ Write an R script that classifies temperatures into different categories using a
 <span id="cb66-10"><a href></a>    </span>
 <span id="cb66-11"><a href></a>    <span class="cf">return</span> <span class="ss">f&quot;The temperature is </span><span class="sc">{</span>category<span class="sc">}</span><span class="ss">.&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
+</section>
+<section id="functions-41" class="slide level2">
+<h2>Functions</h2>
+<h3 id="exercises-with-functions-3-2">Exercises with Functions 3</h3>
+<p>Use if-else statements within a function to classify the temperature into one of the categories.</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href></a>classify_temperature(temperature)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&#39;The temperature is Moderate.&#39;</code></pre>
 </div>
 </div>
 </section>
-<section id="functions-38" class="slide level2">
+<section id="functions-42" class="slide level2">
 <h2>Functions</h2>
 <h3 id="functions-notes">Functions notes</h3>
 <p>A common problem when we first start programming is mixing the concepts of print and return.</p>

@@ -1082,7 +1082,12 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <div class="fragment">
 <p>General syntax:</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href></a>dictionary_name <span class="op">=</span> {key_1: value_1, key_2: value_2, key_3: value_3}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </div>
 <div class="fragment">
@@ -1097,10 +1102,15 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <p>You might see dictionaries that look more like this:</p>
 <div class="fragment">
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href></a>dictionary_name <span class="op">=</span> {key_1: value_1,</span>
 <span id="cb2-2"><a href></a>                   key_2: value_2,</span>
 <span id="cb2-3"><a href></a>                   key_3: value_3,</span>
 <span id="cb2-4"><a href></a>                   }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </div>
 <div class="fragment">
@@ -1112,9 +1122,14 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <h3 id="example">Example</h3>
 <p>An example of the dictionary is the following:</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href></a>dictionary_example <span class="op">=</span> {<span class="st">&quot;PL208&quot;</span>: <span class="st">&quot;I still have to prepare for the final exam.&quot;</span> ,</span>
 <span id="cb3-2"><a href></a>                      <span class="st">&quot;PL360&quot;</span>: <span class="st">&quot;I need to submit a final draft&quot;</span>,</span>
 <span id="cb3-3"><a href></a>                      <span class="st">&quot;PL366&quot;</span>: <span class="st">&quot;I can relax. I have submitted everything necessary.&quot;</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </section>
 <section id="dictionaries-3" class="slide level2">
@@ -1122,12 +1137,21 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <h3 id="extracting-elements-from-a-dictionary">Extracting elements from a dictionary</h3>
 <p>We can get individual items out of the dictionary by giving the dictionary’s name and the key in square brackets:</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href></a>dictionary_example <span class="op">=</span> {<span class="st">&quot;PL208&quot;</span>: <span class="st">&quot;I still have to prepare for the final exam.&quot;</span> ,</span>
 <span id="cb4-2"><a href></a>                      <span class="st">&quot;PL360&quot;</span>: <span class="st">&quot;I need to submit a final draft&quot;</span>,</span>
 <span id="cb4-3"><a href></a>                      <span class="st">&quot;PL366&quot;</span>: <span class="st">&quot;I can relax. I have submitted everything necessary.&quot;</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
 <div class="fragment">
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href></a><span class="bu">print</span>(<span class="st">&quot;Class: </span><span class="sc">%s</span><span class="st">&quot;</span> <span class="op">%</span> <span class="st">&#39;PL208&#39;</span>)</span>
 <span id="cb5-2"><a href></a><span class="bu">print</span>(<span class="st">&quot;Tasks left: </span><span class="sc">%s</span><span class="st">&quot;</span> <span class="op">%</span> dictionary_example[<span class="st">&#39;PL208&#39;</span>])</span>
 <span id="cb5-3"><a href></a><span class="bu">print</span>(<span class="st">&quot;Class: </span><span class="sc">%s</span><span class="st">&quot;</span> <span class="op">%</span> <span class="st">&#39;PL360&#39;</span>)</span>
@@ -1136,8 +1160,9 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <span id="cb5-6"><a href></a><span class="bu">print</span>(<span class="st">&quot;Tasks left: </span><span class="sc">%s</span><span class="st">&quot;</span> <span class="op">%</span> dictionary_example[<span class="st">&#39;PL366&#39;</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
+</div>
 <div class="fragment">
-<div class="cell">
+<div class="cell" data-filename="Python">
 <div class="cell-output cell-output-stdout">
 <pre><code>Class: PL208</code></pre>
 </div>
@@ -1167,17 +1192,27 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <p>The dictionary can be better presented in the following way.</p>
 <div class="fragment">
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href></a>dictionary_example <span class="op">=</span> {<span class="st">&quot;PL208&quot;</span>: <span class="st">&quot;I still have to prepare for the final exam.&quot;</span> ,</span>
 <span id="cb12-2"><a href></a>                      <span class="st">&quot;PL360&quot;</span>: <span class="st">&quot;I need to submit a final draft&quot;</span>,</span>
 <span id="cb12-3"><a href></a>                      <span class="st">&quot;PL366&quot;</span>: <span class="st">&quot;I can relax. I have submitted everything necessary.&quot;</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
+</div>
 <div class="fragment">
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href></a><span class="co"># Print out the items in the dictionary.</span></span>
 <span id="cb13-2"><a href></a><span class="cf">for</span> class_school, task <span class="kw">in</span> dictionary_example.items():</span>
 <span id="cb13-3"><a href></a>    <span class="bu">print</span>(<span class="st">&quot;Class: </span><span class="sc">%s</span><span class="st">&quot;</span> <span class="op">%</span> class_school)</span>
 <span id="cb13-4"><a href></a>    <span class="bu">print</span>(<span class="st">&quot;Task: </span><span class="sc">%s</span><span class="st">&quot;</span> <span class="op">%</span> task)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Class: PL208
 Task: I still have to prepare for the final exam.
@@ -1213,12 +1248,22 @@ Task: I can relax. I have submitted everything necessary.</code></pre>
 <h3 data-visibility="uncounted" id="exercise-1">Exercise</h3>
 <p>Task 1:</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href></a>students_grades <span class="op">=</span> {<span class="st">&quot;Alice&quot;</span>: <span class="dv">85</span>, <span class="st">&quot;Bob&quot;</span>: <span class="dv">90</span>, <span class="st">&quot;Charlie&quot;</span>: <span class="dv">78</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <p>Task 2:</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href></a><span class="cf">for</span> student, grade <span class="kw">in</span> students_grades.items():</span>
 <span id="cb16-2"><a href></a>  <span class="bu">print</span>(student, grade)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Alice 85
 Bob 90
@@ -1227,8 +1272,13 @@ Charlie 78</code></pre>
 </div>
 <p>Task 3:</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href></a>students_grades[<span class="st">&quot;Alice&quot;</span>]<span class="op">=</span><span class="dv">88</span></span>
 <span id="cb18-2"><a href></a>students_grades</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>{&#39;Alice&#39;: 88, &#39;Bob&#39;: 90, &#39;Charlie&#39;: 78}</code></pre>
 </div>
@@ -1250,18 +1300,28 @@ Charlie 78</code></pre>
 <h3 id="operation-1-adding-a-new-key-value-pair">Operation 1: Adding a new key-value pair</h3>
 <p>We can easily add a new key-value pair to our dictionary:</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href></a>dictionary_example <span class="op">=</span> {<span class="st">&quot;PL208&quot;</span>: <span class="st">&quot;I still have to prepare for the final exam.&quot;</span> ,</span>
 <span id="cb20-2"><a href></a>                      <span class="st">&quot;PL360&quot;</span>: <span class="st">&quot;I need to submit a final draft&quot;</span>,</span>
 <span id="cb20-3"><a href></a>                      <span class="st">&quot;PL366&quot;</span>: <span class="st">&quot;I can relax. I have submitted everything necessary.&quot;</span>}</span>
 <span id="cb20-4"><a href></a>dictionary_example                   </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>{&#39;PL208&#39;: &#39;I still have to prepare for the final exam.&#39;, &#39;PL360&#39;: &#39;I need to submit a final draft&#39;, &#39;PL366&#39;: &#39;I can relax. I have submitted everything necessary.&#39;}</code></pre>
 </div>
 </div>
 <div class="fragment">
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href></a>dictionary_example[<span class="st">&quot;PL999&quot;</span>]<span class="op">=</span><span class="st">&quot;Nothing left&quot;</span></span>
 <span id="cb22-2"><a href></a>dictionary_example</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>{&#39;PL208&#39;: &#39;I still have to prepare for the final exam.&#39;, &#39;PL360&#39;: &#39;I need to submit a final draft&#39;, &#39;PL366&#39;: &#39;I can relax. I have submitted everything necessary.&#39;, &#39;PL999&#39;: &#39;Nothing left&#39;}</code></pre>
 </div>
@@ -1273,7 +1333,12 @@ Charlie 78</code></pre>
 <h3 id="operation-2-removing-key-value-pairs">Operation 2: Removing key-value pairs</h3>
 <p>Let us say that we want to remove the newly added pair.</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href></a>dictionary_example</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>{&#39;PL208&#39;: &#39;I still have to prepare for the final exam.&#39;, &#39;PL360&#39;: &#39;I need to submit a final draft&#39;, &#39;PL366&#39;: &#39;I can relax. I have submitted everything necessary.&#39;, &#39;PL999&#39;: &#39;Nothing left&#39;}</code></pre>
 </div>
@@ -1281,13 +1346,23 @@ Charlie 78</code></pre>
 <div class="fragment">
 <p>The way we do that is:</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href></a><span class="kw">del</span> dictionary_example[<span class="st">&#39;PL999&#39;</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </div>
 <div class="fragment">
 <p>Here is the output:</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href></a>dictionary_example</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>{&#39;PL208&#39;: &#39;I still have to prepare for the final exam.&#39;, &#39;PL360&#39;: &#39;I need to submit a final draft&#39;, &#39;PL366&#39;: &#39;I can relax. I have submitted everything necessary.&#39;}</code></pre>
 </div>
@@ -1299,15 +1374,25 @@ Charlie 78</code></pre>
 <h3 id="operation-3-modifying-values-in-a-dictionary">Operation 3: Modifying values in a dictionary</h3>
 <p>We have already seen that modifying values in a dictionary is straightforward.</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href></a>dictionary_example</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>{&#39;PL208&#39;: &#39;I still have to prepare for the final exam.&#39;, &#39;PL360&#39;: &#39;I need to submit a final draft&#39;, &#39;PL366&#39;: &#39;I can relax. I have submitted everything necessary.&#39;}</code></pre>
 </div>
 </div>
 <div class="fragment">
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href></a>dictionary_example[<span class="st">&#39;PL366&#39;</span>] <span class="op">=</span> <span class="st">&quot;Modified task&quot;</span></span>
 <span id="cb31-2"><a href></a>dictionary_example</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>{&#39;PL208&#39;: &#39;I still have to prepare for the final exam.&#39;, &#39;PL360&#39;: &#39;I need to submit a final draft&#39;, &#39;PL366&#39;: &#39;Modified task&#39;}</code></pre>
 </div>
@@ -1327,16 +1412,26 @@ Charlie 78</code></pre>
 </div>
 <div class="fragment">
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href></a><span class="co">#Step1: Copying the value to the new key </span></span>
 <span id="cb33-2"><a href></a>dictionary_example[<span class="st">&#39;PL399&#39;</span>] <span class="op">=</span> dictionary_example[<span class="st">&#39;PL366&#39;</span>]</span>
 <span id="cb33-3"><a href></a><span class="co">#Step2: Deleting the old value</span></span>
 <span id="cb33-4"><a href></a><span class="kw">del</span> dictionary_example[<span class="st">&#39;PL366&#39;</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
+</div>
 <div class="fragment">
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href></a><span class="co">#Step3: Checking the result</span></span>
 <span id="cb34-2"><a href></a>dictionary_example</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>{&#39;PL208&#39;: &#39;I still have to prepare for the final exam.&#39;, &#39;PL360&#39;: &#39;I need to submit a final draft&#39;, &#39;PL399&#39;: &#39;Modified task&#39;}</code></pre>
 </div>
@@ -1349,9 +1444,14 @@ Charlie 78</code></pre>
 <p>This is how we can loop through all the items of a dictionary.</p>
 <div class="fragment">
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href></a><span class="cf">for</span> key, value <span class="kw">in</span> dictionary_example.items():</span>
 <span id="cb36-2"><a href></a>    <span class="bu">print</span>(<span class="st">&#39;Key: </span><span class="sc">%s</span><span class="st">&#39;</span> <span class="op">%</span> key)</span>
 <span id="cb36-3"><a href></a>    <span class="bu">print</span>(<span class="st">&#39;Value: </span><span class="sc">%s</span><span class="st">&#39;</span> <span class="op">%</span> value)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Key: PL208
 Value: I still have to prepare for the final exam.
@@ -1367,7 +1467,12 @@ Value: Modified task</code></pre>
 </div>
 <div class="fragment">
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href></a><span class="bu">print</span>(dictionary_example.items())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>dict_items([(&#39;PL208&#39;, &#39;I still have to prepare for the final exam.&#39;), (&#39;PL360&#39;, &#39;I need to submit a final draft&#39;), (&#39;PL399&#39;, &#39;Modified task&#39;)])</code></pre>
 </div>
@@ -1380,7 +1485,12 @@ Value: Modified task</code></pre>
 <p>We can obtain only the keys from a dictionary in the following way:</p>
 <div class="fragment">
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href></a><span class="bu">print</span>(dictionary_example.keys())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>dict_keys([&#39;PL208&#39;, &#39;PL360&#39;, &#39;PL399&#39;])</code></pre>
 </div>
@@ -1391,7 +1501,12 @@ Value: Modified task</code></pre>
 </div>
 <div class="fragment">
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href></a><span class="bu">print</span>(dictionary_example.values())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>dict_values([&#39;I still have to prepare for the final exam.&#39;, &#39;I need to submit a final draft&#39;, &#39;Modified task&#39;])</code></pre>
 </div>
@@ -1403,7 +1518,12 @@ Value: Modified task</code></pre>
 <h3 id="sorting-keys">Sorting keys</h3>
 <p>We can sort the keys alphabetically in a dictionary.</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href></a><span class="bu">print</span>(<span class="bu">sorted</span>(dictionary_example.keys()))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[&#39;PL208&#39;, &#39;PL360&#39;, &#39;PL399&#39;]</code></pre>
 </div>
@@ -1416,16 +1536,32 @@ Value: Modified task</code></pre>
 <p>It entails putting a list of dictionaries inside another list or dictionary.</p>
 <div class="fragment">
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href></a><span class="co"># This program stores and displays people&#39;s favorite numbers.</span></span>
 <span id="cb46-2"><a href></a>favorite_numbers <span class="op">=</span> {<span class="st">&#39;eric&#39;</span>: [<span class="dv">3</span>, <span class="dv">11</span>, <span class="dv">19</span>, <span class="dv">23</span>, <span class="dv">42</span>],</span>
 <span id="cb46-3"><a href></a>                    <span class="st">&#39;ever&#39;</span>: [<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">5</span>],</span>
 <span id="cb46-4"><a href></a>                    <span class="st">&#39;willie&#39;</span>: [<span class="dv">5</span>, <span class="dv">35</span>, <span class="dv">120</span>]}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
+</div>
+</section>
+<section id="dictionaries-17" class="slide level2">
+<h2>Dictionaries</h2>
+<h3 id="nesting-1">Nesting</h3>
+<p>Nesting is a powerful concept when using dictionaries.</p>
+<p>It entails putting a list of dictionaries inside another list or dictionary.</p>
 <div class="fragment">
 <p>Let us say that we want to print Eric’s favorite numbers:</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href></a><span class="bu">print</span>(favorite_numbers[<span class="st">&#39;eric&#39;</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[3, 11, 19, 23, 42]</code></pre>
 </div>
@@ -1434,38 +1570,53 @@ Value: Modified task</code></pre>
 <div class="fragment">
 <p>Let us say that we want to print Ever’s favorite numbers:</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href></a><span class="bu">print</span>(favorite_numbers[<span class="st">&#39;ever&#39;</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[2, 4, 5]</code></pre>
 </div>
 </div>
 </div>
 </section>
-<section id="dictionaries-17" class="slide level2">
+<section id="dictionaries-18" class="slide level2">
 <h2>Dictionaries</h2>
 <h3 id="dictionaries-in-a-dictionary">Dictionaries in a dictionary</h3>
 <p>Another helpful fact about dictionaries is that we can have dictionaries inside dictionaries.</p>
 <p>To demonstrate how and why this is useful, let’s create a dictionary of pets with information about each pet.</p>
 <div class="fragment">
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href></a>pets <span class="op">=</span> {<span class="st">&#39;willie&#39;</span>: {<span class="st">&#39;kind&#39;</span>: <span class="st">&#39;dog&#39;</span>, <span class="st">&#39;owner&#39;</span>: <span class="st">&#39;eric&#39;</span>, <span class="st">&#39;vaccinated&#39;</span>: <span class="va">True</span>},</span>
 <span id="cb51-2"><a href></a>        <span class="st">&#39;walter&#39;</span>: {<span class="st">&#39;kind&#39;</span>: <span class="st">&#39;cockroach&#39;</span>, <span class="st">&#39;owner&#39;</span>: <span class="st">&#39;eric&#39;</span>, <span class="st">&#39;vaccinated&#39;</span>: <span class="va">False</span>},</span>
 <span id="cb51-3"><a href></a>        <span class="st">&#39;peso&#39;</span>: {<span class="st">&#39;kind&#39;</span>: <span class="st">&#39;dog&#39;</span>, <span class="st">&#39;owner&#39;</span>: <span class="st">&#39;chloe&#39;</span>, <span class="st">&#39;vaccinated&#39;</span>: <span class="va">True</span>}}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
+</div>
 </section>
-<section id="dictionaries-18" class="slide level2">
+<section id="dictionaries-19" class="slide level2">
 <h2>Dictionaries</h2>
 <h3 id="dictionaries-in-a-dictionary-1">Dictionaries in a dictionary</h3>
 <p>The way we can access information about the owners is the following:</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href></a><span class="co"># Let&#39;s show all the information for each pet.</span></span>
 <span id="cb52-2"><a href></a><span class="bu">print</span>(<span class="st">&quot;Here is what I know about Willie:&quot;</span>)</span>
 <span id="cb52-3"><a href></a><span class="bu">print</span>(<span class="st">&quot;kind: &quot;</span> <span class="op">+</span> pets[<span class="st">&#39;willie&#39;</span>][<span class="st">&#39;kind&#39;</span>])</span>
 <span id="cb52-4"><a href></a><span class="bu">print</span>(<span class="st">&quot;owner: &quot;</span> <span class="op">+</span> pets[<span class="st">&#39;willie&#39;</span>][<span class="st">&#39;owner&#39;</span>])</span>
 <span id="cb52-5"><a href></a><span class="bu">print</span>(<span class="st">&quot;vaccinated: &quot;</span> <span class="op">+</span> <span class="bu">str</span>(pets[<span class="st">&#39;willie&#39;</span>][<span class="st">&#39;vaccinated&#39;</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell">
+</div>
+<div class="cell" data-filename="Python">
 <div class="cell-output cell-output-stdout">
 <pre><code>Here is what I know about Willie:</code></pre>
 </div>
@@ -1480,16 +1631,25 @@ Value: Modified task</code></pre>
 </div>
 </div>
 </section>
-<section id="dictionaries-19" class="slide level2">
+<section id="dictionaries-20" class="slide level2">
 <h2>Dictionaries</h2>
 <h3 id="dictionaries-in-a-dictionary-2">Dictionaries in a dictionary</h3>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href></a>pets <span class="op">=</span> {<span class="st">&#39;willie&#39;</span>: {<span class="st">&#39;kind&#39;</span>: <span class="st">&#39;dog&#39;</span>, <span class="st">&#39;owner&#39;</span>: <span class="st">&#39;eric&#39;</span>, <span class="st">&#39;vaccinated&#39;</span>: <span class="va">True</span>},</span>
 <span id="cb57-2"><a href></a>        <span class="st">&#39;walter&#39;</span>: {<span class="st">&#39;kind&#39;</span>: <span class="st">&#39;cockroach&#39;</span>, <span class="st">&#39;owner&#39;</span>: <span class="st">&#39;eric&#39;</span>, <span class="st">&#39;vaccinated&#39;</span>: <span class="va">False</span>},</span>
 <span id="cb57-3"><a href></a>        <span class="st">&#39;peso&#39;</span>: {<span class="st">&#39;kind&#39;</span>: <span class="st">&#39;dog&#39;</span>, <span class="st">&#39;owner&#39;</span>: <span class="st">&#39;chloe&#39;</span>, <span class="st">&#39;vaccinated&#39;</span>: <span class="va">True</span>}}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
 <div class="fragment">
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href></a><span class="co"># Let&#39;s show all the information for each pet.</span></span>
 <span id="cb58-2"><a href></a><span class="bu">print</span>(<span class="st">&quot;Here is what I know about Willie:&quot;</span>)</span>
 <span id="cb58-3"><a href></a><span class="bu">print</span>(<span class="st">&quot;kind: &quot;</span> <span class="op">+</span> pets[<span class="st">&#39;willie&#39;</span>][<span class="st">&#39;kind&#39;</span>])</span>
@@ -1497,8 +1657,9 @@ Value: Modified task</code></pre>
 <span id="cb58-5"><a href></a><span class="bu">print</span>(<span class="st">&quot;vaccinated: &quot;</span> <span class="op">+</span> <span class="bu">str</span>(pets[<span class="st">&#39;willie&#39;</span>][<span class="st">&#39;vaccinated&#39;</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
+</div>
 <div class="fragment">
-<div class="cell">
+<div class="cell" data-filename="Python">
 <div class="cell-output cell-output-stdout">
 <pre><code>Here is what I know about Willie:</code></pre>
 </div>
@@ -1514,21 +1675,31 @@ Value: Modified task</code></pre>
 </div>
 </div>
 </section>
-<section id="dictionaries-20" class="slide level2 smaller">
+<section id="dictionaries-21" class="slide level2 smaller">
 <h2>Dictionaries</h2>
 <h3 id="dictionaries-in-a-dictionary-3">Dictionaries in a dictionary</h3>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href></a>pets <span class="op">=</span> {<span class="st">&#39;willie&#39;</span>: {<span class="st">&#39;kind&#39;</span>: <span class="st">&#39;dog&#39;</span>, <span class="st">&#39;owner&#39;</span>: <span class="st">&#39;eric&#39;</span>, <span class="st">&#39;vaccinated&#39;</span>: <span class="va">True</span>},</span>
 <span id="cb63-2"><a href></a>        <span class="st">&#39;walter&#39;</span>: {<span class="st">&#39;kind&#39;</span>: <span class="st">&#39;cockroach&#39;</span>, <span class="st">&#39;owner&#39;</span>: <span class="st">&#39;eric&#39;</span>, <span class="st">&#39;vaccinated&#39;</span>: <span class="va">False</span>},</span>
 <span id="cb63-3"><a href></a>        <span class="st">&#39;peso&#39;</span>: {<span class="st">&#39;kind&#39;</span>: <span class="st">&#39;dog&#39;</span>, <span class="st">&#39;owner&#39;</span>: <span class="st">&#39;chloe&#39;</span>, <span class="st">&#39;vaccinated&#39;</span>: <span class="va">True</span>}}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
 <p>Notice how we extract information from that dictionary</p>
 <div class="fragment">
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href></a>pets[<span class="st">&#39;willie&#39;</span>][<span class="st">&#39;kind&#39;</span>]</span>
 <span id="cb64-2"><a href></a>pets[<span class="st">&#39;walter&#39;</span>][<span class="st">&#39;kind&#39;</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell">
+</div>
+<div class="cell" data-filename="Python">
 <div class="cell-output cell-output-stdout">
 <pre><code>&#39;dog&#39;</code></pre>
 </div>
@@ -1540,10 +1711,15 @@ Value: Modified task</code></pre>
 <div class="fragment">
 <p>Or</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href></a>pets[<span class="st">&#39;willie&#39;</span>][<span class="st">&#39;kind&#39;</span>]</span>
 <span id="cb67-2"><a href></a>pets[<span class="st">&#39;willie&#39;</span>][<span class="st">&#39;owner&#39;</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell">
+</div>
+<div class="cell" data-filename="Python">
 <div class="cell-output cell-output-stdout">
 <pre><code>&#39;dog&#39;</code></pre>
 </div>
@@ -1556,12 +1732,16 @@ Value: Modified task</code></pre>
 <p>The code will produce an error if we extract elements from the dictionary that do not exist.</p>
 </div>
 </section>
-<section id="dictionaries-21" class="slide level2">
+<section id="dictionaries-22" class="slide level2">
 <h2>Dictionaries</h2>
 <h3 id="dictionaries-in-a-dictionary-4">Dictionaries in a dictionary</h3>
 <p>We can be more efficient in printing the values in the dictionary.</p>
 <p>We can print the values in the dictionary in the following way:</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a href></a>pets <span class="op">=</span> {<span class="st">&#39;willie&#39;</span>: {<span class="st">&#39;kind&#39;</span>: <span class="st">&#39;dog&#39;</span>, <span class="st">&#39;owner&#39;</span>: <span class="st">&#39;eric&#39;</span>, <span class="st">&#39;vaccinated&#39;</span>: <span class="va">True</span>},</span>
 <span id="cb70-2"><a href></a>        <span class="st">&#39;walter&#39;</span>: {<span class="st">&#39;kind&#39;</span>: <span class="st">&#39;cockroach&#39;</span>, <span class="st">&#39;owner&#39;</span>: <span class="st">&#39;eric&#39;</span>, <span class="st">&#39;vaccinated&#39;</span>: <span class="va">False</span>},</span>
 <span id="cb70-3"><a href></a>        <span class="st">&#39;peso&#39;</span>: {<span class="st">&#39;kind&#39;</span>: <span class="st">&#39;dog&#39;</span>, <span class="st">&#39;owner&#39;</span>: <span class="st">&#39;chloe&#39;</span>, <span class="st">&#39;vaccinated&#39;</span>: <span class="va">True</span>}}</span>
@@ -1573,11 +1753,16 @@ Value: Modified task</code></pre>
 <span id="cb70-9"><a href></a>    <span class="bu">print</span>(<span class="st">&quot;owner: &quot;</span> <span class="op">+</span> pet_information[<span class="st">&#39;owner&#39;</span>])</span>
 <span id="cb70-10"><a href></a>    <span class="bu">print</span>(<span class="st">&quot;vaccinated: &quot;</span> <span class="op">+</span> <span class="bu">str</span>(pet_information[<span class="st">&#39;vaccinated&#39;</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
 </section>
-<section id="dictionaries-22" class="slide level2">
+<section id="dictionaries-23" class="slide level2">
 <h2>Dictionaries</h2>
 <h3 id="dictionaries-in-a-dictionary-5">Dictionaries in a dictionary</h3>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb71"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb71-1"><a href></a>pets <span class="op">=</span> {<span class="st">&#39;willie&#39;</span>: {<span class="st">&#39;kind&#39;</span>: <span class="st">&#39;dog&#39;</span>, <span class="st">&#39;owner&#39;</span>: <span class="st">&#39;eric&#39;</span>, <span class="st">&#39;vaccinated&#39;</span>: <span class="va">True</span>},</span>
 <span id="cb71-2"><a href></a>        <span class="st">&#39;walter&#39;</span>: {<span class="st">&#39;kind&#39;</span>: <span class="st">&#39;cockroach&#39;</span>, <span class="st">&#39;owner&#39;</span>: <span class="st">&#39;eric&#39;</span>, <span class="st">&#39;vaccinated&#39;</span>: <span class="va">False</span>},</span>
 <span id="cb71-3"><a href></a>        <span class="st">&#39;peso&#39;</span>: {<span class="st">&#39;kind&#39;</span>: <span class="st">&#39;dog&#39;</span>, <span class="st">&#39;owner&#39;</span>: <span class="st">&#39;chloe&#39;</span>, <span class="st">&#39;vaccinated&#39;</span>: <span class="va">True</span>}}</span>
@@ -1588,37 +1773,7 @@ Value: Modified task</code></pre>
 <span id="cb71-8"><a href></a>    <span class="bu">print</span>(<span class="st">&quot;kind: &quot;</span> <span class="op">+</span> pet_information[<span class="st">&#39;kind&#39;</span>])</span>
 <span id="cb71-9"><a href></a>    <span class="bu">print</span>(<span class="st">&quot;owner: &quot;</span> <span class="op">+</span> pet_information[<span class="st">&#39;owner&#39;</span>])</span>
 <span id="cb71-10"><a href></a>    <span class="bu">print</span>(<span class="st">&quot;vaccinated: &quot;</span> <span class="op">+</span> <span class="bu">str</span>(pet_information[<span class="st">&#39;vaccinated&#39;</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Here is what I know about willie:
-kind: dog
-owner: eric
-vaccinated: True
-Here is what I know about walter:
-kind: cockroach
-owner: eric
-vaccinated: False
-Here is what I know about peso:
-kind: dog
-owner: chloe
-vaccinated: True</code></pre>
 </div>
-</div>
-</section>
-<section id="dictionaries-23" class="slide level2">
-<h2>Dictionaries</h2>
-<h3 id="dictionaries-in-a-dictionary-6">Dictionaries in a dictionary</h3>
-<p>Another way to print information from the dictionary is the following:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb73-1"><a href></a>pets <span class="op">=</span> {<span class="st">&#39;willie&#39;</span>: {<span class="st">&#39;kind&#39;</span>: <span class="st">&#39;dog&#39;</span>, <span class="st">&#39;owner&#39;</span>: <span class="st">&#39;eric&#39;</span>, <span class="st">&#39;vaccinated&#39;</span>: <span class="va">True</span>},</span>
-<span id="cb73-2"><a href></a>        <span class="st">&#39;walter&#39;</span>: {<span class="st">&#39;kind&#39;</span>: <span class="st">&#39;cockroach&#39;</span>, <span class="st">&#39;owner&#39;</span>: <span class="st">&#39;eric&#39;</span>, <span class="st">&#39;vaccinated&#39;</span>: <span class="va">False</span>},</span>
-<span id="cb73-3"><a href></a>        <span class="st">&#39;peso&#39;</span>: {<span class="st">&#39;kind&#39;</span>: <span class="st">&#39;dog&#39;</span>, <span class="st">&#39;owner&#39;</span>: <span class="st">&#39;chloe&#39;</span>, <span class="st">&#39;vaccinated&#39;</span>: <span class="va">True</span>}}</span>
-<span id="cb73-4"><a href></a>        </span>
-<span id="cb73-5"><a href></a><span class="co"># Let&#39;s show all the information for each pet.</span></span>
-<span id="cb73-6"><a href></a><span class="cf">for</span> pet_name, pet_information <span class="kw">in</span> pets.items():</span>
-<span id="cb73-7"><a href></a>    <span class="bu">print</span>(<span class="st">&quot;Here is what I know about </span><span class="sc">%s</span><span class="st">:&quot;</span> <span class="op">%</span> pet_name)</span>
-<span id="cb73-8"><a href></a>    <span class="co"># Each animal&#39;s dictionary is in &#39;information&#39;</span></span>
-<span id="cb73-9"><a href></a>    <span class="cf">for</span> key <span class="kw">in</span> pet_information:</span>
-<span id="cb73-10"><a href></a>        <span class="bu">print</span>(key <span class="op">+</span> <span class="st">&quot;: &quot;</span> <span class="op">+</span> <span class="bu">str</span>(pet_information[key]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Here is what I know about willie:
 kind: dog
@@ -1637,8 +1792,48 @@ vaccinated: True</code></pre>
 </section>
 <section id="dictionaries-24" class="slide level2">
 <h2>Dictionaries</h2>
+<h3 id="dictionaries-in-a-dictionary-6">Dictionaries in a dictionary</h3>
+<p>Another way to print information from the dictionary is the following:</p>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb73-1"><a href></a>pets <span class="op">=</span> {<span class="st">&#39;willie&#39;</span>: {<span class="st">&#39;kind&#39;</span>: <span class="st">&#39;dog&#39;</span>, <span class="st">&#39;owner&#39;</span>: <span class="st">&#39;eric&#39;</span>, <span class="st">&#39;vaccinated&#39;</span>: <span class="va">True</span>},</span>
+<span id="cb73-2"><a href></a>        <span class="st">&#39;walter&#39;</span>: {<span class="st">&#39;kind&#39;</span>: <span class="st">&#39;cockroach&#39;</span>, <span class="st">&#39;owner&#39;</span>: <span class="st">&#39;eric&#39;</span>, <span class="st">&#39;vaccinated&#39;</span>: <span class="va">False</span>},</span>
+<span id="cb73-3"><a href></a>        <span class="st">&#39;peso&#39;</span>: {<span class="st">&#39;kind&#39;</span>: <span class="st">&#39;dog&#39;</span>, <span class="st">&#39;owner&#39;</span>: <span class="st">&#39;chloe&#39;</span>, <span class="st">&#39;vaccinated&#39;</span>: <span class="va">True</span>}}</span>
+<span id="cb73-4"><a href></a>        </span>
+<span id="cb73-5"><a href></a><span class="co"># Let&#39;s show all the information for each pet.</span></span>
+<span id="cb73-6"><a href></a><span class="cf">for</span> pet_name, pet_information <span class="kw">in</span> pets.items():</span>
+<span id="cb73-7"><a href></a>    <span class="bu">print</span>(<span class="st">&quot;Here is what I know about </span><span class="sc">%s</span><span class="st">:&quot;</span> <span class="op">%</span> pet_name)</span>
+<span id="cb73-8"><a href></a>    <span class="co"># Each animal&#39;s dictionary is in &#39;information&#39;</span></span>
+<span id="cb73-9"><a href></a>    <span class="cf">for</span> key <span class="kw">in</span> pet_information:</span>
+<span id="cb73-10"><a href></a>        <span class="bu">print</span>(key <span class="op">+</span> <span class="st">&quot;: &quot;</span> <span class="op">+</span> <span class="bu">str</span>(pet_information[key]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Here is what I know about willie:
+kind: dog
+owner: eric
+vaccinated: True
+Here is what I know about walter:
+kind: cockroach
+owner: eric
+vaccinated: False
+Here is what I know about peso:
+kind: dog
+owner: chloe
+vaccinated: True</code></pre>
+</div>
+</div>
+</section>
+<section id="dictionaries-25" class="slide level2">
+<h2>Dictionaries</h2>
 <h3 id="dictionaries-in-a-dictionary-7">Dictionaries in a dictionary</h3>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb75"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb75-1"><a href></a>pets <span class="op">=</span> {<span class="st">&#39;willie&#39;</span>: {<span class="st">&#39;kind&#39;</span>: <span class="st">&#39;dog&#39;</span>, <span class="st">&#39;owner&#39;</span>: <span class="st">&#39;eric&#39;</span>, <span class="st">&#39;vaccinated&#39;</span>: <span class="va">True</span>},</span>
 <span id="cb75-2"><a href></a>        <span class="st">&#39;walter&#39;</span>: {<span class="st">&#39;kind&#39;</span>: <span class="st">&#39;cockroach&#39;</span>, <span class="st">&#39;owner&#39;</span>: <span class="st">&#39;eric&#39;</span>, <span class="st">&#39;vaccinated&#39;</span>: <span class="va">False</span>},</span>
 <span id="cb75-3"><a href></a>        <span class="st">&#39;peso&#39;</span>: {<span class="st">&#39;kind&#39;</span>: <span class="st">&#39;dog&#39;</span>, <span class="st">&#39;owner&#39;</span>: <span class="st">&#39;chloe&#39;</span>, <span class="st">&#39;vaccinated&#39;</span>: <span class="va">True</span>}}</span>
@@ -1649,6 +1844,7 @@ vaccinated: True</code></pre>
 <span id="cb75-8"><a href></a>    <span class="co"># Each animal&#39;s dictionary is in &#39;information&#39;</span></span>
 <span id="cb75-9"><a href></a>    <span class="cf">for</span> key <span class="kw">in</span> pet_information:</span>
 <span id="cb75-10"><a href></a>        <span class="bu">print</span>(key <span class="op">+</span> <span class="st">&quot;: &quot;</span> <span class="op">+</span> <span class="bu">str</span>(pet_information[key]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <div class="fragment">
 <ul>
@@ -1661,10 +1857,14 @@ vaccinated: True</code></pre>
 </ul>
 </div>
 </section>
-<section id="dictionaries-25" class="slide level2">
+<section id="dictionaries-26" class="slide level2">
 <h2>Dictionaries</h2>
 <h3 id="dictionaries-in-a-dictionary-8">Dictionaries in a dictionary</h3>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb76"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb76-1"><a href></a>pets <span class="op">=</span> {<span class="st">&#39;willie&#39;</span>: {<span class="st">&#39;kind&#39;</span>: <span class="st">&#39;dog&#39;</span>, <span class="st">&#39;owner&#39;</span>: <span class="st">&#39;eric&#39;</span>, <span class="st">&#39;vaccinated&#39;</span>: <span class="va">True</span>},</span>
 <span id="cb76-2"><a href></a>        <span class="st">&#39;walter&#39;</span>: {<span class="st">&#39;kind&#39;</span>: <span class="st">&#39;cockroach&#39;</span>, <span class="st">&#39;owner&#39;</span>: <span class="st">&#39;eric&#39;</span>, <span class="st">&#39;vaccinated&#39;</span>: <span class="va">False</span>},</span>
 <span id="cb76-3"><a href></a>        <span class="st">&#39;peso&#39;</span>: {<span class="st">&#39;kind&#39;</span>: <span class="st">&#39;dog&#39;</span>, <span class="st">&#39;owner&#39;</span>: <span class="st">&#39;chloe&#39;</span>, <span class="st">&#39;vaccinated&#39;</span>: <span class="va">True</span>}}</span>
@@ -1675,6 +1875,7 @@ vaccinated: True</code></pre>
 <span id="cb76-8"><a href></a>    <span class="co"># Each animal&#39;s dictionary is in &#39;information&#39;</span></span>
 <span id="cb76-9"><a href></a>    <span class="cf">for</span> key <span class="kw">in</span> pet_information:</span>
 <span id="cb76-10"><a href></a>        <span class="bu">print</span>(key <span class="op">+</span> <span class="st">&quot;: &quot;</span> <span class="op">+</span> <span class="bu">str</span>(pet_information[key]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <div class="fragment">
 <ul>
@@ -1687,18 +1888,28 @@ vaccinated: True</code></pre>
 </ul>
 </div>
 </section>
-<section id="dictionaries-26" class="slide level2">
+<section id="dictionaries-27" class="slide level2">
 <h2>Dictionaries</h2>
 <h3 id="creating-dictionaries-through-a-loop">Creating dictionaries through a loop</h3>
 <p>We can create dictionaries using a loop:</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb77"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb77-1"><a href></a>names_dogs <span class="op">=</span> [<span class="st">&quot;Bowie&quot;</span>, <span class="st">&quot;Simone&quot;</span>, <span class="st">&quot;Marbs&quot;</span>]</span>
 <span id="cb77-2"><a href></a>breeds <span class="op">=</span> [<span class="st">&quot;Mixed&quot;</span>, <span class="st">&quot;Labrador&quot;</span>, <span class="st">&quot;Boston Terrier&quot;</span>]</span>
 <span id="cb77-3"><a href></a>owners <span class="op">=</span> [<span class="st">&quot;James&quot;</span>, <span class="st">&quot;James&quot;</span>, <span class="st">&quot;Andrea&quot;</span>]</span>
 <span id="cb77-4"><a href></a>vaccined_list <span class="op">=</span> [<span class="va">True</span>, <span class="va">False</span>, <span class="va">True</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
+<div class="fragment">
 <p>We can create a dictionary by doing the following:</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb78"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb78-1"><a href></a>dict_dogs <span class="op">=</span> {}</span>
 <span id="cb78-2"><a href></a><span class="cf">for</span> name, breed, owner, vaccined <span class="kw">in</span> <span class="bu">zip</span>(names_dogs, breeds, owners, vaccined_list):</span>
 <span id="cb78-3"><a href></a>    dict_dogs[name] <span class="op">=</span> {}</span>
@@ -1706,47 +1917,64 @@ vaccinated: True</code></pre>
 <span id="cb78-5"><a href></a>    dict_dogs[name][<span class="st">&quot;owner&quot;</span>] <span class="op">=</span> owner</span>
 <span id="cb78-6"><a href></a>    dict_dogs[name][<span class="st">&quot;vaccined&quot;</span>] <span class="op">=</span> vaccined</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
+</div>
 </section>
-<section id="dictionaries-27" class="slide level2">
+<section id="dictionaries-28" class="slide level2">
 <h2>Dictionaries</h2>
 <h3 id="exercise-1-1">Exercise 1</h3>
 <p>Simone just changed her vaccination status, so she got the vaccine.</p>
 <p>How would you change that within the dictionary?</p>
 </section>
-<section id="dictionaries-28" class="slide level2">
+<section id="dictionaries-29" class="slide level2">
 <h2>Dictionaries</h2>
 <h3 id="exercise-1-solution">Exercise 1 Solution</h3>
 <p>Simone just changed her vaccination status, so she got the vaccine.</p>
 <p>How would you change that within the dictionary?</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb79"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb79-1"><a href></a><span class="co">#How would you change the value if Simone got the vaccine?</span></span>
 <span id="cb79-2"><a href></a>dict_dogs[<span class="st">&#39;Simone&#39;</span>][<span class="st">&quot;vaccined&quot;</span>]<span class="op">=</span><span class="va">True</span></span>
 <span id="cb79-3"><a href></a>dict_dogs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
 </section>
-<section id="dictionaries-29" class="slide level2">
+<section id="dictionaries-30" class="slide level2">
 <h2>Dictionaries</h2>
 <h3 id="exercise-2">Exercise 2</h3>
 <p>Given that the dogs are 1, 5, and 8, how would you create a cumulative age?</p>
 </section>
-<section id="dictionaries-30" class="slide level2">
+<section id="dictionaries-31" class="slide level2">
 <h2>Dictionaries</h2>
 <h3 id="exercise-2-solution">Exercise 2 Solution</h3>
 <p>The first thing to notice is that we need to add the list of ages to the dictionary.</p>
 <p>We can do this in the following way:</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb80"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb80-1"><a href></a>ages <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">8</span>]</span>
 <span id="cb80-2"><a href></a><span class="cf">for</span> name, age <span class="kw">in</span> <span class="bu">zip</span>(names_dogs, ages):</span>
 <span id="cb80-3"><a href></a>    dict_dogs[name][<span class="st">&quot;ages&quot;</span>] <span class="op">=</span> age</span>
 <span id="cb80-4"><a href></a>dict_dogs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
 </section>
-<section id="dictionaries-31" class="slide level2">
+<section id="dictionaries-32" class="slide level2">
 <h2>Dictionaries</h2>
 <h3 id="exercise-2-solution-1">Exercise 2 Solution</h3>
 <p>The next step is to add these ages.</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb81"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb81-1"><a href></a><span class="bu">sum</span>(dog[<span class="st">&#39;ages&#39;</span>] <span class="cf">for</span> dog <span class="kw">in</span> dict_dogs.values())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <p>Note:</p>
 <ul>
@@ -1755,7 +1983,7 @@ vaccinated: True</code></pre>
 <li>each <code>dog</code> is a dictionary corresponding to an individual dog’s details.</li>
 </ul>
 </section>
-<section id="dictionaries-32" class="slide level2">
+<section id="dictionaries-33" class="slide level2">
 <h2>Dictionaries</h2>
 <h3 id="dictionaries-in-a-dictionary-9">Dictionaries in a dictionary</h3>
 <p>Dictionaries within dictionaries can be helpful, but it can get unwieldy quickly.</p>
@@ -1774,33 +2002,67 @@ vaccinated: True</code></pre>
 <div class="fragment">
 <p>Examples of sets:</p>
 <div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
 <div class="sourceCode cell-code" id="cb82"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb82-1"><a href></a>cities <span class="op">=</span>  {<span class="st">&#39;Madrid&#39;</span>, <span class="st">&#39;Barcelona&#39;</span>, <span class="st">&#39;Atlanta&#39;</span>}</span>
 <span id="cb82-2"><a href></a>cities</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-output cell-output-stdout">
-<pre><code>{&#39;Madrid&#39;, &#39;Atlanta&#39;, &#39;Barcelona&#39;}</code></pre>
-</div>
-</div>
-</div>
-<div class="fragment">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb84-1"><a href></a>cities <span class="op">=</span> <span class="bu">set</span>((<span class="st">&quot;Paris&quot;</span>, <span class="st">&quot;Lyon&quot;</span>, <span class="st">&quot;London&quot;</span>, <span class="st">&quot;Berlin&quot;</span>))</span>
-<span id="cb84-2"><a href></a>cities</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>{&#39;Berlin&#39;, &#39;London&#39;, &#39;Lyon&#39;, &#39;Paris&#39;}</code></pre>
+<pre><code>{&#39;Atlanta&#39;, &#39;Barcelona&#39;, &#39;Madrid&#39;}</code></pre>
 </div>
 </div>
 </div>
 </section>
 <section id="sets-1" class="slide level2">
 <h2>Sets</h2>
+<h3 id="introduction-3">Introduction</h3>
+<p>Examples of sets:</p>
+<div class="fragment">
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb84-1"><a href></a>cities <span class="op">=</span> <span class="bu">set</span>([<span class="st">&quot;Paris&quot;</span>, <span class="st">&quot;Lyon&quot;</span>, <span class="st">&quot;London&quot;</span>, <span class="st">&quot;Berlin&quot;</span>])</span>
+<span id="cb84-2"><a href></a>cities</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{&#39;Paris&#39;, &#39;Berlin&#39;, &#39;London&#39;, &#39;Lyon&#39;}</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb86-1"><a href></a>cities <span class="op">=</span> <span class="bu">set</span>((<span class="st">&quot;Paris&quot;</span>, <span class="st">&quot;Lyon&quot;</span>, <span class="st">&quot;London&quot;</span>, <span class="st">&quot;Berlin&quot;</span>))</span>
+<span id="cb86-2"><a href></a>cities</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{&#39;Paris&#39;, &#39;Berlin&#39;, &#39;London&#39;, &#39;Lyon&#39;}</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="sets-2" class="slide level2">
+<h2>Sets</h2>
 <h3 id="sets-example">Sets Example</h3>
 <p>A <code>set()</code> can take any iterable (e.g., list, tuple, string) to form a set.</p>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb86-1"><a href></a>cities <span class="op">=</span> <span class="bu">set</span>((<span class="st">&quot;Paris&quot;</span>, <span class="st">&quot;Lyon&quot;</span>, <span class="st">&quot;London&quot;</span>, <span class="st">&quot;Berlin&quot;</span>))</span>
-<span id="cb86-2"><a href></a>cities</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb88-1"><a href></a>cities <span class="op">=</span> <span class="bu">set</span>((<span class="st">&quot;Paris&quot;</span>, <span class="st">&quot;Lyon&quot;</span>, <span class="st">&quot;London&quot;</span>, <span class="st">&quot;Berlin&quot;</span>))</span>
+<span id="cb88-2"><a href></a>cities</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-output cell-output-stdout">
-<pre><code>{&#39;Berlin&#39;, &#39;London&#39;, &#39;Lyon&#39;, &#39;Paris&#39;}</code></pre>
+<pre><code>{&#39;Paris&#39;, &#39;Berlin&#39;, &#39;London&#39;, &#39;Lyon&#39;}</code></pre>
 </div>
 </div>
 </div>
@@ -1820,36 +2082,51 @@ vaccinated: True</code></pre>
 </ul>
 </div>
 </section>
-<section id="sets-2" class="slide level2">
+<section id="sets-3" class="slide level2">
 <h2>Sets</h2>
 <h3 id="sets-example-1">Sets Example</h3>
 <p>Therefore, the set can be written either as:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb88-1"><a href></a>cities <span class="op">=</span> <span class="bu">set</span>((<span class="st">&quot;Paris&quot;</span>, <span class="st">&quot;Lyon&quot;</span>, <span class="st">&quot;London&quot;</span>,<span class="st">&quot;Berlin&quot;</span>))</span>
-<span id="cb88-2"><a href></a>cities</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb90-1"><a href></a>cities <span class="op">=</span> <span class="bu">set</span>((<span class="st">&quot;Paris&quot;</span>, <span class="st">&quot;Lyon&quot;</span>, <span class="st">&quot;London&quot;</span>,<span class="st">&quot;Berlin&quot;</span>))</span>
+<span id="cb90-2"><a href></a>cities</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-output cell-output-stdout">
-<pre><code>{&#39;Berlin&#39;, &#39;London&#39;, &#39;Lyon&#39;, &#39;Paris&#39;}</code></pre>
+<pre><code>{&#39;Paris&#39;, &#39;Berlin&#39;, &#39;London&#39;, &#39;Lyon&#39;}</code></pre>
 </div>
 </div>
 <div class="fragment">
 <p>or</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb90-1"><a href></a>cities <span class="op">=</span> {<span class="st">&quot;Paris&quot;</span>, <span class="st">&quot;Lyon&quot;</span>, <span class="st">&quot;London&quot;</span>,<span class="st">&quot;Berlin&quot;</span>}</span>
-<span id="cb90-2"><a href></a>cities</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb92"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb92-1"><a href></a>cities <span class="op">=</span> {<span class="st">&quot;Paris&quot;</span>, <span class="st">&quot;Lyon&quot;</span>, <span class="st">&quot;London&quot;</span>,<span class="st">&quot;Berlin&quot;</span>}</span>
+<span id="cb92-2"><a href></a>cities</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-output cell-output-stdout">
-<pre><code>{&#39;Berlin&#39;, &#39;London&#39;, &#39;Lyon&#39;, &#39;Paris&#39;}</code></pre>
+<pre><code>{&#39;Paris&#39;, &#39;Berlin&#39;, &#39;London&#39;, &#39;Lyon&#39;}</code></pre>
 </div>
 </div>
 </div>
 </section>
-<section id="sets-3" class="slide level2">
+<section id="sets-4" class="slide level2">
 <h2>Sets</h2>
 <h3 id="sets-example-2">Sets Example</h3>
 <p>Other examples of sets are:</p>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb92"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb92-1"><a href></a>cities <span class="op">=</span> <span class="bu">set</span>(((<span class="st">&quot;Python&quot;</span>,<span class="st">&quot;Perl&quot;</span>), (<span class="st">&quot;Paris&quot;</span>, <span class="st">&quot;Berlin&quot;</span>, <span class="st">&quot;London&quot;</span>)))</span>
-<span id="cb92-2"><a href></a>cities</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb94"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb94-1"><a href></a>cities <span class="op">=</span> <span class="bu">set</span>(((<span class="st">&quot;Python&quot;</span>,<span class="st">&quot;Perl&quot;</span>), (<span class="st">&quot;Paris&quot;</span>, <span class="st">&quot;Berlin&quot;</span>, <span class="st">&quot;London&quot;</span>)))</span>
+<span id="cb94-2"><a href></a>cities</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>{(&#39;Paris&#39;, &#39;Berlin&#39;, &#39;London&#39;), (&#39;Python&#39;, &#39;Perl&#39;)}</code></pre>
 </div>
@@ -1860,39 +2137,59 @@ vaccinated: True</code></pre>
 </div>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb94"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb94-1"><a href></a>cities <span class="op">=</span> <span class="bu">set</span>(([<span class="st">&quot;Python&quot;</span>,<span class="st">&quot;Perl&quot;</span>], [<span class="st">&quot;Paris&quot;</span>, <span class="st">&quot;Berlin&quot;</span>, <span class="st">&quot;London&quot;</span>]))</span>
-<span id="cb94-2"><a href></a>cities</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb96"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb96-1"><a href></a>cities <span class="op">=</span> <span class="bu">set</span>(([<span class="st">&quot;Python&quot;</span>,<span class="st">&quot;Perl&quot;</span>], [<span class="st">&quot;Paris&quot;</span>, <span class="st">&quot;Berlin&quot;</span>, <span class="st">&quot;London&quot;</span>]))</span>
+<span id="cb96-2"><a href></a>cities</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </div>
 <div class="fragment">
 <p>This is because lists are mutable objects. To get that to work, we would do:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb95"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb95-1"><a href></a>cities <span class="op">=</span> <span class="bu">set</span>((<span class="bu">tuple</span>([<span class="st">&quot;Python&quot;</span>, <span class="st">&quot;Perl&quot;</span>]), <span class="bu">tuple</span>([<span class="st">&quot;Paris&quot;</span>, <span class="st">&quot;Berlin&quot;</span>, <span class="st">&quot;London&quot;</span>])))</span>
-<span id="cb95-2"><a href></a>cities</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb97"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb97-1"><a href></a>cities <span class="op">=</span> <span class="bu">set</span>((<span class="bu">tuple</span>([<span class="st">&quot;Python&quot;</span>, <span class="st">&quot;Perl&quot;</span>]), <span class="bu">tuple</span>([<span class="st">&quot;Paris&quot;</span>, <span class="st">&quot;Berlin&quot;</span>, <span class="st">&quot;London&quot;</span>])))</span>
+<span id="cb97-2"><a href></a>cities</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>{(&#39;Paris&#39;, &#39;Berlin&#39;, &#39;London&#39;), (&#39;Python&#39;, &#39;Perl&#39;)}</code></pre>
 </div>
 </div>
 </div>
 </section>
-<section id="sets-4" class="slide level2">
+<section id="sets-5" class="slide level2">
 <h2>Sets</h2>
 <h3 id="uses">Uses</h3>
 <p>Sets are handy when we want to eliminate duplicates.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb97"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb97-1"><a href></a>fruits <span class="op">=</span> {<span class="st">&#39;apple&#39;</span>, <span class="st">&#39;orange&#39;</span>, <span class="st">&#39;apple&#39;</span>, <span class="st">&#39;pear&#39;</span>}</span>
-<span id="cb97-2"><a href></a><span class="bu">set</span>(fruits) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb99"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb99-1"><a href></a>fruits <span class="op">=</span> {<span class="st">&#39;apple&#39;</span>, <span class="st">&#39;orange&#39;</span>, <span class="st">&#39;apple&#39;</span>, <span class="st">&#39;pear&#39;</span>}</span>
+<span id="cb99-2"><a href></a><span class="bu">set</span>(fruits) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-output cell-output-stdout">
-<pre><code>{&#39;pear&#39;, &#39;apple&#39;, &#39;orange&#39;}</code></pre>
+<pre><code>{&#39;orange&#39;, &#39;pear&#39;, &#39;apple&#39;}</code></pre>
 </div>
 </div>
 </section>
-<section id="sets-5" class="slide level2">
+<section id="sets-6" class="slide level2">
 <h2>Sets</h2>
 <h3 id="operations-with-sets">Operations with Sets</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb99"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb99-1"><a href></a>a <span class="op">=</span> <span class="bu">set</span>(<span class="st">&#39;abcc&#39;</span>)</span>
-<span id="cb99-2"><a href></a>b <span class="op">=</span> <span class="bu">set</span>(<span class="st">&#39;cde&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb101"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb101-1"><a href></a>a <span class="op">=</span> <span class="bu">set</span>(<span class="st">&#39;abcc&#39;</span>)</span>
+<span id="cb101-2"><a href></a>b <span class="op">=</span> <span class="bu">set</span>(<span class="st">&#39;cde&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <div class="fragment">
 <ul>
@@ -1901,9 +2198,14 @@ vaccinated: True</code></pre>
 </div>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb100-1"><a href></a>a <span class="op">-</span> b</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb102"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb102-1"><a href></a>a <span class="op">-</span> b</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-output cell-output-stdout">
-<pre><code>{&#39;b&#39;, &#39;a&#39;}</code></pre>
+<pre><code>{&#39;a&#39;, &#39;b&#39;}</code></pre>
 </div>
 </div>
 </div>
@@ -1912,9 +2214,14 @@ vaccinated: True</code></pre>
 <li>Union: letters in a or b</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb102"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb102-1"><a href></a>a <span class="op">|</span> b</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb104"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb104-1"><a href></a>a <span class="op">|</span> b</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-output cell-output-stdout">
-<pre><code>{&#39;b&#39;, &#39;e&#39;, &#39;c&#39;, &#39;a&#39;, &#39;d&#39;}</code></pre>
+<pre><code>{&#39;a&#39;, &#39;c&#39;, &#39;d&#39;, &#39;b&#39;, &#39;e&#39;}</code></pre>
 </div>
 </div>
 </div>
@@ -1923,53 +2230,73 @@ vaccinated: True</code></pre>
 <li>Intersection: letters in a and in b</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb104"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb104-1"><a href></a>a <span class="op">&amp;</span> b </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb106"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb106-1"><a href></a>a <span class="op">&amp;</span> b </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>{&#39;c&#39;}</code></pre>
 </div>
 </div>
 </div>
 </section>
-<section id="sets-6" class="slide level2">
+<section id="sets-7" class="slide level2">
 <h2>Sets</h2>
 <h3 id="union">Union</h3>
 <p>The union of two sets contains all the elements from both sets without duplicates.</p>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb106"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb106-1"><a href></a>set_a <span class="op">=</span> {<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;cherry&quot;</span>}</span>
-<span id="cb106-2"><a href></a>set_b <span class="op">=</span> {<span class="st">&quot;cherry&quot;</span>, <span class="st">&quot;date&quot;</span>, <span class="st">&quot;elderberry&quot;</span>}</span>
-<span id="cb106-3"><a href></a></span>
-<span id="cb106-4"><a href></a><span class="co"># Union of set_a and set_b</span></span>
-<span id="cb106-5"><a href></a>set_union <span class="op">=</span> set_a.union(set_b)</span>
-<span id="cb106-6"><a href></a>set_union</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb108"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb108-1"><a href></a>set_a <span class="op">=</span> {<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;cherry&quot;</span>}</span>
+<span id="cb108-2"><a href></a>set_b <span class="op">=</span> {<span class="st">&quot;cherry&quot;</span>, <span class="st">&quot;date&quot;</span>, <span class="st">&quot;elderberry&quot;</span>}</span>
+<span id="cb108-3"><a href></a></span>
+<span id="cb108-4"><a href></a><span class="co"># Union of set_a and set_b</span></span>
+<span id="cb108-5"><a href></a>set_union <span class="op">=</span> set_a.union(set_b)</span>
+<span id="cb108-6"><a href></a>set_union</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-output cell-output-stdout">
-<pre><code>{&#39;banana&#39;, &#39;apple&#39;, &#39;cherry&#39;, &#39;date&#39;, &#39;elderberry&#39;}</code></pre>
+<pre><code>{&#39;banana&#39;, &#39;elderberry&#39;, &#39;date&#39;, &#39;apple&#39;, &#39;cherry&#39;}</code></pre>
 </div>
 </div>
 </div>
 <div class="fragment">
 <p>You can also use the <code>|</code> operator for union:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb108"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb108-1"><a href></a>set_union_operator <span class="op">=</span> set_a <span class="op">|</span> set_b</span>
-<span id="cb108-2"><a href></a>set_union_operator</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb110"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb110-1"><a href></a>set_union_operator <span class="op">=</span> set_a <span class="op">|</span> set_b</span>
+<span id="cb110-2"><a href></a>set_union_operator</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-output cell-output-stdout">
-<pre><code>{&#39;banana&#39;, &#39;apple&#39;, &#39;cherry&#39;, &#39;date&#39;, &#39;elderberry&#39;}</code></pre>
+<pre><code>{&#39;banana&#39;, &#39;elderberry&#39;, &#39;date&#39;, &#39;apple&#39;, &#39;cherry&#39;}</code></pre>
 </div>
 </div>
 </div>
 </section>
-<section id="sets-7" class="slide level2">
+<section id="sets-8" class="slide level2">
 <h2>Sets</h2>
 <h3 id="intersection">Intersection</h3>
 <p>The intersection of two sets contains only the elements present in both sets.</p>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb110"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb110-1"><a href></a>set_a <span class="op">=</span> {<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;cherry&quot;</span>}</span>
-<span id="cb110-2"><a href></a>set_b <span class="op">=</span> {<span class="st">&quot;cherry&quot;</span>, <span class="st">&quot;date&quot;</span>, <span class="st">&quot;elderberry&quot;</span>}</span>
-<span id="cb110-3"><a href></a></span>
-<span id="cb110-4"><a href></a><span class="co"># Intersection of set_a and set_b</span></span>
-<span id="cb110-5"><a href></a>set_intersection <span class="op">=</span> set_a.intersection(set_b)</span>
-<span id="cb110-6"><a href></a>set_intersection</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb112"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb112-1"><a href></a>set_a <span class="op">=</span> {<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;cherry&quot;</span>}</span>
+<span id="cb112-2"><a href></a>set_b <span class="op">=</span> {<span class="st">&quot;cherry&quot;</span>, <span class="st">&quot;date&quot;</span>, <span class="st">&quot;elderberry&quot;</span>}</span>
+<span id="cb112-3"><a href></a></span>
+<span id="cb112-4"><a href></a><span class="co"># Intersection of set_a and set_b</span></span>
+<span id="cb112-5"><a href></a>set_intersection <span class="op">=</span> set_a.intersection(set_b)</span>
+<span id="cb112-6"><a href></a>set_intersection</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>{&#39;cherry&#39;}</code></pre>
 </div>
@@ -1978,26 +2305,36 @@ vaccinated: True</code></pre>
 <div class="fragment">
 <p>Alternatively, you can use the <code>&amp;</code> operator:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb112"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb112-1"><a href></a>set_intersection_operator <span class="op">=</span> set_a <span class="op">&amp;</span> set_b</span>
-<span id="cb112-2"><a href></a>set_intersection_operator</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb114"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb114-1"><a href></a>set_intersection_operator <span class="op">=</span> set_a <span class="op">&amp;</span> set_b</span>
+<span id="cb114-2"><a href></a>set_intersection_operator</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>{&#39;cherry&#39;}</code></pre>
 </div>
 </div>
 </div>
 </section>
-<section id="sets-8" class="slide level2">
+<section id="sets-9" class="slide level2">
 <h2>Sets</h2>
 <h3 id="difference">Difference</h3>
 <p>The difference between the two sets contains elements in the first set but not in the second.</p>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb114"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb114-1"><a href></a>set_a <span class="op">=</span> {<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;cherry&quot;</span>}</span>
-<span id="cb114-2"><a href></a>set_b <span class="op">=</span> {<span class="st">&quot;cherry&quot;</span>, <span class="st">&quot;date&quot;</span>, <span class="st">&quot;elderberry&quot;</span>}</span>
-<span id="cb114-3"><a href></a></span>
-<span id="cb114-4"><a href></a><span class="co"># Difference of set_a and set_b</span></span>
-<span id="cb114-5"><a href></a>set_difference <span class="op">=</span> set_a.difference(set_b)</span>
-<span id="cb114-6"><a href></a>set_difference</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb116"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb116-1"><a href></a>set_a <span class="op">=</span> {<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;cherry&quot;</span>}</span>
+<span id="cb116-2"><a href></a>set_b <span class="op">=</span> {<span class="st">&quot;cherry&quot;</span>, <span class="st">&quot;date&quot;</span>, <span class="st">&quot;elderberry&quot;</span>}</span>
+<span id="cb116-3"><a href></a></span>
+<span id="cb116-4"><a href></a><span class="co"># Difference of set_a and set_b</span></span>
+<span id="cb116-5"><a href></a>set_difference <span class="op">=</span> set_a.difference(set_b)</span>
+<span id="cb116-6"><a href></a>set_difference</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>{&#39;apple&#39;, &#39;banana&#39;}</code></pre>
 </div>
@@ -2005,28 +2342,38 @@ vaccinated: True</code></pre>
 </div>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb116"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb116-1"><a href></a>set_difference_operator <span class="op">=</span> set_a <span class="op">-</span> set_b</span>
-<span id="cb116-2"><a href></a>set_difference_operator</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb118"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb118-1"><a href></a>set_difference_operator <span class="op">=</span> set_a <span class="op">-</span> set_b</span>
+<span id="cb118-2"><a href></a>set_difference_operator</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>{&#39;apple&#39;, &#39;banana&#39;}</code></pre>
 </div>
 </div>
 </div>
 </section>
-<section id="sets-9" class="slide level2">
+<section id="sets-10" class="slide level2">
 <h2>Sets</h2>
 <h3 id="symmetric-difference">Symmetric Difference</h3>
 <p>The symmetric difference contains elements that are in either of the sets but not in both.</p>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb118"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb118-1"><a href></a>set_a <span class="op">=</span> {<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;cherry&quot;</span>}</span>
-<span id="cb118-2"><a href></a>set_b <span class="op">=</span> {<span class="st">&quot;cherry&quot;</span>, <span class="st">&quot;date&quot;</span>, <span class="st">&quot;elderberry&quot;</span>}</span>
-<span id="cb118-3"><a href></a></span>
-<span id="cb118-4"><a href></a><span class="co"># Symmetric difference of set_a and set_b</span></span>
-<span id="cb118-5"><a href></a>set_symmetric_difference <span class="op">=</span> set_a.symmetric_difference(set_b)</span>
-<span id="cb118-6"><a href></a>set_symmetric_difference</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb120"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb120-1"><a href></a>set_a <span class="op">=</span> {<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;cherry&quot;</span>}</span>
+<span id="cb120-2"><a href></a>set_b <span class="op">=</span> {<span class="st">&quot;cherry&quot;</span>, <span class="st">&quot;date&quot;</span>, <span class="st">&quot;elderberry&quot;</span>}</span>
+<span id="cb120-3"><a href></a></span>
+<span id="cb120-4"><a href></a><span class="co"># Symmetric difference of set_a and set_b</span></span>
+<span id="cb120-5"><a href></a>set_symmetric_difference <span class="op">=</span> set_a.symmetric_difference(set_b)</span>
+<span id="cb120-6"><a href></a>set_symmetric_difference</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-output cell-output-stdout">
-<pre><code>{&#39;banana&#39;, &#39;date&#39;, &#39;apple&#39;, &#39;elderberry&#39;}</code></pre>
+<pre><code>{&#39;elderberry&#39;, &#39;apple&#39;, &#39;banana&#39;, &#39;date&#39;}</code></pre>
 </div>
 </div>
 </div>
