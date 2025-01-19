@@ -24,7 +24,7 @@ My teaching philosophy focuses on developing critical thinking skills, and acqui
 | [Computational Methods: GIS in R](/files/teaching/big_data/big_data_syllabus.html){:target="_blank"} | John Cabot, Spring 2024, Undergraduate |
 | [Statistics](/files/teaching/stats/stats_syllabus.html){:target="_blank"} | John Cabot, Spring 2024, Winter 2023, Spring 2023, Undergraduate |
 | [Comparative Politics](/files/teaching/comp_pol/comp_pol_syllabus.html){:target="_blank"} | John Cabot, Spring 2024, Winter 2023, Spring 2023, Undergraduate |
-| [Globalization](/files/teaching/cpe/pol_econ_syllabus.html){:target="_blank"} | John Cabot, Spring 2024, Winter 2023, Spring 2023, Undergraduate and Graduate |
+| [Political Economy](/files/teaching/cpe/pol_econ_syllabus.html){:target="_blank"} | John Cabot, Spring 2024, Winter 2023, Spring 2023, Undergraduate and Graduate |
 | European Politics and Society | Oxford, Autumn 2022, Graduate |
 | Comparative Government | Oxford, Autumn 2022, Undergraduate |
 | Comparative Political Economy | Oxford, Autumn 2022, Undergraduate |
