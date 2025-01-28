@@ -1191,10 +1191,8 @@ Inspiration: http://introtopython.org/lists_tuples.html
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href></a><span class="cf">try</span>:</span>
 <span id="cb10-2"><a href></a>    number <span class="op">=</span> <span class="dv">10</span></span>
 <span id="cb10-3"><a href></a>    <span class="bu">print</span>(<span class="dv">100</span> <span class="op">/</span> number)</span>
-<span id="cb10-4"><a href></a><span class="cf">except</span> <span class="pp">ValueError</span>:</span>
-<span id="cb10-5"><a href></a>    <span class="bu">print</span>(<span class="st">&quot;You must enter a valid number!&quot;</span>)</span>
-<span id="cb10-6"><a href></a><span class="cf">except</span> <span class="pp">ZeroDivisionError</span>:</span>
-<span id="cb10-7"><a href></a>    <span class="bu">print</span>(<span class="st">&quot;Cannot divide by zero!&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-4"><a href></a><span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> e:</span>
+<span id="cb10-5"><a href></a>  <span class="bu">print</span>(<span class="ss">f&quot;An error occurred: </span><span class="sc">{</span>e<span class="sc">}</span><span class="ss">&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1207,6 +1205,44 @@ Inspiration: http://introtopython.org/lists_tuples.html
 </div>
 </section>
 <section id="error-handling-in-python-try-and-except-2" class="slide level2">
+<h2>Error Handling in Python: <code>try</code> and <code>except</code></h2>
+<h3 id="basic-syntax-1">Basic Syntax</h3>
+<p>This is the basic syntax:</p>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href></a><span class="cf">try</span>:</span>
+<span id="cb12-2"><a href></a>    <span class="co"># Code that might raise an error</span></span>
+<span id="cb12-3"><a href></a><span class="cf">except</span>:</span>
+<span id="cb12-4"><a href></a>    <span class="co"># Code to execute if an error occurs</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="fragment">
+<p>Another Example:</p>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href></a><span class="cf">try</span>:</span>
+<span id="cb13-2"><a href></a>    number <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb13-3"><a href></a>    <span class="bu">print</span>(<span class="dv">100</span> <span class="op">/</span> number)</span>
+<span id="cb13-4"><a href></a><span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> e:</span>
+<span id="cb13-5"><a href></a>  <span class="bu">print</span>(<span class="ss">f&quot;An error occurred: </span><span class="sc">{</span>e<span class="sc">}</span><span class="ss">&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>An error occurred: division by zero</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="error-handling-in-python-try-and-except-3" class="slide level2">
 <h2>Error Handling in Python: <code>try</code> and <code>except</code></h2>
 <h3 id="key-points">Key Points</h3>
 <ul>
@@ -1231,8 +1267,8 @@ Inspiration: http://introtopython.org/lists_tuples.html
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href></a>students <span class="op">=</span> [<span class="st">&quot;Alice&quot;</span>, <span class="st">&quot;Tom&quot;</span>, <span class="st">&quot;Eugene&quot;</span>]</span>
-<span id="cb12-2"><a href></a><span class="bu">print</span>(students)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href></a>students <span class="op">=</span> [<span class="st">&quot;Alice&quot;</span>, <span class="st">&quot;Tom&quot;</span>, <span class="st">&quot;Eugene&quot;</span>]</span>
+<span id="cb15-2"><a href></a><span class="bu">print</span>(students)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[&#39;Alice&#39;, &#39;Tom&#39;, &#39;Eugene&#39;]</code></pre>
@@ -1246,8 +1282,8 @@ Inspiration: http://introtopython.org/lists_tuples.html
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href></a>descriptions <span class="op">=</span> [<span class="st">&#39;Alice a sophomore&#39;</span>, <span class="st">&#39;Tom is also a sophomore&#39;</span>, <span class="st">&#39;Eugene is a freshman&#39;</span>]</span>
-<span id="cb14-2"><a href></a><span class="bu">print</span>(descriptions)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href></a>descriptions <span class="op">=</span> [<span class="st">&#39;Alice a sophomore&#39;</span>, <span class="st">&#39;Tom is also a sophomore&#39;</span>, <span class="st">&#39;Eugene is a freshman&#39;</span>]</span>
+<span id="cb17-2"><a href></a><span class="bu">print</span>(descriptions)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[&#39;Alice a sophomore&#39;, &#39;Tom is also a sophomore&#39;, &#39;Eugene is a freshman&#39;]</code></pre>
@@ -1265,8 +1301,8 @@ Inspiration: http://introtopython.org/lists_tuples.html
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href></a>descriptions <span class="op">=</span> [<span class="st">&#39;Alice a sophomore&#39;</span>, <span class="st">&#39;Tom is also a sophomore&#39;</span>, <span class="st">&#39;Eugene is a freshman&#39;</span>]</span>
-<span id="cb16-2"><a href></a><span class="bu">print</span>(descriptions[<span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href></a>descriptions <span class="op">=</span> [<span class="st">&#39;Alice a sophomore&#39;</span>, <span class="st">&#39;Tom is also a sophomore&#39;</span>, <span class="st">&#39;Eugene is a freshman&#39;</span>]</span>
+<span id="cb19-2"><a href></a><span class="bu">print</span>(descriptions[<span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Alice a sophomore</code></pre>
@@ -1282,8 +1318,8 @@ Inspiration: http://introtopython.org/lists_tuples.html
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href></a>descriptions <span class="op">=</span> [<span class="st">&#39;Alice a sophomore&#39;</span>, <span class="st">&#39;Tom is also a sophomore&#39;</span>, <span class="st">&#39;Eugene is a freshman&#39;</span>]</span>
-<span id="cb18-2"><a href></a><span class="bu">print</span>(descriptions[<span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href></a>descriptions <span class="op">=</span> [<span class="st">&#39;Alice a sophomore&#39;</span>, <span class="st">&#39;Tom is also a sophomore&#39;</span>, <span class="st">&#39;Eugene is a freshman&#39;</span>]</span>
+<span id="cb21-2"><a href></a><span class="bu">print</span>(descriptions[<span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Tom is also a sophomore</code></pre>
@@ -1304,8 +1340,8 @@ Inspiration: http://introtopython.org/lists_tuples.html
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href></a>descriptions <span class="op">=</span> [<span class="st">&#39;Alice a sophomore&#39;</span>, <span class="st">&#39;Tom is also a sophomore&#39;</span>, <span class="st">&#39;Eugene is a freshman&#39;</span>]</span>
-<span id="cb20-2"><a href></a><span class="bu">print</span>(descriptions[<span class="op">-</span><span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href></a>descriptions <span class="op">=</span> [<span class="st">&#39;Alice a sophomore&#39;</span>, <span class="st">&#39;Tom is also a sophomore&#39;</span>, <span class="st">&#39;Eugene is a freshman&#39;</span>]</span>
+<span id="cb23-2"><a href></a><span class="bu">print</span>(descriptions[<span class="op">-</span><span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Eugene is a freshman</code></pre>
@@ -1321,8 +1357,8 @@ Inspiration: http://introtopython.org/lists_tuples.html
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href></a>descriptions <span class="op">=</span> [<span class="st">&#39;Alice a sophomore&#39;</span>, <span class="st">&#39;Tom is also a sophomore&#39;</span>, <span class="st">&#39;Eugene is a freshman&#39;</span>]</span>
-<span id="cb22-2"><a href></a><span class="bu">print</span>(descriptions[<span class="op">-</span><span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href></a>descriptions <span class="op">=</span> [<span class="st">&#39;Alice a sophomore&#39;</span>, <span class="st">&#39;Tom is also a sophomore&#39;</span>, <span class="st">&#39;Eugene is a freshman&#39;</span>]</span>
+<span id="cb25-2"><a href></a><span class="bu">print</span>(descriptions[<span class="op">-</span><span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Tom is also a sophomore</code></pre>
@@ -1344,17 +1380,17 @@ Inspiration: http://introtopython.org/lists_tuples.html
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href></a>list_lan <span class="op">=</span> [<span class="st">&quot;python&quot;</span>, <span class="st">&quot;c&quot;</span>, <span class="st">&quot;java&quot;</span>]</span>
-<span id="cb24-2"><a href></a>list_lan[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href></a>list_lan <span class="op">=</span> [<span class="st">&quot;python&quot;</span>, <span class="st">&quot;c&quot;</span>, <span class="st">&quot;java&quot;</span>]</span>
+<span id="cb27-2"><a href></a>list_lan[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&#39;python&#39;</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href></a>list_lan[<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href></a>list_lan[<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&#39;c&#39;</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href></a>list_lan[<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href></a>list_lan[<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&#39;java&#39;</code></pre>
 </div>
@@ -1395,8 +1431,8 @@ Inspiration: http://introtopython.org/lists_tuples.html
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href></a><span class="cf">for</span> item <span class="kw">in</span> sequence:</span>
-<span id="cb30-2"><a href></a>  expression</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href></a><span class="cf">for</span> item <span class="kw">in</span> sequence:</span>
+<span id="cb33-2"><a href></a>  expression about item</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="fragment">
@@ -1406,9 +1442,9 @@ Inspiration: http://introtopython.org/lists_tuples.html
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href></a>list_numbers <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>]</span>
-<span id="cb31-2"><a href></a><span class="cf">for</span> number <span class="kw">in</span> list_numbers:</span>
-<span id="cb31-3"><a href></a>  <span class="bu">print</span>(number)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href></a>list_numbers <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>]</span>
+<span id="cb34-2"><a href></a><span class="cf">for</span> number <span class="kw">in</span> list_numbers:</span>
+<span id="cb34-3"><a href></a>  <span class="bu">print</span>(number)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>1
@@ -1427,9 +1463,9 @@ Inspiration: http://introtopython.org/lists_tuples.html
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href></a>list_students <span class="op">=</span> [<span class="st">&quot;John&quot;</span>, <span class="st">&quot;Anna&quot;</span>, <span class="st">&quot;Emma&quot;</span>]</span>
-<span id="cb33-2"><a href></a><span class="cf">for</span> student <span class="kw">in</span> list_students:</span>
-<span id="cb33-3"><a href></a>  <span class="bu">print</span>(student)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href></a>list_students <span class="op">=</span> [<span class="st">&quot;John&quot;</span>, <span class="st">&quot;Anna&quot;</span>, <span class="st">&quot;Emma&quot;</span>]</span>
+<span id="cb36-2"><a href></a><span class="cf">for</span> student <span class="kw">in</span> list_students:</span>
+<span id="cb36-3"><a href></a>  <span class="bu">print</span>(student)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>John
@@ -1517,11 +1553,11 @@ Emma is one of the students taking the class.</code></pre>
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href></a>list_students <span class="op">=</span> [<span class="st">&quot;John&quot;</span>, <span class="st">&quot;Anna&quot;</span>, <span class="st">&quot;Emma&quot;</span>]</span>
-<span id="cb38-2"><a href></a><span class="cf">for</span> student <span class="kw">in</span> list_students:</span>
-<span id="cb38-3"><a href></a>  <span class="cf">if</span> student <span class="op">==</span> <span class="st">&quot;Anna&quot;</span>:</span>
-<span id="cb38-4"><a href></a>    <span class="cf">break</span></span>
-<span id="cb38-5"><a href></a>  <span class="bu">print</span>(student <span class="op">+</span> <span class="st">&quot; is one of the students taking the class.&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href></a>list_students <span class="op">=</span> [<span class="st">&quot;John&quot;</span>, <span class="st">&quot;Anna&quot;</span>, <span class="st">&quot;Emma&quot;</span>]</span>
+<span id="cb41-2"><a href></a><span class="cf">for</span> student <span class="kw">in</span> list_students:</span>
+<span id="cb41-3"><a href></a>  <span class="cf">if</span> student <span class="op">==</span> <span class="st">&quot;Anna&quot;</span>:</span>
+<span id="cb41-4"><a href></a>    <span class="cf">break</span></span>
+<span id="cb41-5"><a href></a>  <span class="bu">print</span>(student <span class="op">+</span> <span class="st">&quot; is one of the students taking the class.&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>John is one of the students taking the class.</code></pre>
@@ -1539,10 +1575,10 @@ Emma is one of the students taking the class.</code></pre>
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">100</span>):</span>
-<span id="cb40-2"><a href></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">3</span> <span class="op">==</span> <span class="dv">0</span> <span class="kw">and</span> i <span class="op">%</span> <span class="dv">7</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb40-3"><a href></a>        <span class="bu">print</span>(i, <span class="st">&quot;divisible by 3 and 7&quot;</span>)</span>
-<span id="cb40-4"><a href></a>        <span class="cf">break</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">100</span>):</span>
+<span id="cb43-2"><a href></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">3</span> <span class="op">==</span> <span class="dv">0</span> <span class="kw">and</span> i <span class="op">%</span> <span class="dv">7</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb43-3"><a href></a>        <span class="bu">print</span>(i, <span class="st">&quot;divisible by 3 and 7&quot;</span>)</span>
+<span id="cb43-4"><a href></a>        <span class="cf">break</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>21 divisible by 3 and 7</code></pre>
@@ -1570,10 +1606,10 @@ Emma is one of the students taking the class.</code></pre>
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href></a>list_students <span class="op">=</span> [<span class="st">&quot;John&quot;</span>, <span class="st">&quot;Anna&quot;</span>, <span class="st">&quot;Emma&quot;</span>]</span>
-<span id="cb42-2"><a href></a><span class="cf">for</span> index, student <span class="kw">in</span> <span class="bu">enumerate</span>(list_students):</span>
-<span id="cb42-3"><a href></a>  place <span class="op">=</span> <span class="bu">str</span>(index)</span>
-<span id="cb42-4"><a href></a>  <span class="bu">print</span>(<span class="st">&quot;Place: &quot;</span> <span class="op">+</span> place <span class="op">+</span> <span class="st">&quot; Student: &quot;</span> <span class="op">+</span> student)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href></a>list_students <span class="op">=</span> [<span class="st">&quot;John&quot;</span>, <span class="st">&quot;Anna&quot;</span>, <span class="st">&quot;Emma&quot;</span>]</span>
+<span id="cb45-2"><a href></a><span class="cf">for</span> index, student <span class="kw">in</span> <span class="bu">enumerate</span>(list_students):</span>
+<span id="cb45-3"><a href></a>  place <span class="op">=</span> <span class="bu">str</span>(index)</span>
+<span id="cb45-4"><a href></a>  <span class="bu">print</span>(<span class="st">&quot;Place: &quot;</span> <span class="op">+</span> place <span class="op">+</span> <span class="st">&quot; Student: &quot;</span> <span class="op">+</span> student)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Place: 0 Student: John
@@ -1592,10 +1628,10 @@ Place: 2 Student: Emma</code></pre>
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href></a>list_students <span class="op">=</span> [<span class="st">&quot;John&quot;</span>, <span class="st">&quot;Anna&quot;</span>, <span class="st">&quot;Emma&quot;</span>]</span>
-<span id="cb44-2"><a href></a><span class="cf">for</span> index, student <span class="kw">in</span> <span class="bu">enumerate</span>(list_students):</span>
-<span id="cb44-3"><a href></a>  place <span class="op">=</span> <span class="bu">str</span>(index)</span>
-<span id="cb44-4"><a href></a>  <span class="bu">print</span>(<span class="st">&quot;Place: &quot;</span> <span class="op">+</span> place <span class="op">+</span> <span class="st">&quot; Student: &quot;</span> <span class="op">+</span> student)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href></a>list_students <span class="op">=</span> [<span class="st">&quot;John&quot;</span>, <span class="st">&quot;Anna&quot;</span>, <span class="st">&quot;Emma&quot;</span>]</span>
+<span id="cb47-2"><a href></a><span class="cf">for</span> index, student <span class="kw">in</span> <span class="bu">enumerate</span>(list_students):</span>
+<span id="cb47-3"><a href></a>  place <span class="op">=</span> <span class="bu">str</span>(index)</span>
+<span id="cb47-4"><a href></a>  <span class="bu">print</span>(<span class="st">&quot;Place: &quot;</span> <span class="op">+</span> place <span class="op">+</span> <span class="st">&quot; Student: &quot;</span> <span class="op">+</span> student)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Place: 0 Student: John
@@ -1636,10 +1672,10 @@ Place: 2 Student: Emma</code></pre>
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href></a>list_students <span class="op">=</span> [<span class="st">&quot;John&quot;</span>, <span class="st">&quot;Anna&quot;</span>, <span class="st">&quot;Emma&quot;</span>]</span>
-<span id="cb46-2"><a href></a>list_grades <span class="op">=</span> [<span class="dv">89</span>, <span class="dv">51</span>, <span class="dv">70</span>]</span>
-<span id="cb46-3"><a href></a><span class="cf">for</span> student, grade <span class="kw">in</span> <span class="bu">zip</span>(list_students, list_grades):</span>
-<span id="cb46-4"><a href></a>  <span class="bu">print</span>(student <span class="op">+</span> <span class="st">&quot; obtained &quot;</span> <span class="op">+</span> <span class="bu">str</span>(grade) <span class="op">+</span> <span class="st">&quot; in the exam.&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href></a>list_students <span class="op">=</span> [<span class="st">&quot;John&quot;</span>, <span class="st">&quot;Anna&quot;</span>, <span class="st">&quot;Emma&quot;</span>]</span>
+<span id="cb49-2"><a href></a>list_grades <span class="op">=</span> [<span class="dv">89</span>, <span class="dv">51</span>, <span class="dv">70</span>]</span>
+<span id="cb49-3"><a href></a><span class="cf">for</span> student, grade <span class="kw">in</span> <span class="bu">zip</span>(list_students, list_grades):</span>
+<span id="cb49-4"><a href></a>  <span class="bu">print</span>(student <span class="op">+</span> <span class="st">&quot; obtained &quot;</span> <span class="op">+</span> <span class="bu">str</span>(grade) <span class="op">+</span> <span class="st">&quot; in the exam.&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>John obtained 89 in the exam.
@@ -1659,12 +1695,12 @@ Emma obtained 70 in the exam.</code></pre>
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href></a>list_students <span class="op">=</span> [<span class="st">&quot;John&quot;</span>, <span class="st">&quot;Anna&quot;</span>, <span class="st">&quot;Emma&quot;</span>]</span>
-<span id="cb48-2"><a href></a>list_grades <span class="op">=</span> [<span class="dv">89</span>, <span class="dv">51</span>, <span class="dv">70</span>]</span>
-<span id="cb48-3"><a href></a>count <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb48-4"><a href></a><span class="cf">for</span> student, grade <span class="kw">in</span> <span class="bu">zip</span>(list_students, list_grades):</span>
-<span id="cb48-5"><a href></a>  count <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb48-6"><a href></a>  <span class="bu">print</span>(<span class="st">&quot;Student &quot;</span> <span class="op">+</span> <span class="bu">str</span>(count) <span class="op">+</span> <span class="st">&quot;: &quot;</span> <span class="op">+</span> student <span class="op">+</span> <span class="st">&quot; obtained &quot;</span> <span class="op">+</span> <span class="bu">str</span>(grade) <span class="op">+</span> <span class="st">&quot; in the exam.&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href></a>list_students <span class="op">=</span> [<span class="st">&quot;John&quot;</span>, <span class="st">&quot;Anna&quot;</span>, <span class="st">&quot;Emma&quot;</span>]</span>
+<span id="cb51-2"><a href></a>list_grades <span class="op">=</span> [<span class="dv">89</span>, <span class="dv">51</span>, <span class="dv">70</span>]</span>
+<span id="cb51-3"><a href></a>count <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb51-4"><a href></a><span class="cf">for</span> student, grade <span class="kw">in</span> <span class="bu">zip</span>(list_students, list_grades):</span>
+<span id="cb51-5"><a href></a>  count <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb51-6"><a href></a>  <span class="bu">print</span>(<span class="st">&quot;Student &quot;</span> <span class="op">+</span> <span class="bu">str</span>(count) <span class="op">+</span> <span class="st">&quot;: &quot;</span> <span class="op">+</span> student <span class="op">+</span> <span class="st">&quot; obtained &quot;</span> <span class="op">+</span> <span class="bu">str</span>(grade) <span class="op">+</span> <span class="st">&quot; in the exam.&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Student 1: John obtained 89 in the exam.
@@ -1689,13 +1725,13 @@ Student 3: Emma obtained 70 in the exam.</code></pre>
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href></a>list_students <span class="op">=</span> [<span class="st">&quot;John&quot;</span>, <span class="st">&quot;Anna&quot;</span>, <span class="st">&quot;Emma&quot;</span>]</span>
-<span id="cb50-2"><a href></a>list_grades <span class="op">=</span> [<span class="dv">89</span>, <span class="dv">51</span>, <span class="dv">70</span>]</span>
-<span id="cb50-3"><a href></a>count <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb50-4"><a href></a><span class="cf">for</span> student, grade <span class="kw">in</span> <span class="bu">zip</span>(list_students, list_grades):</span>
-<span id="cb50-5"><a href></a>  count <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb50-6"><a href></a>  updated_grade <span class="op">=</span> grade <span class="op">+</span> grade <span class="op">*</span> <span class="dv">5</span><span class="op">/</span><span class="dv">100</span></span>
-<span id="cb50-7"><a href></a>  <span class="bu">print</span>(<span class="st">&quot;Student &quot;</span> <span class="op">+</span> <span class="bu">str</span>(count) <span class="op">+</span> <span class="st">&quot;: &quot;</span> <span class="op">+</span> student <span class="op">+</span> <span class="st">&quot; obtained &quot;</span> <span class="op">+</span> <span class="bu">str</span>(updated_grade) <span class="op">+</span> <span class="st">&quot; in the exam.&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href></a>list_students <span class="op">=</span> [<span class="st">&quot;John&quot;</span>, <span class="st">&quot;Anna&quot;</span>, <span class="st">&quot;Emma&quot;</span>]</span>
+<span id="cb53-2"><a href></a>list_grades <span class="op">=</span> [<span class="dv">89</span>, <span class="dv">51</span>, <span class="dv">70</span>]</span>
+<span id="cb53-3"><a href></a>count <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb53-4"><a href></a><span class="cf">for</span> student, grade <span class="kw">in</span> <span class="bu">zip</span>(list_students, list_grades):</span>
+<span id="cb53-5"><a href></a>  count <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb53-6"><a href></a>  updated_grade <span class="op">=</span> grade <span class="op">+</span> grade <span class="op">*</span> <span class="dv">5</span><span class="op">/</span><span class="dv">100</span></span>
+<span id="cb53-7"><a href></a>  <span class="bu">print</span>(<span class="st">&quot;Student &quot;</span> <span class="op">+</span> <span class="bu">str</span>(count) <span class="op">+</span> <span class="st">&quot;: &quot;</span> <span class="op">+</span> student <span class="op">+</span> <span class="st">&quot; obtained &quot;</span> <span class="op">+</span> <span class="bu">str</span>(updated_grade) <span class="op">+</span> <span class="st">&quot; in the exam.&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Student 1: John obtained 93.45 in the exam.
