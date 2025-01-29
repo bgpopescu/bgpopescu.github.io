@@ -1068,14 +1068,11 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 </div>
 
 </section>
-<section class="slide level2">
-
+<section id="introduction" class="slide level2">
+<h2>Introduction</h2>
 <!--
 Inspiration: http://introtopython.org/lists_tuples.html
 -->
-</section>
-<section id="introduction" class="slide level2">
-<h2>Introduction</h2>
 <p>We previously covered lists</p>
 <p>It is important to mention that lists are mutable. They are different from immutable objects.</p>
 <div class="fragment">
@@ -1309,10 +1306,10 @@ Inspiration: http://introtopython.org/lists_tuples.html
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href></a><span class="bu">print</span>(<span class="st">&quot;There are &quot;</span> <span class="op">+</span> <span class="bu">str</span>(no_students) <span class="op">+</span> <span class="st">&quot; students in the list made out of &quot;</span><span class="op">+</span> <span class="bu">str</span>(list_students))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href></a><span class="bu">print</span>(<span class="st">&quot;There are &quot;</span> <span class="op">+</span> <span class="bu">str</span>(no_students) <span class="op">+</span> <span class="st">&quot; students in the list made out of &quot;</span> <span class="op">+</span> <span class="st">&quot;, &quot;</span>.join(list_students))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>There are 3 students in the list made out of [&#39;John&#39;, &#39;Anna&#39;, &#39;Emma&#39;]</code></pre>
+<pre><code>There are 3 students in the list made out of John, Anna, Emma</code></pre>
 </div>
 </div>
 </div>
@@ -1385,11 +1382,11 @@ Inspiration: http://introtopython.org/lists_tuples.html
 <h3 id="exercises-1">Exercises 1</h3>
 <p>Working with lists:</p>
 <ol type="1">
-<li>Make a list that includes four animals such as: “bear”, “cat”, “dog”, etc.</li>
+<li>Make a list that includes four animals: “bear”, “cat”, “dog”, “elephant”.</li>
 <li>Use the <code>list.index()</code> function to find the index of one animal in your list.</li>
 <li>Use the <code>in</code> function to show that this animal is in your list.</li>
-<li>Use the <code>append()</code> function to add a new career to your list.</li>
-<li>Use the <code>insert()</code> function to add a new career at the beginning of the list.</li>
+<li>Use the <code>append()</code> function to add a new animal to your list.</li>
+<li>Use the <code>insert()</code> function to add a new animal at the beginning of the list.</li>
 <li>Use a loop to show all the careers in your list.</li>
 </ol>
 </section>
@@ -1843,8 +1840,8 @@ lion</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb73"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb73-1"><a href></a>list_students <span class="op">=</span> [<span class="st">&quot;John&quot;</span>, <span class="st">&quot;Anna&quot;</span>, <span class="st">&quot;Emma&quot;</span>]</span>
 <span id="cb73-2"><a href></a></span>
-<span id="cb73-3"><a href></a><span class="cf">for</span> student <span class="kw">in</span> list_students:</span>
-<span id="cb73-4"><a href></a>  <span class="bu">print</span>(student <span class="op">+</span> <span class="st">&quot; is a student in this class.&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb73-3"><a href></a><span class="cf">for</span> each_student <span class="kw">in</span> list_students:</span>
+<span id="cb73-4"><a href></a>  <span class="bu">print</span>(each_student <span class="op">+</span> <span class="st">&quot; is a student in this class.&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>John is a student in this class.
@@ -1867,8 +1864,8 @@ Emma is a student in this class.</code></pre>
 <span id="cb75-2"><a href></a></span>
 <span id="cb75-3"><a href></a>list_students_sentences <span class="op">=</span> [student <span class="op">+</span> <span class="st">&quot; is a student in this class.&quot;</span> <span class="cf">for</span> student <span class="kw">in</span> list_students]</span>
 <span id="cb75-4"><a href></a></span>
-<span id="cb75-5"><a href></a><span class="cf">for</span> sentence <span class="kw">in</span> list_students_sentences:</span>
-<span id="cb75-6"><a href></a>  <span class="bu">print</span>(sentence)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb75-5"><a href></a><span class="cf">for</span> each_sentence <span class="kw">in</span> list_students_sentences:</span>
+<span id="cb75-6"><a href></a>  <span class="bu">print</span>(each_sentence)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>John is a student in this class.
