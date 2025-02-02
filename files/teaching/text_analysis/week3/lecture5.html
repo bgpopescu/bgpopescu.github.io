@@ -1387,7 +1387,7 @@ Inspiration: http://introtopython.org/lists_tuples.html
 <li>Use the <code>in</code> function to show that this animal is in your list.</li>
 <li>Use the <code>append()</code> function to add a new animal to your list.</li>
 <li>Use the <code>insert()</code> function to add a new animal at the beginning of the list.</li>
-<li>Use a loop to show all the careers in your list.</li>
+<li>Use a loop to show all the animals in your list.</li>
 </ol>
 </section>
 <section id="list-operations-12" class="slide level2">
@@ -1410,15 +1410,15 @@ Inspiration: http://introtopython.org/lists_tuples.html
 <span id="cb32-9"><a href></a>is_cat_in_list <span class="op">=</span> <span class="st">&quot;cat&quot;</span> <span class="kw">in</span> animals</span>
 <span id="cb32-10"><a href></a><span class="bu">print</span>(<span class="ss">f&quot;Is &#39;cat&#39; in the list? </span><span class="sc">{</span>is_cat_in_list<span class="sc">}</span><span class="ss">&quot;</span>)</span>
 <span id="cb32-11"><a href></a></span>
-<span id="cb32-12"><a href></a><span class="co"># Step 4: Use the `append()` function to add a new career to your list</span></span>
+<span id="cb32-12"><a href></a><span class="co"># Step 4: Use the `append()` function to add a new animal to your list</span></span>
 <span id="cb32-13"><a href></a>animals.append(<span class="st">&quot;lion&quot;</span>)</span>
 <span id="cb32-14"><a href></a><span class="bu">print</span>(<span class="st">&quot;List after appending &#39;lion&#39;:&quot;</span>, animals)</span>
 <span id="cb32-15"><a href></a></span>
-<span id="cb32-16"><a href></a><span class="co"># Step 5: Use the `insert()` function to add a new career at the beginning of the list</span></span>
+<span id="cb32-16"><a href></a><span class="co"># Step 5: Use the `insert()` function to add a new animal at the beginning of the list</span></span>
 <span id="cb32-17"><a href></a>animals.insert(<span class="dv">0</span>, <span class="st">&quot;tiger&quot;</span>)</span>
 <span id="cb32-18"><a href></a><span class="bu">print</span>(<span class="st">&quot;List after inserting &#39;tiger&#39; at the beginning:&quot;</span>, animals)</span>
 <span id="cb32-19"><a href></a></span>
-<span id="cb32-20"><a href></a><span class="co"># Step 6: Use a loop to show all the careers in your list</span></span>
+<span id="cb32-20"><a href></a><span class="co"># Step 6: Use a loop to show all the animals in your list</span></span>
 <span id="cb32-21"><a href></a><span class="bu">print</span>(<span class="st">&quot;All animals in the list:&quot;</span>)</span>
 <span id="cb32-22"><a href></a><span class="cf">for</span> animal <span class="kw">in</span> animals:</span>
 <span id="cb32-23"><a href></a>    <span class="bu">print</span>(animal)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1693,7 +1693,7 @@ lion</code></pre>
 <p>Imagine five jars with different amounts of candies in them. Store these five values in a list, and print out the following sentences:</p>
 <ol type="1">
 <li>“The jar with the most candies has X candies.”</li>
-<li>“The jar with the least candies has X candies.”</li>
+<li>“The jar with the fewest candies has X candies.”</li>
 <li>“Altogether, these jars have X candies.”</li>
 </ol>
 </section>
@@ -1714,7 +1714,7 @@ lion</code></pre>
 <span id="cb61-7"><a href></a></span>
 <span id="cb61-8"><a href></a><span class="co"># Finding the jar with the least candies</span></span>
 <span id="cb61-9"><a href></a>min_candies <span class="op">=</span> <span class="bu">min</span>(candies)</span>
-<span id="cb61-10"><a href></a><span class="bu">print</span>(<span class="ss">f&quot;The jar with the least candies has </span><span class="sc">{</span>min_candies<span class="sc">}</span><span class="ss"> candies.&quot;</span>)</span>
+<span id="cb61-10"><a href></a><span class="bu">print</span>(<span class="ss">f&quot;The jar with the fewest candies has </span><span class="sc">{</span>min_candies<span class="sc">}</span><span class="ss"> candies.&quot;</span>)</span>
 <span id="cb61-11"><a href></a></span>
 <span id="cb61-12"><a href></a><span class="co"># Calculating the total number of candies in all jars</span></span>
 <span id="cb61-13"><a href></a>total_candies <span class="op">=</span> <span class="bu">sum</span>(candies)</span>
@@ -1726,7 +1726,7 @@ lion</code></pre>
 <pre><code>The jar with the most candies has 90 candies.</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>The jar with the least candies has 20 candies.</code></pre>
+<pre><code>The jar with the fewest candies has 20 candies.</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Altogether, these jars have 265 candies.</code></pre>
@@ -1863,14 +1863,10 @@ Emma is a student in this class.</code></pre>
 <div class="sourceCode cell-code" id="cb75"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb75-1"><a href></a>list_students <span class="op">=</span> [<span class="st">&quot;John&quot;</span>, <span class="st">&quot;Anna&quot;</span>, <span class="st">&quot;Emma&quot;</span>]</span>
 <span id="cb75-2"><a href></a></span>
 <span id="cb75-3"><a href></a>list_students_sentences <span class="op">=</span> [student <span class="op">+</span> <span class="st">&quot; is a student in this class.&quot;</span> <span class="cf">for</span> student <span class="kw">in</span> list_students]</span>
-<span id="cb75-4"><a href></a></span>
-<span id="cb75-5"><a href></a><span class="cf">for</span> each_sentence <span class="kw">in</span> list_students_sentences:</span>
-<span id="cb75-6"><a href></a>  <span class="bu">print</span>(each_sentence)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb75-4"><a href></a><span class="bu">print</span>(list_students_sentences)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>John is a student in this class.
-Anna is a student in this class.
-Emma is a student in this class.</code></pre>
+<pre><code>[&#39;John is a student in this class.&#39;, &#39;Anna is a student in this class.&#39;, &#39;Emma is a student in this class.&#39;]</code></pre>
 </div>
 </div>
 </section>
@@ -1945,6 +1941,9 @@ Emma is a student in this class.</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb81"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb81-1"><a href></a>mytuple3 <span class="op">+</span> mytuple4</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div class="cell-output cell-output-stdout">
+<pre><code>(1, &#39;a&#39;, 71.4, 1, &#39;a&#39;, 71.4)</code></pre>
+</div>
 </div>
 </section>
 <section id="conclusion" class="slide level2">
@@ -1952,7 +1951,6 @@ Emma is a student in this class.</code></pre>
 <p>Lists are mutable, allowing for flexible modification, while tuples are immutable.</p>
 <p>Python provides powerful list operations like <code>append</code>, <code>insert</code>, <code>sort</code>, and slicing for dynamic data handling.</p>
 <p>List comprehensions streamline the creation of new lists using concise and readable syntax.</p>
-<p>Using <code>try</code> and <code>except</code> ensures robust error handling, making programs more resilient.</p>
 
 </section>
     </div>
