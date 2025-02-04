@@ -40,7 +40,7 @@ You can download the [introduction and table of contents](https://www.dropbox.co
 </ul>
 
 
-<h2><b>Islam, Sultans, and the Printing Press: How Absence of the Printed Word Limited Development - <em>Manuscript under Review</em></b></h2>
+<h2><b>Islam, Sultans, and the Printing Press: How Absence of the Printed Word Limited Development </b></h2>
 
 <img src="/images/book_cover_second_book.jpg" alt="Islam, Sultans, and the Printing Press" width="350" align="left" hspace="12" vspace="12"/>
 
