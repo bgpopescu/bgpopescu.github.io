@@ -21,6 +21,10 @@ My research centers on state responses to political threats and their enduring c
 
 1) **Popescu, Bogdan G.** 2023. <em>Imperial Borderlands: Institutions and Legacies of the Habsburg Military Frontier</em>. [Cambridge University Press](https://www.cambridge.org/core/books/imperial-borderlands/6845856BB6A18B8B8EC2EE66B9013AAC#fndtn-information){:target="_blank"}. Read the [table of contents and intro](https://www.dropbox.com/scl/fi/npqqmzppb7fsh6m5cy5yl/Imperial-Borderlands_final_intro_comp.pdf?rlkey=af21iyb62cpkbnreiydcaqx1s&dl=0){:target="_blank"}.
 
+<ul style="list-style: none;">
+ <li>Harvard University’s Davis Center 2024 Book Prize Honorable mention for an outstanding monograph published on Russia, Eurasia, or Eastern Europe in anthropology, political science, sociology, or geography</li>
+</ul>
+
 2) **Popescu, Bogdan G.** <em>Islam, Sultans, and the Printing Press</em>. Under Review. Read the [table of contents and intro](https://www.dropbox.com/scl/fi/edeyisrkif33ee9yy4al4/popescu_chapter1_sample.pdf?rlkey=3bw3aw35lx2w7srgf38q3c5dw&dl=0){:target="_blank"}.
 
 <h3><b>Peer-Reviewed Publications</b></h3>
