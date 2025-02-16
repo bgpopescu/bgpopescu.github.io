@@ -1107,6 +1107,7 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 </div>
 </div>
 <p>Let us have a look at a <a href="https://www.dropbox.com/scl/fi/y6j2np389mcq6l8lwbw57/beer_reviews.csv?rlkey=9wv3fwotwvczvxquwiz6z51tv&amp;st=z47wfu6e&amp;dl=0" target="_blank">mock dataset</a>.</p>
+<p>Download it and place it within the week’s folder.</p>
 <div class="fragment">
 <div class="cell">
 <div class="code-with-filename">
@@ -1192,6 +1193,7 @@ Black Horse Black Beer       10325  Vecchio Birraio  ...           3.0        48
       dtype=&#39;object&#39;)</code></pre>
 </div>
 </div>
+<div class="fragment">
 <div class="cell">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
@@ -1201,6 +1203,8 @@ Black Horse Black Beer       10325  Vecchio Birraio  ...           3.0        48
 <span id="cb10-2"><a href></a><span class="st">&quot;aroma_review&quot;</span>, <span class="st">&quot;appearance_review&quot;</span>, <span class="st">&quot;beer_style&quot;</span>, <span class="st">&quot;review_taste&quot;</span>, <span class="st">&quot;beerid&quot;</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
+</div>
+<div class="fragment">
 <p>We can now check if the column names are now changed</p>
 <div class="cell">
 <div class="code-with-filename">
@@ -1214,6 +1218,7 @@ Black Horse Black Beer       10325  Vecchio Birraio  ...           3.0        48
        &#39;aroma_review&#39;, &#39;appearance_review&#39;, &#39;beer_style&#39;, &#39;review_taste&#39;,
        &#39;beerid&#39;],
       dtype=&#39;object&#39;)</code></pre>
+</div>
 </div>
 </div>
 </section>
@@ -1340,40 +1345,53 @@ Black Horse Black Beer       10325  Vecchio Birraio  ...           3.0        48
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href></a><span class="bu">print</span>(<span class="st">&#39;Are there beers with the same name?&#39;</span>,<span class="st">&#39;</span><span class="ch">\n</span><span class="st">&#39;</span>)</span>
-<span id="cb23-2"><a href></a><span class="bu">print</span>(beer.beer_name.duplicated().<span class="bu">any</span>(),<span class="st">&#39;</span><span class="ch">\n</span><span class="st">&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href></a><span class="bu">print</span>(<span class="st">&#39;Are there beers with the same name?&#39;</span>)</span>
+<span id="cb23-2"><a href></a><span class="bu">print</span>(beer.beer_name.duplicated().<span class="bu">any</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
+<div class="fragment">
 <div class="cell" data-filename="Python">
 <div class="cell-output cell-output-stdout">
-<pre><code>Are there beers with the same name? </code></pre>
+<pre><code>Are there beers with the same name?</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>True </code></pre>
+<pre><code>True</code></pre>
 </div>
 </div>
+</div>
+<div class="fragment">
 <div class="cell">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href></a><span class="bu">print</span>(<span class="st">&#39;Are there breweries with the same name?&#39;</span>,<span class="st">&#39;</span><span class="ch">\n</span><span class="st">&#39;</span>)</span>
-<span id="cb26-2"><a href></a><span class="bu">print</span>(beer.name_brewery.duplicated().<span class="bu">any</span>(),<span class="st">&#39;</span><span class="ch">\n</span><span class="st">&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href></a><span class="bu">print</span>(<span class="st">&#39;Are there breweries with the same name?&#39;</span>)</span>
+<span id="cb26-2"><a href></a><span class="bu">print</span>(beer.name_brewery.duplicated().<span class="bu">any</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
+</div>
+<div class="fragment">
 <div class="cell" data-filename="Python">
 <div class="cell-output cell-output-stdout">
-<pre><code>Are there breweries with the same name? </code></pre>
+<pre><code>Are there breweries with the same name?</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>True </code></pre>
+<pre><code>True</code></pre>
+</div>
 </div>
 </div>
 </section>
 <section id="removing-duplicates" class="slide level2">
 <h2>Removing Duplicates</h2>
 <p>To remove duplicates, we can use <code>drop_duplicates</code></p>
-<div class="cell" data-filename="Python">
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href></a>beer2 <span class="op">=</span> beer.drop_duplicates()</span>
+<span id="cb29-2"><a href></a>beer2.head(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                   beer_name  id_brewery  ... review_taste  beerid
 5143              1 A.M. Ale       12003  ...          3.0   25251
@@ -1381,14 +1399,8 @@ Black Horse Black Beer       10325  Vecchio Birraio  ...           3.0        48
 1761        15th Anniversary        1454  ...          4.5   27918
 1762        15th Anniversary        1454  ...          3.5   27918
 1742  2001 - A Stout Odyssey        1454  ...          3.0   55096
-...                      ...         ...  ...          ...     ...
-2498          Yakima Monster       23246  ...          4.5   61417
-2626      Yankee Clipper IPA       15636  ...          4.5   38212
-926         Yellowjacket Ale        2724  ...          3.0   69087
-4891         YouEnjoyMyStout          14  ...          4.0   21436
-2652           Zhigulovskoye        1746  ...          3.0   22746
 
-[3559 rows x 9 columns]</code></pre>
+[5 rows x 9 columns]</code></pre>
 </div>
 </div>
 </section>
@@ -1400,34 +1412,38 @@ Black Horse Black Beer       10325  Vecchio Birraio  ...           3.0        48
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href></a>beer.shape[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href></a>beer.shape[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>5998</code></pre>
 </div>
 </div>
+<div class="fragment">
 <p>And compare it to the dataset where we eliminated the duplicates.</p>
 <div class="cell">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href></a>beer2.shape[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href></a>beer2.shape[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>3559</code></pre>
 </div>
 </div>
+</div>
+<div class="fragment">
 <p>Thus, we got rid of a substantial number of observations.</p>
 <div class="cell">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href></a>beer.shape[<span class="dv">0</span>] <span class="op">-</span> beer2.shape[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href></a>beer.shape[<span class="dv">0</span>] <span class="op">-</span> beer2.shape[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>2439</code></pre>
+</div>
 </div>
 </div>
 </section>
@@ -1439,7 +1455,7 @@ Black Horse Black Beer       10325  Vecchio Birraio  ...           3.0        48
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href></a>beer.drop_duplicates(subset<span class="op">=</span>[<span class="st">&#39;beer_name&#39;</span>], keep<span class="op">=</span><span class="st">&#39;first&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href></a>beer.drop_duplicates(subset<span class="op">=</span>[<span class="st">&#39;beer_name&#39;</span>], keep<span class="op">=</span><span class="st">&#39;first&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                                              beer_name  ...  beerid
@@ -1458,7 +1474,9 @@ Black Horse Black Beer       10325  Vecchio Birraio  ...           3.0        48
 [486 rows x 9 columns]</code></pre>
 </div>
 </div>
+<div class="fragment">
 <p>The <code>keep=&#39;first&#39;</code> allows us to keep the first entry when we encounter duplicates.</p>
+</div>
 </section>
 <section id="filtering-data" class="slide level2">
 <h2>Filtering Data</h2>
@@ -1471,7 +1489,7 @@ Black Horse Black Beer       10325  Vecchio Birraio  ...           3.0        48
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href></a>beer[beer[<span class="st">&#39;overall_review&#39;</span>] <span class="op">&gt;</span> <span class="fl">4.5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href></a>beer[beer[<span class="st">&#39;overall_review&#39;</span>] <span class="op">&gt;</span> <span class="fl">4.5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                                              beer_name  ...  beerid
@@ -1500,7 +1518,7 @@ Black Horse Black Beer       10325  Vecchio Birraio  ...           3.0        48
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href></a>beer[(beer[<span class="st">&#39;overall_review&#39;</span>] <span class="op">&gt;</span> <span class="fl">4.5</span>) <span class="op">&amp;</span> (beer[<span class="st">&#39;beer_style&#39;</span>] <span class="op">==</span> <span class="st">&quot;Light Lager&quot;</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href></a>beer[(beer[<span class="st">&#39;overall_review&#39;</span>] <span class="op">&gt;</span> <span class="fl">4.5</span>) <span class="op">&amp;</span> (beer[<span class="st">&#39;beer_style&#39;</span>] <span class="op">==</span> <span class="st">&quot;Light Lager&quot;</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>         beer_name  id_brewery  ... review_taste  beerid
@@ -1525,7 +1543,7 @@ Black Horse Black Beer       10325  Vecchio Birraio  ...           3.0        48
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href></a>beer.name_brewery.value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href></a>beer.name_brewery.value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>name_brewery
@@ -1552,7 +1570,7 @@ Name: count, Length: 73, dtype: int64</code></pre>
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href></a>beer[beer[<span class="st">&#39;overall_review&#39;</span>].between(<span class="dv">3</span>,<span class="dv">4</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href></a>beer[beer[<span class="st">&#39;overall_review&#39;</span>].between(<span class="dv">3</span>,<span class="dv">4</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                                              beer_name  ...  beerid
@@ -1591,7 +1609,7 @@ Name: count, Length: 73, dtype: int64</code></pre>
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href></a>beer.iloc[<span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href></a>beer.iloc[<span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>beer_name                 15th Anniversary
@@ -1615,7 +1633,7 @@ Name: 1762, dtype: object</code></pre>
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href></a>beer.iloc[<span class="dv">3</span>:<span class="dv">6</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href></a>beer.iloc[<span class="dv">3</span>:<span class="dv">6</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                                              beer_name  ...  beerid
@@ -1635,7 +1653,7 @@ Name: 1762, dtype: object</code></pre>
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href></a>beer.iloc[[<span class="dv">3</span>,<span class="dv">7</span>,<span class="dv">9</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href></a>beer.iloc[[<span class="dv">3</span>,<span class="dv">7</span>,<span class="dv">9</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>             beer_name  id_brewery  ... review_taste  beerid
@@ -1656,7 +1674,7 @@ Name: 1762, dtype: object</code></pre>
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href></a>beer.loc[beer.name_brewery <span class="op">==</span> <span class="st">&#39;Broad Ripple Brew Pub&#39;</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href></a>beer.loc[beer.name_brewery <span class="op">==</span> <span class="st">&#39;Broad Ripple Brew Pub&#39;</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                                              beer_name  ...  beerid
@@ -1685,8 +1703,8 @@ Name: 1762, dtype: object</code></pre>
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href></a>beer2 <span class="op">=</span> beer.loc[beer.name_brewery <span class="op">!=</span> <span class="st">&#39;Broad Ripple Brew Pub&#39;</span>]</span>
-<span id="cb54-2"><a href></a>beer2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href></a>beer2 <span class="op">=</span> beer.loc[beer.name_brewery <span class="op">!=</span> <span class="st">&#39;Broad Ripple Brew Pub&#39;</span>]</span>
+<span id="cb55-2"><a href></a>beer2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>               beer_name  id_brewery  ... review_taste  beerid
@@ -1715,7 +1733,7 @@ Name: 1762, dtype: object</code></pre>
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href></a>beer.shape[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href></a>beer.shape[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>5998</code></pre>
@@ -1726,7 +1744,7 @@ Name: 1762, dtype: object</code></pre>
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href></a>beer2.shape[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href></a>beer2.shape[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>5846</code></pre>
@@ -1741,8 +1759,8 @@ Name: 1762, dtype: object</code></pre>
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href></a>beer[<span class="st">&#39;review_avg&#39;</span>] <span class="op">=</span> (beer[<span class="st">&#39;aroma_review&#39;</span>] <span class="op">+</span> beer[<span class="st">&#39;appearance_review&#39;</span>])<span class="op">/</span><span class="dv">2</span></span>
-<span id="cb60-2"><a href></a>beer.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href></a>beer[<span class="st">&#39;review_avg&#39;</span>] <span class="op">=</span> (beer[<span class="st">&#39;aroma_review&#39;</span>] <span class="op">+</span> beer[<span class="st">&#39;appearance_review&#39;</span>])<span class="op">/</span><span class="dv">2</span></span>
+<span id="cb61-2"><a href></a>beer.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                   beer_name  id_brewery  ... beerid  review_avg
@@ -1764,14 +1782,14 @@ Name: 1762, dtype: object</code></pre>
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href></a>data <span class="op">=</span> {<span class="st">&#39;beer_name&#39;</span>: [<span class="st">&#39;Corona&#39;</span>],</span>
-<span id="cb62-2"><a href></a>        <span class="st">&#39;id_brewery&#39;</span>: <span class="va">None</span>,</span>
-<span id="cb62-3"><a href></a>        <span class="st">&#39;overall_review&#39;</span>: [<span class="st">&#39;5&#39;</span>],</span>
-<span id="cb62-4"><a href></a>        <span class="st">&#39;aroma_review&#39;</span>: [<span class="st">&#39;5&#39;</span>],</span>
-<span id="cb62-5"><a href></a>        <span class="st">&#39;beer_style&#39;</span>: [<span class="st">&quot;Old Ale&quot;</span>]}</span>
-<span id="cb62-6"><a href></a></span>
-<span id="cb62-7"><a href></a>new_beer <span class="op">=</span> pd.DataFrame(data, index<span class="op">=</span>[<span class="st">&quot;Corona&quot;</span>])</span>
-<span id="cb62-8"><a href></a>new_beer</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href></a>data <span class="op">=</span> {<span class="st">&#39;beer_name&#39;</span>: [<span class="st">&#39;Corona&#39;</span>],</span>
+<span id="cb63-2"><a href></a>        <span class="st">&#39;id_brewery&#39;</span>: <span class="va">None</span>,</span>
+<span id="cb63-3"><a href></a>        <span class="st">&#39;overall_review&#39;</span>: [<span class="st">&#39;5&#39;</span>],</span>
+<span id="cb63-4"><a href></a>        <span class="st">&#39;aroma_review&#39;</span>: [<span class="st">&#39;5&#39;</span>],</span>
+<span id="cb63-5"><a href></a>        <span class="st">&#39;beer_style&#39;</span>: [<span class="st">&quot;Old Ale&quot;</span>]}</span>
+<span id="cb63-6"><a href></a></span>
+<span id="cb63-7"><a href></a>new_beer <span class="op">=</span> pd.DataFrame(data, index<span class="op">=</span>[<span class="st">&quot;Corona&quot;</span>])</span>
+<span id="cb63-8"><a href></a>new_beer</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>       beer_name id_brewery overall_review aroma_review beer_style
@@ -1787,8 +1805,8 @@ Corona    Corona       None              5            5    Old Ale</code></pre>
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href></a>beer2 <span class="op">=</span> beer._append(new_beer)</span>
-<span id="cb64-2"><a href></a>beer2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href></a>beer2 <span class="op">=</span> beer._append(new_beer)</span>
+<span id="cb65-2"><a href></a>beer2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                     beer_name id_brewery  ...   beerid review_avg
@@ -1807,21 +1825,25 @@ Corona                  Corona       None  ...      NaN        NaN
 [5999 rows x 10 columns]</code></pre>
 </div>
 </div>
+<div class="fragment">
 <div class="cell">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href></a><span class="bu">set</span>(new_beer.columns)</span>
-<span id="cb66-2"><a href></a><span class="bu">set</span>(beer2.columns)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href></a><span class="bu">set</span>(new_beer.columns)</span>
+<span id="cb67-2"><a href></a><span class="bu">set</span>(beer2.columns)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
+</div>
+<div class="fragment">
 <div class="cell" data-filename="Python">
 <div class="cell-output cell-output-stdout">
-<pre><code>{&#39;aroma_review&#39;, &#39;beer_style&#39;, &#39;id_brewery&#39;, &#39;overall_review&#39;, &#39;beer_name&#39;}</code></pre>
+<pre><code>{&#39;beer_name&#39;, &#39;beer_style&#39;, &#39;id_brewery&#39;, &#39;overall_review&#39;, &#39;aroma_review&#39;}</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>{&#39;review_avg&#39;, &#39;beerid&#39;, &#39;review_taste&#39;, &#39;aroma_review&#39;, &#39;appearance_review&#39;, &#39;beer_style&#39;, &#39;id_brewery&#39;, &#39;name_brewery&#39;, &#39;overall_review&#39;, &#39;beer_name&#39;}</code></pre>
+<pre><code>{&#39;name_brewery&#39;, &#39;beer_name&#39;, &#39;beer_style&#39;, &#39;beerid&#39;, &#39;review_avg&#39;, &#39;id_brewery&#39;, &#39;overall_review&#39;, &#39;appearance_review&#39;, &#39;review_taste&#39;, &#39;aroma_review&#39;}</code></pre>
+</div>
 </div>
 </div>
 <div class="footer">
@@ -1838,12 +1860,12 @@ Corona                  Corona       None  ...      NaN        NaN
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb69-1"><a href></a><span class="co"># Get the columns that are in new_beer but not in beer2</span></span>
-<span id="cb69-2"><a href></a>columns_in_new_beer_not_in_beer2 <span class="op">=</span> <span class="bu">set</span>(beer2.columns) <span class="op">-</span> <span class="bu">set</span>(new_beer.columns)</span>
-<span id="cb69-3"><a href></a>columns_in_new_beer_not_in_beer2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a href></a><span class="co"># Get the columns that are in new_beer but not in beer2</span></span>
+<span id="cb70-2"><a href></a>columns_in_new_beer_not_in_beer2 <span class="op">=</span> <span class="bu">set</span>(beer2.columns) <span class="op">-</span> <span class="bu">set</span>(new_beer.columns)</span>
+<span id="cb70-3"><a href></a>columns_in_new_beer_not_in_beer2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>{&#39;beerid&#39;, &#39;review_taste&#39;, &#39;appearance_review&#39;, &#39;review_avg&#39;, &#39;name_brewery&#39;}</code></pre>
+<pre><code>{&#39;name_brewery&#39;, &#39;review_avg&#39;, &#39;beerid&#39;, &#39;appearance_review&#39;, &#39;review_taste&#39;}</code></pre>
 </div>
 </div>
 </div>
@@ -1866,8 +1888,8 @@ Corona                  Corona       None  ...      NaN        NaN
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb71-1"><a href></a>unique_beer_styles <span class="op">=</span> beer[<span class="st">&#39;beer_style&#39;</span>].nunique()</span>
-<span id="cb71-2"><a href></a>unique_beer_styles</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a href></a>unique_beer_styles <span class="op">=</span> beer[<span class="st">&#39;beer_style&#39;</span>].nunique()</span>
+<span id="cb72-2"><a href></a>unique_beer_styles</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>80</code></pre>
@@ -1884,12 +1906,12 @@ Corona                  Corona       None  ...      NaN        NaN
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb73-1"><a href></a><span class="co"># Get the counts of each beer style</span></span>
-<span id="cb73-2"><a href></a>beer_style_counts <span class="op">=</span> beer[<span class="st">&#39;beer_style&#39;</span>].value_counts()</span>
-<span id="cb73-3"><a href></a></span>
-<span id="cb73-4"><a href></a><span class="co"># Get the top 5 most common beer styles</span></span>
-<span id="cb73-5"><a href></a>top_5_beer_styles <span class="op">=</span> beer_style_counts.head(<span class="dv">5</span>)</span>
-<span id="cb73-6"><a href></a><span class="bu">print</span>(top_5_beer_styles)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb74-1"><a href></a><span class="co"># Get the counts of each beer style</span></span>
+<span id="cb74-2"><a href></a>beer_style_counts <span class="op">=</span> beer[<span class="st">&#39;beer_style&#39;</span>].value_counts()</span>
+<span id="cb74-3"><a href></a></span>
+<span id="cb74-4"><a href></a><span class="co"># Get the top 5 most common beer styles</span></span>
+<span id="cb74-5"><a href></a>top_5_beer_styles <span class="op">=</span> beer_style_counts.head(<span class="dv">5</span>)</span>
+<span id="cb74-6"><a href></a><span class="bu">print</span>(top_5_beer_styles)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>beer_style
@@ -1912,20 +1934,143 @@ Name: count, dtype: int64</code></pre>
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb75-1"><a href></a><span class="co"># Select the relevant review columns</span></span>
-<span id="cb75-2"><a href></a>review_columns <span class="op">=</span> [<span class="st">&#39;overall_review&#39;</span>, <span class="st">&#39;aroma_review&#39;</span>, <span class="st">&#39;appearance_review&#39;</span>, <span class="st">&#39;review_taste&#39;</span>]</span>
-<span id="cb75-3"><a href></a></span>
-<span id="cb75-4"><a href></a><span class="co"># Create a boolean mask where all selected review columns have a score of 5</span></span>
-<span id="cb75-5"><a href></a>mask <span class="op">=</span> (beer[review_columns] <span class="op">==</span> <span class="dv">5</span>).<span class="bu">all</span>(axis<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb75-6"><a href></a></span>
-<span id="cb75-7"><a href></a><span class="co"># Count the number of rows that meet the condition</span></span>
-<span id="cb75-8"><a href></a>beers_with_perfect_scores <span class="op">=</span> mask.<span class="bu">sum</span>()</span>
-<span id="cb75-9"><a href></a>beers_with_perfect_scores</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb76-1"><a href></a><span class="co"># Select the relevant review columns</span></span>
+<span id="cb76-2"><a href></a>review_columns <span class="op">=</span> [<span class="st">&#39;overall_review&#39;</span>, <span class="st">&#39;aroma_review&#39;</span>, <span class="st">&#39;appearance_review&#39;</span>, <span class="st">&#39;review_taste&#39;</span>]</span>
+<span id="cb76-3"><a href></a></span>
+<span id="cb76-4"><a href></a><span class="co"># Create a boolean mask where all selected review columns have a score of 5</span></span>
+<span id="cb76-5"><a href></a>mask <span class="op">=</span> (beer[review_columns] <span class="op">==</span> <span class="dv">5</span>).<span class="bu">all</span>(axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb76-6"><a href></a></span>
+<span id="cb76-7"><a href></a><span class="co"># Count the number of rows that meet the condition</span></span>
+<span id="cb76-8"><a href></a>beers_with_perfect_scores <span class="op">=</span> mask.<span class="bu">sum</span>()</span>
+<span id="cb76-9"><a href></a>beers_with_perfect_scores</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>19</code></pre>
 </div>
 </div>
+</section>
+<section id="exercises-2" class="slide level2">
+<h2>Exercises 2</h2>
+<p>Here is some data:</p>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb78-1"><a href></a>movies_data <span class="op">=</span> {</span>
+<span id="cb78-2"><a href></a>    <span class="st">&quot;title&quot;</span>: [</span>
+<span id="cb78-3"><a href></a>        <span class="st">&quot;Inception&quot;</span>, <span class="st">&quot;The Dark Knight&quot;</span>, <span class="st">&quot;Pulp Fiction&quot;</span>, <span class="st">&quot;The Matrix&quot;</span>, <span class="st">&quot;Forrest Gump&quot;</span>,</span>
+<span id="cb78-4"><a href></a>        <span class="st">&quot;The Godfather&quot;</span>, <span class="st">&quot;Fight Club&quot;</span>, <span class="st">&quot;Interstellar&quot;</span>, <span class="st">&quot;The Shawshank Redemption&quot;</span>, <span class="st">&quot;The Social Network&quot;</span>,</span>
+<span id="cb78-5"><a href></a>        <span class="st">&quot;Whiplash&quot;</span>, <span class="st">&quot;Parasite&quot;</span>, <span class="st">&quot;Gladiator&quot;</span>, <span class="st">&quot;Toy Story&quot;</span>, <span class="st">&quot;The Grand Budapest Hotel&quot;</span></span>
+<span id="cb78-6"><a href></a>    ],</span>
+<span id="cb78-7"><a href></a>    <span class="st">&quot;genre&quot;</span>: [</span>
+<span id="cb78-8"><a href></a>        <span class="st">&quot;Sci-Fi&quot;</span>, <span class="st">&quot;Action&quot;</span>, <span class="st">&quot;Crime&quot;</span>, <span class="st">&quot;Sci-Fi&quot;</span>, <span class="st">&quot;Drama&quot;</span>,</span>
+<span id="cb78-9"><a href></a>        <span class="st">&quot;Crime&quot;</span>, <span class="st">&quot;Drama&quot;</span>, <span class="st">&quot;Sci-Fi&quot;</span>, <span class="st">&quot;Drama&quot;</span>, <span class="st">&quot;Drama&quot;</span>,</span>
+<span id="cb78-10"><a href></a>        <span class="st">&quot;Drama&quot;</span>, <span class="st">&quot;Thriller&quot;</span>, <span class="st">&quot;Action&quot;</span>, <span class="st">&quot;Animation&quot;</span>, <span class="st">&quot;Comedy&quot;</span></span>
+<span id="cb78-11"><a href></a>    ],</span>
+<span id="cb78-12"><a href></a>    <span class="st">&quot;rating&quot;</span>: [<span class="fl">4.8</span>, <span class="fl">4.9</span>, <span class="fl">4.7</span>, <span class="fl">4.8</span>, <span class="fl">4.6</span>, <span class="fl">4.9</span>, <span class="fl">4.5</span>, <span class="fl">4.7</span>, <span class="fl">4.9</span>, <span class="fl">4.3</span>, <span class="fl">4.6</span>, <span class="fl">4.8</span>, <span class="fl">4.7</span>, <span class="fl">4.4</span>, <span class="fl">4.5</span>],</span>
+<span id="cb78-13"><a href></a>    <span class="st">&quot;votes&quot;</span>: [<span class="dv">2500000</span>, <span class="dv">2300000</span>, <span class="dv">1800000</span>, <span class="dv">1900000</span>, <span class="dv">2100000</span>, <span class="dv">2000000</span>, <span class="dv">1700000</span>, <span class="dv">2200000</span>, <span class="dv">2400000</span>, <span class="dv">1500000</span>, <span class="dv">1400000</span>, <span class="dv">1600000</span>, <span class="dv">1800000</span>, <span class="dv">1300000</span>, <span class="dv">1200000</span>],</span>
+<span id="cb78-14"><a href></a>    <span class="st">&quot;critic_score&quot;</span>: [<span class="dv">94</span>, <span class="dv">98</span>, <span class="dv">96</span>, <span class="dv">87</span>, <span class="dv">92</span>, <span class="dv">100</span>, <span class="dv">88</span>, <span class="dv">85</span>, <span class="dv">99</span>, <span class="dv">93</span>, <span class="dv">95</span>, <span class="dv">100</span>, <span class="dv">90</span>, <span class="dv">89</span>, <span class="dv">91</span>],</span>
+<span id="cb78-15"><a href></a>    <span class="st">&quot;user_score&quot;</span>: [<span class="fl">9.5</span>, <span class="fl">9.7</span>, <span class="fl">9.4</span>, <span class="fl">9.0</span>, <span class="fl">8.9</span>, <span class="fl">10.0</span>, <span class="fl">8.7</span>, <span class="fl">8.5</span>, <span class="fl">9.8</span>, <span class="fl">8.6</span>, <span class="fl">9.2</span>, <span class="fl">10.0</span>, <span class="fl">8.8</span>, <span class="fl">8.3</span>, <span class="fl">8.5</span>],</span>
+<span id="cb78-16"><a href></a>    <span class="st">&quot;year&quot;</span>: [<span class="dv">2010</span>, <span class="dv">2008</span>, <span class="dv">1994</span>, <span class="dv">1999</span>, <span class="dv">1994</span>, <span class="dv">1972</span>, <span class="dv">1999</span>, <span class="dv">2014</span>, <span class="dv">1994</span>, <span class="dv">2010</span>, <span class="dv">2014</span>, <span class="dv">2019</span>, <span class="dv">2000</span>, <span class="dv">1995</span>, <span class="dv">2014</span>]</span>
+<span id="cb78-17"><a href></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="exercises-2-1" class="slide level2">
+<h2>Exercises 2</h2>
+<ol type="1">
+<li>Create a pandas dataframe using <code>pd.DataFrame</code></li>
+<li>How many unique genres are there in the dataset?</li>
+<li>Find the top 5 most common genres.</li>
+<li>How many movies have both a critic_score of 100 and a user_score of 10?</li>
+</ol>
+<!--
+## Exercises 2
+
+
+
+::: {.cell filename='Python'}
+
+```{.python .cell-code}
+df = pd.DataFrame(movies_data)
+```
+:::
+
+
+
+2. How many unique genres are there in the dataset?
+
+
+::: {.cell filename='Python'}
+
+```{.python .cell-code}
+unique_genres = df['genre'].nunique()
+print(unique_genres)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+7
+```
+
+
+:::
+:::
+
+
+
+3. Find the top 5 most common genres.
+
+
+::: {.cell filename='Python'}
+
+```{.python .cell-code}
+top_genres = df['genre'].value_counts().head(5)
+print(top_genres)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+genre
+Drama       5
+Sci-Fi      3
+Action      2
+Crime       2
+Thriller    1
+Name: count, dtype: int64
+```
+
+
+:::
+:::
+
+
+
+4. How many movies have both a critic_score of 100 and a user_score of 10?
+
+
+::: {.cell filename='Python'}
+
+```{.python .cell-code}
+perfect_movies = df[(df['critic_score'] == 100) & (df['user_score'] == 10.0)]
+print(len(perfect_movies))
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+2
+```
+
+
+:::
+:::
+
+
+-->
 </section>
 <section id="operations-in-pandas" class="slide level2">
 <h2>Operations in Pandas</h2>
@@ -1937,7 +2082,7 @@ Name: count, dtype: int64</code></pre>
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb77-1"><a href></a>beer.overall_review.mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb79-1"><a href></a>beer.overall_review.mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>3.775508502834278</code></pre>
@@ -1951,7 +2096,7 @@ Name: count, dtype: int64</code></pre>
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb79-1"><a href></a>beer.overall_review.<span class="bu">min</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb81-1"><a href></a>beer.overall_review.<span class="bu">min</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>1.0</code></pre>
@@ -1962,7 +2107,7 @@ Name: count, dtype: int64</code></pre>
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb81-1"><a href></a>beer.overall_review.<span class="bu">max</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb83-1"><a href></a>beer.overall_review.<span class="bu">max</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>5.0</code></pre>
@@ -1989,8 +2134,8 @@ Name: count, dtype: int64</code></pre>
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb83-1"><a href></a>pd.set_option(<span class="st">&#39;display.max_columns&#39;</span>, <span class="va">None</span>)</span>
-<span id="cb83-2"><a href></a>beer[[<span class="st">&#39;overall_review&#39;</span>, <span class="st">&#39;aroma_review&#39;</span>, <span class="st">&#39;appearance_review&#39;</span>, <span class="st">&#39;review_taste&#39;</span>]].corr()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb85-1"><a href></a>pd.set_option(<span class="st">&#39;display.max_columns&#39;</span>, <span class="va">None</span>)</span>
+<span id="cb85-2"><a href></a>beer[[<span class="st">&#39;overall_review&#39;</span>, <span class="st">&#39;aroma_review&#39;</span>, <span class="st">&#39;appearance_review&#39;</span>, <span class="st">&#39;review_taste&#39;</span>]].corr()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -2059,14 +2204,14 @@ Name: count, dtype: int64</code></pre>
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb84-1"><a href></a>table <span class="op">=</span> {</span>
-<span id="cb84-2"><a href></a>    <span class="st">&quot;Item&quot;</span>: [<span class="st">&#39;Item0&#39;</span>, <span class="st">&#39;Item0&#39;</span>, <span class="st">&#39;Item1&#39;</span>, <span class="st">&#39;Item1&#39;</span>],</span>
-<span id="cb84-3"><a href></a>    <span class="st">&#39;CType&#39;</span>: [<span class="st">&#39;Gold&#39;</span>, <span class="st">&#39;Bronze&#39;</span>, <span class="st">&#39;Gold&#39;</span>, <span class="st">&#39;Silver&#39;</span>],</span>
-<span id="cb84-4"><a href></a>    <span class="st">&#39;USD&#39;</span>: [<span class="st">&#39;1$&#39;</span>, <span class="st">&#39;2$&#39;</span>, <span class="st">&#39;3$&#39;</span>, <span class="st">&#39;4$&#39;</span>],</span>
-<span id="cb84-5"><a href></a>    <span class="st">&#39;EU&#39;</span>: [<span class="st">&#39;1€&#39;</span>, <span class="st">&#39;2€&#39;</span>, <span class="st">&#39;3€&#39;</span>, <span class="st">&#39;4€&#39;</span>]</span>
-<span id="cb84-6"><a href></a>}</span>
-<span id="cb84-7"><a href></a>d <span class="op">=</span> pd.DataFrame(table)</span>
-<span id="cb84-8"><a href></a>d</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb86-1"><a href></a>table <span class="op">=</span> {</span>
+<span id="cb86-2"><a href></a>    <span class="st">&quot;Item&quot;</span>: [<span class="st">&#39;Item0&#39;</span>, <span class="st">&#39;Item0&#39;</span>, <span class="st">&#39;Item1&#39;</span>, <span class="st">&#39;Item1&#39;</span>],</span>
+<span id="cb86-3"><a href></a>    <span class="st">&#39;CType&#39;</span>: [<span class="st">&#39;Gold&#39;</span>, <span class="st">&#39;Bronze&#39;</span>, <span class="st">&#39;Gold&#39;</span>, <span class="st">&#39;Silver&#39;</span>],</span>
+<span id="cb86-4"><a href></a>    <span class="st">&#39;USD&#39;</span>: [<span class="st">&#39;1$&#39;</span>, <span class="st">&#39;2$&#39;</span>, <span class="st">&#39;3$&#39;</span>, <span class="st">&#39;4$&#39;</span>],</span>
+<span id="cb86-5"><a href></a>    <span class="st">&#39;EU&#39;</span>: [<span class="st">&#39;1€&#39;</span>, <span class="st">&#39;2€&#39;</span>, <span class="st">&#39;3€&#39;</span>, <span class="st">&#39;4€&#39;</span>]</span>
+<span id="cb86-6"><a href></a>}</span>
+<span id="cb86-7"><a href></a>d <span class="op">=</span> pd.DataFrame(table)</span>
+<span id="cb86-8"><a href></a>d</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    Item   CType USD  EU
@@ -2084,7 +2229,7 @@ Name: count, dtype: int64</code></pre>
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb86-1"><a href></a>d</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb88-1"><a href></a>d</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    Item   CType USD  EU
@@ -2101,8 +2246,8 @@ Name: count, dtype: int64</code></pre>
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb88-1"><a href></a>d_pivot <span class="op">=</span> d.pivot(index<span class="op">=</span><span class="st">&#39;Item&#39;</span>, columns<span class="op">=</span><span class="st">&#39;CType&#39;</span>, values<span class="op">=</span>[<span class="st">&#39;USD&#39;</span>, <span class="st">&#39;EU&#39;</span>])</span>
-<span id="cb88-2"><a href></a>d_pivot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb90-1"><a href></a>d_pivot <span class="op">=</span> d.pivot(index<span class="op">=</span><span class="st">&#39;Item&#39;</span>, columns<span class="op">=</span><span class="st">&#39;CType&#39;</span>, values<span class="op">=</span>[<span class="st">&#39;USD&#39;</span>, <span class="st">&#39;EU&#39;</span>])</span>
+<span id="cb90-2"><a href></a>d_pivot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>         USD                 EU            
@@ -2124,14 +2269,14 @@ Item1    NaN   3$     4$    NaN   3€     4€</code></pre>
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb90-1"><a href></a>data <span class="op">=</span> {<span class="st">&#39;weekday&#39;</span>: [<span class="st">&quot;Monday&quot;</span>, <span class="st">&quot;Tuesday&quot;</span>, <span class="st">&quot;Wednesday&quot;</span>, </span>
-<span id="cb90-2"><a href></a>         <span class="st">&quot;Thursday&quot;</span>, <span class="st">&quot;Friday&quot;</span>, <span class="st">&quot;Saturday&quot;</span>, <span class="st">&quot;Sunday&quot;</span>],</span>
-<span id="cb90-3"><a href></a>        <span class="st">&#39;Person 1&#39;</span>: [<span class="dv">12</span>, <span class="dv">6</span>, <span class="dv">5</span>, <span class="dv">8</span>, <span class="dv">11</span>, <span class="dv">6</span>, <span class="dv">4</span>],</span>
-<span id="cb90-4"><a href></a>        <span class="st">&#39;Person 2&#39;</span>: [<span class="dv">10</span>, <span class="dv">6</span>, <span class="dv">11</span>, <span class="dv">5</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">12</span>],</span>
-<span id="cb90-5"><a href></a>        <span class="st">&#39;Person 3&#39;</span>: [<span class="dv">8</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">3</span>, <span class="dv">7</span>, <span class="dv">11</span>, <span class="dv">15</span>]}</span>
-<span id="cb90-6"><a href></a>df <span class="op">=</span> pd.DataFrame(data, columns<span class="op">=</span>[<span class="st">&#39;weekday&#39;</span>,</span>
-<span id="cb90-7"><a href></a>        <span class="st">&#39;Person 1&#39;</span>, <span class="st">&#39;Person 2&#39;</span>, <span class="st">&#39;Person 3&#39;</span>])</span>
-<span id="cb90-8"><a href></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb92"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb92-1"><a href></a>data <span class="op">=</span> {<span class="st">&#39;weekday&#39;</span>: [<span class="st">&quot;Monday&quot;</span>, <span class="st">&quot;Tuesday&quot;</span>, <span class="st">&quot;Wednesday&quot;</span>, </span>
+<span id="cb92-2"><a href></a>         <span class="st">&quot;Thursday&quot;</span>, <span class="st">&quot;Friday&quot;</span>, <span class="st">&quot;Saturday&quot;</span>, <span class="st">&quot;Sunday&quot;</span>],</span>
+<span id="cb92-3"><a href></a>        <span class="st">&#39;Person 1&#39;</span>: [<span class="dv">12</span>, <span class="dv">6</span>, <span class="dv">5</span>, <span class="dv">8</span>, <span class="dv">11</span>, <span class="dv">6</span>, <span class="dv">4</span>],</span>
+<span id="cb92-4"><a href></a>        <span class="st">&#39;Person 2&#39;</span>: [<span class="dv">10</span>, <span class="dv">6</span>, <span class="dv">11</span>, <span class="dv">5</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">12</span>],</span>
+<span id="cb92-5"><a href></a>        <span class="st">&#39;Person 3&#39;</span>: [<span class="dv">8</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">3</span>, <span class="dv">7</span>, <span class="dv">11</span>, <span class="dv">15</span>]}</span>
+<span id="cb92-6"><a href></a>df <span class="op">=</span> pd.DataFrame(data, columns<span class="op">=</span>[<span class="st">&#39;weekday&#39;</span>,</span>
+<span id="cb92-7"><a href></a>        <span class="st">&#39;Person 1&#39;</span>, <span class="st">&#39;Person 2&#39;</span>, <span class="st">&#39;Person 3&#39;</span>])</span>
+<span id="cb92-8"><a href></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     weekday  Person 1  Person 2  Person 3
@@ -2156,10 +2301,10 @@ Item1    NaN   3$     4$    NaN   3€     4€</code></pre>
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb92"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb92-1"><a href></a>melted <span class="op">=</span> pd.melt(df, id_vars<span class="op">=</span>[<span class="st">&quot;weekday&quot;</span>], </span>
-<span id="cb92-2"><a href></a>                 var_name<span class="op">=</span><span class="st">&quot;Person&quot;</span>, </span>
-<span id="cb92-3"><a href></a>                 value_name<span class="op">=</span><span class="st">&quot;Score&quot;</span>)</span>
-<span id="cb92-4"><a href></a>melted</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb94"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb94-1"><a href></a>melted <span class="op">=</span> pd.melt(df, id_vars<span class="op">=</span>[<span class="st">&quot;weekday&quot;</span>], </span>
+<span id="cb94-2"><a href></a>                 var_name<span class="op">=</span><span class="st">&quot;Person&quot;</span>, </span>
+<span id="cb94-3"><a href></a>                 value_name<span class="op">=</span><span class="st">&quot;Score&quot;</span>)</span>
+<span id="cb94-4"><a href></a>melted</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>      weekday    Person  Score
@@ -2196,15 +2341,15 @@ Item1    NaN   3$     4$    NaN   3€     4€</code></pre>
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb94"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb94-1"><a href></a>data <span class="op">=</span> {</span>
-<span id="cb94-2"><a href></a>    <span class="st">&#39;Date&#39;</span>: [<span class="st">&#39;2024-08-10&#39;</span>, <span class="st">&#39;2024-08-10&#39;</span>, <span class="st">&#39;2024-08-10&#39;</span>, <span class="st">&#39;2024-08-11&#39;</span>, <span class="st">&#39;2024-08-11&#39;</span>, <span class="st">&#39;2024-08-11&#39;</span>],</span>
-<span id="cb94-3"><a href></a>    <span class="st">&#39;City&#39;</span>: [<span class="st">&#39;New York&#39;</span>, <span class="st">&#39;Chicago&#39;</span>, <span class="st">&#39;Miami&#39;</span>, <span class="st">&#39;New York&#39;</span>, <span class="st">&#39;Chicago&#39;</span>, <span class="st">&#39;Miami&#39;</span>],</span>
-<span id="cb94-4"><a href></a>    <span class="st">&#39;Temp&#39;</span>: [<span class="dv">85</span>, <span class="dv">78</span>, <span class="dv">90</span>, <span class="dv">88</span>, <span class="dv">76</span>, <span class="dv">92</span>],</span>
-<span id="cb94-5"><a href></a>    <span class="st">&#39;Hum&#39;</span>: [<span class="dv">70</span>, <span class="dv">65</span>, <span class="dv">80</span>, <span class="dv">72</span>, <span class="dv">68</span>, <span class="dv">82</span>]</span>
-<span id="cb94-6"><a href></a>}</span>
-<span id="cb94-7"><a href></a></span>
-<span id="cb94-8"><a href></a>df <span class="op">=</span> pd.DataFrame(data)</span>
-<span id="cb94-9"><a href></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb96"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb96-1"><a href></a>data <span class="op">=</span> {</span>
+<span id="cb96-2"><a href></a>    <span class="st">&#39;Date&#39;</span>: [<span class="st">&#39;2024-08-10&#39;</span>, <span class="st">&#39;2024-08-10&#39;</span>, <span class="st">&#39;2024-08-10&#39;</span>, <span class="st">&#39;2024-08-11&#39;</span>, <span class="st">&#39;2024-08-11&#39;</span>, <span class="st">&#39;2024-08-11&#39;</span>],</span>
+<span id="cb96-3"><a href></a>    <span class="st">&#39;City&#39;</span>: [<span class="st">&#39;New York&#39;</span>, <span class="st">&#39;Chicago&#39;</span>, <span class="st">&#39;Miami&#39;</span>, <span class="st">&#39;New York&#39;</span>, <span class="st">&#39;Chicago&#39;</span>, <span class="st">&#39;Miami&#39;</span>],</span>
+<span id="cb96-4"><a href></a>    <span class="st">&#39;Temp&#39;</span>: [<span class="dv">85</span>, <span class="dv">78</span>, <span class="dv">90</span>, <span class="dv">88</span>, <span class="dv">76</span>, <span class="dv">92</span>],</span>
+<span id="cb96-5"><a href></a>    <span class="st">&#39;Hum&#39;</span>: [<span class="dv">70</span>, <span class="dv">65</span>, <span class="dv">80</span>, <span class="dv">72</span>, <span class="dv">68</span>, <span class="dv">82</span>]</span>
+<span id="cb96-6"><a href></a>}</span>
+<span id="cb96-7"><a href></a></span>
+<span id="cb96-8"><a href></a>df <span class="op">=</span> pd.DataFrame(data)</span>
+<span id="cb96-9"><a href></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>         Date      City  Temp  Hum
@@ -2244,16 +2389,16 @@ Date
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb97"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb97-1"><a href></a><span class="co"># Sample DataFrame</span></span>
-<span id="cb97-2"><a href></a>data <span class="op">=</span> {</span>
-<span id="cb97-3"><a href></a>    <span class="st">&#39;Person&#39;</span>: [<span class="st">&#39;Alice&#39;</span>, <span class="st">&#39;Bob&#39;</span>, <span class="st">&#39;Carol&#39;</span>],</span>
-<span id="cb97-4"><a href></a>    <span class="st">&#39;Apple&#39;</span>: [<span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">4</span>],</span>
-<span id="cb97-5"><a href></a>    <span class="st">&#39;Banana&#39;</span>: [<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">4</span>],</span>
-<span id="cb97-6"><a href></a>    <span class="st">&#39;Orange&#39;</span>: [<span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">5</span>]</span>
-<span id="cb97-7"><a href></a>}</span>
-<span id="cb97-8"><a href></a></span>
-<span id="cb97-9"><a href></a>df <span class="op">=</span> pd.DataFrame(data)</span>
-<span id="cb97-10"><a href></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb99"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb99-1"><a href></a><span class="co"># Sample DataFrame</span></span>
+<span id="cb99-2"><a href></a>data <span class="op">=</span> {</span>
+<span id="cb99-3"><a href></a>    <span class="st">&#39;Person&#39;</span>: [<span class="st">&#39;Alice&#39;</span>, <span class="st">&#39;Bob&#39;</span>, <span class="st">&#39;Carol&#39;</span>],</span>
+<span id="cb99-4"><a href></a>    <span class="st">&#39;Apple&#39;</span>: [<span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">4</span>],</span>
+<span id="cb99-5"><a href></a>    <span class="st">&#39;Banana&#39;</span>: [<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">4</span>],</span>
+<span id="cb99-6"><a href></a>    <span class="st">&#39;Orange&#39;</span>: [<span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">5</span>]</span>
+<span id="cb99-7"><a href></a>}</span>
+<span id="cb99-8"><a href></a></span>
+<span id="cb99-9"><a href></a>df <span class="op">=</span> pd.DataFrame(data)</span>
+<span id="cb99-10"><a href></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Person  Apple  Banana  Orange
@@ -2283,280 +2428,10 @@ Date
 </div>
 </div>
 </section>
-<section id="aggregating-by-group" class="slide level2">
-<h2>Aggregating by group</h2>
-<p>In some instances, we might be interested in performing operations by group.</p>
-<p>For example, we might be interested in counting the number of observations by group.</p>
-<div class="fragment">
-<p>Let’s say that we want to know how many beers there are per beer style.</p>
-<p>The following will create a group object.</p>
-</div>
-<div class="fragment">
-<div class="cell">
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>Python</strong></pre>
-</div>
-<div class="sourceCode cell-code" id="cb100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb100-1"><a href></a>grouped_by_style <span class="op">=</span> beer.groupby(by<span class="op">=</span><span class="st">&#39;beer_style&#39;</span>)</span>
-<span id="cb100-2"><a href></a>grouped_by_style</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x1755e3c50&gt;</code></pre>
-</div>
-</div>
-</div>
-</section>
-<section id="aggregating-by-group-1" class="slide level2">
-<h2>Aggregating by group</h2>
-<p>If we actually want to see the number of beers by style, we would do the following</p>
-<div class="cell">
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>Python</strong></pre>
-</div>
-<div class="sourceCode cell-code" id="cb102"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb102-1"><a href></a>grouped_by_style.size()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>beer_style
-Altbier                        26
-American Adjunct Lager         28
-American Amber / Red Ale      147
-American Amber / Red Lager      7
-American Barleywine             9
-                             ... 
-Tripel                          9
-Vienna Lager                   17
-Weizenbock                      1
-Winter Warmer                 129
-Witbier                        26
-Length: 80, dtype: int64</code></pre>
-</div>
-</div>
-</section>
-<section id="aggregating-by-group-2" class="slide level2">
-<h2>Aggregating by group</h2>
-<p>We could also rearrange the number of beers by style in the following way:</p>
-<div class="cell">
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>Python</strong></pre>
-</div>
-<div class="sourceCode cell-code" id="cb104"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb104-1"><a href></a><span class="co">#Creating a dataframe</span></span>
-<span id="cb104-2"><a href></a>df <span class="op">=</span> pd.DataFrame(grouped_by_style.size())</span>
-<span id="cb104-3"><a href></a><span class="co">#Renaming the column</span></span>
-<span id="cb104-4"><a href></a>df <span class="op">=</span> df.rename(columns<span class="op">=</span>{<span class="dv">0</span>: <span class="st">&#39;count&#39;</span>})</span>
-<span id="cb104-5"><a href></a><span class="co">#Sorting</span></span>
-<span id="cb104-6"><a href></a>df_sorted <span class="op">=</span> df.sort_values(by<span class="op">=</span><span class="st">&#39;count&#39;</span>, ascending<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb104-7"><a href></a>df_sorted</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>                                count
-beer_style                           
-Russian Imperial Stout           1561
-American IPA                      791
-American Double / Imperial IPA    493
-Light Lager                       466
-American Pale Ale (APA)           304
-...                               ...
-Japanese Rice Lager                 1
-Flanders Red Ale                    1
-California Common / Steam Beer      1
-Bière de Garde                      1
-Weizenbock                          1
-
-[80 rows x 1 columns]</code></pre>
-</div>
-</div>
-</section>
-<section id="aggregating-by-group-3" class="slide level2">
-<h2>Aggregating by group</h2>
-<p>If we are interested in the average review score for every beer style, we would do:</p>
-<div class="cell">
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>Python</strong></pre>
-</div>
-<div class="sourceCode cell-code" id="cb106"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb106-1"><a href></a>a <span class="op">=</span> beer.groupby(<span class="st">&#39;beer_style&#39;</span>)[<span class="st">&#39;overall_review&#39;</span>].mean()</span>
-<span id="cb106-2"><a href></a><span class="bu">print</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>beer_style
-Altbier                       3.846154
-American Adjunct Lager        3.642857
-American Amber / Red Ale      3.792517
-American Amber / Red Lager    3.071429
-American Barleywine           3.722222
-                                ...   
-Tripel                        3.777778
-Vienna Lager                  3.500000
-Weizenbock                    4.000000
-Winter Warmer                 3.457364
-Witbier                       3.615385
-Name: overall_review, Length: 80, dtype: float64</code></pre>
-</div>
-</div>
-</section>
-<section id="aggregating-by-group-4" class="slide level2">
-<h2>Aggregating by group</h2>
-<p>We could also calculate the average review for more than one category</p>
-<div class="fragment">
-<div class="cell">
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>Python</strong></pre>
-</div>
-<div class="sourceCode cell-code" id="cb108"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb108-1"><a href></a>a <span class="op">=</span> beer.groupby([<span class="st">&#39;beer_style&#39;</span>, <span class="st">&#39;name_brewery&#39;</span>])[<span class="st">&#39;overall_review&#39;</span>].mean()</span>
-<span id="cb108-2"><a href></a><span class="bu">print</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>beer_style     name_brewery                              
-Altbier        Bakushukan Clair (Kure Beer)                  4.000000
-               Bluegrass Brewing Co.                         3.766667
-               Bluegrass Brewing Co. - East St. Matthew&#39;s    4.000000
-               Broad Ripple Brew Pub                         4.000000
-               Clockwork Beer Co, The                        4.000000
-                                                               ...   
-Winter Warmer  Hoppin&#39; Frog Brewery                          3.444000
-               NoDa Brewing Company                          4.000000
-Witbier        Broad Ripple Brew Pub                         2.833333
-               Frog at Bercy Village, The                    4.000000
-               Moon River Brewing Company                    3.842105
-Name: overall_review, Length: 375, dtype: float64</code></pre>
-</div>
-</div>
-</div>
-</section>
-<section id="aggregating-by-group-5" class="slide level2">
-<h2>Aggregating by group</h2>
-<p>Another option to work with grouped data is to use the <code>agg</code> function.</p>
-<p>This allows us to apply multiple functions to one group.</p>
-<div class="fragment">
-<div class="cell">
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>Python</strong></pre>
-</div>
-<div class="sourceCode cell-code" id="cb110"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb110-1"><a href></a>a <span class="op">=</span> beer.groupby([<span class="st">&#39;beer_style&#39;</span>, <span class="st">&#39;name_brewery&#39;</span>])[<span class="st">&#39;overall_review&#39;</span>].agg([<span class="st">&quot;mean&quot;</span>, <span class="st">&quot;count&quot;</span>])</span>
-<span id="cb110-2"><a href></a><span class="bu">print</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>                                                              mean  count
-beer_style    name_brewery                                               
-Altbier       Bakushukan Clair (Kure Beer)                4.000000      1
-              Bluegrass Brewing Co.                       3.766667     15
-              Bluegrass Brewing Co. - East St. Matthew&#39;s  4.000000      1
-              Broad Ripple Brew Pub                       4.000000      1
-              Clockwork Beer Co, The                      4.000000      4
-...                                                            ...    ...
-Winter Warmer Hoppin&#39; Frog Brewery                        3.444000    125
-              NoDa Brewing Company                        4.000000      2
-Witbier       Broad Ripple Brew Pub                       2.833333      6
-              Frog at Bercy Village, The                  4.000000      1
-              Moon River Brewing Company                  3.842105     19
-
-[375 rows x 2 columns]</code></pre>
-</div>
-</div>
-</div>
-</section>
-<section id="exercises-1" class="slide level2">
-<h2>Exercises</h2>
-<ol type="1">
-<li>What are the top 5 beer styles?</li>
-<li>What are the top 5 worst breweries?</li>
-<li>Which brewery has the greatest variability in its rating?</li>
-</ol>
-</section>
-<section id="exercises-2" class="slide level2">
-<h2>Exercises</h2>
-<ol type="1">
-<li>What are the top 5 beer styles?</li>
-</ol>
-<div class="cell">
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>Python</strong></pre>
-</div>
-<div class="sourceCode cell-code" id="cb112"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb112-1"><a href></a><span class="co">#Calculate the overall review by beer style</span></span>
-<span id="cb112-2"><a href></a>a <span class="op">=</span> beer.groupby([<span class="st">&#39;beer_style&#39;</span>])[<span class="st">&#39;overall_review&#39;</span>].agg([<span class="st">&quot;mean&quot;</span>])</span>
-<span id="cb112-3"><a href></a><span class="co">#Creating a dataframe</span></span>
-<span id="cb112-4"><a href></a>df <span class="op">=</span> pd.DataFrame(a)</span>
-<span id="cb112-5"><a href></a><span class="co">#Renaming the column</span></span>
-<span id="cb112-6"><a href></a>df <span class="op">=</span> df.rename(columns<span class="op">=</span>{<span class="st">&quot;mean&quot;</span>: <span class="st">&#39;avg_review&#39;</span>})</span>
-<span id="cb112-7"><a href></a><span class="co">#Sorting</span></span>
-<span id="cb112-8"><a href></a>df_sorted <span class="op">=</span> df.sort_values(by<span class="op">=</span><span class="st">&#39;avg_review&#39;</span>, ascending<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb112-9"><a href></a>df_sorted.head(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>                                avg_review
-beer_style                                
-California Common / Steam Beer    5.000000
-Flanders Red Ale                  4.500000
-English Barleywine                4.309091
-Chile Beer                        4.166667
-Rauchbier                         4.159091</code></pre>
-</div>
-</div>
-</section>
-<section id="exercises-3" class="slide level2">
-<h2>Exercises</h2>
-<ol start="2" type="1">
-<li>What are the top 5 worst breweries?</li>
-</ol>
-<div class="cell">
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>Python</strong></pre>
-</div>
-<div class="sourceCode cell-code" id="cb114"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb114-1"><a href></a><span class="co">#Calculate the overall review by beer style</span></span>
-<span id="cb114-2"><a href></a>b <span class="op">=</span> beer.groupby([<span class="st">&#39;name_brewery&#39;</span>])[<span class="st">&#39;overall_review&#39;</span>].agg([<span class="st">&quot;mean&quot;</span>])</span>
-<span id="cb114-3"><a href></a><span class="co">#Creating a dataframe</span></span>
-<span id="cb114-4"><a href></a>df <span class="op">=</span> pd.DataFrame(b)</span>
-<span id="cb114-5"><a href></a><span class="co">#Renaming the column</span></span>
-<span id="cb114-6"><a href></a>df <span class="op">=</span> df.rename(columns<span class="op">=</span>{<span class="st">&quot;mean&quot;</span>: <span class="st">&#39;avg_review&#39;</span>})</span>
-<span id="cb114-7"><a href></a><span class="co">#Sorting</span></span>
-<span id="cb114-8"><a href></a>df_sorted <span class="op">=</span> df.sort_values(by<span class="op">=</span><span class="st">&#39;avg_review&#39;</span>, ascending<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb114-9"><a href></a>df_sorted.head(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>                                     avg_review
-name_brewery                                   
-Eastwood The Brewer (John Eastwood)    1.500000
-Trafalgar Ales &amp; Meads                 2.071429
-Bootleggers Restaurant &amp; Brewery       2.250000
-Piniavos Alutis                        2.500000
-Vecchio Birraio                        2.625000</code></pre>
-</div>
-</div>
-</section>
-<section id="exercises-4" class="slide level2">
-<h2>Exercises</h2>
-<ol start="3" type="1">
-<li>Which brewery has the greatest variability in its rating?</li>
-</ol>
-<div class="cell">
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>Python</strong></pre>
-</div>
-<div class="sourceCode cell-code" id="cb116"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb116-1"><a href></a><span class="co">#Calculate the overall review by beer style</span></span>
-<span id="cb116-2"><a href></a>c <span class="op">=</span> beer.groupby([<span class="st">&#39;name_brewery&#39;</span>])[<span class="st">&#39;overall_review&#39;</span>].std()</span>
-<span id="cb116-3"><a href></a><span class="co">#Identify the highest variability</span></span>
-<span id="cb116-4"><a href></a>max_variability_brewery <span class="op">=</span> c.sort_values(ascending<span class="op">=</span><span class="va">False</span>).head(<span class="dv">1</span>)</span>
-<span id="cb116-5"><a href></a>max_variability_brewery</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>name_brewery
-Otro Mundo Brewing Company    1.06066
-Name: overall_review, dtype: float64</code></pre>
-</div>
-</div>
-</section>
 <section id="conclusion" class="slide level2">
 <h2>Conclusion</h2>
 <p><strong>Data Wrangling Tools</strong>: Pandas simplifies renaming, reindexing, filtering, and modifying data structures for effective data wrangling.</p>
 <p><strong>Handling Duplicates</strong>: Provides efficient methods to detect and remove duplicates at the row or column level.</p>
-<p><strong>Aggregation and Grouping</strong>: Facilitates grouping and aggregation for advanced data summarization and analysis.</p>
 <p><strong>Reshaping Data</strong>: Enables pivoting and melting to transform data structures for specific analytical needs.</p>
 
 </section>
