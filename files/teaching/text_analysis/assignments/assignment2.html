@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Your Name">
+<meta name="dcterms.date" content="2024-09-13">
 
-<title>PL/CS 362-1: Applied Computational Methods for Social Sciences</title>
+<title>Assignment 2</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -18,6 +20,40 @@ ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
 width: 0.8em;
 margin: 0 0.8em 0.2em -1em;  vertical-align: middle;
+}
+
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+}
+pre.numberSource { margin-left: 3em; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -3054,37 +3090,27 @@ vertical-align: -.125em;
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#details" id="toc-details" class="nav-link active" data-scroll-target="#details"><span class="header-section-number">1</span> Details</a></li>
-  <li><a href="#course-description" id="toc-course-description" class="nav-link" data-scroll-target="#course-description"><span class="header-section-number">2</span> Course Description</a></li>
-  <li><a href="#summary-of-course-content" id="toc-summary-of-course-content" class="nav-link" data-scroll-target="#summary-of-course-content"><span class="header-section-number">3</span> Summary of Course Content</a></li>
-  <li><a href="#learning-outcomes" id="toc-learning-outcomes" class="nav-link" data-scroll-target="#learning-outcomes"><span class="header-section-number">4</span> Learning Outcomes</a></li>
-  <li><a href="#assessment" id="toc-assessment" class="nav-link" data-scroll-target="#assessment"><span class="header-section-number">5</span> Assessment</a>
-  <ul class="collapse">
-  <li><a href="#assessment-methods" id="toc-assessment-methods" class="nav-link" data-scroll-target="#assessment-methods"><span class="header-section-number">5.1</span> Assessment methods:</a></li>
-  <li><a href="#problem-sets" id="toc-problem-sets" class="nav-link" data-scroll-target="#problem-sets"><span class="header-section-number">5.2</span> Problem Sets</a></li>
-  <li><a href="#final-project" id="toc-final-project" class="nav-link" data-scroll-target="#final-project"><span class="header-section-number">5.3</span> Final Project</a></li>
-  </ul></li>
-  <li><a href="#attendance-requirements" id="toc-attendance-requirements" class="nav-link" data-scroll-target="#attendance-requirements"><span class="header-section-number">6</span> Attendance Requirements</a></li>
-  <li><a href="#academic-honesty" id="toc-academic-honesty" class="nav-link" data-scroll-target="#academic-honesty"><span class="header-section-number">7</span> Academic Honesty</a></li>
-  <li><a href="#students-with-learning-or-other-disabilities" id="toc-students-with-learning-or-other-disabilities" class="nav-link" data-scroll-target="#students-with-learning-or-other-disabilities"><span class="header-section-number">8</span> Students with Learning or Other Disabilities</a>
-  <ul class="collapse">
-  <li><a href="#required-books" id="toc-required-books" class="nav-link" data-scroll-target="#required-books"><span class="header-section-number">8.1</span> Required Books</a></li>
-  </ul></li>
-  <li><a href="#week-1" id="toc-week-1" class="nav-link" data-scroll-target="#week-1">Week 1</a></li>
-  <li><a href="#week-2" id="toc-week-2" class="nav-link" data-scroll-target="#week-2">Week 2</a></li>
-  <li><a href="#week-3" id="toc-week-3" class="nav-link" data-scroll-target="#week-3">Week 3</a></li>
-  <li><a href="#week-4" id="toc-week-4" class="nav-link" data-scroll-target="#week-4">Week 4</a></li>
-  <li><a href="#week-5" id="toc-week-5" class="nav-link" data-scroll-target="#week-5">Week 5</a></li>
-  <li><a href="#week-6" id="toc-week-6" class="nav-link" data-scroll-target="#week-6">Week 6</a></li>
-  <li><a href="#week-7" id="toc-week-7" class="nav-link" data-scroll-target="#week-7">Week 7</a></li>
-  <li><a href="#week-8" id="toc-week-8" class="nav-link" data-scroll-target="#week-8">Week 8</a></li>
-  <li><a href="#week-9" id="toc-week-9" class="nav-link" data-scroll-target="#week-9">Week 9</a></li>
-  <li><a href="#week-10" id="toc-week-10" class="nav-link" data-scroll-target="#week-10">Week 10</a></li>
-  <li><a href="#week-11" id="toc-week-11" class="nav-link" data-scroll-target="#week-11">Week 11</a></li>
-  <li><a href="#week-12" id="toc-week-12" class="nav-link" data-scroll-target="#week-12">Week 12</a></li>
-  <li><a href="#week-13" id="toc-week-13" class="nav-link" data-scroll-target="#week-13">Week 13</a></li>
-  <li><a href="#week-14" id="toc-week-14" class="nav-link" data-scroll-target="#week-14">Week 14</a></li>
-  <li><a href="#supplementary-tutorials" id="toc-supplementary-tutorials" class="nav-link" data-scroll-target="#supplementary-tutorials">Supplementary Tutorials</a></li>
+  <li><a href="#instructions" id="toc-instructions" class="nav-link active" data-scroll-target="#instructions">Instructions</a></li>
+  <li><a href="#question" id="toc-question" class="nav-link" data-scroll-target="#question"><span class="header-section-number">1</span> Question</a></li>
+  <li><a href="#question-1" id="toc-question-1" class="nav-link" data-scroll-target="#question-1"><span class="header-section-number">2</span> Question</a></li>
+  <li><a href="#question-2" id="toc-question-2" class="nav-link" data-scroll-target="#question-2"><span class="header-section-number">3</span> Question</a></li>
+  <li><a href="#question-3" id="toc-question-3" class="nav-link" data-scroll-target="#question-3"><span class="header-section-number">4</span> Question</a></li>
+  <li><a href="#question-4" id="toc-question-4" class="nav-link" data-scroll-target="#question-4"><span class="header-section-number">5</span> Question</a></li>
+  <li><a href="#question-5" id="toc-question-5" class="nav-link" data-scroll-target="#question-5"><span class="header-section-number">6</span> Question</a></li>
+  <li><a href="#question-6" id="toc-question-6" class="nav-link" data-scroll-target="#question-6"><span class="header-section-number">7</span> Question</a></li>
+  <li><a href="#question-7" id="toc-question-7" class="nav-link" data-scroll-target="#question-7"><span class="header-section-number">8</span> Question</a></li>
+  <li><a href="#question-8" id="toc-question-8" class="nav-link" data-scroll-target="#question-8"><span class="header-section-number">9</span> Question</a></li>
+  <li><a href="#question-9" id="toc-question-9" class="nav-link" data-scroll-target="#question-9"><span class="header-section-number">10</span> Question</a></li>
+  <li><a href="#question-10" id="toc-question-10" class="nav-link" data-scroll-target="#question-10"><span class="header-section-number">11</span> Question</a></li>
+  <li><a href="#question-11" id="toc-question-11" class="nav-link" data-scroll-target="#question-11"><span class="header-section-number">12</span> Question</a></li>
+  <li><a href="#question-12" id="toc-question-12" class="nav-link" data-scroll-target="#question-12"><span class="header-section-number">13</span> Question</a></li>
+  <li><a href="#question-13" id="toc-question-13" class="nav-link" data-scroll-target="#question-13"><span class="header-section-number">14</span> Question</a></li>
+  <li><a href="#question-14" id="toc-question-14" class="nav-link" data-scroll-target="#question-14"><span class="header-section-number">15</span> Question</a></li>
+  <li><a href="#question-15" id="toc-question-15" class="nav-link" data-scroll-target="#question-15"><span class="header-section-number">16</span> Question</a></li>
+  <li><a href="#question-16" id="toc-question-16" class="nav-link" data-scroll-target="#question-16"><span class="header-section-number">17</span> Question</a></li>
+  <li><a href="#question-17" id="toc-question-17" class="nav-link" data-scroll-target="#question-17"><span class="header-section-number">18</span> Question</a></li>
+  <li><a href="#question-18" id="toc-question-18" class="nav-link" data-scroll-target="#question-18"><span class="header-section-number">19</span> Question</a></li>
+  <li><a href="#question-19" id="toc-question-19" class="nav-link" data-scroll-target="#question-19"><span class="header-section-number">20</span> Question</a></li>
   </ul>
 </nav>
 </div>
@@ -3092,15 +3118,26 @@ vertical-align: -.125em;
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">PL/CS 362-1: Applied Computational Methods for Social Sciences</h1>
-<p class="subtitle lead">Introduction to Text Analysis with Python</p>
+<h1 class="title">Assignment 2</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Your Name </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 13, 2024</p>
+    </div>
+  </div>
   
     
   </div>
@@ -3110,452 +3147,261 @@ vertical-align: -.125em;
 </header>
 
 
-<section id="details" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Details</h1>
-<p>Instructor: Bogdan G. Popescu<br>
-Hours: MW 10:00-11:15AM<br>
-Total Hours of Contact: 2:30 per week<br>
-Room: Mimose 3<br>
-</p>
-<p>Credits: 3<br>
-Prerequisites: None<br>
-Office Hours: TBA<br>
-</p>
-<!--Course Website: [http://bgpopescu.net/big_data_syllabus.html](http://bgpopescu.net/big_data_syllabus.html){target="_blank"}-->
+<section id="instructions" class="level1 unnumbered">
+<h1 class="unnumbered">Instructions</h1>
+<p>Complete the questions by adding the code under the relevant chunks.</p>
+<p>Please submit your assignment as html file to me via email. Please call your assignment: “yourlastname_assignment2.html”. For example, I would submit something called “popescu_assignment2.html”. Please make sure that it is all in lower case.</p>
+<p>To obtain the same look as this template, make sure that your you assignment preamble or YAML looks like below:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Assignment 2&quot;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Your Name&quot;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;September 13, 2024&quot;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">number-sections</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">colorlinks</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">smooth-scroll</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">embed-resources</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Note that Headers such as “Question” need to be marked with <code>#</code> (i.e <code># Question</code> will appear as header in bold and larger font after you render the document. It will thus appear in the Table of Contents). Regular text can just be written one line underneath.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>reticulate<span class="sc">::</span><span class="fu">use_python</span>(<span class="st">&quot;/opt/anaconda3/bin/python&quot;</span>, <span class="at">required =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="course-description" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Course Description</h1>
-<p>This is an introductory course on using Python, a free and versatile programming language, to analyze text data. The course begins by building foundational programming skills in Python, including working with variables, loops, conditional statements, and data structures like lists, dictionaries, and arrays. In the second part, students will explore Python’s powerful tools for analyzing text data, such as social media posts, email correspondence, customer reviews, and political debates. The course also includes an introduction to ChatGPT and prompt engineering, teaching students how to leverage large language models for advanced text analysis tasks.</p>
-<p>Through hands-on exercises, lectures, and projects, students will learn to process, clean, and analyze textual data systematically and reproducibly. By the end of the course, participants will be equipped with the skills to derive meaningful insights from textual information and integrate generative AI tools like ChatGPT into their workflows.</p>
-<p>Note: You should have a computer either Windows or Mac with at least 8GB of RAM memory.</p>
+<section id="question" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Question</h1>
+<p>Create a list of five fruits</p>
+<p>Replace the third fruit in the list with “cherry”.</p>
 </section>
-<section id="summary-of-course-content" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Summary of Course Content</h1>
-<p>This course provides a comprehensive introduction to Python programming and its applications in text analysis. The initial portion of the course covers the fundamentals of Python, including working with variables, data structures, and basic programming constructs. The latter part focuses on Python’s capabilities in text data analysis, including text cleaning, dictionary methods, sentiment analysis, topic modeling, and machine learning-based approaches.</p>
-<p>Additionally, the course introduces ChatGPT and prompt engineering, equipping students to use large language models for tasks such as text summarization, classification, sentiment analysis, and topic modeling. Tutorials on creating professional portfolios and websites further enhance students’ ability to showcase their analytical skills. The knowledge and techniques learned in this course are applicable across diverse fields, including political science, economics, business, and marketing.</p>
+<section id="question-1" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Question</h1>
+<p>Add “mango” to the beginning of the list using an appropriate method.</p>
 </section>
-<section id="learning-outcomes" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Learning Outcomes</h1>
-<p>Upon successful completion of this course the students will be able to:<br>
+<section id="question-2" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Question</h1>
+<p>Remove the last fruit from the list.</p>
+</section>
+<section id="question-3" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Question</h1>
+<p>Sort the list alphabetically</p>
+</section>
+<section id="question-4" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Question</h1>
+<p>Create a tuple with the following values: <code>5, 10, 15, 20</code>.</p>
+</section>
+<section id="question-5" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Question</h1>
+<p>Attempt to replace the second value with 12 and explain why this fails.</p>
+</section>
+<section id="question-6" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Question</h1>
+<p>Concatenate this tuple with the numbers tuple: <code>(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;)</code>.</p>
+</section>
+<section id="question-7" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Question</h1>
+<p>Extract the last two elements from the concatenated tuple.</p>
+</section>
+<section id="question-8" class="level1" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span> Question</h1>
+<p>Write a function <code>greet_user(name)</code> that takes one argument, <code>name</code>, and prints a personalized greeting in the format: <code>&quot;Hello, [name]!&quot;</code>.</p>
+</section>
+<section id="question-9" class="level1" data-number="10">
+<h1 data-number="10"><span class="header-section-number">10</span> Question</h1>
+<p>Write a function <code>find_max(a, b, c)</code> that takes three numbers as arguments and returns the largest of the three. Test it on <code>[10, 25, 15]</code>.<br>
 </p>
-<ul>
-<li>Write Python programs to perform tasks such as loops, conditional statements, and function definitions.<br>
+</section>
+<section id="question-10" class="level1" data-number="11">
+<h1 data-number="11"><span class="header-section-number">11</span> Question</h1>
+<p>Create a dictionary called <code>students_scores</code> with the names of three students as keys and their test scores as values: <code>&quot;Alice&quot;: 85, &quot;Bob&quot;: 90, &quot;Charlie&quot;: 78</code> Update the dictionary to add a new student, “David,” with a score of 92, and print the updated dictionary.</p>
+</section>
+<section id="question-11" class="level1" data-number="12">
+<h1 data-number="12"><span class="header-section-number">12</span> Question</h1>
+<p>Create two sets, <code>my_fruits</code> and <code>friend_fruits</code>, containing the names of fruits you and your friend like. The fruits you like are: “apple”, “banana”, “cherry”. The fruits that your friend likes are: “cherry”, “date”, “banana”.<br>
+</p>
+<p>Find and print:<br>
+</p>
+<ol type="1">
+<li>Fruits you both like (intersection).<br>
 </li>
-<li>Employ quantitative techniques to process and analyze textual data.<br>
+<li>Fruits only you like (difference).<br>
 </li>
-<li>Utilize Python libraries like Numpy, Pandas, and NLTK for text manipulation and analysis.<br>
-</li>
-<li>Apply advanced methods such as sentiment analysis, topic modeling, word embeddings, and supervised learning to text data.<br>
-</li>
-<li>Use ChatGPT and prompt engineering to enhance text analysis tasks, including summarization, classification, and generating structured outputs.<br>
-</li>
-<li>Create and publish a professional website showcasing their portfolio and analytical capabilities.</li>
-</ul>
+</ol>
 </section>
-<section id="assessment" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Assessment</h1>
-<section id="assessment-methods" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="assessment-methods"><span class="header-section-number">5.1</span> Assessment methods:</h2>
-<p>You will be graded on four problem sets during the semester (each 12.5% of your grade) and a final report and presentation (each 25% of your grade).</p>
-<ul>
-<li>4 problem sets: 50% of the final grade (12.5% each)</li>
-<li>final presentation: 25% of the final grade</li>
-<li>final project report: 25% of the final grade</li>
-</ul>
+<section id="question-12" class="level1" data-number="13">
+<h1 data-number="13"><span class="header-section-number">13</span> Question</h1>
+<p>Create a dictionary called <code>favorite_fruits</code> where the keys are names of people, and the values are their favorite fruits.<br>
+</p>
+<p>“Alice”: “Apple”<br>
+“Bob”: “Banana”<br>
+“Charlie”: “Cherry”<br>
+</p>
+<p>Write a script that performs the following:<br>
+1. Add a new person and their favorite fruit to the dictionary.<br>
+2. Change the favorite fruit of an existing person.<br>
+3. Print all the people and their favorite fruits in a readable format.<br>
+</p>
 </section>
-<section id="problem-sets" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="problem-sets"><span class="header-section-number">5.2</span> Problem Sets</h2>
-<p>1.<strong>Initial Individual Submission</strong>: This component contributes 50% of the overall grade for the problem set. When you complete the problem set independently and submit it to the instructor, your grade for this component will be calculated based on the quality of your independent work. This grade will be weighted at 50% of the total assignment grade.</p>
-<p>2.<strong>Final Submission After Group Consultation</strong>: This component also contributes 50% of the overall grade for the problem sets. After discussing the problem set with your group members and documenting the correct answers, you will submit this revised version individually. Note: no group submission is permitted. Each one of you has to submit the second attempt of the assignment individually. Your grade for this component will be based on the quality of your final submission after group consultation. This grade will also be weighted at 50% of the total assignment grade.</p>
+<section id="question-13" class="level1" data-number="14">
+<h1 data-number="14"><span class="header-section-number">14</span> Question</h1>
+<p>Create a DataFrame from the following dictionary:</p>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Name&quot;</span>: [<span class="st">&quot;Alice&quot;</span>, <span class="st">&quot;Bob&quot;</span>, <span class="st">&quot;Charlie&quot;</span>, <span class="st">&quot;Diana&quot;</span>],</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Age&quot;</span>: [<span class="dv">25</span>, <span class="dv">30</span>, <span class="va">None</span>, <span class="dv">22</span>],</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;City&quot;</span>: [<span class="st">&quot;New York&quot;</span>, <span class="st">&quot;Paris&quot;</span>, <span class="st">&quot;London&quot;</span>, <span class="st">&quot;Tokyo&quot;</span>],</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Score&quot;</span>: [<span class="dv">85</span>, <span class="dv">90</span>, <span class="dv">78</span>, <span class="va">None</span>]</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>Perform the following:</p>
+<ol type="1">
+<li>Fill the missing values in the <code>Age</code> column with the mean age.</li>
+<li>Replace missing values in the <code>Score</code> column with the value 0.</li>
+<li>Print the updated DataFrame.</li>
+</ol>
 </section>
-<section id="final-project" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="final-project"><span class="header-section-number">5.3</span> Final Project</h2>
-<p>Students will undertake a text analysis project emphasizing the practical application of text analysis techniques using the python programming language. This project offers an opportunity to showcase the acquired skills in manipulating text data and conducting meaningful analyses. Participants are encouraged to choose a topic of interest or relevance, utilizing datasets provided in the course or exploring new ones. The project entails a few steps:</p>
-<ul>
-<li>choosing a topic that involves text data</li>
-<li>acquire data either from the course materials or from external sources</li>
-</ul>
-<p>Students have to submit a two-page report in Quarto and give a 20-minute and give an in-class presentation in Quarto.</p>
-<p>Grading Criteria for the project:</p>
-<ul>
-<li>Relevance</li>
-<li>Methodology: demonstration of at least five distinct GIS procedures in R.</li>
-<li>Analysis</li>
-<li>Presentation</li>
-<li>Code Quality</li>
-</ul>
+<section id="question-14" class="level1" data-number="15">
+<h1 data-number="15"><span class="header-section-number">15</span> Question</h1>
+<p>Using the following dictionary, create a DataFrame:</p>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Team&quot;</span>: [<span class="st">&quot;A&quot;</span>, <span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;C&quot;</span>, <span class="st">&quot;C&quot;</span>],</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Player&quot;</span>: [<span class="st">&quot;John&quot;</span>, <span class="st">&quot;Alice&quot;</span>, <span class="st">&quot;Bob&quot;</span>, <span class="st">&quot;Diana&quot;</span>, <span class="st">&quot;Eve&quot;</span>, <span class="st">&quot;Charlie&quot;</span>],</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Score&quot;</span>: [<span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">20</span>, <span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">35</span>]</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>Perform the following:</p>
+<ol type="1">
+<li>Calculate the total score for each team.</li>
+<li>Print the resulting DataFrame with teams and their total scores.</li>
+</ol>
 </section>
-</section>
-<section id="attendance-requirements" class="level1" data-number="6">
-<h1 data-number="6"><span class="header-section-number">6</span> Attendance Requirements</h1>
-<p>Students are required to attend classes following the University’s policies. Students with more than two unexcused absences are assumed to have withdrawn from the course. Students with a justified reason not to attend class have to send me an email explaining why they cannot attend ahead of class and need to submit a <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=JjSgbcXUYUyLWwzRnlSs6S-ifzmWm4JGlNhisacmxntUOVo3S1BaVDJWTEdPMDE2OTdSMExJOEdaNCQlQCN0PWcu&amp;wdLOR=c23D1B6E8-03B9-4B79-BA0E-60DBA74F17E3" target="_blank">form to the Dean’s Office</a>.</p>
-</section>
-<section id="academic-honesty" class="level1" data-number="7">
-<h1 data-number="7"><span class="header-section-number">7</span> Academic Honesty</h1>
-<p>As stated in the university catalog, any student who commits an act of academic dishonesty will receive a failing grade on the work in which the dishonesty occurred. In addition, acts of academic dishonesty, irrespective of the weight of the assignment, may result in the student receiving a failing grade in the course. Instances of academic dishonesty will be reported to the Dean of Academic Affairs. A student who is reported twice for academic dishonesty is subject to summary dismissal from the University. In such a case, the Academic Council will then make a recommendation to the President, who will make the final decision.</p>
-</section>
-<section id="students-with-learning-or-other-disabilities" class="level1" data-number="8">
-<h1 data-number="8"><span class="header-section-number">8</span> Students with Learning or Other Disabilities</h1>
-<p>John Cabot University does not discriminate on the basis of disability or handicap. Students with approved accommodations must inform their professors at the beginning of the term. Please see the website for the complete policy</p>
-<!--
-## Final Project
+<section id="question-15" class="level1" data-number="16">
+<h1 data-number="16"><span class="header-section-number">16</span> Question</h1>
+<p>Given the following DataFrame of city weather data:</p>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;Date&#39;</span>: [<span class="st">&#39;2025-01-01&#39;</span>, <span class="st">&#39;2025-01-01&#39;</span>, <span class="st">&#39;2025-01-01&#39;</span>, <span class="st">&#39;2025-01-02&#39;</span>, <span class="st">&#39;2025-01-02&#39;</span>, <span class="st">&#39;2025-01-02&#39;</span>],</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;City&#39;</span>: [<span class="st">&#39;New York&#39;</span>, <span class="st">&#39;Chicago&#39;</span>, <span class="st">&#39;Miami&#39;</span>, <span class="st">&#39;New York&#39;</span>, <span class="st">&#39;Chicago&#39;</span>, <span class="st">&#39;Miami&#39;</span>],</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;Temperature&#39;</span>: [<span class="dv">32</span>, <span class="dv">25</span>, <span class="dv">28</span>, <span class="dv">30</span>, <span class="dv">22</span>, <span class="dv">27</span>],</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;Humidity&#39;</span>: [<span class="dv">60</span>, <span class="dv">65</span>, <span class="dv">70</span>, <span class="dv">58</span>, <span class="dv">63</span>, <span class="dv">68</span>]</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>Pivot the DataFrame so that City becomes the column headers, and the index is Date. Include both Temperature and Humidity as values.</p>
+<div class="cell" data-filename="Python">
+<div class="cell-output cell-output-stdout">
+<pre><code>            Chicago_Temperature  ...  New York_Humidity
+Date                             ...                   
+2025-01-01                   25  ...                 60
+2025-01-02                   22  ...                 58
 
-The final project will have to be an application which will incorporate concepts and approaches taught throughout the semester. The project is supposed to answer an important question in the social sciences and will be expected to be completed individually using RMarkdown and Github Pages. This website will present your analysis and findings. You are expected to present your results using data visualizations, some text explaining the methodology or other statistical findings. Your project need to demonstrate the use of at least the following tools:\
-
-- Data visualizations\
-- Data wrangling\
-- Functional programming\
-
-You will be graded on the following criteria:\
-
-- Coding style\
-- Presentation of Graphs\
-- Presentation of Tables\
-- Creativity\
-- Accessibility\
-
-
-You will also be graded on a project proposal, which is supposed to be a summary of the final submission. This is due before week 4 of class. Within this proposal, you should have the following elements:\
-
-- Outline of the research topic\
-- Plan about how you will go about collecting the data\
-- Methodology about analyzing the data\
-- Plan for presenting the results\
--->
-<section id="required-books" class="level2" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="required-books"><span class="header-section-number">8.1</span> Required Books</h2>
-<!--
-Downey, Allen, 2023. Think Python. O’Riley. [https://greenteapress.com/wp/think-python](https://greenteapress.com/wp/think-python){target="_blank"}
-
-James, Gareth, Witten, Daniela, Hastie, Trevor, and Tibshirani, Robert. 2017. *An Introduction to Statistical Learning*. Springer
--->
-<p><strong>General Books on Python</strong></p>
-<p>McKinney, Wes, 2022. <em>Python for Data Analysis</em>. O’Reilly. <a href="https://wesmckinney.com/book/" target="_blank">https://wesmckinney.com/book/</a>.</p>
-<!--
-Mike Nguyen, 2023. *A Guide on Data Analysis*. [https://bookdown.org/mike/data_analysis/](https://bookdown.org/mike/data_analysis/){target="_blank"}
--->
-<p><strong>Text Analysis</strong></p>
-<p>Hovy, Dirk. 2020. <em>Text Analysis in Python for Social Scientists</em>. Cambridge University Press. <a href="https://api.pageplace.de/preview/DT0400.9781108883016_A45556377/preview-9781108883016_A45556377.pdf" target="_blank">https://www.cambridge.org/core/elements/abs/text-analysis-in-python-for-social-scientists/BFAB0A3604C7E29F6198EA2F7941DFF3</a></p>
-<p>Bengfort, Benjamin, Bilbro, Rebecca, and Tony Ojeda. 2018. Applied Text Analysis with Python. O’Reilly Media, Inc. <a href="https://www.oreilly.com/library/view/applied-text-analysis/9781491963036/" target="_blank">https://www.oreilly.com/library/view/applied-text-analysis/9781491963036/</a></p>
-<p>Hvitfeldt, Emil and Silge, Julia. 2022. Supervised Machine Learning for Text Analysis in R. CRC Press. <a href="https://smltar.com" target="_blank">https://smltar.com</a></p>
-<p>Grimmer, Justin, Brandon M. Stewart, and Margaret E. Roberts. <em>Text As Data: A New Framework for Machine Learning and the Social Sciences</em>. Princeton University Press, 2022.</p>
-<p>Silge, Julia, and David Robinson. <a href="https://www.tidytextmining.com" target="_blank"><em>Text Mining with R: A Tidy Approach.</em></a>. First edition. O’Reilly, 2017.</p>
-<!--
-**Text as Data**
-
-Silge, Julia and Robinson, David, 2020. *Tidy Text Mining with R. O’Riley*. [https://www.tidytextmining.com](https://www.tidytextmining.com){target="_blank"}
-
-**Statistics**
-
-Thulin, Måns. 2021. *Modern Statistics with R*. [https://www.modernstatisticswithr.com](https://www.modernstatisticswithr.com){target="_blank"}
--->
+[2 rows x 6 columns]</code></pre>
+</div>
+</div>
 </section>
+<section id="question-16" class="level1" data-number="17">
+<h1 data-number="17"><span class="header-section-number">17</span> Question</h1>
+<p>Given the following dataset:</p>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Department&quot;</span>: [<span class="st">&quot;HR&quot;</span>, <span class="st">&quot;HR&quot;</span>, <span class="st">&quot;IT&quot;</span>, <span class="st">&quot;IT&quot;</span>, <span class="st">&quot;Sales&quot;</span>, <span class="st">&quot;Sales&quot;</span>, <span class="st">&quot;Sales&quot;</span>],</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Employee&quot;</span>: [<span class="st">&quot;Alice&quot;</span>, <span class="st">&quot;Bob&quot;</span>, <span class="st">&quot;Charlie&quot;</span>, <span class="st">&quot;Diana&quot;</span>, <span class="st">&quot;Eve&quot;</span>, <span class="st">&quot;Frank&quot;</span>, <span class="st">&quot;Grace&quot;</span>],</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Salary&quot;</span>: [<span class="dv">50000</span>, <span class="dv">55000</span>, <span class="dv">70000</span>, <span class="dv">80000</span>, <span class="dv">45000</span>, <span class="dv">47000</span>, <span class="dv">52000</span>]</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>Calculate the total salary for each department.</p>
 </section>
-<section id="week-1" class="level1 unnumbered">
-<h1 class="unnumbered">Week 1</h1>
-<p><strong>Class 1: Intro to Python and Text Analysis</strong><br>
-01/20/2025 - Mon - <a href="./week1/lecture1.html" target="_blank">Lecture</a><br>
-<!--
-[Inspiration](https://info5940.infosci.cornell.edu/slides/introduction-to-computing-for-information-science/#45){target="_blank"}--></p>
-<ul>
-<li>Introduction and course overview</li>
-<li>Installing R, R Studio, and Anaconda</li>
-<li>Introduction to Python programming and its applications in text analysis</li>
-<li>Overview of text data (e.g., reviews, political debates, translations)</li>
-</ul>
-<p><strong>Class 2: Intro to Python, Jupyter notebooks, and R Quarto</strong><br>
-01/22/2025 - Wed - <a href="./week1/quarto_document/lecture2.html" target="_blank">Lecture</a><br>
-</p>
-<ul>
-<li>Quarto files: notebooks vs. presentations</li>
-<li>The Python environment</li>
-<li><a href="./week1/quarto_slides/lecture3.html" target="_blank">How to Make Slides in Quarto</a></li>
-</ul>
-<p><strong><em>Reading</em></strong><br>
-McKinney, Wes, 2022. <em>Python for Data Analysis</em>. O’Reilly. <a href="https://wesmckinney.com/book/" target="_blank">https://wesmckinney.com/book/</a>. C1-2</p>
+<section id="question-17" class="level1" data-number="18">
+<h1 data-number="18"><span class="header-section-number">18</span> Question</h1>
+<p>Given the following dataset:</p>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Department&quot;</span>: [<span class="st">&quot;HR&quot;</span>, <span class="st">&quot;HR&quot;</span>, <span class="st">&quot;IT&quot;</span>, <span class="st">&quot;IT&quot;</span>, <span class="st">&quot;Sales&quot;</span>, <span class="st">&quot;Sales&quot;</span>, <span class="st">&quot;Sales&quot;</span>],</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Employee&quot;</span>: [<span class="st">&quot;Alice&quot;</span>, <span class="st">&quot;Bob&quot;</span>, <span class="st">&quot;Charlie&quot;</span>, <span class="st">&quot;Diana&quot;</span>, <span class="st">&quot;Eve&quot;</span>, <span class="st">&quot;Frank&quot;</span>, <span class="st">&quot;Grace&quot;</span>],</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Salary&quot;</span>: [<span class="dv">50000</span>, <span class="dv">55000</span>, <span class="dv">70000</span>, <span class="dv">80000</span>, <span class="dv">45000</span>, <span class="dv">47000</span>, <span class="dv">52000</span>]</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>Determine the average salary for each department.</p>
 </section>
-<section id="week-2" class="level1 unnumbered">
-<h1 class="unnumbered">Week 2</h1>
-<p><strong>Class 1: Variables, Strings, Numbers</strong><br>
-01/27/2025 - Mon - <a href="./week2/lecture3" target="_blank">Lecture</a><br>
-<!--
-[Working directories](https://info5940.infosci.cornell.edu/slides/reproducible-workflow/){target="_blank"}
-[Inspiration](https://info5940.infosci.cornell.edu/slides/data-transformation/#27){target="_blank"}--></p>
-<ul>
-<li>Variables</li>
-<li>Strings</li>
-<li>Combining strings</li>
-<li>Numbers</li>
-<li>Booleans</li>
-<li>Conditionals: <code>if</code> and <code>elif</code></li>
-</ul>
-<p><strong>Class 2: Loops, Lists, Breaks, and Zip Functions</strong><br>
-01/29/2025 - Wed - <a href="./week2/lecture4" target="_blank">Lecture</a><br>
-</p>
-<ul>
-<li>Comparison Operators</li>
-<li>Error Handling</li>
-<li>Lists</li>
-<li>Loops</li>
-<li>Breaks</li>
-</ul>
-<p><strong><em>Reading</em></strong><br>
-McKinney, Wes, 2022. <em>Python for Data Analysis</em>. O’Reilly. <a href="https://wesmckinney.com/book/" target="_blank">https://wesmckinney.com/book/</a>. C3</p>
-<!--
-***Reading***\
-
-Wickham, Hadley and Grolemund, Garett, 2023. *R for Data Science*. C. Import. [https://r4ds.hadley.nz/spreadsheets](https://r4ds.hadley.nz/spreadsheets){target="_blank"}.\
-Wickham, Hadley and Grolemund, Garett, 2023. *R for Data Science*. C. Data Transformation. O’Riley. [https://r4ds.hadley.nz/data-transform](https://r4ds.hadley.nz/data-transform){target="_blank"}.\
-Wickham, Hadley and Grolemund, Garett, 2023. *R for Data Science*. C. Transform. O’Riley. [https://r4ds.hadley.nz/transform](https://r4ds.hadley.nz/transform){target="_blank"}. 
-Thulin, Måns. 2021. *Modern Statistics with R*. C. Dealing with messy data. [https://www.modernstatisticswithr.com/messychapter.html](https://www.modernstatisticswithr.com/messychapter.html){target="_blank"}-->
-<!--
-**Assignment 1**
--->
-<p><a href="./assignments/assignment1.html" target="_blank"><strong>Assignment 1</strong></a><br>
-</p>
+<section id="question-18" class="level1" data-number="19">
+<h1 data-number="19"><span class="header-section-number">19</span> Question</h1>
+<p>Given the following datasets:</p>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df_a <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;Employee&#39;</span>: [<span class="st">&#39;Alice&#39;</span>, <span class="st">&#39;Bob&#39;</span>, <span class="st">&#39;Charlie&#39;</span>, <span class="st">&#39;Diana&#39;</span>],</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;Department&#39;</span>: [<span class="st">&#39;HR&#39;</span>, <span class="st">&#39;HR&#39;</span>, <span class="st">&#39;IT&#39;</span>, <span class="st">&#39;IT&#39;</span>],</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;Age&#39;</span>: [<span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">35</span>, <span class="dv">40</span>]</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>df_b <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;Employee&#39;</span>: [<span class="st">&#39;Alice&#39;</span>, <span class="st">&#39;Bob&#39;</span>, <span class="st">&#39;Charlie&#39;</span>, <span class="st">&#39;Diana&#39;</span>, <span class="st">&#39;Eve&#39;</span>],</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;Salary&#39;</span>: [<span class="dv">50000</span>, <span class="dv">55000</span>, <span class="dv">70000</span>, <span class="dv">80000</span>, <span class="dv">45000</span>]</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>Perform an inner join on the two DataFrames to include only employees present in both datasets.</p>
 </section>
-<section id="week-3" class="level1 unnumbered">
-<h1 class="unnumbered">Week 3</h1>
-<p><strong>Class 1: Operations with Lists and Tuples</strong><br>
-02/03/2025 - Mon - <a href="./week3/lecture5.html" target="_blank">Lecture</a><br>
-</p>
-<ul>
-<li>Lists</li>
-<li>List Operations</li>
-<li>List Slicing</li>
-<li>Tuples</li>
-</ul>
-<!--
-[Inspiration](https://info5940.infosci.cornell.edu/slides/data-wrangling-tidy-data/#7){target="_blank"}
-[Inspiration](https://info5940.infosci.cornell.edu/slides/data-wrangling-relational-data-and-factors/#7){target="_blank"}-->
-<p><strong>Class 2: While Loops and Functions</strong><br>
-02/05/2025 - Wed - <a href="./week3/lecture6.html" target="_blank">Lecture</a><br>
-</p>
-<ul>
-<li>While loops</li>
-<li>Functions</li>
-</ul>
-<p><strong><em>Reading</em></strong><br>
-McKinney, Wes, 2022. <em>Python for Data Analysis</em>. O’Reilly. <a href="https://wesmckinney.com/book/" target="_blank">https://wesmckinney.com/book/</a>. C3</p>
-</section>
-<section id="week-4" class="level1 unnumbered">
-<h1 class="unnumbered">Week 4</h1>
-<p><strong>Class 1: Dictionaries and Sets</strong><br>
-02/10/2025 - Mon - <a href="./week4/lecture7.html" target="_blank">Lecture</a><br>
-</p>
-<ul>
-<li>dictionaries</li>
-<li>extracting elements from dictionary</li>
-<li>sorting dictionary keys</li>
-<li>nesting dictionaries</li>
-<li>dictionaries within dictionaries</li>
-<li>sets and operations with sets</li>
-<li>Supplementary Tutorial: <a href="./week4/lecture_numpy.html" target="_blank">Intro to Numpy</a><br>
-</li>
-</ul>
-<p><strong>Class 2: Pandas</strong><br>
-</p>
-<p>02/12/2025 - Wed - <a href="./week4/lecture8.html" target="_blank">Lecture</a><br>
-</p>
-<ul>
-<li>Dataframes</li>
-<li>Dataframe Methods</li>
-<li>Missing Data</li>
-<li>Assigning Values</li>
-</ul>
-</section>
-<section id="week-5" class="level1 unnumbered">
-<h1 class="unnumbered">Week 5</h1>
-<p><strong>Class 1: Pandas Data Wrangling</strong><br>
-02/17/2025 - Mon - <a href="./week5/lecture9.html" target="_blank">Lecture</a><br>
-</p>
-<ul>
-<li>Setting Indexes</li>
-<li>Changing, ordering column names</li>
-<li>Identifying and Removing duplicates</li>
-<li>Filtering Data</li>
-<li>Aggregating Data</li>
-<li>Modifying Data Structures</li>
-</ul>
-<p><strong>Class 2: Merging Data</strong><br>
-02/19/2025 - Wed - <a href="./week5/lecture10.html" target="_blank">Lecture</a><br>
-</p>
-<ul>
-<li>Aggregating by Group</li>
-<li>Inner, Outer Joins</li>
-<li>Left, Right Joins</li>
-</ul>
-<p><a href="./assignments/assignment2.html" target="_blank"><strong>Assignment 2</strong></a><br>
-</p>
-</section>
-<section id="week-6" class="level1 unnumbered">
-<h1 class="unnumbered">Week 6</h1>
-<p><strong>Class 1: Data Visualization 1</strong><br>
-02/24/2025 - Mon - <a href="./week6/lecture11.html" target="_blank">Lecture</a><br>
-</p>
-<ul>
-<li>Color contrasts</li>
-<li>Intro to <code>ggplot</code></li>
-<li>Aesthetics and geoms</li>
-<li>Labels and Facets</li>
-</ul>
-<p><strong>Class 2: Data Visualization 2</strong><br>
-02/26/2025 - Wed - <a href="./week6/lecture12.html" target="_blank">Lecture</a><br>
-</p>
-<ul>
-<li>Barplots</li>
-<li>Uncertainty</li>
-<li>Boxplots and Violin Plots</li>
-<li>Annotations</li>
-<li>Temporal Plots</li>
-</ul>
-</section>
-<section id="week-7" class="level1 unnumbered">
-<h1 class="unnumbered">Week 7</h1>
-<p><strong>Class 1: Text Analysis Intro</strong><br>
-03/03/2025 - Mon - <a href="./week7/lecture13.html" target="_blank">Lecture</a><br>
-</p>
-<ul>
-<li>Latent Concepts</li>
-<li>Dictionaries, Supervised learning, text scaling, topic models, word embeddings</li>
-<li>Workflows of Text Analysis</li>
-<li>Documents, features,</li>
-<li>Bag-of-Words and Document-feature matrix</li>
-<li>Text Cleaning in Python</li>
-</ul>
-<p><strong>Class 2: Intro to ChatGPT for Text Analysis</strong><br>
-03/05/2025 - Wed - <a href="./week7/lecture14.html" target="_blank">Lecture</a><br>
-</p>
-<ul>
-<li>Prompt enginneering</li>
-<li>Personas, delimiters, structured outputs, Programmatic consumptions</li>
-<li>Chain of Thought</li>
-<li>ChatGPT Api, pricing</li>
-</ul>
-</section>
-<section id="week-8" class="level1 unnumbered">
-<h1 class="unnumbered">Week 8</h1>
-<p><strong>Class 1: Applied ChatGPT for Text Analysis</strong><br>
-03/17/2025 - Mon - <a href="./week8/lecture15.html" target="_blank">Lecture</a><br>
-</p>
-<ul>
-<li>Text Summarization, Text Classification</li>
-<li>Sentiment Analysis, Emotion Analysis</li>
-<li>Topic Modeling, Topics using Zero-Shot Learning</li>
-<li>Language, Grammaer and Spelling</li>
-</ul>
-<p><strong>Class 2: Dictionary Methods</strong><br>
-03/19/2025 - Wed - <a href="./week8/lecture16.html" target="_blank">Lecture</a><br>
-</p>
-<ul>
-<li>Counting words</li>
-<li>Examples of Dictionaries</li>
-<li>Validation of Dictionary Methods</li>
-<li>Accuracy, Sensitivity, Specificity, Naive Guess</li>
-</ul>
-</section>
-<section id="week-9" class="level1 unnumbered">
-<h1 class="unnumbered">Week 9</h1>
-<p><strong>Class 1: Similarity</strong><br>
-03/24/2025 - Mon - <a href="./week9/lecture17.html" target="_blank">Lecture</a><br>
-</p>
-<ul>
-<li>Inner Product</li>
-<li>Frequency words, Eucledian distance</li>
-<li>Cosine Similarity</li>
-</ul>
-<p><strong>Class 2: Language Complexity</strong><br>
-03/26/2025 - Wed - <a href="./week9/lecture18.html" target="_blank">Lecture</a><br>
-</p>
-<ul>
-<li>Similarity: Levenshtein distance</li>
-<li>Cosine similarity</li>
-<li>TF-IDF, Bag-of-Words</li>
-<li>Word Clouds, Fightin’ Words</li>
-</ul>
-<p><strong>Assignment 3</strong></p>
-</section>
-<section id="week-10" class="level1 unnumbered">
-<h1 class="unnumbered">Week 10</h1>
-<p><strong>Class 1: Language Complexity</strong><br>
-03/31/2025 - Mon - <a href="./week10/lecture19.html" target="_blank">Lecture</a><br>
-</p>
-<ul>
-<li>Flesch Reading Ease</li>
-<li>Kincaid score</li>
-</ul>
-<p><strong>Class 2: Supervised Learning</strong><br>
-04/02/2025 - Wed - <a href="./week10/lecture20.html" target="_blank">Lecture</a><br>
-</p>
-<ul>
-<li>Naive Bayes</li>
-<li>Language Models</li>
-<li>Validating Supervised Learning, K-Fold Validation</li>
-</ul>
-</section>
-<section id="week-11" class="level1 unnumbered">
-<h1 class="unnumbered">Week 11</h1>
-<p><strong>Class 1: Unsupervised Learning: Topic Models</strong><br>
-04/07/2025 - Mon - <a href="./week11/lecture21.html" target="_blank">Lecture</a><br>
-</p>
-<ul>
-<li>Topic Models</li>
-<li>Latent Dirichlet Allocation</li>
-<li>Semantic Coherence</li>
-</ul>
-<p><strong>Class 2: Unsupervised Learning: Word Embeddings</strong><br>
-04/09/2025 - Wed - <a href="./week11/lecture22.html" target="_blank">Lecture</a><br>
-</p>
-<ul>
-<li>Word Embeddings</li>
-<li>Distributional Semantics, Topic Distributions</li>
-<li>BERTopic</li>
-</ul>
-<p><strong>Assignment 4</strong></p>
-</section>
-<section id="week-12" class="level1 unnumbered">
-<h1 class="unnumbered">Week 12</h1>
-<p><strong>Class 1: Sentiment Analysis</strong><br>
-04/14/2025 - Mon - <a href="./week12/lecture23.html" target="_blank">Lecture</a><br>
-</p>
-<ul>
-<li>Lexicon-based approaches, machine learning</li>
-<li>VADER sentiment analysis, transformers</li>
-<li>Zero-shot classification</li>
-</ul>
-<p><strong>Class 2: Review</strong><br>
-04/16/2025 - Wed - <a href="./week12/lecture24.html" target="_blank">Lecture</a><br>
-</p>
-</section>
-<section id="week-13" class="level1 unnumbered">
-<h1 class="unnumbered">Week 13</h1>
-<p><strong>Class 1: Project Development Time</strong><br>
-04/21/2025 - Mon</p>
-<p><strong>Class 2: Project Development Time</strong><br>
-04/23/2025 - Wed</p>
-</section>
-<section id="week-14" class="level1 unnumbered">
-<h1 class="unnumbered">Week 14</h1>
-<p><strong>Class 1: Course Reflection</strong><br>
-</p>
-<p>04/28/2025 - Mon - Lecture</p>
-<ul>
-<li>Overview of the Course</li>
-<li>Skills Acquired</li>
-<li>Jobs where these skills are valued</li>
-</ul>
-<p><strong>Class 2: Final Student Presentations</strong><br>
-04/30/2025 - Wed</p>
-</section>
-<section id="supplementary-tutorials" class="level1 unnumbered">
-<h1 class="unnumbered">Supplementary Tutorials</h1>
-<p><a href="https://bgpopescu.net/files/teaching/big_data/supplem_lec2/lecture_github.html#/title-slide" target="_blank"><strong>Making a website on GitHub: <code>username.github.io</code></strong></a><br>
-</p>
-<ul>
-<li>Making a website on Quarto</li>
-<li>Storing a website on GitHub</li>
-<li>Structuring a professional website for Data Analytics Jobs</li>
-</ul>
+<section id="question-19" class="level1" data-number="20">
+<h1 data-number="20"><span class="header-section-number">20</span> Question</h1>
+<p>Given the following datasets:</p>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>df_a <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;Employee&#39;</span>: [<span class="st">&#39;Alice&#39;</span>, <span class="st">&#39;Bob&#39;</span>, <span class="st">&#39;Charlie&#39;</span>, <span class="st">&#39;Diana&#39;</span>],</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;Department&#39;</span>: [<span class="st">&#39;HR&#39;</span>, <span class="st">&#39;HR&#39;</span>, <span class="st">&#39;IT&#39;</span>, <span class="st">&#39;IT&#39;</span>],</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;Age&#39;</span>: [<span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">35</span>, <span class="dv">40</span>]</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>df_b <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;Employee&#39;</span>: [<span class="st">&#39;Alice&#39;</span>, <span class="st">&#39;Bob&#39;</span>, <span class="st">&#39;Charlie&#39;</span>, <span class="st">&#39;Diana&#39;</span>, <span class="st">&#39;Eve&#39;</span>],</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;Salary&#39;</span>: [<span class="dv">50000</span>, <span class="dv">55000</span>, <span class="dv">70000</span>, <span class="dv">80000</span>, <span class="dv">45000</span>]</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>Perform an outer join to include all employees and their respective details from both DataFrames.</p>
 </section>
 
 </main>
