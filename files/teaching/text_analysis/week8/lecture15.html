@@ -1098,6 +1098,7 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <section id="the-code-pattern-for-calling-gpt-via-the-api" class="slide level2">
 <h2>The Code Pattern for Calling GPT via the API</h2>
 <p>The code pattern to call the OpenAI API and get a chat response is as follows:</p>
+<p>Note: do not run. This is just for demonstration purposes:</p>
 <div class="cell">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
@@ -1195,6 +1196,22 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 </section>
 <section id="using-chatgpt-for-summarizing-3" class="slide level2">
 <h2>Using ChatGPT for Summarizing</h2>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Python</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href></a><span class="co"># Sort the DataFrame by the &#39;word_count&#39; column in ascending order</span></span>
+<span id="cb5-2"><a href></a>df_sorted <span class="op">=</span> docs.sort_values(by<span class="op">=</span><span class="st">&#39;word_count&#39;</span>, ascending<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb5-3"><a href></a></span>
+<span id="cb5-4"><a href></a><span class="co"># Get the review with the largest number of words</span></span>
+<span id="cb5-5"><a href></a>longest_review <span class="op">=</span> df_sorted.loc[df_sorted[<span class="st">&#39;word_count&#39;</span>].idxmax(), <span class="st">&#39;review_text&#39;</span>]</span>
+<span id="cb5-6"><a href></a>longest_review</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="using-chatgpt-for-summarizing-4" class="slide level2">
+<h2>Using ChatGPT for Summarizing</h2>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -1209,7 +1226,7 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 </div>
 </div>
 </section>
-<section id="using-chatgpt-for-summarizing-4" class="slide level2">
+<section id="using-chatgpt-for-summarizing-5" class="slide level2">
 <h2>Using ChatGPT for Summarizing</h2>
 <p>We first load the library and define our key:</p>
 <div class="cell">
@@ -1217,9 +1234,9 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb5" data-code-line-numbers="1|2|3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href></a><span class="im">from</span> openai <span class="im">import</span> OpenAI</span>
-<span id="cb5-2"><a href></a>key_bp<span class="op">=</span> <span class="st">&quot;sk-proj-XXXX-Long-Code&quot;</span></span>
-<span id="cb5-3"><a href></a>client <span class="op">=</span> OpenAI(api_key<span class="op">=</span>key_bp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6" data-code-line-numbers="1|2|3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href></a><span class="im">from</span> openai <span class="im">import</span> OpenAI</span>
+<span id="cb6-2"><a href></a>key_bp<span class="op">=</span> <span class="st">&quot;sk-proj-XXXX-Long-Code&quot;</span></span>
+<span id="cb6-3"><a href></a>client <span class="op">=</span> OpenAI(api_key<span class="op">=</span>key_bp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="fragment">
@@ -1229,21 +1246,21 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb6" data-code-line-numbers="1-3|4|5-6|7-9|10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href></a><span class="co"># Import the necessary OpenAI client library</span></span>
-<span id="cb6-2"><a href></a><span class="co"># Make sure you have installed the OpenAI Python package: `pip install openai`</span></span>
-<span id="cb6-3"><a href></a></span>
-<span id="cb6-4"><a href></a><span class="kw">def</span> get_completion(prompt):</span>
-<span id="cb6-5"><a href></a>    response <span class="op">=</span> client.chat.completions.create(</span>
-<span id="cb6-6"><a href></a>        model<span class="op">=</span><span class="st">&quot;gpt-3.5-turbo-0125&quot;</span>,</span>
-<span id="cb6-7"><a href></a>        messages<span class="op">=</span>[{<span class="st">&quot;role&quot;</span>: <span class="st">&quot;user&quot;</span>, <span class="st">&quot;content&quot;</span>: prompt}],</span>
-<span id="cb6-8"><a href></a>        temperature<span class="op">=</span><span class="dv">0</span>,  <span class="co"># this is the degree of randomness of the model&#39;s output</span></span>
-<span id="cb6-9"><a href></a>    )</span>
-<span id="cb6-10"><a href></a>    <span class="cf">return</span> response.choices[<span class="dv">0</span>].message.content</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7" data-code-line-numbers="1-3|4|5-6|7-9|10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href></a><span class="co"># Import the necessary OpenAI client library</span></span>
+<span id="cb7-2"><a href></a><span class="co"># Make sure you have installed the OpenAI Python package: `pip install openai`</span></span>
+<span id="cb7-3"><a href></a></span>
+<span id="cb7-4"><a href></a><span class="kw">def</span> get_completion(prompt):</span>
+<span id="cb7-5"><a href></a>    response <span class="op">=</span> client.chat.completions.create(</span>
+<span id="cb7-6"><a href></a>        model<span class="op">=</span><span class="st">&quot;gpt-3.5-turbo-0125&quot;</span>,</span>
+<span id="cb7-7"><a href></a>        messages<span class="op">=</span>[{<span class="st">&quot;role&quot;</span>: <span class="st">&quot;user&quot;</span>, <span class="st">&quot;content&quot;</span>: prompt}],</span>
+<span id="cb7-8"><a href></a>        temperature<span class="op">=</span><span class="dv">0</span>,  <span class="co"># this is the degree of randomness of the model&#39;s output</span></span>
+<span id="cb7-9"><a href></a>    )</span>
+<span id="cb7-10"><a href></a>    <span class="cf">return</span> response.choices[<span class="dv">0</span>].message.content</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="using-chatgpt-for-summarizing-5" class="slide level2">
+<section id="using-chatgpt-for-summarizing-6" class="slide level2">
 <h2>Using ChatGPT for Summarizing</h2>
 <p>Here is an example:</p>
 <div class="cell">
@@ -1251,10 +1268,10 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href></a>get_completion(<span class="st">&quot;Tell me a joke&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href></a>get_completion(<span class="st">&quot;Tell me a joke&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>&#39;Why did the scarecrow win an award? Because he was outstanding in his field!&#39;</code></pre>
+<pre><code>&quot;Why couldn&#39;t the bicycle stand up by itself?\n\nBecause it was two tired!&quot;</code></pre>
 </div>
 </div>
 <div class="fragment">
@@ -1266,25 +1283,25 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb9" data-code-line-numbers="1|2-4|5|7|8|9|10|12|13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href></a><span class="co"># Assuming longest_review is defined and contains text</span></span>
-<span id="cb9-2"><a href></a>prompt_template <span class="op">=</span> <span class="st">&quot;&quot;&quot;</span></span>
-<span id="cb9-3"><a href></a><span class="st">Task: Summarize the e-commerce product review below.</span></span>
-<span id="cb9-4"><a href></a></span>
-<span id="cb9-5"><a href></a><span class="st">Instructions:</span></span>
-<span id="cb9-6"><a href></a></span>
-<span id="cb9-7"><a href></a><span class="st">1. Create a shortened version of the review in 50 words or fewer.</span></span>
-<span id="cb9-8"><a href></a><span class="st">2. Use first person and immitate the reviewer&#39;s tone directly.</span></span>
-<span id="cb9-9"><a href></a><span class="st">3. Do not add any opinions, explanations, conversational tone, or new information.</span></span>
-<span id="cb9-10"><a href></a><span class="st">4. Simply condense the main points as written by the reviewer.</span></span>
-<span id="cb9-11"><a href></a></span>
-<span id="cb9-12"><a href></a><span class="st">Review: </span></span>
-<span id="cb9-13"><a href></a><span class="st">```</span><span class="sc">{review_text_here}</span><span class="st">```</span></span>
-<span id="cb9-14"><a href></a><span class="st">&quot;&quot;&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10" data-code-line-numbers="1|2-4|5|7|8|9|10|12|13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href></a><span class="co"># Assuming longest_review is defined and contains text</span></span>
+<span id="cb10-2"><a href></a>prompt_template <span class="op">=</span> <span class="st">&quot;&quot;&quot;</span></span>
+<span id="cb10-3"><a href></a><span class="st">Task: Summarize the e-commerce product review below.</span></span>
+<span id="cb10-4"><a href></a></span>
+<span id="cb10-5"><a href></a><span class="st">Instructions:</span></span>
+<span id="cb10-6"><a href></a></span>
+<span id="cb10-7"><a href></a><span class="st">1. Create a shortened version of the review in 50 words or fewer.</span></span>
+<span id="cb10-8"><a href></a><span class="st">2. Use first person and immitate the reviewer&#39;s tone directly.</span></span>
+<span id="cb10-9"><a href></a><span class="st">3. Do not add any opinions, explanations, conversational tone, or new information.</span></span>
+<span id="cb10-10"><a href></a><span class="st">4. Simply condense the main points as written by the reviewer.</span></span>
+<span id="cb10-11"><a href></a></span>
+<span id="cb10-12"><a href></a><span class="st">Review: </span></span>
+<span id="cb10-13"><a href></a><span class="st">```</span><span class="sc">{review_text_here}</span><span class="st">```</span></span>
+<span id="cb10-14"><a href></a><span class="st">&quot;&quot;&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="using-chatgpt-for-summarizing-6" class="slide level2">
+<section id="using-chatgpt-for-summarizing-7" class="slide level2">
 <h2>Using ChatGPT for Summarizing</h2>
 <p>This is how we create a function o help us</p>
 <div class="fragment">
@@ -1293,13 +1310,13 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href></a><span class="kw">def</span> summarize_review(prompt, review_text):</span>
-<span id="cb10-2"><a href></a>    <span class="co"># Replace placeholder in the prompt with the review text</span></span>
-<span id="cb10-3"><a href></a>    formatted_prompt <span class="op">=</span> prompt.replace(<span class="st">&quot;</span><span class="sc">{review_text_here}</span><span class="st">&quot;</span>, review_text)</span>
-<span id="cb10-4"><a href></a>    </span>
-<span id="cb10-5"><a href></a>    <span class="co"># Generate the summary using get_completion</span></span>
-<span id="cb10-6"><a href></a>    summary <span class="op">=</span> get_completion(formatted_prompt)</span>
-<span id="cb10-7"><a href></a>    <span class="cf">return</span> summary</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href></a><span class="kw">def</span> summarize_review(prompt, review_text):</span>
+<span id="cb11-2"><a href></a>    <span class="co"># Replace placeholder in the prompt with the review text</span></span>
+<span id="cb11-3"><a href></a>    formatted_prompt <span class="op">=</span> prompt.replace(<span class="st">&quot;</span><span class="sc">{review_text_here}</span><span class="st">&quot;</span>, review_text)</span>
+<span id="cb11-4"><a href></a>    </span>
+<span id="cb11-5"><a href></a>    <span class="co"># Generate the summary using get_completion</span></span>
+<span id="cb11-6"><a href></a>    summary <span class="op">=</span> get_completion(formatted_prompt)</span>
+<span id="cb11-7"><a href></a>    <span class="cf">return</span> summary</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1310,16 +1327,16 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href></a>short_longest_review <span class="op">=</span> summarize_review(prompt<span class="op">=</span>prompt_template, review_text<span class="op">=</span>longest_review)</span>
-<span id="cb11-2"><a href></a><span class="bu">print</span>(short_longest_review)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href></a>short_longest_review <span class="op">=</span> summarize_review(prompt<span class="op">=</span>prompt_template, review_text<span class="op">=</span>longest_review)</span>
+<span id="cb12-2"><a href></a><span class="bu">print</span>(short_longest_review)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>I recently switched from Xbox to the PS5 Bundle and I&#39;m thrilled. The design is sleek, storage is ample, and performance is top-notch with 4K visuals and fast load times. The DualSense controller is a game-changer, but limited storage and high price are drawbacks. Overall, it&#39;s worth the investment. Happy gaming!</code></pre>
+<pre><code>I switched from Xbox to the PS5 Bundle and it&#39;s been amazing. The design is sleek, the performance is top-notch with 4K visuals and fast load times, and the DualSense controller is a game-changer. Limited storage and price are downsides, but overall, it&#39;s worth the investment. Happy gaming!</code></pre>
 </div>
 </div>
 </div>
 </section>
-<section id="using-chatgpt-for-summarizing-7" class="slide level2">
+<section id="using-chatgpt-for-summarizing-8" class="slide level2">
 <h2>Using ChatGPT for Summarizing</h2>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
@@ -1335,7 +1352,7 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 </div>
 </div>
 </section>
-<section id="using-chatgpt-for-summarizing-8" class="slide level2">
+<section id="using-chatgpt-for-summarizing-9" class="slide level2">
 <h2>Using ChatGPT for Summarizing</h2>
 <p>Let’s say that we want to summarize all the reviews that have more than 100 words:</p>
 <div class="fragment">
@@ -1344,8 +1361,8 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href></a>count_more_than_200 <span class="op">=</span> (docs[<span class="st">&quot;word_count&quot;</span>] <span class="op">&gt;</span> <span class="dv">200</span>).<span class="bu">sum</span>()</span>
-<span id="cb13-2"><a href></a><span class="bu">print</span>(count_more_than_200)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href></a>count_more_than_200 <span class="op">=</span> (docs[<span class="st">&quot;word_count&quot;</span>] <span class="op">&gt;</span> <span class="dv">200</span>).<span class="bu">sum</span>()</span>
+<span id="cb14-2"><a href></a><span class="bu">print</span>(count_more_than_200)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>7</code></pre>
@@ -1353,7 +1370,7 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 </div>
 </div>
 </section>
-<section id="using-chatgpt-for-summarizing-9" class="slide level2">
+<section id="using-chatgpt-for-summarizing-10" class="slide level2">
 <h2>Using ChatGPT for Summarizing</h2>
 <p>This is how we summarize those:</p>
 <div class="fragment">
@@ -1362,24 +1379,24 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb15" data-code-line-numbers="1|2|3|4-7|8|9-11|12-13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href></a><span class="co"># Apply the function only where word_count &gt; 200</span></span>
-<span id="cb15-2"><a href></a><span class="kw">def</span> process_row(row):</span>
-<span id="cb15-3"><a href></a>    <span class="cf">if</span> row[<span class="st">&quot;word_count&quot;</span>] <span class="op">&gt;</span> <span class="dv">200</span>:</span>
-<span id="cb15-4"><a href></a>        summary <span class="op">=</span> summarize_review(prompt<span class="op">=</span>prompt_template, review_text<span class="op">=</span>row[<span class="st">&quot;review_text&quot;</span>])</span>
-<span id="cb15-5"><a href></a>        <span class="bu">print</span>(<span class="ss">f&quot;Processed row </span><span class="sc">{</span>row<span class="sc">.</span>name<span class="sc">}</span><span class="ss">: Summary created&quot;</span>)</span>
-<span id="cb15-6"><a href></a>        <span class="bu">print</span>(summary)</span>
-<span id="cb15-7"><a href></a>        <span class="cf">return</span> summary</span>
-<span id="cb15-8"><a href></a>    <span class="cf">else</span>:</span>
-<span id="cb15-9"><a href></a>        <span class="bu">print</span>(<span class="ss">f&quot;Processed row </span><span class="sc">{</span>row<span class="sc">.</span>name<span class="sc">}</span><span class="ss">: No summary needed (word_count &lt;= 200)&quot;</span>)</span>
-<span id="cb15-10"><a href></a>        <span class="cf">return</span> <span class="va">None</span></span>
-<span id="cb15-11"><a href></a>      </span>
-<span id="cb15-12"><a href></a><span class="co"># Apply the function to process each row</span></span>
-<span id="cb15-13"><a href></a>docs[<span class="st">&quot;summary&quot;</span>] <span class="op">=</span> docs.<span class="bu">apply</span>(process_row, axis<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16" data-code-line-numbers="1|2|3|4-7|8|9-11|12-13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href></a><span class="co"># Apply the function only where word_count &gt; 200</span></span>
+<span id="cb16-2"><a href></a><span class="kw">def</span> process_row(row):</span>
+<span id="cb16-3"><a href></a>    <span class="cf">if</span> row[<span class="st">&quot;word_count&quot;</span>] <span class="op">&gt;</span> <span class="dv">200</span>:</span>
+<span id="cb16-4"><a href></a>        summary <span class="op">=</span> summarize_review(prompt<span class="op">=</span>prompt_template, review_text<span class="op">=</span>row[<span class="st">&quot;review_text&quot;</span>])</span>
+<span id="cb16-5"><a href></a>        <span class="bu">print</span>(<span class="ss">f&quot;Processed row </span><span class="sc">{</span>row<span class="sc">.</span>name<span class="sc">}</span><span class="ss">: Summary created&quot;</span>)</span>
+<span id="cb16-6"><a href></a>        <span class="bu">print</span>(summary)</span>
+<span id="cb16-7"><a href></a>        <span class="cf">return</span> summary</span>
+<span id="cb16-8"><a href></a>    <span class="cf">else</span>:</span>
+<span id="cb16-9"><a href></a>        <span class="bu">print</span>(<span class="ss">f&quot;Processed row </span><span class="sc">{</span>row<span class="sc">.</span>name<span class="sc">}</span><span class="ss">: No summary needed (word_count &lt;= 200)&quot;</span>)</span>
+<span id="cb16-10"><a href></a>        <span class="cf">return</span> <span class="va">None</span></span>
+<span id="cb16-11"><a href></a>      </span>
+<span id="cb16-12"><a href></a><span class="co"># Apply the function to process each row</span></span>
+<span id="cb16-13"><a href></a>docs[<span class="st">&quot;summary&quot;</span>] <span class="op">=</span> docs.<span class="bu">apply</span>(process_row, axis<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="using-chatgpt-for-summarizing-10" class="slide level2">
+<section id="using-chatgpt-for-summarizing-11" class="slide level2">
 <h2>Using ChatGPT for Summarizing</h2>
 <p>These are the first 3 entries:</p>
 <div class="cell">
@@ -1387,8 +1404,8 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href></a>docs2<span class="op">=</span>docs.head(<span class="dv">4</span>)</span>
-<span id="cb16-2"><a href></a>docs2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href></a>docs2<span class="op">=</span>docs.head(<span class="dv">4</span>)</span>
+<span id="cb17-2"><a href></a>docs2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="cell" data-filename="Python">
@@ -1483,34 +1500,34 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb17" data-code-line-numbers="1|2-4|6|8-11|13-14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href></a><span class="co"># Assuming longest_review is defined and contains text</span></span>
-<span id="cb17-2"><a href></a>prompt_template2 <span class="op">=</span> <span class="st">&quot;&quot;&quot;</span></span>
-<span id="cb17-3"><a href></a><span class="st">Task: Summarize the e-commerce product review below, delimited by triple backticks,</span><span class="ch">\</span></span>
-<span id="cb17-4"><a href></a><span class="st">to provide feedback to the engineering department responsible for the product&#39;s design.</span></span>
-<span id="cb17-5"><a href></a></span>
-<span id="cb17-6"><a href></a><span class="st">Instructions:</span></span>
-<span id="cb17-7"><a href></a></span>
-<span id="cb17-8"><a href></a><span class="st">1. Create a concise summary in at most 30 words.</span></span>
-<span id="cb17-9"><a href></a><span class="st">2. Focus specifically on aspects relevant to the product&#39;s design or engineering.</span></span>
-<span id="cb17-10"><a href></a><span class="st">3. If the review does not mention design or engineering, respond with exactly the</span><span class="ch">\</span></span>
-<span id="cb17-11"><a href></a><span class="st">word &quot;None&quot; (without quotes or additional text).</span></span>
-<span id="cb17-12"><a href></a></span>
-<span id="cb17-13"><a href></a><span class="st">Review: </span></span>
-<span id="cb17-14"><a href></a><span class="st">```</span><span class="sc">{review_text_here}</span><span class="st">```</span></span>
-<span id="cb17-15"><a href></a><span class="st">&quot;&quot;&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18" data-code-line-numbers="1|2-4|6|8-11|13-14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href></a><span class="co"># Assuming longest_review is defined and contains text</span></span>
+<span id="cb18-2"><a href></a>prompt_template2 <span class="op">=</span> <span class="st">&quot;&quot;&quot;</span></span>
+<span id="cb18-3"><a href></a><span class="st">Task: Summarize the e-commerce product review below, delimited by triple backticks,</span><span class="ch">\</span></span>
+<span id="cb18-4"><a href></a><span class="st">to provide feedback to the engineering department responsible for the product&#39;s design.</span></span>
+<span id="cb18-5"><a href></a></span>
+<span id="cb18-6"><a href></a><span class="st">Instructions:</span></span>
+<span id="cb18-7"><a href></a></span>
+<span id="cb18-8"><a href></a><span class="st">1. Create a concise summary in at most 30 words.</span></span>
+<span id="cb18-9"><a href></a><span class="st">2. Focus specifically on aspects relevant to the product&#39;s design or engineering.</span></span>
+<span id="cb18-10"><a href></a><span class="st">3. If the review does not mention design or engineering, respond with exactly the</span><span class="ch">\</span></span>
+<span id="cb18-11"><a href></a><span class="st">word &quot;None&quot; (without quotes or additional text).</span></span>
+<span id="cb18-12"><a href></a></span>
+<span id="cb18-13"><a href></a><span class="st">Review: </span></span>
+<span id="cb18-14"><a href></a><span class="st">```</span><span class="sc">{review_text_here}</span><span class="st">```</span></span>
+<span id="cb18-15"><a href></a><span class="st">&quot;&quot;&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="using-chatgpt-for-targeted-summaries-1" class="slide level2">
 <h2>Using ChatGPT for Targeted Summaries</h2>
-<p>Let’s do this for the first 30 entries:</p>
+<p>Let’s do this for the first 10 entries:</p>
 <div class="cell">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href></a>docs_10 <span class="op">=</span> docs.head(<span class="dv">10</span>).copy()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href></a>docs_10 <span class="op">=</span> docs.head(<span class="dv">10</span>).copy()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <p>And these is how we define the function to process the reviews:</p>
@@ -1520,10 +1537,10 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href></a><span class="kw">def</span> process_row(row):</span>
-<span id="cb19-2"><a href></a>    formatted_prompt <span class="op">=</span> prompt_template2.replace(<span class="st">&quot;</span><span class="sc">{review_text_here}</span><span class="st">&quot;</span>, row[<span class="st">&quot;review_text&quot;</span>])</span>
-<span id="cb19-3"><a href></a>    summary <span class="op">=</span> get_completion(formatted_prompt).strip()</span>
-<span id="cb19-4"><a href></a>    <span class="cf">return</span> summary</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href></a><span class="kw">def</span> process_row(row):</span>
+<span id="cb20-2"><a href></a>    formatted_prompt <span class="op">=</span> prompt_template2.replace(<span class="st">&quot;</span><span class="sc">{review_text_here}</span><span class="st">&quot;</span>, row[<span class="st">&quot;review_text&quot;</span>])</span>
+<span id="cb20-3"><a href></a>    summary <span class="op">=</span> get_completion(formatted_prompt).strip()</span>
+<span id="cb20-4"><a href></a>    <span class="cf">return</span> summary</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1537,10 +1554,10 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href></a><span class="co"># Apply the function to process each row</span></span>
-<span id="cb20-2"><a href></a>docs_10[<span class="st">&quot;targeted_summary&quot;</span>] <span class="op">=</span> docs_10.<span class="bu">apply</span>(process_row, axis<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb20-3"><a href></a>docs_10_filtered <span class="op">=</span> docs_10[docs_10[<span class="st">&quot;targeted_summary&quot;</span>] <span class="op">!=</span> <span class="st">&quot;None&quot;</span>]</span>
-<span id="cb20-4"><a href></a>docs_10_filtered</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href></a><span class="co"># Apply the function to process each row</span></span>
+<span id="cb21-2"><a href></a>docs_10[<span class="st">&quot;targeted_summary&quot;</span>] <span class="op">=</span> docs_10.<span class="bu">apply</span>(process_row, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb21-3"><a href></a>docs_10_filtered <span class="op">=</span> docs_10[docs_10[<span class="st">&quot;targeted_summary&quot;</span>] <span class="op">!=</span> <span class="st">&quot;None&quot;</span>]</span>
+<span id="cb21-4"><a href></a>docs_10_filtered</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1575,7 +1592,7 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <td style="text-align: left; background-color: #D9E1F2; font-family: Century Gothic, sans-serif; font-size: medium; padding: 0px 20px 0px 0px; width: auto;">\nNobody could get their hands on this until just recently. It&#39;s a PS5, the craftmanship is awesome.Operates well, system works well with store, everything is easy, this console is a masterpiece and I keep it close. Haven&#39;t got into too many games yet. It looks sexy as heck, it looks dumb in ads but in real life it&#39;s fantastic looking. And you can buy sexy plates for it as well.Controller feels great. Considering the upgrade controller, but I haven&#39;t decided. The game choices are phenomenal. It&#39;s official: XBOX lost, buy a Playstation.Playstation all the way.\n</td>
 <td style="text-align: left; background-color: #D9E1F2; font-family: Century Gothic, sans-serif; font-size: medium; padding: 0px 20px 0px 0px; width: auto;">95</td>
 <td style="text-align: left; background-color: #D9E1F2; font-family: Century Gothic, sans-serif; font-size: medium; padding: 0px 20px 0px 0px; width: auto;">None</td>
-<td style="text-align: left; background-color: #D9E1F2; font-family: Century Gothic, sans-serif; font-size: medium; padding: 0px 20px 0px 0px; width: auto;">The review praises the PS5&#39;s craftsmanship, ease of use, and game choices. Positive feedback on controller and aesthetics. Suggests buying PlayStation over Xbox. No specific design or engineering critique.</td>
+<td style="text-align: left; background-color: #D9E1F2; font-family: Century Gothic, sans-serif; font-size: medium; padding: 0px 20px 0px 0px; width: auto;">The review praises the PS5&#39;s craftsmanship, ease of use, and game choices. Positive feedback on controller and aesthetics. Suggests considering an upgraded controller. No negative comments on design or engineering.</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th" style="text-align: left; background-color: white; color: black; font-family: Century Gothic, sans-serif; font-size: medium; padding: 0px 20px 0px 0px; width: auto;">1</td>
@@ -1615,10 +1632,10 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href></a>review <span class="op">=</span> <span class="st">&quot;&quot;&quot;</span></span>
-<span id="cb21-2"><a href></a><span class="st">The PS5 is overpriced, has limited storage, poor backward compatibility,\ </span></span>
-<span id="cb21-3"><a href></a><span class="st">and lacks exclusive games to justify its hype.</span></span>
-<span id="cb21-4"><a href></a><span class="st">&quot;&quot;&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href></a>review <span class="op">=</span> <span class="st">&quot;&quot;&quot;</span></span>
+<span id="cb22-2"><a href></a><span class="st">The PS5 is overpriced, has limited storage, poor backward compatibility,\ </span></span>
+<span id="cb22-3"><a href></a><span class="st">and lacks exclusive games to justify its hype.</span></span>
+<span id="cb22-4"><a href></a><span class="st">&quot;&quot;&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="fragment">
@@ -1628,13 +1645,13 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href></a>prompt <span class="op">=</span> <span class="ss">f&quot;&quot;&quot;</span></span>
-<span id="cb22-2"><a href></a><span class="ss">What is the sentiment of the following product review, which is delimited</span><span class="ch">\</span></span>
-<span id="cb22-3"><a href></a><span class="ss">with triple backticks?</span></span>
-<span id="cb22-4"><a href></a></span>
-<span id="cb22-5"><a href></a><span class="ss">Review: </span></span>
-<span id="cb22-6"><a href></a><span class="ss">```</span><span class="sc">{</span>review<span class="sc">}</span><span class="ss">```</span></span>
-<span id="cb22-7"><a href></a><span class="ss">&quot;&quot;&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href></a>prompt <span class="op">=</span> <span class="ss">f&quot;&quot;&quot;</span></span>
+<span id="cb23-2"><a href></a><span class="ss">What is the sentiment of the following product review, which is delimited</span><span class="ch">\</span></span>
+<span id="cb23-3"><a href></a><span class="ss">with triple backticks?</span></span>
+<span id="cb23-4"><a href></a></span>
+<span id="cb23-5"><a href></a><span class="ss">Review: </span></span>
+<span id="cb23-6"><a href></a><span class="ss">```</span><span class="sc">{</span>review<span class="sc">}</span><span class="ss">```</span></span>
+<span id="cb23-7"><a href></a><span class="ss">&quot;&quot;&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1648,8 +1665,8 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href></a>response <span class="op">=</span> get_completion(prompt)</span>
-<span id="cb23-2"><a href></a><span class="bu">print</span>(response)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href></a>response <span class="op">=</span> get_completion(prompt)</span>
+<span id="cb24-2"><a href></a><span class="bu">print</span>(response)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>The sentiment of the review is negative.</code></pre>
@@ -1665,14 +1682,14 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href></a>prompt <span class="op">=</span> <span class="ss">f&quot;&quot;&quot;</span></span>
-<span id="cb25-2"><a href></a><span class="ss">What is the sentiment of the following product review, which is delimited with triple backticks?</span></span>
-<span id="cb25-3"><a href></a></span>
-<span id="cb25-4"><a href></a><span class="ss">Give the answer as a single word: &quot;positive&quot;, &quot;negative&quot;, or &quot;neutral&quot;</span></span>
-<span id="cb25-5"><a href></a></span>
-<span id="cb25-6"><a href></a><span class="ss">Review: </span></span>
-<span id="cb25-7"><a href></a><span class="ss">```</span><span class="sc">{</span>review<span class="sc">}</span><span class="ss">```</span></span>
-<span id="cb25-8"><a href></a><span class="ss">&quot;&quot;&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href></a>prompt <span class="op">=</span> <span class="ss">f&quot;&quot;&quot;</span></span>
+<span id="cb26-2"><a href></a><span class="ss">What is the sentiment of the following product review, which is delimited with triple backticks?</span></span>
+<span id="cb26-3"><a href></a></span>
+<span id="cb26-4"><a href></a><span class="ss">Give the answer as a single word: &quot;positive&quot;, &quot;negative&quot;, or &quot;neutral&quot;</span></span>
+<span id="cb26-5"><a href></a></span>
+<span id="cb26-6"><a href></a><span class="ss">Review: </span></span>
+<span id="cb26-7"><a href></a><span class="ss">```</span><span class="sc">{</span>review<span class="sc">}</span><span class="ss">```</span></span>
+<span id="cb26-8"><a href></a><span class="ss">&quot;&quot;&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="fragment">
@@ -1682,8 +1699,8 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href></a>response <span class="op">=</span> get_completion(prompt)</span>
-<span id="cb26-2"><a href></a><span class="bu">print</span>(response)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href></a>response <span class="op">=</span> get_completion(prompt)</span>
+<span id="cb27-2"><a href></a><span class="bu">print</span>(response)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>negative</code></pre>
@@ -1701,17 +1718,17 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href></a>text <span class="op">=</span> <span class="st">&quot;&quot;&quot;</span></span>
-<span id="cb28-2"><a href></a><span class="st">Needed a nice lamp for my bedroom, and this one had </span><span class="ch">\</span></span>
-<span id="cb28-3"><a href></a><span class="st">additional storage and not too high of a price point. </span><span class="ch">\</span></span>
-<span id="cb28-4"><a href></a><span class="st">Got it fast.  The string to our lamp broke during the </span><span class="ch">\</span></span>
-<span id="cb28-5"><a href></a><span class="st">transit and the company happily sent over a new one. </span><span class="ch">\</span></span>
-<span id="cb28-6"><a href></a><span class="st">Came within a few days as well. It was easy to put </span><span class="ch">\</span></span>
-<span id="cb28-7"><a href></a><span class="st">together.  I had a missing part, so I contacted their </span><span class="ch">\</span></span>
-<span id="cb28-8"><a href></a><span class="st">support and they very quickly got me the missing piece! </span><span class="ch">\</span></span>
-<span id="cb28-9"><a href></a><span class="st">Lumina seems to me to be a great company that cares </span><span class="ch">\</span></span>
-<span id="cb28-10"><a href></a><span class="st">about their customers and products!!</span></span>
-<span id="cb28-11"><a href></a><span class="st">&quot;&quot;&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href></a>text <span class="op">=</span> <span class="st">&quot;&quot;&quot;</span></span>
+<span id="cb29-2"><a href></a><span class="st">Needed a nice lamp for my bedroom, and this one had </span><span class="ch">\</span></span>
+<span id="cb29-3"><a href></a><span class="st">additional storage and not too high of a price point. </span><span class="ch">\</span></span>
+<span id="cb29-4"><a href></a><span class="st">Got it fast.  The string to our lamp broke during the </span><span class="ch">\</span></span>
+<span id="cb29-5"><a href></a><span class="st">transit and the company happily sent over a new one. </span><span class="ch">\</span></span>
+<span id="cb29-6"><a href></a><span class="st">Came within a few days as well. It was easy to put </span><span class="ch">\</span></span>
+<span id="cb29-7"><a href></a><span class="st">together.  I had a missing part, so I contacted their </span><span class="ch">\</span></span>
+<span id="cb29-8"><a href></a><span class="st">support and they very quickly got me the missing piece! </span><span class="ch">\</span></span>
+<span id="cb29-9"><a href></a><span class="st">Lumina seems to me to be a great company that cares </span><span class="ch">\</span></span>
+<span id="cb29-10"><a href></a><span class="st">about their customers and products!!</span></span>
+<span id="cb29-11"><a href></a><span class="st">&quot;&quot;&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1726,14 +1743,14 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href></a>prompt <span class="op">=</span> <span class="ss">f&quot;&quot;&quot;</span></span>
-<span id="cb29-2"><a href></a><span class="ss">Identify a list of emotions that the writer of the </span><span class="ch">\</span></span>
-<span id="cb29-3"><a href></a><span class="ss">following review is expressing. Include no more than </span><span class="ch">\</span></span>
-<span id="cb29-4"><a href></a><span class="ss">five items in the list. Format your answer as a list of </span><span class="ch">\</span></span>
-<span id="cb29-5"><a href></a><span class="ss">lower-case words separated by commas.</span></span>
-<span id="cb29-6"><a href></a></span>
-<span id="cb29-7"><a href></a><span class="ss">Review text: &#39;&#39;&#39;</span><span class="sc">{</span>text<span class="sc">}</span><span class="ss">&#39;&#39;&#39;</span></span>
-<span id="cb29-8"><a href></a><span class="ss">&quot;&quot;&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href></a>prompt <span class="op">=</span> <span class="ss">f&quot;&quot;&quot;</span></span>
+<span id="cb30-2"><a href></a><span class="ss">Identify a list of emotions that the writer of the </span><span class="ch">\</span></span>
+<span id="cb30-3"><a href></a><span class="ss">following review is expressing. Include no more than </span><span class="ch">\</span></span>
+<span id="cb30-4"><a href></a><span class="ss">five items in the list. Format your answer as a list of </span><span class="ch">\</span></span>
+<span id="cb30-5"><a href></a><span class="ss">lower-case words separated by commas.</span></span>
+<span id="cb30-6"><a href></a></span>
+<span id="cb30-7"><a href></a><span class="ss">Review text: &#39;&#39;&#39;</span><span class="sc">{</span>text<span class="sc">}</span><span class="ss">&#39;&#39;&#39;</span></span>
+<span id="cb30-8"><a href></a><span class="ss">&quot;&quot;&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1748,8 +1765,8 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href></a>response <span class="op">=</span> get_completion(prompt)</span>
-<span id="cb30-2"><a href></a><span class="bu">print</span>(response)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href></a>response <span class="op">=</span> get_completion(prompt)</span>
+<span id="cb31-2"><a href></a><span class="bu">print</span>(response)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>happy, satisfied, grateful, impressed, content</code></pre>
@@ -1767,17 +1784,17 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href></a>text <span class="op">=</span> <span class="st">&quot;&quot;&quot;</span></span>
-<span id="cb32-2"><a href></a><span class="st">Needed a nice lamp for my bedroom, and this one had </span><span class="ch">\</span></span>
-<span id="cb32-3"><a href></a><span class="st">additional storage and not too high of a price point. </span><span class="ch">\</span></span>
-<span id="cb32-4"><a href></a><span class="st">Got it fast.  The string to our lamp broke during the </span><span class="ch">\</span></span>
-<span id="cb32-5"><a href></a><span class="st">transit and the company happily sent over a new one. </span><span class="ch">\</span></span>
-<span id="cb32-6"><a href></a><span class="st">Came within a few days as well. It was easy to put </span><span class="ch">\</span></span>
-<span id="cb32-7"><a href></a><span class="st">together.  I had a missing part, so I contacted their </span><span class="ch">\</span></span>
-<span id="cb32-8"><a href></a><span class="st">support and they very quickly got me the missing piece! </span><span class="ch">\</span></span>
-<span id="cb32-9"><a href></a><span class="st">Lumina seems to me to be a great company that cares </span><span class="ch">\</span></span>
-<span id="cb32-10"><a href></a><span class="st">about their customers and products!!</span></span>
-<span id="cb32-11"><a href></a><span class="st">&quot;&quot;&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href></a>text <span class="op">=</span> <span class="st">&quot;&quot;&quot;</span></span>
+<span id="cb33-2"><a href></a><span class="st">Needed a nice lamp for my bedroom, and this one had </span><span class="ch">\</span></span>
+<span id="cb33-3"><a href></a><span class="st">additional storage and not too high of a price point. </span><span class="ch">\</span></span>
+<span id="cb33-4"><a href></a><span class="st">Got it fast.  The string to our lamp broke during the </span><span class="ch">\</span></span>
+<span id="cb33-5"><a href></a><span class="st">transit and the company happily sent over a new one. </span><span class="ch">\</span></span>
+<span id="cb33-6"><a href></a><span class="st">Came within a few days as well. It was easy to put </span><span class="ch">\</span></span>
+<span id="cb33-7"><a href></a><span class="st">together.  I had a missing part, so I contacted their </span><span class="ch">\</span></span>
+<span id="cb33-8"><a href></a><span class="st">support and they very quickly got me the missing piece! </span><span class="ch">\</span></span>
+<span id="cb33-9"><a href></a><span class="st">Lumina seems to me to be a great company that cares </span><span class="ch">\</span></span>
+<span id="cb33-10"><a href></a><span class="st">about their customers and products!!</span></span>
+<span id="cb33-11"><a href></a><span class="st">&quot;&quot;&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1792,20 +1809,20 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href></a>prompt <span class="op">=</span> <span class="ss">f&quot;&quot;&quot;</span></span>
-<span id="cb33-2"><a href></a><span class="ss">Identify the following items from the review text: </span></span>
-<span id="cb33-3"><a href></a><span class="ss">- Item purchased by reviewer</span></span>
-<span id="cb33-4"><a href></a><span class="ss">- Company that made the item</span></span>
-<span id="cb33-5"><a href></a></span>
-<span id="cb33-6"><a href></a><span class="ss">The review is delimited with triple backticks. </span><span class="ch">\</span></span>
-<span id="cb33-7"><a href></a><span class="ss">Format your response as a JSON object with </span><span class="ch">\</span></span>
-<span id="cb33-8"><a href></a><span class="ss">&quot;Item&quot; and &quot;Brand&quot; as the keys. </span></span>
-<span id="cb33-9"><a href></a><span class="ss">If the information isn&#39;t present, use &quot;unknown&quot; </span><span class="ch">\</span></span>
-<span id="cb33-10"><a href></a><span class="ss">as the value.</span></span>
-<span id="cb33-11"><a href></a><span class="ss">Make your response as short as possible.</span></span>
-<span id="cb33-12"><a href></a><span class="ss">  </span></span>
-<span id="cb33-13"><a href></a><span class="ss">Review text: &#39;&#39;&#39;</span><span class="sc">{</span>text<span class="sc">}</span><span class="ss">&#39;&#39;&#39;</span></span>
-<span id="cb33-14"><a href></a><span class="ss">&quot;&quot;&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href></a>prompt <span class="op">=</span> <span class="ss">f&quot;&quot;&quot;</span></span>
+<span id="cb34-2"><a href></a><span class="ss">Identify the following items from the review text: </span></span>
+<span id="cb34-3"><a href></a><span class="ss">- Item purchased by reviewer</span></span>
+<span id="cb34-4"><a href></a><span class="ss">- Company that made the item</span></span>
+<span id="cb34-5"><a href></a></span>
+<span id="cb34-6"><a href></a><span class="ss">The review is delimited with triple backticks. </span><span class="ch">\</span></span>
+<span id="cb34-7"><a href></a><span class="ss">Format your response as a JSON object with </span><span class="ch">\</span></span>
+<span id="cb34-8"><a href></a><span class="ss">&quot;Item&quot; and &quot;Brand&quot; as the keys. </span></span>
+<span id="cb34-9"><a href></a><span class="ss">If the information isn&#39;t present, use &quot;unknown&quot; </span><span class="ch">\</span></span>
+<span id="cb34-10"><a href></a><span class="ss">as the value.</span></span>
+<span id="cb34-11"><a href></a><span class="ss">Make your response as short as possible.</span></span>
+<span id="cb34-12"><a href></a><span class="ss">  </span></span>
+<span id="cb34-13"><a href></a><span class="ss">Review text: &#39;&#39;&#39;</span><span class="sc">{</span>text<span class="sc">}</span><span class="ss">&#39;&#39;&#39;</span></span>
+<span id="cb34-14"><a href></a><span class="ss">&quot;&quot;&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1820,8 +1837,8 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href></a>response <span class="op">=</span> get_completion(prompt)</span>
-<span id="cb34-2"><a href></a><span class="bu">print</span>(response)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href></a>response <span class="op">=</span> get_completion(prompt)</span>
+<span id="cb35-2"><a href></a><span class="bu">print</span>(response)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>{
@@ -1842,23 +1859,23 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href></a>prompt <span class="op">=</span> <span class="ss">f&quot;&quot;&quot;</span></span>
-<span id="cb36-2"><a href></a><span class="ss">Identify the following items from the review text: </span></span>
-<span id="cb36-3"><a href></a><span class="ss">- Sentiment (positive or negative)</span></span>
-<span id="cb36-4"><a href></a><span class="ss">- Is the reviewer expressing anger? (true or false)</span></span>
-<span id="cb36-5"><a href></a><span class="ss">- Item purchased by reviewer</span></span>
-<span id="cb36-6"><a href></a><span class="ss">- Company that made the item</span></span>
-<span id="cb36-7"><a href></a></span>
-<span id="cb36-8"><a href></a><span class="ss">The review is delimited with triple backticks. </span><span class="ch">\</span></span>
-<span id="cb36-9"><a href></a><span class="ss">Format your response as a JSON object with </span><span class="ch">\</span></span>
-<span id="cb36-10"><a href></a><span class="ss">&quot;Sentiment&quot;, &quot;Anger&quot;, &quot;Item&quot; and &quot;Brand&quot; as the keys.</span></span>
-<span id="cb36-11"><a href></a><span class="ss">If the information isn&#39;t present, use &quot;unknown&quot; </span><span class="ch">\</span></span>
-<span id="cb36-12"><a href></a><span class="ss">as the value.</span></span>
-<span id="cb36-13"><a href></a><span class="ss">Make your response as short as possible.</span></span>
-<span id="cb36-14"><a href></a><span class="ss">Format the Anger value as a boolean.</span></span>
-<span id="cb36-15"><a href></a></span>
-<span id="cb36-16"><a href></a><span class="ss">Review text: &#39;&#39;&#39;</span><span class="sc">{</span>text<span class="sc">}</span><span class="ss">&#39;&#39;&#39;</span></span>
-<span id="cb36-17"><a href></a><span class="ss">&quot;&quot;&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href></a>prompt <span class="op">=</span> <span class="ss">f&quot;&quot;&quot;</span></span>
+<span id="cb37-2"><a href></a><span class="ss">Identify the following items from the review text: </span></span>
+<span id="cb37-3"><a href></a><span class="ss">- Sentiment (positive or negative)</span></span>
+<span id="cb37-4"><a href></a><span class="ss">- Is the reviewer expressing anger? (true or false)</span></span>
+<span id="cb37-5"><a href></a><span class="ss">- Item purchased by reviewer</span></span>
+<span id="cb37-6"><a href></a><span class="ss">- Company that made the item</span></span>
+<span id="cb37-7"><a href></a></span>
+<span id="cb37-8"><a href></a><span class="ss">The review is delimited with triple backticks. </span><span class="ch">\</span></span>
+<span id="cb37-9"><a href></a><span class="ss">Format your response as a JSON object with </span><span class="ch">\</span></span>
+<span id="cb37-10"><a href></a><span class="ss">&quot;Sentiment&quot;, &quot;Anger&quot;, &quot;Item&quot; and &quot;Brand&quot; as the keys.</span></span>
+<span id="cb37-11"><a href></a><span class="ss">If the information isn&#39;t present, use &quot;unknown&quot; </span><span class="ch">\</span></span>
+<span id="cb37-12"><a href></a><span class="ss">as the value.</span></span>
+<span id="cb37-13"><a href></a><span class="ss">Make your response as short as possible.</span></span>
+<span id="cb37-14"><a href></a><span class="ss">Format the Anger value as a boolean.</span></span>
+<span id="cb37-15"><a href></a></span>
+<span id="cb37-16"><a href></a><span class="ss">Review text: &#39;&#39;&#39;</span><span class="sc">{</span>text<span class="sc">}</span><span class="ss">&#39;&#39;&#39;</span></span>
+<span id="cb37-17"><a href></a><span class="ss">&quot;&quot;&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1873,8 +1890,8 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href></a>response <span class="op">=</span> get_completion(prompt)</span>
-<span id="cb37-2"><a href></a><span class="bu">print</span>(response)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href></a>response <span class="op">=</span> get_completion(prompt)</span>
+<span id="cb38-2"><a href></a><span class="bu">print</span>(response)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>{
@@ -1906,25 +1923,25 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href></a>speech <span class="op">=</span> <span class="st">&quot;&quot;&quot;I am encouraged by the honourable Gentleman’s anger. His intervention bears no relationship</span><span class="ch">\</span></span>
-<span id="cb39-2"><a href></a><span class="st">to the reality in Britain or to reality for our European Union partners. His comment was important.\ </span></span>
-<span id="cb39-3"><a href></a><span class="st">I hope that it will be well circulated to his constituents. It is clear that this whole process is </span><span class="ch">\</span></span>
-<span id="cb39-4"><a href></a><span class="st">in a state of disarray. I welcomed the new Secretary of State for Transport. His main challenge is </span><span class="ch">\</span></span>
-<span id="cb39-5"><a href></a><span class="st">to persuade a number of his colleagues in the Cabinet that the whole process should be dumped. I want</span><span class="ch">\</span></span>
-<span id="cb39-6"><a href></a><span class="st">to finish on two points that sum up this fiasco. I am sure that the honourable Member for Ross,\ </span></span>
-<span id="cb39-7"><a href></a><span class="st">Cromarty and Skye will deal with the issue of sleeper services to Scotland. The Government and</span><span class="ch">\</span></span>
-<span id="cb39-8"><a href></a><span class="st">the British Railways Board were dragged into the courts in Scotland to be exposed for what they</span><span class="ch">\</span></span>
-<span id="cb39-9"><a href></a><span class="st">had shown to Scots - utter contempt for their rail network. They thought that, through stealth\ </span></span>
-<span id="cb39-10"><a href></a><span class="st">and the incompetence of the director of franchising, Mr. Roger Salmon, they could close services\ </span></span>
-<span id="cb39-11"><a href></a><span class="st">under the guise of consultation on a draft passenger service requirement. They were found out.</span><span class="ch">\</span></span>
-<span id="cb39-12"><a href></a><span class="st">Is it not a disgrace that railway policy is now going to be partly dictated in the courts of</span><span class="ch">\</span></span>
-<span id="cb39-13"><a href></a><span class="st">England and Scotland? That is a fiasco and the Government know it. The second issue is trans-European</span><span class="ch">\</span></span>
-<span id="cb39-14"><a href></a><span class="st">networks. It is an important issue for Britain because it involves integrating the major routes in Britain</span><span class="ch">\</span></span>
-<span id="cb39-15"><a href></a><span class="st">with those in Europe. It is absolutely right that that should be done. What did Ministers do</span><span class="ch">\</span></span>
-<span id="cb39-16"><a href></a><span class="st">when they went to Brussels? They sabotaged the proposals. We find that the European Union is</span><span class="ch">\</span></span>
-<span id="cb39-17"><a href></a><span class="st">giving no priority to schemes. It has thrown out environmental impact assessments and of course</span><span class="ch">\</span></span>
-<span id="cb39-18"><a href></a><span class="st">no cash is being provided by the European Union for such developments..</span></span>
-<span id="cb39-19"><a href></a><span class="st">&quot;&quot;&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href></a>speech <span class="op">=</span> <span class="st">&quot;&quot;&quot;I am encouraged by the honourable Gentleman’s anger. His intervention bears no relationship</span><span class="ch">\</span></span>
+<span id="cb40-2"><a href></a><span class="st">to the reality in Britain or to reality for our European Union partners. His comment was important.\ </span></span>
+<span id="cb40-3"><a href></a><span class="st">I hope that it will be well circulated to his constituents. It is clear that this whole process is </span><span class="ch">\</span></span>
+<span id="cb40-4"><a href></a><span class="st">in a state of disarray. I welcomed the new Secretary of State for Transport. His main challenge is </span><span class="ch">\</span></span>
+<span id="cb40-5"><a href></a><span class="st">to persuade a number of his colleagues in the Cabinet that the whole process should be dumped. I want</span><span class="ch">\</span></span>
+<span id="cb40-6"><a href></a><span class="st">to finish on two points that sum up this fiasco. I am sure that the honourable Member for Ross,\ </span></span>
+<span id="cb40-7"><a href></a><span class="st">Cromarty and Skye will deal with the issue of sleeper services to Scotland. The Government and</span><span class="ch">\</span></span>
+<span id="cb40-8"><a href></a><span class="st">the British Railways Board were dragged into the courts in Scotland to be exposed for what they</span><span class="ch">\</span></span>
+<span id="cb40-9"><a href></a><span class="st">had shown to Scots - utter contempt for their rail network. They thought that, through stealth\ </span></span>
+<span id="cb40-10"><a href></a><span class="st">and the incompetence of the director of franchising, Mr. Roger Salmon, they could close services\ </span></span>
+<span id="cb40-11"><a href></a><span class="st">under the guise of consultation on a draft passenger service requirement. They were found out.</span><span class="ch">\</span></span>
+<span id="cb40-12"><a href></a><span class="st">Is it not a disgrace that railway policy is now going to be partly dictated in the courts of</span><span class="ch">\</span></span>
+<span id="cb40-13"><a href></a><span class="st">England and Scotland? That is a fiasco and the Government know it. The second issue is trans-European</span><span class="ch">\</span></span>
+<span id="cb40-14"><a href></a><span class="st">networks. It is an important issue for Britain because it involves integrating the major routes in Britain</span><span class="ch">\</span></span>
+<span id="cb40-15"><a href></a><span class="st">with those in Europe. It is absolutely right that that should be done. What did Ministers do</span><span class="ch">\</span></span>
+<span id="cb40-16"><a href></a><span class="st">when they went to Brussels? They sabotaged the proposals. We find that the European Union is</span><span class="ch">\</span></span>
+<span id="cb40-17"><a href></a><span class="st">giving no priority to schemes. It has thrown out environmental impact assessments and of course</span><span class="ch">\</span></span>
+<span id="cb40-18"><a href></a><span class="st">no cash is being provided by the European Union for such developments..</span></span>
+<span id="cb40-19"><a href></a><span class="st">&quot;&quot;&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1942,17 +1959,17 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href></a>prompt <span class="op">=</span> <span class="ss">f&quot;&quot;&quot;</span></span>
-<span id="cb40-2"><a href></a><span class="ss">Determine five topics that are being discussed in the </span><span class="ch">\</span></span>
-<span id="cb40-3"><a href></a><span class="ss">following text, which is delimited by triple backticks.</span></span>
-<span id="cb40-4"><a href></a></span>
-<span id="cb40-5"><a href></a><span class="ss">Make each item one or two words long. </span></span>
-<span id="cb40-6"><a href></a></span>
-<span id="cb40-7"><a href></a><span class="ss">Format your response as a list of uncounted items separated by commas.</span></span>
-<span id="cb40-8"><a href></a></span>
-<span id="cb40-9"><a href></a><span class="ss">Text sample: </span></span>
-<span id="cb40-10"><a href></a><span class="ss">&#39;&#39;&#39;</span><span class="sc">{</span>speech<span class="sc">}</span><span class="ss">&#39;&#39;&#39;</span></span>
-<span id="cb40-11"><a href></a><span class="ss">&quot;&quot;&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href></a>prompt <span class="op">=</span> <span class="ss">f&quot;&quot;&quot;</span></span>
+<span id="cb41-2"><a href></a><span class="ss">Determine five topics that are being discussed in the </span><span class="ch">\</span></span>
+<span id="cb41-3"><a href></a><span class="ss">following text, which is delimited by triple backticks.</span></span>
+<span id="cb41-4"><a href></a></span>
+<span id="cb41-5"><a href></a><span class="ss">Make each item one or two words long. </span></span>
+<span id="cb41-6"><a href></a></span>
+<span id="cb41-7"><a href></a><span class="ss">Format your response as a list of uncounted items separated by commas.</span></span>
+<span id="cb41-8"><a href></a></span>
+<span id="cb41-9"><a href></a><span class="ss">Text sample: </span></span>
+<span id="cb41-10"><a href></a><span class="ss">&#39;&#39;&#39;</span><span class="sc">{</span>speech<span class="sc">}</span><span class="ss">&#39;&#39;&#39;</span></span>
+<span id="cb41-11"><a href></a><span class="ss">&quot;&quot;&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1967,11 +1984,11 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href></a>response <span class="op">=</span> get_completion(prompt)</span>
-<span id="cb41-2"><a href></a><span class="bu">print</span>(response)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href></a>response <span class="op">=</span> get_completion(prompt)</span>
+<span id="cb42-2"><a href></a><span class="bu">print</span>(response)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Brexit, Transportation, European Union, Railway Policy, Trans-European Networks</code></pre>
+<pre><code>Brexit, Transportation, European Union, Railway Policy, European Networks</code></pre>
 </div>
 </div>
 </div>
@@ -1982,10 +1999,10 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href></a>response.split(sep<span class="op">=</span><span class="st">&#39;,&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href></a>response.split(sep<span class="op">=</span><span class="st">&#39;,&#39;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[&#39;Brexit&#39;, &#39; Transportation&#39;, &#39; European Union&#39;, &#39; Railway Policy&#39;, &#39; Trans-European Networks&#39;]</code></pre>
+<pre><code>[&#39;Brexit&#39;, &#39; Transportation&#39;, &#39; European Union&#39;, &#39; Railway Policy&#39;, &#39; European Networks&#39;]</code></pre>
 </div>
 </div>
 </div>
@@ -2000,7 +2017,7 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href></a>topic_list <span class="op">=</span> [<span class="st">&quot;brexit&quot;</span>, <span class="st">&quot;UK-EU relations&quot;</span>, <span class="st">&quot;rails&quot;</span>, <span class="st">&quot;transport&quot;</span>, <span class="st">&quot;aliens&quot;</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href></a>topic_list <span class="op">=</span> [<span class="st">&quot;brexit&quot;</span>, <span class="st">&quot;UK-EU relations&quot;</span>, <span class="st">&quot;rails&quot;</span>, <span class="st">&quot;transport&quot;</span>, <span class="st">&quot;aliens&quot;</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -2010,21 +2027,21 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href></a>prompt <span class="op">=</span> <span class="ss">f&quot;&quot;&quot;</span></span>
-<span id="cb46-2"><a href></a><span class="ss">Determine whether each item in the following list of </span><span class="ch">\</span></span>
-<span id="cb46-3"><a href></a><span class="ss">topics is a topic in the text below, which</span></span>
-<span id="cb46-4"><a href></a><span class="ss">is delimited with triple backticks.</span></span>
-<span id="cb46-5"><a href></a></span>
-<span id="cb46-6"><a href></a><span class="ss">Format your response as a JSON object with </span><span class="ch">\</span></span>
-<span id="cb46-7"><a href></a><span class="ss">the topics as the keys.</span></span>
-<span id="cb46-8"><a href></a></span>
-<span id="cb46-9"><a href></a><span class="ss">Give your answer as follows:</span></span>
-<span id="cb46-10"><a href></a><span class="ss">item from the list: 0 or 1</span></span>
-<span id="cb46-11"><a href></a></span>
-<span id="cb46-12"><a href></a><span class="ss">List of topics: </span><span class="sc">{</span><span class="st">&quot;, &quot;</span><span class="sc">.</span>join(topic_list)<span class="sc">}</span></span>
-<span id="cb46-13"><a href></a></span>
-<span id="cb46-14"><a href></a><span class="ss">Text sample: &#39;&#39;&#39;</span><span class="sc">{</span>speech<span class="sc">}</span><span class="ss">&#39;&#39;&#39;</span></span>
-<span id="cb46-15"><a href></a><span class="ss">&quot;&quot;&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href></a>prompt <span class="op">=</span> <span class="ss">f&quot;&quot;&quot;</span></span>
+<span id="cb47-2"><a href></a><span class="ss">Determine whether each item in the following list of </span><span class="ch">\</span></span>
+<span id="cb47-3"><a href></a><span class="ss">topics is a topic in the text below, which</span></span>
+<span id="cb47-4"><a href></a><span class="ss">is delimited with triple backticks.</span></span>
+<span id="cb47-5"><a href></a></span>
+<span id="cb47-6"><a href></a><span class="ss">Format your response as a JSON object with </span><span class="ch">\</span></span>
+<span id="cb47-7"><a href></a><span class="ss">the topics as the keys.</span></span>
+<span id="cb47-8"><a href></a></span>
+<span id="cb47-9"><a href></a><span class="ss">Give your answer as follows:</span></span>
+<span id="cb47-10"><a href></a><span class="ss">item from the list: 0 or 1</span></span>
+<span id="cb47-11"><a href></a></span>
+<span id="cb47-12"><a href></a><span class="ss">List of topics: </span><span class="sc">{</span><span class="st">&quot;, &quot;</span><span class="sc">.</span>join(topic_list)<span class="sc">}</span></span>
+<span id="cb47-13"><a href></a></span>
+<span id="cb47-14"><a href></a><span class="ss">Text sample: &#39;&#39;&#39;</span><span class="sc">{</span>speech<span class="sc">}</span><span class="ss">&#39;&#39;&#39;</span></span>
+<span id="cb47-15"><a href></a><span class="ss">&quot;&quot;&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -2039,16 +2056,16 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href></a>response <span class="op">=</span> get_completion(prompt)</span>
-<span id="cb47-2"><a href></a><span class="bu">print</span>(response)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href></a>response <span class="op">=</span> get_completion(prompt)</span>
+<span id="cb48-2"><a href></a><span class="bu">print</span>(response)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>{
-  &quot;brexit&quot;: 0,
-  &quot;UK-EU relations&quot;: 0,
-  &quot;rails&quot;: 1,
-  &quot;transport&quot;: 1,
-  &quot;aliens&quot;: 0
+    &quot;brexit&quot;: 0,
+    &quot;UK-EU relations&quot;: 0,
+    &quot;rails&quot;: 1,
+    &quot;transport&quot;: 1,
+    &quot;aliens&quot;: 0
 }</code></pre>
 </div>
 </div>
@@ -2064,7 +2081,7 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href></a>text_to_translate <span class="op">=</span> <span class="st">&quot;I love what I can do with ChatGPT OpenAI.&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href></a>text_to_translate <span class="op">=</span> <span class="st">&quot;I love what I can do with ChatGPT OpenAI.&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -2074,12 +2091,12 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href></a>prompt <span class="op">=</span> <span class="ss">f&quot;&quot;&quot;</span></span>
-<span id="cb50-2"><a href></a><span class="ss">Translate the following English text to Italian which</span></span>
-<span id="cb50-3"><a href></a><span class="ss">is delimited with triple backticks.:</span><span class="ch">\</span></span>
-<span id="cb50-4"><a href></a></span>
-<span id="cb50-5"><a href></a><span class="ss">Text sample: &#39;&#39;&#39;</span><span class="sc">{</span>text_to_translate<span class="sc">}</span><span class="ss">&#39;&#39;&#39;</span></span>
-<span id="cb50-6"><a href></a><span class="ss">&quot;&quot;&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href></a>prompt <span class="op">=</span> <span class="ss">f&quot;&quot;&quot;</span></span>
+<span id="cb51-2"><a href></a><span class="ss">Translate the following English text to Italian which</span></span>
+<span id="cb51-3"><a href></a><span class="ss">is delimited with triple backticks.:</span><span class="ch">\</span></span>
+<span id="cb51-4"><a href></a></span>
+<span id="cb51-5"><a href></a><span class="ss">Text sample: &#39;&#39;&#39;</span><span class="sc">{</span>text_to_translate<span class="sc">}</span><span class="ss">&#39;&#39;&#39;</span></span>
+<span id="cb51-6"><a href></a><span class="ss">&quot;&quot;&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -2094,8 +2111,8 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href></a>response <span class="op">=</span> get_completion(prompt)</span>
-<span id="cb51-2"><a href></a><span class="bu">print</span>(response)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href></a>response <span class="op">=</span> get_completion(prompt)</span>
+<span id="cb52-2"><a href></a><span class="bu">print</span>(response)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&#39;&#39;&#39;Amo ciò che posso fare con ChatGPT OpenAI.&#39;&#39;&#39;</code></pre>
@@ -2113,7 +2130,7 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href></a>text_to_translate <span class="op">=</span> <span class="st">&quot;I love what I can do with ChatGPT OpenAI.&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href></a>text_to_translate <span class="op">=</span> <span class="st">&quot;I love what I can do with ChatGPT OpenAI.&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -2124,17 +2141,17 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href></a>prompt <span class="op">=</span> <span class="ss">f&quot;&quot;&quot;</span></span>
-<span id="cb54-2"><a href></a><span class="ss">Translate the following English text to Italian and Spanish, which</span></span>
-<span id="cb54-3"><a href></a><span class="ss">is delimited with triple backticks.:</span><span class="ch">\</span></span>
-<span id="cb54-4"><a href></a></span>
-<span id="cb54-5"><a href></a><span class="ss">Format your response as a JSON object with </span><span class="ch">\</span></span>
-<span id="cb54-6"><a href></a><span class="ss">the languages as the keys.</span></span>
-<span id="cb54-7"><a href></a></span>
-<span id="cb54-8"><a href></a><span class="ss">Text sample: &#39;&#39;&#39;</span><span class="sc">{</span>text_to_translate<span class="sc">}</span><span class="ss">&#39;&#39;&#39;</span></span>
-<span id="cb54-9"><a href></a><span class="ss">&quot;&quot;&quot;</span></span>
-<span id="cb54-10"><a href></a>response <span class="op">=</span> get_completion(prompt)</span>
-<span id="cb54-11"><a href></a><span class="bu">print</span>(response)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href></a>prompt <span class="op">=</span> <span class="ss">f&quot;&quot;&quot;</span></span>
+<span id="cb55-2"><a href></a><span class="ss">Translate the following English text to Italian and Spanish, which</span></span>
+<span id="cb55-3"><a href></a><span class="ss">is delimited with triple backticks.:</span><span class="ch">\</span></span>
+<span id="cb55-4"><a href></a></span>
+<span id="cb55-5"><a href></a><span class="ss">Format your response as a JSON object with </span><span class="ch">\</span></span>
+<span id="cb55-6"><a href></a><span class="ss">the languages as the keys.</span></span>
+<span id="cb55-7"><a href></a></span>
+<span id="cb55-8"><a href></a><span class="ss">Text sample: &#39;&#39;&#39;</span><span class="sc">{</span>text_to_translate<span class="sc">}</span><span class="ss">&#39;&#39;&#39;</span></span>
+<span id="cb55-9"><a href></a><span class="ss">&quot;&quot;&quot;</span></span>
+<span id="cb55-10"><a href></a>response <span class="op">=</span> get_completion(prompt)</span>
+<span id="cb55-11"><a href></a><span class="bu">print</span>(response)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>{
@@ -2159,10 +2176,10 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href></a>text_to_fix <span class="op">=</span> <span class="st">&quot;&quot;&quot;</span></span>
-<span id="cb56-2"><a href></a><span class="st">This is a mock short paragraf to see how ChatGPT performs when it comes to\ </span></span>
-<span id="cb56-3"><a href></a><span class="st">grammer and spelling. These is a wrong sentence. Speling is of.</span></span>
-<span id="cb56-4"><a href></a><span class="st">&quot;&quot;&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href></a>text_to_fix <span class="op">=</span> <span class="st">&quot;&quot;&quot;</span></span>
+<span id="cb57-2"><a href></a><span class="st">This is a mock short paragraf to see how ChatGPT performs when it comes to\ </span></span>
+<span id="cb57-3"><a href></a><span class="st">grammer and spelling. These is a wrong sentence. Speling is of.</span></span>
+<span id="cb57-4"><a href></a><span class="st">&quot;&quot;&quot;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -2172,18 +2189,18 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href></a>prompt <span class="op">=</span> <span class="ss">f&quot;&quot;&quot;</span></span>
-<span id="cb57-2"><a href></a><span class="ss">Proofread and correct the following text, which</span></span>
-<span id="cb57-3"><a href></a><span class="ss">is delimited with triple backticks.</span></span>
-<span id="cb57-4"><a href></a></span>
-<span id="cb57-5"><a href></a><span class="ss">Rewrite the corrected version a simple string.</span></span>
-<span id="cb57-6"><a href></a></span>
-<span id="cb57-7"><a href></a><span class="ss">If you don&#39;t find and errors, leave as such.</span></span>
-<span id="cb57-8"><a href></a></span>
-<span id="cb57-9"><a href></a><span class="ss">```</span><span class="sc">{</span>text_to_fix<span class="sc">}</span><span class="ss">```</span></span>
-<span id="cb57-10"><a href></a><span class="ss">&quot;&quot;&quot;</span></span>
-<span id="cb57-11"><a href></a>response <span class="op">=</span> get_completion(prompt)</span>
-<span id="cb57-12"><a href></a><span class="bu">print</span>(response)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href></a>prompt <span class="op">=</span> <span class="ss">f&quot;&quot;&quot;</span></span>
+<span id="cb58-2"><a href></a><span class="ss">Proofread and correct the following text, which</span></span>
+<span id="cb58-3"><a href></a><span class="ss">is delimited with triple backticks.</span></span>
+<span id="cb58-4"><a href></a></span>
+<span id="cb58-5"><a href></a><span class="ss">Rewrite the corrected version a simple string.</span></span>
+<span id="cb58-6"><a href></a></span>
+<span id="cb58-7"><a href></a><span class="ss">If you don&#39;t find and errors, leave as such.</span></span>
+<span id="cb58-8"><a href></a></span>
+<span id="cb58-9"><a href></a><span class="ss">```</span><span class="sc">{</span>text_to_fix<span class="sc">}</span><span class="ss">```</span></span>
+<span id="cb58-10"><a href></a><span class="ss">&quot;&quot;&quot;</span></span>
+<span id="cb58-11"><a href></a>response <span class="op">=</span> get_completion(prompt)</span>
+<span id="cb58-12"><a href></a><span class="bu">print</span>(response)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>This is a mock short paragraph to see how ChatGPT performs when it comes to grammar and spelling. There is a wrong sentence. Spelling is off.</code></pre>
@@ -2200,12 +2217,12 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <div class="code-with-filename-file">
 <pre><strong>Python</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href></a><span class="im">import</span> markdown</span>
-<span id="cb59-2"><a href></a><span class="im">from</span> IPython.display <span class="im">import</span> display, HTML</span>
-<span id="cb59-3"><a href></a><span class="im">from</span> redlines <span class="im">import</span> Redlines</span>
-<span id="cb59-4"><a href></a>diff <span class="op">=</span> Redlines(text_to_fix, response)</span>
-<span id="cb59-5"><a href></a>html_obj <span class="op">=</span> markdown.markdown(diff.output_markdown).strip(<span class="st">&#39;&quot;&#39;</span>)</span>
-<span id="cb59-6"><a href></a>HTML(html_obj)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href></a><span class="im">import</span> markdown</span>
+<span id="cb60-2"><a href></a><span class="im">from</span> IPython.display <span class="im">import</span> display, HTML</span>
+<span id="cb60-3"><a href></a><span class="im">from</span> redlines <span class="im">import</span> Redlines</span>
+<span id="cb60-4"><a href></a>diff <span class="op">=</span> Redlines(text_to_fix, response)</span>
+<span id="cb60-5"><a href></a>html_obj <span class="op">=</span> markdown.markdown(diff.output_markdown).strip(<span class="st">&#39;&quot;&#39;</span>)</span>
+<span id="cb60-6"><a href></a>HTML(html_obj)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output-display">
 <p>This is a mock short <span style="color:red;font-weight:700;text-decoration:line-through;">paragraf </span><span style="color:green;font-weight:700;">paragraph </span>to see how ChatGPT performs when it comes <span style="color:red;font-weight:700;text-decoration:line-through;">to\ ¶ grammer </span><span style="color:green;font-weight:700;">to grammar </span>and spelling. <span style="color:red;font-weight:700;text-decoration:line-through;">These </span><span style="color:green;font-weight:700;">There </span>is a wrong sentence. <span style="color:red;font-weight:700;text-decoration:line-through;">Speling </span><span style="color:green;font-weight:700;">Spelling </span>is <span style="color:red;font-weight:700;text-decoration:line-through;">of.</span><span style="color:green;font-weight:700;">off.</span></p>
