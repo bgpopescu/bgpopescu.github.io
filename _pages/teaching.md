@@ -32,7 +32,7 @@ My teaching philosophy focuses on developing critical thinking skills, and acqui
 
 
 Other courses that I am ready to teach include:
-- [Publishing Your First Quantitative Paper](/files/teaching/research_workshop/resarch_syllabus2.html){:target="_blank"}
+- [Publishing Your First Quantitative Paper](/files/teaching/research_workshop/research_syllabus2.html){:target="_blank"}
 - [Mixed-Methods Research Methodology](/files/teaching/mixed_methods/mixed_methods.html){:target="_blank"}
 - [European Politics](/files/teaching/european_politics/european_pol_syllabus.html){:target="_blank"}
 - [State Formation and State Development](/files/teaching/state_capacity_dev/state_syllabus.html){:target="_blank"}
