@@ -1,0 +1,12 @@
+---
+title: "Statistical Analysis Presentation"
+author: "Your Name"
+date: "2024-11-05"
+format:
+  revealjs:
+    controls: true
+    logo: quarto.png
+    footer: "Footer text"
+    embed-resources: true
+---
+
