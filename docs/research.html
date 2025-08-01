@@ -161,7 +161,7 @@ ul.task-list li input[type="checkbox"] {
 <b>Books</b>
 </h3>
 <ol type="1">
-<li><strong>Popescu, Bogdan G.</strong> 2023. <em>Imperial Borderlands: Institutions and Legacies of the Habsburg Military Frontier</em>. <a href="https://www.cambridge.org/core/books/imperial-borderlands/6845856BB6A18B8B8EC2EE66B9013AAC#fndtn-information" target="_blank">Cambridge University Press</a>. Read the <a href="https://www.dropbox.com/scl/fi/npqqmzppb7fsh6m5cy5yl/Imperial-Borderlands_final_intro_comp.pdf?rlkey=af21iyb62cpkbnreiydcaqx1s&amp;dl=0" target="_blank">table of contents and intro</a>.</li>
+<li><strong>Popescu, Bogdan G.</strong> 2024. <em>Imperial Borderlands: Institutions and Legacies of the Habsburg Military Frontier</em>. <a href="https://www.cambridge.org/core/books/imperial-borderlands/6845856BB6A18B8B8EC2EE66B9013AAC#fndtn-information" target="_blank">Cambridge University Press</a>. Read the <a href="https://www.dropbox.com/scl/fi/npqqmzppb7fsh6m5cy5yl/Imperial-Borderlands_final_intro_comp.pdf?rlkey=af21iyb62cpkbnreiydcaqx1s&amp;dl=0" target="_blank">table of contents and intro</a>.</li>
 </ol>
 <ul style="list-style: none;">
 <li>
@@ -290,7 +290,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/bgpopescu\.net");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
