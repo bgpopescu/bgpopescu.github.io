@@ -5,7 +5,7 @@ project:
     - teaching/**
 
 website:
-  site-url: https://bgpopescu.net  # ← ADD THIS LINE
+  site-url: https://bgpopescu.net
   navbar:
     left:
       - href: index.qmd
