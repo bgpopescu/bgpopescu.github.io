@@ -1,6 +1,8 @@
 project:
   type: website
   output-dir: docs
+  resources:
+    - teaching/**
 
 website:
   site-url: https://bgpopescu.net  # ← ADD THIS LINE
