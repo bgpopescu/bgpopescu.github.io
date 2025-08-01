@@ -1,0 +1,24 @@
+---
+title: "Statistical Analysis Report"
+author: "Your Name"
+date: "2024-11-05"
+format: html
+toc: true
+toc-title: "Contents"
+embed-resources: true
+---
+
+# Introduction
+
+This is an example.
+
+This is an equation: $E=mc^{2}$
+
+This is also an equation: 
+
+$$E=mc^{2}$$
+
+```{r echo=TRUE, eval=TRUE}
+summary(mtcars)
+```
+
