@@ -1,0 +1,27 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  site-url: https://bgpopescu.net  # ← ADD THIS LINE
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - research.qmd
+      - books.qmd
+      - teaching.qmd
+      - data.qmd
+      - cv.qmd
+      - contact.qmd
+
+format:
+  html:
+    sitemap: true
+    theme:
+      - cosmo
+      - brand
+    css: styles.css
+    toc: true
+
+editor: visual

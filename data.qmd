@@ -1,0 +1,9 @@
+---
+title: "Data"
+---
+
+[Historical Atlas of Central and Eastern Europe: 1326-1922](https://www.dropbox.com/scl/fi/in7us17ygkjwt4tpo2xu4/popescu-atlas-summary_compressed.pdf?rlkey=a1549a8q1jjh390t1reqhibkv&e=1&dl=0){target="_blank"}\
+Short PDF with the borders of all political entitities from 1300s until 1900s including: the Ottoman, Habsburg, Russian Empires, Venetian Republic, etc.
+
+[Demographics and Taxation in 15th century Ottoman\ Albania](https://www.dropbox.com/scl/fi/95trt4i3uirgz5zqfabxn/popescu_albania.pdf?rlkey=a7p1wb3m8eg84fgmdcl8gi24v&e=1&dl=0){target="_blank"}
+Short PDF showing some of the facsimiles of Ottoman Albania from 1442 together with GIS work meant to identify the settlements in the Ottoman registers.

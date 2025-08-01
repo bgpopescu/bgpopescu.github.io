@@ -1,0 +1,43 @@
+---
+title: "Bogdan G. Popescu"
+image: images/oxford1_cropped.jpg
+about:
+  template: trestles
+  image-width: 5cm
+  image-shape: round
+  links:
+    - text: "![](/images/bluesky_logo.svg){height=1em}"
+      href: https://bsky.app/profile/bgpopescu.bsky.social
+      target: _blank
+    - text: "![](/images/x_logo.png){height=1em}"
+      href: https://x.com/BogdanGPopescu1
+      target: _blank
+    - icon: github
+      href: https://github.com/bgpopescu
+      target: _blank
+    - icon: linkedin
+      href: https://www.linkedin.com/in/bogdanpopescu/
+      target: _blank
+    - text: "![](/images/googlescholar.svg){height=1em}"
+      href: https://scholar.google.com/citations?user=6H75YbkAAAAJ&hl=en
+      target: _blank
+    - text: "![](/images/orcid.svg){height=1em}"
+      href: https://orcid.org/0000-0002-7730-7495
+      target: _blank
+---
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7DSN63Y1JH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-7DSN63Y1JH');
+</script>
+
+Welcome! I am an Assistant Professor (*tenured*) in Political Science at [John Cabot University](https://www.johncabot.edu/political-science-international-affairs/default.aspx){target="_blank"} in Rome, Italy. Previously, I taught at the [University of Oxford](https://www.politics.ox.ac.uk){target="_blank"} and I was a postdoctoral researcher at [Bocconi](https://www.unibocconi.eu/wps/wcm/connect/Bocconi/SitoPubblico_EN/Navigation+Tree/Home/){target="_blank"} and [Princeton](https://politics.princeton.edu){target="_blank"}. I received my PhD in Political Science from the [University of Chicago](https://political-science.uchicago.edu){target="_blank"}.
+
+My research and teaching interests focus on state management in peripheral regions and their enduring ramifications. I draw on extensive archival research, and computational methods and employ quantitative analysis of observational data and narrative evidence. My first book – <em>Imperial Borderlands: Institutions and Legacies of the Habsburg Military Frontier</em> (<em>Cambridge University Press</em>, 2023), focuses on how historical states adopt distinct institutions in border areas and their long-term consequences. My second book, <em>Islam, Sultans, and the Printing Press</em> scrutinizes the historical disparities between the Middle East and the West. It specifically investigates the long-term legacies of the delay in the adoption of the printing press in the Ottoman Empire.
+
+My research was published in leading peer-reviewed journals, including <em>Comparative Political Studies</em>, <em>Journal of Conflict Resolution</em>, and <em>Quarterly Journal of Political Science</em>, among others.
