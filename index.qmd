@@ -6,23 +6,23 @@ about:
   image-width: 5cm
   image-shape: round
   links:
-    - text: "![](/images/bluesky_logo.svg){height=1em}"
-      href: https://bsky.app/profile/bgpopescu.bsky.social
-      target: _blank
-    - text: "![](/images/x_logo.png){height=1em}"
-      href: https://x.com/BogdanGPopescu1
-      target: _blank
-    - icon: github
-      href: https://github.com/bgpopescu
-      target: _blank
-    - icon: linkedin
-      href: https://www.linkedin.com/in/bogdanpopescu/
-      target: _blank
     - text: "![](/images/googlescholar.svg){height=1em}"
       href: https://scholar.google.com/citations?user=6H75YbkAAAAJ&hl=en
       target: _blank
     - text: "![](/images/orcid.svg){height=1em}"
       href: https://orcid.org/0000-0002-7730-7495
+      target: _blank
+    - icon: linkedin
+      href: https://www.linkedin.com/in/bogdanpopescu/
+      target: _blank
+    - icon: github
+      target: _blank
+      href: https://github.com/bgpopescu
+    - text: "![](/images/bluesky_logo.svg){height=1em}"
+      href: https://bsky.app/profile/bgpopescu.bsky.social
+      target: _blank
+    - text: "![](/images/x_logo.png){height=1em}"
+      href: https://x.com/BogdanGPopescu1
       target: _blank
 ---
 
