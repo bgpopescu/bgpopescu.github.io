@@ -12,18 +12,6 @@ about:
     - text: "![](/images/orcid.svg){height=1em}"
       href: https://orcid.org/0000-0002-7730-7495
       target: _blank
-    - icon: linkedin
-      href: https://www.linkedin.com/in/bogdanpopescu/
-      target: _blank
-    - icon: github
-      target: _blank
-      href: https://github.com/bgpopescu
-    - text: "![](/images/bluesky_logo.svg){height=1em}"
-      href: https://bsky.app/profile/bgpopescu.bsky.social
-      target: _blank
-    - text: "![](/images/x_logo.png){height=1em}"
-      href: https://x.com/BogdanGPopescu1
-      target: _blank
 ---
 
 <!-- Google tag (gtag.js) -->
@@ -40,4 +28,4 @@ Welcome! I am an Assistant Professor (*tenured*) in Political Science at [John C
 
 My research and teaching interests focus on state management in peripheral regions and their enduring ramifications. I draw on extensive archival research, and computational methods and employ quantitative analysis of observational data and narrative evidence. My first book – <em>Imperial Borderlands: Institutions and Legacies of the Habsburg Military Frontier</em> (<em>Cambridge University Press</em>, 2024), focuses on how historical states adopt distinct institutions in border areas and their long-term consequences. My second book, <em>Islam, Sultans, and the Printing Press</em> scrutinizes the historical disparities between the Middle East and the West. It specifically investigates the long-term legacies of the delay in the adoption of the printing press in the Ottoman Empire.
 
-My research was published in leading peer-reviewed journals, including <em>Comparative Political Studies</em>, <em>Journal of Conflict Resolution</em>, and <em>Quarterly Journal of Political Science</em>, among others.
+My research was published in leading peer-reviewed journals, including <em>Comparative Political Studies</em>, <em>Journal of Conflict Resolution</em>, and <em>Quarterly Journal of Political Science</em>, among others. To see more, you can download my [CV](https://www.dropbox.com/scl/fi/h558il8ukl9yma1n2okrm/bogdan-popescu-cv.pdf?rlkey=g2k2jtq0eczebqt7klahrq61u&dl=0){target="_blank"}.

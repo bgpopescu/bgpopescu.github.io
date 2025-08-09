@@ -1,6 +1,5 @@
 ---
 title: "Books"
-format: html
 ---
 
 <!-- Google tag (gtag.js) -->

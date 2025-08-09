@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://bgpopescu.net/index.html</loc>
-    <lastmod>2025-08-04T11:30:00.698Z</lastmod>
+    <lastmod>2025-08-09T09:37:50.624Z</lastmod>
   </url>
   <url>
     <loc>https://bgpopescu.net/research.html</loc>
@@ -10,6 +10,18 @@
   </url>
   <url>
     <loc>https://bgpopescu.net/teaching.html</loc>
-    <lastmod>2025-08-01T18:02:47.958Z</lastmod>
+    <lastmod>2025-08-09T08:20:17.991Z</lastmod>
+  </url>
+  <url>
+    <loc>https://bgpopescu.net/books.html</loc>
+    <lastmod>2025-08-09T09:42:27.697Z</lastmod>
+  </url>
+  <url>
+    <loc>https://bgpopescu.net/contact.html</loc>
+    <lastmod>2025-08-01T17:54:56.053Z</lastmod>
+  </url>
+  <url>
+    <loc>https://bgpopescu.net/data.html</loc>
+    <lastmod>2025-08-01T17:36:18.669Z</lastmod>
   </url>
 </urlset>

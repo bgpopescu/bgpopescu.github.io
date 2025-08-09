@@ -1,29 +1,59 @@
 project:
   type: website
   output-dir: docs
-  resources:
-    - teaching/**
+
+# Meta
+description-meta: "Assistant Professor of Political Science. Research on comparative politics, statistics, data science, and historical political economy."
+author-meta: "Bogdan Popescu"
 
 website:
-  site-url: https://bgpopescu.net
+  title: "Bogdan Popescu"
+  site-url: "https://bgpopescu.net"
+  description: "Comparative politics • statistics • data science • historical political economy"
+  page-navigation: true
+
   navbar:
+    background: light
     left:
-      - href: index.qmd
-        text: Home
-      - research.qmd
-      - books.qmd
-      - teaching.qmd
-      - data.qmd
-      - cv.qmd
-      - contact.qmd
+      - href: research.qmd
+        text: Research
+      - href: books.qmd
+        text: Books
+      - href: teaching.qmd
+        text: Teaching
+      - href: contact.qmd
+        text: Contact
+    right:
+      - text: CV
+        href: https://www.dropbox.com/scl/fi/h558il8ukl9yma1n2okrm/bogdan-popescu-cv.pdf?rlkey=g2k2jtq0eczebqt7klahrq61u&dl=0
+        target: _blank
+      - icon: linkedin
+        href: https://www.linkedin.com/in/bogdanpopescu/
+        target: _blank
+      - icon: github
+        href: https://github.com/bgpopescu
+        target: _blank
+      - text: "![](/images/bluesky_logo.svg){height=1em}"
+        href: https://bsky.app/profile/bgpopescu.bsky.social
+        target: _blank
+      - text: "![](/images/x_logo.png){height=1em}"
+        href: https://x.com/BogdanGPopescu1
+        target: _blank
+    
+  search:
+    location: navbar
+    type: textbox
 
 format:
   html:
-    sitemap: true
-    theme:
-      - cosmo
-      - brand
+    theme: cosmo
     css: styles.css
     toc: true
-
-editor: visual
+    footnotes-hover: true
+    code-copy: true
+    code-link: true
+    code-overflow: wrap
+    fig-align: center
+    link-external-icon: false
+    link-external-newwindow: true
+    email-obfuscation: javascript
