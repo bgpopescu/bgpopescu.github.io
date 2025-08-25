@@ -8,4 +8,4 @@ format:
     embed-resources: true
 ---
 
-## Slide Title {background-image="figures\slide_background.png"}
+## Slide Title {background-image="figures/slide_background.png"}
