@@ -1,9 +1,0 @@
----
-title: "Presentation"
-format:
-  revealjs: 
-    theme: league
-    embed-resources: true
----
-
-
