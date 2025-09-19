@@ -18,7 +18,7 @@ My teaching philosophy focuses on developing critical thinking skills, and acqui
 | Course |   Time Offered           |
 |:-------|:-------------------------|
 | [Computational Methods: Text Analysis in Python](/teaching/text_analysis/text_analysis_syllabus.html){target="_blank"} | John Cabot, Spring 2025, Undergraduate |
-| [Computational Methods: GIS in R](/teaching/big_data/big_data_syllabus.html){target="_blank"} | John Cabot, Spring 2024, Undergraduate |
+| [Computational Methods: GIS in R](/teaching/gis/gis_syllabus.html){target="_blank"} | John Cabot, Spring 2024, Undergraduate |
 | [Statistics](/teaching/stats/stats_syllabus.html){target="_blank"} | John Cabot, Spring 2024, Winter 2023, Spring 2023, Undergraduate |
 | [Comparative Politics](/teaching/comp_pol/comp_pol_syllabus.html){target="_blank"} | John Cabot, Spring 2024, Winter 2023, Spring 2023, Undergraduate |
 | [Political Economy](/teaching/cpe/pol_econ_syllabus.html){target="_blank"} | John Cabot, Spring 2024, Winter 2023, Spring 2023, Undergraduate and Graduate |
