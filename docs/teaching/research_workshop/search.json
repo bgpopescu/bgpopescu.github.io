@@ -1,0 +1,442 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Research Workshop",
+    "section": "",
+    "text": "Course Description\nThis course is an intensive, hands-on introduction to writing a research article in the social sciences, with a focus on political science, sociology, or economics. Students will be taught to use R, R Studio, Quarto, Markdown, and Jabref.\nBy the end of the course, students will have developed and refined a complete research paper through a series of iterative assignments and structured feedback. The course integrates methodological training, substantive readings, and practical writing skills. Course content is divided into weekly units covering both technical skills and theoretical content.\nThis is the visual roadmap of the course:\nTopic → Proposal → Methods → Analysis → Paper Draft → Feedback → Final Paper → Website",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Description</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#learning-outcomes",
+    "href": "index.html#learning-outcomes",
+    "title": "Research Workshop",
+    "section": "Learning Outcomes",
+    "text": "Learning Outcomes\nUpon successful completion of this course the students will be able to:\n\nDevelop a research question and transform it into a publishable paper.\nMaster essential academic tools including reference managers (e.g., JabRef), markdown-based word processing, and professional presentation software.\nUnderstand and apply core methods in social science research, including qualitative comparative analysis, difference-in-differences (DiD), and regression discontinuity design (RDD).\nWrite each section of a paper: abstract, introduction, argument, methods, literature review, findings, discussion, and conclusion.\nConduct basic quantitative analysis in R, including data merging, regression modeling, and visualization.\nCreate a personal academic website using GitHub Pages to showcase their work.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Description</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#research-paper",
+    "href": "index.html#research-paper",
+    "title": "Research Workshop",
+    "section": "Research Paper",
+    "text": "Research Paper\nThe research paper should provide an extensive background on the topic and a clear contribution to the literature. The analysis should include some quantitative analysis to test hypotheses. The statistical part of the research project involves using data (collect and prepare the data to run quantitative analyses and produce graphs) and specialized software (R).\n\nResearch Paper Template\nUse the following as a starting point for writing your own research paper:\n\nResearch Paper Template | Replication\n\n\n\nResearch Paper Examples\nThis section provides two complete examples of finished research papers and presentations. These are not templates to copy, but illustrations of different research designs. Use them to see how arguments, methods, and findings can be structured and communicated in practice.\n\nQuantitative Example\n\nResearch Paper (Quantitative) | Replication Files\nPresentation (Quantitative) | Replication Files\n\nQualitative Example\n\nResearch Paper (Qualitative) | Replication Files\nPresentation (Qualitative) | Replication Files",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Description</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#weekly-paper-presentations",
+    "href": "index.html#weekly-paper-presentations",
+    "title": "Research Workshop",
+    "section": "Weekly Paper Presentations",
+    "text": "Weekly Paper Presentations\nEach week, you will give a short presentation on that week’s reading. You can download the template for the paper presentation at this link.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Description</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#recommended-optional-books",
+    "href": "index.html#recommended-optional-books",
+    "title": "Research Workshop",
+    "section": "Recommended Optional Books",
+    "text": "Recommended Optional Books\n\nWriting Academic Articles\nCoppedge, M. 2012. Democratization and Research Methods. Cambridge University Press.\nHalperin, S., & Heath, O. (2012). Political Research: Methods and Practical Skills (3rd ed.). Oxford University Press.\nPunch, K. F. 2014. Introduction to social research: Quantitative and qualitative approaches (3rd ed.). SAGE Publications.\nVan Evera, S. 1997. Guide to methods for students of political science. Cornell University Press.\n\n\nStatistics\nCunningham, Scott. 2021. Causal Inference: The Mixtape. Yale University Press.https://mixtape.scunning.com.\nIsmay, Chester, and Albert Y. Kim. 2019. Statistical Inference via Data Science: A ModernDive into R and the Tidyverse. Chapman and Hall / CRC. https://moderndive.com/.\nHuntington-Klein, Nick. 2021. The Effect: An Introduction to Research Design and Causality. Boca Raton, Florida: Chapman and Hall / CRC. https://theeffectbook.net/.\nLlaudet, Elena and Imai, Kosuke. 2023. “Data Analysis for Social Science.” Princeton: Oxford University Press.\nWarne, Russel T. 2018. “Statistics for the Social Sciences. A General Linear Model Approach.” London: Cambridge University Press.\n\n\nCausal Inference\nBauer, Paul C. and Dennis Cohen. 2023. Applied Causal Analysis (with R) https://bookdown.org/paul/applied-causal-analysis/.\nKeyes, David, R for the Rest of Us: 2025. A Statistics-Free Introduction https://book.rfortherestofus.com. No Starch Press\n\n\nGeographic Information Systems (GIS)\nLovelace, Robin, Nowosad, Jakub, and Jannes Muenchow. 2021. Geocomputation with R. https://bookdown.org/robinlovelace/geocompr/.\nMieno, Tara. 2023. R as GIS for Economists. https://tmieno2.github.io/R-as-GIS-for-Economists/.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Description</span>"
+    ]
+  },
+  {
+    "objectID": "lecture1/lecture1_landing.html",
+    "href": "lecture1/lecture1_landing.html",
+    "title": "1 The Topic and Research Question",
+    "section": "",
+    "text": "Slides\nThis is lecture 1. Below you can see the slides and watch lecture 1.\nOpen slides in a new window",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>1 The Topic and Research Question</span>"
+    ]
+  },
+  {
+    "objectID": "lecture1/lecture1_landing.html#video",
+    "href": "lecture1/lecture1_landing.html#video",
+    "title": "1 The Topic and Research Question",
+    "section": "Video",
+    "text": "Video",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>1 The Topic and Research Question</span>"
+    ]
+  },
+  {
+    "objectID": "lecture2/lecture2_landing.html",
+    "href": "lecture2/lecture2_landing.html",
+    "title": "2 Essential Tools for Writing a Paper Slides",
+    "section": "",
+    "text": "Slides\nOpen slides in a new window",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>2 Essential Tools for Writing a Paper Slides</span>"
+    ]
+  },
+  {
+    "objectID": "lecture2/lecture2_landing.html#video",
+    "href": "lecture2/lecture2_landing.html#video",
+    "title": "2 Essential Tools for Writing a Paper Slides",
+    "section": "Video",
+    "text": "Video",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>2 Essential Tools for Writing a Paper Slides</span>"
+    ]
+  },
+  {
+    "objectID": "lecture3/lecture3_landing.html",
+    "href": "lecture3/lecture3_landing.html",
+    "title": "3 Operations and Objects in R Slides",
+    "section": "",
+    "text": "Slides\nOpen slides in a new window",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>3 Operations and Objects in R Slides</span>"
+    ]
+  },
+  {
+    "objectID": "lecture3/lecture3_landing.html#video",
+    "href": "lecture3/lecture3_landing.html#video",
+    "title": "3 Operations and Objects in R Slides",
+    "section": "Video",
+    "text": "Video",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>3 Operations and Objects in R Slides</span>"
+    ]
+  },
+  {
+    "objectID": "lecture4/lecture4_landing.html",
+    "href": "lecture4/lecture4_landing.html",
+    "title": "4 Quarto Presentations",
+    "section": "",
+    "text": "Slides\nOpen slides in a new window",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>4 Quarto Presentations</span>"
+    ]
+  },
+  {
+    "objectID": "lecture4/lecture4_landing.html#video",
+    "href": "lecture4/lecture4_landing.html#video",
+    "title": "4 Quarto Presentations",
+    "section": "Video",
+    "text": "Video",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>4 Quarto Presentations</span>"
+    ]
+  },
+  {
+    "objectID": "lecture5/lecture5_landing.html",
+    "href": "lecture5/lecture5_landing.html",
+    "title": "5 Intro to Statistics",
+    "section": "",
+    "text": "Slides\nOpen slides in a new window",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>5 Intro to Statistics</span>"
+    ]
+  },
+  {
+    "objectID": "lecture5/lecture5_landing.html#video",
+    "href": "lecture5/lecture5_landing.html#video",
+    "title": "5 Intro to Statistics",
+    "section": "Video",
+    "text": "Video",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>5 Intro to Statistics</span>"
+    ]
+  },
+  {
+    "objectID": "lecture6/lecture6_landing.html",
+    "href": "lecture6/lecture6_landing.html",
+    "title": "6 Working with Data in R Slides",
+    "section": "",
+    "text": "Slides\nOpen slides in a new window",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>6 Working with Data in R Slides</span>"
+    ]
+  },
+  {
+    "objectID": "lecture6/lecture6_landing.html#video",
+    "href": "lecture6/lecture6_landing.html#video",
+    "title": "6 Working with Data in R Slides",
+    "section": "Video",
+    "text": "Video",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>6 Working with Data in R Slides</span>"
+    ]
+  },
+  {
+    "objectID": "lecture7/lecture7_landing.html",
+    "href": "lecture7/lecture7_landing.html",
+    "title": "7 Dplyr and Basic Visualization",
+    "section": "",
+    "text": "Slides\nOpen slides in a new window",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>7 Dplyr and Basic Visualization</span>"
+    ]
+  },
+  {
+    "objectID": "lecture7/lecture7_landing.html#video",
+    "href": "lecture7/lecture7_landing.html#video",
+    "title": "7 Dplyr and Basic Visualization",
+    "section": "Video",
+    "text": "Video",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>7 Dplyr and Basic Visualization</span>"
+    ]
+  },
+  {
+    "objectID": "lecture8/lecture8_landing.html",
+    "href": "lecture8/lecture8_landing.html",
+    "title": "8 Visualizing Data Distributions in R",
+    "section": "",
+    "text": "Slides\nOpen slides in a new window",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>8 Visualizing Data Distributions in R</span>"
+    ]
+  },
+  {
+    "objectID": "lecture8/lecture8_landing.html#video",
+    "href": "lecture8/lecture8_landing.html#video",
+    "title": "8 Visualizing Data Distributions in R",
+    "section": "Video",
+    "text": "Video",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>8 Visualizing Data Distributions in R</span>"
+    ]
+  },
+  {
+    "objectID": "lecture9/lecture9_landing.html",
+    "href": "lecture9/lecture9_landing.html",
+    "title": "9 Modeling Relationships Between Variables",
+    "section": "",
+    "text": "Slides\nOpen slides in a new window",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>9 Modeling Relationships Between Variables</span>"
+    ]
+  },
+  {
+    "objectID": "lecture9/lecture9_landing.html#video",
+    "href": "lecture9/lecture9_landing.html#video",
+    "title": "9 Modeling Relationships Between Variables",
+    "section": "Video",
+    "text": "Video",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>9 Modeling Relationships Between Variables</span>"
+    ]
+  },
+  {
+    "objectID": "lecture10/lecture10_landing.html",
+    "href": "lecture10/lecture10_landing.html",
+    "title": "10 Interpreting Binary and Multivariate Regression Models",
+    "section": "",
+    "text": "Slides\nOpen slides in a new window",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>10 Interpreting Binary and Multivariate Regression Models</span>"
+    ]
+  },
+  {
+    "objectID": "lecture10/lecture10_landing.html#video",
+    "href": "lecture10/lecture10_landing.html#video",
+    "title": "10 Interpreting Binary and Multivariate Regression Models",
+    "section": "Video",
+    "text": "Video",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>10 Interpreting Binary and Multivariate Regression Models</span>"
+    ]
+  },
+  {
+    "objectID": "lecture11/lecture11_landing.html",
+    "href": "lecture11/lecture11_landing.html",
+    "title": "11 Differences in Differences",
+    "section": "",
+    "text": "Slides\nOpen slides in a new window",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>11 Differences in Differences</span>"
+    ]
+  },
+  {
+    "objectID": "lecture11/lecture11_landing.html#video",
+    "href": "lecture11/lecture11_landing.html#video",
+    "title": "11 Differences in Differences",
+    "section": "Video",
+    "text": "Video",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>11 Differences in Differences</span>"
+    ]
+  },
+  {
+    "objectID": "lecture12/lecture12_landing.html",
+    "href": "lecture12/lecture12_landing.html",
+    "title": "12 Regression Discontinuity Design",
+    "section": "",
+    "text": "Slides\nOpen slides in a new window",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>12 Regression Discontinuity Design</span>"
+    ]
+  },
+  {
+    "objectID": "lecture12/lecture12_landing.html#video",
+    "href": "lecture12/lecture12_landing.html#video",
+    "title": "12 Regression Discontinuity Design",
+    "section": "Video",
+    "text": "Video",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>12 Regression Discontinuity Design</span>"
+    ]
+  },
+  {
+    "objectID": "lecture13/lecture13_landing.html",
+    "href": "lecture13/lecture13_landing.html",
+    "title": "13 Data Visualization in R - 1",
+    "section": "",
+    "text": "Slides\nOpen slides in a new window",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>13 Data Visualization in R - 1</span>"
+    ]
+  },
+  {
+    "objectID": "lecture13/lecture13_landing.html#video",
+    "href": "lecture13/lecture13_landing.html#video",
+    "title": "13 Data Visualization in R - 1",
+    "section": "Video",
+    "text": "Video",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>13 Data Visualization in R - 1</span>"
+    ]
+  },
+  {
+    "objectID": "lecture14/lecture14_landing.html",
+    "href": "lecture14/lecture14_landing.html",
+    "title": "14 Data Visualization in R - 2",
+    "section": "",
+    "text": "Slides\nOpen slides in a new window",
+    "crumbs": [
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>14 Data Visualization in R - 2</span>"
+    ]
+  },
+  {
+    "objectID": "lecture14/lecture14_landing.html#video",
+    "href": "lecture14/lecture14_landing.html#video",
+    "title": "14 Data Visualization in R - 2",
+    "section": "Video",
+    "text": "Video",
+    "crumbs": [
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>14 Data Visualization in R - 2</span>"
+    ]
+  },
+  {
+    "objectID": "lecture15/lecture15_landing.html",
+    "href": "lecture15/lecture15_landing.html",
+    "title": "15 Data Visualization in R - 3",
+    "section": "",
+    "text": "Slides\nOpen slides in a new window",
+    "crumbs": [
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>15 Data Visualization in R - 3</span>"
+    ]
+  },
+  {
+    "objectID": "lecture15/lecture15_landing.html#video",
+    "href": "lecture15/lecture15_landing.html#video",
+    "title": "15 Data Visualization in R - 3",
+    "section": "Video",
+    "text": "Video",
+    "crumbs": [
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>15 Data Visualization in R - 3</span>"
+    ]
+  },
+  {
+    "objectID": "lecture16/lecture16_landing.html",
+    "href": "lecture16/lecture16_landing.html",
+    "title": "16 The Abstract and the Argument",
+    "section": "",
+    "text": "Slides\nOpen slides in a new window",
+    "crumbs": [
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>16 The Abstract and the Argument</span>"
+    ]
+  },
+  {
+    "objectID": "lecture16/lecture16_landing.html#video",
+    "href": "lecture16/lecture16_landing.html#video",
+    "title": "16 The Abstract and the Argument",
+    "section": "Video",
+    "text": "Video",
+    "crumbs": [
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>16 The Abstract and the Argument</span>"
+    ]
+  },
+  {
+    "objectID": "lecture17/lecture17_landing.html",
+    "href": "lecture17/lecture17_landing.html",
+    "title": "17 Literature Review",
+    "section": "",
+    "text": "Slides\nOpen slides in a new window",
+    "crumbs": [
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>17 Literature Review</span>"
+    ]
+  },
+  {
+    "objectID": "lecture17/lecture17_landing.html#video",
+    "href": "lecture17/lecture17_landing.html#video",
+    "title": "17 Literature Review",
+    "section": "Video",
+    "text": "Video",
+    "crumbs": [
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>17 Literature Review</span>"
+    ]
+  },
+  {
+    "objectID": "lecture18/lecture18_landing.html",
+    "href": "lecture18/lecture18_landing.html",
+    "title": "18 Methods",
+    "section": "",
+    "text": "Slides\nOpen slides in a new window",
+    "crumbs": [
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>18 Methods</span>"
+    ]
+  },
+  {
+    "objectID": "lecture18/lecture18_landing.html#video",
+    "href": "lecture18/lecture18_landing.html#video",
+    "title": "18 Methods",
+    "section": "Video",
+    "text": "Video\n\n\nYour browser does not support the video tag.",
+    "crumbs": [
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>18 Methods</span>"
+    ]
+  },
+  {
+    "objectID": "lecture19/lecture19_landing.html",
+    "href": "lecture19/lecture19_landing.html",
+    "title": "19 Findings, Discussion, Intro, and Conclusion",
+    "section": "",
+    "text": "Slides\nOpen slides in a new window",
+    "crumbs": [
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>19 Findings, Discussion, Intro, and Conclusion</span>"
+    ]
+  },
+  {
+    "objectID": "lecture19/lecture19_landing.html#video",
+    "href": "lecture19/lecture19_landing.html#video",
+    "title": "19 Findings, Discussion, Intro, and Conclusion",
+    "section": "Video",
+    "text": "Video",
+    "crumbs": [
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>19 Findings, Discussion, Intro, and Conclusion</span>"
+    ]
+  },
+  {
+    "objectID": "lecture20/lecture20_landing.html",
+    "href": "lecture20/lecture20_landing.html",
+    "title": "20 Making a website on GitHub: username.github.io",
+    "section": "",
+    "text": "Slides\nOpen slides in a new window",
+    "crumbs": [
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>20 Making a website on GitHub: username.github.io</span>"
+    ]
+  }
+]
