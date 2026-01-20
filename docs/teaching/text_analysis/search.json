@@ -1,0 +1,272 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Applied Computational Methods for Social Sciences",
+    "section": "",
+    "text": "Course Information\nCourse Number: P1012\nCourse Title: Text Analysis\nTime: Tue/Fri: 13:10pm-14:50pm\nLocation: Aulas VII 103",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#instructor-details",
+    "href": "index.html#instructor-details",
+    "title": "Applied Computational Methods for Social Sciences",
+    "section": "Instructor Details",
+    "text": "Instructor Details\nInstructor: Bogdan Popescu\nOffice: XX\nE-Mail: xx\nOffice Hours: Tue/Fri: 10:00 am-11:00 am",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#course-description",
+    "href": "index.html#course-description",
+    "title": "Applied Computational Methods for Social Sciences",
+    "section": "Course Description",
+    "text": "Course Description\nThis is an introductory course on using Python, a free and versatile programming language, to analyze text data. The course begins by building foundational programming skills in Python, including working with variables, loops, conditional statements, and data structures like lists, dictionaries, and arrays. In the second part, students will explore Python’s powerful tools for analyzing text data, such as social media posts, email correspondence, customer reviews, and political debates. The course also includes an introduction to ChatGPT and prompt engineering, teaching students how to leverage large language models for advanced text analysis tasks.\nThrough hands-on exercises, lectures, and projects, students will learn to process, clean, and analyze textual data systematically and reproducibly. By the end of the course, participants will be equipped with the skills to derive meaningful insights from textual information and integrate generative AI tools like ChatGPT into their workflows.\nNote: You should have a computer either Windows or Mac with at least 8GB of RAM memory.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#learning-outcomes",
+    "href": "index.html#learning-outcomes",
+    "title": "Applied Computational Methods for Social Sciences",
+    "section": "Learning Outcomes",
+    "text": "Learning Outcomes\nUpon successful completion of this course the students will be able to:\n\nWrite Python programs to perform tasks such as loops, conditional statements, and function definitions.\nEmploy quantitative techniques to process and analyze textual data.\nUtilize Python libraries like Numpy, Pandas, and NLTK for text manipulation and analysis.\nApply advanced methods such as sentiment analysis, topic modeling, word embeddings, and supervised learning to text data.\nUse ChatGPT and prompt engineering to enhance text analysis tasks, including summarization, classification, and generating structured outputs.\nCreate and publish a professional website showcasing their portfolio and analytical capabilities.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#textbook-andor-resource-materials",
+    "href": "index.html#textbook-andor-resource-materials",
+    "title": "Applied Computational Methods for Social Sciences",
+    "section": "Textbook and/or Resource Materials",
+    "text": "Textbook and/or Resource Materials\nNo textbook required",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#assessment",
+    "href": "index.html#assessment",
+    "title": "Applied Computational Methods for Social Sciences",
+    "section": "Assessment",
+    "text": "Assessment",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#assessment-methods",
+    "href": "index.html#assessment-methods",
+    "title": "Applied Computational Methods for Social Sciences",
+    "section": "Assessment methods:",
+    "text": "Assessment methods:\nYou will be graded on four problem sets during the semester (each 12.5% of your grade) and a final report and presentation (each 25% of your grade).\n\n4 problem sets: 50% of the final grade (12.5% each)\nfinal presentation: 25% of the final grade\nfinal project report: 25% of the final grade",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#problem-sets",
+    "href": "index.html#problem-sets",
+    "title": "Applied Computational Methods for Social Sciences",
+    "section": "Problem Sets",
+    "text": "Problem Sets\n1.Initial Individual Submission: This component contributes 50% of the overall grade for the problem set. When you complete the problem set independently and submit it to the instructor, your grade for this component will be calculated based on the quality of your independent work. This grade will be weighted at 50% of the total assignment grade.\n2.Final Submission After Group Consultation: This component also contributes 50% of the overall grade for the problem sets. After discussing the problem set with your group members and documenting the correct answers, you will submit this revised version individually. Note: no group submission is permitted. Each one of you has to submit the second attempt of the assignment individually. Your grade for this component will be based on the quality of your final submission after group consultation. This grade will also be weighted at 50% of the total assignment grade.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#presentation",
+    "href": "index.html#presentation",
+    "title": "Applied Computational Methods for Social Sciences",
+    "section": "Presentation",
+    "text": "Presentation\nEach student will deliver a 10-15 minute presentation on a topic assigned in advance. Presentations should include an overview of the:\n\nquestion\ndescription of the selected text analysis method\ndescription of the dataset used\ndescription of how the data was validated\ncritical analysis\n\nPlease deliver your presentations in a quarto presentation and use relevant visuals. Practice beforehand to stay within the time limit and maintain a confident, professional tone. Be prepared to answer 2-3 questions from peers or the instructor during and after the presentation. Remember to cite your sources and avoid reading verbatim from slides or notes.\nIn addition to summarizing the key arguments or findings, your presentation should include critical analysis of the material. Highlight what the author does not address, the limitations of their research, or potential problems in their analysis or methodology. Think about how the research could be improved, expanded, or connected to broader themes discussed in class, and incorporate these insights into your presentation.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#final-project",
+    "href": "index.html#final-project",
+    "title": "Applied Computational Methods for Social Sciences",
+    "section": "Final Project",
+    "text": "Final Project\nStudents will undertake a text analysis project emphasizing the practical application of text analysis techniques using the python programming language. This project offers an opportunity to showcase the acquired skills in manipulating text data and conducting meaningful analyses. Participants are encouraged to choose a topic of interest or relevance, utilizing datasets provided in the course or exploring new ones. The project entails a few steps:\n\nchoosing a topic that involves text data\nacquire data either from the course materials or from external sources\n\nStudents have to submit a two-page report in Quarto and give a 20-minute and give an in-class presentation in Quarto.\nGrading Criteria for the project:\n\nRelevance\nMethodology\nAnalysis\nPresentation\nCode Quality\n\nHere are examples of projects that previous students created:\n\nTopical Simularity in the US Presidential Speeches\nFraming Latin America in UN Speeches\nAgreesion in Political Speeches.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#attendance",
+    "href": "index.html#attendance",
+    "title": "Applied Computational Methods for Social Sciences",
+    "section": "Attendance",
+    "text": "Attendance\nStudents are required to attend classes following the University’s policies. Students with more than three unexcused absences are assumed to have withdrawn from the course. Students with a justified reason not to attend class have to send me an email explaining why they cannot attend ahead of class.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#academic-honesty",
+    "href": "index.html#academic-honesty",
+    "title": "Applied Computational Methods for Social Sciences",
+    "section": "Academic Honesty",
+    "text": "Academic Honesty\nAs stated in the university catalog, any student who commits an act of academic dishonesty will receive a failing grade on the work in which the dishonesty occurred. In addition, acts of academic dishonesty, irrespective of the weight of the assignment, may result in the student receiving a failing grade in the course. Instances of academic dishonesty will be reported to the Dean of Academic Affairs. A student reported twice for academic dishonesty is subject to summary dismissal from the University. In such a case, the Academic Council will then make a recommendation to the President, who will make the final decision.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#students-with-learning-diﬀiculties-and-other-disabilities",
+    "href": "index.html#students-with-learning-diﬀiculties-and-other-disabilities",
+    "title": "Applied Computational Methods for Social Sciences",
+    "section": "Students with Learning Diﬀiculties and other Disabilities",
+    "text": "Students with Learning Diﬀiculties and other Disabilities\nThe University does not discriminate based on disability. Students with approved accommodations must inform their professors at the beginning of the term. Please see the website for the complete policy.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#required-books",
+    "href": "index.html#required-books",
+    "title": "Applied Computational Methods for Social Sciences",
+    "section": "Required Books",
+    "text": "Required Books\n\nGeneral Books on Python\nMcKinney, Wes, 2022. Python for Data Analysis. O’Reilly. https://wesmckinney.com/book/.\n\nText Analysis\nHovy, Dirk. 2020. Text Analysis in Python for Social Scientists. Cambridge University Press. https://www.cambridge.org/core/elements/abs/text-analysis-in-python-for-social-scientists/BFAB0A3604C7E29F6198EA2F7941DFF3\nBengfort, Benjamin, Bilbro, Rebecca, and Tony Ojeda. 2018. Applied Text Analysis with Python. O’Reilly Media, Inc. https://www.oreilly.com/library/view/applied-text-analysis/9781491963036/\nHvitfeldt, Emil and Silge, Julia. 2022. Supervised Machine Learning for Text Analysis in R. CRC Press. https://smltar.com\nGrimmer, Justin, Brandon M. Stewart, and Margaret E. Roberts. Text As Data: A New Framework for Machine Learning and the Social Sciences. Princeton University Press, 2022.\nSilge, Julia, and David Robinson. Text Mining with R: A Tidy Approach.. First edition. O’Reilly, 2017.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
+    ]
+  },
+  {
+    "objectID": "week1/lecture1_landing.html",
+    "href": "week1/lecture1_landing.html",
+    "title": "1 Installing R and Python",
+    "section": "",
+    "text": "Lecture 1\n\nIntroduction and course overview\nInstalling R, R Studio, and Anaconda\nIntroduction to Python programming and its applications in text analysis\nOverview of text data (e.g., reviews, political debates, translations)\n\n\n\n\n\nOpen slides in a new window\n\n\nLecture 2\n\nQuarto files: notebooks vs. presentations\nThe Python environment\n\n\n\n\n\nOpen slides in a new window\n\n\nLecture 3\n\nHow to Make Slides in Quarto\n\n\n\n\n\nOpen slides in a new window\nReading\nMcKinney, Wes, 2022. Python for Data Analysis. O’Reilly. https://wesmckinney.com/book/. C1-2",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>1 Installing R and Python</span>"
+    ]
+  },
+  {
+    "objectID": "week2/lecture2_landing.html",
+    "href": "week2/lecture2_landing.html",
+    "title": "2 Variables, Strings, Loops",
+    "section": "",
+    "text": "Lecture 3\n\nVariables\nStrings\nCombining strings\nNumbers\nBooleans\nConditionals: if and elif\n\n\n\n\n\nOpen slides in a new window\n\n\nLecture 4\n\nComparison Operators\nError Handling\nLists\nLoops\nBreaks\n\n\n\n\n\nOpen slides in a new window\n\n\nAssignment 1\nSee the Assignment",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>2 Variables, Strings, Loops</span>"
+    ]
+  },
+  {
+    "objectID": "week3/lecture3_landing.html",
+    "href": "week3/lecture3_landing.html",
+    "title": "3 Lists, Tuples, Loops",
+    "section": "",
+    "text": "Lecture 5: Operations with Lists and Tuples\n\nLists\nList Operations\nList Slicing\nTuples\n\n\n\n\n\nOpen slides in a new window\n\n\nLecture 5: While Loops and Functions\n\nComparison Operators\nError Handling\nLists\nLoops\nBreaks\n\n\n\n\n\nOpen slides in a new window\nReading\nMcKinney, Wes, 2022. Python for Data Analysis. O’Reilly. https://wesmckinney.com/book/. C3",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>3 Lists, Tuples, Loops</span>"
+    ]
+  },
+  {
+    "objectID": "week4/lecture4_landing.html",
+    "href": "week4/lecture4_landing.html",
+    "title": "4 Dictionaries, Pandas, Dataframes",
+    "section": "",
+    "text": "Lecture 7: Dictionaries and Sets\n\ndictionaries\nextracting elements from dictionary\nsorting dictionary keys\nnesting dictionaries\ndictionaries within dictionaries\nsets and operations with sets\n\n\n\n\n\nOpen slides in a new window\n\n\nLecture 8: Pandas Data Wrangling\n\nDataframes\nDataframe Methods\nMissing Data\nAssigning Values\n\n\n\n\n\nOpen slides in a new window\n\n\nLecture: Intro to Numpy\n\n\n\n\nOpen slides in a new window",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>4 Dictionaries, Pandas, Dataframes</span>"
+    ]
+  },
+  {
+    "objectID": "week5/lecture5_landing.html",
+    "href": "week5/lecture5_landing.html",
+    "title": "5 Data Wrangling",
+    "section": "",
+    "text": "Lecture 9: Pandas Data Wrangling\n\nSetting Indexes\nChanging, ordering column names\nIdentifying and Removing duplicates\nFiltering Data\nAggregating Data\nModifying Data Structures\n\n\n\n\n\nOpen slides in a new window\n\n\nLecture 10: Merging Data\n\nAggregating by Group\nInner, Outer Joins\nLeft, Right Joins\n\n\n\n\n\nOpen slides in a new window\n\n\nAssignment 2\nSee the Assignment",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>5 Data Wrangling</span>"
+    ]
+  },
+  {
+    "objectID": "week6/lecture6_landing.html",
+    "href": "week6/lecture6_landing.html",
+    "title": "6 Data Visualization in R",
+    "section": "",
+    "text": "Lecture 11: Data Visualization in R - 1\n\n\n\n\nOpen slides in a new window\n\n\nVideo Lecture 11: Data Visualization in R - 1\n\n\n\n\n\nLecture 12: Data Visualization in R - 2\n\n\n\n\nOpen slides in a new window\n\n\nVideo Lecture 12: Data Visualization in R - 2\n\n\n\n\n\nLecture 13: Data Visualization in R - 3\n\n\n\n\nOpen slides in a new window\n\n\nVideo Lecture 13: Data Visualization in R - 3",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>6 Data Visualization in R</span>"
+    ]
+  },
+  {
+    "objectID": "week7/lecture7_landing.html",
+    "href": "week7/lecture7_landing.html",
+    "title": "7 Text as Data and ChatGPT",
+    "section": "",
+    "text": "Lecture 13: Text as Data\n\nLatent Concepts\nDictionaries, Supervised learning, text scaling, topic models, word embeddings\nWorkflows of Text Analysis\nDocuments, features,\nBag-of-Words and Document-feature matrix\nText Cleaning in Python\n\n\n\n\n\nOpen slides in a new window\n\n\nLecture 14: Intro to ChatGPT for Text Analysis\n\nPrompt enginneering\nPersonas, delimiters, structured outputs, Programmatic consumptions\nChain of Thought\nChatGPT Api, pricing\n\n\n\n\n\nOpen slides in a new window",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>7 Text as Data and ChatGPT</span>"
+    ]
+  },
+  {
+    "objectID": "week8/lecture8_landing.html",
+    "href": "week8/lecture8_landing.html",
+    "title": "8 Applied ChatGPT and Dictionary Methods",
+    "section": "",
+    "text": "Lecture 13: Applied ChatGPT for Text Analysis\n\nText Summarization, Text Classification\nSentiment Analysis, Emotion Analysis\nTopic Modeling, Topics using Zero-Shot Learning\nLanguage, Grammar and Spelling\n\n\n\n\n\nOpen slides in a new window\n\n\nLecture 14: Dictionary Methods\n\nCounting words\nExamples of Dictionaries\nValidation of Dictionary Methods\nAccuracy, Sensitivity, Specificity, Naive Guess\n\n\n\n\n\nOpen slides in a new window",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>8 Applied ChatGPT and Dictionary Methods</span>"
+    ]
+  },
+  {
+    "objectID": "week9/lecture9_landing.html",
+    "href": "week9/lecture9_landing.html",
+    "title": "9 Similarity and Word Clouds",
+    "section": "",
+    "text": "Lecture 14: Similarity\n\nInner Product\nFrequency words, Eucledian distance\nCosine Similarity\n\n\n\n\n\nOpen slides in a new window\n\n\nLecture 14: Similarity and Word Clouds\n\nSimilarity: Levenshtein distance\nCosine similarity\nTF-IDF, Bag-of-Words\nWord Clouds, Fightin’ Words\n\n\n\n\n\nOpen slides in a new window\n\n\nAssignment 3\nSee the Assignment",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>9 Similarity and Word Clouds</span>"
+    ]
+  },
+  {
+    "objectID": "week10/lecture10_landing.html",
+    "href": "week10/lecture10_landing.html",
+    "title": "10 Supervised Learning",
+    "section": "",
+    "text": "Lecture: Designing Projects using Text Analysis\n\n\n\n\nOpen slides in a new window\n\n\nLecture 19: Language Complexity\n\nFlesch Reading Ease\nKincaid score\n\n\n\n\n\nOpen slides in a new window\n\n\nLecture 20: Supervised Learning\n\nNaive Bayes\nLanguage Models\nValidating Supervised Learning, K-Fold Validation\n\n\n\n\n\nOpen slides in a new window",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>10 Supervised Learning</span>"
+    ]
+  },
+  {
+    "objectID": "week11/lecture11_landing.html",
+    "href": "week11/lecture11_landing.html",
+    "title": "11 Unsupervised Learning",
+    "section": "",
+    "text": "Lecture 19: Unsupervised Learning: Topic Models\n\nTopic Models\nLatent Dirichlet Allocation\nSemantic Coherence\n\n\n\n\n\nOpen slides in a new window\n\n\nLecture 20: Unsupervised Learning: Word Embeddings\n\nWord Embeddings\nDistributional Semantics, Topic Distributions\nBERTopic\n\n\n\n\n\nOpen slides in a new window\n\n\nAssignment 4\nSee the Assignment",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>11 Unsupervised Learning</span>"
+    ]
+  },
+  {
+    "objectID": "week12/lecture12_landing.html",
+    "href": "week12/lecture12_landing.html",
+    "title": "12 Student Presentations",
+    "section": "",
+    "text": "Lecture: Student presentations\n\nBlumenau, Jack E; Hargrave, Lotte, 2022. No Longer Conforming to Stereotypes? Gender, Political Style, and Parliamentary Debate in the UK. British Journal of Political Science - Wendy and Nico\n\nBlaydes Lisa; Grimmer, Justin; McQueen, Alison, 2018. Mirrors for Princes and Sultans: Advice on the Art of Governance in the Medieval Christian and Islamic Worlds. Journal of Politics - Harman\n\nBellodi, Luca, 2022. A Dynamic Measure of Bureaucratic Reputation: New Data for New Theory. American Journal of Political Science - Kayla\n\nMotolinia, Lucia, 2020. Electoral Accountability and Particularistic Legislation: Evidence from an Electoral Reform in Mexico. American Journal of Political Science - Catalina\n\nRiccardo Di Leo, Chen Zeng, Elias Dinas, and Reda Tamtam, 2025. Mapping (A)Ideology: A Taxonomy of European Parties Using Generative LLMs as Zero-Shot Learners. Political Analysis - Martina\n\n\n\n\nLecture: Student Proposals\n\nQuestion\nData sources\nProposed Text Analysis functions\nExpected policy implications",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>12 Student Presentations</span>"
+    ]
+  },
+  {
+    "objectID": "week13/lecture13_landing.html",
+    "href": "week13/lecture13_landing.html",
+    "title": "13 Sentiment Analysis & GitHub Websites",
+    "section": "",
+    "text": "Lecture 21: Sentiment Analysis\n\nLexicon-based approaches, machine learning\nVADER sentiment analysis, transformers\nZero-shot classification\n\n\n\n\n\nOpen slides in a new window\n\n\nLecture 22: Making a Quarto Website\n\nMaking a website on Quarto\nStoring a website on GitHub\nStructuring a professional website for Data Analytics Jobs\nWebsite Troubleshooting\n\n\n\n\n\nOpen slides in a new window",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>13 Sentiment Analysis & GitHub Websites</span>"
+    ]
+  }
+]
