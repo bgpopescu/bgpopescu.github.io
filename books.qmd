@@ -51,17 +51,17 @@ It received **Harvard University's Davis Center 2024 Book Prize Honorable Mentio
 
 
 
-## **Islam, Sultans, and the Printing Press**
-<h3 style="margin-top: -0.5em;"><b>How Absence of the Printed Word Limited Development</b></h3>\
+## **The Knowledge Trap**
+<h3 style="margin-top: -0.5em;"><b>Printing, Schooling, and the Costs of Empire</b></h3>\
 
 ![](/images/book_cover_second_book.jpg){width=350 style="float: left; margin: 10px;"}
 
-My second book centers on the perceived threats by elites caused by the emergence of the printing press and how that could have been used by the opposition to undermine existing power structures. In this project, I focus on the Ottoman Empire and I argue that preventing the emergence of the printing press was used as a tool by Ottoman sultans to prevent coordination among local power holders. For this project, I compiled an original dataset which captures the amount of time different regions have been under the Ottoman Empire. Preliminary evidence, published in *Comparative Political Studies*, suggests that longer Ottoman rule is associated with lower contemporary economic performance.
+My second book examines how political control of information infrastructure can suppress human capital formation for centuries. Focusing on the Ottoman Empire's restrictions on the printing press, I show how centralized censorship, religious gatekeeping over texts, and thin book markets created a "knowledge trap" - a self-reinforcing equilibrium of low literacy and weak demand for education that outlasted the empire itself. Using an original dataset capturing the duration of Ottoman rule across Southeastern Europe, the book reveals persistent literacy gaps along former imperial frontiers, even under shared national institutions. Evidence first published in *Comparative Political Studies*, suggests that longer Ottoman rule is associated with lower contemporary economic performance.
 
 [Read the article](https://journals.sagepub.com/doi/full/10.1177/00104140211060283){target="_blank"} (*Winner of the James Caporaso Award for Best Article in CPS in 2022*).
 
-The project provides a novel perspective of an important mechanism for how Islamic empires can be associated with underdevelopment, which has to do with the limited availability of the printing press. The project will also consider the role of subsequent regimes up to modern times, *including* the role of communist regimes in eliminating the regional disparities in literacy in South-East Europe.
-
+The book then asks when and how inherited deficits can be reversed, tracing divergent trajectories across Romania, Yugoslavia, Bulgaria, Greece, and Albania. The findings speak to broader debates in comparative politics: imperial legacies persist not mechanically but conditionally - they endure where weak state capacity coincides with populations misaligned with the successor regime, and they erode where administrative reach meets a society  willing to be schooled. Regime type matters less than the direction of state capacity - whether it restricts or expands access to knowledge.
+  
 A book workshop took place on February 14, 2025. Participants included Timur Kuran (Duke University), Carles Boix (Princeton University), Anna Grzymała-Busse (Stanford University), Keith Darden (American University), Agustina Paglayan (University of California, San Diego), Iza Ding (Northwestern University), Ahmet Kuru (San Diego State University), and Michael Driessen (John Cabot University).
 
-* [Download the introduction and table of contents](https://www.dropbox.com/scl/fi/ckfp7rb5xv5juodrf26u7/book_intro.pdf?rlkey=k0h2jcbxsmqeh83kluoioxw54&dl=0){target="_blank"}
+* [Download the introduction and table of contents](https://www.dropbox.com/scl/fi/0eax0zo7yshmg9586jomf/popescu_chapter1_sample.pdf?rlkey=6v36ijwdo5avxz4m0s6f1hqr9&dl=0){target="_blank"}
