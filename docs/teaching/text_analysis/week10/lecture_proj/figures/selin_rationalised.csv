@@ -1,0 +1,346 @@
+agency_name,decision_makers_est,decision_makers_sd,political_review_est,political_review_sd
+Administration for Children and Families,-0.781,0.29,-0.447,0.445
+Administration for Community Living,-0.769,0.297,-0.441,0.454
+Administrative Conference of the United States,1.111,0.297,-0.638,0.451
+Administrative Conference of the United States (Initial),1.012,0.304,-0.675,0.441
+Agency for Healthcare Research and Quality,-0.622,0.288,-0.339,0.458
+Agency for Toxic Substances and Disease Registry,-0.644,0.294,-0.474,0.455
+Agricultural Marketing Service,-0.779,0.29,-0.449,0.45
+Agricultural Research Service,-0.646,0.286,-0.484,0.441
+Air Force,-0.535,0.289,-0.324,0.453
+Alcohol and Tobacco Tax and Trade Bureau,-0.767,0.288,-0.436,0.448
+Animal and Plant Health Inspection Service,-0.771,0.29,-0.46,0.455
+Appalachian Regional Commission,0.755,0.304,-0.309,0.469
+Department of the Army,-0.541,0.291,-0.321,0.457
+Barry Goldwater Schol and Excellence in Ed. Program,1.544,0.292,-0.309,0.442
+Board of Directors of the Hope for Homeowners Program,-0.298,0.3,-0.562,0.436
+Benefits Review Board,-0.145,0.292,-0.581,0.453
+Board of Veterans Appeals,0.266,0.294,0.061,0.476
+Bonneville Power Administration,-0.646,0.299,0.401,0.455
+Border and Transportation Security Directorate,-0.639,0.283,-0.16,0.442
+Broadcasting Board of Governors,1.719,0.308,-0.563,0.447
+"Bureau of Alcohol, Tobacco, Firearms, and Explosives",-0.668,0.289,-0.456,0.453
+Bureau of Competition,-0.38,0.275,-0.53,0.44
+Bureau of Economic Analysis,-0.785,0.294,-0.465,0.453
+Bureau of Economic Analysis,-0.377,0.298,-0.526,0.456
+Bureau of Engraving and Printing,-0.611,0.301,-0.256,0.461
+Bureau of Indian Affairs,-0.656,0.289,-0.403,0.447
+Bureau of Indian Education,-0.767,0.304,-0.473,0.453
+Bureau of Industry and Security,-0.766,0.302,-0.449,0.462
+Bureau of International Labor Affairs,-0.773,0.295,-0.464,0.449
+Bureau of Labor Statistics,-0.306,0.286,-0.265,0.438
+Bureau of Land Management,-0.37,0.29,-0.506,0.455
+Bureau of Ocean Energy Management,-0.774,0.291,-0.444,0.449
+Bureau of Prisons,-0.636,0.293,-0.418,0.46
+Bureau of Reclamation,-0.645,0.28,-0.279,0.45
+Bureau of Safety and Environmental Enforcement,-0.746,0.28,-0.464,0.454
+Bureau of the Census,0.032,0.296,-0.359,0.449
+Bureau of the Public Debt,-0.644,0.296,-0.472,0.447
+Centers for Disease Control and Prevention,-0.761,0.292,-0.441,0.424
+Centers for Medicare and Medicaid Services,-0.791,0.297,-0.475,0.451
+Central Intelligence Agency,0.223,0.308,-0.143,0.472
+Chemical Safety and Hazard Invest. Board (Initial),0.764,0.306,0.413,0.458
+Chemical Safety and Hazard Investigation Board,0.703,0.305,1.941,0.502
+Citizen and Immigration Services,-0.494,0.286,-0.372,0.468
+Civil Division,-0.78,0.301,-0.487,0.445
+Civil Rights Division,-0.78,0.288,-0.456,0.438
+Commodity Credit Corporation,-0.262,0.298,1.389,0.489
+Commodities Futures Trading Commission,1.588,0.296,3.624,0.461
+Community Development Financial Institutions Fund,-0.391,0.281,0.088,0.473
+Consular Affairs,-0.772,0.29,-0.45,0.439
+Consumer Financial Protection Bureau,0.24,0.283,4.1,0.471
+Consumer Product Safety Commission,1.981,0.308,3.54,0.491
+Consumer Product Safety Commission (Initial),2.032,0.29,1.763,0.471
+Corporation for National Community Service,1.455,0.287,0.477,0.468
+Corporation for Public Broadcasting,1.361,0.303,0.247,0.475
+Council of Economic Advisers,0.579,0.311,-0.981,0.467
+Council on Environmental Quality,0.582,0.301,-0.754,0.491
+Council on Environmental Quality (Initial),0.583,0.296,-0.903,0.473
+Criminal Division,-0.769,0.298,-0.465,0.458
+Customs and Border Protection,-0.641,0.291,-0.318,0.459
+Defense Acquisition University,-0.65,0.288,-0.461,0.471
+Defense Acquisition Regulations System,-0.758,0.282,-0.449,0.436
+Defense Advanced Research Projects Agency,-0.773,0.288,-0.442,0.44
+Defense Commissary Agency,-0.778,0.298,-0.438,0.436
+Defense Contract Audit Agency,-0.764,0.288,-0.454,0.443
+Defense Contract Management Agency,-0.77,0.292,-0.439,0.45
+Defense Finance and Accounting Service,-0.784,0.296,-0.448,0.438
+Defense Information Systems Agency,-0.761,0.29,-0.45,0.458
+Defense Intelligence Agency,-0.659,0.294,-0.272,0.453
+Defense Legal Services Agency,-0.771,0.295,-0.448,0.453
+Defense Logistics Agency,-0.781,0.295,-0.425,0.445
+Defense Media Activity,-0.763,0.282,-0.474,0.473
+Defense Nuclear Facilities Safety Board,1.912,0.305,0.687,0.472
+Defense Prisoner of War/Missing Personnel Office,-0.658,0.293,-0.486,0.461
+Defense Procurement and Acquisition Policy,-0.775,0.288,-0.441,0.441
+Defense Security Cooperation Agency,-0.782,0.304,-0.428,0.449
+Defense Security Service,-0.779,0.294,-0.459,0.444
+Defense Technical Information Center,-0.776,0.28,-0.448,0.448
+Defense Technology Security Administration,-0.788,0.292,-0.446,0.456
+Defense Threat Reduction Agency,-0.782,0.294,-0.436,0.467
+Delta Regional Authority,0.217,0.293,-0.494,0.445
+Dep’t of Defense Test Resource Management Center,-0.502,0.294,-0.515,0.45
+Department of Agriculture,-0.361,0.295,0.043,0.462
+Department of Commerce,-0.373,0.307,0.416,0.469
+Department of Defense,-0.227,0.288,-0.083,0.468
+Department of Defense Education Activity,-0.651,0.284,-0.256,0.461
+Department of Defense Human Resources Activity,-0.785,0.294,-0.475,0.46
+Department of Education,-0.382,0.291,0.745,0.47
+Department of Energy,-0.386,0.302,1.406,0.486
+Department of Energy (Initial),-0.319,0.293,0.754,0.46
+Department of Health and Human Services,-0.597,0.303,0.393,0.465
+Department of Homeland Security,-0.337,0.301,0.526,0.461
+Department of Homeland Security (Initial),-0.241,0.293,0.074,0.457
+Department of Housing and Urban Development,-0.692,0.295,0.372,0.456
+Department of Justice,-0.359,0.293,1.101,0.48
+Department of Labor,-0.358,0.293,0.449,0.469
+Department of Labor (Initial),-0.321,0.3,-0.544,0.445
+Department of State,-0.327,0.301,-0.095,0.449
+Department of the Interior,-0.359,0.293,0.519,0.487
+Department of the Treasury,-0.14,0.287,0.218,0.453
+Department of Transportation,-0.366,0.303,1.199,0.506
+Department of Veterans Affairs,-0.389,0.294,0.294,0.48
+Directorate of Defense Trade Controls,-0.768,0.291,-0.436,0.432
+Division of Consumer and Community Affairs,-0.385,0.29,-0.544,0.454
+Domestic Nuclear Detection Office,-0.498,0.286,-0.436,0.45
+Drug Enforcement Administration,-0.698,0.289,-0.089,0.467
+Economic Development Administration,-0.65,0.291,-0.485,0.439
+Economic Research Service,-0.77,0.309,-0.465,0.446
+Economics and Statistics Administration,-0.776,0.305,-0.437,0.434
+Educational and Cultural Affairs,-0.665,0.288,-0.327,0.44
+Employee Benefits Security Administration,-0.76,0.298,-0.449,0.427
+Employees Compensation Appeals Board,-0.624,0.294,-0.487,0.466
+Employment and Training Administration,-0.774,0.3,-0.458,0.444
+Employment Standards Administration,-0.776,0.298,-0.459,0.459
+Environmental Protection Agency,-0.006,0.306,0.271,0.455
+Equal Employment Opportunity Commission,1.629,0.306,0.804,0.477
+Equal Employment Opportunity Commission (Initial),1.62,0.297,0.473,0.462
+European and Eurasian Affairs,-0.785,0.287,-0.46,0.453
+Executive Office for Immigration Review,-0.709,0.294,0.09,0.455
+Executive Office for U.S. Attorneys,-0.776,0.303,-0.457,0.458
+Executive Office for U.S. Trustees,-0.786,0.292,-0.429,0.446
+Export-Import Bank of the United States,1.784,0.305,0.567,0.472
+Farm Credit Administration,2.109,0.295,1.681,0.486
+Farm Service Agency,-0.845,0.302,-0.334,0.45
+Federal Agricultural Mortgage Corporation,1.459,0.303,0.766,0.481
+Federal Aviation Administration,0.024,0.292,2.256,0.495
+Federal Bureau of Investigation,-0.562,0.284,-0.499,0.436
+Federal Communications Commission,1.837,0.303,1.324,0.489
+Federal Deposit Insurance Corporation,1.317,0.313,2.658,0.487
+Federal Deposit Insurance Corporation (Initial),1.152,0.305,0.325,0.458
+Federal Election Commission,1.79,0.302,2.221,0.507
+Federal Emergency Management Agency,-0.497,0.288,-0.335,0.434
+Federal Energy Regulatory Commission,1.065,0.309,2.121,0.468
+Federal Highway Administration,-0.66,0.297,-0.474,0.462
+Federal Hospital Insurance Trust Fund Board,0.794,0.297,-0.52,0.449
+Federal Housing Administration,-0.66,0.294,-0.46,0.456
+Federal Housing Finance Agency,0.956,0.305,2.939,0.484
+Federal Labor Relations Authority,1.019,0.304,0.947,0.472
+Federal Labor Relations Authority (Initial),1.426,0.292,0.881,0.469
+Federal Law Enforcement Training Center,-0.647,0.289,-0.406,0.443
+Federal Maritime Commission,1.815,0.297,1.44,0.477
+Federal Mediation and Conciliation Service,0.124,0.287,-0.514,0.455
+Federal Mediation and Conciliation Service (Initial),0.103,0.299,-0.471,0.445
+Federal Mine Safety and Health Review Commission,1.753,0.3,0.996,0.482
+Federal Motor Carrier Safety Administration,-0.499,0.293,-0.479,0.436
+Federal Prison Industries,-0.056,0.286,-0.542,0.462
+Federal Railroad Administration,-0.491,0.286,-0.508,0.438
+Federal Reserve,2.235,0.325,3.867,0.474
+Federal Reserve (Initial),2.069,0.306,0.182,0.468
+Federal Retirement Thrift Investment Board,1.415,0.298,1.622,0.514
+Federal Student Aid,-0.763,0.288,-0.471,0.444
+Federal Supp. Medication Ins. Trust Fund Bd. (Initial),0.144,0.291,-0.53,0.452
+Federal Supp. Medication Insurance Trust Fund Board,0.791,0.297,-0.55,0.456
+Federal Trade Commission,1.655,0.297,2.269,0.483
+Federal Transit Administration,-0.672,0.293,-0.477,0.452
+Field Policy and Management,-0.78,0.285,-0.471,0.444
+Financial Crimes Enforcement Network,-0.654,0.29,-0.473,0.448
+Financial Management Service,-0.77,0.285,-0.433,0.45
+Financial Stability Oversight Council,0.371,0.299,-0.364,0.467
+Food and Drug Administration,-0.64,0.293,0.566,0.467
+Food and Nutrition Service,-0.773,0.292,-0.423,0.444
+Food Safety and Inspection Service,-0.787,0.297,-0.431,0.447
+Foreign Agricultural Service,-0.769,0.301,-0.441,0.439
+Foreign Claims Settlement Commission,0.136,0.303,-0.154,0.451
+Forest Service,-0.491,0.298,-0.089,0.462
+General Services Administration,0.083,0.292,-0.139,0.443
+Government National Mortgage Association,-0.6,0.303,1.308,0.478
+"Grain Inspection, Packers, and Stockyards Admin.",-0.781,0.295,-0.257,0.449
+Harry S Truman Scholarship Foundation,1.905,0.289,-0.442,0.462
+Health Resources and Services Administration,-0.773,0.292,-0.457,0.445
+Immigration and Customs Enforcement,-0.495,0.3,-0.506,0.455
+Independent Payment Advisory Board,1.923,0.314,-0.177,0.467
+Indian Health Service,-0.456,0.298,-0.291,0.454
+Institute for Museum and Library Services,0.59,0.3,-0.216,0.456
+Institute of American Indian Arts,1.715,0.285,0.437,0.454
+Institute of Education Sciences,0.736,0.308,-0.497,0.434
+Intelligence and Counterintelligence,-0.782,0.298,-0.428,0.44
+Inter-American Foundation,1.951,0.298,0.153,0.478
+Internal Revenue Service,0.031,0.292,0.174,0.444
+Internal Revenue Service Oversight Board,0.778,0.305,-0.6,0.443
+International Trade Administration,-0.768,0.299,-0.453,0.472
+James Madison Memorial Fellowship Foundation,1.497,0.303,0.339,0.486
+Justice Management Division,-0.76,0.298,-0.456,0.43
+Legal Services Corporation,1.007,0.291,2.072,0.48
+Maritime Administration,-0.654,0.297,-0.472,0.46
+Merit Systems Protection Board,1.113,0.311,2.971,0.474
+Metropolitan Washington Airport Authority,2.074,0.313,-0.194,0.452
+Metropolitan Washington Airport Authority (Initial),1.68,0.288,-0.181,0.459
+Millennium Challenge Corporation,0.997,0.306,-0.485,0.456
+Millennium Challenge Corporation (Initial),0.738,0.303,-0.223,0.452
+Mine Safety and Health Administration,-0.655,0.294,-0.483,0.462
+Minority Business Development Agency,-0.764,0.292,-0.455,0.451
+Missile Defense Agency,-0.777,0.291,-0.464,0.436
+Mississippi River Commission,1.268,0.312,-0.462,0.463
+Morris K. Udall Scholarship Foundation,1.689,0.297,-0.235,0.457
+Morris K. Udall Scholarship Foundation (Initial),1.595,0.302,-0.368,0.457
+National Aeronautics and Space Administration,0.189,0.295,-0.147,0.468
+National Agricultural Statistics Service,-0.762,0.291,-0.451,0.44
+National Archives and Records Administration,0.356,0.298,-0.268,0.467
+National Cemetery Administration,-0.658,0.292,-0.147,0.449
+National Consumer Cooperative Bank,0.822,0.291,0.536,0.46
+National Council on Disability,1.505,0.294,-0.502,0.442
+National Credit Union Administration,2.138,0.309,1.547,0.468
+National Endowment for the Arts,0.358,0.29,0.062,0.451
+National Endowment for the Humanities,0.386,0.302,-0.058,0.447
+National Geospatial-Intelligence Agency,-0.521,0.285,-0.22,0.473
+National Highway Traffic Safety Administration,-0.644,0.291,-0.482,0.448
+National Indian Gaming Commission,1.052,0.311,-0.112,0.458
+National Infrastructure Protection Center,-0.686,0.29,-0.44,0.445
+National Institute on Disability and Rehabilitation Research,-0.464,0.287,-0.411,0.457
+National Institute of Building Sciences,1.262,0.309,-0.48,0.458
+National Institute of Building Sciences (Initial),1.09,0.297,-0.457,0.437
+National Institute of Food and Agriculture,0.12,0.305,-0.15,0.441
+National Institute of Standards and Technology,-0.582,0.287,-0.2,0.442
+National Institutes of Health,-0.605,0.288,-0.066,0.452
+National Labor Relations Board,1.453,0.303,1.543,0.49
+National Labor Relations Board (Initial),1.478,0.291,0.836,0.484
+National Mediation Board,1.24,0.313,-0.267,0.453
+National Nuclear Security Administration,-0.383,0.287,0.231,0.478
+National Oceanic and Atmospheric Administration,-0.648,0.298,0.006,0.474
+National Park Service,-0.52,0.292,0.023,0.45
+AMTRAK,1.634,0.305,0.483,0.458
+National Reconnaissance Office,-0.801,0.301,-0.223,0.443
+National Science Foundation,1.243,0.292,0.142,0.459
+National Security Agency,-0.641,0.301,-0.265,0.442
+National Security Education Board,0.803,0.304,-0.545,0.439
+National Security Education Board (Initial),0.686,0.296,-0.376,0.468
+National Technical Information Service,-0.624,0.287,-0.002,0.455
+National Telecommunications and Information Administration,-0.644,0.287,-0.072,0.443
+National Transportation Safety Board,1.29,0.299,2.883,0.483
+Natural Resources Conservation Service,-0.839,0.288,-0.317,0.467
+Department of the Navy,-0.533,0.302,-0.355,0.439
+Nuclear Regulatory Commission,1.848,0.299,1.922,0.485
+Occupational Safety and Health Administration,-0.835,0.291,-0.126,0.472
+Occupational Safety and Health Review Commission,1.73,0.3,0.995,0.473
+Office of A. Sec. for Comm. Planning and Development,-0.778,0.29,-0.444,0.441
+Office of A. Sec. for Elem. and Secondary Education,-0.66,0.292,-0.458,0.461
+Office of A. Sec. for Fair Housing and Equal Opport.,-0.771,0.305,-0.449,0.458
+Office of A. Sec. for Policy Development and Research,-0.774,0.287,-0.435,0.474
+Office of A. Sec. for Post Secondary Education,-0.659,0.28,-0.48,0.447
+Office of Acquisition Policy,-0.38,0.303,-0.54,0.453
+Office of Assistant Secretary for Fossil Energy,-0.797,0.281,-0.455,0.464
+Office of Economic Adjustment,-0.769,0.296,-0.44,0.428
+Office of Electricity Delivery and Energy Reliability,-0.774,0.294,-0.454,0.443
+Office of Energy Efficiency and Renewable Energy,-0.763,0.29,-0.455,0.448
+Office of Energy Policy and New Uses,-0.659,0.301,-0.467,0.461
+Office of Environmental Management,-0.761,0.305,-0.436,0.448
+Office of Federal Contract Compliance Programs,-0.786,0.292,-0.454,0.46
+Office of Federal Procurement Policy,-0.205,0.31,-0.5,0.467
+Office of Financial Stability,-0.674,0.301,-0.454,0.45
+Office of Fiscal Service,-0.637,0.296,-0.473,0.438
+Office of Foreign Assets Control,-0.649,0.284,-0.479,0.444
+Office of Government Ethics,0.467,0.295,-0.323,0.451
+"Office of Health, Safety, and Security",-0.77,0.295,-0.441,0.475
+Office of Healthy Homes and Lead Hazard Control,-0.774,0.3,-0.453,0.449
+Office of Justice Programs,-0.686,0.289,-0.267,0.44
+Office of Labor-Management Standards,-0.768,0.29,-0.436,0.451
+Office of Management and Budget,0.263,0.3,-0.704,0.449
+Office of Minority Economic Impact,-0.648,0.301,-0.492,0.461
+Office of National Drug Control Policy,0.424,0.31,-0.727,0.467
+Office of Navajo and Hopi Indian Relocation,0.219,0.304,-0.45,0.455
+Office of Nuclear Energy,-0.79,0.293,-0.427,0.459
+Office of Nuclear Reactor Regulation,-0.274,0.294,-0.545,0.456
+Office of Personnel Management,0.374,0.292,-0.149,0.457
+Office of Personnel Management (Initial),0.374,0.3,-0.443,0.451
+Office of Rural Development,-0.801,0.3,-0.291,0.459
+Office of Safe and Healthy Students,-0.792,0.295,-0.433,0.459
+Office of Science and Technology,0.175,0.308,-0.74,0.473
+Office of Special Counsel,0.847,0.3,1.074,0.487
+Office of Special Counsel (Initial),0.754,0.307,0.101,0.452
+Office of Special Education and Rehabilitative Services,-0.653,0.295,-0.457,0.444
+Office of Special Trustee for American Indians,-0.476,0.289,-0.374,0.455
+Office of Surety Guarantees,-0.383,0.304,-0.509,0.468
+"Office of Surface Mining, Reclamation and Enforcement",-0.544,0.282,-0.502,0.468
+Office of the A. Secretary of Defense Health Affairs,-0.774,0.299,-0.458,0.462
+Office of the Assistant Secretary International Affairs,-0.783,0.284,-0.426,0.446
+Office of the Assistant Secretary Tax Policy,-0.78,0.295,-0.438,0.458
+Office of the Comptroller of the Currency,0.031,0.284,1.643,0.504
+Office of the Director of National Intelligence,0.321,0.295,-0.289,0.457
+Office of the Fed. Coor. for Alaska Nat. Gas Transp. Pr.,-0.139,0.294,-0.145,0.465
+Office of the U. Sec. for Arms Control and Int’l Secur.,-0.664,0.299,-0.456,0.45
+"Office of the U. Sec. for Food, Nutr, and Cons. Services",-0.825,0.297,-0.436,0.439
+Office of the Under Secretary for Domestic Finance,-0.762,0.3,-0.438,0.455
+Office of the United States Trade Representative,0.457,0.301,-0.988,0.482
+Office of Thrift Supervision,-0.635,0.287,0.925,0.475
+Office of Vocational and Adult Education,-0.664,0.291,-0.482,0.452
+Office of Workers' Compensation Programs,-0.78,0.287,-0.426,0.454
+Oklahoma City National Memorial Trust,-0.603,0.308,-0.267,0.447
+Overseas Private Investment Corporation,1.67,0.306,0.269,0.474
+Overseas Private Investment Corporation (Initial),1.42,0.295,0.177,0.477
+Patent and Trademark Office,-0.335,0.288,-0.118,0.462
+Peace Corps,0.084,0.306,-0.094,0.443
+Pentagon,-0.783,0.304,-0.462,0.453
+Pipeline and Hazardous Materials Safety Administration,-0.5,0.29,-0.515,0.437
+Political-Military Affairs,-0.785,0.293,-0.424,0.447
+Postal Regulatory Commission,1.938,0.311,0.549,0.464
+Presidio Trust,-0.802,0.293,-0.321,0.46
+Privacy and Civil Liberties Oversight Board,1.477,0.301,-0.469,0.465
+Public and Indian Housing,-0.764,0.286,-0.455,0.446
+Public Buildings Service,-0.382,0.29,-0.539,0.452
+Public Health Service,-0.574,0.291,-0.113,0.462
+Railroad Retirement Board,0.963,0.302,2.715,0.474
+Rehabilitation Services Administration,-0.513,0.294,-0.498,0.438
+Research and Innovative Technology Administration,-0.654,0.299,-0.496,0.444
+Risk Management Agency,-0.655,0.289,-0.464,0.441
+Rural Business and Cooperative Development Service,-0.828,0.305,-0.446,0.453
+Rural Housing Service,-0.845,0.292,-0.445,0.442
+Rural Utilities Service,-0.504,0.29,-0.493,0.449
+Saint Lawrence Seaway Development Corporation,-0.418,0.291,0.29,0.48
+Securities and Exchange Commission,1.312,0.304,3.566,0.467
+Securities and Exchange Commission (Initial),1.44,0.307,-0.43,0.447
+Securities Investor Protection Corporation,1.351,0.292,0.244,0.455
+Selective Service System,0.067,0.3,-0.491,0.443
+Small Business Administration (Initial),0.384,0.302,-0.138,0.448
+Small Business Administration,0.191,0.306,1.102,0.496
+Social Security Administration,0.623,0.308,1.127,0.452
+Social Security Advisory Board,2.063,0.307,-0.709,0.462
+State Justice Institute,1.719,0.301,1.574,0.505
+Substance Abuse and Mental Health Services Administration,-0.753,0.291,-0.318,0.454
+Surface Transportation Board,1.062,0.316,1.927,0.461
+Task Force on Lead-Based Paint Haz. Reduc. and Fin.,-0.502,0.297,-0.515,0.445
+Tennessee Valley Authority,1.648,0.307,1.009,0.478
+Transportation Security Administration,0.155,0.289,-0.125,0.446
+Tricare Management Activity,-0.648,0.286,-0.473,0.45
+Coast Guard,-0.172,0.292,0.601,0.492
+Fish and Wildlife Service,-0.404,0.297,-0.379,0.464
+Geological Survey,-0.503,0.291,-0.217,0.426
+Marshals Service,-0.676,0.284,-0.461,0.47
+Mint,-0.182,0.292,-0.377,0.466
+Secret Service,-0.636,0.282,-0.485,0.44
+African Development Foundation,1.981,0.279,0.396,0.453
+Agency for International Development,0.049,0.294,-0.261,0.45
+Election Assistance Commission,1.706,0.296,-0.346,0.447
+Institute of Peace,1.884,0.293,1.824,0.462
+International Trade Commission,2.095,0.311,3.078,0.47
+Parole Commission,-0.03,0.298,-0.269,0.463
+US Postal Service,2.191,0.305,1.715,0.48
+US Postal Service (Initial),2.328,0.304,0.172,0.479
+Trade and Development Agency,0.156,0.314,-0.532,0.457
+Veterans Benefits Administration,-0.511,0.296,-0.534,0.461
+Veterans Employment and Training Service,-0.669,0.29,-0.315,0.433
+Veterans Health Administration,-0.501,0.293,-0.307,0.451
+Wage and Hour Division,-0.722,0.298,0.168,0.451
+Washington Headquarters Services,-0.77,0.288,-0.434,0.46
+Western Area Power Administration,-0.781,0.305,-0.462,0.434
+Womens' Bureau,-0.487,0.29,-0.504,0.466

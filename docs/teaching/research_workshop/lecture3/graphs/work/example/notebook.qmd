@@ -1,0 +1,33 @@
+---
+title: "Notebook"
+author: "Your Name"
+date: "July 26, 2025"
+format:
+  html:
+    toc: true
+    number-sections: true
+    colorlinks: true
+    smooth-scroll: true
+    embed-resources: true
+---
+
+# Introduction
+
+This is the introduction.
+
+```{r}
+# This is another vector 
+weight <- c(88, 72, 85, 52, 71, 69, 61, 61, 51, 75)
+height <- c(168, 177, 177, 177, 178, 172, 165, 171, 178, 170)
+# Performing a simple calculation using vectors
+bmi = weight/((height/100)^2)
+matrix <- cbind(height, weight, bmi)
+```
+
+
+```{r}
+mydat <- data.frame(
+  weight = c(88, 72, 85, 52, 71, 69, 61, 61, 51, 75),
+  height = c(168, 177, 177, 177, 178, 172, 165, 171, 178, 170)
+)
+```

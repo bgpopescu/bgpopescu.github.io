@@ -1,0 +1,311 @@
+---
+title: "AI and Big Power Politics"
+format: 
+  revealjs:
+    theme: dark
+    transition: slide
+---
+
+## The New Geopolitical Battleground {background-color="#40666e"}
+
+::: columns
+::: {.column width="60%"}
+**AI = Strategic Asset, Not Just Technology**
+
+- US, China, and EU compete through domestic policies and export controls to maintain AI dominance
+- Policymakers increasingly link AI competition to national security and economic primacy
+- The debate is no longer *if* AI will change everything, but *who* will determine how
+:::
+
+::: {.column width="40%"}
+**Three Competing Models**
+
+- **US**: Innovation-driven, market flexibility
+- **China**: State control + tech leadership  
+- **EU**: Regulation-first approach (AI Act)
+:::
+:::
+
+::: footer
+Sources: Politics & Governance 2025; Euronews 2025
+:::
+
+
+## Semiconductor Wars: The Critical Chokepoint {background-color="#40666e"}
+
+::: columns
+::: {.column width="50%"}
+**Export Controls as Weapon**
+
+- January 2025: US AI Diffusion Rule created global licensing framework for advanced chips
+- Over 1 million downgraded Nvidia chips reached China through gray markets since 2022
+- Chinese DeepSeek R1 is 50 times more efficient than top US models, using minimal resources
+:::
+
+::: {.column width="50%"}
+**The Arms Race Dynamic**
+
+- China accounts for 28% of global semiconductor production (mature nodes), forecast to rise to 39% by 2027
+- China invested $143+ billion in domestic chips after 2022 US controls
+- US advantage in cutting-edge chips vs. China's manufacturing scale
+:::
+:::
+
+::: footer
+Sources: Congress.gov 2025; CNTR Monitor 2025; Contrary Research 2025
+:::
+
+
+## Energy: The New Constraint on AI Power {background-color="#40666e"}
+
+::: columns
+::: {.column width="55%"}
+**The "Electron Gap"**
+
+- US data center electricity demand will more than double from 2024 to 2030, reaching 426 TWh (9% of total demand)
+- China has significant advantage in energy - can build infrastructure faster without public opposition
+- A typical AI-focused hyperscaler annually consumes as much electricity as 100,000 households
+:::
+
+::: {.column width="45%"}
+**Geopolitical Implications**
+
+- Competition for data center locations depends on speed of electricity infrastructure delivery
+- Megaprojects like $500bn Stargate and France's €109bn investments driving nuclear power revival
+- Energy access = AI supremacy
+:::
+:::
+
+::: footer
+Sources: Brookings 2025; Pew Research 2025; IFRI 2025
+:::
+
+
+## Market Dominance and Global Influence {background-color="#40666e"}
+
+**The Numbers Tell the Story**
+
+::: columns
+::: {.column width="50%"}
+- US models captured 93% of global LLM site visits in August 2025
+- Chinese LLMs' market share surged from 3% to 13% in two months (via DeepSeek)
+- Chinese models gained 20%+ market share in 11 countries - mostly in developing nations with close ties to China
+:::
+
+::: {.column width="50%"}
+**Investment Race**
+
+- US invested $109.1 billion in AI in 2024; China invested $9.3 billion
+- Global venture capital in generative AI reached $49.2 billion in first half of 2025
+- France's "third way": €109 billion plan positioned against US and China
+:::
+:::
+
+::: footer
+Sources: RAND 2025; GM Insights 2025; Politics & Governance 2025
+:::
+
+
+## Democracy vs. Authoritarianism: The Stakes {background-color="#40666e"}
+
+::: columns
+::: {.column width="60%"}
+**Two Visions of AI Governance**
+
+**Democratic Model (US/EU)**
+- Innovation with guardrails
+- Market-driven development
+- Concerns about concentration of power in Big Tech
+- Focus on economic growth potentially conflicts with worker protections and equity
+
+**Authoritarian Model (China)**
+- State licensing system - AI must align with state interests
+- Strategic infrastructure approach
+- Rapid deployment without public opposition
+:::
+
+::: {.column width="40%"}
+**Critical Questions**
+
+- Who controls training data?
+- Who sets safety standards?
+- Who benefits from productivity gains?
+- Does China's path to AGI threaten global security?
+:::
+:::
+
+::: footer
+Sources: Euronews 2025; AI Now Institute 2025; Contrary Research 2025
+:::
+
+
+## Data Center Geography: The New Strategic Map {background-color="#40666e"}
+
+::: columns
+::: {.column width="55%"}
+**Why Location Matters**
+
+::: fragment
+- US accounts for over 45% of world's data centers
+:::
+
+::: fragment
+- Northern Virginia ("Data Center Alley") = largest market globally
+:::
+
+::: fragment
+- Countries compete to host data centers like they once competed for factories
+:::
+
+::: fragment
+- Location determines: latency, connectivity, energy access, and regulatory control
+:::
+:::
+
+::: {.column width="45%"}
+**The Stakes**
+
+::: fragment
+- Hosting AI workloads = economic competitiveness and national security
+:::
+
+::: fragment
+- Physical infrastructure creates new "gatekeepers" of computational power
+:::
+
+::: fragment
+- Data sovereignty vs. efficiency trade-offs
+:::
+:::
+:::
+
+::: footer
+Sources: World Economic Forum 2025; Foreign Policy 2024; Aalto University 2024
+:::
+
+
+## Emerging Data Center Hubs: The Global Race {background-color="#40666e"}
+
+::: columns
+::: {.column width="50%"}
+**Traditional Powers Expanding**
+
+::: fragment
+- Japan investing 0.71% of GDP on semiconductors through 2025
+:::
+
+::: fragment
+- Arab Gulf states: highest internet penetration rates, critical subsea cable nodes
+:::
+
+::: fragment
+- Nordic countries: cheap renewable energy, cool climate
+:::
+:::
+
+::: {.column width="50%"}
+**Rising Regional Hubs**
+
+::: fragment
+- Latin America: Colombia, Chile, Brazil, Mexico using incentives to attract hyperscalers
+:::
+
+::: fragment
+- Southeast Asia: Thailand attracted $16+ billion in first half 2025
+:::
+
+::: fragment
+- India: second-largest market in region, partnering with West through Quad
+:::
+:::
+:::
+
+::: footer
+Sources: S&P Global 2025; FTI Consulting 2025; Foreign Policy 2024
+:::
+
+
+## Data Centers as Critical Infrastructure {background-color="#40666e"}
+
+::: columns
+::: {.column width="60%"}
+**Three Vulnerability Chokepoints**
+
+::: fragment
+1. **Semiconductors** - chips embedded in virtually every complex product, not just IT hardware
+:::
+
+::: fragment
+2. **Subsea Cables** - 500+ cables carry nearly all intercontinental data traffic, difficult to protect
+:::
+
+::: fragment
+3. **Energy Grid** - In Virginia, data centers consume 26% of local electricity supply
+:::
+:::
+
+::: {.column width="40%"}
+**Geopolitical Implications**
+
+::: fragment
+- Export controls on semiconductors = ceiling on AI development
+:::
+
+::: fragment
+- Subsea cable sabotage = high-value, secretive attack vector
+:::
+
+::: fragment
+- Hyperscalers moving to directly capture nuclear assets and renewable energy
+:::
+:::
+:::
+
+::: footer
+Sources: Uptime Institute 2023; Humane Intelligence 2025
+:::
+
+
+## "Data Center Diplomacy": Building Alliances {background-color="#40666e"}
+
+::: columns
+::: {.column width="55%"}
+**The Strategic Partnership Model**
+
+::: fragment
+- US developing list of partners with capacity, will, and aligned interests
+:::
+
+::: fragment
+- "Chip 4" alliance: US, Japan, Taiwan, South Korea coordinate semiconductor strategy
+:::
+
+::: fragment
+- EU's €200 billion InvestAI initiative includes €20 billion "AI Gigafactory" fund
+:::
+
+::: fragment
+- China's Digital Silk Road as counter-strategy
+:::
+:::
+
+::: {.column width="45%"}
+**The Fragmentation Risk**
+
+::: fragment
+- US and China-led tech spheres divided by incompatible standards and mutual suspicions
+:::
+
+::: fragment
+- International scrutiny of Chinese-owned data centers in Malaysia over semiconductor compliance
+:::
+
+::: fragment
+- Other countries forced to navigate two separate ecosystems
+:::
+:::
+:::
+
+::: footer
+Sources: Foreign Policy 2024; World Economic Forum 2025; FTI Consulting 2025; S&P Global 2025
+:::
