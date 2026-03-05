@@ -54,17 +54,7 @@
     "href": "lecture1/lecture1_landing.html",
     "title": "1 The Topic and Research Question",
     "section": "",
-    "text": "Slides\nThis is lecture 1. Below you can see the slides and watch lecture 1.\nOpen slides in a new window",
-    "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>1 The Topic and Research Question</span>"
-    ]
-  },
-  {
-    "objectID": "lecture1/lecture1_landing.html#video",
-    "href": "lecture1/lecture1_landing.html#video",
-    "title": "1 The Topic and Research Question",
-    "section": "Video",
-    "text": "Video",
+    "text": "Lecture\n\n\n\n\nOpen slides in a new window\n\n\nVideo",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>1 The Topic and Research Question</span>"
     ]
@@ -74,17 +64,7 @@
     "href": "lecture2/lecture2_landing.html",
     "title": "2 Essential Tools for Writing a Paper Slides",
     "section": "",
-    "text": "Slides\nOpen slides in a new window",
-    "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>2 Essential Tools for Writing a Paper Slides</span>"
-    ]
-  },
-  {
-    "objectID": "lecture2/lecture2_landing.html#video",
-    "href": "lecture2/lecture2_landing.html#video",
-    "title": "2 Essential Tools for Writing a Paper Slides",
-    "section": "Video",
-    "text": "Video",
+    "text": "Slides\n\n\n\n\nOpen slides in a new window\n\n\nVideo",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>2 Essential Tools for Writing a Paper Slides</span>"
     ]
@@ -94,17 +74,7 @@
     "href": "lecture3/lecture3_landing.html",
     "title": "3 Operations and Objects in R Slides",
     "section": "",
-    "text": "Slides\nOpen slides in a new window",
-    "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>3 Operations and Objects in R Slides</span>"
-    ]
-  },
-  {
-    "objectID": "lecture3/lecture3_landing.html#video",
-    "href": "lecture3/lecture3_landing.html#video",
-    "title": "3 Operations and Objects in R Slides",
-    "section": "Video",
-    "text": "Video",
+    "text": "Slides\n\n\n\n\nOpen slides in a new window\n\n\nVideo",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>3 Operations and Objects in R Slides</span>"
     ]
@@ -114,17 +84,7 @@
     "href": "lecture4/lecture4_landing.html",
     "title": "4 Quarto Presentations",
     "section": "",
-    "text": "Slides\nOpen slides in a new window",
-    "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>4 Quarto Presentations</span>"
-    ]
-  },
-  {
-    "objectID": "lecture4/lecture4_landing.html#video",
-    "href": "lecture4/lecture4_landing.html#video",
-    "title": "4 Quarto Presentations",
-    "section": "Video",
-    "text": "Video",
+    "text": "Slides\n\n\n\n\nOpen slides in a new window\n\n\nVideo",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>4 Quarto Presentations</span>"
     ]
@@ -134,17 +94,7 @@
     "href": "lecture5/lecture5_landing.html",
     "title": "5 Intro to Statistics",
     "section": "",
-    "text": "Slides\nOpen slides in a new window",
-    "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>5 Intro to Statistics</span>"
-    ]
-  },
-  {
-    "objectID": "lecture5/lecture5_landing.html#video",
-    "href": "lecture5/lecture5_landing.html#video",
-    "title": "5 Intro to Statistics",
-    "section": "Video",
-    "text": "Video",
+    "text": "Slides\n\n\n\n\nOpen slides in a new window\n\n\nVideo",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>5 Intro to Statistics</span>"
     ]
@@ -154,17 +104,7 @@
     "href": "lecture6/lecture6_landing.html",
     "title": "6 Working with Data in R Slides",
     "section": "",
-    "text": "Slides\nOpen slides in a new window",
-    "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>6 Working with Data in R Slides</span>"
-    ]
-  },
-  {
-    "objectID": "lecture6/lecture6_landing.html#video",
-    "href": "lecture6/lecture6_landing.html#video",
-    "title": "6 Working with Data in R Slides",
-    "section": "Video",
-    "text": "Video",
+    "text": "Slides\n\n\n\n\nOpen slides in a new window\n\n\nVideo",
     "crumbs": [
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>6 Working with Data in R Slides</span>"
     ]
@@ -174,17 +114,7 @@
     "href": "lecture7/lecture7_landing.html",
     "title": "7 Dplyr and Basic Visualization",
     "section": "",
-    "text": "Slides\nOpen slides in a new window",
-    "crumbs": [
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>7 Dplyr and Basic Visualization</span>"
-    ]
-  },
-  {
-    "objectID": "lecture7/lecture7_landing.html#video",
-    "href": "lecture7/lecture7_landing.html#video",
-    "title": "7 Dplyr and Basic Visualization",
-    "section": "Video",
-    "text": "Video",
+    "text": "Slides\n\n\n\n\nOpen slides in a new window\n\n\nVideo",
     "crumbs": [
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>7 Dplyr and Basic Visualization</span>"
     ]
@@ -194,17 +124,7 @@
     "href": "lecture8/lecture8_landing.html",
     "title": "8 Visualizing Data Distributions in R",
     "section": "",
-    "text": "Slides\nOpen slides in a new window",
-    "crumbs": [
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>8 Visualizing Data Distributions in R</span>"
-    ]
-  },
-  {
-    "objectID": "lecture8/lecture8_landing.html#video",
-    "href": "lecture8/lecture8_landing.html#video",
-    "title": "8 Visualizing Data Distributions in R",
-    "section": "Video",
-    "text": "Video",
+    "text": "Slides\n\n\n\n\nOpen slides in a new window\n\n\nVideo",
     "crumbs": [
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>8 Visualizing Data Distributions in R</span>"
     ]
@@ -214,17 +134,7 @@
     "href": "lecture9/lecture9_landing.html",
     "title": "9 Modeling Relationships Between Variables",
     "section": "",
-    "text": "Slides\nOpen slides in a new window",
-    "crumbs": [
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>9 Modeling Relationships Between Variables</span>"
-    ]
-  },
-  {
-    "objectID": "lecture9/lecture9_landing.html#video",
-    "href": "lecture9/lecture9_landing.html#video",
-    "title": "9 Modeling Relationships Between Variables",
-    "section": "Video",
-    "text": "Video",
+    "text": "Slides\n\n\n\n\nOpen slides in a new window\n\n\nVideo",
     "crumbs": [
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>9 Modeling Relationships Between Variables</span>"
     ]
@@ -234,17 +144,7 @@
     "href": "lecture10/lecture10_landing.html",
     "title": "10 Interpreting Binary and Multivariate Regression Models",
     "section": "",
-    "text": "Slides\nOpen slides in a new window",
-    "crumbs": [
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>10 Interpreting Binary and Multivariate Regression Models</span>"
-    ]
-  },
-  {
-    "objectID": "lecture10/lecture10_landing.html#video",
-    "href": "lecture10/lecture10_landing.html#video",
-    "title": "10 Interpreting Binary and Multivariate Regression Models",
-    "section": "Video",
-    "text": "Video",
+    "text": "Slides\n\n\n\n\nOpen slides in a new window\n\n\nVideo",
     "crumbs": [
       "<span class='chapter-number'>11</span>  <span class='chapter-title'>10 Interpreting Binary and Multivariate Regression Models</span>"
     ]
@@ -254,17 +154,7 @@
     "href": "lecture11/lecture11_landing.html",
     "title": "11 Differences in Differences",
     "section": "",
-    "text": "Slides\nOpen slides in a new window",
-    "crumbs": [
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>11 Differences in Differences</span>"
-    ]
-  },
-  {
-    "objectID": "lecture11/lecture11_landing.html#video",
-    "href": "lecture11/lecture11_landing.html#video",
-    "title": "11 Differences in Differences",
-    "section": "Video",
-    "text": "Video",
+    "text": "Slides\n\n\n\n\nOpen slides in a new window\n\n\nVideo",
     "crumbs": [
       "<span class='chapter-number'>12</span>  <span class='chapter-title'>11 Differences in Differences</span>"
     ]
@@ -274,17 +164,7 @@
     "href": "lecture12/lecture12_landing.html",
     "title": "12 Regression Discontinuity Design",
     "section": "",
-    "text": "Slides\nOpen slides in a new window",
-    "crumbs": [
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>12 Regression Discontinuity Design</span>"
-    ]
-  },
-  {
-    "objectID": "lecture12/lecture12_landing.html#video",
-    "href": "lecture12/lecture12_landing.html#video",
-    "title": "12 Regression Discontinuity Design",
-    "section": "Video",
-    "text": "Video",
+    "text": "Slides\n\n\n\n\nOpen slides in a new window\n\n\nVideo",
     "crumbs": [
       "<span class='chapter-number'>13</span>  <span class='chapter-title'>12 Regression Discontinuity Design</span>"
     ]
@@ -294,17 +174,7 @@
     "href": "lecture13/lecture13_landing.html",
     "title": "13 Data Visualization in R - 1",
     "section": "",
-    "text": "Slides\nOpen slides in a new window",
-    "crumbs": [
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>13 Data Visualization in R - 1</span>"
-    ]
-  },
-  {
-    "objectID": "lecture13/lecture13_landing.html#video",
-    "href": "lecture13/lecture13_landing.html#video",
-    "title": "13 Data Visualization in R - 1",
-    "section": "Video",
-    "text": "Video",
+    "text": "Slides\n\n\n\n\nOpen slides in a new window\n\n\nVideo",
     "crumbs": [
       "<span class='chapter-number'>14</span>  <span class='chapter-title'>13 Data Visualization in R - 1</span>"
     ]
@@ -314,17 +184,7 @@
     "href": "lecture14/lecture14_landing.html",
     "title": "14 Data Visualization in R - 2",
     "section": "",
-    "text": "Slides\nOpen slides in a new window",
-    "crumbs": [
-      "<span class='chapter-number'>15</span>  <span class='chapter-title'>14 Data Visualization in R - 2</span>"
-    ]
-  },
-  {
-    "objectID": "lecture14/lecture14_landing.html#video",
-    "href": "lecture14/lecture14_landing.html#video",
-    "title": "14 Data Visualization in R - 2",
-    "section": "Video",
-    "text": "Video",
+    "text": "Slides\n\n\n\n\nOpen slides in a new window\n\n\nVideo",
     "crumbs": [
       "<span class='chapter-number'>15</span>  <span class='chapter-title'>14 Data Visualization in R - 2</span>"
     ]
@@ -334,17 +194,7 @@
     "href": "lecture15/lecture15_landing.html",
     "title": "15 Data Visualization in R - 3",
     "section": "",
-    "text": "Slides\nOpen slides in a new window",
-    "crumbs": [
-      "<span class='chapter-number'>16</span>  <span class='chapter-title'>15 Data Visualization in R - 3</span>"
-    ]
-  },
-  {
-    "objectID": "lecture15/lecture15_landing.html#video",
-    "href": "lecture15/lecture15_landing.html#video",
-    "title": "15 Data Visualization in R - 3",
-    "section": "Video",
-    "text": "Video",
+    "text": "Slides\n\n\n\n\nOpen slides in a new window\n\n\nVideo",
     "crumbs": [
       "<span class='chapter-number'>16</span>  <span class='chapter-title'>15 Data Visualization in R - 3</span>"
     ]
@@ -354,17 +204,7 @@
     "href": "lecture16/lecture16_landing.html",
     "title": "16 The Abstract and the Argument",
     "section": "",
-    "text": "Slides\nOpen slides in a new window",
-    "crumbs": [
-      "<span class='chapter-number'>17</span>  <span class='chapter-title'>16 The Abstract and the Argument</span>"
-    ]
-  },
-  {
-    "objectID": "lecture16/lecture16_landing.html#video",
-    "href": "lecture16/lecture16_landing.html#video",
-    "title": "16 The Abstract and the Argument",
-    "section": "Video",
-    "text": "Video",
+    "text": "Slides\n\n\n\n\nOpen slides in a new window\n\n\nVideo",
     "crumbs": [
       "<span class='chapter-number'>17</span>  <span class='chapter-title'>16 The Abstract and the Argument</span>"
     ]
@@ -374,17 +214,7 @@
     "href": "lecture17/lecture17_landing.html",
     "title": "17 Literature Review",
     "section": "",
-    "text": "Slides\nOpen slides in a new window",
-    "crumbs": [
-      "<span class='chapter-number'>18</span>  <span class='chapter-title'>17 Literature Review</span>"
-    ]
-  },
-  {
-    "objectID": "lecture17/lecture17_landing.html#video",
-    "href": "lecture17/lecture17_landing.html#video",
-    "title": "17 Literature Review",
-    "section": "Video",
-    "text": "Video",
+    "text": "Slides\n\n\n\n\nOpen slides in a new window\n\n\nVideo",
     "crumbs": [
       "<span class='chapter-number'>18</span>  <span class='chapter-title'>17 Literature Review</span>"
     ]
@@ -404,7 +234,7 @@
     "href": "lecture18/lecture18_landing.html#video",
     "title": "18 Methods",
     "section": "Video",
-    "text": "Video\n\n\nYour browser does not support the video tag.",
+    "text": "Video",
     "crumbs": [
       "<span class='chapter-number'>19</span>  <span class='chapter-title'>18 Methods</span>"
     ]
@@ -414,17 +244,7 @@
     "href": "lecture19/lecture19_landing.html",
     "title": "19 Findings, Discussion, Intro, and Conclusion",
     "section": "",
-    "text": "Slides\nOpen slides in a new window",
-    "crumbs": [
-      "<span class='chapter-number'>20</span>  <span class='chapter-title'>19 Findings, Discussion, Intro, and Conclusion</span>"
-    ]
-  },
-  {
-    "objectID": "lecture19/lecture19_landing.html#video",
-    "href": "lecture19/lecture19_landing.html#video",
-    "title": "19 Findings, Discussion, Intro, and Conclusion",
-    "section": "Video",
-    "text": "Video",
+    "text": "Slides\n\n\n\n\nOpen slides in a new window\n\n\nVideo",
     "crumbs": [
       "<span class='chapter-number'>20</span>  <span class='chapter-title'>19 Findings, Discussion, Intro, and Conclusion</span>"
     ]
@@ -434,7 +254,7 @@
     "href": "lecture20/lecture20_landing.html",
     "title": "20 Making a website on GitHub: username.github.io",
     "section": "",
-    "text": "Slides\nOpen slides in a new window",
+    "text": "Slides\n\n\n\n\nOpen slides in a new window",
     "crumbs": [
       "<span class='chapter-number'>21</span>  <span class='chapter-title'>20 Making a website on GitHub: username.github.io</span>"
     ]
@@ -444,7 +264,7 @@
     "href": "lecture21/lecture21_landing.html",
     "title": "21 Research Proposal",
     "section": "",
-    "text": "Slides",
+    "text": "Slides\n\n\n\n\nOpen slides in a new window",
     "crumbs": [
       "<span class='chapter-number'>22</span>  <span class='chapter-title'>21 Research Proposal</span>"
     ]
