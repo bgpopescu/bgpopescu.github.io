@@ -1,0 +1,21 @@
+---
+title: "Statistical Analysis Report"
+author: "Your Name"
+date: "2024-11-05"
+format: html
+toc: true
+toc-title: "Contents"
+embed-resources: true
+number-sections: true
+---
+
+# Introduction
+
+This is a table.
+
+| Right | Left | Default | Center |
+|------:|:-----|---------|:------:|
+|    12 | 12   | 12      |   12   |
+|   123 | 123  | 123     |  123   |
+|     1 | 1    | 1       |   1    |
+

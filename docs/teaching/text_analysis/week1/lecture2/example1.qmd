@@ -1,0 +1,11 @@
+---
+title: "Statistical Analysis Report"
+author: "Your Name"
+date: "2024-11-05"
+format: html
+embed-resources: true
+---
+
+# Introduction
+
+This is an example.

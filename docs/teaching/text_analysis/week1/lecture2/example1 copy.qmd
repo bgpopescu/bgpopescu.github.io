@@ -1,0 +1,21 @@
+---
+title: "Statistical Analysis Report"
+author: "Your Name"
+date: "2024-11-05"
+format: html
+toc: true
+toc-title: "Contents"
+number-sections: true
+---
+
+# Introduction
+
+```{r echo=TRUE, eval=FALSE}
+summary(mtcars)
+```
+
+The following are headers:
+
+# Header
+## Subheader {.unnumbered .unlisted}
+### Sub-subheader {.unnumbered .unlisted}
