@@ -20,7 +20,7 @@ My teaching philosophy focuses on developing critical thinking skills, and acqui
 | [Technological Change and Social Development](/teaching/econ_development/index.html){target="_blank"} | Tecnológico de Monterrey, Spring 2026, Undergraduate |
 | [Computational Methods: Text Analysis in Python](/teaching/text_analysis/index.html){target="_blank"} | John Cabot, Spring 2025, Undergraduate |
 | [Computational Methods: GIS in R](/teaching/gis/gis_syllabus.html){target="_blank"} | John Cabot, Spring 2024, Undergraduate |
-| [Statistics](/teaching/stats/stats_syllabus.html){target="_blank"} | John Cabot, Spring 2024, Winter 2023, Spring 2023, Undergraduate |
+| [Statistics](/teaching/stats/index.html){target="_blank"} | John Cabot, Spring 2024, Winter 2023, Spring 2023, Undergraduate |
 | [Comparative Politics](/teaching/comp_pol/index.html){target="_blank"} | John Cabot, Spring 2024, Winter 2023, Spring 2023, Undergraduate |
 | [Political Economy](/teaching/cpe/pol_econ_syllabus.html){target="_blank"} | John Cabot, Spring 2024, Winter 2023, Spring 2023, Undergraduate and Graduate |
 | European Politics and Society | Oxford, Autumn 2022, Graduate |
