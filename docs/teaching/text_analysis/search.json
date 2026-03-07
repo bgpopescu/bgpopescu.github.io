@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Applied Computational Methods for Social Sciences",
     "section": "",
-    "text": "Course Information\nCourse Number: P1012\nCourse Title: Text Analysis\nTime: Tue/Fri: 13:10pm-14:50pm\nLocation: Aulas VII 103",
+    "text": "Course Information\nCourse Number: P1012\nCourse Title: Data Science\nTime: Tue/Wed/Fri: 09:00am-11:00am\nLocation: xx",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
     ]
@@ -14,7 +14,7 @@
     "href": "index.html#instructor-details",
     "title": "Applied Computational Methods for Social Sciences",
     "section": "Instructor Details",
-    "text": "Instructor Details\nInstructors: Manuel Toral and Bogdan Popescu\nOffice: xx\nE-Mail: xx\nOffice Hours: xx",
+    "text": "Instructor Details\nInstructors: Manuel Toral, Jorge Juvenal Campos, and Bogdan Popescu\nE-Mail: jmtoral@tec.mx; juvenal.campos@tec.mx; bgpopescu@tec.mx Office Hours: xx",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
     ]
@@ -24,7 +24,7 @@
     "href": "index.html#course-description",
     "title": "Applied Computational Methods for Social Sciences",
     "section": "Course Description",
-    "text": "Course Description\nThis is an introductory course on using Python, a free and versatile programming language, to analyze text data. The course begins by building foundational programming skills in Python, including working with variables, loops, conditional statements, and data structures like lists, dictionaries, and arrays. In the second part, students will explore Python’s powerful tools for analyzing text data, such as social media posts, email correspondence, customer reviews, and political debates. The course also includes an introduction to ChatGPT and prompt engineering, teaching students how to leverage large language models for advanced text analysis tasks.\nThrough hands-on exercises, lectures, and projects, students will learn to process, clean, and analyze textual data systematically and reproducibly. By the end of the course, participants will be equipped with the skills to derive meaningful insights from textual information and integrate generative AI tools like ChatGPT into their workflows.\nNote: You should have a computer either Windows or Mac with at least 8GB of RAM memory.",
+    "text": "Course Description\nThis is an introductory course in data science for the social sciences and public policy analysis. The course begins with core conceptual foundations, including causality in the social sciences and the use of machine learning as a tool for empirical political and policy analysis. Students will then study predictive methods commonly used in social research, such as linear regression beyond traditional econometrics and classification techniques for categorizing social phenomena, along with sampling methods, model selection, and dimensionality reduction.\nIn the second part of the course, students are introduced to more flexible modeling approaches, including polynomial regression, splines, and decision trees, as well as Support Vector Machines and unsupervised learning methods for constructing social indicators. Through lectures and hands-on exercises based on real public policy problems, participants will learn to analyze data systematically, evaluate and interpret predictive models, and produce quantitative evidence relevant to contemporary social and political issues.\nThrough hands-on exercises, lectures, and projects, students will learn to process, clean, and analyze data systematically and reproducibly.\nNote: You should have a computer either Windows or Mac with at least 8GB of RAM memory.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
     ]
@@ -64,7 +64,7 @@
     "href": "index.html#assessment-methods",
     "title": "Applied Computational Methods for Social Sciences",
     "section": "Assessment methods:",
-    "text": "Assessment methods:\nYou will be graded on four problem sets during the semester (each 12.5% of your grade) and a final report and presentation (each 25% of your grade).\n\n4 problem sets: 50% of the final grade (12.5% each)\nfinal presentation: 25% of the final grade\nfinal project report: 25% of the final grade",
+    "text": "Assessment methods:\nYou will be graded on four problem sets during the semester (each 12.5% of your grade) and a final report and presentation (each 25% of your grade).\n\n4 problem sets: 40% of the final grade (12.5% each)\nmidtem: 15% of the final grade\nfinal exam: 15% of the final grade\nfinal presentation: 15% of the final grade\nfinal project report: 15% of the final grade",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
     ]
@@ -134,7 +134,7 @@
     "href": "index.html#required-books",
     "title": "Applied Computational Methods for Social Sciences",
     "section": "Required Books",
-    "text": "Required Books\n\nGeneral Books on Python\nMcKinney, Wes, 2022. Python for Data Analysis. O’Reilly. https://wesmckinney.com/book/.\n\nText Analysis\nHovy, Dirk. 2020. Text Analysis in Python for Social Scientists. Cambridge University Press. https://www.cambridge.org/core/elements/abs/text-analysis-in-python-for-social-scientists/BFAB0A3604C7E29F6198EA2F7941DFF3\nBengfort, Benjamin, Bilbro, Rebecca, and Tony Ojeda. 2018. Applied Text Analysis with Python. O’Reilly Media, Inc. https://www.oreilly.com/library/view/applied-text-analysis/9781491963036/\nHvitfeldt, Emil and Silge, Julia. 2022. Supervised Machine Learning for Text Analysis in R. CRC Press. https://smltar.com\nGrimmer, Justin, Brandon M. Stewart, and Margaret E. Roberts. Text As Data: A New Framework for Machine Learning and the Social Sciences. Princeton University Press, 2022.\nSilge, Julia, and David Robinson. Text Mining with R: A Tidy Approach.. First edition. O’Reilly, 2017.",
+    "text": "Required Books\n\nGeneral Books on Python\nMcKinney, Wes, 2022. Python for Data Analysis. O’Reilly. https://wesmckinney.com/book/.\n\nText Analysis\nHovy, Dirk. 2020. Text Analysis in Python for Social Scientists. Cambridge University Press. https://www.cambridge.org/core/elements/abs/text-analysis-in-python-for-social-scientists/BFAB0A3604C7E29F6198EA2F7941DFF3\nBengfort, Benjamin, Bilbro, Rebecca, and Tony Ojeda. 2018. Applied Text Analysis with Python. O’Reilly Media, Inc. https://www.oreilly.com/library/view/applied-text-analysis/9781491963036/\nHvitfeldt, Emil and Silge, Julia. 2022. Supervised Machine Learning for Text Analysis in R. CRC Press. https://smltar.com\nGrimmer, Justin, Brandon M. Stewart, and Margaret E. Roberts. Text As Data: A New Framework for Machine Learning and the Social Sciences. Princeton University Press, 2022.\nSilge, Julia, and David Robinson. Text Mining with R: A Tidy Approach.. First edition. O’Reilly, 2017.\n\nDates:\nWeek 1 Session 1: 02/10/2025 - Introduction and course overview Session 2: 02/11/2025 - Installing R Quarto files: notebooks vs. presentations Session 3: 02/13/2025 - Practice\nWeek 2 Session 1: 02/17/2025 - Classes, Vectors, Operations, Matrices, Dataframes Session 2: 02/18/2025 - Importing Data Session 3: 02/20/2025 - Practice\nAssignment 1\nWeek 3 Session 1: 02/24/2025 - Reading Data and Working Directories Session 2: 02/25/2025 - Relational Data, Dates and Joins Session 3: 02/27/2025 - Practice\nResubmit Assignment 1\nWeek 4 Session 1: 03/03/2025 - Data Viz 1 Session 2: 03/04/2025 - Data Viz 2 Session 3: 03/06/2025 - Practice\nWeek 5 Session 1: 03/10/2025 - Data Viz 3 Session 2: 03/11/2025 - Practice Session 3: 03/13/2025 - Practice\nAssignment 2\nWeek 7 Session 1: 03/24/2026 - Review for Exam Session 2: 03/25/2026 - Exam Session 3: 03/27/2026 - Intro to Machine Learning\nResubmit Assignment 2\nWeek 8 04/07/2026 - Intro to Machine Learning: Supervised/Non-Supervised Learning 04/08/2026 - Linear Regression 04/10/2026 - Practice\nWeek 9 04/14/2026 - Cost Function 1 04/15/2026 - Cost Function 2 04/17/2026 - Practice\nAssignment 3\nWeek 10 04/21 - Gradient Descent 1 04/22 - Gradient Descent 2 04/24 - Practice\nResubmit Assignment 3\nWeek 11 04/28 - Learning Rate 04/29 - Gradient Descent for Linear Regression 05/01 - no class\nWeek 13 05/12 - Combining LLM and Machine Learning 05/13 - Combining LLM and Machine Learning 05/15 - Practice\nAssignment 4\nWeek 14 05/19 - Project Proposals 05/20 - Project Proposals 05/22 - Final Exam Review\nResubmit Assignment 4\nWeek 15 05/26 - Final Exam 05/27 - Project Development 05/29 - Project Development\nWeek 16 06/02 - Project Development 06/03 - Presentations 06/05 - Presentations\nWeek 17 06/09 - Presentations 06/10 - Presentations 06/12 - Presentations",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
     ]
@@ -267,6 +267,16 @@
     "text": "Lecture 21: Sentiment Analysis\n\nLexicon-based approaches, machine learning\nVADER sentiment analysis, transformers\nZero-shot classification\n\n\n\n\n\nOpen slides in a new window\n\n\nLecture 22: Making a Quarto Website\n\nMaking a website on Quarto\nStoring a website on GitHub\nStructuring a professional website for Data Analytics Jobs\nWebsite Troubleshooting\n\n\n\n\n\nOpen slides in a new window",
     "crumbs": [
       "<span class='chapter-number'>14</span>  <span class='chapter-title'>13 Sentiment Analysis & GitHub Websites</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#activities",
+    "href": "index.html#activities",
+    "title": "Applied Computational Methods for Social Sciences",
+    "section": "Activities",
+    "text": "Activities\n\nIndividual and team-based research on the different prediction methods discussed in the module.\nSolving exercises, problems, and case studies both individually and collaboratively in order to develop the ability to identify public policy problems or research questions that require accurate prediction of a phenomenon. Once the nature of the problem has been identified, students will select the statistical tools that best fit the data and the research questions in order to carry out the statistical analysis.\nFieldwork in real-world settings where the challenge involves making accurate predictions of social phenomena, interacting with colleagues and key stakeholders involved in solving the problem.\nPreparation of documentation of the results produced by the computational tool.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
     ]
   }
 ]
