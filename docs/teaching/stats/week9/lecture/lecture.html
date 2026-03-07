@@ -1,0 +1,2377 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="lecture_files/libs/clipboard/clipboard.min.js"></script>
+<script src="lecture_files/libs/quarto-html/tabby.min.js"></script>
+<script src="lecture_files/libs/quarto-html/popper.min.js"></script>
+<script src="lecture_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="lecture_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="lecture_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="lecture_files/libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.6.40">
+
+  <meta name="author" content="Bogdan G. Popescu">
+  <title>Statistical Analysis</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-eb6d988269a85a3d2831a8eb2c365c63.css">
+  <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  <script src="lecture_files/libs/quarto-diagram/mermaid.min.js"></script>
+  <script src="lecture_files/libs/quarto-diagram/mermaid-init.js"></script>
+  <link href="lecture_files/libs/quarto-diagram/mermaid.css" rel="stylesheet">
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Statistical Analysis</h1>
+  <p class="subtitle">Lecture 9: Bivariate Regression</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a>
+</div>
+<div class="quarto-title-author-email">
+<a href="mailto:bogdan.popescu@johncabot.edu">bogdan.popescu@johncabot.edu</a>
+</div>
+        <p class="quarto-title-affiliation">
+            John Cabot University
+          </p>
+    </div>
+</div>
+
+</section>
+<section class="slide level2">
+
+<style>
+.reveal section[data-background-color="#1e293b"] h1 {
+  color: #f9fafb !important;
+  border-bottom: 3px solid #b44527;
+  padding-bottom: 0.35em;
+  display: inline-block;
+}
+</style>
+</section>
+<section>
+<section id="introduction" class="title-slide slide level1 center" data-background-color="#1e293b">
+<h1>Introduction</h1>
+
+</section>
+<section id="from-correlation-to-regression" class="slide level2">
+<h2>From Correlation to Regression</h2>
+<ul>
+<li>Previously: Pearson correlation coefficient (<span class="math inline">\(r\)</span>)
+<ul>
+<li>Measures <strong>strength and direction</strong> of a linear relationship</li>
+</ul></li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Limitation: <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are <strong>interchangeable</strong>
+<ul>
+<li><span class="math inline">\(r\)</span> does not distinguish IV from DV</li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Today: <strong>regression</strong> lets us <strong>predict</strong> <span class="math inline">\(Y\)</span> from <span class="math inline">\(X\)</span>
+<ul>
+<li>Assigns roles: <span class="math inline">\(X\)</span> is the predictor, <span class="math inline">\(Y\)</span> is the outcome</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="pearson-correlation-recap" class="slide level2">
+<h2>Pearson Correlation (Recap)</h2>
+<p><span class="math display">\[
+r = \frac{\frac{\sum(X_i - \bar{X})(Y_i - \bar{Y})}{n}}{s_X \cdot s_Y}
+\]</span></p>
+<ul>
+<li>Ranges from <span class="math inline">\(-1\)</span> to <span class="math inline">\(+1\)</span></li>
+<li>Does <strong>not</strong> imply causation</li>
+<li>Treats <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> symmetrically</li>
+</ul>
+</section></section>
+<section>
+<section id="notation" class="title-slide slide level1 center" data-background-color="#1e293b">
+<h1>Notation</h1>
+
+</section>
+<section id="population-vs.-sample-notation" class="slide level2">
+<h2>Population vs.&nbsp;Sample Notation</h2>
+<p>Before building the regression equation, we distinguish <strong>population</strong> parameters from <strong>sample</strong> statistics:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Concept</th>
+<th>Population</th>
+<th>Sample</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Mean</td>
+<td><span class="math inline">\(\mu_X\)</span>, <span class="math inline">\(\mu_Y\)</span></td>
+<td><span class="math inline">\(\bar{X}\)</span>, <span class="math inline">\(\bar{Y}\)</span></td>
+</tr>
+<tr class="even">
+<td>Std. Dev.</td>
+<td><span class="math inline">\(\sigma_X\)</span>, <span class="math inline">\(\sigma_Y\)</span></td>
+<td><span class="math inline">\(s_X\)</span>, <span class="math inline">\(s_Y\)</span></td>
+</tr>
+<tr class="odd">
+<td>Size</td>
+<td><span class="math inline">\(N\)</span></td>
+<td><span class="math inline">\(n\)</span></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>We observe the <strong>sample</strong> but want to learn about the <strong>population</strong></li>
+</ul>
+</section>
+<section id="sample-standard-deviation" class="slide level2">
+<h2>Sample Standard Deviation</h2>
+<p><span class="math display">\[s_Y = \sqrt{\frac{\sum_{i=1}^{n}(Y_i - \bar{Y})^2}{n}}\]</span></p>
+<ul>
+<li><span class="math inline">\(Y_i\)</span>: the <span class="math inline">\(i\)</span>th value of variable <span class="math inline">\(Y\)</span></li>
+<li><span class="math inline">\(\bar{Y}\)</span>: sample mean of <span class="math inline">\(Y\)</span></li>
+<li><span class="math inline">\(n\)</span>: sample size</li>
+</ul>
+</section>
+<section id="regression-notation" class="slide level2">
+<h2>Regression Notation</h2>
+<p>The regression equation can be written two equivalent ways:</p>
+<p><span class="math display">\[\hat{Y} = bX + a \quad \text{or} \quad \hat{y} = \hat{\beta}_0 + \hat{\beta}_1 x + \epsilon\]</span></p>
+<div class="fragment">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Symbol</th>
+<th>Equivalent</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\hat{\beta}_0\)</span></td>
+<td><span class="math inline">\(a\)</span></td>
+<td>Intercept</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\hat{\beta}_1\)</span></td>
+<td><span class="math inline">\(b\)</span></td>
+<td>Slope</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\epsilon\)</span></td>
+<td></td>
+<td>Error term</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="estimates-vs.-true-values" class="slide level2">
+<h2>Estimates vs.&nbsp;True Values</h2>
+<p><span class="math display">\[\hat{y} = \hat{\beta}_0 + \hat{\beta}_1 x + \epsilon \quad \text{(sample estimate)}\]</span></p>
+<p><span class="math display">\[y = \beta_0 + \beta_1 x + \epsilon \quad \text{(true population)}\]</span></p>
+<div class="fragment">
+<ul>
+<li>The <strong>hat</strong> (<span class="math inline">\(\hat{}\)</span>) denotes an <strong>estimate</strong> from sample data</li>
+<li><span class="math inline">\(\hat{\beta}_1\)</span> is our best guess of the true <span class="math inline">\(\beta_1\)</span></li>
+<li><span class="math inline">\(b\)</span> and <span class="math inline">\(\hat{\beta}_1\)</span> refer to the same quantity</li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="the-regression-line" class="title-slide slide level1 center" data-background-color="#1e293b">
+<h1>The Regression Line</h1>
+
+</section>
+<section id="the-regression-equation" class="slide level2">
+<h2>The Regression Equation</h2>
+<p>We make predictions with <strong>regressions</strong>:</p>
+<p><span class="math display">\[\hat{Y}_i = bX_i + a\]</span></p>
+<div class="fragment">
+<ul>
+<li><span class="math inline">\(\hat{Y}_i\)</span>: predicted value of the dependent variable</li>
+<li><span class="math inline">\(X_i\)</span>: observed value of the independent variable</li>
+<li><span class="math inline">\(b\)</span> (<span class="math inline">\(\hat{\beta}_1\)</span>): <strong>slope</strong> — change in <span class="math inline">\(Y\)</span> per unit of <span class="math inline">\(X\)</span></li>
+<li><span class="math inline">\(a\)</span> (<span class="math inline">\(\hat{\beta}_0\)</span>): <strong>intercept</strong> — predicted <span class="math inline">\(Y\)</span> when <span class="math inline">\(X = 0\)</span></li>
+</ul>
+</div>
+<div class="fragment">
+<p>Similar to <span class="math inline">\(y = mx + b\)</span> from algebra</p>
+</div>
+</section>
+<section id="computing-the-slope-b" class="slide level2">
+<h2>Computing the Slope (<span class="math inline">\(b\)</span>)</h2>
+<p><span class="math display">\[b = r \cdot \frac{s_Y}{s_X}\]</span></p>
+<div class="fragment">
+<ul>
+<li><span class="math inline">\(r\)</span>: correlation between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span></li>
+<li><span class="math inline">\(s_Y\)</span>: standard deviation of <span class="math inline">\(Y\)</span></li>
+<li><span class="math inline">\(s_X\)</span>: standard deviation of <span class="math inline">\(X\)</span></li>
+</ul>
+</div>
+</section>
+<section id="computing-the-intercept-a" class="slide level2">
+<h2>Computing the Intercept (<span class="math inline">\(a\)</span>)</h2>
+<p>Once we know <span class="math inline">\(b\)</span>, we compute <span class="math inline">\(a\)</span> using the sample means:</p>
+<p><span class="math display">\[a = \bar{Y} - b\bar{X}\]</span></p>
+<ul>
+<li>The regression line passes through <span class="math inline">\((\bar{X}, \bar{Y})\)</span></li>
+</ul>
+<div class="fragment">
+<p><strong>Caution on interpreting <span class="math inline">\(a\)</span></strong>: The intercept is the predicted <span class="math inline">\(Y\)</span> when <span class="math inline">\(X = 0\)</span>. If <span class="math inline">\(X = 0\)</span> does not exist in the data, <span class="math inline">\(a\)</span> is an <strong>out-of-sample extrapolation</strong> and may not be substantively meaningful.</p>
+</div>
+</section></section>
+<section>
+<section id="worked-example" class="title-slide slide level1 center" data-background-color="#1e293b">
+<h1>Worked Example</h1>
+
+</section>
+<section id="our-running-example" class="slide level2">
+<h2>Our Running Example</h2>
+<p><strong>Question</strong>: Does urbanization predict life expectancy?</p>
+<ul>
+<li><span class="math inline">\(X\)</span> = urbanization (% urban population)</li>
+<li><span class="math inline">\(Y\)</span> = life expectancy (years)</li>
+<li><span class="math inline">\(n\)</span> = 214 countries (2015 data)</li>
+</ul>
+</section>
+<section id="step-1-compute-means" class="slide level2">
+<h2>Step 1: Compute Means</h2>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top">
+<caption>Sample means</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Statistic</th>
+<th style="text-align: left;">Formula</th>
+<th style="text-align: right;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Mean of X (urbanization)</td>
+<td style="text-align: left;"><span class="math inline">\(\bar{X} = \frac{\sum X_i}{n}\)</span></td>
+<td style="text-align: right;">60.132</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mean of Y (life expectancy)</td>
+<td style="text-align: left;"><span class="math inline">\(\bar{Y} = \frac{\sum Y_i}{n}\)</span></td>
+<td style="text-align: right;">72.078</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="step-2-compute-standard-deviations" class="slide level2">
+<h2>Step 2: Compute Standard Deviations</h2>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top">
+<caption>Sample standard deviations</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Statistic</th>
+<th style="text-align: right;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">SD of X</td>
+<td style="text-align: right;">23.9784</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">SD of Y</td>
+<td style="text-align: right;">7.8963</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><span class="math display">\[s_X = \sqrt{\frac{\sum(X_i - \bar{X})^2}{n}} = 23.9784\]</span></p>
+<p><span class="math display">\[s_Y = \sqrt{\frac{\sum(Y_i - \bar{Y})^2}{n}} = 7.8963\]</span></p>
+</section>
+<section id="step-3-compute-the-correlation" class="slide level2">
+<h2>Step 3: Compute the Correlation</h2>
+<p><span class="math display">\[r = \frac{\frac{\sum(X_i - \bar{X})(Y_i - \bar{Y})}{n}}{s_X \cdot s_Y} = 0.5968\]</span></p>
+</section>
+<section id="step-4-compute-b-and-a" class="slide level2">
+<h2>Step 4: Compute <span class="math inline">\(b\)</span> and <span class="math inline">\(a\)</span></h2>
+<p><span class="math display">\[b = r \cdot \frac{s_Y}{s_X} = 0.5968 \times \frac{7.8963}{23.9784} = 0.1965\]</span></p>
+<div class="fragment">
+<p><span class="math display">\[a = \bar{Y} - b\bar{X} = 72.078 - 0.1965 \times 60.132 = 60.2599\]</span></p>
+</div>
+<div class="fragment">
+<p><strong>Our regression equation:</strong></p>
+<p><span class="math display">\[\hat{Y}_i = 0.1965 \cdot X_i + 60.2599\]</span></p>
+</div>
+</section>
+<section id="summary-of-parameters" class="slide level2">
+<h2>Summary of Parameters</h2>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top">
+<caption>Regression parameters</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: right;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">X-bar (mean urbanization)</td>
+<td style="text-align: right;">60.1322</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Y-bar (mean life expectancy)</td>
+<td style="text-align: right;">72.0776</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">s_X</td>
+<td style="text-align: right;">23.9784</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">s_Y</td>
+<td style="text-align: right;">7.8963</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">r (correlation)</td>
+<td style="text-align: right;">0.5968</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">b (slope)</td>
+<td style="text-align: right;">0.1965</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">a (intercept)</td>
+<td style="text-align: right;">60.2599</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section></section>
+<section>
+<section id="building-the-table-step-by-step" class="title-slide slide level1 center" data-background-color="#1e293b">
+<h1>Building the Table Step by Step</h1>
+
+</section>
+<section id="table-original-data" class="slide level2">
+<h2>Table: Original Data</h2>
+<div style="font-size: 0.72em;">
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Entity</th>
+<th style="text-align: right;">Life Expectancy</th>
+<th style="text-align: right;">Urbanization</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Afghanistan</td>
+<td style="text-align: right;">62.7</td>
+<td style="text-align: right;">24.803</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Albania</td>
+<td style="text-align: right;">78.6</td>
+<td style="text-align: right;">57.434</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Algeria</td>
+<td style="text-align: right;">75.6</td>
+<td style="text-align: right;">70.848</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">American Samoa</td>
+<td style="text-align: right;">72.5</td>
+<td style="text-align: right;">87.238</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">…</td>
+<td style="text-align: right;">…</td>
+<td style="text-align: right;">…</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Zimbabwe</td>
+<td style="text-align: right;">59.6</td>
+<td style="text-align: right;">32.385</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>X-bar</strong></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">60.132</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="table-adding-bary" class="slide level2">
+<h2>Table: Adding <span class="math inline">\(\bar{Y}\)</span></h2>
+<div style="font-size: 0.72em;">
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Entity</th>
+<th style="text-align: right;">Life Expectancy</th>
+<th style="text-align: right;">Urbanization</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Afghanistan</td>
+<td style="text-align: right;">62.7</td>
+<td style="text-align: right;">24.803</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Albania</td>
+<td style="text-align: right;">78.6</td>
+<td style="text-align: right;">57.434</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Algeria</td>
+<td style="text-align: right;">75.6</td>
+<td style="text-align: right;">70.848</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">American Samoa</td>
+<td style="text-align: right;">72.5</td>
+<td style="text-align: right;">87.238</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">…</td>
+<td style="text-align: right;">…</td>
+<td style="text-align: right;">…</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Zimbabwe</td>
+<td style="text-align: right;">59.6</td>
+<td style="text-align: right;">32.385</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>X-bar</strong></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">60.132</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Y-bar</strong></td>
+<td style="text-align: right;">72.078</td>
+<td style="text-align: right;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="table-adding-b" class="slide level2">
+<h2>Table: Adding <span class="math inline">\(b\)</span></h2>
+<p><span class="math inline">\(b = r \cdot \frac{s_Y}{s_X} = 0.1965\)</span></p>
+<div style="font-size: 0.72em;">
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Entity</th>
+<th style="text-align: right;">Life Expectancy</th>
+<th style="text-align: right;">Urbanization</th>
+<th style="text-align: right;">b</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Afghanistan</td>
+<td style="text-align: right;">62.7</td>
+<td style="text-align: right;">24.803</td>
+<td style="text-align: right;">0.1965</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Albania</td>
+<td style="text-align: right;">78.6</td>
+<td style="text-align: right;">57.434</td>
+<td style="text-align: right;">0.1965</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Algeria</td>
+<td style="text-align: right;">75.6</td>
+<td style="text-align: right;">70.848</td>
+<td style="text-align: right;">0.1965</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">American Samoa</td>
+<td style="text-align: right;">72.5</td>
+<td style="text-align: right;">87.238</td>
+<td style="text-align: right;">0.1965</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">…</td>
+<td style="text-align: right;">…</td>
+<td style="text-align: right;">…</td>
+<td style="text-align: right;">…</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Zimbabwe</td>
+<td style="text-align: right;">59.6</td>
+<td style="text-align: right;">32.385</td>
+<td style="text-align: right;">0.1965</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>X-bar</strong></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">60.132</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Y-bar</strong></td>
+<td style="text-align: right;">72.078</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="table-adding-a" class="slide level2">
+<h2>Table: Adding <span class="math inline">\(a\)</span></h2>
+<p><span class="math inline">\(a = \bar{Y} - b\bar{X} = 60.2599\)</span></p>
+<div style="font-size: 0.68em;">
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Entity</th>
+<th style="text-align: right;">Life Exp.</th>
+<th style="text-align: right;">Urbanization</th>
+<th style="text-align: right;">b</th>
+<th style="text-align: right;">a</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Afghanistan</td>
+<td style="text-align: right;">62.7</td>
+<td style="text-align: right;">24.803</td>
+<td style="text-align: right;">0.1965</td>
+<td style="text-align: right;">60.2599</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Albania</td>
+<td style="text-align: right;">78.6</td>
+<td style="text-align: right;">57.434</td>
+<td style="text-align: right;">0.1965</td>
+<td style="text-align: right;">60.2599</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Algeria</td>
+<td style="text-align: right;">75.6</td>
+<td style="text-align: right;">70.848</td>
+<td style="text-align: right;">0.1965</td>
+<td style="text-align: right;">60.2599</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">American Samoa</td>
+<td style="text-align: right;">72.5</td>
+<td style="text-align: right;">87.238</td>
+<td style="text-align: right;">0.1965</td>
+<td style="text-align: right;">60.2599</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">…</td>
+<td style="text-align: right;">…</td>
+<td style="text-align: right;">…</td>
+<td style="text-align: right;">…</td>
+<td style="text-align: right;">…</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Zimbabwe</td>
+<td style="text-align: right;">59.6</td>
+<td style="text-align: right;">32.385</td>
+<td style="text-align: right;">0.1965</td>
+<td style="text-align: right;">60.2599</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>X-bar</strong></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">60.132</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Y-bar</strong></td>
+<td style="text-align: right;">72.078</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="table-adding-haty-operations" class="slide level2">
+<h2>Table: Adding <span class="math inline">\(\hat{Y}\)</span> (Operations)</h2>
+<p><span class="math inline">\(\hat{Y}_i = b \cdot X_i + a\)</span></p>
+<div style="font-size: 0.62em;">
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top">
+<colgroup>
+<col style="width: 19%">
+<col style="width: 13%">
+<col style="width: 17%">
+<col style="width: 9%">
+<col style="width: 10%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Entity</th>
+<th style="text-align: right;">Life Exp.</th>
+<th style="text-align: right;">Urbanization</th>
+<th style="text-align: right;">b</th>
+<th style="text-align: right;">a</th>
+<th style="text-align: right;">Y-hat</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Afghanistan</td>
+<td style="text-align: right;">62.7</td>
+<td style="text-align: right;">24.803</td>
+<td style="text-align: right;">0.1965</td>
+<td style="text-align: right;">60.2599</td>
+<td style="text-align: right;">0.197 * 24.803 + 60.26</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Albania</td>
+<td style="text-align: right;">78.6</td>
+<td style="text-align: right;">57.434</td>
+<td style="text-align: right;">0.1965</td>
+<td style="text-align: right;">60.2599</td>
+<td style="text-align: right;">0.197 * 57.434 + 60.26</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Algeria</td>
+<td style="text-align: right;">75.6</td>
+<td style="text-align: right;">70.848</td>
+<td style="text-align: right;">0.1965</td>
+<td style="text-align: right;">60.2599</td>
+<td style="text-align: right;">0.197 * 70.848 + 60.26</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">American Samoa</td>
+<td style="text-align: right;">72.5</td>
+<td style="text-align: right;">87.238</td>
+<td style="text-align: right;">0.1965</td>
+<td style="text-align: right;">60.2599</td>
+<td style="text-align: right;">0.197 * 87.238 + 60.26</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">…</td>
+<td style="text-align: right;">…</td>
+<td style="text-align: right;">…</td>
+<td style="text-align: right;">…</td>
+<td style="text-align: right;">…</td>
+<td style="text-align: right;">…</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Zimbabwe</td>
+<td style="text-align: right;">59.6</td>
+<td style="text-align: right;">32.385</td>
+<td style="text-align: right;">0.1965</td>
+<td style="text-align: right;">60.2599</td>
+<td style="text-align: right;">0.197 * 32.385 + 60.26</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>X-bar</strong></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">60.132</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Y-bar</strong></td>
+<td style="text-align: right;">72.078</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="table-adding-haty-results" class="slide level2">
+<h2>Table: Adding <span class="math inline">\(\hat{Y}\)</span> (Results)</h2>
+<div style="font-size: 0.62em;">
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Entity</th>
+<th style="text-align: right;">Life Exp.</th>
+<th style="text-align: right;">Urbanization</th>
+<th style="text-align: right;">b</th>
+<th style="text-align: right;">a</th>
+<th style="text-align: right;">Y-hat</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Afghanistan</td>
+<td style="text-align: right;">62.7</td>
+<td style="text-align: right;">24.803</td>
+<td style="text-align: right;">0.1965</td>
+<td style="text-align: right;">60.2599</td>
+<td style="text-align: right;">65.1344</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Albania</td>
+<td style="text-align: right;">78.6</td>
+<td style="text-align: right;">57.434</td>
+<td style="text-align: right;">0.1965</td>
+<td style="text-align: right;">60.2599</td>
+<td style="text-align: right;">71.5473</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Algeria</td>
+<td style="text-align: right;">75.6</td>
+<td style="text-align: right;">70.848</td>
+<td style="text-align: right;">0.1965</td>
+<td style="text-align: right;">60.2599</td>
+<td style="text-align: right;">74.1835</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">American Samoa</td>
+<td style="text-align: right;">72.5</td>
+<td style="text-align: right;">87.238</td>
+<td style="text-align: right;">0.1965</td>
+<td style="text-align: right;">60.2599</td>
+<td style="text-align: right;">77.4046</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">…</td>
+<td style="text-align: right;">…</td>
+<td style="text-align: right;">…</td>
+<td style="text-align: right;">…</td>
+<td style="text-align: right;">…</td>
+<td style="text-align: right;">…</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Zimbabwe</td>
+<td style="text-align: right;">59.6</td>
+<td style="text-align: right;">32.385</td>
+<td style="text-align: right;">0.1965</td>
+<td style="text-align: right;">60.2599</td>
+<td style="text-align: right;">66.6245</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>X-bar</strong></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">60.132</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Y-bar</strong></td>
+<td style="text-align: right;">72.078</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="five-countries-step-by-step" class="title-slide slide level1 center" data-background-color="#1e293b">
+<h1>Five Countries: Step by Step</h1>
+
+</section>
+<section id="five-countries-haty-operations" class="slide level2">
+<h2>Five Countries: <span class="math inline">\(\hat{Y}\)</span> Operations</h2>
+<p><span class="math inline">\(\hat{Y}_i = b \cdot X_i + a\)</span></p>
+<div style="font-size: 0.62em;">
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top">
+<colgroup>
+<col style="width: 19%">
+<col style="width: 13%">
+<col style="width: 17%">
+<col style="width: 9%">
+<col style="width: 10%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Entity</th>
+<th style="text-align: right;">Life Exp.</th>
+<th style="text-align: right;">Urbanization</th>
+<th style="text-align: right;">b</th>
+<th style="text-align: right;">a</th>
+<th style="text-align: right;">Y-hat</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">China</td>
+<td style="text-align: right;">77</td>
+<td style="text-align: right;">55.5</td>
+<td style="text-align: right;">0.1965</td>
+<td style="text-align: right;">60.2599</td>
+<td style="text-align: right;">0.197 * 55.5 + 60.26</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Italy</td>
+<td style="text-align: right;">82.5</td>
+<td style="text-align: right;">69.565</td>
+<td style="text-align: right;">0.1965</td>
+<td style="text-align: right;">60.2599</td>
+<td style="text-align: right;">0.197 * 69.565 + 60.26</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Spain</td>
+<td style="text-align: right;">82.6</td>
+<td style="text-align: right;">79.602</td>
+<td style="text-align: right;">0.1965</td>
+<td style="text-align: right;">60.2599</td>
+<td style="text-align: right;">0.197 * 79.602 + 60.26</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">United Kingdom</td>
+<td style="text-align: right;">80.9</td>
+<td style="text-align: right;">82.626</td>
+<td style="text-align: right;">0.1965</td>
+<td style="text-align: right;">60.2599</td>
+<td style="text-align: right;">0.197 * 82.626 + 60.26</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">United States</td>
+<td style="text-align: right;">78.9</td>
+<td style="text-align: right;">81.671</td>
+<td style="text-align: right;">0.1965</td>
+<td style="text-align: right;">60.2599</td>
+<td style="text-align: right;">0.197 * 81.671 + 60.26</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>X-bar</strong></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">60.132</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Y-bar</strong></td>
+<td style="text-align: right;">72.078</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="five-countries-haty-results" class="slide level2">
+<h2>Five Countries: <span class="math inline">\(\hat{Y}\)</span> Results</h2>
+<div style="font-size: 0.62em;">
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Entity</th>
+<th style="text-align: right;">Life Exp.</th>
+<th style="text-align: right;">Urbanization</th>
+<th style="text-align: right;">b</th>
+<th style="text-align: right;">a</th>
+<th style="text-align: right;">Y-hat</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">China</td>
+<td style="text-align: right;">77</td>
+<td style="text-align: right;">55.5</td>
+<td style="text-align: right;">0.1965</td>
+<td style="text-align: right;">60.2599</td>
+<td style="text-align: right;">71.1672</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Italy</td>
+<td style="text-align: right;">82.5</td>
+<td style="text-align: right;">69.565</td>
+<td style="text-align: right;">0.1965</td>
+<td style="text-align: right;">60.2599</td>
+<td style="text-align: right;">73.9314</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Spain</td>
+<td style="text-align: right;">82.6</td>
+<td style="text-align: right;">79.602</td>
+<td style="text-align: right;">0.1965</td>
+<td style="text-align: right;">60.2599</td>
+<td style="text-align: right;">75.9039</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">United Kingdom</td>
+<td style="text-align: right;">80.9</td>
+<td style="text-align: right;">82.626</td>
+<td style="text-align: right;">0.1965</td>
+<td style="text-align: right;">60.2599</td>
+<td style="text-align: right;">76.4982</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">United States</td>
+<td style="text-align: right;">78.9</td>
+<td style="text-align: right;">81.671</td>
+<td style="text-align: right;">0.1965</td>
+<td style="text-align: right;">60.2599</td>
+<td style="text-align: right;">76.3105</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>X-bar</strong></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">60.132</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Y-bar</strong></td>
+<td style="text-align: right;">72.078</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="five-countries-residual-operations" class="slide level2">
+<h2>Five Countries: Residual Operations</h2>
+<p><span class="math inline">\(\text{residual}_i = Y_i - \hat{Y}_i\)</span></p>
+<div style="font-size: 0.58em;">
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 14%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Entity</th>
+<th style="text-align: right;">Life Exp.</th>
+<th style="text-align: right;">Urb.</th>
+<th style="text-align: right;">b</th>
+<th style="text-align: right;">a</th>
+<th style="text-align: right;">Y-hat</th>
+<th style="text-align: right;">Residual</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">China</td>
+<td style="text-align: right;">77</td>
+<td style="text-align: right;">55.5</td>
+<td style="text-align: right;">0.1965</td>
+<td style="text-align: right;">60.2599</td>
+<td style="text-align: right;">71.1672</td>
+<td style="text-align: right;">77 - 71.167</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Italy</td>
+<td style="text-align: right;">82.5</td>
+<td style="text-align: right;">69.565</td>
+<td style="text-align: right;">0.1965</td>
+<td style="text-align: right;">60.2599</td>
+<td style="text-align: right;">73.9314</td>
+<td style="text-align: right;">82.5 - 73.931</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Spain</td>
+<td style="text-align: right;">82.6</td>
+<td style="text-align: right;">79.602</td>
+<td style="text-align: right;">0.1965</td>
+<td style="text-align: right;">60.2599</td>
+<td style="text-align: right;">75.9039</td>
+<td style="text-align: right;">82.6 - 75.904</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">United Kingdom</td>
+<td style="text-align: right;">80.9</td>
+<td style="text-align: right;">82.626</td>
+<td style="text-align: right;">0.1965</td>
+<td style="text-align: right;">60.2599</td>
+<td style="text-align: right;">76.4982</td>
+<td style="text-align: right;">80.9 - 76.498</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">United States</td>
+<td style="text-align: right;">78.9</td>
+<td style="text-align: right;">81.671</td>
+<td style="text-align: right;">0.1965</td>
+<td style="text-align: right;">60.2599</td>
+<td style="text-align: right;">76.3105</td>
+<td style="text-align: right;">78.9 - 76.311</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>X-bar</strong></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">60.132</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Y-bar</strong></td>
+<td style="text-align: right;">72.078</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="five-countries-residual-results" class="slide level2">
+<h2>Five Countries: Residual Results</h2>
+<div style="font-size: 0.58em;">
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Entity</th>
+<th style="text-align: right;">Life Exp.</th>
+<th style="text-align: right;">Urb.</th>
+<th style="text-align: right;">b</th>
+<th style="text-align: right;">a</th>
+<th style="text-align: right;">Y-hat</th>
+<th style="text-align: right;">Residual</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">China</td>
+<td style="text-align: right;">77</td>
+<td style="text-align: right;">55.5</td>
+<td style="text-align: right;">0.1965</td>
+<td style="text-align: right;">60.2599</td>
+<td style="text-align: right;">71.1672</td>
+<td style="text-align: right;">5.8328</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Italy</td>
+<td style="text-align: right;">82.5</td>
+<td style="text-align: right;">69.565</td>
+<td style="text-align: right;">0.1965</td>
+<td style="text-align: right;">60.2599</td>
+<td style="text-align: right;">73.9314</td>
+<td style="text-align: right;">8.5686</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Spain</td>
+<td style="text-align: right;">82.6</td>
+<td style="text-align: right;">79.602</td>
+<td style="text-align: right;">0.1965</td>
+<td style="text-align: right;">60.2599</td>
+<td style="text-align: right;">75.9039</td>
+<td style="text-align: right;">6.6961</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">United Kingdom</td>
+<td style="text-align: right;">80.9</td>
+<td style="text-align: right;">82.626</td>
+<td style="text-align: right;">0.1965</td>
+<td style="text-align: right;">60.2599</td>
+<td style="text-align: right;">76.4982</td>
+<td style="text-align: right;">4.4018</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">United States</td>
+<td style="text-align: right;">78.9</td>
+<td style="text-align: right;">81.671</td>
+<td style="text-align: right;">0.1965</td>
+<td style="text-align: right;">60.2599</td>
+<td style="text-align: right;">76.3105</td>
+<td style="text-align: right;">2.5895</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>X-bar</strong></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">60.132</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Y-bar</strong></td>
+<td style="text-align: right;">72.078</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="making-predictions" class="title-slide slide level1 center" data-background-color="#1e293b">
+<h1>Making Predictions</h1>
+
+</section>
+<section id="prediction-exercise-1" class="slide level2">
+<h2>Prediction Exercise 1</h2>
+<p>If a country has urbanization of <strong>77%</strong>, what is the predicted life expectancy?</p>
+<div class="fragment">
+<p><span class="math display">\[\hat{Y} = 0.1965 \times 77 + 60.2599 = 75.393\]</span></p>
+</div>
+</section>
+<section id="prediction-exercise-2" class="slide level2">
+<h2>Prediction Exercise 2</h2>
+<p>If a country has urbanization of <strong>10%</strong>, what is the predicted life expectancy?</p>
+<div class="fragment">
+<p><span class="math display">\[\hat{Y} = 0.1965 \times 10 + 60.2599 = 62.225\]</span></p>
+</div>
+</section></section>
+<section>
+<section id="plotting-the-regression-line" class="title-slide slide level1 center" data-background-color="#1e293b">
+<h1>Plotting the Regression Line</h1>
+
+</section>
+<section id="scatterplot-urbanization-vs.-life-expectancy" class="slide level2">
+<h2>Scatterplot: Urbanization vs.&nbsp;Life Expectancy</h2>
+
+<img data-src="lecture_files/figure-revealjs/scatter-full-1.png" width="768" class="r-stretch"></section>
+<section id="five-countries-observed-values" class="slide level2">
+<h2>Five Countries: Observed Values</h2>
+
+<img data-src="lecture_files/figure-revealjs/scatter-five-1.png" width="768" class="r-stretch"></section>
+<section id="five-countries-predicted-values" class="slide level2">
+<h2>Five Countries: Predicted Values</h2>
+
+<img data-src="lecture_files/figure-revealjs/scatter-predicted-1.png" width="768" class="r-stretch"></section></section>
+<section>
+<section id="residuals" class="title-slide slide level1 center" data-background-color="#1e293b">
+<h1>Residuals</h1>
+
+</section>
+<section id="what-is-a-residual" class="slide level2">
+<h2>What Is a Residual?</h2>
+<p>The <strong>residual</strong> is the difference between observed and predicted:</p>
+<p><span class="math display">\[\text{residual}_i = Y_i - \hat{Y}_i\]</span></p>
+<div class="fragment">
+<ul>
+<li><strong>Negative residual</strong>: country scored <strong>lower</strong> than predicted</li>
+<li><strong>Positive residual</strong>: country scored <strong>higher</strong> than predicted</li>
+</ul>
+</div>
+<div class="fragment">
+<p>The regression line <strong>minimizes</strong> the overall size of residuals — it is the <strong>line of best fit</strong></p>
+</div>
+</section>
+<section id="visualizing-residuals" class="slide level2">
+<h2>Visualizing Residuals</h2>
+
+<img data-src="lecture_files/figure-revealjs/resid-plot-1.png" width="768" class="r-stretch"></section>
+<section id="residuals-table" class="slide level2">
+<h2>Residuals Table</h2>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top">
+<caption>Residuals for five example countries</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Country</th>
+<th style="text-align: right;">Y (Observed)</th>
+<th style="text-align: right;">Ŷ (Predicted)</th>
+<th style="text-align: right;">Residual</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">China</td>
+<td style="text-align: right;">77.0</td>
+<td style="text-align: right;">71.167</td>
+<td style="text-align: right;">5.833</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Italy</td>
+<td style="text-align: right;">82.5</td>
+<td style="text-align: right;">73.931</td>
+<td style="text-align: right;">8.569</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Spain</td>
+<td style="text-align: right;">82.6</td>
+<td style="text-align: right;">75.904</td>
+<td style="text-align: right;">6.696</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">United Kingdom</td>
+<td style="text-align: right;">80.9</td>
+<td style="text-align: right;">76.498</td>
+<td style="text-align: right;">4.402</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">United States</td>
+<td style="text-align: right;">78.9</td>
+<td style="text-align: right;">76.311</td>
+<td style="text-align: right;">2.589</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section></section>
+<section>
+<section id="baseline-model-r²" class="title-slide slide level1 center" data-background-color="#1e293b">
+<h1>Baseline Model &amp; R²</h1>
+
+</section>
+<section id="the-baseline-model" class="slide level2">
+<h2>The Baseline Model</h2>
+<p>The simplest “model” predicts <span class="math inline">\(\bar{Y}\)</span> for everyone:</p>
+<p><span class="math display">\[\hat{Y}_i^{\text{baseline}} = \bar{Y}\]</span></p>
+<div class="fragment">
+<ul>
+<li>Baseline residual: <span class="math inline">\(Y_i - \bar{Y}\)</span></li>
+<li>How much does our regression <strong>improve</strong> over this?</li>
+</ul>
+</div>
+</section>
+<section id="comparing-residuals" class="slide level2">
+<h2>Comparing Residuals</h2>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top">
+<caption>Regression vs.&nbsp;baseline residuals</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Country</th>
+<th style="text-align: right;">Y</th>
+<th style="text-align: right;">Ŷ</th>
+<th style="text-align: right;">Resid (Regression)</th>
+<th style="text-align: right;">Resid (Baseline)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">China</td>
+<td style="text-align: right;">77.0</td>
+<td style="text-align: right;">71.167</td>
+<td style="text-align: right;">5.833</td>
+<td style="text-align: right;">4.922</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Italy</td>
+<td style="text-align: right;">82.5</td>
+<td style="text-align: right;">73.931</td>
+<td style="text-align: right;">8.569</td>
+<td style="text-align: right;">10.422</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Spain</td>
+<td style="text-align: right;">82.6</td>
+<td style="text-align: right;">75.904</td>
+<td style="text-align: right;">6.696</td>
+<td style="text-align: right;">10.522</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">United Kingdom</td>
+<td style="text-align: right;">80.9</td>
+<td style="text-align: right;">76.498</td>
+<td style="text-align: right;">4.402</td>
+<td style="text-align: right;">8.822</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">United States</td>
+<td style="text-align: right;">78.9</td>
+<td style="text-align: right;">76.311</td>
+<td style="text-align: right;">2.589</td>
+<td style="text-align: right;">6.822</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="visualizing-the-baseline" class="slide level2">
+<h2>Visualizing the Baseline</h2>
+
+<img data-src="lecture_files/figure-revealjs/baseline-plot-1.png" width="768" class="r-stretch"></section>
+<section id="sum-of-squared-residuals" class="slide level2">
+<h2>Sum of Squared Residuals</h2>
+<p>We square residuals and sum them:</p>
+<div class="fragment">
+<p><strong>Total Sum of Squares (SST)</strong> — baseline model:</p>
+<p><span class="math display">\[SST = \sum_{i=1}^{n}(Y_i - \bar{Y})^2 = 1.334313\times 10^{4}\]</span></p>
+</div>
+<div class="fragment">
+<p><strong>Sum of Squared Residuals (SSR)</strong> — regression model:</p>
+<p><span class="math display">\[SSR = \sum_{i=1}^{n}(Y_i - \hat{Y}_i)^2 = 8590.86\]</span></p>
+</div>
+</section>
+<section id="r-squared-r2" class="slide level2">
+<h2>R-Squared (<span class="math inline">\(R^2\)</span>)</h2>
+<p><span class="math display">\[R^2 = \frac{SST - SSR}{SST} = 1 - \frac{SSR}{SST}\]</span></p>
+<div class="fragment">
+<p><span class="math display">\[R^2 = 1 - \frac{8590.86}{1.334313\times 10^{4}} = 0.3562\]</span></p>
+</div>
+<div class="fragment">
+<p><strong>Interpretation</strong>: Urbanization explains <strong>35.6%</strong> of the variance in life expectancy</p>
+</div>
+</section>
+<section id="interpreting-r2" class="slide level2">
+<h2>Interpreting <span class="math inline">\(R^2\)</span></h2>
+<ul>
+<li><span class="math inline">\(R^2\)</span> ranges from 0 to 1</li>
+<li><span class="math inline">\(R^2 = 0\)</span>: model explains <strong>nothing</strong></li>
+<li><span class="math inline">\(R^2 = 1\)</span>: model explains <strong>everything</strong></li>
+</ul>
+<div class="fragment">
+<p>“Our model explains X% of the variance in the outcome variable.”</p>
+</div>
+<div class="fragment">
+<p><strong>Practice</strong>: If <span class="math inline">\(R^2 = 0.4532\)</span>, how do you interpret it?</p>
+</div>
+<div class="fragment">
+<p>“Our model explains <strong>45%</strong> of the variance in the outcome.”</p>
+</div>
+</section></section>
+<section>
+<section id="running-regressions-in-r" class="title-slide slide level1 center" data-background-color="#1e293b">
+<h1>Running Regressions in R</h1>
+
+</section>
+<section id="the-lm-function" class="slide level2">
+<h2>The <code>lm()</code> Function</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(life_expectancy <span class="sc">~</span> urbanization, <span class="at">data =</span> final)</span>
+<span id="cb1-2"><a href=""></a><span class="fu">summary</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = life_expectancy ~ urbanization, data = final)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-17.861  -3.301   1.042   4.297  19.729 
+
+Coefficients:
+             Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  60.25992    1.17483   51.29   &lt;2e-16 ***
+urbanization  0.19653    0.01815   10.83   &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 6.366 on 212 degrees of freedom
+Multiple R-squared:  0.3562,    Adjusted R-squared:  0.3531 
+F-statistic: 117.3 on 1 and 212 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+</section>
+<section id="reading-r-output-coefficients" class="slide level2">
+<h2>Reading R Output: Coefficients</h2>
+<div style="font-size: 0.82em;">
+<table class="caption-top">
+<colgroup>
+<col style="width: 24%">
+<col style="width: 40%">
+<col style="width: 36%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Term</th>
+<th>Estimate</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>(Intercept)</code></td>
+<td>60.2599</td>
+<td><span class="math inline">\(a\)</span> — predicted <span class="math inline">\(Y\)</span> when <span class="math inline">\(X = 0\)</span> (extrapolation!)</td>
+</tr>
+<tr class="even">
+<td><code>urbanization</code></td>
+<td>0.1965</td>
+<td><span class="math inline">\(b\)</span> — change in <span class="math inline">\(Y\)</span> per unit <span class="math inline">\(X\)</span></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Std. Error</strong>: precision of the estimate</li>
+<li><strong>t value</strong>: <span class="math inline">\(\text{Estimate} / \text{Std. Error}\)</span></li>
+<li><strong>Pr(&gt;|t|)</strong>: p-value for <span class="math inline">\(H_0: \beta = 0\)</span></li>
+<li><code>***</code>: <span class="math inline">\(p &lt; 0.001\)</span> (highly significant)</li>
+</ul>
+</div>
+</section>
+<section id="reading-r-output-model-fit" class="slide level2">
+<h2>Reading R Output: Model Fit</h2>
+<ul>
+<li><strong>Multiple R-squared</strong>: 0.3562 — variance explained</li>
+<li><strong>F-statistic</strong>: overall model significance</li>
+<li><strong>Residual standard error</strong>: typical prediction error</li>
+</ul>
+</section></section>
+<section>
+<section id="standard-errors" class="title-slide slide level1 center" data-background-color="#1e293b">
+<h1>Standard Errors</h1>
+
+</section>
+<section id="standard-error-of-b" class="slide level2">
+<h2>Standard Error of <span class="math inline">\(b\)</span></h2>
+<p><span class="math display">\[SE(b) = \sqrt{\frac{1}{n-2} \cdot \frac{\sum(Y_i - \hat{Y}_i)^2}{\sum(X_i - \bar{X})^2}}\]</span></p>
+<div class="fragment">
+<ul>
+<li><strong>Numerator</strong>: sum of squared residuals (<span class="math inline">\(SSR\)</span>)</li>
+<li><strong>Denominator</strong>: spread of <span class="math inline">\(X\)</span> values</li>
+<li>Smaller SE → more precise estimate</li>
+</ul>
+</div>
+</section>
+<section id="computing-seb" class="slide level2">
+<h2>Computing SE(b)</h2>
+<p><span class="math display">\[SE(b) = \sqrt{\frac{1}{214-2} \cdot \frac{8590.86}{1.2304188\times 10^{5}}} = 0.018148\]</span></p>
+<p>This matches the R output: 0.018148</p>
+</section></section>
+<section>
+<section id="ols-assumptions" class="title-slide slide level1 center" data-background-color="#1e293b">
+<h1>OLS Assumptions</h1>
+
+</section>
+<section id="three-assumptions-for-unbiasedness" class="slide level2">
+<h2>Three Assumptions for Unbiasedness</h2>
+<p>We want <span class="math inline">\(\hat{\beta}_1 = \beta_1\)</span> (unbiased). Three assumptions:</p>
+<div class="fragment">
+<ol type="1">
+<li><strong>Linearity</strong>: <span class="math inline">\(Y\)</span> is linearly related to <span class="math inline">\(X\)</span></li>
+</ol>
+</div>
+<div class="fragment">
+<ol start="2" type="1">
+<li><strong>Random Sampling</strong>: observations are independently drawn</li>
+</ol>
+</div>
+<div class="fragment">
+<ol start="3" type="1">
+<li><strong>Zero Conditional Mean</strong>: <span class="math inline">\(E(\epsilon | X) = 0\)</span></li>
+</ol>
+</div>
+</section>
+<section id="zero-conditional-mean" class="slide level2">
+<h2>Zero Conditional Mean</h2>
+<p><span class="math inline">\(E(\epsilon | X) = 0\)</span> means: <strong>knowing <span class="math inline">\(X\)</span> tells you nothing about the error</strong></p>
+<div class="fragment">
+<ul>
+<li>For any value of <span class="math inline">\(X\)</span>, the average error is zero</li>
+<li>The unobserved factors affecting <span class="math inline">\(Y\)</span> are <strong>uncorrelated</strong> with <span class="math inline">\(X\)</span></li>
+</ul>
+</div>
+<div class="fragment">
+<p>This is the assumption <strong>most frequently violated</strong> in observational data — and the most consequential</p>
+</div>
+</section>
+<section id="why-zero-conditional-mean-fails" class="slide level2">
+<h2>Why Zero Conditional Mean Fails</h2>
+<p>When an <strong>omitted variable</strong> affects both <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>:</p>
+<div class="fragment">
+<p><strong>Example</strong>: Urbanization <span class="math inline">\(\rightarrow\)</span> Life Expectancy</p>
+<ul>
+<li>Wealthier countries are more urbanized <strong>and</strong> have better healthcare</li>
+<li>GDP affects both <span class="math inline">\(X\)</span> (urbanization) and <span class="math inline">\(Y\)</span> (life expectancy)</li>
+<li>Our estimate of <span class="math inline">\(b\)</span> absorbs the effect of GDP <span class="math inline">\(\rightarrow\)</span> <strong>omitted variable bias</strong></li>
+</ul>
+</div>
+<div class="fragment">
+<p>Other violations: <strong>reverse causality</strong> (<span class="math inline">\(Y\)</span> also causes <span class="math inline">\(X\)</span>) and <strong>selection bias</strong> (non-random sample)</p>
+</div>
+</section>
+<section id="what-omitted-variable-bias-means" class="slide level2">
+<h2>What Omitted Variable Bias Means</h2>
+<p>If <span class="math inline">\(E(\epsilon | X) \neq 0\)</span>:</p>
+<ul>
+<li><span class="math inline">\(\hat{\beta}_1 \neq \beta_1\)</span> — our slope estimate is <strong>biased</strong></li>
+<li>The regression still <strong>describes</strong> the data accurately</li>
+<li>But it does not give us a <strong>causal</strong> effect of <span class="math inline">\(X\)</span> on <span class="math inline">\(Y\)</span></li>
+</ul>
+<div class="fragment">
+<p><strong>Solutions</strong>: randomized experiments, instrumental variables, or controlling for confounders (future lectures)</p>
+</div>
+</section>
+<section id="homoskedasticity" class="slide level2">
+<h2>Homoskedasticity</h2>
+<p>Beyond unbiasedness, for valid <strong>standard errors</strong> we also need:</p>
+<ul>
+<li><strong>Homoskedasticity</strong>: <span class="math inline">\(\text{Var}(\epsilon | X) = \sigma^2\)</span> for all values of <span class="math inline">\(X\)</span></li>
+<li>The spread of residuals is <strong>constant</strong> across <span class="math inline">\(X\)</span></li>
+</ul>
+<div class="fragment">
+<p>If violated (<strong>heteroskedasticity</strong>):</p>
+<ul>
+<li><span class="math inline">\(\hat{\beta}_1\)</span> is still unbiased</li>
+<li>But standard errors, t-values, and p-values become <strong>unreliable</strong></li>
+</ul>
+</div>
+</section>
+<section id="diagnosing-heteroskedasticity" class="slide level2">
+<h2>Diagnosing Heteroskedasticity</h2>
+<p>Plot <strong>residuals vs.&nbsp;<span class="math inline">\(X\)</span></strong> and look for patterns:</p>
+<ul>
+<li><strong>Homoskedastic</strong>: points form a roughly even band around zero</li>
+<li><strong>Heteroskedastic</strong>: spread fans out (or narrows) as <span class="math inline">\(X\)</span> increases</li>
+</ul>
+
+<img data-src="lecture_files/figure-revealjs/homosk-plot-1.png" width="768" class="r-stretch"></section>
+<section id="addressing-heteroskedasticity" class="slide level2">
+<h2>Addressing Heteroskedasticity</h2>
+<p>If the residual plot shows fanning or clustering:</p>
+<ul>
+<li>Use <strong>robust standard errors</strong> (Huber-White / HC standard errors)</li>
+<li>These adjust SE calculations without changing <span class="math inline">\(\hat{\beta}_1\)</span></li>
+<li>In R: <code>lmtest::coeftest(model, vcov = sandwich::vcovHC)</code></li>
+</ul>
+</section></section>
+<section>
+<section id="binary-explanatory-variables" class="title-slide slide level1 center" data-background-color="#1e293b">
+<h1>Binary Explanatory Variables</h1>
+
+</section>
+<section id="regression-with-a-dummy-variable" class="slide level2">
+<h2>Regression with a Dummy Variable</h2>
+<p>So far, <span class="math inline">\(X\)</span> was continuous. What if <span class="math inline">\(X\)</span> is <strong>binary</strong> (0 or 1)?</p>
+<p><span class="math display">\[y = \beta_0 + \beta_1 x + \epsilon\]</span></p>
+<div class="fragment">
+<ul>
+<li>When <span class="math inline">\(x = 0\)</span>: <span class="math inline">\(E(y | x=0) = \beta_0\)</span></li>
+<li>When <span class="math inline">\(x = 1\)</span>: <span class="math inline">\(E(y | x=1) = \beta_0 + \beta_1\)</span></li>
+</ul>
+</div>
+<div class="fragment">
+<p><span class="math display">\[\beta_1 = E(y | x=1) - E(y | x=0)\]</span></p>
+<p><span class="math inline">\(\beta_1\)</span> is the <strong>difference in group means</strong></p>
+</div>
+</section>
+<section id="example-eu-membership" class="slide level2">
+<h2>Example: EU Membership</h2>
+<p><strong>Question</strong>: Do EU countries have higher life expectancy?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a>model_eu <span class="ot">&lt;-</span> <span class="fu">lm</span>(life_expectancy <span class="sc">~</span> eu, <span class="at">data =</span> final)</span>
+<span id="cb3-2"><a href=""></a><span class="fu">summary</span>(model_eu)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = life_expectancy ~ eu, data = final)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-19.898  -5.062   1.373   5.077  14.302 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  70.9979     0.5413 131.165  &lt; 2e-16 ***
+eu            8.5577     1.5239   5.616  6.1e-08 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 7.402 on 212 degrees of freedom
+Multiple R-squared:  0.1295,    Adjusted R-squared:  0.1254 
+F-statistic: 31.54 on 1 and 212 DF,  p-value: 6.099e-08</code></pre>
+</div>
+</div>
+</section>
+<section id="interpreting-the-eu-result" class="slide level2">
+<h2>Interpreting the EU Result</h2>
+<ul>
+<li><span class="math inline">\(\hat{\beta}_0 = 70.998\)</span>: average life expectancy for <strong>non-EU</strong> countries</li>
+<li><span class="math inline">\(\hat{\beta}_1 = 8.558\)</span>: EU countries live <strong>8.558</strong> years longer on average</li>
+</ul>
+<div class="fragment">
+<p><span class="math display">\[\beta_1 = E(\text{Life Exp.} | \text{EU}=1) - E(\text{Life Exp.} | \text{EU}=0)\]</span></p>
+</div>
+<div class="fragment">
+<p><strong>Caution</strong>: this does not prove EU membership <strong>causes</strong> longer life</p>
+</div>
+</section></section>
+<section>
+<section id="counterfactuals-policy-analysis" class="title-slide slide level1 center" data-background-color="#1e293b">
+<h1>Counterfactuals &amp; Policy Analysis</h1>
+
+</section>
+<section id="binary-variables-and-causality" class="slide level2">
+<h2>Binary Variables and Causality</h2>
+<p>Binary regressions are central to <strong>policy analysis</strong>:</p>
+<ul>
+<li>Treatment group (<span class="math inline">\(x = 1\)</span>) vs.&nbsp;control group (<span class="math inline">\(x = 0\)</span>)</li>
+<li><span class="math inline">\(\beta_1\)</span> = <strong>treatment effect</strong> (causal if properly designed)</li>
+</ul>
+<div class="fragment">
+<p>Examples of policy interventions:</p>
+<ul>
+<li>Free iPads <span class="math inline">\(\rightarrow\)</span> educational outcomes</li>
+<li>Plastic bag ban <span class="math inline">\(\rightarrow\)</span> pollution reduction</li>
+<li>Job training <span class="math inline">\(\rightarrow\)</span> income increase</li>
+</ul>
+</div>
+</section>
+<section id="the-average-treatment-effect" class="slide level2">
+<h2>The Average Treatment Effect</h2>
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">%%{init:{"theme":"base","themeVariables":{"fontSize":"22px","primaryColor":"#4a7c6f","primaryTextColor":"#1e293b","lineColor":"#334155"},"flowchart":{"useMaxWidth":true,"nodeSpacing":60,"rankSpacing":80}}}%%
+flowchart LR
+    A["Random&lt;br/&gt;Assignment"] --&gt; B["Treatment&lt;br/&gt;(x = 1)"]
+    A --&gt; C["Control&lt;br/&gt;(x = 0)"]
+    B --&gt; D["Outcome&lt;br/&gt;Y₁"]
+    C --&gt; E["Outcome&lt;br/&gt;Y₀"]
+    D --&gt; F["ATE =&lt;br/&gt;Ȳ₁ − Ȳ₀"]
+    E --&gt; F
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p><span class="math display">\[ATE = E(\bar{Y} | x=1) - E(\bar{Y} | x=0)\]</span></p>
+</section>
+<section id="example-malaria-bed-nets-in-malawi" class="slide level2">
+<h2>Example: Malaria Bed Nets in Malawi</h2>
+<p>The World Bank evaluated insecticide-treated bed nets:</p>
+<ul>
+<li><strong>Setting</strong>: 1,000 people in Malawi</li>
+<li><strong>Treatment</strong>: randomly assigned bed nets</li>
+<li><strong>Outcome</strong>: malaria risk</li>
+</ul>
+
+<img data-src="graphs/map_malawi_exp.jpg" class="quarto-figure quarto-figure-center r-stretch" style="border: 2px solid #d6dbe1; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.10); padding: 4px;;width:55.0%"></section>
+<section id="malaria-rct-results" class="slide level2">
+<h2>Malaria RCT Results</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a><span class="fu">summary</span>(model_rct)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = malaria_post ~ net, data = rct_data)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-31.1804  -6.4519  -0.0199   6.5294  30.3102 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  46.5707     0.4262  109.27   &lt;2e-16 ***
+net         -10.3903     0.5899  -17.61   &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 9.318 on 998 degrees of freedom
+Multiple R-squared:  0.2371,    Adjusted R-squared:  0.2364 
+F-statistic: 310.2 on 1 and 998 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+</section>
+<section id="interpreting-the-treatment-effect" class="slide level2">
+<h2>Interpreting the Treatment Effect</h2>
+<p><span class="math display">\[ATE = \bar{Y}_{\text{treatment}} - \bar{Y}_{\text{control}} = 36.18 - 46.57 = -10.39\]</span></p>
+<div class="fragment">
+<ul>
+<li>Bed nets <strong>reduce</strong> malaria risk by <strong>10.39</strong> units</li>
+<li>The effect is statistically significant (<span class="math inline">\(p &lt; 0.001\)</span>)</li>
+<li>Random assignment ensures this is a <strong>causal</strong> estimate</li>
+</ul>
+</div>
+</section>
+<section id="treatment-vs.-control-distribution" class="slide level2">
+<h2>Treatment vs.&nbsp;Control Distribution</h2>
+
+<img data-src="lecture_files/figure-revealjs/malaria-dist-1.png" width="768" class="r-stretch"></section></section>
+<section>
+<section id="conclusion" class="title-slide slide level1 center" data-background-color="#1e293b">
+<h1>Conclusion</h1>
+
+</section>
+<section id="summary" class="slide level2">
+<h2>Summary</h2>
+<ul>
+<li><strong>Notation first</strong>: <span class="math inline">\(\hat{\beta}_0\)</span> and <span class="math inline">\(\hat{\beta}_1\)</span> are sample estimates of population parameters</li>
+<li><strong>Regression equation</strong>: <span class="math inline">\(\hat{Y} = bX + a\)</span> predicts the outcome from a predictor</li>
+<li><strong>Intercept</strong>: may be an out-of-sample extrapolation — interpret with care</li>
+<li><strong>Residuals</strong>: <span class="math inline">\(Y_i - \hat{Y}_i\)</span> — the regression line minimizes these</li>
+<li><strong><span class="math inline">\(R^2\)</span></strong>: proportion of variance explained by the model</li>
+<li><strong>Zero conditional mean</strong>: the key OLS assumption — violated when confounders are omitted</li>
+<li><strong>Binary regressors</strong>: <span class="math inline">\(\beta_1\)</span> is the difference in group means</li>
+<li><strong>Randomized experiments</strong> enable <strong>causal</strong> interpretation of <span class="math inline">\(\beta_1\)</span></li>
+</ul>
+
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+<p>Popescu (JCU) Statistical Analysis Lecture 9: Bivariate Regression</p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const onCopySuccess = function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
+      });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>

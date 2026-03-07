@@ -1,0 +1,1598 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="lecture_files/libs/clipboard/clipboard.min.js"></script>
+<script src="lecture_files/libs/quarto-html/tabby.min.js"></script>
+<script src="lecture_files/libs/quarto-html/popper.min.js"></script>
+<script src="lecture_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="lecture_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="lecture_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="lecture_files/libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.6.40">
+
+  <meta name="author" content="Bogdan G. Popescu">
+  <title>Statistical Analysis</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-eb6d988269a85a3d2831a8eb2c365c63.css">
+  <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Statistical Analysis</h1>
+  <p class="subtitle">Lecture 12: Threats to Validity</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a>
+</div>
+<div class="quarto-title-author-email">
+<a href="mailto:bogdan.popescu@johncabot.edu">bogdan.popescu@johncabot.edu</a>
+</div>
+        <p class="quarto-title-affiliation">
+            John Cabot University
+          </p>
+    </div>
+</div>
+
+</section>
+<section class="slide level2">
+
+<style>
+.reveal section[data-background-color="#1e293b"] h1 {
+  color: #f9fafb !important;
+  border-bottom: 3px solid #b44527;
+  padding-bottom: 0.35em;
+  display: inline-block;
+}
+</style>
+</section>
+<section>
+<section id="introduction" class="title-slide slide level1 center" data-background-color="#1e293b">
+<h1>Introduction</h1>
+
+</section>
+<section id="from-validity-to-causal-inference" class="slide level2">
+<h2>From Validity to Causal Inference</h2>
+<ul>
+<li>Previous week: DAGs, ATE, randomization</li>
+<li>Today: <strong>threats to validity</strong> and how to address them</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Key topics:
+<ul>
+<li>Construct, statistical, internal, and external validity</li>
+<li><strong>Matching</strong> and <strong>inverse probability weighting</strong></li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Goal: improve causal claims from <strong>observational data</strong></li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="construct-validity" class="title-slide slide level1 center" data-background-color="#1e293b">
+<h1>Construct Validity</h1>
+
+</section>
+<section id="construct-validity-1" class="slide level2">
+<h2>Construct Validity</h2>
+<p>How well do our measures capture the <strong>concepts</strong> we care about?</p>
+<div class="fragment">
+<p>Example: <strong>social anxiety</strong> is multidimensional:</p>
+<ul>
+<li><em>Psychological</em>: intense fear and anxiety</li>
+<li><em>Physiological</em>: physical stress indicators</li>
+<li><em>Behavioral</em>: avoidance of social settings</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>We must <strong>operationalize</strong> abstract ideas into observable indicators</li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="statistical-conclusion-validity" class="title-slide slide level1 center" data-background-color="#1e293b">
+<h1>Statistical Conclusion Validity</h1>
+
+</section>
+<section id="type-i-and-type-ii-errors" class="slide level2">
+<h2>Type I and Type II Errors</h2>
+<p><strong>Type I error</strong> (false positive):</p>
+<ul>
+<li>Finding a relationship when <strong>none exists</strong></li>
+<li>Rejecting a true <span class="math inline">\(H_0\)</span></li>
+</ul>
+<div class="fragment">
+<p><strong>Type II error</strong> (false negative):</p>
+<ul>
+<li>Missing a relationship that <strong>does exist</strong></li>
+<li>Failing to reject a false <span class="math inline">\(H_0\)</span></li>
+</ul>
+</div>
+</section>
+<section id="statistical-power" class="slide level2">
+<h2>Statistical Power</h2>
+<p><strong>Power</strong> = probability of detecting a true effect</p>
+<div class="fragment">
+<p>When power is low:</p>
+<ul>
+<li>Detecting true effects becomes <strong>difficult</strong></li>
+<li>Significant results less likely to reflect truth</li>
+<li>Often caused by <strong>small sample sizes</strong></li>
+</ul>
+</div>
+</section>
+<section id="p-hacking" class="slide level2">
+<h2>p-Hacking</h2>
+<p><strong>p-hacking</strong>: manipulating analyses to obtain significance</p>
+<div class="fragment">
+<p>Common forms:</p>
+<ol type="1">
+<li>Report only results that <strong>support</strong> the hypothesis</li>
+<li>Try multiple tests until one is <strong>significant</strong></li>
+<li>Remove outliers to achieve <strong>desired results</strong></li>
+<li>Not reporting <strong>null results</strong></li>
+</ol>
+</div>
+</section></section>
+<section>
+<section id="threats-to-internal-validity" class="title-slide slide level1 center" data-background-color="#1e293b">
+<h1>Threats to Internal Validity</h1>
+
+</section>
+<section id="eight-threats-to-internal-validity" class="slide level2">
+<h2>Eight Threats to Internal Validity</h2>
+<div style="font-size: 0.78em;">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>#</th>
+<th>Threat</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>History</td>
+<td>External events affect results</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Maturation</td>
+<td>Natural changes over time</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Selection Bias</td>
+<td>Non-random group assignment</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Attrition</td>
+<td>Dropout biases the sample</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Regression to Mean</td>
+<td>Extremes moderate naturally</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>Hawthorne Effect</td>
+<td>Observation changes behavior</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>Placebo Effect</td>
+<td>Belief drives improvement</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>Spillover</td>
+<td>Treatment leaks to control group</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="history-maturation" class="slide level2">
+<h2>History &amp; Maturation</h2>
+<p><strong>History</strong>: unrelated events during the study affect outcomes</p>
+<ul>
+<li>A news event distracts students mid-experiment</li>
+<li>Solution: use a <strong>control group</strong></li>
+</ul>
+<div class="fragment">
+<p><strong>Maturation</strong>: participants change naturally over time</p>
+<ul>
+<li>Children grow regardless of nutrition program</li>
+<li>Solution: use a <strong>comparison group</strong> to remove trend</li>
+</ul>
+</div>
+</section>
+<section id="selection-bias-attrition" class="slide level2">
+<h2>Selection Bias &amp; Attrition</h2>
+<p><strong>Selection bias</strong>: participants differ systematically from population</p>
+<ul>
+<li>Volunteers are healthier than non-volunteers</li>
+<li>Solution: <strong>randomization</strong></li>
+</ul>
+<div class="fragment">
+<p><strong>Attrition</strong>: non-random dropout biases results</p>
+<ul>
+<li>Patients not responding well leave the study</li>
+<li>Solution: compare characteristics of <strong>stayers vs.&nbsp;leavers</strong></li>
+</ul>
+</div>
+</section>
+<section id="regression-to-mean-hawthorne" class="slide level2">
+<h2>Regression to Mean &amp; Hawthorne</h2>
+<p><strong>Regression to mean</strong>: extreme values moderate naturally</p>
+<ul>
+<li>Very overweight participants lose some weight naturally</li>
+<li>Solution: <strong>don’t select extremes</strong></li>
+</ul>
+<div class="fragment">
+<p><strong>Hawthorne effect</strong>: behavior changes under observation</p>
+<ul>
+<li>Workers are more productive when being watched</li>
+<li>Solution: use a <strong>control group</strong> also under observation</li>
+</ul>
+</div>
+</section>
+<section id="placebo-spillover" class="slide level2">
+<h2>Placebo &amp; Spillover</h2>
+<p><strong>Placebo effect</strong>: belief in treatment causes improvement</p>
+<ul>
+<li>Control group improves from receiving inert treatment</li>
+<li>Solution: include a <strong>placebo group</strong> (double-blind)</li>
+</ul>
+<div class="fragment">
+<p><strong>Spillover</strong>: treatment leaks to control group</p>
+<ul>
+<li>Treated students share knowledge with untreated peers</li>
+<li>Solution: use <strong>geographically distant</strong> control groups</li>
+</ul>
+</div>
+</section>
+<section id="hawthorne-vs.-placebo" class="slide level2">
+<h2>Hawthorne vs.&nbsp;Placebo</h2>
+<p>These are commonly confused:</p>
+<div class="fragment">
+<ul>
+<li><strong>Hawthorne</strong>: behavior changes from <strong>being observed</strong>
+<ul>
+<li>Participants <em>know</em> they are in a study</li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><strong>Placebo</strong>: improvement from <strong>believing</strong> in treatment
+<ul>
+<li>Participants are <em>unaware</em> they receive no active treatment</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="what-randomization-fixes" class="slide level2">
+<h2>What Randomization Fixes</h2>
+<p>Randomization addresses <strong>some</strong> but not all threats:</p>
+<div class="fragment">
+<ul>
+<li>Fixes: selection bias, maturation, regression to mean</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Does <strong>not</strong> fix: attrition, spillover, measurement problems</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Additional safeguards are always needed</li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="threats-to-external-validity" class="title-slide slide level1 center" data-background-color="#1e293b">
+<h1>Threats to External Validity</h1>
+
+</section>
+<section id="external-validity" class="slide level2">
+<h2>External Validity</h2>
+<p>Are your findings <strong>generalizable</strong> to the whole population?</p>
+<div class="fragment">
+<ul>
+<li>Many study participants are <strong>WEIRD</strong>:
+<ul>
+<li>Western, Educated, Industrialized, Rich, Democratic</li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>We must assess how findings extend to <strong>other populations</strong></li>
+</ul>
+</div>
+</section>
+<section id="sample-selection-contextual-factors" class="slide level2">
+<h2>Sample Selection &amp; Contextual Factors</h2>
+<p><strong>Sample selection</strong>: the sample does not represent the population</p>
+<ul>
+<li>Drug study selects only ages 20–30</li>
+<li>Solution: select <strong>representative samples</strong></li>
+</ul>
+<div class="fragment">
+<p><strong>Contextual factors</strong>: setting influences results</p>
+<ul>
+<li>Counseling program works at one university but not others</li>
+<li>Solution: replicate across <strong>multiple settings</strong></li>
+</ul>
+</div>
+</section>
+<section id="time-related-social-desirability" class="slide level2">
+<h2>Time-Related &amp; Social Desirability</h2>
+<p><strong>Time-related factors</strong>: context changes over time</p>
+<ul>
+<li>A 5-year health study spans policy changes</li>
+<li>Solution: conduct <strong>follow-up studies</strong></li>
+</ul>
+<div class="fragment">
+<p><strong>Social desirability bias</strong>: people give “acceptable” answers</p>
+<ul>
+<li>Participants overreport healthy behaviors</li>
+<li>Solution: use <strong>anonymous surveys</strong> or behavioral observation</li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="types-of-research" class="title-slide slide level1 center" data-background-color="#1e293b">
+<h1>Types of Research</h1>
+
+</section>
+<section id="experimental-studies" class="slide level2">
+<h2>Experimental Studies</h2>
+<ul>
+<li>Researcher <strong>manipulates</strong> the independent variable</li>
+<li>Participants <strong>randomly assigned</strong> to groups</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Stronger claims about <strong>cause and effect</strong></li>
+<li>More <strong>expensive</strong> and time-consuming</li>
+</ul>
+</div>
+</section>
+<section id="observational-studies" class="slide level2">
+<h2>Observational Studies</h2>
+<ul>
+<li>Researcher <strong>observes</strong> without manipulating</li>
+<li>Participants are <strong>not randomly assigned</strong></li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Useful for real-world behaviors and outcomes</li>
+<li>More prone to <strong>bias</strong> and <strong>confounding</strong></li>
+</ul>
+</div>
+</section>
+<section id="improving-observational-studies" class="slide level2">
+<h2>Improving Observational Studies</h2>
+<p>Four techniques to approach causal estimates:</p>
+<div class="fragment">
+<ol type="1">
+<li><strong>Matching</strong>: pair similar treated/untreated units</li>
+<li><strong>Instrumental variables</strong>: use an exogenous instrument</li>
+<li><strong>Regression discontinuity</strong>: compare at a threshold</li>
+<li><strong>Difference-in-differences</strong>: compare changes over time</li>
+</ol>
+</div>
+<div class="fragment">
+<p>Today: <strong>matching</strong> and <strong>inverse probability weighting</strong></p>
+</div>
+</section></section>
+<section>
+<section id="nearest-neighbor-matching" class="title-slide slide level1 center" data-background-color="#1e293b">
+<h1>Nearest Neighbor Matching</h1>
+
+</section>
+<section id="what-is-matching" class="slide level2">
+<h2>What Is Matching?</h2>
+<p><strong>Matching</strong>: create comparable groups by pairing similar units</p>
+<div class="fragment">
+<ul>
+<li>Reduces bias from <strong>confounding variables</strong></li>
+<li>Pairs treated and untreated on <strong>pre-treatment characteristics</strong></li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Goal: make groups comparable <em>as if</em> randomized</li>
+</ul>
+</div>
+</section>
+<section id="the-malaria-example" class="slide level2">
+<h2>The Malaria Example</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p>Back to the malaria study — now <strong>observational</strong>:</p>
+<ul>
+<li>People <strong>choose</strong> to use nets</li>
+<li>No random assignment</li>
+<li>Confounders affect treatment</li>
+</ul>
+</div><div class="column" style="width:60%;">
+<div class="cell">
+<details class="code-fold">
+<summary>Show Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="co"># Observational DAG: confounders -&gt; Net AND -&gt; Post Malaria Risk</span></span>
+<span id="cb1-2"><a href=""></a>malaria_dag_obs <span class="ot">&lt;-</span> <span class="fu">dagify</span>(</span>
+<span id="cb1-3"><a href=""></a>  post_malaria_risk <span class="sc">~</span> net <span class="sc">+</span> age <span class="sc">+</span> sex <span class="sc">+</span> income <span class="sc">+</span> pre_malaria_risk,</span>
+<span id="cb1-4"><a href=""></a>  net <span class="sc">~</span> age <span class="sc">+</span> sex <span class="sc">+</span> income <span class="sc">+</span> pre_malaria_risk,</span>
+<span id="cb1-5"><a href=""></a>  <span class="at">exposure =</span> <span class="st">"net"</span>,</span>
+<span id="cb1-6"><a href=""></a>  <span class="at">outcome =</span> <span class="st">"post_malaria_risk"</span>,</span>
+<span id="cb1-7"><a href=""></a>  <span class="at">labels =</span> <span class="fu">c</span>(<span class="at">post_malaria_risk =</span> <span class="st">"Post Malaria Risk"</span>,</span>
+<span id="cb1-8"><a href=""></a>             <span class="at">net =</span> <span class="st">"Mosquito Net"</span>,</span>
+<span id="cb1-9"><a href=""></a>             <span class="at">age =</span> <span class="st">"Age"</span>, <span class="at">sex =</span> <span class="st">"Sex"</span>,</span>
+<span id="cb1-10"><a href=""></a>             <span class="at">income =</span> <span class="st">"Income"</span>,</span>
+<span id="cb1-11"><a href=""></a>             <span class="at">pre_malaria_risk =</span> <span class="st">"Pre Malaria Risk"</span>),</span>
+<span id="cb1-12"><a href=""></a>  <span class="at">coords =</span> <span class="fu">list</span>(</span>
+<span id="cb1-13"><a href=""></a>    <span class="at">x =</span> <span class="fu">c</span>(<span class="at">net =</span> <span class="dv">2</span>, <span class="at">post_malaria_risk =</span> <span class="dv">7</span>, <span class="at">income =</span> <span class="dv">5</span>,</span>
+<span id="cb1-14"><a href=""></a>          <span class="at">age =</span> <span class="dv">2</span>, <span class="at">sex =</span> <span class="dv">4</span>, <span class="at">pre_malaria_risk =</span> <span class="dv">6</span>),</span>
+<span id="cb1-15"><a href=""></a>    <span class="at">y =</span> <span class="fu">c</span>(<span class="at">net =</span> <span class="dv">3</span>, <span class="at">post_malaria_risk =</span> <span class="dv">2</span>, <span class="at">income =</span> <span class="dv">1</span>,</span>
+<span id="cb1-16"><a href=""></a>          <span class="at">age =</span> <span class="dv">2</span>, <span class="at">sex =</span> <span class="dv">4</span>, <span class="at">pre_malaria_risk =</span> <span class="dv">4</span>)</span>
+<span id="cb1-17"><a href=""></a>  )</span>
+<span id="cb1-18"><a href=""></a>)</span>
+<span id="cb1-19"><a href=""></a></span>
+<span id="cb1-20"><a href=""></a><span class="co"># Cleaning the DAG and turning it into a dataframe</span></span>
+<span id="cb1-21"><a href=""></a>df_obs <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="fu">tidy_dagitty</span>(malaria_dag_obs))</span>
+<span id="cb1-22"><a href=""></a>df_obs<span class="sc">$</span>type <span class="ot">&lt;-</span> <span class="st">"Confounder"</span></span>
+<span id="cb1-23"><a href=""></a>df_obs<span class="sc">$</span>type[df_obs<span class="sc">$</span>name <span class="sc">==</span> <span class="st">"post_malaria_risk"</span>] <span class="ot">&lt;-</span> <span class="st">"Outcome"</span></span>
+<span id="cb1-24"><a href=""></a>df_obs<span class="sc">$</span>type[df_obs<span class="sc">$</span>name <span class="sc">==</span> <span class="st">"net"</span>] <span class="ot">&lt;-</span> <span class="st">"Intervention"</span></span>
+<span id="cb1-25"><a href=""></a></span>
+<span id="cb1-26"><a href=""></a><span class="co"># Axis limits</span></span>
+<span id="cb1-27"><a href=""></a>min_lon_x <span class="ot">&lt;-</span> <span class="fu">min</span>(df_obs<span class="sc">$</span>x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-28"><a href=""></a>max_lon_x <span class="ot">&lt;-</span> <span class="fu">max</span>(df_obs<span class="sc">$</span>x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-29"><a href=""></a>min_lat_y <span class="ot">&lt;-</span> <span class="fu">min</span>(df_obs<span class="sc">$</span>y, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-30"><a href=""></a>max_lat_y <span class="ot">&lt;-</span> <span class="fu">max</span>(df_obs<span class="sc">$</span>y, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-31"><a href=""></a>error <span class="ot">&lt;-</span> (max_lon_x <span class="sc">-</span> min_lon_x) <span class="sc">/</span> <span class="dv">10</span></span>
+<span id="cb1-32"><a href=""></a></span>
+<span id="cb1-33"><a href=""></a><span class="co"># Producing the graph</span></span>
+<span id="cb1-34"><a href=""></a>dag_obs_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df_obs,</span>
+<span id="cb1-35"><a href=""></a>    <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">xend =</span> xend, <span class="at">yend =</span> yend, <span class="at">color =</span> type)) <span class="sc">+</span></span>
+<span id="cb1-36"><a href=""></a>  <span class="fu">geom_dag_point</span>(<span class="at">size =</span> <span class="dv">8</span>) <span class="sc">+</span></span>
+<span id="cb1-37"><a href=""></a>  <span class="fu">geom_dag_edges</span>() <span class="sc">+</span></span>
+<span id="cb1-38"><a href=""></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> dag_col, <span class="at">name =</span> <span class="st">"Group"</span>,</span>
+<span id="cb1-39"><a href=""></a>                      <span class="at">breaks =</span> dag_order) <span class="sc">+</span></span>
+<span id="cb1-40"><a href=""></a>  <span class="fu">geom_label_repel</span>(</span>
+<span id="cb1-41"><a href=""></a>    <span class="at">data =</span> <span class="fu">subset</span>(df_obs, <span class="sc">!</span><span class="fu">duplicated</span>(df_obs<span class="sc">$</span>label)),</span>
+<span id="cb1-42"><a href=""></a>    <span class="fu">aes</span>(<span class="at">label =</span> label),</span>
+<span id="cb1-43"><a href=""></a>    <span class="at">fill =</span> <span class="fu">alpha</span>(cream, <span class="fl">0.8</span>), <span class="at">size =</span> <span class="dv">4</span>,</span>
+<span id="cb1-44"><a href=""></a>    <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb1-45"><a href=""></a>  <span class="fu">coord_sf</span>(<span class="at">xlim =</span> <span class="fu">c</span>(min_lon_x <span class="sc">-</span> error, max_lon_x <span class="sc">+</span> error),</span>
+<span id="cb1-46"><a href=""></a>           <span class="at">ylim =</span> <span class="fu">c</span>(min_lat_y <span class="sc">-</span> error, max_lat_y <span class="sc">+</span> error)) <span class="sc">+</span></span>
+<span id="cb1-47"><a href=""></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb1-48"><a href=""></a>  <span class="fu">theme_meridian</span>() <span class="sc">+</span></span>
+<span id="cb1-49"><a href=""></a>  <span class="fu">theme</span>(<span class="at">axis.text =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb1-50"><a href=""></a>        <span class="at">axis.line =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb1-51"><a href=""></a>        <span class="at">axis.ticks =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb1-52"><a href=""></a>        <span class="at">panel.grid =</span> <span class="fu">element_blank</span>())</span>
+<span id="cb1-53"><a href=""></a></span>
+<span id="cb1-54"><a href=""></a>dag_obs_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="lecture_files/figure-revealjs/dag-observational-1.png" width="1050"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="observational-vs.-experimental" class="slide level2">
+<h2>Observational vs.&nbsp;Experimental</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Show Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a><span class="co"># Experimental DAG: confounders -&gt; Post Malaria Risk only (no arrows into Net)</span></span>
+<span id="cb2-2"><a href=""></a>malaria_dag_exp <span class="ot">&lt;-</span> <span class="fu">dagify</span>(</span>
+<span id="cb2-3"><a href=""></a>  post_malaria_risk <span class="sc">~</span> net <span class="sc">+</span> age <span class="sc">+</span> sex <span class="sc">+</span> income <span class="sc">+</span> pre_malaria_risk,</span>
+<span id="cb2-4"><a href=""></a>  <span class="at">exposure =</span> <span class="st">"net"</span>,</span>
+<span id="cb2-5"><a href=""></a>  <span class="at">outcome =</span> <span class="st">"post_malaria_risk"</span>,</span>
+<span id="cb2-6"><a href=""></a>  <span class="at">labels =</span> <span class="fu">c</span>(<span class="at">post_malaria_risk =</span> <span class="st">"Post Malaria Risk"</span>,</span>
+<span id="cb2-7"><a href=""></a>             <span class="at">net =</span> <span class="st">"Mosquito Net"</span>,</span>
+<span id="cb2-8"><a href=""></a>             <span class="at">age =</span> <span class="st">"Age"</span>, <span class="at">sex =</span> <span class="st">"Sex"</span>,</span>
+<span id="cb2-9"><a href=""></a>             <span class="at">income =</span> <span class="st">"Income"</span>,</span>
+<span id="cb2-10"><a href=""></a>             <span class="at">pre_malaria_risk =</span> <span class="st">"Pre Malaria Risk"</span>),</span>
+<span id="cb2-11"><a href=""></a>  <span class="at">coords =</span> <span class="fu">list</span>(</span>
+<span id="cb2-12"><a href=""></a>    <span class="at">x =</span> <span class="fu">c</span>(<span class="at">net =</span> <span class="dv">2</span>, <span class="at">post_malaria_risk =</span> <span class="dv">7</span>, <span class="at">income =</span> <span class="dv">5</span>,</span>
+<span id="cb2-13"><a href=""></a>          <span class="at">age =</span> <span class="dv">2</span>, <span class="at">sex =</span> <span class="dv">4</span>, <span class="at">pre_malaria_risk =</span> <span class="dv">6</span>),</span>
+<span id="cb2-14"><a href=""></a>    <span class="at">y =</span> <span class="fu">c</span>(<span class="at">net =</span> <span class="dv">3</span>, <span class="at">post_malaria_risk =</span> <span class="dv">2</span>, <span class="at">income =</span> <span class="dv">1</span>,</span>
+<span id="cb2-15"><a href=""></a>          <span class="at">age =</span> <span class="dv">2</span>, <span class="at">sex =</span> <span class="dv">4</span>, <span class="at">pre_malaria_risk =</span> <span class="dv">4</span>)</span>
+<span id="cb2-16"><a href=""></a>  )</span>
+<span id="cb2-17"><a href=""></a>)</span>
+<span id="cb2-18"><a href=""></a></span>
+<span id="cb2-19"><a href=""></a><span class="co"># Cleaning the DAG and turning it into a dataframe</span></span>
+<span id="cb2-20"><a href=""></a>df_exp <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="fu">tidy_dagitty</span>(malaria_dag_exp))</span>
+<span id="cb2-21"><a href=""></a>df_exp<span class="sc">$</span>type <span class="ot">&lt;-</span> <span class="st">"Confounder"</span></span>
+<span id="cb2-22"><a href=""></a>df_exp<span class="sc">$</span>type[df_exp<span class="sc">$</span>name <span class="sc">==</span> <span class="st">"post_malaria_risk"</span>] <span class="ot">&lt;-</span> <span class="st">"Outcome"</span></span>
+<span id="cb2-23"><a href=""></a>df_exp<span class="sc">$</span>type[df_exp<span class="sc">$</span>name <span class="sc">==</span> <span class="st">"net"</span>] <span class="ot">&lt;-</span> <span class="st">"Intervention"</span></span>
+<span id="cb2-24"><a href=""></a></span>
+<span id="cb2-25"><a href=""></a><span class="co"># Producing the graph</span></span>
+<span id="cb2-26"><a href=""></a>dag_exp_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df_exp,</span>
+<span id="cb2-27"><a href=""></a>    <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">xend =</span> xend, <span class="at">yend =</span> yend, <span class="at">color =</span> type)) <span class="sc">+</span></span>
+<span id="cb2-28"><a href=""></a>  <span class="fu">geom_dag_point</span>(<span class="at">size =</span> <span class="dv">8</span>) <span class="sc">+</span></span>
+<span id="cb2-29"><a href=""></a>  <span class="fu">geom_dag_edges</span>() <span class="sc">+</span></span>
+<span id="cb2-30"><a href=""></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> dag_col, <span class="at">name =</span> <span class="st">"Group"</span>,</span>
+<span id="cb2-31"><a href=""></a>                      <span class="at">breaks =</span> dag_order) <span class="sc">+</span></span>
+<span id="cb2-32"><a href=""></a>  <span class="fu">geom_label_repel</span>(</span>
+<span id="cb2-33"><a href=""></a>    <span class="at">data =</span> <span class="fu">subset</span>(df_exp, <span class="sc">!</span><span class="fu">duplicated</span>(df_exp<span class="sc">$</span>label)),</span>
+<span id="cb2-34"><a href=""></a>    <span class="fu">aes</span>(<span class="at">label =</span> label),</span>
+<span id="cb2-35"><a href=""></a>    <span class="at">fill =</span> <span class="fu">alpha</span>(cream, <span class="fl">0.8</span>), <span class="at">size =</span> <span class="dv">4</span>,</span>
+<span id="cb2-36"><a href=""></a>    <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb2-37"><a href=""></a>  <span class="fu">coord_sf</span>(<span class="at">xlim =</span> <span class="fu">c</span>(min_lon_x <span class="sc">-</span> error, max_lon_x <span class="sc">+</span> error),</span>
+<span id="cb2-38"><a href=""></a>           <span class="at">ylim =</span> <span class="fu">c</span>(min_lat_y <span class="sc">-</span> error, max_lat_y <span class="sc">+</span> error)) <span class="sc">+</span></span>
+<span id="cb2-39"><a href=""></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb2-40"><a href=""></a>  <span class="fu">theme_meridian</span>() <span class="sc">+</span></span>
+<span id="cb2-41"><a href=""></a>  <span class="fu">theme</span>(<span class="at">axis.text =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb2-42"><a href=""></a>        <span class="at">axis.line =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb2-43"><a href=""></a>        <span class="at">axis.ticks =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb2-44"><a href=""></a>        <span class="at">panel.grid =</span> <span class="fu">element_blank</span>())</span>
+<span id="cb2-45"><a href=""></a></span>
+<span id="cb2-46"><a href=""></a><span class="co"># Side-by-side comparison</span></span>
+<span id="cb2-47"><a href=""></a>(dag_obs_plot <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">"Observational"</span>)) <span class="sc">+</span></span>
+<span id="cb2-48"><a href=""></a>  (dag_exp_plot <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">"Experimental"</span>)) <span class="sc">+</span></span>
+<span id="cb2-49"><a href=""></a>  <span class="fu">plot_layout</span>(<span class="at">guides =</span> <span class="st">"collect"</span>) <span class="sc">&amp;</span></span>
+<span id="cb2-50"><a href=""></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
+</div>
+<img data-src="lecture_files/figure-revealjs/dag-obs-vs-exp-1.png" width="1500" class="r-stretch"></section>
+<section id="the-model" class="slide level2">
+<h2>The Model</h2>
+<p><span class="math display">\[\text{Malaria Risk} = \beta_0 + \beta_1 \cdot \text{Net} + \beta_2 \cdot \text{Income} + \epsilon\]</span></p>
+<div class="cell">
+<details class="code-fold">
+<summary>Show Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a>mod_naive <span class="ot">&lt;-</span> <span class="fu">lm</span>(malaria_risk_post <span class="sc">~</span> net, <span class="at">data =</span> rct)</span>
+<span id="cb3-2"><a href=""></a>b_naive <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">coef</span>(mod_naive)[<span class="st">"net"</span>], <span class="dv">3</span>)</span>
+<span id="cb3-3"><a href=""></a></span>
+<span id="cb3-4"><a href=""></a><span class="fu">ggplot</span>(rct, <span class="fu">aes</span>(<span class="at">x =</span> income, <span class="at">y =</span> malaria_risk_post,</span>
+<span id="cb3-5"><a href=""></a>                <span class="at">color =</span> type, <span class="at">shape =</span> type)) <span class="sc">+</span></span>
+<span id="cb3-6"><a href=""></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="fl">1.5</span>) <span class="sc">+</span></span>
+<span id="cb3-7"><a href=""></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">linewidth =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb3-8"><a href=""></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Control"</span> <span class="ot">=</span> stone, <span class="st">"Treatment"</span> <span class="ot">=</span> terracotta)) <span class="sc">+</span></span>
+<span id="cb3-9"><a href=""></a>  <span class="fu">scale_shape_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="dv">16</span>, <span class="dv">17</span>)) <span class="sc">+</span></span>
+<span id="cb3-10"><a href=""></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Malaria Risk vs. Income by Treatment"</span>,</span>
+<span id="cb3-11"><a href=""></a>       <span class="at">x =</span> <span class="st">"Income"</span>, <span class="at">y =</span> <span class="st">"Post-Treatment Malaria Risk"</span>,</span>
+<span id="cb3-12"><a href=""></a>       <span class="at">color =</span> <span class="st">""</span>, <span class="at">shape =</span> <span class="st">""</span>,</span>
+<span id="cb3-13"><a href=""></a>       <span class="at">caption =</span> <span class="st">"Source: Simulated Malawi RCT data"</span>) <span class="sc">+</span></span>
+<span id="cb3-14"><a href=""></a>  <span class="fu">theme_meridian</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
+</div>
+<img data-src="lecture_files/figure-revealjs/naive-scatter-1.png" width="1200" class="r-stretch"></section>
+<section id="naive-estimate" class="slide level2">
+<h2>Naive Estimate</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a>mod_naive <span class="ot">&lt;-</span> <span class="fu">lm</span>(malaria_risk_post <span class="sc">~</span> net, <span class="at">data =</span> rct)</span>
+<span id="cb4-2"><a href=""></a><span class="fu">summary</span>(mod_naive)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = malaria_risk_post ~ net, data = rct)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-30.5794  -6.4719   0.0798   6.1909  28.9747 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  45.6621     0.4146  110.14   &lt;2e-16 ***
+net         -10.0827     0.5738  -17.57   &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 9.064 on 998 degrees of freedom
+Multiple R-squared:  0.2363,    Adjusted R-squared:  0.2355 
+F-statistic: 308.7 on 1 and 998 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+</section>
+<section id="confounders-drive-treatment" class="slide level2">
+<h2>Confounders Drive Treatment</h2>
+<p>Higher income and higher pre-malaria risk <span class="math inline">\(\rightarrow\)</span> more likely to use nets</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Show Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="fu">ggplot</span>(rct, <span class="fu">aes</span>(<span class="at">x =</span> income, <span class="at">y =</span> malaria_risk_pre,</span>
+<span id="cb6-2"><a href=""></a>                <span class="at">color =</span> type, <span class="at">shape =</span> type)) <span class="sc">+</span></span>
+<span id="cb6-3"><a href=""></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="fl">1.5</span>) <span class="sc">+</span></span>
+<span id="cb6-4"><a href=""></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Control"</span> <span class="ot">=</span> stone, <span class="st">"Treatment"</span> <span class="ot">=</span> terracotta)) <span class="sc">+</span></span>
+<span id="cb6-5"><a href=""></a>  <span class="fu">scale_shape_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="dv">16</span>, <span class="dv">17</span>)) <span class="sc">+</span></span>
+<span id="cb6-6"><a href=""></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Pre-Treatment Confounders by Group"</span>,</span>
+<span id="cb6-7"><a href=""></a>       <span class="at">x =</span> <span class="st">"Income"</span>, <span class="at">y =</span> <span class="st">"Pre-Treatment Malaria Risk"</span>,</span>
+<span id="cb6-8"><a href=""></a>       <span class="at">color =</span> <span class="st">""</span>, <span class="at">shape =</span> <span class="st">""</span>,</span>
+<span id="cb6-9"><a href=""></a>       <span class="at">caption =</span> <span class="st">"Source: Simulated Malawi RCT data"</span>) <span class="sc">+</span></span>
+<span id="cb6-10"><a href=""></a>  <span class="fu">theme_meridian</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
+</div>
+<img data-src="lecture_files/figure-revealjs/confounders-scatter-1.png" width="1200" class="r-stretch"></section>
+<section id="process-for-matching" class="slide level2">
+<h2>Process for Matching</h2>
+<p><strong>Step 1</strong>: identify confounders from the DAG</p>
+<ul>
+<li>Income and pre-malaria risk affect net usage</li>
+</ul>
+<div class="fragment">
+<p><strong>Step 2</strong>: match treated and untreated on confounders</p>
+<ul>
+<li>Find similar pairs who differ only in treatment</li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Step 3</strong>: estimate treatment effect on matched data</p>
+</div>
+</section>
+<section id="nearest-neighbor-matching-in-r" class="slide level2">
+<h2>Nearest Neighbor Matching in R</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a>matched_ob <span class="ot">&lt;-</span> <span class="fu">matchit</span>(net <span class="sc">~</span> income <span class="sc">+</span> malaria_risk_pre,</span>
+<span id="cb7-2"><a href=""></a>                       <span class="at">data =</span> rct, <span class="at">method =</span> <span class="st">"nearest"</span>,</span>
+<span id="cb7-3"><a href=""></a>                       <span class="at">distance =</span> <span class="st">"mahalanobis"</span>,</span>
+<span id="cb7-4"><a href=""></a>                       <span class="at">replace =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb7-5"><a href=""></a>matched_ob</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>A `matchit` object
+ - method: 1:1 nearest neighbor matching without replacement
+ - distance: Mahalanobis - number of obs.: 1000 (original), 956 (matched)
+ - target estimand: ATT
+ - covariates: income, malaria_risk_pre</code></pre>
+</div>
+</div>
+</section>
+<section id="before-vs.-after-matching" class="slide level2">
+<h2>Before vs.&nbsp;After Matching</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Show Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a>rct<span class="sc">$</span>source <span class="ot">&lt;-</span> <span class="st">"All Data"</span></span>
+<span id="cb9-2"><a href=""></a>matched<span class="sc">$</span>source <span class="ot">&lt;-</span> <span class="st">"Matched"</span></span>
+<span id="cb9-3"><a href=""></a></span>
+<span id="cb9-4"><a href=""></a>p_before <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(rct, <span class="fu">aes</span>(<span class="at">x =</span> income, <span class="at">y =</span> malaria_risk_pre,</span>
+<span id="cb9-5"><a href=""></a>                             <span class="at">color =</span> type, <span class="at">shape =</span> type)) <span class="sc">+</span></span>
+<span id="cb9-6"><a href=""></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.4</span>, <span class="at">size =</span> <span class="fl">1.3</span>) <span class="sc">+</span></span>
+<span id="cb9-7"><a href=""></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Control"</span> <span class="ot">=</span> stone, <span class="st">"Treatment"</span> <span class="ot">=</span> terracotta)) <span class="sc">+</span></span>
+<span id="cb9-8"><a href=""></a>  <span class="fu">scale_shape_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="dv">16</span>, <span class="dv">17</span>)) <span class="sc">+</span></span>
+<span id="cb9-9"><a href=""></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Before Matching"</span>,</span>
+<span id="cb9-10"><a href=""></a>       <span class="at">x =</span> <span class="st">"Income"</span>, <span class="at">y =</span> <span class="st">"Pre-Malaria Risk"</span>,</span>
+<span id="cb9-11"><a href=""></a>       <span class="at">color =</span> <span class="st">""</span>, <span class="at">shape =</span> <span class="st">""</span>) <span class="sc">+</span></span>
+<span id="cb9-12"><a href=""></a>  <span class="fu">theme_meridian</span>(<span class="at">base_size =</span> <span class="dv">11</span>)</span>
+<span id="cb9-13"><a href=""></a></span>
+<span id="cb9-14"><a href=""></a>matched<span class="sc">$</span>type <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(matched<span class="sc">$</span>net <span class="sc">==</span> <span class="dv">1</span>, <span class="st">"Treatment"</span>, <span class="st">"Control"</span>)</span>
+<span id="cb9-15"><a href=""></a></span>
+<span id="cb9-16"><a href=""></a>p_after <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(matched, <span class="fu">aes</span>(<span class="at">x =</span> income, <span class="at">y =</span> malaria_risk_pre,</span>
+<span id="cb9-17"><a href=""></a>                                <span class="at">color =</span> type, <span class="at">shape =</span> type)) <span class="sc">+</span></span>
+<span id="cb9-18"><a href=""></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="fl">1.3</span>) <span class="sc">+</span></span>
+<span id="cb9-19"><a href=""></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Control"</span> <span class="ot">=</span> stone, <span class="st">"Treatment"</span> <span class="ot">=</span> terracotta)) <span class="sc">+</span></span>
+<span id="cb9-20"><a href=""></a>  <span class="fu">scale_shape_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="dv">16</span>, <span class="dv">17</span>)) <span class="sc">+</span></span>
+<span id="cb9-21"><a href=""></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"After Matching"</span>,</span>
+<span id="cb9-22"><a href=""></a>       <span class="at">x =</span> <span class="st">"Income"</span>, <span class="at">y =</span> <span class="st">"Pre-Malaria Risk"</span>,</span>
+<span id="cb9-23"><a href=""></a>       <span class="at">color =</span> <span class="st">""</span>, <span class="at">shape =</span> <span class="st">""</span>) <span class="sc">+</span></span>
+<span id="cb9-24"><a href=""></a>  <span class="fu">theme_meridian</span>(<span class="at">base_size =</span> <span class="dv">11</span>)</span>
+<span id="cb9-25"><a href=""></a></span>
+<span id="cb9-26"><a href=""></a>p_before <span class="sc">+</span> p_after <span class="sc">+</span></span>
+<span id="cb9-27"><a href=""></a>  <span class="fu">plot_annotation</span>(<span class="at">caption =</span> <span class="st">"Source: Simulated Malawi RCT data"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
+</div>
+<img data-src="lecture_files/figure-revealjs/matching-plot-1.png" width="1350" class="r-stretch"></section>
+<section id="matched-vs.-unmatched-results" class="slide level2">
+<h2>Matched vs.&nbsp;Unmatched Results</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a>mod_matched <span class="ot">&lt;-</span> <span class="fu">lm</span>(malaria_risk_post <span class="sc">~</span> net, <span class="at">data =</span> matched)</span>
+<span id="cb10-2"><a href=""></a><span class="fu">summary</span>(mod_matched)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = malaria_risk_post ~ net, data = matched)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-30.5936  -6.5821   0.0878   6.3101  28.9605 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  45.6621     0.4168  109.55   &lt;2e-16 ***
+net         -10.0685     0.5895  -17.08   &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 9.113 on 954 degrees of freedom
+Multiple R-squared:  0.2342,    Adjusted R-squared:  0.2334 
+F-statistic: 291.8 on 1 and 954 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+</section>
+<section id="drawbacks-of-nn-matching" class="slide level2">
+<h2>Drawbacks of NN Matching</h2>
+<ul>
+<li>One-to-one matching <strong>drops many observations</strong></li>
+<li>Original: 1000 <span class="math inline">\(\rightarrow\)</span> Matched: 956</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Smaller samples reduce <strong>statistical power</strong></li>
+<li>Results may be <strong>sensitive</strong> to matching specification</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Alternative: <strong>Inverse Probability Weighting</strong> keeps all data</li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="inverse-probability-weighting" class="title-slide slide level1 center" data-background-color="#1e293b">
+<h1>Inverse Probability Weighting</h1>
+
+</section>
+<section id="what-is-ipw" class="slide level2">
+<h2>What Is IPW?</h2>
+<p><strong>Inverse Probability Weighting</strong>: reweight observations instead of dropping them</p>
+<div class="fragment">
+<ul>
+<li>Predict the probability of treatment (<strong>propensity score</strong>)</li>
+<li>Give <strong>more weight</strong> to “surprising” observations</li>
+<li>Keep <strong>all data</strong> <span class="math inline">\(\rightarrow\)</span> no loss of sample size</li>
+</ul>
+</div>
+</section>
+<section id="logistic-regression" class="slide level2">
+<h2>Logistic Regression</h2>
+<p>To compute propensity scores, we use <strong>logistic regression</strong>:</p>
+<p><span class="math display">\[\log\frac{P(\text{Treated})}{1 - P(\text{Treated})} = \beta_0 + \beta_1 X_1 + \beta_2 X_2\]</span></p>
+<div class="fragment">
+<ul>
+<li>Predicts the <strong>probability</strong> of receiving treatment</li>
+<li>Output is bounded between 0 and 1 (S-curve)</li>
+</ul>
+</div>
+</section>
+<section id="logistic-regression-mtcars-example" class="slide level2">
+<h2>Logistic Regression: mtcars Example</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Show Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href=""></a><span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(<span class="at">x =</span> mpg, <span class="at">y =</span> am)) <span class="sc">+</span></span>
+<span id="cb12-2"><a href=""></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> sage, <span class="at">alpha =</span> <span class="fl">0.6</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb12-3"><a href=""></a>  <span class="fu">stat_smooth</span>(<span class="at">method =</span> <span class="st">"glm"</span>,</span>
+<span id="cb12-4"><a href=""></a>              <span class="at">method.args =</span> <span class="fu">list</span>(<span class="at">family =</span> <span class="st">"binomial"</span>),</span>
+<span id="cb12-5"><a href=""></a>              <span class="at">se =</span> <span class="cn">TRUE</span>, <span class="at">color =</span> terracotta, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb12-6"><a href=""></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Logistic Regression: Manual Transmission vs. MPG"</span>,</span>
+<span id="cb12-7"><a href=""></a>       <span class="at">x =</span> <span class="st">"Miles per Gallon"</span>, <span class="at">y =</span> <span class="st">"Prob. of Manual Transmission"</span>,</span>
+<span id="cb12-8"><a href=""></a>       <span class="at">caption =</span> <span class="st">"Source: mtcars dataset"</span>) <span class="sc">+</span></span>
+<span id="cb12-9"><a href=""></a>  <span class="fu">theme_meridian</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
+</div>
+<img data-src="lecture_files/figure-revealjs/logit-curve-1.png" width="1200" class="r-stretch"></section>
+<section id="interpreting-odds-ratios" class="slide level2">
+<h2>Interpreting Odds Ratios</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href=""></a>model_car <span class="ot">&lt;-</span> <span class="fu">glm</span>(am <span class="sc">~</span> mpg, <span class="at">data =</span> mtcars,</span>
+<span id="cb13-2"><a href=""></a>                 <span class="at">family =</span> <span class="fu">binomial</span>(<span class="at">link =</span> <span class="st">"logit"</span>))</span>
+<span id="cb13-3"><a href=""></a><span class="fu">tidy</span>(model_car, <span class="at">exponentiate =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 5
+  term        estimate std.error statistic p.value
+  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;
+1 (Intercept)  0.00136     2.35      -2.81 0.00498
+2 mpg          1.36        0.115      2.67 0.00751</code></pre>
+</div>
+</div>
+<div class="fragment">
+<ul>
+<li>Odds ratio centered around <strong>1</strong> (no effect)</li>
+<li>OR <span class="math inline">\(&gt; 1\)</span>: <strong>more</strong> likely (e.g., 1.36 = 36% more likely)</li>
+<li>OR <span class="math inline">\(&lt; 1\)</span>: <strong>less</strong> likely (subtract from 1)</li>
+</ul>
+</div>
+</section>
+<section id="the-weighting-idea" class="slide level2">
+<h2>The Weighting Idea</h2>
+<p>Make underrepresented groups <strong>count more</strong>:</p>
+<div style="font-size: 0.82em;">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Group</th>
+<th>Population</th>
+<th>Sample</th>
+<th>Weight</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Young</td>
+<td>30%</td>
+<td>60%</td>
+<td>30/60 = 0.5</td>
+</tr>
+<tr class="even">
+<td>Middle</td>
+<td>40%</td>
+<td>30%</td>
+<td>40/30 = 1.33</td>
+</tr>
+<tr class="odd">
+<td>Old</td>
+<td>30%</td>
+<td>10%</td>
+<td>30/10 = 3.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment">
+<ul>
+<li>Old people are <strong>upweighted</strong> (underrepresented)</li>
+<li>Young people are <strong>downweighted</strong> (overrepresented)</li>
+</ul>
+</div>
+</section>
+<section id="ipw-formula" class="slide level2">
+<h2>IPW Formula</h2>
+<p><span class="math display">\[w_i = \frac{T_i}{p_i} + \frac{1 - T_i}{1 - p_i}\]</span></p>
+<p>where <span class="math inline">\(T_i\)</span> = treatment status, <span class="math inline">\(p_i\)</span> = propensity score</p>
+<div class="fragment">
+<ul>
+<li>High propensity + <strong>no</strong> treatment <span class="math inline">\(\rightarrow\)</span> <strong>high weight</strong></li>
+<li>Low propensity + treatment <span class="math inline">\(\rightarrow\)</span> <strong>high weight</strong></li>
+<li>“Surprising” observations get more influence</li>
+</ul>
+</div>
+</section>
+<section id="ipw-applied-to-malaria" class="slide level2">
+<h2>IPW Applied to Malaria</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Show Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href=""></a><span class="co"># Step 1: Logistic regression for propensity</span></span>
+<span id="cb15-2"><a href=""></a>model_prop <span class="ot">&lt;-</span> <span class="fu">glm</span>(net <span class="sc">~</span> income <span class="sc">+</span> malaria_risk_pre,</span>
+<span id="cb15-3"><a href=""></a>                  <span class="at">data =</span> rct,</span>
+<span id="cb15-4"><a href=""></a>                  <span class="at">family =</span> <span class="fu">binomial</span>(<span class="at">link =</span> <span class="st">"logit"</span>))</span>
+<span id="cb15-5"><a href=""></a></span>
+<span id="cb15-6"><a href=""></a><span class="co"># Step 2: Get propensity scores</span></span>
+<span id="cb15-7"><a href=""></a>rct_ipw <span class="ot">&lt;-</span> rct</span>
+<span id="cb15-8"><a href=""></a>rct_ipw<span class="sc">$</span>propensity <span class="ot">&lt;-</span> <span class="fu">predict</span>(model_prop, <span class="at">type =</span> <span class="st">"response"</span>)</span>
+<span id="cb15-9"><a href=""></a></span>
+<span id="cb15-10"><a href=""></a><span class="co"># Step 3: Compute IPW weights</span></span>
+<span id="cb15-11"><a href=""></a>rct_ipw<span class="sc">$</span>ipw <span class="ot">&lt;-</span> rct_ipw<span class="sc">$</span>net <span class="sc">/</span> rct_ipw<span class="sc">$</span>propensity <span class="sc">+</span></span>
+<span id="cb15-12"><a href=""></a>               (<span class="dv">1</span> <span class="sc">-</span> rct_ipw<span class="sc">$</span>net) <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">-</span> rct_ipw<span class="sc">$</span>propensity)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell">
+<details class="code-fold">
+<summary>Show Code</summary>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href=""></a>p_unw <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(rct_ipw, <span class="fu">aes</span>(<span class="at">x =</span> income, <span class="at">y =</span> malaria_risk_pre,</span>
+<span id="cb16-2"><a href=""></a>                               <span class="at">color =</span> type, <span class="at">shape =</span> type)) <span class="sc">+</span></span>
+<span id="cb16-3"><a href=""></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">1.5</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb16-4"><a href=""></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Control"</span> <span class="ot">=</span> stone, <span class="st">"Treatment"</span> <span class="ot">=</span> terracotta)) <span class="sc">+</span></span>
+<span id="cb16-5"><a href=""></a>  <span class="fu">scale_shape_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="dv">16</span>, <span class="dv">17</span>)) <span class="sc">+</span></span>
+<span id="cb16-6"><a href=""></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Unweighted"</span>, <span class="at">x =</span> <span class="st">"Income"</span>, <span class="at">y =</span> <span class="st">"Pre-Malaria Risk"</span>,</span>
+<span id="cb16-7"><a href=""></a>       <span class="at">color =</span> <span class="st">""</span>, <span class="at">shape =</span> <span class="st">""</span>) <span class="sc">+</span></span>
+<span id="cb16-8"><a href=""></a>  <span class="fu">theme_meridian</span>(<span class="at">base_size =</span> <span class="dv">11</span>)</span>
+<span id="cb16-9"><a href=""></a></span>
+<span id="cb16-10"><a href=""></a>p_wt <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(rct_ipw, <span class="fu">aes</span>(<span class="at">x =</span> income, <span class="at">y =</span> malaria_risk_pre,</span>
+<span id="cb16-11"><a href=""></a>                              <span class="at">color =</span> type, <span class="at">shape =</span> type,</span>
+<span id="cb16-12"><a href=""></a>                              <span class="at">size =</span> ipw)) <span class="sc">+</span></span>
+<span id="cb16-13"><a href=""></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb16-14"><a href=""></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Control"</span> <span class="ot">=</span> stone, <span class="st">"Treatment"</span> <span class="ot">=</span> terracotta)) <span class="sc">+</span></span>
+<span id="cb16-15"><a href=""></a>  <span class="fu">scale_shape_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="dv">16</span>, <span class="dv">17</span>)) <span class="sc">+</span></span>
+<span id="cb16-16"><a href=""></a>  <span class="fu">scale_size_continuous</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="dv">5</span>), <span class="at">guide =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
+<span id="cb16-17"><a href=""></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"IPW Weighted"</span>, <span class="at">x =</span> <span class="st">"Income"</span>, <span class="at">y =</span> <span class="st">"Pre-Malaria Risk"</span>,</span>
+<span id="cb16-18"><a href=""></a>       <span class="at">color =</span> <span class="st">""</span>, <span class="at">shape =</span> <span class="st">""</span>) <span class="sc">+</span></span>
+<span id="cb16-19"><a href=""></a>  <span class="fu">theme_meridian</span>(<span class="at">base_size =</span> <span class="dv">11</span>)</span>
+<span id="cb16-20"><a href=""></a></span>
+<span id="cb16-21"><a href=""></a>p_unw <span class="sc">+</span> p_wt <span class="sc">+</span></span>
+<span id="cb16-22"><a href=""></a>  <span class="fu">plot_annotation</span>(<span class="at">caption =</span> <span class="st">"Source: Simulated Malawi RCT data"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
+</div>
+<img data-src="lecture_files/figure-revealjs/ipw-plot-1.png" width="1350" class="r-stretch"></section></section>
+<section>
+<section id="comparing-methods" class="title-slide slide level1 center" data-background-color="#1e293b">
+<h1>Comparing Methods</h1>
+
+</section>
+<section id="three-approaches-compared" class="slide level2">
+<h2>Three Approaches Compared</h2>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top">
+<caption>Effect of mosquito nets on post-treatment malaria risk</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Model</th>
+<th style="text-align: right;">Net Estimate</th>
+<th style="text-align: right;">Std. Error</th>
+<th style="text-align: right;">p-value</th>
+<th style="text-align: right;">N</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Naive Regression</td>
+<td style="text-align: right;">-10.083</td>
+<td style="text-align: right;">0.574</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NN Matched</td>
+<td style="text-align: right;">-10.069</td>
+<td style="text-align: right;">0.589</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">956</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">IPW Weighted</td>
+<td style="text-align: right;">-10.075</td>
+<td style="text-align: right;">0.572</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1000</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="fragment">
+<ul>
+<li>All three methods find a <strong>negative</strong> treatment effect</li>
+<li>Matched and IPW adjust for <strong>confounding</strong></li>
+<li>IPW retains the <strong>full sample</strong></li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="conclusion" class="title-slide slide level1 center" data-background-color="#1e293b">
+<h1>Conclusion</h1>
+
+</section>
+<section id="summary" class="slide level2">
+<h2>Summary</h2>
+<ul>
+<li><strong>Construct validity</strong>: measures must reflect concepts</li>
+<li><strong>Statistical conclusion</strong>: beware Type I/II errors and p-hacking</li>
+<li><strong>Internal validity</strong>: 8 threats; randomization fixes some</li>
+<li><strong>External validity</strong>: generalizability to broader populations</li>
+<li><strong>Matching</strong>: pair similar units to reduce confounding</li>
+<li><strong>IPW</strong>: reweight observations instead of dropping them</li>
+</ul>
+
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+<p>Popescu (JCU) Statistical Analysis Lecture 12: Threats to Validity</p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const onCopySuccess = function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
+      });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>
