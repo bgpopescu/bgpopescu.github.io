@@ -1385,27 +1385,65 @@ $ differ &lt;dbl&gt; 18.5, 34.9, 26.0, 21.6, 32.3, 14.4, 37.8, 14.7, 12.9, 11.4,
 <p>A strong positive correlation (<span class="math inline">\(r \approx 0.80\)</span>): higher urbanization is associated with higher life expectancy. But what does this actually look like?</p>
 </div>
 </section>
-<section id="scatterplot-life-expectancy-vs-urbanization" class="slide level2">
-<h2>Scatterplot: Life Expectancy vs Urbanization</h2>
+<section id="shared-axis-limits" class="slide level2">
+<h2>Shared Axis Limits</h2>
+</section>
+<section id="scatterplot-earliest-year-1960" class="slide level2">
+<h2>Scatterplot: Earliest Year (1960)</h2>
 <div class="cell">
 <details class="code-fold">
 <summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href=""></a><span class="fu">ggplot</span>(merged_df2, <span class="fu">aes</span>(<span class="at">x =</span> urb_mean, <span class="at">y =</span> life_exp_mean)) <span class="sc">+</span></span>
-<span id="cb66-2"><a href=""></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.15</span>, <span class="at">color =</span> sage, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb66-3"><a href=""></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">color =</span> terracotta, <span class="at">se =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb66-4"><a href=""></a>              <span class="at">fill =</span> <span class="fu">alpha</span>(terracotta, <span class="fl">0.15</span>)) <span class="sc">+</span></span>
-<span id="cb66-5"><a href=""></a>  <span class="fu">labs</span>(</span>
-<span id="cb66-6"><a href=""></a>    <span class="at">title =</span> <span class="st">"Life Expectancy vs Urbanization"</span>,</span>
-<span id="cb66-7"><a href=""></a>    <span class="at">subtitle =</span> <span class="st">"Each point = one country-year observation"</span>,</span>
-<span id="cb66-8"><a href=""></a>    <span class="at">x =</span> <span class="st">"Urban Population (%)"</span>,</span>
-<span id="cb66-9"><a href=""></a>    <span class="at">y =</span> <span class="st">"Life Expectancy at Birth"</span>,</span>
-<span id="cb66-10"><a href=""></a>    <span class="at">caption =</span> <span class="st">"Source: Our World in Data"</span></span>
-<span id="cb66-11"><a href=""></a>  ) <span class="sc">+</span></span>
-<span id="cb66-12"><a href=""></a>  <span class="fu">theme_meridian</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href=""></a>merged_earliest <span class="ot">&lt;-</span> <span class="fu">subset</span>(merged_df2, Year <span class="sc">==</span> earliest_year)</span>
+<span id="cb66-2"><a href=""></a></span>
+<span id="cb66-3"><a href=""></a>cor_earliest <span class="ot">&lt;-</span> <span class="fu">round</span>(</span>
+<span id="cb66-4"><a href=""></a>  <span class="fu">cor</span>(merged_earliest<span class="sc">$</span>life_exp_mean, merged_earliest<span class="sc">$</span>urb_mean), <span class="dv">2</span></span>
+<span id="cb66-5"><a href=""></a>)</span>
+<span id="cb66-6"><a href=""></a></span>
+<span id="cb66-7"><a href=""></a><span class="fu">ggplot</span>(merged_earliest, <span class="fu">aes</span>(<span class="at">x =</span> urb_mean, <span class="at">y =</span> life_exp_mean)) <span class="sc">+</span></span>
+<span id="cb66-8"><a href=""></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>, <span class="at">color =</span> sage, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb66-9"><a href=""></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">color =</span> terracotta, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb66-10"><a href=""></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim =</span> x_lim, <span class="at">ylim =</span> y_lim) <span class="sc">+</span></span>
+<span id="cb66-11"><a href=""></a>  <span class="fu">labs</span>(</span>
+<span id="cb66-12"><a href=""></a>    <span class="at">title =</span> <span class="fu">paste0</span>(<span class="st">"Life Expectancy vs Urbanization ("</span>, earliest_year, <span class="st">")"</span>),</span>
+<span id="cb66-13"><a href=""></a>    <span class="at">subtitle =</span> <span class="fu">paste0</span>(<span class="st">"r = "</span>, cor_earliest,</span>
+<span id="cb66-14"><a href=""></a>                      <span class="st">" · Each point = one country"</span>),</span>
+<span id="cb66-15"><a href=""></a>    <span class="at">x =</span> <span class="st">"Urban Population (%)"</span>,</span>
+<span id="cb66-16"><a href=""></a>    <span class="at">y =</span> <span class="st">"Life Expectancy at Birth"</span>,</span>
+<span id="cb66-17"><a href=""></a>    <span class="at">caption =</span> <span class="st">"Source: Our World in Data"</span></span>
+<span id="cb66-18"><a href=""></a>  ) <span class="sc">+</span></span>
+<span id="cb66-19"><a href=""></a>  <span class="fu">theme_meridian</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 
 </div>
-<img data-src="lab7_files/figure-revealjs/scatter-cor-1.png" width="1500" class="r-stretch"></section>
+<img data-src="lab7_files/figure-revealjs/scatter-earliest-1.png" width="1500" class="r-stretch"></section>
+<section id="scatterplot-latest-year-2020" class="slide level2">
+<h2>Scatterplot: Latest Year (2020)</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href=""></a>merged_latest <span class="ot">&lt;-</span> <span class="fu">subset</span>(merged_df2, Year <span class="sc">==</span> latest_year)</span>
+<span id="cb67-2"><a href=""></a></span>
+<span id="cb67-3"><a href=""></a>cor_latest <span class="ot">&lt;-</span> <span class="fu">round</span>(</span>
+<span id="cb67-4"><a href=""></a>  <span class="fu">cor</span>(merged_latest<span class="sc">$</span>life_exp_mean, merged_latest<span class="sc">$</span>urb_mean), <span class="dv">2</span></span>
+<span id="cb67-5"><a href=""></a>)</span>
+<span id="cb67-6"><a href=""></a></span>
+<span id="cb67-7"><a href=""></a><span class="fu">ggplot</span>(merged_latest, <span class="fu">aes</span>(<span class="at">x =</span> urb_mean, <span class="at">y =</span> life_exp_mean)) <span class="sc">+</span></span>
+<span id="cb67-8"><a href=""></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>, <span class="at">color =</span> sage, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb67-9"><a href=""></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">color =</span> terracotta, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb67-10"><a href=""></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim =</span> x_lim, <span class="at">ylim =</span> y_lim) <span class="sc">+</span></span>
+<span id="cb67-11"><a href=""></a>  <span class="fu">labs</span>(</span>
+<span id="cb67-12"><a href=""></a>    <span class="at">title =</span> <span class="fu">paste0</span>(<span class="st">"Life Expectancy vs Urbanization ("</span>, latest_year, <span class="st">")"</span>),</span>
+<span id="cb67-13"><a href=""></a>    <span class="at">subtitle =</span> <span class="fu">paste0</span>(<span class="st">"r = "</span>, cor_latest,</span>
+<span id="cb67-14"><a href=""></a>                      <span class="st">" · Each point = one country"</span>),</span>
+<span id="cb67-15"><a href=""></a>    <span class="at">x =</span> <span class="st">"Urban Population (%)"</span>,</span>
+<span id="cb67-16"><a href=""></a>    <span class="at">y =</span> <span class="st">"Life Expectancy at Birth"</span>,</span>
+<span id="cb67-17"><a href=""></a>    <span class="at">caption =</span> <span class="st">"Source: Our World in Data"</span></span>
+<span id="cb67-18"><a href=""></a>  ) <span class="sc">+</span></span>
+<span id="cb67-19"><a href=""></a>  <span class="fu">theme_meridian</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
+</div>
+<img data-src="lab7_files/figure-revealjs/scatter-latest-1.png" width="1500" class="r-stretch"></section>
 <section id="correlation-causation" class="slide level2">
 <h2>Correlation ≠ Causation</h2>
 <p>The correlation is real, but think about what’s in the data:</p>
