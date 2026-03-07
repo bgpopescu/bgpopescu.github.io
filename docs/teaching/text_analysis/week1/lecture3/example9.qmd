@@ -1,0 +1,11 @@
+---
+title: "Statistical Analysis Presentation"
+author: "Your Name"
+date: "2024-11-05"
+format:
+  revealjs:
+    controls: true
+    embed-resources: true
+---
+
+## Slide Title {background-gradient="radial-gradient(#283b95, #17b2c3)"}
