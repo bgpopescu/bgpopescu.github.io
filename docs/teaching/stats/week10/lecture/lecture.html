@@ -1,0 +1,1632 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="lecture_files/libs/clipboard/clipboard.min.js"></script>
+<script src="lecture_files/libs/quarto-html/tabby.min.js"></script>
+<script src="lecture_files/libs/quarto-html/popper.min.js"></script>
+<script src="lecture_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="lecture_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="lecture_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="lecture_files/libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.6.40">
+
+  <meta name="author" content="Bogdan G. Popescu">
+  <title>Statistical Analysis</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-eb6d988269a85a3d2831a8eb2c365c63.css">
+  <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Statistical Analysis</h1>
+  <p class="subtitle">Lecture 10: Bivariate and Multivariate Regression</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a>
+</div>
+<div class="quarto-title-author-email">
+<a href="mailto:bogdan.popescu@johncabot.edu">bogdan.popescu@johncabot.edu</a>
+</div>
+        <p class="quarto-title-affiliation">
+            John Cabot University
+          </p>
+    </div>
+</div>
+
+</section>
+<section class="slide level2">
+
+<style>
+.reveal section[data-background-color="#1e293b"] h1 {
+  color: #f9fafb !important;
+  border-bottom: 3px solid #b44527;
+  padding-bottom: 0.35em;
+  display: inline-block;
+}
+</style>
+</section>
+<section>
+<section id="introduction" class="title-slide slide level1 center" data-background-color="#1e293b">
+<h1>Introduction</h1>
+
+</section>
+<section id="from-bivariate-to-multivariate" class="slide level2">
+<h2>From Bivariate to Multivariate</h2>
+<ul>
+<li>Previously: bivariate regression (<span class="math inline">\(Y = bX + a\)</span>)</li>
+<li>Only <strong>one</strong> predictor influenced <span class="math inline">\(Y\)</span></li>
+</ul>
+<div class="fragment">
+<ul>
+<li>In practice, <span class="math inline">\(Y\)</span> is determined by <strong>many</strong> factors</li>
+<li>Example: life expectancy depends on urbanization, income, education, …</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Today: <strong>multivariate regression</strong> with multiple predictors</li>
+</ul>
+</div>
+</section>
+<section id="correlates-of-life-expectancy" class="slide level2">
+<h2>Correlates of Life Expectancy</h2>
+
+<img data-src="graphs/figure_vars_expectancy.png" class="quarto-figure quarto-figure-center r-stretch" style="border: 2px solid #d6dbe1; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.10); padding: 4px;;width:75.0%"></section></section>
+<section>
+<section id="bivariate-vs.-multivariate" class="title-slide slide level1 center" data-background-color="#1e293b">
+<h1>Bivariate vs.&nbsp;Multivariate</h1>
+
+</section>
+<section id="bivariate-regression-recap" class="slide level2">
+<h2>Bivariate Regression (Recap)</h2>
+<p><span class="math display">\[\hat{y} = \hat{\beta}_0 + \hat{\beta}_1 x_1 + \epsilon\]</span></p>
+<ul>
+<li><span class="math inline">\(\hat{\beta}_0\)</span>: intercept (predicted <span class="math inline">\(Y\)</span> when <span class="math inline">\(X = 0\)</span>)</li>
+<li><span class="math inline">\(\hat{\beta}_1\)</span>: slope (change in <span class="math inline">\(Y\)</span> per unit <span class="math inline">\(X\)</span>)</li>
+<li><span class="math inline">\(\epsilon\)</span>: error term</li>
+</ul>
+</section>
+<section id="our-running-example" class="slide level2">
+<h2>Our Running Example</h2>
+<p><span class="math display">\[\widehat{\text{life expectancy}} = \hat{\beta}_0 + \hat{\beta}_1 \cdot \text{urbanization} + \epsilon\]</span></p>
+
+<img data-src="lecture_files/figure-revealjs/biv-scatter-1.png" width="768" class="r-stretch"></section>
+<section id="bivariate-model-in-r" class="slide level2">
+<h2>Bivariate Model in R</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a>mod_all <span class="ot">&lt;-</span> <span class="fu">lm</span>(life_expectancy <span class="sc">~</span> urbanization, <span class="at">data =</span> final_clean)</span>
+<span id="cb1-2"><a href=""></a><span class="fu">summary</span>(mod_all)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = life_expectancy ~ urbanization, data = final_clean)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-14.6401  -4.1417  -0.5023   5.0570  18.3322 
+
+Coefficients:
+             Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  49.69309    1.07845   46.08   &lt;2e-16 ***
+urbanization  0.22533    0.01901   11.85   &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 6.726 on 213 degrees of freedom
+Multiple R-squared:  0.3973,    Adjusted R-squared:  0.3945 
+F-statistic: 140.4 on 1 and 213 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+</section>
+<section id="interpreting-the-bivariate-model" class="slide level2">
+<h2>Interpreting the Bivariate Model</h2>
+<p><span class="math display">\[\widehat{\text{life expectancy}} = 49.693 + 0.225 \cdot \text{urbanization}\]</span></p>
+<div class="fragment">
+<ul>
+<li>One unit increase in urbanization <span class="math inline">\(\rightarrow\)</span> <strong>0.225</strong> year increase</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>But what if this relationship <strong>differs</strong> across regions?</li>
+</ul>
+</div>
+</section>
+<section id="regional-differences" class="slide level2">
+<h2>Regional Differences</h2>
+
+<img data-src="lecture_files/figure-revealjs/regional-scatter-1.png" width="768" class="r-stretch"></section>
+<section id="regional-slopes-differ" class="slide level2">
+<h2>Regional Slopes Differ</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Region</th>
+<th>Slope (<span class="math inline">\(\hat{\beta}_1\)</span>)</th>
+<th>Direction</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>All countries</td>
+<td>0.225</td>
+<td>Positive</td>
+</tr>
+<tr class="even">
+<td>Latin America</td>
+<td>0.142</td>
+<td>Positive</td>
+</tr>
+<tr class="odd">
+<td>EU</td>
+<td>-0.223</td>
+<td><strong>Negative</strong></td>
+</tr>
+</tbody>
+</table>
+<div class="fragment">
+<ul>
+<li>The EU shows a <strong>negative</strong> relationship</li>
+<li>Different samples <span class="math inline">\(\rightarrow\)</span> different slopes</li>
+</ul>
+</div>
+</section>
+<section id="why-is-the-eu-slope-negative" class="slide level2">
+<h2>Why Is the EU Slope Negative?</h2>
+<p>Two issues drive this result:</p>
+<div class="fragment">
+<ol type="1">
+<li><strong>Range restriction</strong>: no EU country has urbanization below 40%
+<ul>
+<li>The EU line is fit to a <strong>narrow band</strong> of <span class="math inline">\(X\)</span> values</li>
+<li>Small, noisy samples amplify estimation error</li>
+</ul></li>
+</ol>
+</div>
+<div class="fragment">
+<ol start="2" type="1">
+<li><strong>Omitted variables</strong>: EU countries are wealthy, well-governed, and educated
+<ul>
+<li>Once urbanization is already high, further increases may not improve health</li>
+<li>Other factors (healthcare, institutions) dominate at high development levels</li>
+</ul></li>
+</ol>
+</div>
+<div class="fragment">
+<ul>
+<li>This is why we need <strong>multivariate models</strong> to disentangle effects</li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="interaction-effects" class="title-slide slide level1 center" data-background-color="#1e293b">
+<h1>Interaction Effects</h1>
+
+</section>
+<section id="adding-a-dummy-variable" class="slide level2">
+<h2>Adding a Dummy Variable</h2>
+<p>We can estimate regional effects with <strong>dummy variables</strong>:</p>
+<p><span class="math display">\[\text{life exp.} = \beta_0 + \beta_1 \cdot \text{EU} + \epsilon\]</span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a>mod_eu_dummy <span class="ot">&lt;-</span> <span class="fu">lm</span>(life_expectancy <span class="sc">~</span> eu, <span class="at">data =</span> final_clean)</span>
+<span id="cb3-2"><a href=""></a><span class="fu">summary</span>(mod_eu_dummy)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = life_expectancy ~ eu, data = final_clean)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-22.390  -6.963   1.530   6.415  16.835 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  60.4182     0.6106  98.946  &lt; 2e-16 ***
+eu            6.6955     1.7231   3.886 0.000136 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 8.372 on 213 degrees of freedom
+Multiple R-squared:  0.0662,    Adjusted R-squared:  0.06181 
+F-statistic:  15.1 on 1 and 213 DF,  p-value: 0.0001362</code></pre>
+</div>
+</div>
+</section>
+<section id="interpreting-the-eu-dummy" class="slide level2">
+<h2>Interpreting the EU Dummy</h2>
+<ul>
+<li><span class="math inline">\(\hat{\beta}_0 = 60.418\)</span>: average life expectancy for <strong>non-EU</strong> countries</li>
+<li><span class="math inline">\(\hat{\beta}_1 = 6.696\)</span>: EU countries live <strong>6.696</strong> years longer</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Life expectancy in EU: <span class="math inline">\(60.418 + 6.696 = 67.114\)</span></li>
+<li>Significant at 0.1% level (<span class="math inline">\(p &lt; 0.001\)</span>)</li>
+</ul>
+</div>
+</section>
+<section id="adding-multiple-dummies" class="slide level2">
+<h2>Adding Multiple Dummies</h2>
+<p><span class="math display">\[\text{life exp.} = \beta_0 + \beta_1 \cdot \text{EU} + \beta_2 \cdot \text{Latam} + \epsilon\]</span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a>mod_two <span class="ot">&lt;-</span> <span class="fu">lm</span>(life_expectancy <span class="sc">~</span> eu <span class="sc">+</span> latam, <span class="at">data =</span> final_clean)</span>
+<span id="cb5-2"><a href=""></a><span class="fu">summary</span>(mod_two)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = life_expectancy ~ eu + latam, data = final_clean)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-22.182  -6.754   1.176   6.398  17.043 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)   60.210      0.652  92.341  &lt; 2e-16 ***
+eu             6.904      1.739   3.971 9.82e-05 ***
+latam          1.704      1.864   0.914    0.362    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 8.376 on 212 degrees of freedom
+Multiple R-squared:  0.06986,   Adjusted R-squared:  0.06109 
+F-statistic: 7.962 on 2 and 212 DF,  p-value: 0.0004634</code></pre>
+</div>
+</div>
+</section>
+<section id="interpreting-two-dummies" class="slide level2">
+<h2>Interpreting Two Dummies</h2>
+<ul>
+<li><span class="math inline">\(\hat{\beta}_0 = 60.21\)</span>: life expectancy for <strong>rest of world</strong></li>
+<li><span class="math inline">\(\hat{\beta}_1 = 6.904\)</span>: EU countries live <strong>6.904</strong> years more</li>
+<li><span class="math inline">\(\hat{\beta}_2 = 1.704\)</span>: Latin America lives <strong>1.704</strong> years more</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>EU coefficient is <strong>significant</strong> (<span class="math inline">\(p &lt; 0.001\)</span>)</li>
+<li>Latin America coefficient is <strong>not significant</strong></li>
+</ul>
+</div>
+</section>
+<section id="adding-urbanization-as-a-control" class="slide level2">
+<h2>Adding Urbanization as a Control</h2>
+<p><span class="math display">\[\text{life exp.} = \beta_0 + \beta_1 \text{EU} + \beta_2 \text{Latam} + \beta_3 \text{urbanization} + \epsilon\]</span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a>mod_three <span class="ot">&lt;-</span> <span class="fu">lm</span>(life_expectancy <span class="sc">~</span> eu <span class="sc">+</span> latam <span class="sc">+</span> urbanization,</span>
+<span id="cb7-2"><a href=""></a>                <span class="at">data =</span> final_clean)</span>
+<span id="cb7-3"><a href=""></a><span class="fu">summary</span>(mod_three)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = life_expectancy ~ eu + latam + urbanization, data = final_clean)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-16.0178  -3.8761  -0.1325   4.6590  18.3088 
+
+Coefficients:
+             Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  49.85172    1.07619  46.323   &lt;2e-16 ***
+eu            2.67415    1.44168   1.855    0.065 .  
+latam        -0.76122    1.50643  -0.505    0.614    
+urbanization  0.21728    0.01975  11.000   &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 6.693 on 211 degrees of freedom
+Multiple R-squared:  0.4089,    Adjusted R-squared:  0.4004 
+F-statistic: 48.64 on 3 and 211 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+</section>
+<section id="effect-of-adding-controls" class="slide level2">
+<h2>Effect of Adding Controls</h2>
+<ul>
+<li>Urbanization: <strong>0.217</strong> increase per unit, <em>holding everything else constant</em></li>
+<li>EU coefficient <strong>reduced in significance</strong> after controlling for urbanization</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>This is a <strong>partial effect</strong>: holding other variables constant</li>
+</ul>
+</div>
+</section>
+<section id="the-interaction-model" class="slide level2">
+<h2>The Interaction Model</h2>
+<p>What if the <strong>slope</strong> of urbanization differs by region?</p>
+<p><span class="math display">\[\text{life exp.} = \beta_0 + \beta_1 \text{EU} + \beta_2 \text{urbanization} + \beta_3 (\text{EU} \times \text{urbanization}) + \epsilon\]</span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a>mod_int <span class="ot">&lt;-</span> <span class="fu">lm</span>(life_expectancy <span class="sc">~</span> eu <span class="sc">+</span> urbanization <span class="sc">+</span> eu_urbanization,</span>
+<span id="cb9-2"><a href=""></a>              <span class="at">data =</span> final_clean)</span>
+<span id="cb9-3"><a href=""></a><span class="fu">summary</span>(mod_int)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = life_expectancy ~ eu + urbanization + eu_urbanization, 
+    data = final_clean)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-14.0296  -3.7422  -0.5109   3.9937  18.9145 
+
+Coefficients:
+                Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)     48.97896    1.03992  47.099  &lt; 2e-16 ***
+eu              33.09677    6.59550   5.018 1.11e-06 ***
+urbanization     0.23317    0.01896  12.296  &lt; 2e-16 ***
+eu_urbanization -0.45603    0.09714  -4.694 4.81e-06 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 6.372 on 211 degrees of freedom
+Multiple R-squared:  0.4641,    Adjusted R-squared:  0.4565 
+F-statistic: 60.91 on 3 and 211 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+</section>
+<section id="interpreting-interaction-coefficients" class="slide level2">
+<h2>Interpreting Interaction Coefficients</h2>
+<div style="font-size: 0.82em;">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Coefficient</th>
+<th>Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\hat{\beta}_0\)</span></td>
+<td>48.979</td>
+<td>Intercept for non-EU</td>
+</tr>
+<tr class="even">
+<td>EU</td>
+<td>33.097</td>
+<td><strong>Offset</strong> in intercept for EU</td>
+</tr>
+<tr class="odd">
+<td>Urbanization</td>
+<td>0.233</td>
+<td>Slope for non-EU</td>
+</tr>
+<tr class="even">
+<td>EU <span class="math inline">\(\times\)</span> Urbanization</td>
+<td>-0.456</td>
+<td><strong>Offset</strong> in slope for EU</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment">
+<ul>
+<li>EU intercept: <span class="math inline">\(48.979 + 33.097 = 82.076\)</span></li>
+<li>EU slope: <span class="math inline">\(0.233 + (-0.456) = -0.223\)</span></li>
+</ul>
+</div>
+</section>
+<section id="what-is-an-interaction-effect" class="slide level2">
+<h2>What Is an Interaction Effect?</h2>
+<p>The effect of urbanization <strong>depends on</strong> EU membership:</p>
+<div class="fragment">
+<ul>
+<li><strong>Non-EU</strong>: +1 urbanization <span class="math inline">\(\rightarrow\)</span> <strong>0.233</strong> year increase</li>
+<li><strong>EU</strong>: +1 urbanization <span class="math inline">\(\rightarrow\)</span> <strong>-0.223</strong> year decrease</li>
+</ul>
+</div>
+<div class="fragment">
+<p>An <strong>interaction</strong> exists when one variable’s effect depends on another</p>
+</div>
+</section>
+<section id="indicators-vs.-interactions" class="slide level2">
+<h2>Indicators vs.&nbsp;Interactions</h2>
+<p><strong>Indicators</strong> (dummy variables):</p>
+<ul>
+<li>Show changes in the <strong>intercept</strong> for specific groups</li>
+<li>EU and Latin America are indicators</li>
+</ul>
+<div class="fragment">
+<p><strong>Interactions</strong>:</p>
+<ul>
+<li>Show changes in the <strong>slope</strong> for specific groups</li>
+<li>EU <span class="math inline">\(\times\)</span> Urbanization is an interaction</li>
+</ul>
+</div>
+</section>
+<section id="predicted-values-non-eu" class="slide level2">
+<h2>Predicted Values: Non-EU</h2>
+<p>For non-EU countries (<span class="math inline">\(\text{EU} = 0\)</span>):</p>
+<p><span class="math display">\[\hat{y} = 48.979 + 0.233 \cdot \text{urbanization}\]</span></p>
+<div class="fragment">
+<p><strong>Example</strong>: urbanization = 36% (a typical developing-country value)</p>
+<p><span class="math display">\[\hat{y} = 48.979 + 0.233 \times 36 = 57.367\]</span></p>
+</div>
+</section>
+<section id="predicted-values-eu" class="slide level2">
+<h2>Predicted Values: EU</h2>
+<p>For EU countries (<span class="math inline">\(\text{EU} = 1\)</span>):</p>
+<p><span class="math display">\[\hat{y} = 82.076 + -0.223 \cdot \text{urbanization}\]</span></p>
+<div class="fragment">
+<p><strong>Example</strong>: urbanization = 59% (close to the EU median)</p>
+<p><span class="math display">\[\hat{y} = 82.076 + -0.223 \times 59 = 68.919\]</span></p>
+</div>
+</section>
+<section id="visualizing-the-interaction" class="slide level2">
+<h2>Visualizing the Interaction</h2>
+
+<img data-src="lecture_files/figure-revealjs/interaction-plot-1.png" width="768" class="r-stretch"></section></section>
+<section>
+<section id="multivariate-regression" class="title-slide slide level1 center" data-background-color="#1e293b">
+<h1>Multivariate Regression</h1>
+
+</section>
+<section id="the-general-equation" class="slide level2">
+<h2>The General Equation</h2>
+<p><span class="math display">\[\hat{y} = \hat{\beta}_0 + \hat{\beta}_1 x_1 + \hat{\beta}_2 x_2 + \ldots + \hat{\beta}_k x_k + \epsilon\]</span></p>
+<div class="fragment">
+<ul>
+<li><span class="math inline">\(\hat{\beta}_0\)</span>: intercept</li>
+<li><span class="math inline">\(\hat{\beta}_1 \ldots \hat{\beta}_k\)</span>: slopes for each predictor</li>
+<li><span class="math inline">\(\epsilon\)</span>: error term</li>
+<li>Each <span class="math inline">\(\hat{\beta}_j\)</span> is a <strong>partial effect</strong>, holding other variables constant</li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="steps-to-exploratory-analysis" class="title-slide slide level1 center" data-background-color="#1e293b">
+<h1>9 Steps to Exploratory Analysis</h1>
+
+</section>
+<section id="the-9-steps" class="slide level2">
+<h2>The 9 Steps</h2>
+<div style="font-size: 0.82em;">
+<ol type="1">
+<li>Write the equation of interest</li>
+<li>Explore variable data types and values</li>
+<li>Compute summary statistics</li>
+<li>Compute correlation coefficients</li>
+<li>Run a regression</li>
+<li>Run alternative specifications</li>
+<li>Interpret the results</li>
+<li>Create coefficient plots</li>
+<li>Create scatter plots</li>
+</ol>
+</div>
+</section>
+<section id="step-1-write-the-equation" class="slide level2">
+<h2>Step 1: Write the Equation</h2>
+<p><span class="math display">\[\text{life expectancy} = \beta_0 + \beta_1 \cdot \text{urbanization} + \beta_2 \cdot \text{GDP} + \epsilon\]</span></p>
+<ul>
+<li><span class="math inline">\(\beta_0\)</span>: intercept</li>
+<li><span class="math inline">\(\beta_1\)</span>: effect of urbanization</li>
+<li><span class="math inline">\(\beta_2\)</span>: effect of GDP</li>
+<li><span class="math inline">\(\epsilon\)</span>: error term</li>
+</ul>
+</section>
+<section id="step-2-explore-data-types" class="slide level2">
+<h2>Step 2: Explore Data Types</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a><span class="fu">glimpse</span>(final_full)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 165
+Columns: 7
+$ Code            &lt;chr&gt; "AFG", "AGO", "ALB", "ARE", "ARG", "ARM", "AUS", "AUT"…
+$ Entity          &lt;chr&gt; "Afghanistan", "Angola", "Albania", "United Arab Emira…
+$ life_expectancy &lt;dbl&gt; 45.38333, 45.08466, 68.28611, 66.14722, 65.40805, 67.1…
+$ urbanization    &lt;dbl&gt; 18.611754, 37.539705, 40.444164, 80.680263, 85.282148,…
+$ gdp             &lt;dbl&gt; 1183.9188, 2989.0206, 4255.4923, 43458.1587, 8653.3394…
+$ continent       &lt;chr&gt; "Other", "Other", "Other", "Other", "Latam", "Other", …
+$ log_gdp         &lt;dbl&gt; 7.076585, 8.002701, 8.355966, 10.679554, 9.065701, 9.0…</code></pre>
+</div>
+</div>
+</section>
+<section id="step-3-summary-statistics" class="slide level2">
+<h2>Step 3: Summary Statistics</h2>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top">
+<caption>Summary statistics for key variables</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Variable</th>
+<th style="text-align: right;">Mean</th>
+<th style="text-align: right;">Median</th>
+<th style="text-align: right;">SD</th>
+<th style="text-align: right;">Min</th>
+<th style="text-align: right;">Max</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">life_expectancy</td>
+<td style="text-align: right;">60.20</td>
+<td style="text-align: right;">61.09</td>
+<td style="text-align: right;">8.42</td>
+<td style="text-align: right;">43.08</td>
+<td style="text-align: right;">75.50</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">urbanization</td>
+<td style="text-align: right;">50.74</td>
+<td style="text-align: right;">51.66</td>
+<td style="text-align: right;">22.35</td>
+<td style="text-align: right;">6.67</td>
+<td style="text-align: right;">100.00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">gdp</td>
+<td style="text-align: right;">7434.08</td>
+<td style="text-align: right;">4796.66</td>
+<td style="text-align: right;">8007.71</td>
+<td style="text-align: right;">819.89</td>
+<td style="text-align: right;">60020.87</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="step-3b-check-distributions" class="slide level2">
+<h2>Step 3b: Check Distributions</h2>
+
+<img data-src="lecture_files/figure-revealjs/distributions-1.png" width="864" class="r-stretch"></section>
+<section id="why-log-gdp" class="slide level2">
+<h2>Why Log GDP?</h2>
+<p>GDP is <strong>right-skewed</strong> <span class="math inline">\(\rightarrow\)</span> take the logarithm for normality</p>
+
+<img data-src="lecture_files/figure-revealjs/log-gdp-compare-1.png" width="768" class="r-stretch"></section>
+<section id="step-4-correlation-matrix" class="slide level2">
+<h2>Step 4: Correlation Matrix</h2>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top">
+<caption>Correlation matrix</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">life_expectancy</th>
+<th style="text-align: right;">urbanization</th>
+<th style="text-align: right;">log_gdp</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">life_expectancy</td>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">0.657</td>
+<td style="text-align: right;">0.774</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">urbanization</td>
+<td style="text-align: right;">0.657</td>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">0.773</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">log_gdp</td>
+<td style="text-align: right;">0.774</td>
+<td style="text-align: right;">0.773</td>
+<td style="text-align: right;">1.000</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="fragment">
+<ul>
+<li>All variables are <strong>positively correlated</strong></li>
+<li>Log GDP has the strongest correlation with life expectancy</li>
+</ul>
+</div>
+</section>
+<section id="step-5-run-a-regression" class="slide level2">
+<h2>Step 5: Run a Regression</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href=""></a>mod_multi <span class="ot">&lt;-</span> <span class="fu">lm</span>(life_expectancy <span class="sc">~</span> urbanization <span class="sc">+</span> log_gdp,</span>
+<span id="cb13-2"><a href=""></a>                <span class="at">data =</span> final_full)</span>
+<span id="cb13-3"><a href=""></a><span class="fu">summary</span>(mod_multi)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = life_expectancy ~ urbanization + log_gdp, data = final_full)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-16.614  -3.918   0.157   3.385  14.587 
+
+Coefficients:
+             Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)   7.22280    4.86021   1.486   0.1392    
+urbanization  0.05490    0.02926   1.876   0.0624 .  
+log_gdp       5.91834    0.69546   8.510 1.11e-14 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 5.31 on 162 degrees of freedom
+Multiple R-squared:  0.6072,    Adjusted R-squared:  0.6023 
+F-statistic: 125.2 on 2 and 162 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+</section>
+<section id="step-6-alternative-specifications" class="slide level2">
+<h2>Step 6: Alternative Specifications</h2>
+<div style="font-size: 0.72em;">
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top">
+<caption>Comparing model specifications</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Model</th>
+<th style="text-align: left;">Term</th>
+<th style="text-align: right;">Estimate</th>
+<th style="text-align: right;">Std. Error</th>
+<th style="text-align: right;">p-value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Model 1: Both</td>
+<td style="text-align: left;">urbanization</td>
+<td style="text-align: right;">0.055</td>
+<td style="text-align: right;">0.029</td>
+<td style="text-align: right;">0.062</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Model 1: Both</td>
+<td style="text-align: left;">log_gdp</td>
+<td style="text-align: right;">5.918</td>
+<td style="text-align: right;">0.695</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Model 2: Urb. only</td>
+<td style="text-align: left;">urbanization</td>
+<td style="text-align: right;">0.247</td>
+<td style="text-align: right;">0.022</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Model 3: GDP only</td>
+<td style="text-align: left;">log_gdp</td>
+<td style="text-align: right;">6.928</td>
+<td style="text-align: right;">0.444</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="step-7-interpret-the-results" class="slide level2">
+<h2>Step 7: Interpret the Results</h2>
+<ul>
+<li><strong>Model 1</strong>: urbanization effect = 0.055 (holding GDP constant)</li>
+<li><strong>Model 2</strong>: urbanization effect = 0.247 (bivariate)</li>
+<li><strong>Model 3</strong>: log GDP effect = 6.928 (bivariate)</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Urbanization coefficient <strong>drops</strong> substantially from Model 2 to Model 1</li>
+<li>GDP coefficient is <strong>stable</strong> across models</li>
+<li>GDP is a more <strong>robust</strong> predictor of life expectancy</li>
+</ul>
+</div>
+</section>
+<section id="log-interpretation-the-derivation" class="slide level2">
+<h2>Log Interpretation: The Derivation</h2>
+<p>Why does <span class="math inline">\(\hat{\beta}/100\)</span> give the effect of a 1% increase?</p>
+<div class="fragment">
+<p>From calculus, for small changes:</p>
+<p><span class="math display">\[\log(x + \Delta x) - \log(x) \approx \frac{\Delta x}{x}\]</span></p>
+</div>
+<div class="fragment">
+<p>A 1% increase means <span class="math inline">\(\Delta x / x = 0.01\)</span>, so <span class="math inline">\(\Delta \log(x) \approx 0.01\)</span></p>
+</div>
+<div class="fragment">
+<p><span class="math display">\[\Delta Y = \hat{\beta} \times \Delta \log(x) = \hat{\beta} \times 0.01 = \frac{\hat{\beta}}{100}\]</span></p>
+</div>
+</section>
+<section id="log-interpretation-applied" class="slide level2">
+<h2>Log Interpretation: Applied</h2>
+<ul>
+<li>Log GDP coefficient <span class="math inline">\(\approx 5.918\)</span></li>
+<li>1% GDP increase <span class="math inline">\(\rightarrow\)</span> <span class="math inline">\(5.918 \times 0.01 = 0.0592\)</span> year increase</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>10% GDP increase <span class="math inline">\(\rightarrow\)</span> <span class="math inline">\(5.918 \times 0.10 = 0.592\)</span> year increase</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>This <strong>level-log</strong> rule applies whenever <span class="math inline">\(X\)</span> is logged</li>
+</ul>
+</div>
+</section>
+<section id="step-8-coefficient-plots" class="slide level2">
+<h2>Step 8: Coefficient Plots</h2>
+
+<img data-src="lecture_files/figure-revealjs/coef-plot-1.png" width="768" class="r-stretch"></section>
+<section id="why-standardize" class="slide level2">
+<h2>Why Standardize?</h2>
+<ul>
+<li>Raw coefficients have <strong>different scales</strong> (% vs.&nbsp;dollars)</li>
+<li><strong>Scaling</strong>: subtract mean, divide by SD</li>
+</ul>
+<div class="fragment">
+<p><span class="math display">\[z = \frac{x - \bar{x}}{s_x}\]</span></p>
+</div>
+<div class="fragment">
+<ul>
+<li>Standardized coefficients allow <strong>direct comparison</strong> of effect sizes</li>
+<li>Log GDP has a <strong>stronger</strong> standardized effect than urbanization</li>
+</ul>
+</div>
+</section>
+<section id="step-9-scatter-plots" class="slide level2">
+<h2>Step 9: Scatter Plots</h2>
+
+<img data-src="lecture_files/figure-revealjs/scatter-final-1.png" width="864" class="r-stretch"></section></section>
+<section>
+<section id="r2-and-adjusted-r2" class="title-slide slide level1 center" data-background-color="#1e293b">
+<h1><span class="math inline">\(R^2\)</span> and Adjusted <span class="math inline">\(R^2\)</span></h1>
+
+</section>
+<section id="r2-recap" class="slide level2">
+<h2><span class="math inline">\(R^2\)</span> Recap</h2>
+<p><span class="math display">\[R^2 = 1 - \frac{SSR}{SST}\]</span></p>
+<ul>
+<li><span class="math inline">\(R^2\)</span> ranges from 0 to 1</li>
+<li>Proportion of variance in <span class="math inline">\(Y\)</span> explained by the model</li>
+</ul>
+<div class="fragment">
+<p><strong>Problem</strong>: <span class="math inline">\(R^2\)</span> <strong>never decreases</strong> when adding variables, even irrelevant ones</p>
+</div>
+</section>
+<section id="adjusted-r2" class="slide level2">
+<h2>Adjusted <span class="math inline">\(R^2\)</span></h2>
+<p><span class="math display">\[R^2_{adj} = 1 - \frac{(1 - R^2)(n - 1)}{n - p - 1}\]</span></p>
+<ul>
+<li><span class="math inline">\(n\)</span>: number of observations</li>
+<li><span class="math inline">\(p\)</span>: number of predictors</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Adjusted <span class="math inline">\(R^2\)</span> <strong>penalizes</strong> adding redundant variables</li>
+<li>Can be <strong>negative</strong> if the model is worse than <span class="math inline">\(\bar{Y}\)</span></li>
+<li>Use Adjusted <span class="math inline">\(R^2\)</span> for multivariate models</li>
+</ul>
+</div>
+</section>
+<section id="comparing-model-fit" class="slide level2">
+<h2>Comparing Model Fit</h2>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top">
+<caption>Model fit comparison</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Model</th>
+<th style="text-align: right;">R²</th>
+<th style="text-align: right;">Adj. R²</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Urbanization only</td>
+<td style="text-align: right;">0.4315</td>
+<td style="text-align: right;">0.4281</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Log GDP only</td>
+<td style="text-align: right;">0.5986</td>
+<td style="text-align: right;">0.5962</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Both</td>
+<td style="text-align: right;">0.6072</td>
+<td style="text-align: right;">0.6023</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="fragment">
+<ul>
+<li>Adding log GDP <strong>substantially improves</strong> model fit</li>
+<li>The combined model explains the most variance</li>
+</ul>
+</div>
+</section>
+<section id="statistical-significance-reminder" class="slide level2">
+<h2>Statistical Significance Reminder</h2>
+<ul>
+<li><span class="math inline">\(H_0\)</span>: no relationship between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> (<span class="math inline">\(\beta = 0\)</span>)</li>
+<li><span class="math inline">\(H_1\)</span>: there is a relationship (<span class="math inline">\(\beta \neq 0\)</span>)</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>If <span class="math inline">\(p &lt; 0.05\)</span>: reject <span class="math inline">\(H_0\)</span> <span class="math inline">\(\rightarrow\)</span> <strong>significant</strong></li>
+<li>If <span class="math inline">\(p \geq 0.05\)</span>: do not reject <span class="math inline">\(H_0\)</span> <span class="math inline">\(\rightarrow\)</span> <strong>not significant</strong></li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Frequentist interpretation</strong>: <span class="math inline">\(p\)</span> = probability of observing data this extreme <em>if <span class="math inline">\(H_0\)</span> were true</em></p>
+</div>
+<div class="fragment">
+<ul>
+<li><span class="math inline">\(p\)</span> is <strong>not</strong> “probability that <span class="math inline">\(H_0\)</span> is true” (Bayesian misreading)</li>
+<li>Small <span class="math inline">\(p\)</span>: data unlikely <strong>under <span class="math inline">\(H_0\)</span></strong> <span class="math inline">\(\rightarrow\)</span> reject <span class="math inline">\(H_0\)</span></li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="gauss-markov-assumptions" class="title-slide slide level1 center" data-background-color="#1e293b">
+<h1>Gauss-Markov Assumptions</h1>
+
+</section>
+<section id="from-analysis-to-assumptions" class="slide level2">
+<h2>From Analysis to Assumptions</h2>
+<p>The 9 steps show you <strong>how</strong> to build a regression model</p>
+<div class="fragment">
+<p>But for the results to be trustworthy, the model must satisfy certain conditions</p>
+</div>
+<div class="fragment">
+<p>The <strong>Gauss-Markov theorem</strong> states: if four assumptions hold, OLS produces the <strong>Best Linear Unbiased Estimator</strong> (BLUE)</p>
+</div>
+</section>
+<section id="four-ols-assumptions" class="slide level2">
+<h2>Four OLS Assumptions</h2>
+<ol type="1">
+<li><strong>Linearity</strong>: <span class="math inline">\(Y\)</span> is a linear function of <span class="math inline">\(X\)</span></li>
+</ol>
+<div class="fragment">
+<ol start="2" type="1">
+<li><strong>Zero Conditional Mean</strong> (exogeneity): <span class="math inline">\(E(\epsilon | X) = 0\)</span></li>
+</ol>
+</div>
+<div class="fragment">
+<ol start="3" type="1">
+<li><strong>Homoskedasticity</strong>: <span class="math inline">\(\text{Var}(\epsilon | X) = \sigma^2\)</span></li>
+</ol>
+</div>
+<div class="fragment">
+<ol start="4" type="1">
+<li><strong>No Perfect Collinearity</strong>: no exact linear relationships among predictors</li>
+</ol>
+</div>
+</section>
+<section id="consequences-of-violations" class="slide level2">
+<h2>Consequences of Violations</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Assumption</th>
+<th>If Violated</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Linearity</td>
+<td>Biased coefficients and SEs</td>
+</tr>
+<tr class="even">
+<td>Zero conditional mean</td>
+<td>Biased coefficients and SEs</td>
+</tr>
+<tr class="odd">
+<td>Homoskedasticity</td>
+<td>Biased SEs (coefficients OK)</td>
+</tr>
+<tr class="even">
+<td>No perfect collinearity</td>
+<td>Biased SEs (coefficients OK)</td>
+</tr>
+</tbody>
+</table>
+<div class="fragment">
+<ul>
+<li>Assumptions 1–2: most serious (coefficients are <strong>wrong</strong>)</li>
+<li>Assumptions 3–4: SEs are unreliable (use <strong>robust SEs</strong>)</li>
+</ul>
+</div>
+</section>
+<section id="diagnosing-linearity-homoskedasticity" class="slide level2">
+<h2>Diagnosing Linearity &amp; Homoskedasticity</h2>
+<p>Plot <strong>residuals vs.&nbsp;fitted values</strong> from our multivariate model:</p>
+
+<img data-src="lecture_files/figure-revealjs/resid-fitted-1.png" width="768" class="r-stretch"></section>
+<section id="reading-the-diagnostic-plot" class="slide level2">
+<h2>Reading the Diagnostic Plot</h2>
+<p>What to look for:</p>
+<div class="fragment">
+<ul>
+<li><strong>Linearity</strong>: LOESS curve should be roughly flat near zero
+<ul>
+<li>A clear curve <span class="math inline">\(\rightarrow\)</span> non-linear relationship</li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><strong>Homoskedasticity</strong>: the spread of residuals should be roughly constant
+<ul>
+<li>A fan or funnel shape <span class="math inline">\(\rightarrow\)</span> heteroskedasticity</li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>If heteroskedasticity is detected, use <strong>robust standard errors</strong></li>
+</ul>
+</div>
+</section>
+<section id="diagnosing-collinearity" class="slide level2">
+<h2>Diagnosing Collinearity</h2>
+<p>The <strong>Variance Inflation Factor</strong> (VIF) measures collinearity:</p>
+<p><span class="math display">\[\text{VIF}_j = \frac{1}{1 - R^2_j}\]</span></p>
+<p>where <span class="math inline">\(R^2_j\)</span> is from regressing predictor <span class="math inline">\(j\)</span> on all other predictors</p>
+<div class="fragment">
+<ul>
+<li>VIF <span class="math inline">\(= 1\)</span>: no collinearity</li>
+<li>VIF <span class="math inline">\(&gt; 5\)</span>: moderate concern</li>
+<li>VIF <span class="math inline">\(&gt; 10\)</span>: serious collinearity problem</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Our predictors are correlated but not perfectly collinear</li>
+<li>VIF can be computed in R using <code>car::vif(mod_multi)</code></li>
+</ul>
+</div>
+</section>
+<section id="strength-of-evidence" class="slide level2">
+<h2>Strength of Evidence</h2>
+<p>The <strong>t-statistic</strong> measures the strength of the pattern:</p>
+<p><span class="math display">\[t = \frac{\hat{\beta}}{SE(\hat{\beta})}\]</span></p>
+<div class="fragment">
+<p>Three factors influence it:</p>
+<ul>
+<li><strong>Effect size</strong>: larger <span class="math inline">\(\hat{\beta}\)</span> <span class="math inline">\(\rightarrow\)</span> larger <span class="math inline">\(t\)</span></li>
+<li><strong>Noise</strong>: more variability <span class="math inline">\(\rightarrow\)</span> smaller <span class="math inline">\(t\)</span></li>
+<li><strong>Sample size</strong>: more data <span class="math inline">\(\rightarrow\)</span> larger <span class="math inline">\(t\)</span></li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="conclusion" class="title-slide slide level1 center" data-background-color="#1e293b">
+<h1>Conclusion</h1>
+
+</section>
+<section id="summary" class="slide level2">
+<h2>Summary</h2>
+<ul>
+<li><strong>Multivariate regression</strong> extends bivariate to multiple predictors</li>
+<li><strong>Dummy variables</strong> shift intercepts; <strong>interactions</strong> shift slopes</li>
+<li><strong>Partial effects</strong>: each <span class="math inline">\(\hat{\beta}\)</span> holds other variables constant</li>
+<li><strong>Log interpretation</strong>: 1% increase in <span class="math inline">\(X\)</span> <span class="math inline">\(\rightarrow\)</span> <span class="math inline">\(\hat{\beta}/100\)</span> change in <span class="math inline">\(Y\)</span></li>
+<li><strong>Adjusted <span class="math inline">\(R^2\)</span></strong> penalizes adding redundant predictors</li>
+<li><strong>Gauss-Markov</strong>: four assumptions; diagnose with residual plots and VIF</li>
+</ul>
+
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+<p>Popescu (JCU) Statistical Analysis Lecture 10: Bivariate and Multivariate Regression</p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const onCopySuccess = function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
+      });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>

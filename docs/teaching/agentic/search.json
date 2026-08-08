@@ -1,0 +1,512 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Agentic AI for Social Science Research",
+    "section": "",
+    "text": "Preface\nThis tutorial series teaches empirical social science researchers how to use Claude Code — an agentic AI harness — for the full research workflow: from reading papers and designing identification strategies through analysis, verification, and journal submission.\nThe series is organized in five parts:\n\nIntroduction — What agentic AI is, the expertise-verification paradox, and how to install Claude Code\nCLAUDE.md — Configuring Claude Code for research with a persistent project constitution\nGit — Version control as safety infrastructure for AI-assisted workflows\nSkills — A reusable skills library for the publication pipeline, from literature discovery through submission\nAI Work Hygiene — Productivity traps, cognitive strain, and strategies for sustainable AI-assisted research\n\nEach tutorial is self-contained but they build on each other. The accompanying popescu_claude/ folder contains 11 working skills you can install into your own projects.\nThe tutorials synthesize ideas from Scott Cunningham’s MixtapeTools, Hugo Sant’Anna’s Clo-Author, Chris Blattman’s claudeblattman.com, Aniket Panjwani’s AI MBA, and Anthropic’s Claude Code documentation.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "lecture1.html",
+    "href": "lecture1.html",
+    "title": "1  Agentic AI for Social Science Research",
+    "section": "",
+    "text": "2 What Is Agentic AI?\nMost researchers interact with AI through a chat interface — you type a question, get a response, and the conversation stays inside that browser tab. That’s fine for brainstorming or drafting text, but it can’t touch your files, run your code, or remember your project across sessions.\nAn agent is different. An agent is an AI that can act: it reads files on your computer, writes code, executes it, inspects the output, fixes errors, and iterates, all within your actual project directory. Research is not a conversation. It is a workflow: data cleaning, estimation, verification, writing, revision, submission. An agent can participate in that workflow in ways a chatbot cannot.\nA useful framework here is the distinction between models, apps, and harnesses:\nThe same model powering a chat interface becomes far more capable when placed inside a harness that gives it tools: file access, code execution, version control, and the ability to plan multi-step workflows. A harness can also delegate: when you give Claude Code a complex task, it can spawn sub-agents — separate processes, each with its own context window — to handle subtasks like web research or file analysis in parallel. This is why complex requests take longer and why specificity matters: a vague prompt forces sub-agents to search broadly, while a precise one lets them work efficiently. This tutorial series teaches you how to use that harness for empirical social science research.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Agentic AI for Social Science Research</span>"
+    ]
+  },
+  {
+    "objectID": "lecture1.html#prerequisites",
+    "href": "lecture1.html#prerequisites",
+    "title": "1  Agentic AI for Social Science Research",
+    "section": "8.1 Prerequisites",
+    "text": "8.1 Prerequisites\nYou need a computer (macOS, Linux, or Windows), an internet connection, and a paid Claude subscription or API key. The free plan does not include Claude Code. For current pricing, see claude.ai/pricing.\n\n8.1.1 Required\n\n\n\nTool\nPurpose\nInstall\n\n\n\n\nClaude Code\nThe agentic coding harness\nSee Step 1 below\n\n\nClaude subscription\nPays for Claude Code usage\nClaude Pro, Max, Teams, or Enterprise, or an API key from the Claude Console\n\n\nGit\nVersion control and audit trail\nbrew install git (macOS) or apt install git (Linux) — see Tutorial 3\n\n\n\n\n\n8.1.2 Recommended\n\n\n\nTool\nPurpose\nInstall\n\n\n\n\nR\nPrimary analysis and visualization\nr-project.org\n\n\nQuarto\nSlide decks, documents, website\nquarto.org\n\n\nGitHub CLI\nGitHub integration (push, pull, create repos)\nbrew install gh (macOS) or see cli.github.com\n\n\n\n\n\n8.1.3 Optional\n\n\n\nTool\nPurpose\nInstall\n\n\n\n\nPython\nCross-language replication\npython.org or brew install python\n\n\nLaTeX\nPaper compilation\nTeX Live or MacTeX\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nYou don’t need everything on day one. Claude Code (required) is all you need for Tutorials 1 and 2. Git (required) is introduced in Tutorial 3. R, Quarto, and the optional tools become relevant in Tutorial 4 when you start using skills. Install them as you go.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Agentic AI for Social Science Research</span>"
+    ]
+  },
+  {
+    "objectID": "lecture1.html#step-1-install-claude-code",
+    "href": "lecture1.html#step-1-install-claude-code",
+    "title": "1  Agentic AI for Social Science Research",
+    "section": "8.2 Step 1: Install Claude Code",
+    "text": "8.2 Step 1: Install Claude Code\nOpen a terminal and run the installer for your operating system:\nmacOS or Linux:\ncurl -fsSL https://claude.ai/install.sh | bash\nWindows (PowerShell):\nirm https://claude.ai/install.ps1 | iex\nThe native installer requires no dependencies and auto-updates in the background.\n\n\n\n\n\n\nNote\n\n\n\nAlternative: npm installation. If you prefer to install via npm (e.g., for version pinning), you can run npm install -g @anthropic-ai/claude-code. This requires Node.js to be installed first. The npm method still works but is officially deprecated by Anthropic in favor of the native installer.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Agentic AI for Social Science Research</span>"
+    ]
+  },
+  {
+    "objectID": "lecture1.html#step-2-first-run",
+    "href": "lecture1.html#step-2-first-run",
+    "title": "1  Agentic AI for Social Science Research",
+    "section": "8.3 Step 2: First Run",
+    "text": "8.3 Step 2: First Run\nNavigate to a project directory and start Claude Code:\ncd ~/Dropbox/my-research-project\nclaude\nYour browser will open for Anthropic authentication. Approve access, return to the terminal, and Claude Code is running. Try asking it something about your files:\nWhat files are in my current folder?\nClaude can now see your actual project. Type /exit to end the session.\nBefore you start working in earnest, it helps to understand how Claude Code handles permissions and data privacy.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Agentic AI for Social Science Research</span>"
+    ]
+  },
+  {
+    "objectID": "lecture1.html#permissions",
+    "href": "lecture1.html#permissions",
+    "title": "1  Agentic AI for Social Science Research",
+    "section": "8.4 Permissions",
+    "text": "8.4 Permissions\nClaude Code asks for permission before running commands, editing files, or accessing the web. You can approve each action individually, or grant blanket permission to speed things up:\n\n“Yes” — approve this one action\n“Yes, and don’t ask again” — approve this type of action for the rest of the session (e.g., all web searches, or all Python script executions)\n\nFor a data analysis session, you might say “yes, you can always use web searches” and “yes, you can run all the R scripts you need.” This avoids approving every single action and lets Claude work while you step away. Permissions are scoped to the current session and project.\n\n\n\n\n\n\nImportant\n\n\n\nAlways navigate to your project folder before running claude. Claude Code sees whatever directory you’re in when you launch it. If you start it from your home directory, it sees everything. If you start it from your project folder, it sees your project and reads your CLAUDE.md automatically.\n\n\n\n\n\n\n\n\nWarning\n\n\n\nYour files are sent to Anthropic’s servers. Claude Code reads files in your project directory and sends their contents to Anthropic as part of each API request. The conversation doesn’t persist server-side, but file contents become part of the request. A safe heuristic: don’t expose data you wouldn’t upload to Dropbox. Specifically exclude IRB-protected research data, personally identifiable information (PII), HIPAA-regulated medical records, and API keys or passwords.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Agentic AI for Social Science Research</span>"
+    ]
+  },
+  {
+    "objectID": "lecture1.html#choosing-a-model",
+    "href": "lecture1.html#choosing-a-model",
+    "title": "1  Agentic AI for Social Science Research",
+    "section": "8.5 Choosing a Model",
+    "text": "8.5 Choosing a Model\nClaude Code defaults to Sonnet on Pro and Team Standard plans and Opus on Max and Team Premium plans. For research work (analysis, writing, review), Opus is the better choice:\n/model\nSelect Claude Opus from the list. Opus is slower and more expensive but noticeably better at reasoning, nuanced interpretation, and longer output. Use Sonnet for mechanical tasks (reformatting, file operations, simple code edits) and Opus for anything requiring judgment.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Agentic AI for Social Science Research</span>"
+    ]
+  },
+  {
+    "objectID": "lecture1.html#useful-commands",
+    "href": "lecture1.html#useful-commands",
+    "title": "1  Agentic AI for Social Science Research",
+    "section": "8.6 Useful Commands",
+    "text": "8.6 Useful Commands\n\n\n\n\n\n\n\nAction\nHow\n\n\n\n\nSend a message\nType and press Enter\n\n\nMulti-line message\nPress \\ then Enter (or Shift+Enter)\n\n\nQueue messages while Claude works\nJust type — they’ll be sent when it finishes (press Up to edit a queued message)\n\n\nScroll history\nUp/Down arrow keys\n\n\nSwitch model\n/model\n\n\nGet help\n/help\n\n\nExit\n/exit or Ctrl + C\n\n\nCompact context\n/compact\n\n\nInterrupt / revert\nEsc (interrupt current action; press again to revert). Type “please continue” to resume.\n\n\nSee Claude’s thinking\nCtrl + O (toggle internal reasoning view while Claude works)\n\n\nReference a file\nType @filename in your prompt\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nManaging long sessions. Claude Code automatically compresses earlier conversation as the context window fills. For very long research sessions, you can manually run /compact to summarize the conversation so far and free up space. If a session becomes sluggish or Claude starts forgetting earlier instructions, this usually helps.\n\n\n\n\n\n\n\n\nWarning\n\n\n\nCompaction is lossy. When Claude compacts a conversation, whether automatically or via /compact, it summarizes the history but drops specific details: which approaches failed, constraints you stated three prompts ago, a reviewer’s formatting preferences you mentioned in passing. This is one more reason to keep sessions short, commit often, and put important constraints in CLAUDE.md rather than relying on conversation history. CLAUDE.md and auto-memory are re-loaded at the start of every session and are immune to compaction.\n\n\n\n\n\n\n\n\nNote\n\n\n\nCode runs on your machine. Claude Code executes scripts locally — your hardware, not a cloud server. Running Python or R code requires having those languages installed, and any files created or modified are real files in your project directory. The distinction: your code runs locally, but the files Claude reads are sent to Anthropic’s servers as part of each API request (see the data privacy note above).\n\n\n\n\n\n\n\n\nTipClaude Code vs. Cowork\n\n\n\nCowork is the web-based sandboxed alternative bundled with Claude’s desktop app. Both use the same underlying model, but the environments differ:\n\n\n\nFeature\nClaude Code\nCowork\n\n\n\n\nInterface\nTerminal\nWeb browser\n\n\nFile access\nFull filesystem\nSandboxed\n\n\nNetwork\nUnrestricted\nIP-restricted\n\n\nBest for\nFull projects\nQuick prototyping\n\n\n\nCowork’s restrictions are deliberate safety boundaries, not capability limits. Use Claude Code for real project work; use Cowork for quick experiments you don’t want touching your filesystem.\n\n\n\n\n\n\n\n\nTipChatGPT vs. Claude: which should I use?\n\n\n\nYou don’t have to choose one exclusively. Each has strengths: Claude Code is the best current agentic harness for working inside your project directory; Claude is strong on long documents and nuanced reasoning; ChatGPT’s Deep Research mode is good for literature surveys; and ChatGPT handles image generation, which Claude does not. If you had to pick one tool for research, Claude with Claude Code is the better option right now, but there’s no reason not to use both. Note that OpenAI’s Codex uses AGENTS.md the way Claude Code uses CLAUDE.md — the concept is converging across platforms.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Agentic AI for Social Science Research</span>"
+    ]
+  },
+  {
+    "objectID": "lecture2.html",
+    "href": "lecture2.html",
+    "title": "2  Writing Your CLAUDE.md",
+    "section": "",
+    "text": "3 What Is CLAUDE.md and Why Does It Matter?\nClaude Code forgets everything between sessions. Every time you open a new terminal and type claude, it starts fresh: no memory of your project, your methods, your file locations, or the decisions you made yesterday. Scott Cunningham calls this the “amnesia problem”:\nThe fix is a file called CLAUDE.md that Claude Code reads automatically at the start of every session. It tells Claude who you are, how to behave, where your files live, and what rules to follow. If you skip it, you spend the first five minutes of every session re-explaining context that hasn’t changed.\nThis tutorial walks through a complete, working CLAUDE.md line by line. The file draws on three sources:\nWhat follows is a CLAUDE.md built for an empirical social science researcher who works primarily in R with Quarto, stores projects in Dropbox, and cares about empirical rigor. Each section is explained: what it does, where the idea came from, and why it belongs in a file you want to keep under ~150 lines.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Writing Your CLAUDE.md</span>"
+    ]
+  },
+  {
+    "objectID": "lecture2.html#core-principles",
+    "href": "lecture2.html#core-principles",
+    "title": "2  Writing Your CLAUDE.md",
+    "section": "6.1 Core Principles",
+    "text": "6.1 Core Principles\n## Core Principles\n\n- **Plan first** — enter plan mode before non-trivial tasks\n- **Verify after** — run code, render output, confirm results before moving on\nWhere it comes from: Pedro Sant’Anna’s “project constitution” approach. His CLAUDE.md opens with core principles that govern Claude’s behavior across every session. The idea is that these are non-negotiable rules, not suggestions.\nWhy it’s here: These two rules address the failure modes I’ve seen most often in AI-assisted research:\n\nPlan first stops Claude from jumping straight into code that goes in the wrong direction. For anything beyond a quick fix, Claude should outline its approach before executing. This is Sant’Anna’s entry gate. Claude Code has a built-in planning mode that you can trigger by asking Claude to “make a plan” before executing — it will outline its approach and ask clarifying questions before writing any code. For larger projects, you can take this further with the research-plan-execute workflow described in the Managing Long Sessions section below.\nVerify after means you don’t accept output on faith. After running a regression, rendering a Quarto deck, or generating a figure, Claude should confirm the output is correct before moving on.\n\n\n\n\n\n\n\nTip\n\n\n\nPrinciples other practitioners promote. Cunningham’s MixtapeTools template adds two behavioral rules worth knowing about: design before results (focus on specification correctness, not point estimates) and cross-replicate (implement key analyses in both R and a second language, since “the mistakes Claude makes in R and Stata are largely independent — they’re orthogonal error vectors”). This tutorial handles both through the Estimation Philosophy section and the Tools table rather than as core principles. Claude Code’s auto-memory feature also functions as an implicit principle: when you correct Claude, it saves a feedback memory that persists across sessions, so corrections compound over time without manual logging.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Writing Your CLAUDE.md</span>"
+    ]
+  },
+  {
+    "objectID": "lecture2.html#estimation-philosophy",
+    "href": "lecture2.html#estimation-philosophy",
+    "title": "2  Writing Your CLAUDE.md",
+    "section": "6.2 Estimation Philosophy",
+    "text": "6.2 Estimation Philosophy\n## Estimation Philosophy\n\n- Do NOT express concern or excitement about point estimates\n- Do NOT interpret results as \"good\" or \"bad\" until the design is intentional\n- Focus entirely on whether the specification is correct — results are meaningless until the design is right\n- /methods-review NEVER modifies author code — it only reads, runs, and creates replication scripts\nWhere it comes from: Scott Cunningham’s MixtapeTools template. This section is closely adapted from his approach.\nWhy it’s here: I think this is the most important section in any research CLAUDE.md. If you leave it out, Claude will cheerfully tell you “Great news, the coefficient is significant!”, express concern about null results, and nudge you toward findings that look “interesting.”\nWith these lines in place, Claude focuses on whether the specification is correct: the right fixed effects, sample restrictions, standard errors. It treats results as outputs of a design, not as goals. This is where Cunningham’s “design before results” principle lives in practice — not as a one-liner in Core Principles, but as a detailed behavioral constraint that shapes how Claude handles every regression.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Writing Your CLAUDE.md</span>"
+    ]
+  },
+  {
+    "objectID": "lecture2.html#communication-guidelines",
+    "href": "lecture2.html#communication-guidelines",
+    "title": "2  Writing Your CLAUDE.md",
+    "section": "6.3 Communication Guidelines",
+    "text": "6.3 Communication Guidelines\n## Tools and Software\n\n```{.markdown}\n## Tools and Software\n\n| Tool | Use | Notes |\n|------|-----|-------|\n| R | Primary analysis, visualization (ggplot2, fixest, sf, dplyr, tidyr) | Always use |\n| Python | Cross-language replication (statsmodels, linearmodels, pandas) | For verification |\n| Quarto | Slide decks (RevealJS), documents, website, tutorials (.qmd) | NOT Beamer |\n| LaTeX | Paper drafts when needed | |\n\nWhen suggesting code, include comments explaining non-obvious choices.\n\n\n\n\n\n\nNote\n\n\n\nCommunication guidelines. Blattman’s template includes a “How I Prefer to Work” section and Cunningham’s includes “Communication Guidelines” with collaborator names. Claude’s default style is verbose and hedging — it adds caveats like “It’s worth noting that…” which waste time for experienced researchers. You can add communication rules (conciseness, name conventions, no hedging) either as a separate section or, as this file does, as a single line in the Tools section. The choice is yours — what matters is that the instruction exists somewhere.\n\n\nWhere it comes from: Blattman’s template uses a Tools and Software table with columns for Tool, Use, and File Location.\nWhy it’s here: Claude needs to know which tools to use. If you don’t tell it, it might generate Beamer slides instead of Quarto, or default to matplotlib when you use ggplot2. The “Notes” column does a lot of work here:\n\n“Always use” for R means Claude should never default to another language for primary analysis\n“NOT Beamer” for Quarto prevents Claude from generating LaTeX slide code when you want Quarto RevealJS\n“For verification” for Python makes clear that Python is a replication tool, not the primary language\n\nListing specific packages (fixest, sf, dplyr) tells Claude which ecosystem you work in and stops it from suggesting alternatives you don’t use.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Writing Your CLAUDE.md</span>"
+    ]
+  },
+  {
+    "objectID": "lecture2.html#folder-structure",
+    "href": "lecture2.html#folder-structure",
+    "title": "2  Writing Your CLAUDE.md",
+    "section": "6.4 Folder Structure",
+    "text": "6.4 Folder Structure\n## Folder Structure\nproject/ ├── code/R/ — R scripts (01_clean.R, 02_analysis.R, …) ├── code/python/ — Replication scripts ├── data/raw/ — Original data (NEVER modify) ├── data/clean/ — Cleaned datasets ├── output/tables/ — Generated tables ├── output/figures/ — Generated figures\n\n- Use relative paths in all code\n- Quarto theme: use _extensions/meridian.scss when available\n- ggplot2: use theme_bw() when defined in the project (exception: presentation-builder uses theme_meridian())\nWhere it comes from: Cunningham’s MixtapeTools includes a /newproject command that generates a standard project scaffold. Sant’Anna’s template includes a full directory tree.\nWhy it’s here: This keeps Claude from creating files in the wrong places. I’ve seen it save figures to the project root instead of output/figures/, or drop an R script at the top level instead of code/R/.\nThe rules worth highlighting:\n\ndata/raw/ — NEVER modify. Raw data doesn’t get touched. All transformations happen in code, producing cleaned versions in data/clean/.\nRelative paths only prevents the reproducibility failure where code works on your machine but breaks everywhere else because it has /Users/yourname/... hardcoded in it.\nNumbering convention (01_clean.R, 02_analysis.R) makes execution order obvious.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Writing Your CLAUDE.md</span>"
+    ]
+  },
+  {
+    "objectID": "lecture2.html#quarto-conventions",
+    "href": "lecture2.html#quarto-conventions",
+    "title": "2  Writing Your CLAUDE.md",
+    "section": "6.5 Quarto Conventions",
+    "text": "6.5 Quarto Conventions\n## Quarto Conventions\n\n- Slide decks use RevealJS format with self-contained: true\n- Section headers: # Title {background-color=\"#1e293b\"}\n- Exercises: {background-color=\"#b44527\"}\n- Use :::fragment for progressive disclosure\n- Mermaid diagrams: always include %%{init:{...}}%% block with useMaxWidth: true\n- Code chunks: echo: false, warning: false, message: false by default\n- Maximum 6 bullets per slide, 10 words per bullet\n- Slide titles are assertions, not labels (\"Trade increased GDP by 12%\" not \"Results\")\n- Cognitive load should be roughly equal across all slides\n- Lead with the conclusion, then support it (Pyramid Principle)\nWhere it comes from: This section is specific to your workflow. Sant’Anna’s template includes Beamer Custom Environments and Quarto CSS Classes sections, which serve the same purpose for different tools.\nWhy it’s here: You produce all slide decks in Quarto RevealJS. If Claude doesn’t know your conventions, it will generate slides that don’t match your theme, use wrong background colors for section headers, forget to suppress code output, or produce slides that overflow. The embed-resources: true rule ensures the HTML file bundles all assets (images, fonts) so you can share it as a single file.\nThe Mermaid diagram rule (%%{init:{...}}%% block) prevents a rendering problem where diagrams come out too small or overflow the slide.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Writing Your CLAUDE.md</span>"
+    ]
+  },
+  {
+    "objectID": "lecture2.html#project-overview-and-status",
+    "href": "lecture2.html#project-overview-and-status",
+    "title": "2  Writing Your CLAUDE.md",
+    "section": "6.6 Project Overview and Status",
+    "text": "6.6 Project Overview and Status\n## Project Overview and Status\n\nSee README.md for the current research question, method, data, and status.\nWhere it comes from: Cunningham’s template has detailed Project Overview, Research Question, Data Sources, Identification Strategy, Current Status, and Key Decisions sections, all inside CLAUDE.md.\nWhy it’s a pointer, not prose: Research questions evolve. Data sources change. Status updates every session. If you put detailed project descriptions in CLAUDE.md, they go stale fast and bloat the file. The ~150 line budget means you can’t afford to waste space on content that changes weekly.\nInstead, this one line tells Claude to read README.md, which it will do when you run the session startup routine:\nRead all the markdowns. Read the key programs.\nState the goals of this session.\nThe README.md can be as detailed and frequently updated as you need without affecting CLAUDE.md.\nWhat goes in README.md (not CLAUDE.md):\n\nCurrent research question and method\nData sources and time periods\nKey decisions made (with dates and rationale)\nDropped analyses (with reasons)\nVariable definitions\nSample restrictions\nCurrent status and next steps\n\nAll of these change. CLAUDE.md holds behavioral rules that stay stable across sessions.\nA concrete example. Here is what a README.md might look like for a difference-in-differences project studying the effect of a land reform on local public goods provision:\n# Land Reform and Public Goods — README\n\n## Research Question\nDid the 1996 Colombian land reform increase local public goods provision\n(schools, clinics, roads) in treated municipalities?\n\n## Method\nDifference-in-differences with staggered treatment adoption.\nPrimary estimator: Callaway & Sant'Anna (2021) via the `did` R package.\nRobustness: Sun & Abraham, Borusyak et al.\n\n## Data\n- **Treatment**: Municipality-level reform implementation dates (MinAgricultura).\n- **Outcomes**: School and clinic density from DANE census panels, 1990–2010.\n- **Controls**: Pre-reform population, elevation, distance to department capital.\n- Unit of observation: municipality-year. N ≈ 1,100 municipalities × 21 years.\n\n## Key Decisions\n- 2025-03-12: Dropped municipalities with population &lt; 500 (measurement noise).\n- 2025-03-18: Switched from TWFE to Callaway–Sant'Anna after heterogeneity diagnostic.\n\n## Current Status\n- Cleaning: done (01_clean.R)\n- Main estimates: in progress (02_analysis.R)\n- Robustness checks: not started\n- Draft: outline stage\nREADME holds what changes; CLAUDE.md holds what doesn’t. Claude reads both at session start, but only CLAUDE.md needs to stay short.\n\n\n\n\n\n\nTip\n\n\n\nQuality thresholds (from Sant’Anna and Clo-Author). Pedro Sant’Anna’s template includes a Quality Thresholds section with a scoring system: 80 (Commit — good enough to save), 90 (PR-ready — ready for coauthor review), 95 (Excellence — ready for submission). Hugo Sant’Anna’s Clo-Author uses the same thresholds with weighted aggregate scoring. The idea is that quality gates give you a shared vocabulary for “is this done?” — Claude can self-assess against a numeric target instead of the vague “looks good.” This tutorial’s CLAUDE.md does not include quality thresholds, relying instead on the stopping rules and verification skills described in Tutorials 4 and 5. But if you find yourself iterating without a clear endpoint, adding a threshold table to your own file is a concrete way to fix that.\n\n\n\n\n\n\n\n\nNoteWhat happened to Session Startup and MEMORY.md?\n\n\n\nEarlier versions of this template included a Session Startup section (instructing Claude to read README.md and MEMORY.md at session start) and a manual MEMORY.md file with [LEARN:category] tags for recording corrections.\nBoth are now obsolete. Claude Code reads CLAUDE.md automatically at every session start — no startup instruction needed. And the auto-memory system (built into Claude Code) handles corrections automatically: when you correct Claude, it saves the lesson to ~/.claude/projects/&lt;project&gt;/memory/ without you needing to manage a file. See Tutorial 4 for details.\nThe methods-review guardrail (“NEVER modifies author code”) was previously in a standalone Referee 2 section. It now lives in the Estimation Philosophy section above, which is where it belongs — it’s loaded every session as part of the core rules.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Writing Your CLAUDE.md</span>"
+    ]
+  },
+  {
+    "objectID": "lecture3.html",
+    "href": "lecture3.html",
+    "title": "3  Git for Research",
+    "section": "",
+    "text": "4 Why Git?\nClaude can rewrite your entire analysis script in seconds. That speed is useful — until you want to go back. Without version control, “going back” means trying to remember what your code looked like before Claude changed it. Git solves this: it tracks every change to every file, lets you undo anything, and backs up your work to GitHub. For research specifically, git also provides an audit trail — a complete record of how your analysis evolved, which a reviewer or co-author can inspect to understand every decision you made.\nThis tutorial covers only what you need for a research workflow with Claude Code. It’s not a comprehensive git course. For deeper coverage, the Pro Git book is free and good.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Git for Research</span>"
+    ]
+  },
+  {
+    "objectID": "lecture3.html#committing-your-work",
+    "href": "lecture3.html#committing-your-work",
+    "title": "3  Git for Research",
+    "section": "9.1 Committing your work",
+    "text": "9.1 Committing your work\nWhen you want to save your progress:\n\n\n\n\n\n\nTip\n\n\n\nPrompt:\n“Commit the changes I just made with a descriptive message explaining what changed and why.”\n\n\nClaude runs git add to stage your changed files, then git commit -m \"...\" with a message it writes based on the diff.\nIf you want to be specific about what to commit:\n\n\n\n\n\n\nTip\n\n\n\nPrompt:\n“Stage only the R analysis script and the output table, and commit with a message about adding the baseline DiD specification. Don’t include changes to the README.”",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Git for Research</span>"
+    ]
+  },
+  {
+    "objectID": "lecture3.html#auto-commits-via-claude.md",
+    "href": "lecture3.html#auto-commits-via-claude.md",
+    "title": "3  Git for Research",
+    "section": "9.2 Auto-commits via CLAUDE.md",
+    "text": "9.2 Auto-commits via CLAUDE.md\nYou can also have Claude commit automatically as it works. Add this rule to your CLAUDE.md:\n## Core Principles\n- Commit frequently with meaningful messages\nClaude reads this and should commit after each logical change, building up a detailed commit log without you typing git commit yourself. In practice, it may occasionally forget during long or complex tasks — remind it if needed (see Tutorial 2).\n\n\n\n\n\n\nNote\n\n\n\nReviewing auto-commits. Claude’s auto-generated commit messages are usually good but not always perfect. Periodically run git log --oneline (or ask Claude to show your recent history) to spot any vague or misleading messages. If you catch a bad one immediately, git commit --amend -m \"Better message\" rewrites the most recent commit message. For older commits, it’s usually not worth rewriting history — just write a clearer message on the next commit.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Git for Research</span>"
+    ]
+  },
+  {
+    "objectID": "lecture3.html#setting-up-github",
+    "href": "lecture3.html#setting-up-github",
+    "title": "3  Git for Research",
+    "section": "10.1 Setting up GitHub",
+    "text": "10.1 Setting up GitHub\nYou need the GitHub CLI (gh) installed and authenticated. Ask Claude:\n\n\n\n\n\n\nTip\n\n\n\nPrompt:\n“Check if the GitHub CLI (gh) is installed. If not, install it. Then authenticate me with GitHub through the browser. After that, create a private repository on GitHub called ‘my-research-project’ and push all my commits to it.”\n\n\nClaude will install gh if needed, run gh auth login for browser authentication, gh repo create to make the remote repo, and git push -u origin main to upload your commits. Use private repos for research projects — you can make them public later when you’re ready.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Git for Research</span>"
+    ]
+  },
+  {
+    "objectID": "lecture3.html#subsequent-pushes",
+    "href": "lecture3.html#subsequent-pushes",
+    "title": "3  Git for Research",
+    "section": "10.2 Subsequent pushes",
+    "text": "10.2 Subsequent pushes\nAfter any commit:\n\n\n\n\n\n\nTip\n\n\n\nPrompt:\n“Push all my commits to GitHub.”\n\n\nOr include pushing in your session ending routine — Claude will do this automatically as part of the closing workflow described in Tutorial 2.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Git for Research</span>"
+    ]
+  },
+  {
+    "objectID": "lecture3.html#what-are-branches",
+    "href": "lecture3.html#what-are-branches",
+    "title": "3  Git for Research",
+    "section": "11.1 What are branches?",
+    "text": "11.1 What are branches?\nWhen you create a git repository, you start with one branch called main. Think of it as your clean, working version — the code that produces your current results correctly.\nA branch is a parallel copy where you can try things without touching main. Make changes, break things, experiment. If it works, you merge it back into main. If it fails, you delete the branch and main is untouched.\n\n\n\n\n\n\n\n\n\n\nmain (dark dots): your working version. Always safe.\nexperiment (red dots): a parallel copy where you try things.\nIf the experiment works → merge back into main.\nIf it fails → delete the branch. Main is untouched.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Git for Research</span>"
+    ]
+  },
+  {
+    "objectID": "lecture3.html#why-this-matters-for-research",
+    "href": "lecture3.html#why-this-matters-for-research",
+    "title": "3  Git for Research",
+    "section": "11.2 Why this matters for research",
+    "text": "11.2 Why this matters for research\nSuppose you have a working regression specification. You ask Claude to try an alternative — different fixed effects, different controls, different sample restrictions. Claude rewrites your analysis script. Twenty minutes later, you realize the new specification is wrong.\nWithout git: you try to remember what the original script looked like. You undo changes manually, hoping you don’t miss anything. You might have a backup copy somewhere, but it’s from last week.\nWith git: you created a branch before the experiment. You switch back to main and delete the branch. Three seconds. Nothing lost.\nRule of thumb: If there’s a chance you’ll want to undo it, branch first.\n\n\n\nBranch\nDon’t Branch\n\n\n\n\nAlternative specifications\nFixing a typo\n\n\nDifferent sample restrictions\nAdding a comment\n\n\nNew identification strategy\nMinor formatting\n\n\nRestructuring project directories\n\n\n\nTrying a new package/method",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Git for Research</span>"
+    ]
+  },
+  {
+    "objectID": "lecture3.html#creating-and-using-branches",
+    "href": "lecture3.html#creating-and-using-branches",
+    "title": "3  Git for Research",
+    "section": "11.3 Creating and using branches",
+    "text": "11.3 Creating and using branches\n\n\n\n\n\n\nTip\n\n\n\nPrompt:\n“Create a new git branch called ‘experiment-alt-controls’ and switch to it. I want to try an alternative control set without affecting the main branch.”\n\n\nClaude runs git switch -c experiment-alt-controls, which creates the branch and switches to it in one step. Everything you do from here happens on the experiment branch — main stays untouched.\n\n\n\n\n\n\nWarning\n\n\n\nAlways commit or stash before switching branches. If you have uncommitted changes and try to switch branches, git will either refuse (if the changes conflict) or carry the uncommitted changes to the new branch (which is usually not what you want). Stashing (git stash) temporarily shelves your uncommitted changes so you can switch branches cleanly, then restores them later with git stash pop. Make it a habit to commit your work before switching — stashing is the fallback when you’re not ready to commit.\n\n\nIf the experiment works — merge:\n\n\n\n\n\n\nTip\n\n\n\nPrompt:\n“The experiment worked. Switch back to the main branch and merge in the experiment-alt-controls branch. Then delete the experiment branch.”\n\n\nClaude runs git switch main, then git merge experiment-alt-controls, then git branch -d experiment-alt-controls to clean up.\nIf the experiment fails — discard:\n\n\n\n\n\n\nTip\n\n\n\nPrompt:\n“The experiment didn’t work. Switch back to main and delete the experiment-alt-controls branch. I want to discard all the changes on that branch.”\n\n\nClaude runs git switch main and then git branch -D experiment-alt-controls (the capital -D forces deletion of an unmerged branch).",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Git for Research</span>"
+    ]
+  },
+  {
+    "objectID": "lecture3.html#i-committed-something-i-shouldnt-have",
+    "href": "lecture3.html#i-committed-something-i-shouldnt-have",
+    "title": "3  Git for Research",
+    "section": "14.1 “I committed something I shouldn’t have”",
+    "text": "14.1 “I committed something I shouldn’t have”\nIf you accidentally committed a file with sensitive data, you need to remove it from git tracking (while keeping the local file) and add it to .gitignore so it doesn’t happen again.\n\n\n\n\n\n\nTip\n\n\n\nPrompt:\n“I accidentally committed data/raw/sensitive_file.csv. Remove it from git tracking but keep the local file. Add it to .gitignore so it doesn’t get tracked again.”\n\n\nIf you already pushed to GitHub, the file is in the remote history even after you remove it locally. Prevention (a good .gitignore) is much easier than cleanup. Ask Claude to help you scrub the file from history (it will likely use a third-party tool called git filter-repo, which may need to be installed separately). As a last resort for a solo project with no issues or pull requests, you could delete and recreate the repository — but this destroys all history.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Git for Research</span>"
+    ]
+  },
+  {
+    "objectID": "lecture3.html#i-want-to-undo-my-last-commit",
+    "href": "lecture3.html#i-want-to-undo-my-last-commit",
+    "title": "3  Git for Research",
+    "section": "14.2 “I want to undo my last commit”",
+    "text": "14.2 “I want to undo my last commit”\nUnder the hood: git reset --soft HEAD~1 removes the last commit but keeps your files unchanged. The snapshot goes away; the edits stay.\n\n\n\n\n\n\nTip\n\n\n\nPrompt:\n“Undo my last commit but keep all the file changes in my working directory. I want to re-do it differently.”",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Git for Research</span>"
+    ]
+  },
+  {
+    "objectID": "lecture3.html#i-want-to-see-what-changed",
+    "href": "lecture3.html#i-want-to-see-what-changed",
+    "title": "3  Git for Research",
+    "section": "14.3 “I want to see what changed”",
+    "text": "14.3 “I want to see what changed”\nUnder the hood: git status shows uncommitted changes; git log --oneline shows the commit history.\n\n\n\n\n\n\nTip\n\n\n\nPrompt:\n“Show me what files have changed since my last commit. Then show me the last 10 commits as a summary.”",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Git for Research</span>"
+    ]
+  },
+  {
+    "objectID": "lecture3.html#i-tried-to-merge-and-got-a-conflict",
+    "href": "lecture3.html#i-tried-to-merge-and-got-a-conflict",
+    "title": "3  Git for Research",
+    "section": "14.4 “I tried to merge and got a conflict”",
+    "text": "14.4 “I tried to merge and got a conflict”\nMost merges just work — git combines the changes automatically. A merge conflict happens when both branches edited the same lines in the same file, and git can’t decide which version to keep. This is normal, not an emergency.\nWhen it happens, git marks the conflicting section inside the file with special markers:\n&lt;&lt;&lt;&lt;&lt;&lt;&lt; main\nresults &lt;- feols(y ~ treatment + controls1, data = df)\n=======\nresults &lt;- feols(y ~ treatment + controls2, data = df)\n&gt;&gt;&gt;&gt;&gt;&gt;&gt; experiment-alt-controls\nThe section between &lt;&lt;&lt;&lt;&lt;&lt;&lt; main and ======= is the version on your current branch. The section between ======= and &gt;&gt;&gt;&gt;&gt;&gt;&gt; experiment-alt-controls is the incoming version. You (or Claude) need to decide which to keep, or combine them, and then remove the markers.\n\n\n\n\n\n\nTip\n\n\n\nPrompt:\n“I tried to merge but got a conflict. Show me the conflicting files, explain what each version does, and resolve the conflict by keeping the version from the experiment branch. Then commit the merge.”\n\n\n\n\n\n\n\n\nNote\n\n\n\nPreventing conflicts. Conflicts are most common when you work on the same file across multiple branches, or when collaborators edit the same section. Three habits that reduce them: commit frequently (smaller changes are easier to merge), keep branches short-lived (merge or discard within a session or two), and pull from GitHub before starting work if you share the repo.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Git for Research</span>"
+    ]
+  },
+  {
+    "objectID": "lecture4.html",
+    "href": "lecture4.html",
+    "title": "4  Skills for Publication-Ready Research",
+    "section": "",
+    "text": "5 What Are Skills?\nA skill is a reusable set of instructions that tells Claude how to perform a specific task. At its core, a skill is just a folder containing a SKILL.md file — a plain-text document written in markdown that describes what Claude should do, step by step. When Claude encounters a relevant task, it reads the skill and follows the instructions. You can also invoke a skill directly by typing /skill-name in the terminal.\nThink of skills as saved expertise. Without a skill, you’d type the same detailed instructions every time you wanted Claude to, say, read a paper carefully or audit your code. With a skill, those instructions are written once and reused automatically.\nThere is no magic here. A skill is just a prompt saved to disk — you could paste the contents of any SKILL.md directly into a chat and get the same result. The advantage is that the instructions are written once and loaded automatically. If you can write clear instructions for a research assistant, you can write a skill.\nWhere skills live. Skills are stored in .claude/skills/ inside your project (available to that project only) or in ~/.claude/skills/ on your machine (available across all projects). Each skill gets its own folder. Note that .claude/ is a hidden folder (the dot makes it invisible by default) — use ls -a in the terminal or press Cmd+Shift+. in macOS Finder to see it:\nWhat SKILL.md contains. The file starts with a short YAML header (name, description) and then markdown instructions. The description helps Claude decide when to use the skill automatically. Here’s a minimal example:\nThat’s it — no programming required. If you can write a checklist, you can write a skill.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Skills for Publication-Ready Research</span>"
+    ]
+  },
+  {
+    "objectID": "lecture4.html#the-problem-auto-memory-solves",
+    "href": "lecture4.html#the-problem-auto-memory-solves",
+    "title": "4  Skills for Publication-Ready Research",
+    "section": "7.1 The problem auto-memory solves",
+    "text": "7.1 The problem auto-memory solves\nClaude has no memory between sessions. Every time you start a new conversation, it begins from scratch. If you corrected Claude yesterday — told it to use theme_bw() instead of theme_meridian(), or to never modify raw data files — it has already forgotten. Without intervention, you’ll make the same correction again tomorrow, and the day after that.\nCLAUDE.md (Tutorial 2) solves part of this problem by giving Claude stable rules at the start of every session. But CLAUDE.md is for rules you know in advance. Many of the most important lessons only emerge through use — the edge cases, the quirks, the project-specific conventions that you discover when Claude gets something wrong.\nAuto-memory captures those lessons automatically. When you correct Claude, it saves the correction to ~/.claude/projects/&lt;project&gt;/memory/ as a structured markdown file. An index file (MEMORY.md) lists all memories — the first 200 lines are loaded at every session start.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Skills for Publication-Ready Research</span>"
+    ]
+  },
+  {
+    "objectID": "lecture4.html#how-it-works",
+    "href": "lecture4.html#how-it-works",
+    "title": "4  Skills for Publication-Ready Research",
+    "section": "7.2 How it works",
+    "text": "7.2 How it works\nClaude saves memories as individual markdown files in ~/.claude/projects/&lt;project&gt;/memory/. Each file has a name, description, and content. In practice, memories tend to capture things like:\n\nYour preferences — “works primarily in R, uses theme_bw() for ggplot2”\nCorrections — “don’t use theme_meridian(), use theme_bw()”\nProject context — ongoing goals, decisions, key constraints\n\nUnlike the older manual [LEARN] tag approach (from Pedro Sant’Anna’s CLAUDE.md template), auto-memory is a built-in Claude Code feature — no Session Startup section or manual logging required.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Skills for Publication-Ready Research</span>"
+    ]
+  },
+  {
+    "objectID": "lecture4.html#how-corrections-get-added",
+    "href": "lecture4.html#how-corrections-get-added",
+    "title": "4  Skills for Publication-Ready Research",
+    "section": "7.3 How corrections get added",
+    "text": "7.3 How corrections get added\nWhen Claude makes a mistake and you correct it, it automatically saves the lesson. You can also ask Claude to remember something conversationally:\n\n\n\n\n\n\nTip\n\n\n\nPrompt:\n“Always use theme_bw() for ggplot2 figures in this project”\n\n\nClaude saves this as a memory that persists across sessions. You can manage memories with the /memory command, which lets you toggle auto-memory on or off and open the memory folder to review or edit files directly.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Skills for Publication-Ready Research</span>"
+    ]
+  },
+  {
+    "objectID": "lecture4.html#why-this-matters-for-skills",
+    "href": "lecture4.html#why-this-matters-for-skills",
+    "title": "4  Skills for Publication-Ready Research",
+    "section": "7.4 Why this matters for skills",
+    "text": "7.4 Why this matters for skills\nMany of the skills in this tutorial produce outputs that depend on project conventions — which plotting theme to use, where to save files, how to name variables. Auto-memory ensures Claude applies your accumulated corrections every time, so skills produce output that fits your workflow without you repeating the same instructions.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Skills for Publication-Ready Research</span>"
+    ]
+  },
+  {
+    "objectID": "lecture4.html#the-problem",
+    "href": "lecture4.html#the-problem",
+    "title": "4  Skills for Publication-Ready Research",
+    "section": "9.1 The problem",
+    "text": "9.1 The problem\nWhen you give Claude a full PDF, it tries to process everything at once. For short documents this works fine. For a 40-page economics paper with tables, equations, and appendices, it produces shallow summaries with hallucinated details — the kind where the paper is real, the method is roughly right, but the specific coefficient from Table 3 Column 4 is fabricated.\nLiterature reviews in good journals require you to actually engage with source material: correct attribution of findings, precise methodological descriptions, honest representation of what prior work does and doesn’t show. If you let Claude read papers in one pass and then write your lit review, you’ll get hallucinated citations, methodological mischaracterization, and overconfident claims about what sources actually found.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Skills for Publication-Ready Research</span>"
+    ]
+  },
+  {
+    "objectID": "lecture4.html#what-the-skill-enforces",
+    "href": "lecture4.html#what-the-skill-enforces",
+    "title": "4  Skills for Publication-Ready Research",
+    "section": "9.2 What the skill enforces",
+    "text": "9.2 What the skill enforces\nThree hard constraints that Claude would not follow on its own:\n\nNever read a full PDF. Split into 4-page chunks first.\nRead only 3 chunks at a time (~12 pages). After each batch, update running notes and pause.\nWait for user confirmation before reading the next batch.\n\nThe pause-and-confirm protocol is what makes this work. It forces Claude to commit to an interpretation of pages 1–12 before seeing pages 13–24, which makes it unlikely to retroactively revise early claims to sound more coherent with later material. This is closer to how you’d actually read a paper yourself.\nStructured extraction. As Claude reads, it collects information along 8 dimensions:\n\n\n\n#\nDimension\nWhat to Look For\n\n\n\n\n1\nResearch question\nWhat and why\n\n\n2\nAudience\nWhich sub-community\n\n\n3\nMethod\nIdentification strategy\n\n\n4\nData\nSource, unit, sample, period\n\n\n5\nStatistical methods\nEstimator, key specifications\n\n\n6\nFindings\nCoefficients, standard errors\n\n\n7\nContributions\nWhat’s new\n\n\n8\nReplication feasibility\nPublic data? Code archive?\n\n\n\nThese extract what you need to build on or replicate the work, not just summarize it.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Skills for Publication-Ready Research</span>"
+    ]
+  },
+  {
+    "objectID": "lecture4.html#how-to-use-it",
+    "href": "lecture4.html#how-to-use-it",
+    "title": "4  Skills for Publication-Ready Research",
+    "section": "9.3 How to use it",
+    "text": "9.3 How to use it\n\n\n\n\n\n\nTip\n\n\n\nPrompt:\n“/read-paper articles/acemoglu_2001.pdf”\n\n\nClaude splits the PDF, reads the first ~12 pages, presents structured notes, and waits for your confirmation before continuing. The final output is a notes.md file in the split directory with specific data sources, variable names, and coefficient estimates — not vague summaries.\nAfter reading all papers for a literature review, synthesize:\n\n\n\n\n\n\nTip\n\n\n\nPrompt:\n“I’ve now read 5 papers on colonial institutions and development. Synthesize the structured notes into a literature review identifying: points of agreement, methodological debates, and gaps my study addresses. Do NOT invent any citations.”\n\n\n\n\n\n\n\n\nWarning\n\n\n\nAlways audit citations. Even with structured reading, verify that every paper exists, the author actually said what’s claimed, the findings are accurately reported, and table/column/figure references are correct. AI confidently produces citations where the paper is real but the specific numbers are fabricated. These are the hardest hallucinations to spot because they look plausible.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Skills for Publication-Ready Research</span>"
+    ]
+  },
+  {
+    "objectID": "lecture4.html#the-problem-1",
+    "href": "lecture4.html#the-problem-1",
+    "title": "4  Skills for Publication-Ready Research",
+    "section": "10.1 The problem",
+    "text": "10.1 The problem\nIf you ask Claude to “review my paper,” you get a generic list of suggestions. Some are useful, some are hallucinated, and there’s no way to tell which is which.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Skills for Publication-Ready Research</span>"
+    ]
+  },
+  {
+    "objectID": "lecture4.html#what-the-skill-does",
+    "href": "lecture4.html#what-the-skill-does",
+    "title": "4  Skills for Publication-Ready Research",
+    "section": "10.2 What the skill does",
+    "text": "10.2 What the skill does\nThe argument-review skill runs an 8-step adversarial intellectual review of your paper. It checks argument gaps, internal consistency, methods-theory alignment, assumptions, notation, and simulates a referee report — then forces an author defense before finalizing.\n\n\n\n\n\n\n\nStep\nWhat it checks\n\n\n\n\n1. Ruthless Reader\nClaims asserted but not demonstrated, logical gaps\n\n\n2. Internal Consistency\nNumbers in text vs. tables, abstract vs. results\n\n\n3. Methods-Theory Alignment\nDoes the design identify what the theory claims?\n\n\n4. Assumption Stress Test\nAre identifying assumptions stated, testable, tested?\n\n\n5. Notation & Precision\nConsistent symbols, defined terms, notation drift\n\n\n6. Simulated Referee Report\n3–5 most damaging criticisms, classified by severity\n\n\n7. Author Defense\nSteelman defense of each criticism — does it survive?\n\n\n8. Synthesis\nRemove hallucinated criticisms, deduplicate, produce actionable report\n\n\n\nStep 3 (Methods-Theory Alignment) is the most valuable. It forces Claude to write out explicitly what the research design identifies and compare it to the theoretical claim. Many papers have a clean design that identifies something subtly different from what the theory needs — this step catches that gap.\nStep 7 (Author Defense) is what makes this honest. After generating criticisms, the skill switches perspective and stress-tests each one. Any criticism that turns out to be hallucinated, factually wrong, or that the author can fully defend gets dropped from the final report.\nThe final synthesis uses a constructive tone — “here is how to strengthen” rather than “here is what is wrong” — and organizes by importance to referees.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Skills for Publication-Ready Research</span>"
+    ]
+  },
+  {
+    "objectID": "lecture4.html#how-to-use-it-1",
+    "href": "lecture4.html#how-to-use-it-1",
+    "title": "4  Skills for Publication-Ready Research",
+    "section": "10.3 How to use it",
+    "text": "10.3 How to use it\n\n\n\n\n\n\nTip\n\n\n\nPrompt:\n“/argument-review paper/main.tex”\n\n\nRun this after /methods-review has verified the code and replication — argument problems are worth fixing only if the implementation is correct.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Skills for Publication-Ready Research</span>"
+    ]
+  },
+  {
+    "objectID": "lecture4.html#the-problem-2",
+    "href": "lecture4.html#the-problem-2",
+    "title": "4  Skills for Publication-Ready Research",
+    "section": "11.1 The problem",
+    "text": "11.1 The problem\nWhen you ask Claude to turn a paper into slides, you get a bulleted summary of each section — one slide per section, bullet points under each, generic “Results” and “Conclusion” titles. The deck reads like a document reformatted as slides, not something you’d actually want to sit through.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Skills for Publication-Ready Research</span>"
+    ]
+  },
+  {
+    "objectID": "lecture4.html#what-the-skill-does-1",
+    "href": "lecture4.html#what-the-skill-does-1",
+    "title": "4  Skills for Publication-Ready Research",
+    "section": "11.2 What the skill does",
+    "text": "11.2 What the skill does\nThe presentation-builder skill enforces design constraints that Claude would otherwise ignore. It builds on Scott Cunningham’s Rhetoric of Decks framework, adapted from Beamer to Quarto RevealJS. The rules:\n\nAssertion titles — “Colonial institutions explain 75% of income variation,” not “Results”\nOne idea per slide — cognitive load is distributed evenly, not front-loaded\nFigures carry the argument — every chart answers one question, with direct labels (no legends requiring eye movement)\nMinimal bullet points — lists are converted to diagrams, tables, or prose (maximum 3 items if truly needed)\n\nAfter building the deck, the skill runs a multi-agent review: one agent checks argument quality and narrative flow, another checks visual elements (figure sizing, label visibility, numerical accuracy). It also generates a proof PDF via decktape and reads it page by page to catch silent visual errors.\nThe full presentation philosophy (the Three Laws of slide design, the rhetoric framework, and the principle that each slide should carry equal cognitive load) is in the presentation-builder/methodology.md file. Read it if you want to understand the design theory or customize the skill.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Skills for Publication-Ready Research</span>"
+    ]
+  },
+  {
+    "objectID": "lecture4.html#how-to-use-it-2",
+    "href": "lecture4.html#how-to-use-it-2",
+    "title": "4  Skills for Publication-Ready Research",
+    "section": "11.3 How to use it",
+    "text": "11.3 How to use it\n\n\n\n\n\n\nTip\n\n\n\nPrompt:\n“/presentation-builder paper/main.tex”\n\n\nClaude reads the paper, plans assertion titles, generates figures (R with theme_meridian() to match the slide theme — an exception to the theme_bw() default), builds the Quarto RevealJS deck, compiles, runs the multi-agent review, and delivers a polished .html deck. You can customize for context:\n\n\n\n\n\n\nTip\n\n\n\nConference talk (20 min):\n“/presentation-builder paper/main.tex — conference presentation for political scientists in comparative politics, 20 minutes, emphasize identification strategy and key results”\nJob talk (45 min):\n“/presentation-builder paper/main.tex — job talk, include roadmap slide, more time on data and robustness”",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Skills for Publication-Ready Research</span>"
+    ]
+  },
+  {
+    "objectID": "lecture5.html",
+    "href": "lecture5.html",
+    "title": "5  AI Work Hygiene",
+    "section": "",
+    "text": "6 The Productivity Paradox\nA software company called Avatra recently analyzed the digital activity of 164,000 workers across more than a thousand employers. They found that AI users spent more than double the time on email, messaging, and chat apps, while their focused, uninterrupted work fell 9% compared with non-users (Wall Street Journal, March 2026). More time on shallow tasks. Less time on deep work.\nA caveat: Avatra measures digital activity — time-on-app, switching frequency — not productivity or cognitive depth. The finding is directional, not definitive. But it’s consistent with a pattern that Cal Newport has documented across decades of productivity technology: tools that promise to speed up annoying aspects of your job end up making you busier without producing more high-value output. This was true of email, mobile computing, and video conferencing. Newport calls it the digital productivity paradox (Newport, Deep Questions, 2026).\nYou’ve spent four tutorials learning powerful agentic tools. This tutorial is about what happens if you use them without discipline.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>AI Work Hygiene</span>"
+    ]
+  },
+  {
+    "objectID": "lecture5.html#trap-1-speed-increases-throughput",
+    "href": "lecture5.html#trap-1-speed-increases-throughput",
+    "title": "5  AI Work Hygiene",
+    "section": "6.1 Trap 1: Speed Increases Throughput",
+    "text": "6.1 Trap 1: Speed Increases Throughput\nWhen a tool makes a task faster, you don’t do the same number of tasks in less time — you do more tasks. The queue of shallow work is essentially infinite. Speed up how you handle items and more flood in.\nEmail is the canonical example. It made sending a message faster than calling or writing a memo. But faster messages meant more messages. Microsoft’s Work Trend Index finds that the average knowledge worker now checks an inbox once every two minutes. The task got faster; the total time spent on communication went up.\nAI creates the same dynamic. You use it to draft emails, summarize meetings, generate reports — and more of each roll in behind the ones you just cleared. Higher throughput means more context switching, which exhausts cognitive capacity and degrades everything else you do that day.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>AI Work Hygiene</span>"
+    ]
+  },
+  {
+    "objectID": "lecture5.html#trap-2-ease-produces-work-slop",
+    "href": "lecture5.html#trap-2-ease-produces-work-slop",
+    "title": "5  AI Work Hygiene",
+    "section": "6.2 Trap 2: Ease Produces “Work Slop”",
+    "text": "6.2 Trap 2: Ease Produces “Work Slop”\nWhen a tool reduces the effort required to produce something, quality drops — and the total work to reach a usable result often increases. The Harvard Business Review calls this work slop: “AI-generated work content that masquerades as good work but lacks the substance to meaningfully advance a given task” (HBR, 2026).\nThe mechanism: prompting AI for a draft takes less effort than writing from scratch. But the draft is often so generic that fixing it takes more total time than writing it properly. Imagine trading 30 minutes of hard thinking for 10 minutes of prompting plus 45 minutes of cleanup — and the result is still worse.\nA concrete example: you prompt Claude to draft the opening paragraph of your literature review. It produces something plausible — correct journal names, reasonable-sounding claims. But it attributes a finding on colonial institutions to Acemoglu when the finding was actually from Nunn. It describes a regression discontinuity design as difference-in-differences. It cites a working paper that was never published. Now you’re spending an hour cross-checking every sentence — time you wouldn’t have spent if you’d written the paragraph yourself, because you already know the literature. The AI lowered the activation cost of starting; it raised the total cost of finishing.\nThis example illustrates a distinction worth internalizing: mechanics vs. judgment. AI can automate the mechanics of literature review — searching databases, deduplicating results, extracting methods and datasets from papers. Perhaps 50–70% of the mechanical work can be offloaded. But it cannot automate the judgment — deciding which papers matter for your argument, interpreting how findings relate to each other, identifying the gap your paper fills. That remains 0% automatable. The danger is hearing “AI helps with literature review” and inferring that half the effort is gone, when in reality the easy half is gone and the hard half — the half that determines your contribution — remains entirely yours.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>AI Work Hygiene</span>"
+    ]
+  },
+  {
+    "objectID": "lecture5.html#strategy-1-use-a-better-scoreboard",
+    "href": "lecture5.html#strategy-1-use-a-better-scoreboard",
+    "title": "5  AI Work Hygiene",
+    "section": "11.1 Strategy 1: Use a Better Scoreboard",
+    "text": "11.1 Strategy 1: Use a Better Scoreboard\nMeasure the things that actually matter and track them over time. If a new tool doesn’t improve that score, the tool isn’t helping — regardless of how impressive individual sessions feel.\n\n\n\n\n\n\n\nRole\nWhat to Measure\n\n\n\n\nPre-tenure faculty\nPapers published per year\n\n\nGraduate student\nChapters completed, papers submitted\n\n\nResearch team lead\nPriority projects completed per quarter\n\n\nApplied researcher\nQuality of empirical results, replication success rate\n\n\n\nIf you adopted a new tool last month and your output pace hasn’t changed (or has slowed), you have evidence — not just a feeling — that something isn’t working.\n\n\n\n\n\n\nNote\n\n\n\nThe pseudo-productivity test. Before adopting any new AI tool or workflow, ask: will this move the scoreboard, or will it just make me look busier? If you can’t articulate how it connects to your actual output metric, it’s probably pseudo-productivity.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>AI Work Hygiene</span>"
+    ]
+  },
+  {
+    "objectID": "lecture5.html#strategy-2-find-the-real-bottleneck",
+    "href": "lecture5.html#strategy-2-find-the-real-bottleneck",
+    "title": "5  AI Work Hygiene",
+    "section": "11.2 Strategy 2: Find the Real Bottleneck",
+    "text": "11.2 Strategy 2: Find the Real Bottleneck\nNot all parts of your workflow constrain your output equally. Speeding up a non-bottleneck step feels productive but doesn’t increase the rate at which you produce results.\nNewport uses a pointed example: social scientists who use Claude Code to generate plots in 20 minutes that would have taken 3 hours by hand. That’s a real time saving — but plot generation happens a couple of times over a paper that takes three months. It’s not the bottleneck.\nHe recalls a conversation with Adam Grant about what drives paper production in organizational management. Grant’s answer: getting access to interesting datasets. One good dataset from a company yields three or four papers. So Grant prioritized relationship-building and data access negotiations — not analysis speed.\nThis won’t generalize to every field. A computational social scientist working with public administrative data has a different bottleneck than an experimentalist who needs IRB approval. The point is that the bottleneck is almost never the mechanical step that AI speeds up most visibly. It might be:\n\nReading deeply enough to identify the right question\nDeveloping the identification strategy that makes results credible\nGetting access to the right data\nWriting clearly enough to survive peer review\n\nClaude Code is excellent at non-bottleneck tasks: data cleaning, code refactoring, figure formatting. That’s genuinely useful — but only if you invest the freed-up time in your actual bottleneck.\n\n\n\n\n\n\nTip\n\n\n\nExercise: identify your bottleneck. Think about the last paper you published. What step took longest or was hardest? Is Claude Code helping with that step, or with other steps that feel productive but don’t control your publication rate?",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>AI Work Hygiene</span>"
+    ]
+  },
+  {
+    "objectID": "lecture5.html#strategy-3-separate-deep-from-shallow-work",
+    "href": "lecture5.html#strategy-3-separate-deep-from-shallow-work",
+    "title": "5  AI Work Hygiene",
+    "section": "11.3 Strategy 3: Separate Deep from Shallow Work",
+    "text": "11.3 Strategy 3: Separate Deep from Shallow Work\nProtect dedicated blocks of time for hard thinking where no AI tool is running. Confine AI-assisted work to separate blocks.\nEven if your AI sessions trigger side effects — throughput traps, work slop, brain fry — those effects can’t infect the hours where you’re reading papers, developing theory, or writing prose. Separation contains the damage.\n\n\n\n\n\n\n\n\nBlock\nActivity\nAI Role\n\n\n\n\nMorning (deep)\nRead papers, develop theory, write prose\nNone or minimal\n\n\nMidday (shallow)\nData cleaning, code, formatting, admin\nClaude Code with defined goals\n\n\nAfternoon (deep or collaborative)\nReview results, discuss with co-authors, revise\nHuman judgment on AI work products\n\n\n\nThe specific hours don’t matter. What matters is that the deep blocks exist and are protected.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>AI Work Hygiene</span>"
+    ]
+  },
+  {
+    "objectID": "lecture5.html#strategy-4-define-stopping-rules-before-you-start",
+    "href": "lecture5.html#strategy-4-define-stopping-rules-before-you-start",
+    "title": "5  AI Work Hygiene",
+    "section": "11.4 Strategy 4: Define Stopping Rules Before You Start",
+    "text": "11.4 Strategy 4: Define Stopping Rules Before You Start\nBrain fry is worst when workers iterate endlessly without knowing when they’re done. In the BCG study, marketing was hardest hit — 90% of skills disrupted by AI — and the core problem was the absence of natural stopping points. You can always prompt one more time.\nFor researchers, the same trap appears when refining a figure, iterating on a regression specification, or polishing an abstract. Each round seems slightly better, with no external signal to stop.\nThe fix: define success criteria before opening a Claude Code session. This is what the verification skills from Tutorial 4 do:\n\nMethods review (Tutorial 4): five structured audits with a formal verdict (Accept / Minor / Major / Reject).\nRobustness battery (Tutorial 4): classifies results as robust, sensitive, or fragile.\nQuality gates (Sant’Anna’s template, discussed in Tutorial 2): a numeric scoring system where 80 means commit, 90 means ready for review, 95 means ready for submission. Not included in this tutorial’s CLAUDE.md, but a useful addition if you lack clear stopping points.\n\n\n\n\n\n\n\nImportant\n\n\n\nThe stopping rule principle. Before every Claude Code session, state what “done” looks like. Write it in your prompt: “I need a cleaned dataset with no missing values in the outcome variable and all controls logged, saved to data/clean/.” When the output meets that criterion, stop.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>AI Work Hygiene</span>"
+    ]
+  },
+  {
+    "objectID": "lecture5.html#strategy-5-use-ai-as-a-team-not-solo",
+    "href": "lecture5.html#strategy-5-use-ai-as-a-team-not-solo",
+    "title": "5  AI Work Hygiene",
+    "section": "11.5 Strategy 5: Use AI as a Team, Not Solo",
+    "text": "11.5 Strategy 5: Use AI as a Team, Not Solo\nWhen teams integrate AI into shared workflows — with defined handoffs rather than solo use — brain fry decreases. Shared use distributes cognitive load and creates natural checkpoints.\nFor research teams:\n\nShare your CLAUDE.md. Co-authors working from the same configuration produce consistent output.\nDiscuss AI outputs with collaborators. Don’t just accept Claude’s regression interpretation — present it to your co-author and debate it.\nUse git as a collaboration tool. When your co-author can see what Claude changed (via git diff), they can evaluate the AI’s contribution.\nSplit AI tasks across the team. One person runs the robustness battery; another reviews the output. Less efficient per task, but lower cognitive load per person.\n\nCunningham describes a concrete team workflow: three co-authors join a Zoom call, one shares a screen with Claude Code running, everyone makes requests and offers interpretations, and the agent executes in real time. The power is rapid iteration — an idea at 2:00 PM becomes a figure by 2:05 PM. The danger is that after a 3-hour session, no one can remember what was found or decided (Federal Reserve talk, 2026). Five practices that prevent this:\n\nDesignate a scribe. One person (not the driver) keeps a running document of key findings, decisions, and surprising results. The scribe creates a digest, not a transcript — dead ends and debugging details get ignored.\nKeep a shared document open. A Google Doc where anyone can paste the question asked, the key part of Claude’s response, and the team’s interpretation or decision.\nRequest periodic summaries. Every 30–45 minutes, pause and ask Claude: “Summarize what we’ve learned in the last hour.” Paste the summary into the shared document. This forces reflection and catches misunderstandings early.\nMaintain a project log file. Have Claude write to a persistent session_notes.md in your project folder — date, key findings with numbers, decisions made, next steps. The file accumulates over time and is version-controlled.\nEnd-of-session ritual. Before closing, always ask Claude for a wrap-up: what was accomplished, key results with numbers, decisions reached, and what to do next session. Save it somewhere permanent — append to the project log, email the team, or pin it in Slack.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>AI Work Hygiene</span>"
+    ]
+  },
+  {
+    "objectID": "lecture5.html#strategy-6-aim-ai-at-drudgery-not-at-thinking",
+    "href": "lecture5.html#strategy-6-aim-ai-at-drudgery-not-at-thinking",
+    "title": "5  AI Work Hygiene",
+    "section": "11.6 Strategy 6: Aim AI at Drudgery, Not at Thinking",
+    "text": "11.6 Strategy 6: Aim AI at Drudgery, Not at Thinking\nThe BCG study found a clear split: AI used for repetitive tasks reduced burnout and freed time for human interaction. AI used for intensive oversight tasks — iterating on creative output, evaluating AI-generated content — caused brain fry.\nFor researchers:\n\n\n\n\n\n\n\nGood AI Targets (Drudgery)\nBad AI Targets (Thinking)\n\n\n\n\nData cleaning and reshaping\nChoosing your identification strategy\n\n\nFile formatting and conversion\nInterpreting ambiguous results\n\n\nBibliography management\nDeciding what question to ask\n\n\nBoilerplate code (folder setup, package loading)\nReading papers for deep understanding\n\n\nGenerating tables from existing results\nWriting the argument of your paper\n\n\n\nUse AI for tasks where verification is mechanical — the data is clean or it isn’t, the table renders or it doesn’t. Keep the tasks where verification requires judgment for yourself. This connects to the Expertise-Verification Paradox from Tutorial 1: AI is most useful where you already have the expertise to spot errors, but using it may prevent you from developing that expertise.\nTwo design principles sharpen this further:\n\nAutomate processes that reduce the cost of rigor, not processes that increase output. A robustness suite that reruns your core models every time the data changes makes your paper stronger without producing more work. A pipeline that generates 300 specification variants overnight makes your paper harder to verify while producing the illusion of thoroughness. The question is not “can AI do this?” but “does automating this make my research more trustworthy or just more voluminous?”\nOnly automate steps where errors are cheap to detect. This is a practical filter for deciding what to delegate:\n\n\n\n\n\n\n\n\n\nTask\nAutomate?\nWhy\n\n\n\n\nPDF parsing and data extraction\nYes\nErrors are obvious on inspection\n\n\nRobustness reruns\nYes\nDeterministic and reproducible\n\n\nCitation extraction\nCautiously\nNeeds spot checks — hallucinations are plausible-looking\n\n\nIdentification strategy\nNo\nErrors are subtle, costly, and may not surface until peer review\n\n\nTheory and argument\nNo\nJudgment-heavy; no mechanical check exists\n\n\n\nIf you cannot quickly verify whether the AI got it right, you should not be automating it — because the verification cost will eat the time you saved, and the undetected errors will be worse than the ones you would have caught writing it yourself.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>AI Work Hygiene</span>"
+    ]
+  },
+  {
+    "objectID": "lecture6.html",
+    "href": "lecture6.html",
+    "title": "6  Working with Large Datasets",
+    "section": "",
+    "text": "7 The Problem\nMost social science workflows assume your data fits in memory. You load a CSV into R or pandas, run your analysis, and move on. This works until it doesn’t — and the threshold arrives faster than you’d expect. A 10GB administrative dataset will crash R on a laptop with 16GB of RAM. Four such datasets, each covering a different outcome or data source, and you’re managing 40GB+ of raw files that no standard tool can open.\nThis is increasingly common. Government administrative data (tax records, mortgage filings, Medicare claims, customs transactions), web-scraped corpora, satellite imagery extracts, and digitized historical records routinely exceed what a dataframe can hold. If your research question requires linking across multiple large sources, the problem compounds.\nThe traditional solutions are painful: buy more RAM, rent a cloud server, learn SQL, or spend weeks writing custom scripts to process files in chunks. Each requires specialized knowledge that most social scientists don’t have and shouldn’t need to acquire from scratch.\nThis is where Claude Code changes the equation. The data engineering knowledge hasn’t gotten easier — but you no longer need to acquire it yourself. You can describe what you need in plain English and let Claude handle the implementation. What previously required weeks of Stack Overflow research and trial-and-error can be done in hours (Goldsmith-Pinkham, Markus Academy, 2026).\nThis tutorial covers the workflow for getting large datasets under control: converting to efficient formats, building a queryable database, and making the whole thing self-documenting so Claude (and your collaborators) can work with it across sessions.\n\n\n8 The Tool Stack\nTwo tools solve the large-data problem for most social science use cases:\nParquet is a file format. Where CSV stores data as plain text (every number is a string of characters), parquet stores data in a compressed binary format organized by columns. The practical difference: a 10GB CSV typically compresses to 2–1.5GB in parquet, depending on data type — categorical and string-heavy datasets (common in administrative data) compress the most, while numeric-heavy datasets see smaller gains. Reading a single column from a parquet file doesn’t require loading the entire file — the format supports lazy reading, where only the requested columns enter memory.\nDuckDB is a database engine that runs inside your R or Python session — no server, no installation beyond a package, no configuration. It reads parquet files directly and executes SQL queries on datasets far larger than RAM. Think of it as SQLite for analytical workloads.\n\n\n\n\n\n\n\n\nTool\nWhat It Replaces\nWhy It’s Better\n\n\n\n\nParquet\nCSV files\n5–15x smaller, column-selective reads, typed\n\n\nDuckDB\nLoading full datasets into R/Python\nQueries 100GB+ without loading into memory\n\n\n\nYou don’t need to learn either in depth. Claude Code knows both well. What you need is the workflow: when to use them and how to ask Claude to set them up.\n\n\n\n\n\n\nNote\n\n\n\nInstalling. In R: install.packages(c(\"arrow\", \"duckdb\")). In Python: pip install pyarrow duckdb. Claude will handle this if you ask, but you can also install them in advance.\n\n\n\n\n9 Step 1: Convert Raw Files to Parquet\nStart with your raw data — typically CSVs downloaded from a government agency, data archive, or API. Don’t delete the originals. Convert them to parquet and work from the parquet versions going forward.\n\n\n\n\n\n\nTip\n\n\n\nPrompt:\n“I have [N] CSV files in data/raw/ totaling about [X] GB. Convert them all to parquet format and save to data/parquet/. Keep the original CSVs untouched. Report the size reduction.”\n\n\nClaude will write a script that reads each CSV (in chunks if needed), converts to parquet with appropriate type inference, and saves the compressed version. Expect 5–15x compression depending on data type, with string-heavy administrative datasets at the high end.\n\n\n\n\n\n\nWarning\n\n\n\nLeading zeros disappear silently. When converting CSV to parquet, type inference can strip leading zeros from columns that look numeric but aren’t. FIPS county codes (06037 becomes 6037), ZIP codes (01234 becomes 1234), and similar identifiers are the most common victims. This breaks joins — \"06037\" won’t match \"6037\". Tell Claude to treat these columns as strings explicitly: “Convert to parquet but keep county_fips and zip_code as string columns, not integers.” Check identifier columns after conversion.\n\n\nAfter conversion, your data/ folder looks like this:\ndata/\n├── raw/          ← original CSVs (keep, but rarely touch again)\n├── parquet/      ← compressed versions (your working files)\n├── clean/        ← analysis-ready datasets\n└── intermediate/ ← figure data, temp files\n\n\n\n\n\n\nWarning\n\n\n\nFile format surprises. Government data files are not always what they claim to be. A file with a .csv extension might be pipe-delimited. A “fixed-width” file might have inconsistent column positions across years. Headers might appear on the second row, or not at all. If Claude’s first conversion attempt fails, have it inspect the first few lines of the raw file before retrying — the format documentation is often wrong.\n\n\n\n\n\n\n\n\nTip\n\n\n\nFor large downloads, ask for resume capability. If you’re downloading multi-GB files from a government server, include “with resume capability” in your prompt. Claude will write a download script that can pick up where it left off if the connection drops, rather than starting over. This saves hours on unreliable connections.\n\n\n\n\n\n\n\n\nWarning\n\n\n\nScripts, not ad-hoc commands. Claude sometimes takes shortcuts with small files — downloading them via one-off curl commands in the session rather than writing a reusable script. This is convenient but not reproducible: if you need to rebuild the pipeline from scratch, those ad-hoc commands are gone. Goldsmith-Pinkham flags this explicitly (Markus Academy, 2026): every step in the pipeline — including downloads — should be a script you can re-run, not a command you typed once in a session. If you see Claude downloading files interactively, ask it to write the download into a script instead.\n\n\n\n\n10 Step 2: Harmonize Across Sources\nIf you’re working with multiple datasets — or the same dataset across years where the format changed — you need harmonization before building a database. This means aligning column names, coding schemes, and identifiers across sources.\nThis is where Claude Code earns its keep. Schema harmonization is tedious, error-prone, and exactly the kind of work Claude handles well: read two file headers, identify which columns correspond, build a crosswalk, and apply it. The judgment calls (is respondent_id the same as lei? did the coding of loan_purpose change in 2018?) require your input, but Claude does the detective work.\n\n\n\n\n\n\nTip\n\n\n\nPrompt:\n“I have data from [source] covering [years]. The format changed in [year]: column names, coding schemes, and identifiers all differ. Read the codebook PDFs in data/docs/ for both periods. Compare the schemas from a pre-change and post-change file. Build a crosswalk mapping old column names and codes to new ones. Flag anything ambiguous for me to decide.”\n\n\nThe key principle: Claude should surface ambiguities, not resolve them silently. If a coding change is ambiguous (did code 31 in the old format map to code 3 or code 2 in the new format?), you need to see it and decide. Add a CLAUDE.md rule if this matters for your project:\n## Data Harmonization\n- Flag ambiguous crosswalk mappings — do not resolve silently\n- Test harmonization on sample years before processing full dataset\nIf the data provider published codebooks or technical documentation describing format changes, give those to Claude alongside the data files. Claude can read PDFs — a codebook that explains why column names changed in 2018 produces a better crosswalk than schema comparison alone.\n\n\n11 Step 3: Build a DuckDB Database\nOnce your parquet files are harmonized, load them into a single DuckDB database. This gives you one file that contains all your data, queryable with SQL.\n\n\n\n\n\n\nTip\n\n\n\nPrompt:\n“Build a DuckDB database at data/project_name.duckdb. Load all the harmonized parquet files into a single table called main_data. Also create any aggregated tables I’ll need for analysis — county-year panels, provider-level summaries, etc. Tell me the final row counts.”\n\n\nClaude will write a build script that reads the parquet files, inserts them into DuckDB, creates indexes on your key identifiers (county FIPS codes, year, provider ID), and builds the aggregations you’ll need for analysis.\nThe result: one .duckdb file, typically a few GB, containing everything. You query it from R or Python without loading it into memory:\nlibrary(duckdb)\ncon &lt;- dbConnect(duckdb(), \"data/project_name.duckdb\")\ncounty_panel &lt;- dbGetQuery(con, \"\n  SELECT county_fips, year, SUM(amount) as total_volume, COUNT(*) as n_obs\n  FROM main_data\n  WHERE year BETWEEN 2010 AND 2020\n  GROUP BY county_fips, year\n\")\nThe query returns only the aggregated result — a small dataframe — even though the underlying table has hundreds of millions of rows.\n\n\n\n\n\n\nWarning\n\n\n\nOne writer at a time. DuckDB allows only one write connection to a database file at a time. If you have an R session connected to the database and try to run a second script that also writes to it, the second connection will fail. Close your connection (dbDisconnect(con)) before running build or update scripts, or open analysis connections as read-only: dbConnect(duckdb(), \"data/project_name.duckdb\", read_only = TRUE).\n\n\n\n\n\n\n\n\nNote\n\n\n\nYou don’t have to write SQL. The examples above use SQL because it’s the most direct way to query DuckDB. But if you’re more comfortable with dplyr, the dbplyr package lets you write dplyr code that gets translated to SQL behind the scenes — tbl(con, \"main_data\") |&gt; filter(year &gt;= 2010) |&gt; group_by(county_fips) |&gt; summarize(n = n()) works without writing a line of SQL. Claude can also translate between the two: “Rewrite this SQL query as dplyr code” or vice versa.\n\n\n\n\n\n\n\n\nNote\n\n\n\nFor very large data (50GB+), partition your parquet files. Instead of one parquet file per source, split by year (or another key variable): data/parquet/year=2010/data.parquet, data/parquet/year=2011/data.parquet, etc. DuckDB reads partitioned parquet natively and only loads the partitions your query touches. Ask Claude to “convert to partitioned parquet, partitioned by year” — it knows the convention.\n\n\n\n\n12 Step 4: Add a Metadata Table\nThis is the step that makes the whole setup work across sessions and collaborators. It comes from Goldsmith-Pinkham’s “context engineering for data” concept: embed the documentation inside the database itself.\n\n\n\n\n\n\nTip\n\n\n\nPrompt:\n“Create a metadata table in the DuckDB database. For every column in every table, record: column name, description, data type, valid values (or range), and which years it’s available. I want to be able to run SELECT * FROM metadata and get full documentation.”\n\n\nHere’s what a metadata table looks like in practice:\n\n\n\n\n\n\n\n\n\n\n\ntable\ncolumn\ntype\ndescription\nvalid_values\nyears\n\n\n\n\nmain_data\ncounty_fips\nVARCHAR\n5-digit county FIPS code\n01001–56045\n2007–2024\n\n\nmain_data\nloan_amount\nDOUBLE\nLoan amount in thousands USD\n&gt; 0\n2007–2024\n\n\nmain_data\naction_taken\nINTEGER\nLoan disposition\n1=originated, 2=approved, 3=denied, …\n2007–2024\n\n\nmain_data\nlender_type\nVARCHAR\nLender classification\nbank, credit_union, fintech, non_bank_other\n2007–2024\n\n\ncounty_year\nhhi\nDOUBLE\nHerfindahl-Hirschman Index\n0–10000\n2007–2024\n\n\n\nFive rows, but a collaborator (or Claude) immediately knows what every column means, what values are valid, and which years are covered.\nThe metadata table solves a specific problem with Claude Code: session amnesia applied to data. Claude forgets your schema between sessions. Without a metadata table, you either re-explain your variables every session or hope Claude infers them correctly from column names. With one, you start every session with:\nRead the metadata table from data/project_name.duckdb and familiarize yourself with the schema.\nClaude runs SELECT * FROM metadata, gets full documentation of every variable, and is immediately oriented. No re-explanation needed. This also works for collaborators — a co-author who has never seen the dataset can query the metadata table and understand what they’re working with.\n\n\n\n\n\n\n\nWithout Metadata Table\nWith Metadata Table\n\n\n\n\nRe-explain schema every session\nSELECT * FROM metadata\n\n\nCo-authors email you asking “what is column X?”\nThey query the database\n\n\nClaude guesses variable meanings from names\nClaude reads exact definitions\n\n\nDocumentation lives in a separate file that drifts\nDocumentation lives with the data\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nThis is not just a DuckDB trick. The principle — documentation that lives with the artifact, not in a separate file — applies broadly. You can add metadata tables to SQLite databases, write data dictionaries as CSV files alongside your data, or embed variable labels in Stata .dta files. The specific implementation matters less than the habit: make your data self-documenting.\n\n\n\n\n13 Step 5: Verify the Pipeline\nLarge data pipelines have a specific failure mode: they run without errors but produce wrong results. A join that silently drops 10% of observations. A type conversion that turns missing values into zeros. A harmonization that maps two distinct categories to the same code.\nBefore using the database for analysis, run basic checks:\n\n\n\n\n\n\nTip\n\n\n\nPrompt:\n“Verify the DuckDB database. Check: (1) row counts per year match expectations, (2) no unexpected missing values in key variables, (3) identifier coverage — are the same units present across years? (4) spot-check 5 random observations against the raw CSV to confirm values match. Report any discrepancies.”\n\n\nThis is the cross-language replication principle from Tutorial 1 applied to data engineering: don’t trust the pipeline because it ran — verify the output against the input.\n\n\n14 The Full Workflow\nPutting it together, the sequence for each new large dataset:\n\n\n\n\n\n\n\n\nStep\nWhat\nPrompt Pattern\n\n\n\n\n1\nConvert to parquet\n“Convert CSVs to parquet, report compression”\n\n\n2\nHarmonize schemas\n“Compare formats, build crosswalk, flag ambiguities”\n\n\n3\nBuild DuckDB\n“Load parquet into DuckDB, create aggregations”\n\n\n4\nAdd metadata\n“Create metadata table with full variable documentation”\n\n\n5\nVerify\n“Check row counts, missing values, spot-check against raw”\n\n\n\nFor a single dataset, this takes one Claude Code session. For multiple datasets that need linking, budget one session per dataset plus one session for the linking and verification.\n\n\n\n\n\n\nTip\n\n\n\nUse the research-plan-execute pattern (Tutorial 2). For a complex multi-dataset pipeline, start with a research session: “I have four datasets [describe them]. I need to link them by [identifier]. What would this take — is it feasible? What might be missing?” Save Claude’s assessment to a plan file. Then start a fresh session to execute from the plan.\n\n\n\n\n15 Working with the Database in Analysis Sessions\nOnce the database is built, your daily analysis workflow changes. Instead of loading data into R at the start of every script, you query the database for exactly what you need.\nSession startup with a database:\nRead the metadata table from data/project_name.duckdb.\nRead CLAUDE.md and README.md.\nState the goals of this session.\nQuerying in R scripts:\nlibrary(duckdb)\ncon &lt;- dbConnect(duckdb(), \"data/project_name.duckdb\")\n\n##### Step 1: Pull analysis sample\ndf &lt;- dbGetQuery(con, \"\n  SELECT county_fips, year, outcome, treatment, pop, area_sqkm\n  FROM main_data\n  WHERE year BETWEEN 2005 AND 2015\n    AND pop &gt; 1000\n\")\n\n##### Step 2: Run regression\nlibrary(fixest)\nmodel &lt;- feols(outcome ~ treatment | county_fips + year, data = df)\nThe query extracts only the rows and columns you need. The resulting dataframe fits comfortably in memory even if the full dataset doesn’t.\n\n\n\n\n\n\nWarning\n\n\n\nGit and large files. DuckDB database files are typically 1–10GB — far too large for git. Add *.duckdb and data/parquet/ to your .gitignore. Track the scripts that build the database (they’re small text files), not the database itself. Anyone with the raw data and your build scripts can reproduce the database exactly. If you need to share the database with a co-author, use a file transfer service or shared drive — not GitHub.\n\n\n\n\n\n\n\n\nWarning\n\n\n\nKeep all modifications in the build script. During analysis, you’ll be tempted to add derived columns or new aggregation tables to the database interactively — “add a log_income column to main_data.” Those changes live only in the database file, which is not version-controlled. If you rebuild from your scripts, they’re lost. The rule: every modification to the database should be a line in build_db.py (or a separate analysis_views.sql file that runs after the build). If Claude adds a column during a session, ask it to add the same step to the build script before you move on.\n\n\n\n\n16 When You Don’t Need This\nNot every dataset warrants a database pipeline. The decision is straightforward:\n\n\n\n\n\n\n\nDataset Size\nApproach\n\n\n\n\nUnder 1 GB\nLoad directly into R/Python. No pipeline needed.\n\n\n1–10 GB\nParquet conversion helps. DuckDB optional — depends on how often you query.\n\n\n10 GB+\nFull pipeline (parquet + DuckDB + metadata). The investment pays for itself.\n\n\nMultiple sources to link\nFull pipeline regardless of individual file sizes.\n\n\n\nIf your data fits in memory and you’re not linking across sources, a CSV and a well-commented R script are fine. Don’t build infrastructure you don’t need.\n\n\n17 Further Reading\n\n\n\nResource\nLink\n\n\n\n\nGoldsmith-Pinkham, “Large Datasets and Structured Databases” (worked example with HMDA data)\nA Causal Affair\n\n\nDuckDB documentation\nduckdb.org\n\n\nApache Parquet format\nparquet.apache.org\n\n\nArrow R package (parquet I/O)\narrow.apache.org/docs/r\n\n\nPolars (alternative to DuckDB for lazy evaluation in Python)\npola.rs",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Working with Large Datasets</span>"
+    ]
+  }
+]

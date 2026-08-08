@@ -1,0 +1,53 @@
+---
+title: "Teaching"
+---
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7DSN63Y1JH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-7DSN63Y1JH');
+</script>
+
+My teaching philosophy focuses on developing critical thinking skills, and acquiring tools which enable students to become producers of knowledge. I have taught courses in comparative politics and quantitative methodology at undergraduate and graduate level.
+
+
+| Course |   Time Offered           |
+|:-------|:-------------------------|
+| [Corruption](/teaching/corruption/index.html){target="_blank"} | Tecnológico de Monterrey, Fall 2026, Undergraduate |
+| [Logic and Science](/teaching/logic/index.html){target="_blank"} | Tecnológico de Monterrey, Fall 2026, Undergraduate |
+| [Technology and Society](/teaching/econ_development/index.html){target="_blank"} | Tecnológico de Monterrey, Spring 2026, Undergraduate |
+| [Text Analysis in Python](/teaching/text_analysis/index.html){target="_blank"} | John Cabot, Spring 2025, Undergraduate |
+| [GIS in R](/teaching/gis/index.html){target="_blank"} | John Cabot, Spring 2024, Undergraduate |
+| [Statistics](/teaching/stats/index.html){target="_blank"} | John Cabot, Spring 2024, Winter 2023, Spring 2023, Undergraduate |
+| [Comparative Politics](/teaching/comp_pol/index.html){target="_blank"} | John Cabot, Spring 2024, Winter 2023, Spring 2023, Undergraduate |
+| [Comparative Political Economy](/teaching/cpe/pol_econ_syllabus.html){target="_blank"} | John Cabot, Spring 2024, Winter 2023, Spring 2023, Undergraduate and Graduate |
+| European Politics and Society | Oxford, Autumn 2022, Graduate |
+| Comparative Government | Oxford, Autumn 2022, Undergraduate |
+| Comparative Political Economy | Oxford, Autumn 2022, Undergraduate |
+
+<br><br>
+Other courses that I am ready to teach include:
+
+- [Research Workshop](/teaching/research_workshop/index.html){target="_blank"}
+- [Agentic AI for Research](/teaching/agentic/index.html){target="_blank"}
+- [Mixed-Methods Research Methodology](/teaching/mixed_methods/mixed_methods.html){target="_blank"}
+- [European Politics](/teaching/european_politics/european_pol_syllabus.html){target="_blank"}
+- [State Formation and State Development](/teaching/state_capacity_dev/state_syllabus.html){target="_blank"}
+- [Comparative Politics of Borders](/teaching/borders/borders_syllabus.html){target="_blank"}
+- [Historical Political Economy](https://www.dropbox.com/s/d8llj89ijo4dwb8/his-pol-syllabus_2022.pdf?dl=0){target="_blank"}
+- [Political Economy of Corruption](https://bgpopescu.files.wordpress.com/2016/10/bpsyllabus.pdf){target="_blank"}
+
+<br><br>
+Short Courses focused on producing a paper:
+
+- [Political Legitimacy and Participation](/teaching/research_workshop/research_pol_legitimacy.html){target="_blank"}
+- [China, Foreign Aid, and Global Development](/teaching/research_workshop/research_ir_china_aid.html){target="_blank"}
+- [International Courts and Global Power](/teaching/research_workshop/research_ir_law.html){target="_blank"}
+- [Protests and Social Movements](/teaching/research_workshop/research_protest_diffusion.html){target="_blank"}
+
+
+Teaching reviews available upon request.

@@ -1,0 +1,272 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Intro to GIS",
+    "section": "",
+    "text": "Course Information\nCourse Number: PL/CS 362-1\nCourse Title: Applied Computational Methods for Social Sciences\nHours: MW 10:00-11:15AM\nLocation: G.K.1.4-Guarini Campus, Kushlan Wing, First Floor, Room 4\nCredits: 3\nPrerequisites: None",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#instructor-details",
+    "href": "index.html#instructor-details",
+    "title": "Intro to GIS",
+    "section": "Instructor Details",
+    "text": "Instructor Details\nInstructor: Bogdan G. Popescu\nE-Mail: bogdan.popescu@johncabot.edu\nOffice Hours: By appointment\nNote: You should have a computer, either Windows or Mac, with at least 8GB of RAM.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#course-description",
+    "href": "index.html#course-description",
+    "title": "Intro to GIS",
+    "section": "Course Description",
+    "text": "Course Description\nThis is an introductory course to spatial data in R, a free programming language and environment developed for statistical computing and graphics. The first part of the course will introduce you to the R programming language. The second part will focus on R’s ability to manipulate spatial data, including how to process vector layers and rasters. Through hands-on exercises, this course introduces students to the concepts and applications of geographic information systems (GIS). It provides a basic foundation of spatial analysis and GIS with laboratory applications in particular techniques and methodology utilizing R. Students will learn to perform spatial analyses and communicate their results through cartography, along with an introduction to concepts such as spatial data collection, remote sensing, and spatial statistics.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#summary-of-course-content",
+    "href": "index.html#summary-of-course-content",
+    "title": "Intro to GIS",
+    "section": "Summary of Course Content",
+    "text": "Summary of Course Content\nThis introductory course on spatial data in R offers a comprehensive exploration of the R programming language’s capabilities in statistical computing and graphics, with a specific focus on spatial data manipulation. The initial segment of the course acquaints students with the fundamentals of the R programming language, emphasizing its status as a versatile and free tool. Subsequently, the course delves into R’s ability to handle spatial data, covering the processing of both vector layers and raster data. Participants learn to perform spatial analyses using R, with a particular emphasis on laboratory applications that apply techniques and methodologies to real-world scenarios. A critical component of the course is the integration of cartography, enabling students to visually communicate spatial analysis results through map creation. The practical applications extend to various domains, allowing students to develop a solid foundation in spatial analysis skills. Overall, this course equips students with a robust skill set for handling spatial data, making it valuable for those entering fields such as geography, environmental science, and urban planning.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#learning-outcomes",
+    "href": "index.html#learning-outcomes",
+    "title": "Intro to GIS",
+    "section": "Learning Outcomes",
+    "text": "Learning Outcomes\nUpon successful completion of this course the students will be able to:\n\nexecute basic programming tasks in R (e.g. loops, conditional statements, while statements, etc.)\nunderstand basic GIS terms and concepts\nutilize GIS for mapping and conducting spatial analyses\ncreate a professional website containing a portfolio",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#assessment",
+    "href": "index.html#assessment",
+    "title": "Intro to GIS",
+    "section": "Assessment",
+    "text": "Assessment\nYou will be graded on four problem sets during the semester (each 12.5% of your grade) and a final report and presentation (each 25% of your grade).\n\n4 problem sets: 50% of the final grade (12.5% each)\nfinal presentation: 25% of the final grade\nfinal project report: 25% of the final grade\n\n\nProblem Sets\n\nInitial Individual Submission: This component contributes 50% of the overall grade for the problem set. When you first complete the problem set independently and submit it to the instructor, your grade for this component will be calculated based on the quality of your independent work. This grade will be weighted at 50% of the total assignment grade.\nFinal Submission After Group Consultation: This component also contributes 50% of the overall grade for the problem sets. After discussing the problem set with your group members and documenting the correct answers, you will submit this revised version individually. Note: no group submission is permitted. Each one of you has to submit the second attempt of the assignment individually. Your grade for this component will be based on the quality of your final submission after group consultation. This grade will also be weighted at 50% of the total assignment grade.\n\n\n\nFinal Project\nStudents will undertake a GIS project emphasizing the practical application of spatial analysis techniques using the R programming language. This project offers an opportunity to showcase the acquired skills in manipulating spatial data and conducting meaningful analyses. Participants are encouraged to choose a topic of interest or relevance, utilizing datasets provided in the course or exploring new ones. The project entails a few steps:\n\nchoosing a topic that involves spatial data\nacquiring data either from the course materials or from external sources\nemploying at least five GIS procedures in R such as: st_join, st_centroid, st_area, st_distance, st_buffer, st_voronoi, st_union, st_combine, st_cast, st_intersection, st_difference, dplyr for vector layer aggregation, st_crop, st_rasterize, raster::aggregate, etc.\n\nOR\n\nproducing some descriptive visualizations (maps, barplot, scatterplot, boxplots) that tell the same story AND making a GitHub website (for data, you can explore https://ourworldindata.org)\ncrafting a well-structured two-page report containing an intro to the problem, objectives, data sources, methodology, results, and conclusion\nan appendix with the R code for the GIS procedures\n\nHere are examples of projects that former students produced:\n\nSwiss Glaciers Melting Rate\nRising Temperatures and Droughts\n\nExamples of Project Topics:\n\nUnderstanding economic development in Eastern Europe since 1992 using satellite luminosity\nExploring temperature changes: what are the countries in Europe that have experienced the most dramatic changes in temperature since 1901\nExploring temperature changes: what are the regions within a country (e.g. Italy) that have experienced the most dramatic changes in temperature since 1901\nExploring business opportunities (e.g. restaurants, retail) in your favorite city using OSM\nExploring areas worst affected by an earthquake\n\nStudents have to submit a two-page report in Quarto and give a 20-minute, in-class presentation in Quarto.\nGrading criteria for the project:\n\nRelevance\nMethodology: demonstration of at least five distinct GIS procedures in R\nAnalysis\nPresentation\nCode Quality\n\nYou can find below an example of a project: Wildfires in 2023\n\nProject Memo | Project Memo QMD file\nPresentation | Presentation QMD file",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#attendance-requirements",
+    "href": "index.html#attendance-requirements",
+    "title": "Intro to GIS",
+    "section": "Attendance Requirements",
+    "text": "Attendance Requirements\nStudents are required to attend classes following the University’s policies. Students with more than four unexcused absences (two weeks) will get an F on the course. Thus, students must attend classes.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#academic-honesty",
+    "href": "index.html#academic-honesty",
+    "title": "Intro to GIS",
+    "section": "Academic Honesty",
+    "text": "Academic Honesty\nAs stated in the university catalog, any student who commits an act of academic dishonesty will receive a failing grade on the work in which the dishonesty occurred. In addition, acts of academic dishonesty, irrespective of the weight of the assignment, may result in the student receiving a failing grade in the course. Instances of academic dishonesty will be reported to the Dean of Academic Affairs. A student who is reported twice for academic dishonesty is subject to summary dismissal from the University. In such a case, the Academic Council will then make a recommendation to the President, who will make the final decision.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#students-with-learning-or-other-disabilities",
+    "href": "index.html#students-with-learning-or-other-disabilities",
+    "title": "Intro to GIS",
+    "section": "Students with Learning or Other Disabilities",
+    "text": "Students with Learning or Other Disabilities\nJohn Cabot University does not discriminate on the basis of disability or handicap. Students with approved accommodations must inform their professors at the beginning of the term. Please see the website for the complete policy.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#recommended-books",
+    "href": "index.html#recommended-books",
+    "title": "Intro to GIS",
+    "section": "Recommended Books",
+    "text": "Recommended Books\n\nGeneral Books on R\n\nWickham, Hadley, and Garrett Grolemund. 2023. R for Data Science. O’Reilly Media. https://r4ds.hadley.nz\nWickham, Hadley. 2023. ggplot2: Elegant Graphics for Data Analysis. Springer. https://ggplot2-book.org/index.html\nNguyen, Mike. 2023. A Guide on Data Analysis. https://bookdown.org/mike/data_analysis/\n\n\n\nSpatial Analysis\n\nPebesma, Edzer, and Roger Bivand. 2023. Spatial Data Science: With Applications in R. Chapman & Hall/CRC. https://r-spatial.org/book/\nGimond, Manuel. 2023. Intro to GIS and Spatial Analysis. https://mgimond.github.io/Spatial/index.html\nLovelace, Robin; Jakub Nowosad; and Jannes Muenchow. 2023. Geocomputation with R. https://r.geocompx.org",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
+    ]
+  },
+  {
+    "objectID": "schedule.html",
+    "href": "schedule.html",
+    "title": "Schedule",
+    "section": "",
+    "text": "Week\nSession\nTopic\n\n\n\n\n1\nClass 1\nIntro to R and GIS\n\n\n1\nClass 2\nIntro to R, Quarto, and R Environments\n\n\n2\nClass 1\nClasses, Vectors, Operations, Matrices, Dataframes\n\n\n2\nClass 2\nFunctions and Loops — Assignment 1\n\n\n3\nClass 1\nReading Data and Working Directories\n\n\n3\nClass 2\nRelational Data, Dates and Joins\n\n\n4\nClass 1\nProblems (exercises: functions, loops, joins, dates)\n\n\n4\nClass 2\nData Visualization 1\n\n\n4\nClass 3\nData Visualization 2 & 3\n\n\n5\nBoth\nIntro to Geographic Information Systems (GIS) — Assignment 2\n\n\n6\nClass 1\nShapefiles, Coordinate Systems, and Basic Mapping\n\n\n—\n\nSpring Break\n\n\n7\nClass 1\nFundamentals of Mapping\n\n\n7\nClass 2\nGeometric Operations with Vectors 1\n\n\n8\nBoth\nGeometric Operations with Vectors 2 — Assignment 3\n\n\n9\nClass 1\nSpatial Operations — Applications\n\n\n9\nClass 2\nRasters and Raster Operations 1\n\n\n10\nBoth\nRasters and Raster Operations 2 — Assignment 4\n\n\n11\nClass 2\nRasters and Raster Operations 3\n\n\n12\nClass 1\nGeometric Operations with Rasters 1\n\n\n12\nClass 2\nStudent Proposal Presentations\n\n\n13\nBoth\nCombining Vectors and Rasters\n\n\n14\nClass 1\nGeometric Operations with Rasters 2\n\n\n14\nClass 2\nConcluding Remarks\n\n\nSupp.\n\nGeoreferencing Maps and Creating Shapefiles (QGIS)\n\n\nSupp.\n\nMaking a Website on GitHub",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Schedule</span>"
+    ]
+  },
+  {
+    "objectID": "week1/week1_landing.html",
+    "href": "week1/week1_landing.html",
+    "title": "1 Intro to R and GIS",
+    "section": "",
+    "text": "Class 1: Intro to R and GIS\n\n\n\n\nOpen slides in a new window\n\n\nClass 2: Intro to R, Quarto, and R Environments\n\n\n\n\nOpen slides in a new window\n\n\nReading\nWilson G., Bryan J., Cranston K., Kitzes J., Nederbragt L., et al. 2017. “Good Enough Practices in Scientific Computing.” PLoS Comput Biol 13(6): e1005510.\nWickham, Hadley and Grolemund, Garett. 2023. R for Data Science. O’Reilly. https://r4ds.hadley.nz. C1-4",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>1 Intro to R and GIS</span>"
+    ]
+  },
+  {
+    "objectID": "week2/week2_landing.html",
+    "href": "week2/week2_landing.html",
+    "title": "2 Objects, Dataframes, Functions, and Loops",
+    "section": "",
+    "text": "Class 1: Classes, Vectors, Operations, Matrices, Dataframes\n\n\n\n\nOpen slides in a new window\n\n\nClass 2: Functions and Loops\n\n\n\n\nOpen slides in a new window\n\n\nReading\nWickham, Hadley and Grolemund, Garett. 2023. R for Data Science. O’Reilly. C. Program https://r4ds.hadley.nz/program\nThulin, Måns. 2021. Modern Statistics with R. C6 R programming https://www.modernstatisticswithr.com/progchapter.html\n\n\nAssignment\nAssignment 1",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>2 Objects, Dataframes, Functions, and Loops</span>"
+    ]
+  },
+  {
+    "objectID": "week3/week3_landing.html",
+    "href": "week3/week3_landing.html",
+    "title": "3 Reading Data, Joins, and Dates",
+    "section": "",
+    "text": "Class 1: Reading Data and Working Directories\n\n\n\n\nOpen slides in a new window\n\n\nClass 2: Relational Data, Dates and Joins\n\n\n\n\nOpen slides in a new window\n\n\nReading\nWickham, Hadley and Grolemund, Garett. 2023. R for Data Science. O’Reilly. C. Transform https://r4ds.hadley.nz/transform\nThulin, Måns. 2021. Modern Statistics with R. C. Exploratory data analysis and unsupervised learning. https://www.modernstatisticswithr.com/eda.html#outliers-and-missing-data",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>3 Reading Data, Joins, and Dates</span>"
+    ]
+  },
+  {
+    "objectID": "week4/week4_landing.html",
+    "href": "week4/week4_landing.html",
+    "title": "4 Data Visualization",
+    "section": "",
+    "text": "Data Visualization 1: Points, Bars, Boxplots, and Maps\n\n\n\n\nOpen slides in a new window\n\n\nData Visualization 2: Color, Size, Shape, Transparency, and Linetype\n\n\n\n\nOpen slides in a new window\n\n\nData Visualization 3: Facets, Coordinates, Annotations, and Themes\n\n\n\n\nOpen slides in a new window\n\n\nReading\nWickham, Hadley and Grolemund, Garett. 2023. R for Data Science. O’Reilly. https://r4ds.hadley.nz. C5-8\nWickham, Hadley. 2023. ggplot2: Elegant Graphics for Data Analysis. Springer. https://ggplot2-book.org/index.html",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>4 Data Visualization</span>"
+    ]
+  },
+  {
+    "objectID": "week5/week5_landing.html",
+    "href": "week5/week5_landing.html",
+    "title": "5 Intro to Geographic Information Systems",
+    "section": "",
+    "text": "Intro to Geographic Information Systems (GIS)\n\n\n\n\nOpen slides in a new window\n\n\nReading\nGimond, Manuel. 2023. Intro to GIS and Spatial Analysis. C9. Coordinate Systems. https://mgimond.github.io/Spatial/chp09_0.html\n\n\nAssignment\nAssignment 2 | Assignment 2 Presentation Example | Assignment 2 Presentation Template",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>5 Intro to Geographic Information Systems</span>"
+    ]
+  },
+  {
+    "objectID": "week6/week6_landing.html",
+    "href": "week6/week6_landing.html",
+    "title": "6 Shapefiles, Coordinate Systems, and Basic Mapping",
+    "section": "",
+    "text": "Shapefiles, Coordinate Systems, and Basic Mapping\n\n\n\n\nOpen slides in a new window\n\n\nReading\nGimond, Manuel. 2023. Intro to GIS and Spatial Analysis. C3. GIS Data Management. https://mgimond.github.io/Spatial/gis-data-management.html",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>6 Shapefiles, Coordinate Systems, and Basic Mapping</span>"
+    ]
+  },
+  {
+    "objectID": "week7/week7_landing.html",
+    "href": "week7/week7_landing.html",
+    "title": "7 Fundamentals of Mapping and Spatial Joins",
+    "section": "",
+    "text": "Class 1: Fundamentals of Mapping\n\n\n\n\nOpen slides in a new window\n\n\nClass 2: Geometric Operations with Vectors 1\n\n\n\n\nOpen slides in a new window\n\n\nReading\nGimond, Manuel. 2023. Intro to GIS and Spatial Analysis. C7. Good Map Making Tips. https://mgimond.github.io/Spatial/good-map-making-tips.html#elements-of-a-map",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>7 Fundamentals of Mapping and Spatial Joins</span>"
+    ]
+  },
+  {
+    "objectID": "week8/week8_landing.html",
+    "href": "week8/week8_landing.html",
+    "title": "8 Geometric Operations with Vectors",
+    "section": "",
+    "text": "Geometric Operations with Vectors 2\n\n\n\n\nOpen slides in a new window\n\n\nReading\nLovelace, Robin; Nowosad, Jakub; and Muenchow, Jannes. 2023. Geocomputation with R. C. Geometry operations. https://r.geocompx.org/geometry-operations\n\n\nAssignment\nAssignment 3",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>8 Geometric Operations with Vectors</span>"
+    ]
+  },
+  {
+    "objectID": "week9/week9_landing.html",
+    "href": "week9/week9_landing.html",
+    "title": "9 Spatial Operations and Rasters 1",
+    "section": "",
+    "text": "Class 1: Spatial Operations - Applications\n\n\n\n\nOpen slides in a new window\n\n\nClass 2: Rasters and Raster Operations 1\n\n\n\n\nOpen slides in a new window",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>9 Spatial Operations and Rasters 1</span>"
+    ]
+  },
+  {
+    "objectID": "week10/week10_landing.html",
+    "href": "week10/week10_landing.html",
+    "title": "10 Rasters and Raster Operations 2",
+    "section": "",
+    "text": "Rasters and Raster Operations 2\n\n\n\n\nOpen slides in a new window\n\n\nReading\nGimond, Manuel. 2023. Intro to GIS and Spatial Analysis. C. Raster operations in R. https://mgimond.github.io/Spatial/raster-operations-in-r.html\nLovelace, Robin; Nowosad, Jakub; and Muenchow, Jannes. 2023. Geocomputation with R. C. Spatial data operations. https://r.geocompx.org/spatial-operations\n\n\nAssignment\nAssignment 4",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>10 Rasters and Raster Operations 2</span>"
+    ]
+  },
+  {
+    "objectID": "week11/week11_landing.html",
+    "href": "week11/week11_landing.html",
+    "title": "11 Rasters and Raster Operations 3",
+    "section": "",
+    "text": "Rasters and Raster Operations 3\n\n\n\n\nOpen slides in a new window\n\n\nReading\nGimond, Manuel. 2023. Intro to GIS and Spatial Analysis. C. Raster operations in R. https://mgimond.github.io/Spatial/raster-operations-in-r.html\nLovelace, Robin; Nowosad, Jakub; and Muenchow, Jannes. 2023. Geocomputation with R. C. Spatial data operations. https://r.geocompx.org/spatial-operations",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>11 Rasters and Raster Operations 3</span>"
+    ]
+  },
+  {
+    "objectID": "week12/week12_landing.html",
+    "href": "week12/week12_landing.html",
+    "title": "12 Geometric Operations with Rasters 1",
+    "section": "",
+    "text": "Geometric Operations with Rasters 1\n\n\n\n\nOpen slides in a new window\n\n\nStudent Proposal Presentations\n\nQuestion\nData sources\nProposed GIS functions\nExpected policy implications",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>12 Geometric Operations with Rasters 1</span>"
+    ]
+  },
+  {
+    "objectID": "week13/week13_landing.html",
+    "href": "week13/week13_landing.html",
+    "title": "13 Combining Vectors and Rasters",
+    "section": "",
+    "text": "Combining Vectors and Rasters\n\n\n\n\nOpen slides in a new window",
+    "crumbs": [
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>13 Combining Vectors and Rasters</span>"
+    ]
+  },
+  {
+    "objectID": "week14/week14_landing.html",
+    "href": "week14/week14_landing.html",
+    "title": "14 Mosaicing, Reprojecting, and Concluding Remarks",
+    "section": "",
+    "text": "Class 1: Geometric Operations with Rasters 2\n\n\n\n\nOpen slides in a new window\n\n\nClass 2: Concluding Remarks\n\n\n\n\nOpen slides in a new window",
+    "crumbs": [
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>14 Mosaicing, Reprojecting, and Concluding Remarks</span>"
+    ]
+  },
+  {
+    "objectID": "supplem_lec1/supplem1_landing.html",
+    "href": "supplem_lec1/supplem1_landing.html",
+    "title": "Supplement: Georeferencing Maps and Creating Shapefiles",
+    "section": "",
+    "text": "Georeferencing Maps and Creating Shapefiles in QGIS\n\n\n\n\nOpen slides in a new window",
+    "crumbs": [
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Supplement: Georeferencing Maps and Creating Shapefiles</span>"
+    ]
+  },
+  {
+    "objectID": "supplem_lec2/supplem2_landing.html",
+    "href": "supplem_lec2/supplem2_landing.html",
+    "title": "Supplement: Making a Website on GitHub",
+    "section": "",
+    "text": "GitHub Websites and Quarto\n\n\n\n\nOpen slides in a new window",
+    "crumbs": [
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Supplement: Making a Website on GitHub</span>"
+    ]
+  }
+]

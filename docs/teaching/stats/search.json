@@ -1,0 +1,262 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Essential Quantitative Skills for Social Sciences",
+    "section": "",
+    "text": "Course Information\nInstructor: Bogdan G. Popescu\nHours: TBA\nTotal Hours of Contact: 2:30 per week\nRoom: TBA\nCredits: 3\nPrerequisites: None\nOffice Hours: TBA",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#course-description",
+    "href": "index.html#course-description",
+    "title": "Essential Quantitative Skills for Social Sciences",
+    "section": "Course Description",
+    "text": "Course Description\nThis is an applied course on statistical methods commonly used in social science research (including political science and sociology) and provides the necessary foundation to conduct your analysis. Students will learn how to use a widely-used statistical package in data analytics - R and prepare HTML Quarto documents. More generally, students will learn how to read statistics, use statistical tests, and draw conclusions based on them. Students will also learn to carry out statistical tests using statistical packages and interpret results based on their analyses. About 50% of the class will be dedicated to coding.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#summary-of-course-content",
+    "href": "index.html#summary-of-course-content",
+    "title": "Essential Quantitative Skills for Social Sciences",
+    "section": "Summary of Course Content",
+    "text": "Summary of Course Content\nThe course will convene twice a week. There will be lectures covering statistical concepts applied to political science and practical lab sessions where students will use statistical software to conduct the tests. There will be assignments that have to be completed every week. The grades will be 30% midterm, 30% final exam, and 35% weekly assignments, and 5% how much you help your colleagues during the assignments.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#learning-outcomes",
+    "href": "index.html#learning-outcomes",
+    "title": "Essential Quantitative Skills for Social Sciences",
+    "section": "Learning Outcomes",
+    "text": "Learning Outcomes\nUpon successful completion of this course the students will be able to:\n\nUse statistical core terminology accurately and interpret results from descriptive statistics, hypothesis tests, and regression analyses.\nOrganize, clean, and merge datasets using R, and summarize data with numerical and graphical methods.\nConduct hypothesis tests (z-tests, t-tests) and evaluate statistical significance, p-values, and confidence intervals.\nEstimate and interpret bivariate and multivariate regression models, including coefficients, standard errors, and goodness-of-fit measures.\nDistinguish correlation from causation using causal diagrams (DAGs) and identify confounders, colliders, and mediators.\nApply causal inference methods including randomized controlled trials (RCTs), matching, and differences-in-differences.\nCreate effective data visualizations (scatterplots, histograms, choropleth maps, coefficient plots) using ggplot2 and produce reproducible reports in Quarto.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#assessment-methods",
+    "href": "index.html#assessment-methods",
+    "title": "Essential Quantitative Skills for Social Sciences",
+    "section": "Assessment methods",
+    "text": "Assessment methods\n\nFive problem sets: 35% of the final grade (7% each)\nColleague evaluation: 5% of the final grade\nMid term exam: 30% of the final grade\nFinal exam: 30% of the final grade\n\nYou will be graded on five problem sets during the semester (35% of your grade), the extent to which you help your colleagues for the problem sets (5%), and two exams (each 30% of your grade).\n\nProblem Sets\n1.Initial Individual Submission: This component contributes 50% of the overall grade for the problem set. When you first complete the problem set independently and submit it to the instructor, your grade for this component will be calculated based on the quality of your independent work. This grade will be weighted at 50% of the total assignment grade.\n2.Final Submission After Group Consultation: This component also contributes 50% of the overall grade for the problem sets. After discussing the problem set with your group members and documenting the correct answers, you will submit this revised version individually. Note: no group submission is permitted. Each one of you has to submit the second attempt of the assignment individually. Your grade for this component will be based on the quality of your final submission after group consultation. This grade will also be weighted at 50% of the total assignment grade.\n3.Colleague Evaluation: Your colleagues will assess how much you contributed to helping them with the problem sets at the end of the semester. This evaluation is separate from the individual and group submissions. It measures your ability to assist your fellow students. This component will count towards your final grade at the end (5%).\n\n\nMid term and Final exam\nThere will also be an in-class midterm and a final exam consisting of specific questions and problems. Each is worth 30%.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#attendance-requirements",
+    "href": "index.html#attendance-requirements",
+    "title": "Essential Quantitative Skills for Social Sciences",
+    "section": "Attendance Requirements",
+    "text": "Attendance Requirements\nStudents are required to attend classes following the University’s policies. Students with more than two unexcused absences are assumed to have withdrawn from the course. Students with a justified reason not to attend class have to send me an email explaining why they cannot attend ahead of class and need to submit a form to the Dean’s Office.\n\nExamination policy\nA major exam (midterm or final) cannot be made up without the permission of the Dean’s Office. The Dean’s Office will grant such permission only when the absence was caused by a serious impediment, such as a documented illness, hospitalization or death in the immediate family (in which you must attend the funeral) or other situations of similar gravity. Absences due to other meaningful conflicts, such as job interviews, family celebrations, travel difficulties, student misunderstandings or personal convenience, will not be excused. Students who will be absent from a major exam must notify the Dean’s Office prior to that exam. Absences from class due to the observance of a religious holiday will normally be excused. Individual students who will have to miss class to observe a religious holiday should notify the instructor by the end of the Add/Drop period to make prior arrangements for making up any work that will be missed.\n\n\nGrade Description of Academic Work\n\nA (95-100)\nB (85-94)\nC (75-84)\nD (65-74)\nF (65 and below)",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#academic-honesty",
+    "href": "index.html#academic-honesty",
+    "title": "Essential Quantitative Skills for Social Sciences",
+    "section": "Academic Honesty",
+    "text": "Academic Honesty\nAs stated in the university catalog, any student who commits an act of academic dishonesty will receive a failing grade on the work in which the dishonesty occurred. In addition, acts of academic dishonesty, irrespective of the weight of the assignment, may result in the student receiving a failing grade in the course. Instances of academic dishonesty will be reported to the Dean of Academic Affairs. A student who is reported twice for academic dishonesty is subject to summary dismissal from the University. In such a case, the Academic Council will then make a recommendation to the President, who will make the final decision.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#students-with-learning-or-other-disabilities",
+    "href": "index.html#students-with-learning-or-other-disabilities",
+    "title": "Essential Quantitative Skills for Social Sciences",
+    "section": "Students with Learning or Other Disabilities",
+    "text": "Students with Learning or Other Disabilities\nJohn Cabot University does not discriminate on the basis of disability or handicap. Students with approved accommodations must inform their professors at the beginning of the term. Please see the website for the complete policy.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#recommended-books",
+    "href": "index.html#recommended-books",
+    "title": "Essential Quantitative Skills for Social Sciences",
+    "section": "Recommended Books",
+    "text": "Recommended Books\nAronow, Peter and Miller, Benjamin, 2019. Foundations of Agnostic Statistics. Cambridge University Press.\nCunningham, Scott. 2021. Causal Inference: The Mixtape. Yale University Press. https://mixtape.scunning.com.\nIsmay, Chester, and Albert Y. Kim. 2019. Statistical Inference via Data Science: A ModernDive into R and the Tidyverse. Chapman and Hall / CRC. https://moderndive.com/.\nHuntington-Klein, Nick. 2021. The Effect: An Introduction to Research Design and Causality. Boca Raton, Florida: Chapman and Hall / CRC. https://theeffectbook.net/.\nLlaudet, Elena and Imai, Kosuke. 2023. “Data Analysis for Social Science.” Princeton: Oxford University Press.\nWarne, Russel T. 2018. “Statistics for the Social Sciences. A General Linear Model Approach.” London: Cambridge University Press.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#optional-books",
+    "href": "index.html#optional-books",
+    "title": "Essential Quantitative Skills for Social Sciences",
+    "section": "Optional Books",
+    "text": "Optional Books\nBauer, Paul C. and Dennis Cohen. 2023. Applied Causal Analysis (with R) https://bookdown.org/paul/applied-causal-analysis/.\nKeyes, David, R for the Rest of Us: 2025. A Statistics-Free Introduction https://book.rfortherestofus.com. No Stach Press.\nLovelace, Robin, Nowosad, Jakub, and Jannes Muenchow. 2021. Geocomputation with R. https://bookdown.org/robinlovelace/geocompr/.\nMieno, Tara. 2023. R as GIS for Economists. https://tmieno2.github.io/R-as-GIS-for-Economists/.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
+    ]
+  },
+  {
+    "objectID": "schedule.html",
+    "href": "schedule.html",
+    "title": "Schedule",
+    "section": "",
+    "text": "Week\nClass\nTopic\n\n\n\n\n1\nLecture\nOverview of Statistics\n\n\n1\nLab\nOperations and Objects in R\n\n\n2\nLecture\nLevels of Data\n\n\n2\nLab\nWorking with Data in R\n\n\n3\nLecture\nDescriptive Statistics\n\n\n3\nLab\nDplyr and Basic Visualization\n\n\n4\nLecture\nProbability I\n\n\n4\nLab\nHistograms, Barplots, Lineplots\n\n\n5\nLecture\nProbability II\n\n\n5\nLab\nNormal Distribution & R Functions\n\n\n6\nLecture\nStatistical Significance Testing and Z-Tests\n\n\n6\nLab\nHypothesis Testing\n\n\n7\nLecture\nT-Tests and Correlations\n\n\n7\nLab\nT-Tests, Choropleth Maps, and Correlations\n\n\n8\nLecture\nMidterm Revision\n\n\n8\nLab\nMIDTERM\n\n\n9\nLecture\nBivariate Regression\n\n\n9\nLab\nBivariate Regression\n\n\n10\nLecture\nBivariate and Multivariate Regression\n\n\n10\nLab\nQuarto Essentials\n\n\n11\nLecture\nTheories of Change\n\n\n11\nLab\nRCT Data\n\n\n12\nLecture\nThreats to Validity\n\n\n12\nLab\nDAGs\n\n\n13\nLecture\nDifferences in Differences\n\n\n13\nLab\nDifferences in Differences\n\n\n14\nLab\nData Visualization\n\n\n15\nLecture\nRevision for Final Exam\n\n\n15\nLab\nFINAL EXAM",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Schedule</span>"
+    ]
+  },
+  {
+    "objectID": "week1/week1_landing.html",
+    "href": "week1/week1_landing.html",
+    "title": "1 Overview of Statistics",
+    "section": "",
+    "text": "Lecture\n\n\n\n\nOpen slides in a new window\n\n\nLab\n\n\n\n\nOpen slides in a new window\n\n\nReading\nLlaudet, Elena and Imai, Kosuke. 2023. Data Analysis for Social Science. Princeton University Press. Chapter: Introduction.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>1 Overview of Statistics</span>"
+    ]
+  },
+  {
+    "objectID": "week2/week2_landing.html",
+    "href": "week2/week2_landing.html",
+    "title": "2 Levels of Data",
+    "section": "",
+    "text": "Lecture\n\n\n\n\nOpen slides in a new window\n\n\nLab\n\n\n\n\nOpen slides in a new window\n\n\nReading\nLlaudet, Elena and Imai, Kosuke. 2023. Data Analysis for Social Science. Princeton University Press. Chapter: Introduction.\nLlaudet, Elena and Imai, Kosuke. 2023. Data Analysis for Social Science. Princeton University Press. Chapter: Estimating Causal Effects with Randomized Experiments.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>2 Levels of Data</span>"
+    ]
+  },
+  {
+    "objectID": "week3/week3_landing.html",
+    "href": "week3/week3_landing.html",
+    "title": "3 Descriptive Statistics",
+    "section": "",
+    "text": "Lecture\n\n\n\n\nOpen slides in a new window\n\n\nLab\n\n\n\n\nOpen slides in a new window\n\n\nReading\nLlaudet, Elena and Imai, Kosuke. 2023. Data Analysis for Social Science. Princeton University Press. Chapter: Inferring Population Characteristics via Survey Research.\n\n\nAssignment 1\n\n\n\n\nOpen assignment in a new window",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>3 Descriptive Statistics</span>"
+    ]
+  },
+  {
+    "objectID": "week4/week4_landing.html",
+    "href": "week4/week4_landing.html",
+    "title": "4 Probability I",
+    "section": "",
+    "text": "Lecture\n\n\n\n\nOpen slides in a new window\n\n\nLab\n\n\n\n\nOpen slides in a new window\n\n\nReading\nAronow, Peter and Miller, Benjamin, 2019. Foundations of Agnostic Statistics. Cambridge University Press. Chapter 1: Probability Theory.\nCunningham, Scott. 2021. Causal Inference: The Mixtape. Yale University Press. Chapter 2: Probability and Regression Review.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>4 Probability I</span>"
+    ]
+  },
+  {
+    "objectID": "week5/week5_landing.html",
+    "href": "week5/week5_landing.html",
+    "title": "5 Probability II",
+    "section": "",
+    "text": "Lecture\n\n\n\n\nOpen slides in a new window\n\n\nLab\n\n\n\n\nOpen slides in a new window\n\n\nReading\nAronow, Peter and Miller, Benjamin, 2019. Foundations of Agnostic Statistics. Cambridge University Press. Chapter 1: Probability Theory.\nCunningham, Scott. 2021. Causal Inference: The Mixtape. Yale University Press. Chapter 2: Probability and Regression Review.\n\n\nAssignment 2\n\n\n\n\nOpen assignment in a new window",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>5 Probability II</span>"
+    ]
+  },
+  {
+    "objectID": "week6/week6_landing.html",
+    "href": "week6/week6_landing.html",
+    "title": "6 Statistical Significance Testing and Z-Tests",
+    "section": "",
+    "text": "Lecture\n\n\n\n\nOpen slides in a new window\n\n\nLab\n\n\n\n\nOpen slides in a new window\n\n\nReading\nLlaudet, Elena and Imai, Kosuke. 2023. Data Analysis for Social Science. Princeton University Press. Chapter: Quantifying uncertainty.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>6 Statistical Significance Testing and Z-Tests</span>"
+    ]
+  },
+  {
+    "objectID": "week7/week7_landing.html",
+    "href": "week7/week7_landing.html",
+    "title": "7 T-Tests and Correlations",
+    "section": "",
+    "text": "Lecture\n\n\n\n\nOpen slides in a new window\n\n\nLab\n\n\n\n\nOpen slides in a new window\n\n\nReading\nAronow, Peter and Miller, Benjamin, 2019. Foundations of Agnostic Statistics. Cambridge University Press. Chapter 2: Summarizing Distributions.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>7 T-Tests and Correlations</span>"
+    ]
+  },
+  {
+    "objectID": "week8/week8_landing.html",
+    "href": "week8/week8_landing.html",
+    "title": "8 Midterm Revision and Exam",
+    "section": "",
+    "text": "Lecture\n\n\n\n\nOpen slides in a new window\n\n\nMidterm Exam",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>8 Midterm Revision and Exam</span>"
+    ]
+  },
+  {
+    "objectID": "week9/week9_landing.html",
+    "href": "week9/week9_landing.html",
+    "title": "9 Bivariate Regression",
+    "section": "",
+    "text": "Lecture\n\n\n\n\nOpen slides in a new window\n\n\nLab\n\n\n\n\nOpen slides in a new window\n\n\nReading\nCunningham, Scott. 2021. Causal Inference: The Mixtape. Yale University Press. Chapter 2: Probability and Regression Review.\nLlaudet, Elena and Imai, Kosuke. 2023. Data Analysis for Social Science. Princeton University Press. Chapter: Predicting Outcomes Using Linear Regression.\n\n\nAssignment 3\n\n\n\n\nOpen assignment in a new window",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>9 Bivariate Regression</span>"
+    ]
+  },
+  {
+    "objectID": "week10/week10_landing.html",
+    "href": "week10/week10_landing.html",
+    "title": "10 Bivariate and Multivariate Regression",
+    "section": "",
+    "text": "Lecture\n\n\n\n\nOpen slides in a new window\n\n\nLab\n\n\n\n\nOpen slides in a new window\n\n\nReading\nIsmay, Chester, and Albert Y. Kim. 2019. Statistical Inference via Data Science: A ModernDive into R and the Tidyverse. Chapman and Hall / CRC. Chapter 6.\nHuntington-Klein, Nick. 2021. The Effect: An Introduction to Research Design and Causality. Chapman and Hall / CRC. Chapter 13.\nQuarto Guide.",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>10 Bivariate and Multivariate Regression</span>"
+    ]
+  },
+  {
+    "objectID": "week11/week11_landing.html",
+    "href": "week11/week11_landing.html",
+    "title": "11 Theories of Change",
+    "section": "",
+    "text": "Lecture\n\n\n\n\nOpen slides in a new window\n\n\nLab\n\n\n\n\nOpen slides in a new window\n\n\nReading\nAronow, Peter and Miller, Benjamin, 2019. Foundations of Agnostic Statistics. Cambridge University Press. Chapter 7: Causal Inference.\nCunningham, Scott. 2021. Causal Inference: The Mixtape. Yale University Press. Chapter 3: Directed Acyclic Graphs.\nCunningham, Scott. 2021. Causal Inference: The Mixtape. Yale University Press. Chapter 4: Potential Outcomes Causal Model.\nHuntington-Klein, Nick. 2021. The Effect. Chapter 13.\nHuntington-Klein, Nick. 2021. The Effect. Chapter 5.\n\n\nAssignment 4\n\n\n\n\nOpen assignment in a new window",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>11 Theories of Change</span>"
+    ]
+  },
+  {
+    "objectID": "week12/week12_landing.html",
+    "href": "week12/week12_landing.html",
+    "title": "12 Threats to Validity",
+    "section": "",
+    "text": "Lecture\n\n\n\n\nOpen slides in a new window\n\n\nLab\n\n\n\n\nOpen slides in a new window\n\n\nReading\nCunningham, Scott. 2021. Causal Inference: The Mixtape. Yale University Press. Chapter 3: Directed Acyclic Graphs.\nCunningham, Scott. 2021. Causal Inference: The Mixtape. Yale University Press. Chapter 4: Matching and Subclassification.\nHuntington-Klein, Nick. 2021. The Effect. Chapter 6, Chapter 7, Chapter 8.\nHuntington-Klein, Nick. 2021. The Effect. Chapter 14.",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>12 Threats to Validity</span>"
+    ]
+  },
+  {
+    "objectID": "week13/week13_landing.html",
+    "href": "week13/week13_landing.html",
+    "title": "13 Differences in Differences",
+    "section": "",
+    "text": "Lecture\n\n\n\n\nOpen slides in a new window\n\n\nLab\n\n\n\n\nOpen slides in a new window\n\n\nReading\nHuntington-Klein, Nick. 2021. The Effect. Chapter 18.\nCunningham, Scott. 2021. Causal Inference: The Mixtape. Yale University Press. Chapter: Differences-in-Differences.\n\n\nAssignment 5\n\n\n\n\nOpen assignment in a new window",
+    "crumbs": [
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>13 Differences in Differences</span>"
+    ]
+  },
+  {
+    "objectID": "week14/week14_landing.html",
+    "href": "week14/week14_landing.html",
+    "title": "14 Data Visualization",
+    "section": "",
+    "text": "Lab\n\n\n\n\nOpen slides in a new window\n\n\nLab\n\n\n\n\nOpen slides in a new window\n\n\nLab\n\n\n\n\nOpen slides in a new window",
+    "crumbs": [
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>14 Data Visualization</span>"
+    ]
+  },
+  {
+    "objectID": "week15/week15_landing.html",
+    "href": "week15/week15_landing.html",
+    "title": "15 Revision for Final Exam",
+    "section": "",
+    "text": "Lecture\n\n\n\n\nOpen slides in a new window\n\n\nFinal Exam",
+    "crumbs": [
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>15 Revision for Final Exam</span>"
+    ]
+  }
+]

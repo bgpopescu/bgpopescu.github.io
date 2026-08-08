@@ -1,0 +1,36 @@
+/* Roboto 300 (light) and 400 (regular) */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
+}
+
+.page-columns .content,
+#quarto-content {
+  max-width: 930px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.navbar {
+  opacity: 0.95;
+}
+
+.navbar-title {
+  font-weight: 400;
+}
+
+code {
+  border-radius: 3px;
+  padding: 3px 3px;
+}
+
+pre {
+  border-radius: 6px;
+  padding: 6px 12px;
+}

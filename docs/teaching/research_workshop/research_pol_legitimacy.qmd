@@ -1,0 +1,344 @@
+---
+title: "Political Legitimacy and Youth Political Participation"
+subtitle: "Research Article Workshop"
+#author: "Bogdan G. Popescu"
+layout: archive
+format:
+  html:
+    toc: true
+    number-sections: true
+    colorlinks: true
+    smooth-scroll: true
+    embed-resources: true
+    format-links: false
+    other-links:
+      - text: PDF version
+        href: research_pol_legitimacy.pdf
+        icon: file-pdf
+
+  pdf:
+    documentclass: article
+    toc: false
+    number-sections: false
+    geometry:
+      - top=30mm
+      - bottom=30mm
+      - left=30mm
+      - right=30mm
+    keep-tex: true
+    colorlinks: true
+    mainfont: "TeX Gyre Pagella"
+    monofont: "Courier New"
+    mathfont: "TeX Gyre Pagella"
+    include-in-header:
+      - text: |
+          \makeatletter
+          \providecommand{\chapter}{\section}
+          \providecommand{\chapter*}{\section*}
+          \makeatother
+
+          \usepackage{graphicx}
+          \usepackage{multirow}
+          \usepackage{amsmath,amssymb,amsfonts}
+          \usepackage{amsthm}
+          \usepackage{mathrsfs}
+          \usepackage[title]{appendix}
+          \usepackage{xcolor}
+          \usepackage{textcomp}
+          \usepackage{booktabs}
+          \usepackage{setspace}
+          \usepackage{subcaption}
+
+          \setstretch{1.1}
+
+          \makeatletter
+          \renewcommand{\maketitle}{%
+            \begin{center}
+            \vspace*{1em}
+            {\Large\bfseries Political Legitimacy and Youth Political Participation\par}
+            \vspace{0.3em}
+            {\normalsize\textsc{Research Article Workshop}\par}
+            {\normalsize Summer 2026\par}
+            \vspace{0.2em}
+            {\normalsize\href{https://bgpopescu.net/teaching/research\_workshop/research\_pol\_legitimacy.html}%
+              {bgpopescu.net/teaching/research\_workshop/research\_pol\_legitimacy.html}\par}
+            \end{center}
+            \vspace{0.5em}
+            \noindent\rule{\textwidth}{0.4pt}
+          }
+          \makeatother
+---
+
+## Details
+Instructor: Bogdan Popescu\
+Program Duration: 10 Weeks (10 mentor meetings)\
+Structure: One-on-one, remote weekly sessions for 1 hour\
+<!--Research Scholar: Linlin
+-->
+
+## Course Description
+This course is an intensive, hands-on introduction to writing a research article in the social sciences, with a focus on political science, sociology, or economics. By the end of the course, students will have developed and refined a complete research paper through a series of iterative assignments and structured feedback. The course integrates methodological training, substantive readings, and practical writing skills. Course content is divided into weekly units covering both technical skills and theoretical content. This course is demanding, but it's designed to give you the tools to write your first publishable article. I am here to guide you every step of the way.
+
+This course introduces students to the study of political legitimacy and political participation through four thematic modules: the concept and measurement of legitimacy, the youth turnout gap, institutional barriers to voting, and non-electoral participation. Students begin by examining what legitimacy is and whether trust in institutions actually drives participation through Easton, Norris, and Kelly, Tilley, and Oskarsson, distinguishing diffuse from specific support and asking what non-voting actually signals about consent. The course then turns to the core empirical puzzle—why young people vote at lower rates than older citizens—engaging the life-cycle, cohort, and period explanations through Franklin, Blais and Rubenson, and Smets. The third module examines the institutional pathway: how registration costs, voting age rules, and compulsory voting shape who votes, drawing on experimental and quasi-experimental evidence from Braconnier, Dormagen, and Pons, Leininger and coauthors, and Fowler. It concludes by asking whether young people are exiting politics or merely changing repertoires—shifting toward protest, petitions, and online activism—and whether democratic attitudes can be strengthened, through Dalton, Grasso, and Voelkel and coauthors. Throughout, students acquire foundational quantitative skills in R and apply them to cross-national survey and turnout data, culminating in an empirical research paper that connects theories of legitimacy and participation to real-world political outcomes.
+
+Assessment will be based on the progressive development of a research project, including submission of a research question, proposal, outline, draft, and final paper, as well as in-class presentations. No prior experience with coding or statistics is required, but students should be ready to engage with challenging material in a supportive, step-by-step environment.
+
+## Learning Outcomes
+
+Upon successful completion of this course the students will be able to:
+
+- Develop a research question and transform it into a publishable paper.
+- Master essential academic tools including reference managers (e.g., JabRef), markdown-based word processing, and professional presentation software.
+- Write each section of a paper: abstract, introduction, argument, methods, literature review, findings, discussion, and conclusion.
+- Conduct basic quantitative analysis in R, including data merging, regression modeling, and visualization.
+- Understand and apply core methods in social science research, including qualitative methods, difference-in-differences (DiD), and regression discontinuity design (RDD).
+- Create a personal academic website using GitHub Pages to showcase their work.
+
+
+## Weekly Presentations
+
+Students will deliver a 20-minute presentation on a topic assigned in advance. Presentations should include a clear introduction, main points, and conclusion. Use visual aids (e.g., slides) effectively, ensuring text is legible and visuals are relevant. Practice beforehand to stay within the time limit and maintain a confident, professional tone. Be prepared to answer 2-3 questions from peers or the instructor during and after the presentation. Remember to cite your sources and avoid reading verbatim from slides or notes.
+
+In addition to summarizing the key arguments or findings, your presentation should include critical analysis of the material. Highlight what the author does not address, the limitations of their research, or potential problems in their analysis or methodology. Think about how the research could be improved, expanded, or connected to broader themes discussed in class, and incorporate these insights into your presentation.
+
+Each week, you will give a short presentation on that week's readings. You can download the [template for the paper presentation at this link](https://www.dropbox.com/scl/fi/xcm8tlmze9chyz4vsb3mg/example_presentation.pdf?rlkey=0sn25xsc0byzny2gx1cdz95xg&e=1&dl=0){target="_blank"}.
+
+**How weekly homework works**: after each meeting, your homework has two components: (1) the slide decks listed under the current week, and (2) the readings listed under the *following* week. The readings must be completed before the next meeting — they are the basis of your weekly presentation and of our discussion.
+
+The slide decks come in **two kinds, and they are not completed the same way**:
+
+- **Conceptual slides** — those listed under *Research Design and Presentation* — are meant to be **read and understood**. Take notes and bring questions.
+- **Coding slides** — those listed under *Statistics and R Programming* — are **exercises to reproduce, not reading**. "Going over" a coding session means opening a new Quarto (`.qmd`) document and **typing out and running every code example yourself**, chunk by chunk, until each one executes without error, and then **saving the file**. Reading the slides or watching the code run is *not* the same as completing the session.
+
+**What counts as a completed coding session.** For every coding session, before the meeting where it is due you should have:
+
+1. A saved `.qmd` file that reproduces every example from the slides, together with its rendered HTML output;
+2. All required packages installed and loading without error (e.g., `library(ggplot2)`, `library(dplyr)`);
+3. Any datasets used in the slides downloaded and saved in the same folder as your `.qmd`;
+4. The ability to **explain and modify** the code — in the meeting I may ask you to change an example and re-run it on the spot.
+
+Keep everything in one structured folder (a separate subfolder per week), and bring that folder — including the `.qmd` files, not just the rendered HTML — to every meeting. Getting stuck on an error is fine and expected: save what you have, note where it broke, and we will work through it together. What does not work is arriving without the files.
+
+
+## Research Paper
+
+The research paper should provide an extensive background on the topic and a clear contribution to the literature. The analysis should include some quantitative analysis to test hypotheses. The statistical part of the research project involves using data (collect and prepare the data to run quantitative analyses and produce graphs) and specialized software (R). For topics on legitimacy, turnout, and youth participation, rich publicly available data include the [European Social Survey (ESS)](https://www.europeansocialsurvey.org){target="_blank"}, the [World Values Survey (WVS)](https://www.worldvaluessurvey.org){target="_blank"}, the [Comparative Study of Electoral Systems (CSES)](https://cses.org){target="_blank"}, and the [International IDEA Voter Turnout Database](https://www.idea.int/data-tools/data/voter-turnout){target="_blank"}.
+
+The final paper should be approximately 15–20 pages double-spaced (somewhat shorter or longer is acceptable depending on the target journal's requirements) and should engage critically with the literature, citing at least 5–10 papers in the field.
+
+### Research Paper Template
+
+Use the following as a starting point for writing your own research paper:
+
+- [Research Paper Template](https://bgpopescu.net/teaching/research_workshop/paper_template/paper/paper_template.html){target="_blank"} | [Replication](https://bgpopescu.net/teaching/research_workshop/paper_template/paper/paper_template.zip){target="_blank"}
+
+### Research Paper Examples
+
+This section provides two complete examples of finished research papers and presentations. These are not templates to copy, but illustrations of different research designs. Use them to see how arguments, methods, and findings can be structured and communicated in practice.
+
+- **Quantitative Example**
+  - [Research Paper (Quantitative)](https://bgpopescu.net/teaching/research_workshop/paper_example_quantitative/paper_example_quant.html){target="_blank"} | [Replication Files](https://www.dropbox.com/scl/fi/2b9d8670ynd2xh2ji55f3/paper_example_quant.zip?rlkey=rz68u8unp2ohcbpkylzl8lthg&st=b6p8fwzk&dl=0){target="_blank"}
+  - [Presentation (Quantitative)](https://bgpopescu.net/teaching/research_workshop/presentation_example_quantitative/presentation_example_quant.html){target="_blank"} | [Replication Files](https://www.dropbox.com/scl/fi/2mpuif72ikpzqes6nhqr4/presentation_example_quant.zip?rlkey=x6i489osoyvl8b56p1i862gqf&st=lvf8vace&dl=0){target="_blank"}
+
+- **Qualitative Example**
+  - [Research Paper (Qualitative)](https://bgpopescu.net/teaching/research_workshop/paper_example_qualitative/paper_example_qual.html){target="_blank"} | [Replication Files](https://www.dropbox.com/scl/fi/5gb5du4g80f96385cqr41/paper_example_qual.zip?rlkey=jv9k4jt98jv4wc9813jzkomt4&st=nr34qq28&dl=0){target="_blank"}
+  - [Presentation (Qualitative)](https://bgpopescu.net/teaching/research_workshop/presentation_example_qualitative/presentation_example_qual.html){target="_blank"} | [Replication Files](https://www.dropbox.com/scl/fi/3p1dzq2obrebzpakmg3u8/presentation_example_qual.zip?rlkey=k7ny21gy3g5qjqc7ilh6lsia0&st=7sy34n3g&dl=0){target="_blank"}
+
+
+## Recommended Optional Books
+### Writing Articles {.unlisted .unnumbered}
+
+Coppedge, M. 2012. Democratization and Research Methods. Cambridge University Press.
+
+Halperin, S., & Heath, O. (2012). Political Research: Methods and Practical Skills (3rd ed.). Oxford University Press.
+
+Punch, K. F. 2014. Introduction to social research: Quantitative and qualitative approaches (3rd ed.). SAGE Publications.
+
+Van Evera, S. 1997. Guide to methods for students of political science. Cornell University Press.
+
+### Statistics {.unlisted .unnumbered}
+
+Cunningham, Scott. 2021. Causal Inference: The Mixtape. Yale University Press. [https://mixtape.scunning.com](https://mixtape.scunning.com){target="_blank"}\.
+
+Ismay, Chester, and Albert Y. Kim. 2019. *Statistical Inference via Data Science: A ModernDive into R and the Tidyverse.* Chapman and Hall / CRC. [https://moderndive.com/](https://moderndive.com/){target="_blank"}\.
+
+Huntington-Klein, Nick. 2021. The Effect: An Introduction to Research Design and Causality. Boca Raton, Florida: Chapman and Hall / CRC. [https://theeffectbook.net/](https://theeffectbook.net/){target="_blank"}\.
+
+Keyes, David. 2024. *R for the Rest of Us: A Statistics-Free Introduction*. San Francisco: No Starch Press. [https://book.rfortherestofus.com](https://book.rfortherestofus.com){target="_blank"}\.
+
+Llaudet, Elena and Imai, Kosuke. 2023. "Data Analysis for Social Science." Princeton: Princeton University Press.
+
+Warne, Russell T. 2018. "Statistics for the Social Sciences: A General Linear Model Approach." Cambridge: Cambridge University Press.
+
+
+### Causal Inference {.unlisted .unnumbered}
+
+Bauer, Paul C. and Dennis Cohen. 2023. *Applied Causal Analysis (with R)* [https://bookdown.org/paul/applied-causal-analysis/](https://bookdown.org/paul/applied-causal-analysis/){target="_blank"}\.
+
+
+### Geographic Information Systems (GIS) {.unlisted .unnumbered}
+
+Lovelace, Robin, Nowosad, Jakub, and Jannes Muenchow. 2021. *Geocomputation with R*. [https://bookdown.org/robinlovelace/geocompr/](https://bookdown.org/robinlovelace/geocompr/){target="_blank"}\.
+
+Mieno, Taro. 2023. *R as GIS for Economists*. [https://tmieno2.github.io/R-as-GIS-for-Economists/](https://tmieno2.github.io/R-as-GIS-for-Economists/){target="_blank"}\.
+
+
+## Week 1 {.unnumbered}
+
+- Intro to the Course - 2026-07-16\
+
+
+**Homework 1: Research Design and Presentation**: Go over:\
+
+- [The Topic and Research Question Slides](https://bgpopescu.net/teaching/research_workshop/lecture1/lecture1_landing.html){target="_blank"}\
+- [Quarto Presentations Slides](https://bgpopescu.net/teaching/research_workshop/lecture4/lecture4_landing.html){target="_blank"}\
+
+**Homework 2: Statistics and R Programming** — reproduce and run every code example in your own Quarto `.qmd` file (not just read):\
+
+- [Operations and Objects in R Slides](https://bgpopescu.net/teaching/research_workshop/lecture3/lecture3_landing.html){target="_blank"}\
+- [Intro to Statistics Slides](https://bgpopescu.net/teaching/research_workshop/lecture5/lecture5_landing.html){target="_blank"}\
+
+**Homework 3: Readings**: Read the Week 2 readings (listed below) and prepare a short presentation on them for the Week 2 meeting.\
+
+**Deadline**: Syllabus - 2026-07-18
+
+
+## Week 2 {.unnumbered}
+
+Political Legitimacy: Concepts and Measurement - 2026-07-23\
+
+- Easton, David. 1975. "A Re-Assessment of the Concept of Political Support." British Journal of Political Science 5 (4): 435–457. [[PDF](https://www.dropbox.com/scl/fo/2ttqgsfx1hxpb8s51co9o/ACyDs8ag6vy2DZxHWl_LgMs?rlkey=l3otyw4gjltiyw1g0zme7fra1&preview=easton_1975_political_support.pdf&dl=0){target="_blank"}]
+- Norris, Pippa. 2011. Democratic Deficit: Critical Citizens Revisited. Cambridge: Cambridge University Press. C1 [[PDF](https://www.dropbox.com/scl/fo/2ttqgsfx1hxpb8s51co9o/ACyDs8ag6vy2DZxHWl_LgMs?rlkey=l3otyw4gjltiyw1g0zme7fra1&preview=norris_2011_democratic_deficit.pdf&dl=0){target="_blank"}]
+- Kelly, Edmund, James Tilley, and Sven Oskarsson. 2025. "Revisiting the Link Between Political Trust and Political Participation." Journal of Politics (forthcoming). [[PDF](https://www.dropbox.com/scl/fo/2ttqgsfx1hxpb8s51co9o/ACyDs8ag6vy2DZxHWl_LgMs?rlkey=l3otyw4gjltiyw1g0zme7fra1&preview=kelly_tilley_oskarsson_2025_political_trust_participation.pdf&dl=0){target="_blank"}]
+
+**Homework 1: Research Design and Presentation**: Go over:\
+
+- **[Essential Tools for Writing a Paper Slides](https://bgpopescu.net/teaching/research_workshop/lecture2/lecture2_landing.html){target="_blank"}**\
+- [The Abstract and the Argument Slides](https://bgpopescu.net/teaching/research_workshop/lecture16/lecture16_landing.html){target="_blank"}\
+
+**Homework 2: Statistics and R Programming** — reproduce and run every code example in your own Quarto `.qmd` file (not just read):\
+
+- [Working with Data in R Slides](https://bgpopescu.net/teaching/research_workshop/lecture6/lecture6_landing.html){target="_blank"}\
+- [Dplyr and Basic Visualization Slides](https://bgpopescu.net/teaching/research_workshop/lecture7/lecture7_landing.html){target="_blank"}\
+
+**Homework 3: Readings**: Read the Week 3 readings (listed below) and prepare a short presentation on them for the Week 3 meeting.\
+
+**Deadline**: Research Question (with descriptive data on the youth turnout gap) - 2026-07-29
+
+
+## Week 3 {.unnumbered}
+
+The Youth Turnout Gap: Life-Cycle, Cohort, and Generation - 2026-07-30
+
+- Franklin, Mark N. 2004. Voter Turnout and the Dynamics of Electoral Competition in Established Democracies since 1945. Cambridge: Cambridge University Press. C2 [[PDF](https://www.dropbox.com/scl/fo/2ttqgsfx1hxpb8s51co9o/ACyDs8ag6vy2DZxHWl_LgMs?rlkey=l3otyw4gjltiyw1g0zme7fra1&preview=franklin_2004_voter_turnout_dynamics.pdf&dl=0){target="_blank"}]
+- Blais, André, and Daniel Rubenson. 2013. "The Source of Turnout Decline: New Values or New Contexts?" Comparative Political Studies 46 (1): 95–117. [[PDF](https://www.dropbox.com/scl/fo/2ttqgsfx1hxpb8s51co9o/ACyDs8ag6vy2DZxHWl_LgMs?rlkey=l3otyw4gjltiyw1g0zme7fra1&preview=blais_rubenson_2013_source_turnout_decline.pdf&dl=0){target="_blank"}]
+- Smets, Kaat. 2016. "Revisiting the Political Life-Cycle Model: Later Maturation and Turnout Decline Among Young Adults." European Political Science Review 8 (2): 225–249. [[PDF](https://www.dropbox.com/scl/fo/2ttqgsfx1hxpb8s51co9o/ACyDs8ag6vy2DZxHWl_LgMs?rlkey=l3otyw4gjltiyw1g0zme7fra1&preview=smets_2016_political_lifecycle_model.pdf&dl=0){target="_blank"}]
+
+**Homework 1: Research Design and Presentation**: Go over:\
+
+- [Literature Review Slides](https://bgpopescu.net/teaching/research_workshop/lecture17/lecture17_landing.html){target="_blank"}\
+- [Writing the Research Proposal](https://bgpopescu.net/teaching/research_workshop/lecture21/lecture21_landing.html){target="_blank"}: question, hypotheses, literature, methods
+
+
+**Homework 2: Statistics and R Programming** — reproduce and run every code example in your own Quarto `.qmd` file (not just read):\
+
+- [Visualizing Data Distributions in R Slides](https://bgpopescu.net/teaching/research_workshop/lecture8/lecture8_landing.html){target="_blank"}\
+- [Modeling Relationships Between Variables Slides](https://bgpopescu.net/teaching/research_workshop/lecture9/lecture9_landing.html){target="_blank"}\
+
+**Homework 3: Readings**: Read the Week 4 readings (listed below) and prepare a short presentation on them for the Week 4 meeting.\
+
+**Deadline**: Research Proposal - 2026-08-05
+
+
+## Week 4 {.unnumbered}
+
+Institutions and the Franchise: Registration, Voting Age, and Compulsory Voting - 2026-08-06
+
+- Braconnier, Céline, Jean-Yves Dormagen, and Vincent Pons. 2017. "Voter Registration Costs and Disenfranchisement: Experimental Evidence from France." American Political Science Review 111 (3): 584–604. [[PDF](https://www.dropbox.com/scl/fo/2ttqgsfx1hxpb8s51co9o/ACyDs8ag6vy2DZxHWl_LgMs?rlkey=l3otyw4gjltiyw1g0zme7fra1&preview=braconnier_dormagen_pons_2017_voter_registration.pdf&dl=0){target="_blank"}]
+- Leininger, Arndt, Marie-Lou Sohnius, Thorsten Faas, Sigrid Roßteutscher, and Armin Schäfer. 2023. "Temporary Disenfranchisement: Negative Side Effects of Lowering the Voting Age." American Political Science Review 117 (1): 355–361. [[PDF](https://www.dropbox.com/scl/fo/2ttqgsfx1hxpb8s51co9o/ACyDs8ag6vy2DZxHWl_LgMs?rlkey=l3otyw4gjltiyw1g0zme7fra1&preview=leininger_et_al_2023_temporary_disenfranchisement.pdf&dl=0){target="_blank"}]
+- Fowler, Anthony. 2013. "Electoral and Policy Consequences of Voter Turnout: Evidence from Compulsory Voting in Australia." Quarterly Journal of Political Science 8 (2): 159–182. [[PDF](https://www.dropbox.com/scl/fo/2ttqgsfx1hxpb8s51co9o/ACyDs8ag6vy2DZxHWl_LgMs?rlkey=l3otyw4gjltiyw1g0zme7fra1&preview=fowler_2013_compulsory_voting.pdf&dl=0){target="_blank"}]
+
+**Homework 1: Statistics and R Programming** — reproduce and run every code example in your own Quarto `.qmd` file (not just read):\
+
+- [Interpreting Binary and Multivariate Regression Models Slides](https://bgpopescu.net/teaching/research_workshop/lecture10/lecture10_landing.html){target="_blank"}\
+- [Differences-in-Differences Slides](https://bgpopescu.net/teaching/research_workshop/lecture11/lecture11_landing.html){target="_blank"}\
+- [Data Visualization in R - 1 Slides](https://bgpopescu.net/teaching/research_workshop/lecture13/lecture13_landing.html){target="_blank"}\
+
+**Homework 2: Readings**: Read the Week 5 readings (listed below) and prepare a short presentation on them for the Week 5 meeting.\
+
+**Deadline**: Research Paper Outline - 2026-08-12
+
+
+## Week 5 {.unnumbered}
+
+Beyond the Ballot: Changing Repertoires and Democratic Attitudes - 2026-08-13\
+
+- Dalton, Russell J. 2008. "Citizenship Norms and the Expansion of Political Participation." Political Studies 56 (1): 76–98. [[PDF](https://www.dropbox.com/scl/fo/2ttqgsfx1hxpb8s51co9o/ACyDs8ag6vy2DZxHWl_LgMs?rlkey=l3otyw4gjltiyw1g0zme7fra1&preview=dalton_2008_citizenship_norms.pdf&dl=0){target="_blank"}]
+- Grasso, Maria T. 2014. "Age, Period and Cohort Analysis in a Comparative Context: Political Generations and Political Participation Repertoires in Western Europe." Electoral Studies 33: 63–76. [[PDF](https://www.dropbox.com/scl/fo/2ttqgsfx1hxpb8s51co9o/ACyDs8ag6vy2DZxHWl_LgMs?rlkey=l3otyw4gjltiyw1g0zme7fra1&preview=grasso_2014_age_period_cohort.pdf&dl=0){target="_blank"}]
+- Voelkel, Jan G., Michael N. Stagnaro, James Y. Chu, et al. 2024. "Megastudy Testing 25 Treatments to Reduce Antidemocratic Attitudes and Partisan Animosity." Science 386 (6719): eadh4764. [[PDF](https://www.dropbox.com/scl/fo/2ttqgsfx1hxpb8s51co9o/ACyDs8ag6vy2DZxHWl_LgMs?rlkey=l3otyw4gjltiyw1g0zme7fra1&preview=voelkel_et_al_2024_megastudy.pdf&dl=0){target="_blank"}]
+
+**Homework 1: Research Design and Presentation**: Go over:\
+
+- [Methods Slides](https://bgpopescu.net/teaching/research_workshop/lecture18/lecture18_landing.html){target="_blank"}\
+- Writing the Paper Outline
+
+**Homework 2: Statistics and R Programming** — reproduce and run every code example in your own Quarto `.qmd` file (not just read):\
+
+- [Regression Discontinuity Design Slides](https://bgpopescu.net/teaching/research_workshop/lecture12/lecture12_landing.html){target="_blank"}\
+- [Data Visualization in R - 2 Slides](https://bgpopescu.net/teaching/research_workshop/lecture14/lecture14_landing.html){target="_blank"}\
+- [Data Visualization in R - 3 Slides](https://bgpopescu.net/teaching/research_workshop/lecture15/lecture15_landing.html){target="_blank"}\
+
+
+## Week 6 {.unnumbered}
+
+Replication: Difference-in-Differences - 2026-08-20\
+
+**Homework 1: Research Design and Presentation**: Go over:\
+
+- [Findings, Discussion, Intro, and Conclusion Slides](https://bgpopescu.net/teaching/research_workshop/lecture19/lecture19_landing.html){target="_blank"}\
+- [Making a website on GitHub: `username.github.io`](https://bgpopescu.net/teaching/research_workshop/lecture20/lecture20_landing.html){target="_blank"}\
+
+**Deadline**: Milestone - 2026-08-26
+
+
+## Week 7 {.unnumbered}
+
+Replication: Regression Discontinuity Design - 2026-08-27\
+
+**Homework**: Write:\
+
+- Work on Research Design, Data, Research Methodology
+
+
+## Week 8 {.unnumbered}
+
+Paper Development - 2026-09-03\
+
+**Homework**: Write:\
+
+- Work on Research Design, Data, Research Methodology
+- Finish First Draft
+
+**Deadline**: First Draft - 2026-09-09
+
+
+## Week 9 {.unnumbered}
+
+Paper Feedback - 2026-09-10\
+
+- Writing an academic CV and publishing on your personal website\
+- CV template:\
+  - [tex file](https://www.dropbox.com/scl/fi/q9wmf2q9bbszjsif55mww/template-cv.tex?rlkey=0obuf6hn8ng0bzai8yqu7gn44&dl=0){target="_blank"} (open the tex file in quarto and compile after updating it with personal details)\
+  - [pdf file](https://www.dropbox.com/scl/fi/1ncr9cuqos5u16feu06u3/template-cv.pdf?rlkey=p0jr71fibqrcs3hpqvr9r9zu6&dl=0){target="_blank"}
+
+**Homework**: Write:\
+
+- Revise Paper: Methods
+- Write academic CV and post on website
+
+
+## Week 10 {.unnumbered}
+
+Paper Development - 2026-09-17\
+
+**Deadline**: Revised Final Paper - 2026-09-24

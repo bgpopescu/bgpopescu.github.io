@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>2&nbsp; Writing Your CLAUDE.md – Agentic AI for Social Science Research</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./lecture3.html" rel="next">
+<link href="./lecture1.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./lecture2.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Writing Your CLAUDE.md</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Agentic AI for Social Science Research</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lecture1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Agentic AI for Social Science Research</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lecture2.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Writing Your CLAUDE.md</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lecture3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Git for Research</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lecture4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Skills for Publication-Ready Research</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lecture5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">AI Work Hygiene</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lecture6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Working with Large Datasets</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#what-is-claude.md-and-why-does-it-matter" id="toc-what-is-claude.md-and-why-does-it-matter" class="nav-link active" data-scroll-target="#what-is-claude.md-and-why-does-it-matter"><span class="header-section-number">3</span> What Is CLAUDE.md and Why Does It Matter?</a></li>
+  <li><a href="#where-to-store-it" id="toc-where-to-store-it" class="nav-link" data-scroll-target="#where-to-store-it"><span class="header-section-number">4</span> Where to Store It</a></li>
+  <li><a href="#the-complete-file" id="toc-the-complete-file" class="nav-link" data-scroll-target="#the-complete-file"><span class="header-section-number">5</span> The Complete File</a></li>
+  <li><a href="#section-by-section-explanation" id="toc-section-by-section-explanation" class="nav-link" data-scroll-target="#section-by-section-explanation"><span class="header-section-number">6</span> Section-by-Section Explanation</a>
+  <ul class="collapse">
+  <li><a href="#core-principles" id="toc-core-principles" class="nav-link" data-scroll-target="#core-principles"><span class="header-section-number">6.1</span> Core Principles</a></li>
+  <li><a href="#estimation-philosophy" id="toc-estimation-philosophy" class="nav-link" data-scroll-target="#estimation-philosophy"><span class="header-section-number">6.2</span> Estimation Philosophy</a></li>
+  <li><a href="#communication-guidelines" id="toc-communication-guidelines" class="nav-link" data-scroll-target="#communication-guidelines"><span class="header-section-number">6.3</span> Communication Guidelines</a></li>
+  <li><a href="#folder-structure" id="toc-folder-structure" class="nav-link" data-scroll-target="#folder-structure"><span class="header-section-number">6.4</span> Folder Structure</a></li>
+  <li><a href="#quarto-conventions" id="toc-quarto-conventions" class="nav-link" data-scroll-target="#quarto-conventions"><span class="header-section-number">6.5</span> Quarto Conventions</a></li>
+  <li><a href="#project-overview-and-status" id="toc-project-overview-and-status" class="nav-link" data-scroll-target="#project-overview-and-status"><span class="header-section-number">6.6</span> Project Overview and Status</a></li>
+  </ul></li>
+  <li><a href="#what-was-left-out-and-why" id="toc-what-was-left-out-and-why" class="nav-link" data-scroll-target="#what-was-left-out-and-why"><span class="header-section-number">7</span> What Was Left Out (and Why)</a></li>
+  <li><a href="#testing-your-claude.md" id="toc-testing-your-claude.md" class="nav-link" data-scroll-target="#testing-your-claude.md"><span class="header-section-number">8</span> Testing Your CLAUDE.md</a></li>
+  <li><a href="#prompting-tips-that-compound-over-time" id="toc-prompting-tips-that-compound-over-time" class="nav-link" data-scroll-target="#prompting-tips-that-compound-over-time"><span class="header-section-number">9</span> Prompting Tips That Compound Over Time</a></li>
+  <li><a href="#session-routines" id="toc-session-routines" class="nav-link" data-scroll-target="#session-routines"><span class="header-section-number">10</span> Session Routines</a></li>
+  <li><a href="#managing-long-sessions" id="toc-managing-long-sessions" class="nav-link" data-scroll-target="#managing-long-sessions"><span class="header-section-number">11</span> Managing Long Sessions</a></li>
+  <li><a href="#the-three-source-templates" id="toc-the-three-source-templates" class="nav-link" data-scroll-target="#the-three-source-templates"><span class="header-section-number">12</span> The Three Source Templates</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Writing Your CLAUDE.md</span></h1>
+<p class="subtitle lead">A section-by-section guide to configuring Claude Code for research</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="what-is-claude.md-and-why-does-it-matter" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> What Is CLAUDE.md and Why Does It Matter?</h1>
+<p>Claude Code forgets everything between sessions. Every time you open a new terminal and type <code>claude</code>, it starts fresh: no memory of your project, your methods, your file locations, or the decisions you made yesterday. Scott Cunningham calls this the “amnesia problem”:</p>
+<blockquote class="blockquote">
+<p>“Claude has amnesia — it forgets everything between sessions.”</p>
+<p>— Cunningham, MixtapeTools <code>workflow.md</code></p>
+</blockquote>
+<p>The fix is a file called <code>CLAUDE.md</code> that Claude Code reads <strong>automatically</strong> at the start of every session. It tells Claude who you are, how to behave, where your files live, and what rules to follow. If you skip it, you spend the first five minutes of every session re-explaining context that hasn’t changed.</p>
+<p>This tutorial walks through a complete, working CLAUDE.md line by line. The file draws on three sources:</p>
+<ul>
+<li><strong>Scott Cunningham</strong> (MixtapeTools) — research-specific sections like estimation philosophy, variable definitions, and the Referee 2 protocol. (<a href="https://github.com/scunning1975/MixtapeTools/blob/main/claude/CLAUDE.md">Template on GitHub</a>)</li>
+<li><strong>Pedro Sant’Anna</strong> (claude-code-my-workflow) — the “project constitution” approach: core principles, quality gates, and the ~150 line limit. (<a href="https://github.com/pedrohcgs/claude-code-my-workflow/blob/main/CLAUDE.md">Template on GitHub</a>)</li>
+<li><strong>Chris Blattman</strong> (claudeblattman.com) — the general-purpose template: who you are, your tools, skill levels, and preferences. (<a href="https://claudeblattman.com/toolkit/claude-md/">Guide</a>)</li>
+</ul>
+<p>What follows is a CLAUDE.md built for an empirical social science researcher who works primarily in R with Quarto, stores projects in Dropbox, and cares about empirical rigor. Each section is explained: what it does, where the idea came from, and why it belongs in a file you want to keep under ~150 lines.</p>
+</section>
+<section id="where-to-store-it" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Where to Store It</h1>
+<p>Claude Code reads <code>CLAUDE.md</code> from three levels:</p>
+<pre><code>~/.claude/CLAUDE.md             ← user-level (applies to ALL projects)
+project/CLAUDE.md               ← project root (this project only)
+project/.claude/CLAUDE.md       ← also project-level (this project only)</code></pre>
+<p>The <strong>user-level</strong> file (<code>~/.claude/CLAUDE.md</code>) is for identity and preferences that apply everywhere: your name, communication style, tool preferences. The <strong>project-level</strong> file holds project-specific rules like estimation philosophy, folder conventions, and quality gates. If both exist, Claude reads both.</p>
+<p>For a single research project, either project-level location works. Cunningham puts it at the project root. Blattman uses the <code>.claude/</code> subfolder. Pick one and be consistent.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Seeing hidden folders
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <code>.claude/</code> folder starts with a dot, which makes it <strong>hidden by default</strong> on macOS and Linux. You won’t see it in Finder or with a plain <code>ls</code> command. To see it:</p>
+<ul>
+<li><strong>Terminal:</strong> use <code>ls -a</code> (the <code>-a</code> flag shows hidden files)</li>
+<li><strong>macOS Finder:</strong> press <code>Cmd + Shift + .</code> to toggle hidden files on and off</li>
+<li><strong>VS Code:</strong> hidden files are shown by default in the Explorer sidebar</li>
+</ul>
+<p>If you create a <code>claude/</code> folder (without the dot), Claude Code will <strong>not</strong> find your configuration files. The dot matters.</p>
+<p><strong>Why hidden?</strong> On Unix systems (macOS, Linux), any file or folder starting with <code>.</code> is treated as hidden. This is a convention for <strong>configuration and tool metadata</strong> — things that are important for the software to function but that you don’t need to see during normal work. You already have many hidden folders in your home directory: <code>.git/</code> (git internals), <code>.ssh/</code> (SSH keys), <code>.zshrc</code> (shell config), <code>.Rprofile</code> (R startup). The <code>.claude/</code> folder follows the same logic: it holds Claude Code’s configuration, not your research files.</p>
+<p><strong>Should you keep it hidden?</strong> Yes. Resist the temptation to rename it to a visible folder. Hidden folders stay out of your way in Finder and <code>ls</code>, they won’t accidentally get included when you zip a folder to share with a co-author, and tools like <code>.gitignore</code> handle them predictably. More importantly, Claude Code expects the dot — it will not detect configuration or skills in a <code>claude/</code> folder without it. Learn the <code>Cmd+Shift+.</code> shortcut for Finder and <code>ls -a</code> for the terminal, and you’ll have no trouble accessing it when you need to.</p>
+</div>
+</div>
+</section>
+<section id="the-complete-file" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> The Complete File</h1>
+<p>Here is the full <code>CLAUDE.md</code>. The rest of this tutorial explains each section.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># CLAUDE.md</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## Core Principles</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Plan first** — enter plan mode before non-trivial tasks</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Verify after** — run code, render output, confirm results before moving on</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="fu">## Estimation Philosophy</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Do NOT express concern or excitement about point estimates</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Do NOT interpret results as "good" or "bad" until the design is intentional</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Focus entirely on whether the specification is correct — results are meaningless until the design is right</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`/methods-review`</span> NEVER modifies author code — it only reads, runs, and creates replication scripts</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="fu">## Tools and Software</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Tool <span class="pp">|</span> Use <span class="pp">|</span> Notes <span class="pp">|</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="pp">|------|-----|-------|</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> R <span class="pp">|</span> Primary analysis, visualization (ggplot2, fixest, sf, dplyr, tidyr) <span class="pp">|</span> Always use <span class="pp">|</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Python <span class="pp">|</span> Cross-language replication (statsmodels, linearmodels, pandas) <span class="pp">|</span> For verification <span class="pp">|</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Quarto <span class="pp">|</span> Slide decks (RevealJS), documents, website, tutorials (.qmd) <span class="pp">|</span> NOT Beamer <span class="pp">|</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> LaTeX <span class="pp">|</span> Paper drafts when needed <span class="pp">|</span> <span class="pp">|</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>When suggesting code, include comments explaining non-obvious choices.</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="fu">## R Code Style</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Write linear, top-to-bottom scripts — a reader should follow the logic by reading downward</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Use direct column access (<span class="in">`df$var`</span>) over tidy evaluation when it's clearer</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Section headers with <span class="in">`#####`</span> comment blocks, terse step labels (<span class="in">`#Step 3: Run regression`</span>)</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Only create helper functions when the same logic is genuinely reused — not for one-off operations</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Keep comments short — say where you are, not what standard functions do</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>No conditional execution paths (<span class="in">`if (!exists(...))`</span>) — scripts should assume they run top to bottom in order</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>No lengthy output manifests in script headers — a one-line purpose comment is enough</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Use <span class="in">`setwd()`</span> at the top then relative paths throughout — not <span class="in">`base &lt;- "..." + file.path(base, ...)`</span> everywhere</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>When generating ggplot figures, also write the underlying plot data to a CSV in <span class="in">`data/intermediate/`</span> (e.g., <span class="in">`figure_X_data.csv`</span>). This allows accurate interpretation of figures without relying on image parsing.</span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a><span class="fu">## Folder Structure</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>project/ ├── code/R/ — R scripts (01_clean.R, 02_analysis.R, …) ├── code/python/ — Replication scripts ├── data/raw/ — Original data (NEVER modify) ├── data/clean/ — Cleaned datasets ├── output/tables/ — Generated tables ├── output/figures/ — Generated figures</p>
+<pre><code>
+- Use relative paths in all code
+- Quarto theme: use _extensions/meridian.scss when available
+- ggplot2: use theme_bw() when defined in the project (exception: presentation-builder uses theme_meridian())
+
+---
+
+## Quarto Conventions
+
+- Slide decks use RevealJS format with self-contained: true
+- Section headers: # Title {background-color="#1e293b"}
+- Exercises: {background-color="#b44527"}
+- Use :::fragment for progressive disclosure
+- Mermaid diagrams: always include %%{init:{...}}%% block with useMaxWidth: true
+- Code chunks: echo: false, warning: false, message: false by default
+- Maximum 6 bullets per slide, 10 words per bullet
+- Slide titles are assertions, not labels ("Trade increased GDP by 12%" not "Results")
+- Cognitive load should be roughly equal across all slides
+- Lead with the conclusion, then support it (Pyramid Principle)</code></pre>
+<p>The file is 113 lines, well under Sant’Anna’s ~150 line recommendation. That limit is not arbitrary: Claude reads the entire file, but following 50 rules simultaneously is harder than following 15. Each additional rule constrains the output space and increases the chance of silent conflicts — where satisfying one rule means subtly violating another. A focused 120-line file where every rule gets followed beats a 400-line file where Claude quietly drops the ones that conflict with others. The sections below explain why each part is there.</p>
+</section>
+<section id="section-by-section-explanation" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Section-by-Section Explanation</h1>
+<section id="core-principles" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="core-principles"><span class="header-section-number">6.1</span> Core Principles</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Core Principles</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Plan first** — enter plan mode before non-trivial tasks</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Verify after** — run code, render output, confirm results before moving on</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Where it comes from:</strong> Pedro Sant’Anna’s “project constitution” approach. His CLAUDE.md opens with core principles that govern Claude’s behavior across every session. The idea is that these are non-negotiable rules, not suggestions.</p>
+<p><strong>Why it’s here:</strong> These two rules address the failure modes I’ve seen most often in AI-assisted research:</p>
+<ol type="1">
+<li><p><strong>Plan first</strong> stops Claude from jumping straight into code that goes in the wrong direction. For anything beyond a quick fix, Claude should outline its approach before executing. This is Sant’Anna’s entry gate. Claude Code has a built-in planning mode that you can trigger by asking Claude to “make a plan” before executing — it will outline its approach and ask clarifying questions before writing any code. For larger projects, you can take this further with the research-plan-execute workflow described in the Managing Long Sessions section below.</p></li>
+<li><p><strong>Verify after</strong> means you don’t accept output on faith. After running a regression, rendering a Quarto deck, or generating a figure, Claude should confirm the output is correct before moving on.</p></li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Principles other practitioners promote.</strong> Cunningham’s MixtapeTools template adds two behavioral rules worth knowing about: <strong>design before results</strong> (focus on specification correctness, not point estimates) and <strong>cross-replicate</strong> (implement key analyses in both R and a second language, since “the mistakes Claude makes in R and Stata are largely independent — they’re orthogonal error vectors”). This tutorial handles both through the Estimation Philosophy section and the Tools table rather than as core principles. Claude Code’s <strong>auto-memory</strong> feature also functions as an implicit principle: when you correct Claude, it saves a feedback memory that persists across sessions, so corrections compound over time without manual logging.</p>
+</div>
+</div>
+</section>
+<section id="estimation-philosophy" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="estimation-philosophy"><span class="header-section-number">6.2</span> Estimation Philosophy</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Estimation Philosophy</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Do NOT express concern or excitement about point estimates</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Do NOT interpret results as "good" or "bad" until the design is intentional</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Focus entirely on whether the specification is correct — results are meaningless until the design is right</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>/methods-review NEVER modifies author code — it only reads, runs, and creates replication scripts</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Where it comes from:</strong> Scott Cunningham’s MixtapeTools template. This section is closely adapted from his approach.</p>
+<p><strong>Why it’s here:</strong> I think this is the most important section in any research CLAUDE.md. If you leave it out, Claude will cheerfully tell you “Great news, the coefficient is significant!”, express concern about null results, and nudge you toward findings that look “interesting.”</p>
+<p>With these lines in place, Claude focuses on whether the specification is correct: the right fixed effects, sample restrictions, standard errors. It treats results as outputs of a design, not as goals. This is where Cunningham’s “design before results” principle lives in practice — not as a one-liner in Core Principles, but as a detailed behavioral constraint that shapes how Claude handles every regression.</p>
+</section>
+<section id="communication-guidelines" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="communication-guidelines"><span class="header-section-number">6.3</span> Communication Guidelines</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Tools and Software</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="in">```{.markdown}</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">## Tools and Software</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Tool <span class="pp">|</span> Use <span class="pp">|</span> Notes <span class="pp">|</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="pp">|------|-----|-------|</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> R <span class="pp">|</span> Primary analysis, visualization (ggplot2, fixest, sf, dplyr, tidyr) <span class="pp">|</span> Always use <span class="pp">|</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Python <span class="pp">|</span> Cross-language replication (statsmodels, linearmodels, pandas) <span class="pp">|</span> For verification <span class="pp">|</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Quarto <span class="pp">|</span> Slide decks (RevealJS), documents, website, tutorials (.qmd) <span class="pp">|</span> NOT Beamer <span class="pp">|</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> LaTeX <span class="pp">|</span> Paper drafts when needed <span class="pp">|</span> <span class="pp">|</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>When suggesting code, include comments explaining non-obvious choices.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Communication guidelines.</strong> Blattman’s template includes a “How I Prefer to Work” section and Cunningham’s includes “Communication Guidelines” with collaborator names. Claude’s default style is verbose and hedging — it adds caveats like “It’s worth noting that…” which waste time for experienced researchers. You can add communication rules (conciseness, name conventions, no hedging) either as a separate section or, as this file does, as a single line in the Tools section. The choice is yours — what matters is that the instruction exists somewhere.</p>
+</div>
+</div>
+<p><strong>Where it comes from:</strong> Blattman’s template uses a Tools and Software table with columns for Tool, Use, and File Location.</p>
+<p><strong>Why it’s here:</strong> Claude needs to know which tools to use. If you don’t tell it, it might generate Beamer slides instead of Quarto, or default to matplotlib when you use ggplot2. The “Notes” column does a lot of work here:</p>
+<ul>
+<li><strong>“Always use”</strong> for R means Claude should never default to another language for primary analysis</li>
+<li><strong>“NOT Beamer”</strong> for Quarto prevents Claude from generating LaTeX slide code when you want Quarto RevealJS</li>
+<li><strong>“For verification”</strong> for Python makes clear that Python is a replication tool, not the primary language</li>
+</ul>
+<p>Listing specific packages (fixest, sf, dplyr) tells Claude which ecosystem you work in and stops it from suggesting alternatives you don’t use.</p>
+</section>
+<section id="folder-structure" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="folder-structure"><span class="header-section-number">6.4</span> Folder Structure</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Folder Structure</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>project/ ├── code/R/ — R scripts (01_clean.R, 02_analysis.R, …) ├── code/python/ — Replication scripts ├── data/raw/ — Original data (NEVER modify) ├── data/clean/ — Cleaned datasets ├── output/tables/ — Generated tables ├── output/figures/ — Generated figures</p>
+<pre><code>
+- Use relative paths in all code
+- Quarto theme: use _extensions/meridian.scss when available
+- ggplot2: use theme_bw() when defined in the project (exception: presentation-builder uses theme_meridian())</code></pre>
+<p><strong>Where it comes from:</strong> Cunningham’s MixtapeTools includes a <code>/newproject</code> command that generates a standard project scaffold. Sant’Anna’s template includes a full directory tree.</p>
+<p><strong>Why it’s here:</strong> This keeps Claude from creating files in the wrong places. I’ve seen it save figures to the project root instead of <code>output/figures/</code>, or drop an R script at the top level instead of <code>code/R/</code>.</p>
+<p>The rules worth highlighting:</p>
+<ul>
+<li><strong><code>data/raw/</code> — NEVER modify.</strong> Raw data doesn’t get touched. All transformations happen in code, producing cleaned versions in <code>data/clean/</code>.</li>
+<li><strong>Relative paths only</strong> prevents the reproducibility failure where code works on your machine but breaks everywhere else because it has <code>/Users/yourname/...</code> hardcoded in it.</li>
+<li><strong>Numbering convention</strong> (01_clean.R, 02_analysis.R) makes execution order obvious.</li>
+</ul>
+</section>
+<section id="quarto-conventions" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="quarto-conventions"><span class="header-section-number">6.5</span> Quarto Conventions</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Quarto Conventions</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Slide decks use RevealJS format with self-contained: true</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Section headers: # Title {background-color="#1e293b"}</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Exercises: {background-color="#b44527"}</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Use :::fragment for progressive disclosure</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Mermaid diagrams: always include %%{init:{...}}%% block with useMaxWidth: true</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Code chunks: echo: false, warning: false, message: false by default</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Maximum 6 bullets per slide, 10 words per bullet</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Slide titles are assertions, not labels ("Trade increased GDP by 12%" not "Results")</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Cognitive load should be roughly equal across all slides</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Lead with the conclusion, then support it (Pyramid Principle)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Where it comes from:</strong> This section is specific to your workflow. Sant’Anna’s template includes Beamer Custom Environments and Quarto CSS Classes sections, which serve the same purpose for different tools.</p>
+<p><strong>Why it’s here:</strong> You produce all slide decks in Quarto RevealJS. If Claude doesn’t know your conventions, it will generate slides that don’t match your theme, use wrong background colors for section headers, forget to suppress code output, or produce slides that overflow. The <code>embed-resources: true</code> rule ensures the HTML file bundles all assets (images, fonts) so you can share it as a single file.</p>
+<p>The Mermaid diagram rule (<code>%%{init:{...}}%%</code> block) prevents a rendering problem where diagrams come out too small or overflow the slide.</p>
+</section>
+<section id="project-overview-and-status" class="level2" data-number="6.6">
+<h2 data-number="6.6" class="anchored" data-anchor-id="project-overview-and-status"><span class="header-section-number">6.6</span> Project Overview and Status</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Project Overview and Status</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>See README.md for the current research question, method, data, and status.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Where it comes from:</strong> Cunningham’s template has detailed Project Overview, Research Question, Data Sources, Identification Strategy, Current Status, and Key Decisions sections, all inside CLAUDE.md.</p>
+<p><strong>Why it’s a pointer, not prose:</strong> Research questions evolve. Data sources change. Status updates every session. If you put detailed project descriptions in CLAUDE.md, they go stale fast and bloat the file. The ~150 line budget means you can’t afford to waste space on content that changes weekly.</p>
+<p>Instead, this one line tells Claude to read README.md, which it will do when you run the session startup routine:</p>
+<pre><code>Read all the markdowns. Read the key programs.
+State the goals of this session.</code></pre>
+<p>The README.md can be as detailed and frequently updated as you need without affecting CLAUDE.md.</p>
+<p><strong>What goes in README.md</strong> (not CLAUDE.md):</p>
+<ul>
+<li>Current research question and method</li>
+<li>Data sources and time periods</li>
+<li>Key decisions made (with dates and rationale)</li>
+<li>Dropped analyses (with reasons)</li>
+<li>Variable definitions</li>
+<li>Sample restrictions</li>
+<li>Current status and next steps</li>
+</ul>
+<p>All of these change. CLAUDE.md holds <strong>behavioral rules</strong> that stay stable across sessions.</p>
+<p><strong>A concrete example.</strong> Here is what a README.md might look like for a difference-in-differences project studying the effect of a land reform on local public goods provision:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Land Reform and Public Goods — README</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## Research Question</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>Did the 1996 Colombian land reform increase local public goods provision</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>(schools, clinics, roads) in treated municipalities?</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="fu">## Method</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>Difference-in-differences with staggered treatment adoption.</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>Primary estimator: Callaway &amp; Sant'Anna (2021) via the <span class="in">`did`</span> R package.</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>Robustness: Sun &amp; Abraham, Borusyak et al.</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Treatment**: Municipality-level reform implementation dates (MinAgricultura).</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Outcomes**: School and clinic density from DANE census panels, 1990–2010.</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Controls**: Pre-reform population, elevation, distance to department capital.</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Unit of observation: municipality-year. N ≈ 1,100 municipalities × 21 years.</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a><span class="fu">## Key Decisions</span></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>2025-03-12: Dropped municipalities with population &lt; 500 (measurement noise).</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>2025-03-18: Switched from TWFE to Callaway–Sant'Anna after heterogeneity diagnostic.</span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a><span class="fu">## Current Status</span></span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Cleaning: done (01_clean.R)</span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Main estimates: in progress (02_analysis.R)</span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Robustness checks: not started</span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Draft: outline stage</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>README holds what changes; CLAUDE.md holds what doesn’t. Claude reads both at session start, but only CLAUDE.md needs to stay short.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Quality thresholds (from Sant’Anna and Clo-Author).</strong> Pedro Sant’Anna’s template includes a Quality Thresholds section with a scoring system: 80 (Commit — good enough to save), 90 (PR-ready — ready for coauthor review), 95 (Excellence — ready for submission). Hugo Sant’Anna’s Clo-Author uses the same thresholds with weighted aggregate scoring. The idea is that quality gates give you a shared vocabulary for “is this done?” — Claude can self-assess against a numeric target instead of the vague “looks good.” This tutorial’s CLAUDE.md does not include quality thresholds, relying instead on the stopping rules and verification skills described in Tutorials 4 and 5. But if you find yourself iterating without a clear endpoint, adding a threshold table to your own file is a concrete way to fix that.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>What happened to Session Startup and MEMORY.md?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Earlier versions of this template included a <strong>Session Startup</strong> section (instructing Claude to read README.md and MEMORY.md at session start) and a manual <strong>MEMORY.md</strong> file with <code>[LEARN:category]</code> tags for recording corrections.</p>
+<p>Both are now <strong>obsolete</strong>. Claude Code reads CLAUDE.md automatically at every session start — no startup instruction needed. And the <strong>auto-memory</strong> system (built into Claude Code) handles corrections automatically: when you correct Claude, it saves the lesson to <code>~/.claude/projects/&lt;project&gt;/memory/</code> without you needing to manage a file. See Tutorial 4 for details.</p>
+<p>The <strong>methods-review guardrail</strong> (“NEVER modifies author code”) was previously in a standalone Referee 2 section. It now lives in the Estimation Philosophy section above, which is where it belongs — it’s loaded every session as part of the core rules.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="what-was-left-out-and-why" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> What Was Left Out (and Why)</h1>
+<p>Several sections from the source templates were left out on purpose:</p>
+<p><strong>Variable Definitions, Sample Restrictions, Dropped Analyses</strong> (from Cunningham): These all change as your project develops. After 20 key decisions, the decisions table alone would push CLAUDE.md past the 150-line limit. They belong in README.md. If Claude keeps getting a specific variable wrong, correct it and auto-memory will save the lesson.</p>
+<p><strong>Key Files</strong> (from Cunningham): File paths change as you add scripts. This is README.md territory.</p>
+<p><strong>Meeting Schedule</strong> (from Cunningham): Does not change Claude’s behavior.</p>
+<p><strong>My Skill Level</strong> (from Blattman): You know your skill level. Blattman includes this for beginners who need Claude to calibrate explanation depth. If you’re comfortable with R and the terminal, this section wastes lines.</p>
+<p><strong>Skills Quick Reference</strong> (from Sant’Anna): You don’t have custom skills installed yet. Add this table when you build your first skill.</p>
+<p><strong>Beamer Custom Environments</strong> (from Sant’Anna): You use Quarto, not Beamer.</p>
+<p><strong>Current Project State table</strong> (from Sant’Anna): Useful for his 6-lecture course production system, but overkill for a single research project. Status goes in README.md.</p>
+<p><strong>Learned Corrections section</strong> (from Sant’Anna): The older <code>[LEARN]</code> tag approach has been replaced by Claude Code’s built-in auto-memory system, which handles corrections automatically.</p>
+</section>
+<section id="testing-your-claude.md" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Testing Your CLAUDE.md</h1>
+<p>After creating the file, start Claude Code in your project directory:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/Library/CloudStorage/Dropbox/my-research-project</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Then ask:</p>
+<pre><code>What do you know about me and my work?</code></pre>
+<p>Claude should reference:</p>
+<ul>
+<li>Your name and institution</li>
+<li>Your primary tools (R, Quarto)</li>
+<li>Your estimation philosophy</li>
+<li>Your folder structure conventions</li>
+<li>Your quality thresholds</li>
+</ul>
+<p>If it doesn’t, check:</p>
+<ul>
+<li>The file is at the project root or in <code>.claude/CLAUDE.md</code></li>
+<li>The filename is exactly <code>CLAUDE.md</code> (case-sensitive)</li>
+<li>The file is not empty</li>
+</ul>
+<p>You can also ask Claude to help you fill it in. In the terminal, type something like:</p>
+<blockquote class="blockquote">
+<p>“Help me fill out my CLAUDE.md. I’m a [YOUR FIELD] professor who studies [YOUR TOPIC].”</p>
+</blockquote>
+<p>Claude will ask follow-up questions and draft sections for you.</p>
+</section>
+<section id="prompting-tips-that-compound-over-time" class="level1" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span> Prompting Tips That Compound Over Time</h1>
+<p>Beyond CLAUDE.md configuration, five prompting patterns consistently improve Claude’s output (Goldsmith-Pinkham, Markus Academy, 2026):</p>
+<p><strong>Reference an authority.</strong> Instead of describing the style you want, name the source. “Follow the best practices from Kieran Healey’s <em>Data Visualization</em>” produces cleaner ggplot2 figures than “make a nice graph” — Claude knows the book’s principles (direct labeling, minimal chart junk, thoughtful palettes) and applies them. This generalizes: “Write this methods section in the style of an AER paper” or “Structure this lit review like Acemoglu &amp; Robinson” anchors Claude to a concrete standard rather than its generic defaults.</p>
+<p><strong>Iterate with praise + correction.</strong> “This is great, but I want the age distribution on the x-axis instead” is more effective than “that’s wrong, redo it.” The pattern — acknowledge what worked, then specify the change — keeps Claude on track without starting over.</p>
+<p><strong>Ask Claude to self-review.</strong> For complex code, add a verification step: “Now review this script and check that the intertemporal budget constraints are satisfied” or “Verify that the merge didn’t drop any observations.” Claude will attempt to audit its own work, catching errors that a single pass misses.</p>
+<p><strong>Get a second opinion from a different model.</strong> Self-review catches some errors but misses the blind spots a model is systematically prone to — its own edge cases, its own hidden assumptions, its tendency to over-engineer. For consequential outputs (an estimation strategy, a cleaning pipeline, a paper draft), paste it into a different model — ChatGPT, Gemini — and ask for an adversarial review: “What’s wrong with this? What edge cases does it miss? What would you do differently and why?” Different training produces different blind spots, so the second model often surfaces issues the first cannot see in itself. Treat it as a devil’s advocate, not a tiebreaker — its job is to surface concerns you can then weigh, not to issue a verdict.</p>
+<p><strong>Build a style guide for your writing.</strong> The “reference an authority” tip anchors Claude to someone else’s style. A style guide anchors it to <em>yours</em>. Goldsmith-Pinkham describes the workflow (<a href="https://paulgp.substack.com">A Causal Affair</a>, 2026): collect 3–5 writing samples you’re happy with — a published paper, a policy memo, a grant narrative — and ask Claude to identify your patterns: sentence length, tone, paragraph structure, how you introduce evidence, how you hedge. Curate the output into a <code>writing_style.md</code> file and reference it in writing prompts. The result is a “laundry list of rules” that constrains Claude’s output toward your voice rather than its generic default. It won’t replicate you perfectly — Goldsmith-Pinkham notes the styled output felt “exaggerated” compared to his actual writing — but it raises the floor. Blattman calls these <strong>voice files</strong> and recommends them for any recurring writing task (emails, reviews, recommendation letters). Store the file alongside your CLAUDE.md or in your project root.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Prompt to build a style guide:</strong></p>
+<p>“I’m attaching 3 writing samples <span class="citation" data-cites="file">[paste or @file them]</span>. Analyze my writing style: sentence structure, tone, how I introduce claims, how I use evidence, hedging patterns, word choices I favor or avoid. Produce a <code>writing_style.md</code> I can reference in future prompts.”</p>
+</div>
+</div>
+</section>
+<section id="session-routines" class="level1" data-number="10">
+<h1 data-number="10"><span class="header-section-number">10</span> Session Routines</h1>
+<p>The CLAUDE.md file works best with consistent session routines, adapted from Cunningham’s <code>workflow.md</code>.</p>
+<p><strong>Session startup.</strong> Claude Code reads CLAUDE.md automatically at session start. Auto-memory is also loaded automatically. To give Claude additional context, start each session with a prompt like:</p>
+<pre><code>Read all the markdowns. Read the key programs.
+State the goals of this session.</code></pre>
+<p><strong>Session ending.</strong> Before closing, preserve context for tomorrow:</p>
+<pre><code>Update README.md with decisions made today.
+Note unresolved issues for next session.
+Commit everything and push to GitHub.</code></pre>
+<p>Tutorial 3 covers the git side of this routine, including committing, pushing, and branching.</p>
+</section>
+<section id="managing-long-sessions" class="level1" data-number="11">
+<h1 data-number="11"><span class="header-section-number">11</span> Managing Long Sessions</h1>
+<p>Claude Code operates within a finite context window. As conversations grow, earlier details get compressed or dropped. Two practices help:</p>
+<p><strong>Use <code>/compact</code> proactively.</strong> Don’t wait for Claude to slow down. If you’ve been working for 30+ minutes and are about to shift tasks (from data cleaning to estimation, or from coding to writing), run <code>/compact</code> to summarize the conversation so far and free up context space. Think of it as clearing your desk between tasks. You can also guide what <code>/compact</code> preserves by being specific: <code>/compact remember all the things related to the fixed effects specification we just tested</code>. This directs the compaction to prioritize the information you’ll need next.</p>
+<p><strong>Chunk work into focused sessions.</strong> Rather than doing everything in one marathon conversation — cleaning, estimation, figures, tables, slides — run separate sessions for each stage. A “figures session” where you generate and refine all plots. A “tables session” for regression output. A “writing session” for the manuscript. Each session starts fresh with CLAUDE.md and auto-memory loaded, giving Claude full context for the task at hand rather than a compressed summary of everything you’ve done today. This also creates natural git commit points (Tutorial 3).</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Rule of thumb:</strong> if your session involves more than one type of deliverable (code + figures + text), split it into multiple sessions. The context window is a budget — spend it on one thing at a time.</p>
+</div>
+</div>
+<p><strong>The research → plan → execute pattern.</strong> For complex tasks, use a three-phase workflow that keeps each phase focused (Goldsmith-Pinkham, Markus Academy, 2026):</p>
+<ol type="1">
+<li><strong>Research</strong> — explore the problem with Claude (discuss data sources, read documentation, brainstorm approaches).</li>
+<li><strong>Summarize to file</strong> — ask Claude to write a plan or summary to a file (e.g., <code>plan.md</code>). This compresses everything useful from the research phase into a permanent artifact. Claude Code also saves plans internally to <code>~/.claude/plans/</code> — you can reference these in later sessions, but an explicit file in your project directory is more portable and version-controllable.</li>
+<li><strong>Start a new session</strong> — close the conversation and open a fresh one. Have Claude read the plan file and execute from it.</li>
+</ol>
+<p>Each phase gets a clean context window focused on one job. The plan file acts as a bridge between phases — it carries forward the conclusions without the dead ends, false starts, and debugging noise that accumulated during research. This pattern is especially useful for multi-step data pipelines, literature reviews, or any task where the research phase consumes significant context.</p>
+</section>
+<section id="the-three-source-templates" class="level1" data-number="12">
+<h1 data-number="12"><span class="header-section-number">12</span> The Three Source Templates</h1>
+<p>If you want to explore the original templates this file draws from:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Source</th>
+<th>What It Emphasizes</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Cunningham (MixtapeTools)</td>
+<td>Estimation philosophy, variable definitions, Referee 2, dropped analyses</td>
+<td><a href="https://github.com/scunning1975/MixtapeTools/blob/main/claude/CLAUDE.md">GitHub</a></td>
+</tr>
+<tr class="even">
+<td>Pedro Sant’Anna</td>
+<td>Core principles, quality gates, ~150 line limit</td>
+<td><a href="https://github.com/pedrohcgs/claude-code-my-workflow/blob/main/CLAUDE.md">GitHub</a></td>
+</tr>
+<tr class="odd">
+<td>Hugo Sant’Anna (Clo-Author)</td>
+<td>Worker-critic pairs, research lifecycle, submission pipeline</td>
+<td><a href="https://github.com/hugosantanna/clo-author">GitHub</a></td>
+</tr>
+<tr class="even">
+<td>Blattman</td>
+<td>General template, skill levels, preferences, voice files</td>
+<td><a href="https://claudeblattman.com/toolkit/claude-md/">Guide</a></td>
+</tr>
+<tr class="odd">
+<td>Goldsmith-Pinkham</td>
+<td>Prompting tips, reference-an-authority trick, research-plan-execute workflow</td>
+<td><a href="https://www.youtube.com/watch?v=HzgByl5ZsWE">Markus Academy video series</a></td>
+</tr>
+</tbody>
+</table>
+<p>The progression: start with Blattman’s general template if you’re new to Claude Code, add Cunningham’s research sections when you begin empirical work, adopt Sant’Anna’s governance principles when your workflow involves multi-step tasks or quality gates, and apply Goldsmith-Pinkham’s prompting strategies throughout. This tutorial’s file pulls from all five, tuned for a working researcher.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./lecture1.html" class="pagination-link" aria-label="Agentic AI for Social Science Research">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Agentic AI for Social Science Research</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./lecture3.html" class="pagination-link" aria-label="Git for Research">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Git for Research</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

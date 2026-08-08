@@ -1,0 +1,530 @@
+/*-- scss:defaults --*/
+
+// ============================================================
+// MERIDIAN — A Quarto RevealJS theme
+// Designed for social science lectures
+// Sleek variant: slightly cooler background + crisper code blocks
+// ============================================================
+
+// --------------- Palette ---------------
+
+$slate:      #1e293b;   // deep ink — headings, anchors
+$graphite:   #334155;   // body text
+$stone:      #64748b;   // muted captions & metadata
+$terracotta: #b44527;   // primary accent — warm, authoritative
+$sage:       #4a7c6f;   // secondary accent — calm, scholarly
+$gold:       #b7943a;   // tertiary highlight — sparingly
+
+// UPDATED: cooler, more "technical" off-white (still not pure white)
+$cream:      #f9fafb;   // slide background (sleek neutral)
+
+// UPDATED: slightly cooler rule color to match the new bg
+$rule-gray:  #d6dbe1;   // lines & borders
+
+$right-arrow: "\2192";
+
+// --------------- Typography ---------------
+//
+//  DM Serif Display  ×  DM Sans
+//  A contemporary serif/sans pairing from Google Fonts.
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,200..700;1,9..40,200..700&family=DM+Serif+Display:ital@0;1&display=swap');
+
+$font-family-sans-serif:    "DM Sans", "Segoe UI", sans-serif !default;
+$presentation-heading-font: "DM Serif Display", "Georgia", serif !default;
+
+$presentation-heading-color: $slate !default;
+$presentation-heading-font-weight: 400;
+$presentation-font-size-root: 32px;
+
+// --------------- Colour assignments ---------------
+
+$body-bg:      $cream !default;
+$body-color:   $graphite !default;
+$link-color:   $sage !default;
+$selection-bg: rgba($sage, 0.25) !default;
+
+
+/*-- scss:rules --*/
+
+// ============================================================
+//  GLOBAL
+// ============================================================
+
+.reveal a {
+  line-height: 1.5em;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease;
+  &:hover {
+    color: $terracotta;
+  }
+}
+
+.reveal p {
+  font-weight: 350;
+  line-height: 1.55;
+  margin-top: 1em;
+}
+
+.reveal .slides {
+  text-align: left;
+}
+
+// ============================================================
+//  TITLE SLIDE
+// ============================================================
+
+#title-slide {
+  text-align: left;
+
+  .title {
+    color: $slate;
+    font-size: 1.75em;
+    line-height: 1.15;
+    font-weight: 400;
+    border-bottom: 3px solid $terracotta;
+    padding-bottom: 0.35em;
+    display: inline-block;
+  }
+
+  .subtitle {
+    color: $slate;
+    font-family: $font-family-sans-serif;
+    font-weight: 400;
+    font-size: 1.1em;
+    letter-spacing: 0.01em;
+    margin-top: 0.5em;
+  }
+
+  .author,
+  .quarto-title-author-name {
+    color: $slate;
+    font-weight: 500;
+    font-size: 0.8em;
+    margin-top: 1.5em;
+  }
+
+  .institute,
+  .quarto-title-affiliation,
+  .quarto-title-author-email {
+    font-family: $font-family-sans-serif;
+    font-style: italic;
+    font-weight: 300;
+    color: $stone;
+    font-size: 0.72em;
+  }
+
+  .date,
+  .quarto-title-date {
+    font-family: $font-family-sans-serif;
+    color: $stone;
+    font-size: 0.68em;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-top: 2em;
+  }
+
+  .quarto-title-authors {
+    display: flex;
+    justify-content: left;
+    .quarto-title-author {
+      padding-left: 0em;
+      padding-right: 0em;
+      width: 100%;
+    }
+  }
+}
+
+// ============================================================
+//  HEADINGS
+// ============================================================
+
+.reveal h2 {
+  font-weight: 400;
+  font-size: 1.35em;
+  color: $slate;
+
+  // UPDATED: slightly thinner rule for a cleaner, more "technical" look
+  border-bottom: 1.5px solid rgba($terracotta, 0.35);
+
+  padding-bottom: 0.15em;
+  margin-bottom: 0.6em;
+}
+
+.reveal h3 {
+  font-family: $font-family-sans-serif;
+  color: $sage;
+  font-weight: 500;
+  font-size: 0.88em;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin-top: 1em;
+}
+
+.reveal h4 {
+  font-family: $font-family-sans-serif;
+  color: $terracotta;
+  font-weight: 450;
+  font-size: 0.82em;
+  margin-top: 1.25em;
+}
+
+// ============================================================
+//  LISTS
+// ============================================================
+
+.reveal ul {
+  font-weight: 350;
+  padding-left: 1.1em;
+
+  li {
+    margin-bottom: 0.3em;
+  }
+
+  li::marker {
+    color: $sage;
+    font-size: 0.8em;
+  }
+}
+
+// Nested lists: right-arrow style
+.reveal ul ul {
+  list-style: none;
+  padding-left: 0.2em;
+
+  li {
+    position: relative;
+    padding-left: 1.4em;
+  }
+
+  li::before {
+    content: $right-arrow;
+    color: rgba($sage, 0.55);
+    position: absolute;
+    left: 0;
+    font-size: 0.85em;
+  }
+}
+
+.reveal ol {
+  font-weight: 350;
+  padding-left: 1.1em;
+
+  li {
+    margin-bottom: 0.3em;
+  }
+
+  li::marker {
+    color: $terracotta;
+    font-weight: 600;
+  }
+}
+
+// ============================================================
+//  BLOCKQUOTE
+// ============================================================
+
+.reveal blockquote {
+  background: rgba($sage, 0.06);
+  border-left: 4px solid $sage;
+  padding: 0.8em 1.2em;
+  margin: 1.2em 0;
+  border-radius: 0 6px 6px 0;
+  font-style: italic;
+  color: $slate;
+  font-size: 0.92em;
+  line-height: 1.5;
+
+  p {
+    margin: 0;
+  }
+}
+
+// ============================================================
+//  ALERTS & UTILITY CLASSES
+// ============================================================
+
+.alert {
+  color: $terracotta;
+}
+
+.fg {
+  color: var(--col, $graphite);
+}
+
+.bg {
+  background-color: var(--col, #fff);
+  padding: 0.15em 0.35em;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+// Highlight class for emphasised terms
+.hl {
+  background: linear-gradient(
+    to top,
+    rgba($gold, 0.28) 0%,
+    rgba($gold, 0.28) 38%,
+    transparent 38%
+  );
+  padding: 0 2px;
+}
+
+// ============================================================
+//  TABLES
+// ============================================================
+
+.reveal table {
+  margin: 1em auto;
+  border-collapse: collapse;
+  font-size: 0.78em;
+  border-top: 2.5px solid $slate;
+  border-bottom: 2.5px solid $slate;
+}
+
+.reveal table th,
+.reveal table td {
+  border: none;
+  padding: 0.35em 0.8em;
+  text-align: left;
+  font-weight: 350;
+}
+
+.reveal table thead th {
+  font-weight: 600;
+  color: $slate;
+  border-bottom: 1.2px solid $rule-gray;
+  padding-bottom: 0.45em;
+}
+
+// Subtle alternating row shading
+.reveal table tbody tr:nth-child(even) {
+  background-color: rgba($sage, 0.045);
+}
+
+.reveal table caption {
+  caption-side: bottom;
+  color: $stone;
+  font-size: 0.85em;
+  font-style: italic;
+  padding-top: 0.6em;
+  text-align: left;
+}
+
+// etable support (fixest)
+.etable {
+  width: 100%;
+  height: calc(100% - 3em);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.etable img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+// ============================================================
+//  CODE BLOCKS
+// ============================================================
+
+.reveal pre {
+  // UPDATED: cooler code background for a more "tooling / docs" feel
+  background: #f4f6f8;
+
+  border: 1px solid $rule-gray;
+  border-radius: 6px;
+  padding: 0.7em 1em;
+  font-size: 0.52em;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  max-width: 100%;
+  width: auto;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.reveal code {
+  font-family: "Fira Code", "JetBrains Mono", "Source Code Pro", monospace;
+  color: $slate;
+}
+
+.reveal pre code {
+  background: none;
+  padding: 0;
+}
+
+// Inline code
+.reveal p code,
+.reveal li code {
+  background: rgba($sage, 0.08);
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
+  font-size: 0.88em;
+}
+
+// ============================================================
+//  IMAGES & FIGURES
+// ============================================================
+
+.reveal .slide figure,
+.reveal .quarto-figure {
+  text-align: center;
+}
+
+.reveal figcaption,
+.reveal .figure-caption {
+  color: $stone;
+  font-size: 0.7em;
+  font-style: italic;
+  margin-top: 0.4em;
+}
+
+// ============================================================
+//  CALLOUT BOXES (Quarto native)
+// ============================================================
+
+.reveal .callout {
+  border-radius: 6px;
+  font-size: 0.82em;
+}
+
+// ============================================================
+//  BUTTON
+// ============================================================
+
+.button {
+  display: inline-block;
+  padding: 7px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: $font-family-sans-serif;
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  background-color: $sage;
+  border: 1.5px solid $sage;
+  color: #fff !important;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: darken($sage, 10%);
+    border-color: darken($sage, 10%);
+  }
+
+  &::before {
+    content: "▸ ";
+  }
+}
+
+// ============================================================
+//  NAVIGATION & CHROME
+// ============================================================
+
+// Hamburger menu → top-right
+.reveal .slide-menu-button {
+  position: fixed;
+  top: 6px;
+  right: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  pointer-events: none;
+}
+.reveal .slide-menu-button > * {
+  pointer-events: auto;
+}
+
+// Chalkboard buttons
+.reveal .slide-chalkboard-buttons {
+  position: fixed;
+  top: 12px;
+  right: 24px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  pointer-events: none;
+}
+.reveal .slide-chalkboard-buttons > * {
+  pointer-events: auto;
+}
+
+// Slide number
+.reveal .slide-number {
+  font-family: $font-family-sans-serif;
+  font-size: 0.55em;
+  color: $stone;
+}
+
+// Progress bar
+.reveal .progress {
+  height: 3px;
+  color: $terracotta;
+}
+
+// ============================================================
+//  SECTION / DIVIDER SLIDES
+// ============================================================
+
+.section-slide {
+  background-color: $slate !important;
+
+  h2 {
+    color: $cream !important;
+    border-bottom: 2px solid $terracotta !important;
+    font-size: 1.6em;
+  }
+
+  h3 {
+    color: rgba($cream, 0.7) !important;
+  }
+
+  p, li {
+    color: rgba($cream, 0.85) !important;
+  }
+}
+
+// ============================================================
+//  INVERSE SLIDE
+// ============================================================
+
+.inverse {
+  background-color: $graphite !important;
+
+  h2, h3, h4 {
+    color: $cream !important;
+    border-color: rgba($terracotta, 0.5) !important;
+  }
+
+  p, li, td, th, code {
+    color: rgba($cream, 0.9) !important;
+  }
+
+  a {
+    color: lighten($sage, 25%) !important;
+  }
+}
+
+// ============================================================
+//  PRINT / PDF ADJUSTMENTS
+// ============================================================
+
+@media print {
+  .reveal table {
+    font-size: 0.65em;
+  }
+  .reveal pre {
+    border: 1px solid #ccc;
+    box-shadow: none;
+  }
+}

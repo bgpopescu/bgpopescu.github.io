@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Bogdan G. Popescu">
+
+<title>Intro to GIS</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./schedule.html" rel="next">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-d3f7f8e73c8d287b30bcf59c2b563615.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-title">Course Information</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Intro to GIS</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Course Information</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./schedule.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Schedule</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week1/week1_landing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1 Intro to R and GIS</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week2/week2_landing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">2 Objects, Dataframes, Functions, and Loops</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week3/week3_landing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">3 Reading Data, Joins, and Dates</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week4/week4_landing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">4 Data Visualization</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week5/week5_landing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">5 Intro to Geographic Information Systems</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week6/week6_landing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">6 Shapefiles, Coordinate Systems, and Basic Mapping</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week7/week7_landing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">7 Fundamentals of Mapping and Spatial Joins</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week8/week8_landing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">8 Geometric Operations with Vectors</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week9/week9_landing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">9 Spatial Operations and Rasters 1</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week10/week10_landing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">10 Rasters and Raster Operations 2</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week11/week11_landing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">11 Rasters and Raster Operations 3</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week12/week12_landing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">12 Geometric Operations with Rasters 1</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week13/week13_landing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">13 Combining Vectors and Rasters</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week14/week14_landing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">14 Mosaicing, Reprojecting, and Concluding Remarks</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./supplem_lec1/supplem1_landing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Supplement: Georeferencing Maps and Creating Shapefiles</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./supplem_lec2/supplem2_landing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Supplement: Making a Website on GitHub</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#course-information" id="toc-course-information" class="nav-link active" data-scroll-target="#course-information">Course Information</a></li>
+  <li><a href="#instructor-details" id="toc-instructor-details" class="nav-link" data-scroll-target="#instructor-details">Instructor Details</a></li>
+  <li><a href="#course-description" id="toc-course-description" class="nav-link" data-scroll-target="#course-description">Course Description</a></li>
+  <li><a href="#summary-of-course-content" id="toc-summary-of-course-content" class="nav-link" data-scroll-target="#summary-of-course-content">Summary of Course Content</a></li>
+  <li><a href="#learning-outcomes" id="toc-learning-outcomes" class="nav-link" data-scroll-target="#learning-outcomes">Learning Outcomes</a></li>
+  <li><a href="#assessment" id="toc-assessment" class="nav-link" data-scroll-target="#assessment">Assessment</a>
+  <ul class="collapse">
+  <li><a href="#problem-sets" id="toc-problem-sets" class="nav-link" data-scroll-target="#problem-sets">Problem Sets</a></li>
+  <li><a href="#final-project" id="toc-final-project" class="nav-link" data-scroll-target="#final-project">Final Project</a></li>
+  </ul></li>
+  <li><a href="#attendance-requirements" id="toc-attendance-requirements" class="nav-link" data-scroll-target="#attendance-requirements">Attendance Requirements</a></li>
+  <li><a href="#academic-honesty" id="toc-academic-honesty" class="nav-link" data-scroll-target="#academic-honesty">Academic Honesty</a></li>
+  <li><a href="#students-with-learning-or-other-disabilities" id="toc-students-with-learning-or-other-disabilities" class="nav-link" data-scroll-target="#students-with-learning-or-other-disabilities">Students with Learning or Other Disabilities</a></li>
+  <li><a href="#recommended-books" id="toc-recommended-books" class="nav-link" data-scroll-target="#recommended-books">Recommended Books</a>
+  <ul class="collapse">
+  <li><a href="#general-books-on-r" id="toc-general-books-on-r" class="nav-link" data-scroll-target="#general-books-on-r">General Books on R</a></li>
+  <li><a href="#spatial-analysis" id="toc-spatial-analysis" class="nav-link" data-scroll-target="#spatial-analysis">Spatial Analysis</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Intro to GIS</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Bogdan G. Popescu </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="course-information" class="level2">
+<h2 class="anchored" data-anchor-id="course-information">Course Information</h2>
+<p>Course Number: PL/CS 362-1<br>
+Course Title: Applied Computational Methods for Social Sciences<br>
+Hours: MW 10:00-11:15AM<br>
+Location: G.K.1.4-Guarini Campus, Kushlan Wing, First Floor, Room 4<br>
+Credits: 3<br>
+Prerequisites: None</p>
+</section>
+<section id="instructor-details" class="level2">
+<h2 class="anchored" data-anchor-id="instructor-details">Instructor Details</h2>
+<p>Instructor: Bogdan G. Popescu<br>
+E-Mail: bogdan.popescu@johncabot.edu<br>
+Office Hours: By appointment</p>
+<p>Note: You should have a computer, either Windows or Mac, with at least 8GB of RAM.</p>
+</section>
+<section id="course-description" class="level2">
+<h2 class="anchored" data-anchor-id="course-description">Course Description</h2>
+<p>This is an introductory course to spatial data in R, a free programming language and environment developed for statistical computing and graphics. The first part of the course will introduce you to the R programming language. The second part will focus on R’s ability to manipulate spatial data, including how to process vector layers and rasters. Through hands-on exercises, this course introduces students to the concepts and applications of geographic information systems (GIS). It provides a basic foundation of spatial analysis and GIS with laboratory applications in particular techniques and methodology utilizing R. Students will learn to perform spatial analyses and communicate their results through cartography, along with an introduction to concepts such as spatial data collection, remote sensing, and spatial statistics.</p>
+</section>
+<section id="summary-of-course-content" class="level2">
+<h2 class="anchored" data-anchor-id="summary-of-course-content">Summary of Course Content</h2>
+<p>This introductory course on spatial data in R offers a comprehensive exploration of the R programming language’s capabilities in statistical computing and graphics, with a specific focus on spatial data manipulation. The initial segment of the course acquaints students with the fundamentals of the R programming language, emphasizing its status as a versatile and free tool. Subsequently, the course delves into R’s ability to handle spatial data, covering the processing of both vector layers and raster data. Participants learn to perform spatial analyses using R, with a particular emphasis on laboratory applications that apply techniques and methodologies to real-world scenarios. A critical component of the course is the integration of cartography, enabling students to visually communicate spatial analysis results through map creation. The practical applications extend to various domains, allowing students to develop a solid foundation in spatial analysis skills. Overall, this course equips students with a robust skill set for handling spatial data, making it valuable for those entering fields such as geography, environmental science, and urban planning.</p>
+</section>
+<section id="learning-outcomes" class="level2">
+<h2 class="anchored" data-anchor-id="learning-outcomes">Learning Outcomes</h2>
+<p>Upon successful completion of this course the students will be able to:</p>
+<ul>
+<li>execute basic programming tasks in R (e.g.&nbsp;loops, conditional statements, while statements, etc.)</li>
+<li>understand basic GIS terms and concepts</li>
+<li>utilize GIS for mapping and conducting spatial analyses</li>
+<li>create a professional website containing a portfolio</li>
+</ul>
+</section>
+<section id="assessment" class="level2">
+<h2 class="anchored" data-anchor-id="assessment">Assessment</h2>
+<p>You will be graded on four problem sets during the semester (each 12.5% of your grade) and a final report and presentation (each 25% of your grade).</p>
+<ul>
+<li>4 problem sets: 50% of the final grade (12.5% each)</li>
+<li>final presentation: 25% of the final grade</li>
+<li>final project report: 25% of the final grade</li>
+</ul>
+<section id="problem-sets" class="level3">
+<h3 class="anchored" data-anchor-id="problem-sets">Problem Sets</h3>
+<ol type="1">
+<li><p><strong>Initial Individual Submission</strong>: This component contributes 50% of the overall grade for the problem set. When you first complete the problem set independently and submit it to the instructor, your grade for this component will be calculated based on the quality of your independent work. This grade will be weighted at 50% of the total assignment grade.</p></li>
+<li><p><strong>Final Submission After Group Consultation</strong>: This component also contributes 50% of the overall grade for the problem sets. After discussing the problem set with your group members and documenting the correct answers, you will submit this revised version individually. Note: no group submission is permitted. Each one of you has to submit the second attempt of the assignment individually. Your grade for this component will be based on the quality of your final submission after group consultation. This grade will also be weighted at 50% of the total assignment grade.</p></li>
+</ol>
+</section>
+<section id="final-project" class="level3">
+<h3 class="anchored" data-anchor-id="final-project">Final Project</h3>
+<p>Students will undertake a GIS project emphasizing the practical application of spatial analysis techniques using the R programming language. This project offers an opportunity to showcase the acquired skills in manipulating spatial data and conducting meaningful analyses. Participants are encouraged to choose a topic of interest or relevance, utilizing datasets provided in the course or exploring new ones. The project entails a few steps:</p>
+<ul>
+<li>choosing a topic that involves spatial data</li>
+<li>acquiring data either from the course materials or from external sources</li>
+<li>employing at least five GIS procedures in R such as: <code>st_join</code>, <code>st_centroid</code>, <code>st_area</code>, <code>st_distance</code>, <code>st_buffer</code>, <code>st_voronoi</code>, <code>st_union</code>, <code>st_combine</code>, <code>st_cast</code>, <code>st_intersection</code>, <code>st_difference</code>, dplyr for vector layer aggregation, <code>st_crop</code>, <code>st_rasterize</code>, <code>raster::aggregate</code>, etc.</li>
+</ul>
+<p>OR</p>
+<ul>
+<li>producing some descriptive visualizations (maps, barplot, scatterplot, boxplots) that tell the same story AND making a GitHub website (for data, you can explore <a href="https://ourworldindata.org" target="_blank">https://ourworldindata.org</a>)</li>
+<li>crafting a well-structured two-page report containing an intro to the problem, objectives, data sources, methodology, results, and conclusion</li>
+<li>an appendix with the R code for the GIS procedures</li>
+</ul>
+<p>Here are examples of projects that former students produced:</p>
+<ul>
+<li><a href="https://ntayao99.github.io/portfolio.html" target="_blank">Swiss Glaciers Melting Rate</a></li>
+<li><a href="https://mariarosariadibagno.github.io/Projects.html" target="_blank">Rising Temperatures and Droughts</a></li>
+</ul>
+<p><strong>Examples of Project Topics</strong>:</p>
+<ol type="1">
+<li>Understanding economic development in Eastern Europe since 1992 using satellite luminosity</li>
+<li>Exploring temperature changes: what are the countries in Europe that have experienced the most dramatic changes in temperature since 1901</li>
+<li>Exploring temperature changes: what are the regions within a country (e.g.&nbsp;Italy) that have experienced the most dramatic changes in temperature since 1901</li>
+<li>Exploring business opportunities (e.g.&nbsp;restaurants, retail) in your favorite city using OSM</li>
+<li>Exploring areas worst affected by an earthquake</li>
+</ol>
+<p>Students have to submit a two-page report in Quarto and give a 20-minute, in-class presentation in Quarto.</p>
+<p>Grading criteria for the project:</p>
+<ul>
+<li>Relevance</li>
+<li>Methodology: demonstration of at least five distinct GIS procedures in R</li>
+<li>Analysis</li>
+<li>Presentation</li>
+<li>Code Quality</li>
+</ul>
+<p>You can find below an example of a project: <strong>Wildfires in 2023</strong></p>
+<ul>
+<li><a href="example/memo_example.html" target="_blank">Project Memo</a> | <a href="https://www.dropbox.com/scl/fi/3pe34g98vr2814m46h480/memo_example.qmd?rlkey=h8516s54r8jbxh3u42xj44zrq&amp;dl=0" target="_blank">Project Memo QMD file</a></li>
+<li><a href="example/memo_example_presentation.html" target="_blank">Presentation</a> | <a href="https://www.dropbox.com/scl/fi/mya0ae0hpeteymk9nmrd3/memo_example_presentation.qmd?rlkey=gldrbbfjgivtadnulcicndxt8&amp;dl=0" target="_blank">Presentation QMD file</a></li>
+</ul>
+</section>
+</section>
+<section id="attendance-requirements" class="level2">
+<h2 class="anchored" data-anchor-id="attendance-requirements">Attendance Requirements</h2>
+<p>Students are required to attend classes following the University’s policies. Students with more than four unexcused absences (two weeks) will get an F on the course. Thus, students must attend classes.</p>
+</section>
+<section id="academic-honesty" class="level2">
+<h2 class="anchored" data-anchor-id="academic-honesty">Academic Honesty</h2>
+<p>As stated in the university catalog, any student who commits an act of academic dishonesty will receive a failing grade on the work in which the dishonesty occurred. In addition, acts of academic dishonesty, irrespective of the weight of the assignment, may result in the student receiving a failing grade in the course. Instances of academic dishonesty will be reported to the Dean of Academic Affairs. A student who is reported twice for academic dishonesty is subject to summary dismissal from the University. In such a case, the Academic Council will then make a recommendation to the President, who will make the final decision.</p>
+</section>
+<section id="students-with-learning-or-other-disabilities" class="level2">
+<h2 class="anchored" data-anchor-id="students-with-learning-or-other-disabilities">Students with Learning or Other Disabilities</h2>
+<p>John Cabot University does not discriminate on the basis of disability or handicap. Students with approved accommodations must inform their professors at the beginning of the term. Please see the website for the complete policy.</p>
+</section>
+<section id="recommended-books" class="level2">
+<h2 class="anchored" data-anchor-id="recommended-books">Recommended Books</h2>
+<section id="general-books-on-r" class="level3">
+<h3 class="anchored" data-anchor-id="general-books-on-r">General Books on R</h3>
+<ul>
+<li>Wickham, Hadley, and Garrett Grolemund. 2023. <em>R for Data Science.</em> O’Reilly Media. <a href="https://r4ds.hadley.nz" target="_blank">https://r4ds.hadley.nz</a></li>
+<li>Wickham, Hadley. 2023. <em>ggplot2: Elegant Graphics for Data Analysis.</em> Springer. <a href="https://ggplot2-book.org/index.html" target="_blank">https://ggplot2-book.org/index.html</a></li>
+<li>Nguyen, Mike. 2023. <em>A Guide on Data Analysis.</em> <a href="https://bookdown.org/mike/data_analysis/" target="_blank">https://bookdown.org/mike/data_analysis/</a></li>
+</ul>
+</section>
+<section id="spatial-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="spatial-analysis">Spatial Analysis</h3>
+<ul>
+<li>Pebesma, Edzer, and Roger Bivand. 2023. <em>Spatial Data Science: With Applications in R.</em> Chapman &amp; Hall/CRC. <a href="https://r-spatial.org/book/" target="_blank">https://r-spatial.org/book/</a></li>
+<li>Gimond, Manuel. 2023. <em>Intro to GIS and Spatial Analysis.</em> <a href="https://mgimond.github.io/Spatial/index.html" target="_blank">https://mgimond.github.io/Spatial/index.html</a></li>
+<li>Lovelace, Robin; Jakub Nowosad; and Jannes Muenchow. 2023. <em>Geocomputation with R.</em> <a href="https://r.geocompx.org" target="_blank">https://r.geocompx.org</a></li>
+</ul>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./schedule.html" class="pagination-link" aria-label="Schedule">
+        <span class="nav-page-text"><span class="chapter-title">Schedule</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

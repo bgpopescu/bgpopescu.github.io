@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="lecture13_files/libs/clipboard/clipboard.min.js"></script>
+<script src="lecture13_files/libs/quarto-html/tabby.min.js"></script>
+<script src="lecture13_files/libs/quarto-html/popper.min.js"></script>
+<script src="lecture13_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="lecture13_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="lecture13_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="lecture13_files/libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.6.40">
+
+  <meta name="author" content="Bogdan G. Popescu">
+  <title>Comparative Politics</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="lecture13_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="lecture13_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="lecture13_files/libs/revealjs/dist/theme/quarto-5d8d9fc4ff8902849d506bd524d1dc44.css">
+  <link href="lecture13_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="lecture13_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="lecture13_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="lecture13_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  <script src="lecture13_files/libs/quarto-diagram/mermaid.min.js"></script>
+  <script src="lecture13_files/libs/quarto-diagram/mermaid-init.js"></script>
+  <link href="lecture13_files/libs/quarto-diagram/mermaid.css" rel="stylesheet">
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Comparative Politics</h1>
+  <p class="subtitle">Lecture 13: Corruption, Clientelism, and Accountability</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a>
+</div>
+<div class="quarto-title-author-email">
+<a href="mailto:bogdan.popescu@johncabot.edu">bogdan.popescu@johncabot.edu</a>
+</div>
+        <p class="quarto-title-affiliation">
+            John Cabot University
+          </p>
+    </div>
+</div>
+
+</section>
+<section>
+<section id="i.-the-puzzle" class="title-slide slide level1 center" data-background-color="#1e293b">
+<h1>I. The Puzzle</h1>
+
+</section>
+<section id="two-countries-one-starting-point" class="slide level2">
+<h2>Two Countries, One Starting Point</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<div>
+<ul>
+<li class="fragment"><strong>1960s:</strong> Both deeply clientelistic</li>
+<li class="fragment">Philippines was <em>richer</em> per capita</li>
+<li class="fragment">Both US-aligned Cold War allies</li>
+<li class="fragment">Both ran on patronage networks</li>
+<li class="fragment"><strong>By 2000:</strong> radically different outcomes</li>
+</ul>
+</div>
+</div><div class="column" style="width:45%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="graphs/seoul_skyline.jpg" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</figure>
+</div>
+<div style="font-size: 0.5em; color: #64748b; text-align: center;">
+<p>Seoul today. Source: Wikimedia Commons.</p>
+</div>
+</div></div>
+</section>
+<section id="the-divergence" class="slide level2">
+<h2>The Divergence</h2>
+
+<img data-src="lecture13_files/figure-revealjs/fig-divergence-1.png" width="960" class="r-stretch quarto-figure-center" id="fig-divergence"><p class="caption">
+Figure&nbsp;1: GDP per capita divergence. Source: World Bank (2023).
+</p></section>
+<section id="what-explains-the-gap" class="slide level2">
+<h2>What Explains the Gap?</h2>
+<div>
+<ul>
+<li class="fragment">Not geography — both Pacific-facing</li>
+<li class="fragment">Not colonial legacy alone</li>
+<li class="fragment"><strong>Key:</strong> one broke the loop; one deepened it</li>
+<li class="fragment">Park insulated technocratic agencies</li>
+<li class="fragment">Marcos entrenched patronage oligarchy</li>
+</ul>
+</div>
+</section>
+<section id="the-lecture-question" class="slide level2">
+<h2>The Lecture Question</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<div>
+<ul>
+<li class="fragment">What <em>is</em> clientelism, and why persist?</li>
+<li class="fragment">How does it trap states?</li>
+<li class="fragment"><strong>When and how do countries escape?</strong></li>
+</ul>
+</div>
+</div><div class="column" style="width:45%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="graphs/manila_skyline.jpg" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</figure>
+</div>
+<div style="font-size: 0.5em; color: #64748b; text-align: center;">
+<p>Manila, Philippines. Source: Wikimedia Commons.</p>
+</div>
+</div></div>
+</section></section>
+<section>
+<section id="ii.-conceptual-foundations" class="title-slide slide level1 center" data-background-color="#1e293b">
+<h1>II. Conceptual Foundations</h1>
+
+</section>
+<section id="three-concepts-often-conflated" class="slide level2">
+<h2>Three Concepts, Often Conflated</h2>
+<table class="caption-top">
+<caption>Source: Adapted from Kitschelt &amp; Wilkinson (2007).</caption>
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Concept</th>
+<th style="text-align: left;">Definition</th>
+<th style="text-align: left;">Key feature</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Corruption</strong></td>
+<td style="text-align: left;">Abuse of office for private gain</td>
+<td style="text-align: left;">A <em>transaction</em></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Clientelism</strong></td>
+<td style="text-align: left;">Benefits exchanged for political support</td>
+<td style="text-align: left;">A <em>relationship</em></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Patronage</strong></td>
+<td style="text-align: left;">Discretionary allocation of public jobs</td>
+<td style="text-align: left;">An <em>organizational resource</em></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="why-the-distinctions-matter" class="slide level2">
+<h2>Why the Distinctions Matter</h2>
+<div>
+<ul>
+<li class="fragment">Corruption is one-off; clientelism is ongoing</li>
+<li class="fragment">Clientelism involves obligation and monitoring</li>
+<li class="fragment">Patronage is <em>supply infrastructure</em> for clientelism</li>
+<li class="fragment">Bribe is impersonal; patron-client tie is social</li>
+<li class="fragment">Conflating them leads to wrong prescriptions</li>
+</ul>
+</div>
+</section>
+<section id="clientelism-as-a-relationship" class="slide level2">
+<h2>Clientelism as a Relationship</h2>
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">%%{init: {'theme': 'base', 'themeVariables': {'fontSize': '20px', 'primaryColor': '#ffffff', 'primaryTextColor': '#1e293b', 'lineColor': '#334155', 'primaryBorderColor': '#334155'}, 'flowchart': {'useMaxWidth': true, 'nodeSpacing': 50, 'rankSpacing': 70}}}%%
+flowchart LR
+    A["&lt;b&gt;Patron&lt;/b&gt;&lt;br/&gt;Controls resources"] ---|"Material benefits&lt;br/&gt;(jobs, transfers, access)"| B["&lt;b&gt;Client&lt;/b&gt;&lt;br/&gt;Needs goods/services"]
+    B ---|"Political support&lt;br/&gt;(votes, loyalty, turnout)"| A
+    C["&lt;b&gt;Broker&lt;/b&gt;&lt;br/&gt;Monitors &amp; enforces"] --- A
+    C --- B
+    style A fill:#ffffff,stroke:#4a7c6f,stroke-width:2px
+    style B fill:#ffffff,stroke:#334155,stroke-width:2px
+    style C fill:#ffffff,stroke:#64748b,stroke-width:2px
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<div style="font-size: 0.55em; color: #64748b; text-align: center;">
+<p>Source: Author’s illustration based on Scott (1972).</p>
+</div>
+</section>
+<section id="what-makes-it-sticky" class="slide level2">
+<h2>What Makes It Sticky?</h2>
+<div>
+<ul>
+<li class="fragment"><strong>Asymmetric power:</strong> patron controls access</li>
+<li class="fragment"><strong>Social embeddedness:</strong> ties are personal</li>
+<li class="fragment"><strong>Iterative exchange:</strong> repeated interaction builds norms</li>
+<li class="fragment"><strong>Monitoring:</strong> brokers track compliance locally</li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="iii.-why-does-clientelism-persist" class="title-slide slide level1 center" data-background-color="#1e293b">
+<h1>III. Why Does Clientelism Persist?</h1>
+
+</section>
+<section id="the-demand-side" class="slide level2">
+<h2>The Demand Side</h2>
+<div>
+<ul>
+<li class="fragment">Poor voters prefer certain small transfers <em>now</em></li>
+<li class="fragment">Programmatic promises are uncertain, delayed</li>
+<li class="fragment">Clientelism provides <strong>insurance</strong> (Stokes, 2005)</li>
+<li class="fragment">Income volatility makes bird-in-hand rational</li>
+<li class="fragment">Not ignorance — rational risk management</li>
+</ul>
+</div>
+</section>
+<section id="the-supply-side" class="slide level2">
+<h2>The Supply Side</h2>
+<div>
+<ul>
+<li class="fragment">Parties with weak programmatic credibility</li>
+<li class="fragment">Strong local networks but no policy brand</li>
+<li class="fragment">Targeted benefits solve mobilization problem</li>
+<li class="fragment">Cheaper than programmatic infrastructure</li>
+<li class="fragment">Equilibrium serves <em>both</em> parties and voters</li>
+</ul>
+</div>
+</section>
+<section id="the-clientelistic-equilibrium" class="slide level2">
+<h2>The Clientelistic Equilibrium</h2>
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">%%{init: {'theme': 'base', 'themeVariables': {'fontSize': '20px', 'primaryColor': '#4a7c6f', 'primaryTextColor': '#1e293b', 'lineColor': '#334155', 'primaryBorderColor': '#334155'}, 'flowchart': {'useMaxWidth': true, 'nodeSpacing': 50, 'rankSpacing': 70}}}%%
+flowchart LR
+    A["&lt;b&gt;Poverty &amp;&lt;br/&gt;income volatility&lt;/b&gt;"] --&gt; B["&lt;b&gt;Voters prefer&lt;br/&gt;certain transfers&lt;/b&gt;"]
+    B --&gt; C["&lt;b&gt;Parties invest in&lt;br/&gt;targeted delivery&lt;/b&gt;"]
+    C --&gt; D["&lt;b&gt;No programmatic&lt;br/&gt;infrastructure built&lt;/b&gt;"]
+    D --&gt; A
+    style A fill:#fbe9e7,stroke:#b44527,stroke-width:2px
+    style B fill:#fff3e0,stroke:#b7943a,stroke-width:2px
+    style C fill:#fff3e0,stroke:#b7943a,stroke-width:2px
+    style D fill:#fbe9e7,stroke:#b44527,stroke-width:2px
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<div style="font-size: 0.55em; color: #64748b; text-align: center;">
+<p>Source: Author’s illustration based on Stokes (2005).</p>
+</div>
+</section>
+<section id="the-enforcement-problem" class="slide level2">
+<h2>The Enforcement Problem</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<div>
+<ul>
+<li class="fragment">Secret ballot means can’t verify votes</li>
+<li class="fragment">So how does vote-buying work?</li>
+<li class="fragment"><strong>Nichter (2008):</strong> key distinction</li>
+<li class="fragment">Not <em>vote-buying</em> but <strong>turnout-buying</strong></li>
+<li class="fragment">Pay supporters to show up</li>
+</ul>
+</div>
+</div><div class="column" style="width:45%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="graphs/vote_buying_historical.jpg" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</figure>
+</div>
+<div style="font-size: 0.5em; color: #64748b; text-align: center;">
+<p>G. C. Bingham, <em>The County Election</em> (1852). Source: Wikimedia Commons.</p>
+</div>
+</div></div>
+</section>
+<section id="vote-buying-vs.-turnout-buying" class="slide level2">
+<h2>Vote-Buying vs.&nbsp;Turnout-Buying</h2>
+<table class="caption-top">
+<caption>Source: Adapted from Nichter (2008).</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: left;"><strong>Vote-buying</strong></th>
+<th style="text-align: left;"><strong>Turnout-buying</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Target</strong></td>
+<td style="text-align: left;">Opponents / swing voters</td>
+<td style="text-align: left;">Own supporters</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Goal</strong></td>
+<td style="text-align: left;">Preference change</td>
+<td style="text-align: left;">Mobilization</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Verification</strong></td>
+<td style="text-align: left;">Very hard</td>
+<td style="text-align: left;">Easier (showed up?)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Defection risk</strong></td>
+<td style="text-align: left;">High</td>
+<td style="text-align: left;">Low</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Broker role</strong></td>
+<td style="text-align: left;">Persuade</td>
+<td style="text-align: left;">Monitor attendance</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="brokers-as-enforcement-technology" class="slide level2">
+<h2>Brokers as Enforcement Technology</h2>
+<div>
+<ul>
+<li class="fragment">Local brokers monitor neighborhoods</li>
+<li class="fragment">Track who attended rallies, who voted</li>
+<li class="fragment">Social pressure in small communities</li>
+<li class="fragment"><strong>Brokers are the infrastructure</strong>, not cash</li>
+<li class="fragment">Remove brokers and clientelism collapses</li>
+</ul>
+</div>
+</section>
+<section id="the-koreaphilippines-anchor" class="slide level2">
+<h2>The Korea/Philippines Anchor</h2>
+<div>
+<ul>
+<li class="fragment">Marcos: turnout-buying via <em>barangay</em> captains</li>
+<li class="fragment">Local brokers monitored, rewarded, punished</li>
+<li class="fragment">Park: dismantled broker networks</li>
+<li class="fragment">Replaced with bureaucratic service delivery</li>
+<li class="fragment"><strong>Removed the enforcement infrastructure</strong></li>
+</ul>
+</div>
+</section>
+<section id="exercise-1" class="slide level2" data-background-color="#4a7c6f">
+<h2>Exercise 1</h2>
+<h3 id="demand-or-supply-5-min">Demand or Supply? (5 min)</h3>
+<p>Two scenarios:</p>
+<ul>
+<li><strong>Country A:</strong> Universal cash transfer ($50/month). Clientelistic party loses 15% vote share.</li>
+<li><strong>Country B:</strong> Same program via local party offices. Party vote share <em>increases</em>.</li>
+</ul>
+<p><strong>Which is demand-side disruption vs.&nbsp;supply-side capture? Where is the binding constraint?</strong></p>
+</section></section>
+<section>
+<section id="iv.-measurement" class="title-slide slide level1 center" data-background-color="#1e293b">
+<h1>IV. Measurement</h1>
+
+</section>
+<section id="the-fundamental-problem" class="slide level2">
+<h2>The Fundamental Problem</h2>
+<div>
+<ul>
+<li class="fragment">Corruption is hidden by definition</li>
+<li class="fragment">Participants actively conceal it</li>
+<li class="fragment">Must infer from indirect evidence</li>
+<li class="fragment">Three approaches, each with limitations</li>
+</ul>
+</div>
+</section>
+<section id="approach-1-surveys" class="slide level2">
+<h2>Approach 1: Surveys</h2>
+<div>
+<ul>
+<li class="fragment">Afrobarometer, LAPOP: “Were you bribed?”</li>
+<li class="fragment">Captures reported experience</li>
+<li class="fragment"><strong>Problem:</strong> social desirability bias</li>
+<li class="fragment">Thresholds vary across cultures</li>
+<li class="fragment">Useful for patterns, not precise estimates</li>
+</ul>
+</div>
+</section>
+<section id="approach-2-perception-indices" class="slide level2">
+<h2>Approach 2: Perception Indices</h2>
+<div class="columns">
+<div class="column" style="width:45%;">
+<div>
+<ul>
+<li class="fragment">TI Corruption Perceptions Index</li>
+<li class="fragment">World Bank WGI</li>
+<li class="fragment">Aggregated expert/business surveys</li>
+<li class="fragment">Measure <strong>reputation</strong>, not corruption</li>
+<li class="fragment">Treat as noisy signal</li>
+</ul>
+</div>
+</div><div class="column" style="width:55%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="graphs/cpi_world_map.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</figure>
+</div>
+<div style="font-size: 0.5em; text-align: center; margin-top: 4px;">
+<p><span style="display:inline-block;width:12px;height:12px;background:#003580;border-radius:2px;"></span> Clean (80+) <span style="display:inline-block;width:12px;height:12px;background:#56a8cb;border-radius:2px;margin-left:6px;"></span> 60–79 <span style="display:inline-block;width:12px;height:12px;background:#f4e285;border-radius:2px;margin-left:6px;"></span> 40–59 <span style="display:inline-block;width:12px;height:12px;background:#d96a2b;border-radius:2px;margin-left:6px;"></span> 20–39 <span style="display:inline-block;width:12px;height:12px;background:#690000;border-radius:2px;margin-left:6px;"></span> Corrupt (0–19) <br><span style="color: #64748b;">Source: Transparency International via Wikimedia Commons.</span></p>
+</div>
+</div></div>
+</section>
+<section id="corruption-perceptions-index-2023" class="slide level2">
+<h2>Corruption Perceptions Index, 2023</h2>
+
+<img data-src="lecture13_files/figure-revealjs/fig-cpi-1.png" width="960" class="r-stretch quarto-figure-center" id="fig-cpi"><p class="caption">
+Figure&nbsp;2: CPI scores for selected countries. Source: Transparency International (2023).
+</p></section>
+<section id="what-the-cpi-cannot-tell-you" class="slide level2">
+<h2>What the CPI Cannot Tell You</h2>
+<div>
+<ul>
+<li class="fragment">Cannot distinguish corruption <em>types</em></li>
+<li class="fragment">Conflates petty and grand corruption</li>
+<li class="fragment">Expert perceptions lag actual reform</li>
+<li class="fragment">Rich countries: corruption may be <em>legal</em> (lobbying)</li>
+<li class="fragment"><strong>Use with caution as dependent variable</strong></li>
+</ul>
+</div>
+</section>
+<section id="approach-3-behavioral-audits" class="slide level2">
+<h2>Approach 3: Behavioral Audits</h2>
+<div>
+<ul>
+<li class="fragment"><strong>Ferraz &amp; Finan (2008):</strong> Brazil’s audit lottery</li>
+<li class="fragment">Random municipalities selected for audit</li>
+<li class="fragment">Quasi-experimental design</li>
+<li class="fragment">Audited mayors punished at ballot box</li>
+<li class="fragment">Clean identification of accountability</li>
+</ul>
+</div>
+</section>
+<section id="ferraz-finan-the-design" class="slide level2">
+<h2>Ferraz &amp; Finan: The Design</h2>
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">%%{init: {'theme': 'base', 'themeVariables': {'fontSize': '20px', 'primaryColor': '#4a7c6f', 'primaryTextColor': '#1e293b', 'lineColor': '#334155', 'primaryBorderColor': '#334155'}, 'flowchart': {'useMaxWidth': true, 'nodeSpacing': 50, 'rankSpacing': 70}}}%%
+flowchart LR
+    A["&lt;b&gt;Random audit&lt;br/&gt;lottery&lt;/b&gt;"] --&gt; B["&lt;b&gt;Some municipalities&lt;br/&gt;audited&lt;/b&gt;"]
+    B --&gt; C["&lt;b&gt;Corruption&lt;br/&gt;revealed&lt;/b&gt;"]
+    C --&gt; D["&lt;b&gt;Information&lt;br/&gt;disseminated&lt;/b&gt;"]
+    D --&gt; E["&lt;b&gt;Voters punish&lt;br/&gt;corrupt mayors&lt;/b&gt;"]
+    style A fill:#e8f5e9,stroke:#4a7c6f,stroke-width:2px
+    style B fill:#e8f5e9,stroke:#4a7c6f,stroke-width:2px
+    style C fill:#fbe9e7,stroke:#b44527,stroke-width:2px
+    style D fill:#fff3e0,stroke:#b7943a,stroke-width:2px
+    style E fill:#e8f5e9,stroke:#4a7c6f,stroke-width:2px
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<div style="font-size: 0.55em; color: #64748b; text-align: center;">
+<p>Source: Author’s illustration based on Ferraz &amp; Finan (2008).</p>
+</div>
+</section>
+<section id="the-key-finding" class="slide level2">
+<h2>The Key Finding</h2>
+<div>
+<ul>
+<li class="fragment">Disclosed corruption led to a drop in incumbent’s likelihood of re-election by approximately 20 percent</li>
+<li class="fragment">Effect strongest with local media coverage</li>
+<li class="fragment">Without information, no electoral punishment</li>
+<li class="fragment"><strong>Accountability = information + elections</strong></li>
+<li class="fragment">Corruption is punishable — <em>if voters know</em></li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="v.-the-low-capacity-trap" class="title-slide slide level1 center" data-background-color="#1e293b">
+<h1>V. The Low-Capacity Trap</h1>
+
+</section>
+<section id="the-core-logic" class="slide level2">
+<h2>The Core Logic</h2>
+<div>
+<ul>
+<li class="fragment">Weak states can’t deliver goods impersonally</li>
+<li class="fragment">Citizens turn to patrons for access</li>
+<li class="fragment">Patrons resist bureaucratic reform</li>
+<li class="fragment">Clientelism undermines state capacity further</li>
+<li class="fragment"><strong>Mutual reinforcement creates stable trap</strong></li>
+</ul>
+</div>
+</section>
+<section id="the-low-capacity-trap" class="slide level2">
+<h2>The Low-Capacity Trap</h2>
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">%%{init: {'theme': 'base', 'themeVariables': {'fontSize': '20px', 'primaryColor': '#4a7c6f', 'primaryTextColor': '#1e293b', 'lineColor': '#334155', 'primaryBorderColor': '#334155'}, 'flowchart': {'useMaxWidth': true, 'nodeSpacing': 50, 'rankSpacing': 70}}}%%
+flowchart LR
+    A["&lt;b&gt;Weak state&lt;br/&gt;capacity&lt;/b&gt;"] --&gt; B["&lt;b&gt;Citizens rely&lt;br/&gt;on patrons&lt;/b&gt;"]
+    B --&gt; C["&lt;b&gt;Patrons gain&lt;br/&gt;political power&lt;/b&gt;"]
+    C --&gt; D["&lt;b&gt;Patrons block&lt;br/&gt;bureaucratic reform&lt;/b&gt;"]
+    D --&gt; A
+    style A fill:#fbe9e7,stroke:#b44527,stroke-width:2px
+    style B fill:#fff3e0,stroke:#b7943a,stroke-width:2px
+    style C fill:#fff3e0,stroke:#b7943a,stroke-width:2px
+    style D fill:#fbe9e7,stroke:#b44527,stroke-width:2px
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<div style="font-size: 0.55em; color: #64748b; text-align: center;">
+<p>Source: Author’s illustration.</p>
+</div>
+</section>
+<section id="government-effectiveness-and-cpi" class="slide level2">
+<h2>Government Effectiveness and CPI</h2>
+
+<img data-src="lecture13_files/figure-revealjs/fig-capacity-corruption-1.png" width="960" class="r-stretch quarto-figure-center" id="fig-capacity-corruption"><p class="caption">
+Figure&nbsp;3: State capacity and corruption perceptions. Source: World Bank WGI &amp; TI (2023).
+</p></section>
+<section id="korea-breaking-the-trap" class="slide level2">
+<h2>Korea: Breaking the Trap</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<div>
+<ul>
+<li class="fragment">Insulated Economic Planning Board</li>
+<li class="fragment">Merit-based technocrat recruitment</li>
+<li class="fragment">Cold War pressure for developmental results</li>
+<li class="fragment"><strong>Method was authoritarian repression</strong>, not reform</li>
+<li class="fragment">Raises question: can democracies replicate this?</li>
+</ul>
+</div>
+</div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="graphs/park_chung_hee_portrait.jpg" class="quarto-figure quarto-figure-center" height="320"></p>
+</figure>
+</div>
+<div style="font-size: 0.5em; color: #64748b; text-align: center;">
+<p>Park Chung-hee, President of South Korea (1963–1979). Source: Wikimedia Commons.</p>
+</div>
+</div></div>
+</section>
+<section id="philippines-deepening-the-trap" class="slide level2">
+<h2>Philippines: Deepening the Trap</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<div>
+<ul>
+<li class="fragment">Had equivalent formal institutions</li>
+<li class="fragment"><strong>Chose not to insulate them</strong></li>
+<li class="fragment">Patronage served regime survival</li>
+<li class="fragment"><em>Barangay</em> captains = electoral infrastructure</li>
+<li class="fragment">Oligarchic families captured local state</li>
+<li class="fragment">No external pressure to reform</li>
+</ul>
+</div>
+</div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="graphs/ferdinand_marcos_portrait.jpg" class="quarto-figure quarto-figure-center" height="320"></p>
+</figure>
+</div>
+<div style="font-size: 0.5em; color: #64748b; text-align: center;">
+<p>Ferdinand Marcos, President of the Philippines (1965–1986). Source: Wikimedia Commons.</p>
+</div>
+</div></div>
+</section></section>
+<section>
+<section id="vi.-when-do-systems-reform" class="title-slide slide level1 center" data-background-color="#1e293b">
+<h1>VI. When Do Systems Reform?</h1>
+
+</section>
+<section id="three-exit-mechanisms" class="slide level2">
+<h2>Three Exit Mechanisms</h2>
+<div>
+<ul>
+<li class="fragment"><strong>External shocks</strong> change elite incentives
+<ul>
+<li class="fragment">Korea: US pressure, export competition</li>
+</ul></li>
+<li class="fragment"><strong>Competition</strong> makes programmatic policy credible
+<ul>
+<li class="fragment">Argentina (Weitz-Shapiro, 2012)</li>
+</ul></li>
+<li class="fragment"><strong>Rising incomes</strong> erode the insurance logic</li>
+</ul>
+</div>
+</section>
+<section id="the-programmatic-turn" class="slide level2">
+<h2>The Programmatic Turn</h2>
+<div>
+<ul>
+<li class="fragment">As incomes rise, voters need patrons less</li>
+<li class="fragment">Programmatic promises become more credible</li>
+<li class="fragment">Parties shift from targeted to universal goods</li>
+<li class="fragment">Kitschelt &amp; Wilkinson (2007): broad cross-national pattern</li>
+<li class="fragment"><strong>But the transition is not automatic or linear</strong></li>
+</ul>
+</div>
+</section>
+<section id="why-reform-is-hard" class="slide level2">
+<h2>Why Reform Is Hard</h2>
+<div>
+<ul>
+<li class="fragment">Incumbents <em>benefit</em> from clientelistic system</li>
+<li class="fragment">They control the levers of reform</li>
+<li class="fragment">Collective action problem among reformers</li>
+<li class="fragment">Brokers resist merit-based recruitment</li>
+<li class="fragment"><strong>Trap is stable; escape requires disruption</strong></li>
+</ul>
+</div>
+</section>
+<section id="weitz-shapiro-competition-as-catalyst" class="slide level2">
+<h2>Weitz-Shapiro: Competition as Catalyst</h2>
+<div>
+<ul>
+<li class="fragment">Argentine mayors in competitive districts</li>
+<li class="fragment">Shifted to programmatic delivery</li>
+<li class="fragment">Competition made clientelism <em>costly</em></li>
+<li class="fragment">Programmatic commitment signals credibility</li>
+<li class="fragment"><strong>Competition can substitute for external shock</strong></li>
+</ul>
+</div>
+</section>
+<section id="exercise-2" class="slide level2" data-background-color="#4a7c6f">
+<h2>Exercise 2</h2>
+<h3 id="diagnosing-the-trap-5-min">Diagnosing the Trap (5 min)</h3>
+<p>Korea vs.&nbsp;Philippines comparison:</p>
+<ul>
+<li>Structural factors (income, geography) or political agency (elite choices)?</li>
+<li>Could Ferraz &amp; Finan’s audit logic work under Marcos?</li>
+<li>Name two missing preconditions</li>
+<li>What does this reveal about institutional portability?</li>
+</ul>
+</section></section>
+<section>
+<section id="conclusion" class="title-slide slide level1 center" data-background-color="#1e293b">
+<h1>Conclusion</h1>
+
+</section>
+<section id="conclusion-1" class="slide level2">
+<h2>Conclusion</h2>
+<div>
+<ul>
+<li class="fragment">Clientelism is a rational equilibrium, not a moral failing</li>
+<li class="fragment">Brokers are the infrastructure; cash is secondary</li>
+<li class="fragment">Weak states and clientelism reinforce each other</li>
+<li class="fragment">The clearest historical exit was <em>authoritarian</em></li>
+<li class="fragment">Democratic paths exist but are slow and fragile</li>
+<li class="fragment"><strong>Uncomfortable implication: the tools that break the trap fastest are the ones democracies cannot use</strong></li>
+</ul>
+</div>
+</section>
+<section id="references" class="slide level2 smaller">
+<h2>References</h2>
+<ul>
+<li>Calvo, E. &amp; Murillo, M.V. (2004). Who delivers? Partisan clients in the Argentine electoral market. <em>American Journal of Political Science</em>, 48(4), 742-757.</li>
+<li>Ferraz, C. &amp; Finan, F. (2008). Exposing corrupt politicians: The effects of Brazil’s publicly released audits on electoral outcomes. <em>Quarterly Journal of Economics</em>, 123(2), 703-745.</li>
+<li>Kitschelt, H. &amp; Wilkinson, S.I. (2007). <em>Patrons, Clients, and Policies: Patterns of Democratic Accountability and Political Competition</em>. Cambridge: Cambridge University Press.</li>
+<li>Nichter, S. (2008). Vote buying or turnout buying? Machine politics and the secret ballot. <em>American Political Science Review</em>, 102(1), 19-31.</li>
+<li>Scott, J.C. (1972). Patron-client politics and political change in Southeast Asia. <em>American Political Science Review</em>, 66(1), 91-113.</li>
+<li>Stokes, S.C. (2005). Perverse accountability: A formal model of machine politics with evidence from Argentina. <em>American Political Science Review</em>, 99(3), 315-325.</li>
+<li>Weitz-Shapiro, R. (2012). What wins votes: Why some politicians opt out of clientelism. <em>American Journal of Political Science</em>, 56(3), 568-583.</li>
+</ul>
+
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+<p>Popescu (JCU) Comparative Politics Lecture 13: Corruption, Clientelism, and Accountability</p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="lecture13_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="lecture13_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="lecture13_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="lecture13_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="lecture13_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="lecture13_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="lecture13_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="lecture13_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="lecture13_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="lecture13_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const onCopySuccess = function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
+      });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>

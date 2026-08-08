@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>1&nbsp; Agentic AI for Social Science Research – Agentic AI for Social Science Research</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./lecture2.html" rel="next">
+<link href="./index.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./lecture1.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Agentic AI for Social Science Research</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Agentic AI for Social Science Research</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lecture1.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Agentic AI for Social Science Research</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lecture2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Writing Your CLAUDE.md</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lecture3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Git for Research</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lecture4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Skills for Publication-Ready Research</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lecture5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">AI Work Hygiene</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lecture6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Working with Large Datasets</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#what-is-agentic-ai" id="toc-what-is-agentic-ai" class="nav-link active" data-scroll-target="#what-is-agentic-ai"><span class="header-section-number">2</span> What Is Agentic AI?</a></li>
+  <li><a href="#why-this-matters-for-research" id="toc-why-this-matters-for-research" class="nav-link" data-scroll-target="#why-this-matters-for-research"><span class="header-section-number">3</span> Why This Matters for Research</a></li>
+  <li><a href="#the-expertise-verification-paradox" id="toc-the-expertise-verification-paradox" class="nav-link" data-scroll-target="#the-expertise-verification-paradox"><span class="header-section-number">4</span> The Expertise-Verification Paradox</a></li>
+  <li><a href="#two-modes-of-working-with-ai" id="toc-two-modes-of-working-with-ai" class="nav-link" data-scroll-target="#two-modes-of-working-with-ai"><span class="header-section-number">5</span> Two Modes of Working with AI</a></li>
+  <li><a href="#the-research-workflow" id="toc-the-research-workflow" class="nav-link" data-scroll-target="#the-research-workflow"><span class="header-section-number">6</span> The Research Workflow</a></li>
+  <li><a href="#the-tutorial-series" id="toc-the-tutorial-series" class="nav-link" data-scroll-target="#the-tutorial-series"><span class="header-section-number">7</span> The Tutorial Series</a></li>
+  <li><a href="#installing-claude-code" id="toc-installing-claude-code" class="nav-link" data-scroll-target="#installing-claude-code"><span class="header-section-number">8</span> Installing Claude Code</a>
+  <ul class="collapse">
+  <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link" data-scroll-target="#prerequisites"><span class="header-section-number">8.1</span> Prerequisites</a>
+  <ul class="collapse">
+  <li><a href="#required" id="toc-required" class="nav-link" data-scroll-target="#required"><span class="header-section-number">8.1.1</span> Required</a></li>
+  <li><a href="#recommended" id="toc-recommended" class="nav-link" data-scroll-target="#recommended"><span class="header-section-number">8.1.2</span> Recommended</a></li>
+  <li><a href="#optional" id="toc-optional" class="nav-link" data-scroll-target="#optional"><span class="header-section-number">8.1.3</span> Optional</a></li>
+  </ul></li>
+  <li><a href="#step-1-install-claude-code" id="toc-step-1-install-claude-code" class="nav-link" data-scroll-target="#step-1-install-claude-code"><span class="header-section-number">8.2</span> Step 1: Install Claude Code</a></li>
+  <li><a href="#step-2-first-run" id="toc-step-2-first-run" class="nav-link" data-scroll-target="#step-2-first-run"><span class="header-section-number">8.3</span> Step 2: First Run</a></li>
+  <li><a href="#permissions" id="toc-permissions" class="nav-link" data-scroll-target="#permissions"><span class="header-section-number">8.4</span> Permissions</a></li>
+  <li><a href="#choosing-a-model" id="toc-choosing-a-model" class="nav-link" data-scroll-target="#choosing-a-model"><span class="header-section-number">8.5</span> Choosing a Model</a></li>
+  <li><a href="#useful-commands" id="toc-useful-commands" class="nav-link" data-scroll-target="#useful-commands"><span class="header-section-number">8.6</span> Useful Commands</a></li>
+  </ul></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading"><span class="header-section-number">9</span> Further Reading</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Agentic AI for Social Science Research</span></h1>
+<p class="subtitle lead">What it is, why it matters, and how to get started</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="what-is-agentic-ai" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> What Is Agentic AI?</h1>
+<p>Most researchers interact with AI through a chat interface — you type a question, get a response, and the conversation stays inside that browser tab. That’s fine for brainstorming or drafting text, but it can’t touch your files, run your code, or remember your project across sessions.</p>
+<p>An <strong>agent</strong> is different. An agent is an AI that can act: it reads files on your computer, writes code, executes it, inspects the output, fixes errors, and iterates, all within your actual project directory. Research is not a conversation. It is a workflow: data cleaning, estimation, verification, writing, revision, submission. An agent can participate in that workflow in ways a chatbot cannot.</p>
+<blockquote class="blockquote">
+<p>“An AI that does things is fundamentally more useful than an AI that says things.”</p>
+<p>— Ethan Mollick, “A Guide to Which AI to Use in the Agentic Era”</p>
+</blockquote>
+<p>A useful framework here is the distinction between <strong>models</strong>, <strong>apps</strong>, and <strong>harnesses</strong>:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Layer</th>
+<th>What It Is</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Model</strong></td>
+<td>The intelligence</td>
+<td>Claude Opus 4.6, GPT-4o</td>
+</tr>
+<tr class="even">
+<td><strong>App</strong></td>
+<td>The interface</td>
+<td>claude.ai, ChatGPT</td>
+</tr>
+<tr class="odd">
+<td><strong>Harness</strong></td>
+<td>The system enabling autonomy</td>
+<td>Claude Code, Codex</td>
+</tr>
+</tbody>
+</table>
+<p>The same model powering a chat interface becomes far more capable when placed inside a harness that gives it tools: file access, code execution, version control, and the ability to plan multi-step workflows. A harness can also delegate: when you give Claude Code a complex task, it can spawn <strong>sub-agents</strong> — separate processes, each with its own context window — to handle subtasks like web research or file analysis in parallel. This is why complex requests take longer and why specificity matters: a vague prompt forces sub-agents to search broadly, while a precise one lets them work efficiently. This tutorial series teaches you how to use that harness for empirical social science research.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Sub-agents don’t inherit all your instructions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>When Claude Code spawns a sub-agent, the sub-agent gets its own prompt — and your instructions to the main agent don’t always propagate. Goldsmith-Pinkham demonstrated this live (Markus Academy, 2026): he told Claude to stay in the current subdirectory, but a sub-agent it spawned tried to access the parent directory. Denying the permission request didn’t help — the sub-agent kept trying new approaches because the denial didn’t explain <em>why</em> it was forbidden. He had to explicitly type “you should not look in the parent directory” to get it to stop.</p>
+<p>The practical lesson: if you see Claude spawning sub-agents (you’ll see “researching…” or “analyzing…” messages in the terminal), watch the permission requests. When you deny one, add a brief explanation so the sub-agent understands the constraint, not just the refusal.</p>
+</div>
+</div>
+</section>
+<section id="why-this-matters-for-research" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Why This Matters for Research</h1>
+<p>Research is not product development. The difference matters for how you use AI tools:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Aspect</th>
+<th>Product Development</th>
+<th>Research</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Goal</td>
+<td>Ship working code</td>
+<td>Understand correctly</td>
+</tr>
+<tr class="even">
+<td>Error cost</td>
+<td>Bug in production</td>
+<td>Wrong conclusion in paper</td>
+</tr>
+<tr class="odd">
+<td>Iteration</td>
+<td>Fast, fix later</td>
+<td>Slow, careful, get it right</td>
+</tr>
+<tr class="even">
+<td>Testing</td>
+<td>Unit tests, CI/CD</td>
+<td>Cross-language replication (reimplement in a second language and compare)</td>
+</tr>
+<tr class="odd">
+<td>Success</td>
+<td>Does it run?</td>
+<td>Does it mean what we think?</td>
+</tr>
+</tbody>
+</table>
+<p>Most AI coding tools were built for product development: they optimize for speed and working code. Research needs different defaults. Correctness over speed. Verification over confidence. Design before results. The workflow in this tutorial series is built around those priorities.</p>
+<blockquote class="blockquote">
+<p>“Claude Code is not vibe coding. It is agentic coding.”</p>
+<p>— Scott Cunningham, MixtapeTools</p>
+</blockquote>
+<p>“Vibe coding” means accepting what the AI writes without scrutiny. “Agentic coding” means treating the AI as a thinking partner that you interrogate, verify, and direct. You use protocols to catch errors that informal review would miss.</p>
+<p>A concrete example: Cunningham described a text classification task to Claude Code in plain English — replicate Card et al.&nbsp;(<em>PNAS</em>, 2022), which analyzed 140 years of congressional speeches on immigration. The original paper required weeks of research assistant annotation and a fine-tuned RoBERTa model trained on 7,626 human-labeled speeches. Claude Code found the replication package on GitHub, downloaded and organized 305,000 speech segments, structured the corpus for OpenAI’s Batch API, submitted the classification job, and parsed the results. Cost: $11. Time: 2.6 hours (Cunningham, Federal Reserve Board of Governors talk, 2026). The agent handled every technical step; Cunningham handled the judgment — evaluating the 69% agreement rate, diagnosing a systematic neutral bias in the classifications, and assessing implications for downstream estimation. That is what an agent does. And it is why the rest of this tutorial series focuses on protocols that keep the researcher in control of the judgment that matters.</p>
+<p>But if AI requires verification, who does the verifying? That tension is worth sitting with before touching any tool.</p>
+</section>
+<section id="the-expertise-verification-paradox" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> The Expertise-Verification Paradox</h1>
+<p>Ethan Mollick identifies a core problem with AI-assisted work:</p>
+<blockquote class="blockquote">
+<p>“AI proves most useful where expertise already exists to spot errors.”</p>
+<p>— Mollick, “15 Times to Use AI, and 5 Not To”</p>
+</blockquote>
+<p>You need domain expertise to verify AI output. But using AI may prevent you from developing that expertise in the first place. Each delegation prevents building judgment. This is especially dangerous in research, where the stakes are not a software bug but a published conclusion.</p>
+<p>Mollick flags three cases where AI use is actively harmful:</p>
+<ol type="1">
+<li><strong>Learning and synthesis</strong> — AI bypasses the cognitive struggle that produces understanding</li>
+<li><strong>High-accuracy tasks without verification</strong> — hallucinations are confident and specific</li>
+<li><strong>Tasks where struggle enables breakthrough</strong> — the difficulty is the point</li>
+</ol>
+<p>So what do you do? You use AI within structured protocols: cross-language replication, adversarial review in fresh terminals, formal audit trails, explicit quality gates. These become more important as AI improves, not less.</p>
+<p>This paradox also has an ethical dimension. Before submitting any AI-assisted research, ask yourself three questions:</p>
+<ol type="1">
+<li><strong>Would I disclose this AI use to a referee?</strong></li>
+<li><strong>Could a colleague follow and verify my AI-assisted steps?</strong> (Exact replication of stochastic model output is not the standard — the logic and process should be reproducible.)</li>
+<li><strong>Did I verify every AI-generated claim?</strong></li>
+</ol>
+<p>If any answer is “no,” fix it first. The audit trail (git history, CLAUDE.md, auto-memory, quality reports) exists precisely so you can answer “yes” to all three. The three-question test is really a practical check on the expertise-verification paradox. It forces you to confirm that you actually understood and verified the AI’s contribution rather than trusting it passively.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>AI replicates our worst habits
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The verification problem is not hypothetical. The Social Catalyst Lab (Zurich) is running <strong>Project APE</strong> (Autonomous Policy Evaluation): 651 fully automated papers produced by AI agents with no human guidance — real data, real estimators, full manuscripts. These papers win 4.7% of head-to-head matches against AER-quality human papers — roughly what a mid-tier field journal paper would score against top-5 work. Not competitive with the best journals, but publishable-quality output, and improving (7.6% in the latest cohort).</p>
+<p>The striking finding: when Cunningham extracted every coefficient and standard error from the 651 manuscripts, the t-statistics bunched at <em>t</em> = 1.96 — the same pattern Brodeur et al.&nbsp;found in human papers. The AI agents learned to p-hack. They replicate the rhetorical conventions of human researchers, including the problematic ones (Cunningham, Federal Reserve Board of Governors talk, 2026). Verification protocols are not optional extras. Without them, AI-assisted research inherits the field’s existing pathologies and adds new ones.</p>
+</div>
+</div>
+<p>The tutorials that follow teach protocols that make these answers defensible: CLAUDE.md for configuration and institutional memory, git for audit trails and safe experimentation, and a skills library that bakes verification steps into the workflow.</p>
+</section>
+<section id="two-modes-of-working-with-ai" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Two Modes of Working with AI</h1>
+<p>So how closely should you integrate AI into your work? Mollick draws a useful distinction between two modes.</p>
+<p><strong>Centaur mode</strong> is a clear division of labor. You decide the argument, the identification strategy, the interpretation. The AI handles formatting, compilation, figure generation, and mechanical tasks. Lower risk, and easier to verify.</p>
+<p><strong>Cyborg mode</strong> is deep integration, a fluid back-and-forth where the AI brainstorms, drafts, and iterates alongside you. Higher risk, harder to separate contributions, harder to verify.</p>
+<p>Most of this tutorial series teaches Centaur mode. The protocols (CLAUDE.md, skills, adversarial review, cross-language replication) are about keeping human judgment and AI execution separate. As you get comfortable with the tools and verification protocols, you can start moving toward Cyborg mode for specific tasks like exploratory data analysis or brainstorming research questions.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>The formal version: isoquants and the danger zone
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Cunningham formalizes this tradeoff using production theory (Federal Reserve Board of Governors talk, 2026). Think of research output <em>Q</em> as a function of human time <em>H</em> and machine time <em>M</em>. Pre-AI, the isoquants are quasi-concave — you always use some of both, and the optimal mix is an interior solution. Post-AI, if human and machine time become perfect substitutes, the isoquants are linear and the cost-minimizing solution is a corner: all machine time, no human time.</p>
+<p>The problem is that the production function is concave in <em>H</em>. If you reduce human time below some threshold, output falls below the pre-AI level — a “danger zone” where a productivity-enhancing technology reduces actual output because the behavioral response overwhelms the technology gain. In plain terms: if you delegate so much to AI that you stop thinking deeply about your research, the work gets worse even though the tools got better. The protocols in this tutorial series are designed to keep you in the interior, not at the corner.</p>
+</div>
+</div>
+</section>
+<section id="the-research-workflow" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> The Research Workflow</h1>
+<p>Now for the actual process. The workflow combines Cunningham’s five-step research protocol with Blattman’s iterative PPRR loop into a single framework:</p>
+<p><strong>Dialogue → Code → Replicate → Verify → Document</strong></p>
+<p>Each step follows the same internal rhythm: <strong>Prompt → Plan → Review → Revise.</strong> You don’t fire off a single request and accept the result. You iterate within each step until the output meets your standards.</p>
+<ol type="1">
+<li><strong>Dialogue</strong> — start with an observation or question, not a code request. Discuss the substance before asking for implementation. Brain-dump your idea, have Claude structure it into an actionable plan, then stress-test the plan before committing to code.</li>
+<li><strong>Code</strong> — implement in your primary language (R, Python). Use structured prompts: context, task, format, constraints. Review Claude’s plan before it writes, then review the code before running it.</li>
+<li><strong>Replicate</strong> — implement key analyses in a second language. Compare to 6 decimal places for linear models; set tolerance upfront for nonlinear. This is the strongest guard against silent errors.</li>
+<li><strong>Verify</strong> — run adversarial review in a <strong>fresh terminal</strong> (so Claude can’t see its own earlier work). Five audits, formal report, iterate until “Accept.” This is the methods-review protocol (based on Cunningham’s Referee 2 concept).</li>
+<li><strong>Document</strong> — commit with meaningful messages, update CLAUDE.md, maintain audit trails. If it’s not documented, it didn’t happen.</li>
+</ol>
+<p>AI works best as iteration, not a single query.</p>
+</section>
+<section id="the-tutorial-series" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> The Tutorial Series</h1>
+<p>This tutorial series walks through a complete research workflow using Claude Code, from initial setup through journal submission. Each tutorial is a standalone HTML document you can read and follow independently, but they build on each other:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Tutorial</th>
+<th>Topic</th>
+<th>What You’ll Learn</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>1 (this one)</strong></td>
+<td>Introduction</td>
+<td>What agentic AI is, why it matters, installation</td>
+</tr>
+<tr class="even">
+<td><strong>2</strong></td>
+<td>CLAUDE.md</td>
+<td>Configuring Claude Code for research (the amnesia solution)</td>
+</tr>
+<tr class="odd">
+<td><strong>3</strong></td>
+<td>Git</td>
+<td>Version control for AI-assisted research workflows</td>
+</tr>
+<tr class="even">
+<td><strong>4</strong></td>
+<td>Skills</td>
+<td>A skills library for the full publication pipeline</td>
+</tr>
+<tr class="odd">
+<td><strong>5</strong></td>
+<td>AI Work Hygiene</td>
+<td>Using agentic tools without losing your mind</td>
+</tr>
+<tr class="even">
+<td><strong>6</strong></td>
+<td>Large Datasets</td>
+<td>Working with data that doesn’t fit in memory</td>
+</tr>
+</tbody>
+</table>
+<p>The tutorials use an accompanying <code>popescu_claude/</code> folder containing a working skills library and project configuration (CLAUDE.md). This folder is designed to be shared. You can copy the skills into your own project and customize the configuration for your profile.</p>
+</section>
+<section id="installing-claude-code" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Installing Claude Code</h1>
+<p>Enough concepts. Let’s get Claude Code running on your machine.</p>
+<section id="prerequisites" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="prerequisites"><span class="header-section-number">8.1</span> Prerequisites</h2>
+<p>You need a computer (macOS, Linux, or Windows), an internet connection, and a paid Claude subscription or API key. The free plan does not include Claude Code. For current pricing, see <a href="https://claude.ai/pricing">claude.ai/pricing</a>.</p>
+<section id="required" class="level3" data-number="8.1.1">
+<h3 data-number="8.1.1" class="anchored" data-anchor-id="required"><span class="header-section-number">8.1.1</span> Required</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Tool</th>
+<th>Purpose</th>
+<th>Install</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Claude Code</strong></td>
+<td>The agentic coding harness</td>
+<td>See Step 1 below</td>
+</tr>
+<tr class="even">
+<td><strong>Claude subscription</strong></td>
+<td>Pays for Claude Code usage</td>
+<td><a href="https://claude.ai/pricing">Claude Pro, Max, Teams, or Enterprise</a>, or an API key from the <a href="https://console.anthropic.com">Claude Console</a></td>
+</tr>
+<tr class="odd">
+<td><strong>Git</strong></td>
+<td>Version control and audit trail</td>
+<td><code>brew install git</code> (macOS) or <code>apt install git</code> (Linux) — see Tutorial 3</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="recommended" class="level3" data-number="8.1.2">
+<h3 data-number="8.1.2" class="anchored" data-anchor-id="recommended"><span class="header-section-number">8.1.2</span> Recommended</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Tool</th>
+<th>Purpose</th>
+<th>Install</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>R</strong></td>
+<td>Primary analysis and visualization</td>
+<td><a href="https://www.r-project.org/">r-project.org</a></td>
+</tr>
+<tr class="even">
+<td><strong>Quarto</strong></td>
+<td>Slide decks, documents, website</td>
+<td><a href="https://quarto.org/docs/get-started/">quarto.org</a></td>
+</tr>
+<tr class="odd">
+<td><strong>GitHub CLI</strong></td>
+<td>GitHub integration (push, pull, create repos)</td>
+<td><code>brew install gh</code> (macOS) or see <a href="https://cli.github.com/">cli.github.com</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="optional" class="level3" data-number="8.1.3">
+<h3 data-number="8.1.3" class="anchored" data-anchor-id="optional"><span class="header-section-number">8.1.3</span> Optional</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Tool</th>
+<th>Purpose</th>
+<th>Install</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Python</strong></td>
+<td>Cross-language replication</td>
+<td><a href="https://www.python.org/">python.org</a> or <code>brew install python</code></td>
+</tr>
+<tr class="even">
+<td><strong>LaTeX</strong></td>
+<td>Paper compilation</td>
+<td><a href="https://tug.org/texlive/">TeX Live</a> or <a href="https://tug.org/mactex/">MacTeX</a></td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>You don’t need everything on day one.</strong> Claude Code (required) is all you need for Tutorials 1 and 2. Git (required) is introduced in Tutorial 3. R, Quarto, and the optional tools become relevant in Tutorial 4 when you start using skills. Install them as you go.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="step-1-install-claude-code" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="step-1-install-claude-code"><span class="header-section-number">8.2</span> Step 1: Install Claude Code</h2>
+<p>Open a terminal and run the installer for your operating system:</p>
+<p><strong>macOS or Linux:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-fsSL</span> https://claude.ai/install.sh <span class="kw">|</span> <span class="fu">bash</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Windows (PowerShell):</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">irm</span> https<span class="op">://</span>claude<span class="op">.</span><span class="fu">ai</span><span class="op">/</span>install<span class="op">.</span><span class="fu">ps1</span> <span class="op">|</span> <span class="fu">iex</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The native installer requires no dependencies and auto-updates in the background.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Alternative: npm installation.</strong> If you prefer to install via npm (e.g., for version pinning), you can run <code>npm install -g @anthropic-ai/claude-code</code>. This requires <a href="https://nodejs.org">Node.js</a> to be installed first. The npm method still works but is officially deprecated by Anthropic in favor of the native installer.</p>
+</div>
+</div>
+</section>
+<section id="step-2-first-run" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="step-2-first-run"><span class="header-section-number">8.3</span> Step 2: First Run</h2>
+<p>Navigate to a project directory and start Claude Code:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/Dropbox/my-research-project</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Your browser will open for Anthropic authentication. Approve access, return to the terminal, and Claude Code is running. Try asking it something about your files:</p>
+<pre><code>What files are in my current folder?</code></pre>
+<p>Claude can now see your actual project. Type <code>/exit</code> to end the session.</p>
+<p>Before you start working in earnest, it helps to understand how Claude Code handles permissions and data privacy.</p>
+</section>
+<section id="permissions" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="permissions"><span class="header-section-number">8.4</span> Permissions</h2>
+<p>Claude Code asks for permission before running commands, editing files, or accessing the web. You can approve each action individually, or grant blanket permission to speed things up:</p>
+<ul>
+<li><strong>“Yes”</strong> — approve this one action</li>
+<li><strong>“Yes, and don’t ask again”</strong> — approve this type of action for the rest of the session (e.g., all web searches, or all Python script executions)</li>
+</ul>
+<p>For a data analysis session, you might say “yes, you can always use web searches” and “yes, you can run all the R scripts you need.” This avoids approving every single action and lets Claude work while you step away. Permissions are scoped to the current session and project.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Always navigate to your project folder before running <code>claude</code>.</strong> Claude Code sees whatever directory you’re in when you launch it. If you start it from your home directory, it sees everything. If you start it from your project folder, it sees your project and reads your CLAUDE.md automatically.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Your files are sent to Anthropic’s servers.</strong> Claude Code reads files in your project directory and sends their contents to Anthropic as part of each API request. The conversation doesn’t persist server-side, but file contents become part of the request. A safe heuristic: don’t expose data you wouldn’t upload to Dropbox. Specifically exclude IRB-protected research data, personally identifiable information (PII), HIPAA-regulated medical records, and API keys or passwords.</p>
+</div>
+</div>
+</section>
+<section id="choosing-a-model" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="choosing-a-model"><span class="header-section-number">8.5</span> Choosing a Model</h2>
+<p>Claude Code defaults to <strong>Sonnet</strong> on Pro and Team Standard plans and <strong>Opus</strong> on Max and Team Premium plans. For research work (analysis, writing, review), Opus is the better choice:</p>
+<pre><code>/model</code></pre>
+<p>Select Claude Opus from the list. Opus is slower and more expensive but noticeably better at reasoning, nuanced interpretation, and longer output. Use Sonnet for mechanical tasks (reformatting, file operations, simple code edits) and Opus for anything requiring judgment.</p>
+</section>
+<section id="useful-commands" class="level2" data-number="8.6">
+<h2 data-number="8.6" class="anchored" data-anchor-id="useful-commands"><span class="header-section-number">8.6</span> Useful Commands</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Action</th>
+<th>How</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Send a message</td>
+<td>Type and press <strong>Enter</strong></td>
+</tr>
+<tr class="even">
+<td>Multi-line message</td>
+<td>Press <code>\</code> then <strong>Enter</strong> (or <strong>Shift+Enter</strong>)</td>
+</tr>
+<tr class="odd">
+<td>Queue messages while Claude works</td>
+<td>Just type — they’ll be sent when it finishes (press <strong>Up</strong> to edit a queued message)</td>
+</tr>
+<tr class="even">
+<td>Scroll history</td>
+<td><strong>Up/Down</strong> arrow keys</td>
+</tr>
+<tr class="odd">
+<td>Switch model</td>
+<td><code>/model</code></td>
+</tr>
+<tr class="even">
+<td>Get help</td>
+<td><code>/help</code></td>
+</tr>
+<tr class="odd">
+<td>Exit</td>
+<td><code>/exit</code> or <strong>Ctrl + C</strong></td>
+</tr>
+<tr class="even">
+<td>Compact context</td>
+<td><code>/compact</code></td>
+</tr>
+<tr class="odd">
+<td>Interrupt / revert</td>
+<td><strong>Esc</strong> (interrupt current action; press again to revert). Type “please continue” to resume.</td>
+</tr>
+<tr class="even">
+<td>See Claude’s thinking</td>
+<td><strong>Ctrl + O</strong> (toggle internal reasoning view while Claude works)</td>
+</tr>
+<tr class="odd">
+<td>Reference a file</td>
+<td>Type <code>@filename</code> in your prompt</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Managing long sessions.</strong> Claude Code automatically compresses earlier conversation as the context window fills. For very long research sessions, you can manually run <code>/compact</code> to summarize the conversation so far and free up space. If a session becomes sluggish or Claude starts forgetting earlier instructions, this usually helps.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Compaction is lossy.</strong> When Claude compacts a conversation, whether automatically or via <code>/compact</code>, it summarizes the history but drops specific details: which approaches failed, constraints you stated three prompts ago, a reviewer’s formatting preferences you mentioned in passing. This is one more reason to keep sessions short, commit often, and put important constraints in CLAUDE.md rather than relying on conversation history. CLAUDE.md and auto-memory are re-loaded at the start of every session and are immune to compaction.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Code runs on your machine.</strong> Claude Code executes scripts locally — your hardware, not a cloud server. Running Python or R code requires having those languages installed, and any files created or modified are real files in your project directory. The distinction: your code runs locally, but the files Claude reads are sent to Anthropic’s servers as part of each API request (see the data privacy note above).</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Claude Code vs.&nbsp;Cowork
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Cowork is the web-based sandboxed alternative bundled with Claude’s desktop app. Both use the same underlying model, but the environments differ:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Feature</th>
+<th>Claude Code</th>
+<th>Cowork</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Interface</td>
+<td>Terminal</td>
+<td>Web browser</td>
+</tr>
+<tr class="even">
+<td>File access</td>
+<td>Full filesystem</td>
+<td>Sandboxed</td>
+</tr>
+<tr class="odd">
+<td>Network</td>
+<td>Unrestricted</td>
+<td>IP-restricted</td>
+</tr>
+<tr class="even">
+<td>Best for</td>
+<td>Full projects</td>
+<td>Quick prototyping</td>
+</tr>
+</tbody>
+</table>
+<p>Cowork’s restrictions are deliberate safety boundaries, not capability limits. Use Claude Code for real project work; use Cowork for quick experiments you don’t want touching your filesystem.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>ChatGPT vs.&nbsp;Claude: which should I use?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You don’t have to choose one exclusively. Each has strengths: Claude Code is the best current agentic harness for working inside your project directory; Claude is strong on long documents and nuanced reasoning; ChatGPT’s Deep Research mode is good for literature surveys; and ChatGPT handles image generation, which Claude does not. If you had to pick one tool for research, Claude with Claude Code is the better option right now, but there’s no reason not to use both. Note that OpenAI’s Codex uses <code>AGENTS.md</code> the way Claude Code uses <code>CLAUDE.md</code> — the concept is converging across platforms.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="further-reading" class="level1" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span> Further Reading</h1>
+<p>If you want to go deeper into the sources behind this tutorial series:</p>
+<p><strong>Scott Cunningham</strong> (Baylor University) — <a href="https://github.com/scunning1975/MixtapeTools">MixtapeTools</a>. The original research-focused Claude Code workflow: estimation philosophy, the read-paper protocol, cross-language replication as default verification, the adversarial methods audit, and a presentation philosophy built on the “Three Laws.” His <code>workflow.md</code> is the fullest statement of the “agentic coding” philosophy for empirical economics.</p>
+<p><strong>Pedro Sant’Anna</strong> (Emory University) — <a href="https://github.com/pedrohcgs/claude-code-my-workflow">claude-code-my-workflow</a>. The “project constitution” approach to CLAUDE.md: core principles, quality gates, and the ~150 line limit.</p>
+<p><strong>Hugo Sant’Anna</strong> (University of Alabama at Birmingham) — <a href="https://github.com/hugosantanna/clo-author">Clo-Author</a>. A full research pipeline with 10 slash commands (<code>/discover</code>, <code>/strategize</code>, <code>/analyze</code>, <code>/write</code>, <code>/review</code>, <code>/submit</code>), worker-critic agent pairs, and an orchestrator loop with dependency graphs. Documentation at <a href="https://hsantanna.org/clo-author/">hsantanna.org/clo-author</a>.</p>
+<p><strong>Chris Blattman</strong> (University of Chicago) — <a href="https://claudeblattman.com">claudeblattman.com</a>. The friendliest guide to Claude Code for social scientists: installation walkthroughs, prompt engineering advice, the PPRR loop, voice files for teaching AI your writing style, and the “embarrassment heuristic” for deciding when AI use is appropriate.</p>
+<p><strong>Aniket Panjwani</strong> — <a href="https://ai-mba.io">AI MBA</a>. Practical training on skills, MCPs, and Claude Code workflows. Covers the skill-building process, skills-vs-MCPs comparison, git as the foundation of AI-assisted work, and context window management.</p>
+<p><strong>Paul Goldsmith-Pinkham</strong> (Yale University) — <a href="https://www.youtube.com/watch?v=HzgByl5ZsWE">Claude Code for Economists</a> (Markus Academy, 2026). An ongoing video series (four parts and counting) covering getting started, data visualization, text-as-data pipelines, and large-scale data engineering. Practical demonstrations of permissions, sub-agents, planning mode, and the research-plan-execute workflow. Accompanying essays on his substack <a href="https://paulgp.substack.com">A Causal Affair</a>.</p>
+<p><strong>Anthropic</strong> — <a href="https://code.claude.com/docs/en/skills">Claude Code documentation</a>. The technical reference for skills, CLAUDE.md, and Claude Code configuration.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link" aria-label="Preface">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./lecture2.html" class="pagination-link" aria-label="Writing Your CLAUDE.md">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Writing Your CLAUDE.md</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

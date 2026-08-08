@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="lecture10_files/libs/clipboard/clipboard.min.js"></script>
+<script src="lecture10_files/libs/quarto-html/tabby.min.js"></script>
+<script src="lecture10_files/libs/quarto-html/popper.min.js"></script>
+<script src="lecture10_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="lecture10_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="lecture10_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="lecture10_files/libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.6.40">
+
+  <meta name="author" content="Bogdan G. Popescu">
+  <title>Comparative Politics</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="lecture10_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="lecture10_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="lecture10_files/libs/revealjs/dist/theme/quarto-5d8d9fc4ff8902849d506bd524d1dc44.css">
+  <link href="lecture10_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="lecture10_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="lecture10_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="lecture10_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  <script src="lecture10_files/libs/quarto-diagram/mermaid.min.js"></script>
+  <script src="lecture10_files/libs/quarto-diagram/mermaid-init.js"></script>
+  <link href="lecture10_files/libs/quarto-diagram/mermaid.css" rel="stylesheet">
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Comparative Politics</h1>
+  <p class="subtitle">Lecture 10: Electoral Systems</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a>
+</div>
+<div class="quarto-title-author-email">
+<a href="mailto:bogdan.popescu@johncabot.edu">bogdan.popescu@johncabot.edu</a>
+</div>
+        <p class="quarto-title-affiliation">
+            John Cabot University
+          </p>
+    </div>
+</div>
+
+</section>
+<section>
+<section id="the-puzzle" class="title-slide slide level1 center" data-background-color="#1e293b">
+<h1>The Puzzle</h1>
+
+</section>
+<section id="the-central-question" class="slide level2">
+<h2>The Central Question</h2>
+<p><br></p>
+<blockquote>
+<p>Do electoral rules <strong>shape</strong> political outcomes, or do they merely <strong>reflect</strong> prior social forces?</p>
+</blockquote>
+<div class="fragment">
+<p>This question will frame the entire lecture.</p>
+<p>We will return to it at the end.</p>
+</div>
+</section>
+<section id="uk-1983-votes-vs.-seats" class="slide level2">
+<h2>UK 1983: Votes vs.&nbsp;Seats</h2>
+
+<img data-src="lecture10_files/figure-revealjs/uk-1983-1.png" width="960" class="r-stretch"></section>
+<section id="why-this-matters" class="slide level2">
+<h2>Why This Matters</h2>
+<div>
+<ul>
+<li class="fragment">The Alliance’s 7.8 million voters elected <strong>23 MPs</strong></li>
+<li class="fragment">The Conservatives governed with <strong>42% of the vote</strong></li>
+<li class="fragment">The <em>rules</em> produced this outcome — not the voters</li>
+<li class="fragment"><strong>Same votes, different rules → different parliament</strong></li>
+</ul>
+</div>
+</section>
+<section id="global-variation-in-electoral-systems" class="slide level2">
+<h2>Global Variation in Electoral Systems</h2>
+<div>
+<ul>
+<li class="fragment"><strong>Majoritarian systems:</strong> UK, US, Canada, India, France</li>
+<li class="fragment"><strong>Proportional systems:</strong> most of continental Europe</li>
+<li class="fragment"><strong>Mixed systems:</strong> Germany, New Zealand, Japan</li>
+<li class="fragment">No two democracies use identical rules</li>
+<li class="fragment">Every design choice has political consequences</li>
+</ul>
+</div>
+<div class="fragment">
+<p><em>How do we make sense of this variation?</em></p>
+</div>
+</section>
+<section id="the-argument-ahead" class="slide level2">
+<h2>The Argument Ahead</h2>
+<p>If rules can produce outcomes this skewed, three questions follow — and each undermines the previous one:</p>
+<div>
+<ol type="1">
+<li class="fragment"><strong>What</strong> are the different systems? <em>(Taxonomy)</em></li>
+<li class="fragment"><strong>What</strong> do they do to outcomes? <em>(Consequences — but these may not be causal)</em></li>
+<li class="fragment"><strong>Why</strong> did countries adopt the systems they have? <em>(Origins — the question that forces us to rethink everything)</em></li>
+</ol>
+</div>
+</section></section>
+<section>
+<section id="the-taxonomy" class="title-slide slide level1 center" data-background-color="#1e293b">
+<h1>The Taxonomy</h1>
+
+</section>
+<section id="two-concepts-do-all-the-work" class="slide level2">
+<h2>Two Concepts Do All the Work</h2>
+<div class="fragment">
+<p><strong>District magnitude</strong></p>
+<p>How many seats are elected per district?</p>
+<ul>
+<li>1 seat = winner-take-all (FPTP)</li>
+<li>Many seats = proportional allocation (PR)</li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Electoral threshold</strong></p>
+<p>Minimum vote share to win representation</p>
+<ul>
+<li>Natural threshold in FPTP: ~30–40% in competitive races</li>
+<li>Legal threshold in PR: typically 3–5%</li>
+</ul>
+</div>
+</section>
+<section id="first-past-the-post-fptp" class="slide level2">
+<h2>First-Past-the-Post (FPTP)</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<ul>
+<li><strong>Single-member districts</strong>, plurality wins</li>
+<li>Used in: UK, US, India, Canada</li>
+<li>Simple rule: most votes in the district → seat</li>
+</ul>
+<div class="fragment">
+<p><strong>Key feature:</strong> A party can win 0 seats with 20% of the national vote if those votes are spread evenly across districts.</p>
+</div>
+</div><div class="column" style="width:45%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="graphs/uk_house_of_commons.png"></p>
+<figcaption>The UK House of Commons: adversarial seating reflects the two-party logic of FPTP</figcaption>
+</figure>
+</div>
+<div style="font-size: 0.5em; color: #64748b;">
+<p>Photo: UK Parliament / Wikimedia Commons, CC BY 3.0</p>
+</div>
+</div></div>
+</section>
+<section id="proportional-representation-pr" class="slide level2">
+<h2>Proportional Representation (PR)</h2>
+<ul>
+<li><strong>Multi-member districts</strong>, seats allocated by vote share</li>
+<li><strong>Closed list:</strong> party controls candidate order</li>
+<li><strong>Open list:</strong> voters can choose among party candidates</li>
+</ul>
+<div class="fragment">
+<p>Used across continental Europe: Netherlands, Sweden, Spain, Denmark, Finland, Austria, Belgium</p>
+</div>
+</section>
+<section id="mixed-member-proportional-mmp" class="slide level2">
+<h2>Mixed-Member Proportional (MMP)</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Voters cast <strong>two ballots</strong>: district + party list</li>
+<li>District seats filled by FPTP</li>
+<li>List seats <strong>compensate</strong> for disproportionality</li>
+</ul>
+<div class="fragment">
+<p>Used in: Germany (since 1949), New Zealand (since 1996)</p>
+<p><em>Hybrid design — combines local representation with proportional outcomes</em></p>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="graphs/german_mmp_ballot.jpg" height="420"></p>
+<figcaption>German ballot: <em>Erststimme</em> (candidate, left) and <em>Zweitstimme</em> (party list, right)</figcaption>
+</figure>
+</div>
+<div style="font-size: 0.5em; color: #64748b;">
+<p>Sample ballot, 2017 Bundestagswahl. Public domain.</p>
+</div>
+</div></div>
+</section>
+<section id="electoral-system-families" class="slide level2">
+<h2>Electoral System Families</h2>
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">%%{init: {'flowchart': {'useMaxWidth': true, 'nodeSpacing': 30, 'rankSpacing': 50}, 'themeVariables': {'fontSize': '20px'}, 'theme': 'base'}}%%
+flowchart TB
+    A["Electoral Systems"] --&gt; B["Majoritarian"]
+    A --&gt; C["Proportional"]
+    A --&gt; D["Mixed"]
+    B --&gt; E["FPTP&lt;br/&gt;UK, US, India"]
+    B --&gt; F["Two-Round&lt;br/&gt;France"]
+    C --&gt; G["Closed List&lt;br/&gt;Spain, Israel"]
+    C --&gt; H["Open List&lt;br/&gt;Finland, Brazil"]
+    D --&gt; I["MMP&lt;br/&gt;Germany, NZ"]
+    D --&gt; J["Parallel&lt;br/&gt;Japan"]
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="quick-comparison" class="slide level2">
+<h2>Quick Comparison</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>System</th>
+<th>District Magnitude</th>
+<th>Threshold</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>FPTP</td>
+<td>1</td>
+<td>~30–40% (natural, not legal)</td>
+<td>UK, US, Canada</td>
+</tr>
+<tr class="even">
+<td>Closed-list PR</td>
+<td>5–150</td>
+<td>3–5% (legal)</td>
+<td>Spain, Israel</td>
+</tr>
+<tr class="odd">
+<td>Open-list PR</td>
+<td>5–30</td>
+<td>3–5% (legal)</td>
+<td>Finland, Brazil</td>
+</tr>
+<tr class="even">
+<td>MMP</td>
+<td>1 + list</td>
+<td>~5%</td>
+<td>Germany, NZ</td>
+</tr>
+</tbody>
+</table>
+<div class="fragment">
+<p><em>District magnitude is the single strongest predictor of system behavior (Taagepera &amp; Shugart 1989).</em></p>
+</div>
+</section></section>
+<section>
+<section id="duvergers-law" class="title-slide slide level1 center" data-background-color="#1e293b">
+<h1>Duverger’s Law</h1>
+
+</section>
+<section id="the-prediction" class="slide level2">
+<h2>The Prediction</h2>
+<p><br></p>
+<blockquote>
+<p><strong>FPTP → two-party systems</strong></p>
+<p><strong>PR → multiparty systems</strong></p>
+</blockquote>
+<div class="fragment">
+<p>Duverger (1954): “The simple-majority single-ballot system favours the two-party system.”</p>
+<p>The closest thing comparative politics has to a law.</p>
+</div>
+</section>
+<section id="two-mechanisms" class="slide level2">
+<h2>Two Mechanisms</h2>
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">%%{init: {'flowchart': {'useMaxWidth': true, 'nodeSpacing': 50, 'rankSpacing': 70}, 'themeVariables': {'fontSize': '20px'}, 'theme': 'base'}}%%
+flowchart LR
+    A["FPTP&lt;br/&gt;Rules"] --&gt; B["Mechanical&lt;br/&gt;Effect"]
+    B --&gt; C["Small parties&lt;br/&gt;win few seats"]
+    C --&gt; D["Strategic&lt;br/&gt;Effect"]
+    D --&gt; E["Voters abandon&lt;br/&gt;losing parties"]
+    E --&gt; F["Two-party&lt;br/&gt;equilibrium"]
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p><strong>Mechanical:</strong> votes convert to seats inefficiently for third parties</p>
+<p><strong>Strategic:</strong> voters and candidates anticipate this and adapt</p>
+</div>
+</section>
+<section id="disproportionality-by-system-type" class="slide level2">
+<h2>Disproportionality by System Type</h2>
+
+<img data-src="lecture10_files/figure-revealjs/gallagher-index-1.png" width="960" class="r-stretch"></section>
+<section id="effective-number-of-parliamentary-parties" class="slide level2">
+<h2>Effective Number of Parliamentary Parties</h2>
+
+<img data-src="lecture10_files/figure-revealjs/enpp-1.png" width="960" class="r-stretch"></section>
+<section id="the-exceptions-and-the-scope-condition" class="slide level2">
+<h2>The Exceptions — and the Scope Condition</h2>
+<div class="fragment">
+<p><strong>India</strong> is the key case. FPTP, but 6+ effective parties nationally. Why?</p>
+<ul>
+<li>Caste, linguistic, and regional cleavages produce <strong>distinct two-candidate contests</strong> in each state</li>
+<li>BJP vs.&nbsp;Congress in the Hindi belt; DMK vs.&nbsp;AIADMK in Tamil Nadu; TMC dominance in West Bengal</li>
+<li>Duverger works <em>within each district</em> — aggregation across heterogeneous districts produces national multipartyism</li>
+</ul>
+</div>
+<div class="fragment">
+<p>Same logic explains <strong>Canada</strong> (Bloc Québécois wins locally) and the <strong>UK</strong> (Lib Dems survive through geographic concentration).</p>
+<p><strong>The lesson:</strong> the law operates at the <strong>district level</strong>. The unit of analysis matters.</p>
+</div>
+</section></section>
+<section>
+<section id="consequences" class="title-slide slide level1 center" data-background-color="#1e293b">
+<h1>Consequences</h1>
+
+</section>
+<section id="womens-representation" class="slide level2">
+<h2>Women’s Representation</h2>
+<div class="fragment">
+<p><strong>The finding:</strong> PR systems consistently elect more women to parliament (Matland &amp; Studlar 1996).</p>
+</div>
+<div class="fragment">
+<p><strong>The mechanism:</strong> Party lists make diversification cheap — adding women to the list costs no incumbent a seat.</p>
+</div>
+<div class="fragment">
+<p><strong>The caveat:</strong> FPTP systems with quotas (e.g., UK Labour) achieve similar results. The system is a <em>transmission belt</em>, not a root cause.</p>
+</div>
+</section>
+<section id="women-in-parliament-pr-vs.-fptp" class="slide level2">
+<h2>Women in Parliament: PR vs.&nbsp;FPTP</h2>
+
+<img data-src="lecture10_files/figure-revealjs/women-parliament-1.png" width="960" class="r-stretch"></section>
+<section id="policy-outputs" class="slide level2">
+<h2>Policy Outputs</h2>
+<div class="fragment">
+<p><strong>Iversen &amp; Soskice (2006):</strong></p>
+<p>PR → center-left coalitions → higher welfare spending</p>
+</div>
+<div class="fragment">
+<p><strong>The logic:</strong> Coalition math under PR makes redistributive parties <em>pivotal</em> — they are almost always needed for a majority.</p>
+</div>
+<div class="fragment">
+<p>Under FPTP, center-right parties can win outright, producing lower redistribution.</p>
+</div>
+</section>
+<section id="but-does-it-replicate" class="slide level2">
+<h2>But Does It Replicate?</h2>
+<div>
+<ul>
+<li class="fragment">Denmark and Sweden built large welfare states <strong>before</strong> modern PR consolidated</li>
+<li class="fragment">New Zealand switched to MMP — policy outputs <strong>barely changed</strong></li>
+<li class="fragment">The correlation may reflect <strong>party strength</strong>, not system effects</li>
+</ul>
+</div>
+<div class="fragment">
+<p><em>If the same political forces that demand redistribution also demand PR, the correlation is not causal.</em></p>
+</div>
+</section>
+<section id="exercise-correlation-or-causation" class="slide level2" data-background-color="#4a7c6f">
+<h2>Exercise: Correlation or Causation?</h2>
+<p><strong>Iversen &amp; Soskice claim: PR → more welfare spending — 5 minutes</strong></p>
+<div>
+<ol type="1">
+<li class="fragment">State the <strong>causal claim</strong> in one sentence</li>
+<li class="fragment">Identify <strong>two alternative explanations</strong> for the correlation</li>
+<li class="fragment">What <strong>evidence</strong> would you need to distinguish cause from correlation?</li>
+</ol>
+</div>
+<div class="fragment">
+<p><em>Hint: Think about what determines whether a country adopts PR in the first place.</em></p>
+</div>
+</section></section>
+<section>
+<section id="the-origins-question" class="title-slide slide level1 center" data-background-color="#1e293b">
+<h1>The Origins Question</h1>
+
+</section>
+<section id="boix-1999-strategic-adoption" class="slide level2">
+<h2>Boix (1999): Strategic Adoption</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<div class="fragment">
+<p><strong>Core argument:</strong> Ruling parties adopt PR when they face credible new entrants and fear losing under FPTP.</p>
+</div>
+<div class="fragment">
+<p><strong>Sweden, 1909:</strong> Conservatives adopted PR not because they believed in proportional representation — but because a unified socialist bloc would beat them under plurality rules.</p>
+</div>
+<div class="fragment">
+<p><em>Electoral systems are chosen by politicians to survive.</em></p>
+</div>
+</div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="graphs/swedish_riksdag.jpg"></p>
+<figcaption>The Swedish Riksdag, Stockholm</figcaption>
+</figure>
+</div>
+<div style="font-size: 0.5em; color: #64748b;">
+<p>Photo: Arild Vågen / Wikimedia Commons, CC BY-SA 4.0</p>
+</div>
+</div></div>
+</section>
+<section id="boix-the-logic" class="slide level2">
+<h2>Boix: The Logic</h2>
+<div>
+<ol type="1">
+<li class="fragment">Incumbent right-wing parties hold power under FPTP with a fragmented opposition</li>
+<li class="fragment">Universal suffrage mobilizes a <strong>unified left</strong> (socialist/labor parties)</li>
+<li class="fragment">Under FPTP, a unified left sweeps district after district — the right faces <strong>extinction</strong></li>
+<li class="fragment">The right calculates: guaranteed minority share under PR &gt; probable wipeout under FPTP</li>
+<li class="fragment"><strong>PR adopted as insurance</strong>, not as principle</li>
+</ol>
+</div>
+<div class="fragment">
+<p>Sweden, 1909: Conservatives held a comfortable majority. Projections under universal suffrage + FPTP showed Social Democrats winning outright. The right chose PR to survive — and it worked.</p>
+</div>
+</section>
+<section id="the-endogeneity-problem" class="slide level2">
+<h2>The Endogeneity Problem</h2>
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">%%{init: {'flowchart': {'useMaxWidth': true, 'nodeSpacing': 60, 'rankSpacing': 80}, 'themeVariables': {'fontSize': '22px'}, 'theme': 'base'}}%%
+flowchart LR
+    A["Electoral&lt;br/&gt;Rules"] --&gt; B["Party&lt;br/&gt;System"]
+    B --&gt; C["Policy&lt;br/&gt;Outcomes"]
+    C --&gt; D["Political&lt;br/&gt;Demands"]
+    D --&gt; A
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p>If rules shape outcomes, and outcomes shape demands for new rules, <strong>where do you break the loop to identify causation?</strong></p>
+</div>
+</section>
+<section id="three-implications" class="slide level2">
+<h2>Three Implications</h2>
+<div>
+<ol type="1">
+<li class="fragment">Duverger tells us what systems <strong>do</strong>, not what they <strong>cause in equilibrium</strong></li>
+<li class="fragment">The welfare-spending correlation may reflect which parties were strong enough to <strong>demand</strong> PR</li>
+<li class="fragment">Causal identification requires <strong>exogenous variation</strong> — colonial imposition, referenda, constitutional moments</li>
+</ol>
+</div>
+</section>
+<section id="rokkan-1970-social-cleavages" class="slide level2">
+<h2>Rokkan (1970): Social Cleavages</h2>
+<div class="fragment">
+<p><strong>Alternative explanation:</strong> Electoral systems reflect pre-existing social cleavage structures.</p>
+</div>
+<div>
+<ul>
+<li class="fragment"><strong>Homogeneous</strong> societies → FPTP suffices (no need for PR)</li>
+<li class="fragment"><strong>Fragmented</strong> societies → PR needed to represent diversity</li>
+</ul>
+</div>
+<div class="fragment">
+<p>Are Rokkan and Boix rivals or complements? Complements: Rokkan explains <em>why</em> new parties emerge (cleavage demand); Boix explains <em>how</em> incumbents respond (strategic adoption). Neither is sufficient alone.</p>
+</div>
+</section>
+<section id="the-identification-problem" class="slide level2">
+<h2>The Identification Problem</h2>
+<blockquote>
+<p>“To know what electoral rules <strong>cause</strong>, we need variation in rules that is <strong>independent</strong> of the political conditions that produced them.”</p>
+</blockquote>
+<div class="fragment">
+<p>Such variation is rare. Where does it come from?</p>
+<ul>
+<li>Colonial imposition of metropolitan rules</li>
+<li>Public referenda (voter-driven, not elite-driven)</li>
+<li>Constitutional moments after crises</li>
+</ul>
+</div>
+<div class="fragment">
+<p>We need a case where the system changed for reasons <strong>outside</strong> normal party calculation. New Zealand’s 1993 referendum is one.</p>
+</div>
+</section>
+<section id="exercise-is-boix-right" class="slide level2" data-background-color="#4a7c6f">
+<h2>Exercise: Is Boix Right?</h2>
+<p><strong>Two cases — 5 minutes</strong></p>
+<ul>
+<li><strong>Sweden (1907):</strong> Conservatives adopt PR when facing a rising socialist party</li>
+<li><strong>United Kingdom:</strong> Never switched to PR despite persistent third parties</li>
+</ul>
+<div>
+<ol type="1">
+<li class="fragment">Does Boix’s theory explain <strong>both</strong> cases?</li>
+<li class="fragment">What is the <strong>scope condition</strong> — when should we expect reform?</li>
+<li class="fragment">Would his theory predict electoral reform in the <strong>United States</strong>?</li>
+</ol>
+</div>
+</section></section>
+<section>
+<section id="application-new-zealand-1996" class="title-slide slide level1 center" data-background-color="#1e293b">
+<h1>Application: New Zealand 1996</h1>
+
+</section>
+<section id="why-new-zealand" class="slide level2">
+<h2>Why New Zealand?</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<div>
+<ul>
+<li class="fragment">Switched from FPTP to MMP via <strong>public referendum</strong> (1993)</li>
+<li class="fragment">Not elite party calculation — driven by <strong>voter dissatisfaction</strong></li>
+<li class="fragment">First MMP election: 1996</li>
+</ul>
+</div>
+<div class="fragment">
+<p>This is cleaner for causal identification: when <em>voters</em> choose the rules by referendum, the change is not driven by the same elite calculations that Boix describes — so we can more credibly isolate what the rules themselves do.</p>
+</div>
+</div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="graphs/nz_parliament_beehive.jpg"></p>
+<figcaption>The “Beehive,” NZ Parliament, Wellington</figcaption>
+</figure>
+</div>
+<div style="font-size: 0.5em; color: #64748b;">
+<p>Photo: Donaldytong / Wikimedia Commons, CC BY-SA 3.0</p>
+</div>
+</div></div>
+</section>
+<section id="what-changed" class="slide level2">
+<h2>What Changed</h2>
+<div>
+<ul>
+<li class="fragment"><strong>More parties</strong> entered parliament (ACT, Greens, NZ First)</li>
+<li class="fragment"><strong>Coalition government</strong> became the norm</li>
+<li class="fragment"><strong>Māori representation</strong> increased through list seats</li>
+<li class="fragment">Disproportionality dropped dramatically</li>
+</ul>
+</div>
+</section>
+<section id="what-didnt-change" class="slide level2">
+<h2>What Didn’t Change</h2>
+<div>
+<ul>
+<li class="fragment">Welfare retrenchment begun under FPTP <strong>continued</strong> under MMP</li>
+<li class="fragment">Economic policy direction remained largely stable</li>
+<li class="fragment">Two major parties still dominated coalition formation</li>
+</ul>
+</div>
+<div class="fragment">
+<p>This complicates Iversen &amp; Soskice: the rules changed, but policy didn’t follow.</p>
+</div>
+</section>
+<section id="new-zealand-before-and-after-mmp" class="slide level2">
+<h2>New Zealand Before and After MMP</h2>
+
+<img data-src="lecture10_files/figure-revealjs/nz-mmp-1.png" width="960" class="r-stretch"></section>
+<section id="return-to-the-central-question" class="slide level2">
+<h2>Return to the Central Question</h2>
+<blockquote>
+<p>Do electoral rules <strong>shape</strong> political outcomes, or do they merely <strong>reflect</strong> prior social forces?</p>
+</blockquote>
+<div>
+<ul>
+<li class="fragment">New Zealand’s rules changed → representation changed (more parties, lower disproportionality, better Māori access)</li>
+<li class="fragment">New Zealand’s rules changed → policy direction <strong>did not</strong> (welfare retrenchment continued, major-party dominance persisted)</li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>The takeaway:</strong> Electoral systems are <strong>strong on representation, weak on policy</strong>, and never independent of the politics that produced them.</p>
+<p>That is a testable claim — not a shrug.</p>
+</div>
+</section></section>
+<section>
+<section id="references" class="title-slide slide level1 center" data-background-color="#1e293b">
+<h1>References</h1>
+
+</section>
+<section id="references-i" class="slide level2">
+<h2>References I</h2>
+<div style="font-size: 0.65em;">
+<p>Boix, C. (1999). Setting the rules of the game: The choice of electoral systems in advanced democracies. <em>American Political Science Review</em>, 93(3), 609–624.</p>
+<p>Bormann, N.-C., &amp; Golder, M. (2013). Democratic electoral systems around the world, 1946–2011. <em>Electoral Studies</em>, 32(2), 360–369.</p>
+<p>Duverger, M. (1954). <em>Political parties: Their organization and activity in the modern state</em>. Wiley.</p>
+<p>Iversen, T., &amp; Soskice, D. (2006). Electoral institutions and the politics of coalitions: Why some democracies redistribute more than others. <em>American Political Science Review</em>, 100(2), 165–181.</p>
+<p>Lijphart, A. (2012). <em>Patterns of democracy: Government forms and performance in thirty-six countries</em> (2nd ed.). Yale University Press.</p>
+<p>Matland, R. E., &amp; Studlar, D. T. (1996). The contagion of women candidates in single-member district and proportional representation electoral systems. <em>Journal of Politics</em>, 58(3), 707–733.</p>
+</div>
+</section>
+<section id="references-ii" class="slide level2">
+<h2>References II</h2>
+<div style="font-size: 0.65em;">
+<p>Norris, P. (2004). <em>Electoral engineering: Voting rules and political behavior</em>. Cambridge University Press.</p>
+<p>Rokkan, S. (1970). <em>Citizens, elections, parties: Approaches to the comparative study of the processes of development</em>. Universitetsforlaget.</p>
+<p>Taagepera, R., &amp; Shugart, M. S. (1989). <em>Seats and votes: The effects and determinants of electoral systems</em>. Yale University Press.</p>
+</div>
+
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+<p>Popescu (JCU) Comparative Politics Lecture 10: Electoral Systems</p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="lecture10_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="lecture10_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="lecture10_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="lecture10_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="lecture10_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="lecture10_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="lecture10_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="lecture10_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="lecture10_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="lecture10_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const onCopySuccess = function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
+      });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>
