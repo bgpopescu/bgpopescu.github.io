@@ -54,7 +54,7 @@
     "href": "index.html#assessment",
     "title": "Logic and Scientific Thinking",
     "section": "Assessment",
-    "text": "Assessment\nThe final grade has five components:\n\nMidterm exam — 30%\nFinal exam — 30%\nReading — 20%\nAttendance — 10%\nParticipation — 10%\n\nExams\nBoth exams are closed-book and individual. They test knowledge of the theories and facts developed across the course and independent critical thinking. The midterm is on Thursday, August 27 and covers Sessions 1–7. The final exam is on Thursday, September 10 and covers Sessions 10–14. Neither exam is cumulative. The midterm is preceded by a practice-and-review session; before the final, Session 14 runs the whole toolkit on one real study, which serves the same purpose in applied form.\nReading\nEach session lists its readings as Required or Optional. Required readings are done before the session that assigns them; optional ones are there as reference, and nothing rests on them. Reading completion will be tested in the midterm and the final.\nAttendance\nAttendance is taken every session and is worth 10% of the final grade. See the Attendance policy below for excused absences and the withdrawal threshold.\nParticipation\nBeing present is the floor, not the grade. Participation is assessed on contribution to the work of the session — the exercise sheets, team pages, and in-class diagnoses — where the standard is engagement with the argument on the table, not volume of talk.",
+    "text": "Assessment\nThe final grade has five components:\n\nMidterm exam — 30%\nFinal exam — 30%\nReading — 20%\nAttendance — 10%\nParticipation — 10%\n\nExams\nBoth exams are closed-book and individual. They test knowledge of the theories and facts developed across the course and independent critical thinking. The midterm is on Thursday, August 27 and covers Sessions 1–7. The final exam is on Thursday, September 10 and covers Sessions 10–13. Neither exam is cumulative. The midterm is preceded by a practice-and-review session. Session 14 is a workshop, not new examinable material: students build an argument of their own, have its weak point probed by a classmate, and repair it.\nReading\nEach session lists its readings as Required or Optional. Required readings are done before the session that assigns them; optional ones are there as reference, and nothing rests on them. Reading completion will be tested in the midterm and the final.\nAttendance\nAttendance is taken every session and is worth 10% of the final grade. See the Attendance policy below for excused absences and the withdrawal threshold.\nParticipation\nBeing present is the floor, not the grade. Participation is assessed on contribution to the work of the session — the exercise sheets, team pages, and in-class diagnoses — where the standard is engagement with the argument on the table, not volume of talk.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
     ]
@@ -64,7 +64,7 @@
     "href": "index.html#course-content",
     "title": "Logic and Scientific Thinking",
     "section": "Course Content",
-    "text": "Course Content\nFifteen 90-minute sessions over five weeks: twelve lecture sessions, a practice-and-review session before the midterm, and the two exams.\n\n\n\nWeek\nDate\nSession\n\n\n\n\n1\nMon, Aug 10\n1 · Types of Knowledge\n\n\n\nWed, Aug 12\n2 · Premises and Conclusions\n\n\n\nThu, Aug 13\n3 · Empirical, Conceptual, and Normative Claims\n\n\n2\nMon, Aug 17\n4 · Deduction and Induction\n\n\n\nWed, Aug 19\n5 · Deductive Tools, Validity, and Truth\n\n\n\nThu, Aug 20\n6 · Formal Fallacies\n\n\n3\nMon, Aug 24\n7 · Informal Fallacies 1\n\n\n\nWed, Aug 26\n8 · Midterm Review — Practice Session\n\n\n\nThu, Aug 27\n9 · Midterm Exam (Sessions 1–7)\n\n\n4\nMon, Aug 31\n10 · Informal Fallacies 2\n\n\n\nWed, Sep 2\n11 · Misinformation\n\n\n\nThu, Sep 3\n12 · Persuasion and Rhetoric\n\n\n5\nMon, Sep 7\n13 · Correlation, Causation\n\n\n\nWed, Sep 9\n14 · Reading a Study Critically\n\n\n\nThu, Sep 10\n15 · Final Exam (Sessions 10–14)",
+    "text": "Course Content\nFifteen 90-minute sessions over five weeks: eleven lecture sessions, a practice-and-review session before the midterm, a closing workshop, and the two exams. One further session is offered as optional and is not examinable.\n\n\n\nWeek\nDate\nSession\n\n\n\n\n1\nMon, Aug 10\n1 · Types of Knowledge\n\n\n\nWed, Aug 12\n2 · Premises and Conclusions\n\n\n\nThu, Aug 13\n3 · Empirical, Conceptual, and Normative Claims\n\n\n2\nMon, Aug 17\n4 · Deduction and Induction\n\n\n\nWed, Aug 19\n5 · Deductive Tools, Validity, and Truth\n\n\n\nThu, Aug 20\n6 · Formal Fallacies\n\n\n3\nMon, Aug 24\n7 · Informal Fallacies 1\n\n\n\nWed, Aug 26\n8 · Midterm Review — Practice Session\n\n\n\nThu, Aug 27\n9 · Midterm Exam (Sessions 1–7)\n\n\n4\nMon, Aug 31\n10 · Informal Fallacies 2\n\n\n\nWed, Sep 2\n11 · Misinformation\n\n\n\nThu, Sep 3\n12 · Persuasion and Rhetoric\n\n\n5\nMon, Sep 7\n13 · Correlation, Causation\n\n\n\nWed, Sep 9\n14 · Building an Argument\n\n\n\nThu, Sep 10\n15 · Final Exam (Sessions 10–13)\n\n\n\n—\nReading a Study Critically — optional, not examinable",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
     ]
@@ -232,11 +232,11 @@
   {
     "objectID": "session14/session14_landing.html",
     "href": "session14/session14_landing.html",
-    "title": "14 Reading a Study Critically",
+    "title": "14 Building an Argument",
     "section": "",
-    "text": "Lecture\n\n\n\n\nOpen the slides in a new window\n\n\nReading\nDinas, E., Matakos, K., Xefteris, D., & Hangartner, D. (2019). Waking up the golden dawn: Does exposure to the refugee crisis increase support for extreme-right parties? Political Analysis, 27(2), 244–254. (PDF) Required.",
+    "text": "The closing workshop. For five weeks the course took other people’s arguments apart; in this session you build one of your own, have its weak point probed by a classmate, and repair it. Everything is done by hand, in class. Nothing produced here is examinable — the final covers Sessions 10–13.\n\nLecture\n\n\n\n\nOpen the slides in a new window\n\n\nReading\nNo new reading. Bring the toolkit from Sessions 2, 3 and 13.",
     "crumbs": [
-      "<span class='chapter-number'>15</span>  <span class='chapter-title'>14 Reading a Study Critically</span>"
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>14 Building an Argument</span>"
     ]
   },
   {
@@ -244,9 +244,19 @@
     "href": "session15/session15_landing.html",
     "title": "15 Final Exam",
     "section": "",
-    "text": "Held in class on Thursday, September 10.\n\nClosed book, individual.\nCovers Sessions 10–14: the second half of the fallacy catalogue, misinformation, persuasion and rhetoric, correlation and causation, and reading a study critically, and the required readings assigned for those sessions. Not cumulative.\nTests knowledge of the theories and facts developed across the course and independent critical thinking.",
+    "text": "Held in class on Thursday, September 10.\n\nClosed book, individual.\nCovers Sessions 10–13: the second half of the fallacy catalogue, misinformation, persuasion and rhetoric, and correlation and causation, and the required readings assigned for those sessions. Not cumulative.\nSession 14 is a workshop and is not examinable; neither is the optional session on reading a study critically.\nTests knowledge of the theories and facts developed across the course and independent critical thinking.",
     "crumbs": [
       "<span class='chapter-number'>16</span>  <span class='chapter-title'>15 Final Exam</span>"
+    ]
+  },
+  {
+    "objectID": "session16/session16_landing.html",
+    "href": "session16/session16_landing.html",
+    "title": "Reading a Study Critically (Optional)",
+    "section": "",
+    "text": "Optional. This session is not examinable and is not required. It applies the whole toolkit to one real published study — six moves, from the claim to a calibrated verdict — and is here for anyone who wants to see the method run at full length on peer-reviewed work.\n\nLecture\n\n\n\n\nOpen the slides in a new window\n\n\nReading\nDinas, E., Matakos, K., Xefteris, D., & Hangartner, D. (2019). Waking up the golden dawn: Does exposure to the refugee crisis increase support for extreme-right parties? Political Analysis, 27(2), 244–254. (PDF) Optional.",
+    "crumbs": [
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Reading a Study Critically (Optional)</span>"
     ]
   }
 ]
