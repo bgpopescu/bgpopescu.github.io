@@ -1,0 +1,172 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Spatial Data Analysis in R",
+    "section": "",
+    "text": "Course Information\nCourse Title: Data Science II\nModule: Spatial Data Analysis in R — 5 sessions\nTerm: August – December 2026\nSchedule: 09:10 – 10:50 hrs\nLocation: Cedetec, Salón 210",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#instructor",
+    "href": "index.html#instructor",
+    "title": "Spatial Data Analysis in R",
+    "section": "Instructor",
+    "text": "Instructor\nBogdan G. Popescu\nE-Mail: bgpopescu@tec.mx\nOffice Hours: By appointment",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#module-description",
+    "href": "index.html#module-description",
+    "title": "Spatial Data Analysis in R",
+    "section": "Module Description",
+    "text": "Module Description\nThis is the spatial module of Data Science II. Over five sessions it takes you from never having opened a shapefile to producing a complete accessibility analysis and publishing it as a report you can send to someone.\nThe other modules of this course cover large language models, APIs, web scraping, and SQL. This one covers the thing none of them touch: data that has a location. That is not a niche skill — municipio-level indicators, service coverage, census geography, and crime statistics are all spatial, and treating them as ordinary tables throws away most of what they can tell you.\nEverything is done in R, using the sf and terra packages, and written up in Quarto. You have both already; we repurpose them.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#learning-outcomes",
+    "href": "index.html#learning-outcomes",
+    "title": "Spatial Data Analysis in R",
+    "section": "Learning Outcomes",
+    "text": "Learning Outcomes\nUpon completion of this module, students will be able to:\n\nExplain what a coordinate reference system is and diagnose the errors that follow from getting it wrong.\nRead, inspect, and write spatial data in the common vector formats, and build a spatial layer from an ordinary table of coordinates.\nJoin data to geography — by administrative code and by location — and know which to trust when the two disagree.\nProduce a defensible thematic map: choose a rate rather than a count, classify it deliberately, and colour it so the reader is not misled.\nMeasure: areas, distances, nearest features, buffers, and overlays.\nUse raster data, and extract a continuous surface into a column of your table.\nPublish the result as a self-contained Quarto document.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#what-you-need",
+    "href": "index.html#what-you-need",
+    "title": "Spatial Data Analysis in R",
+    "section": "What You Need",
+    "text": "What You Need\nA laptop with at least 8 GB of RAM, and:\n\nR 4.4 or later and RStudio — posit.co/download/rstudio-desktop\nQuarto — quarto.org\nThe packages installed in Session 1:\n\ninstall.packages(c(\"sf\", \"terra\", \"tidyterra\", \"exactextractr\",\n                   \"ggplot2\", \"dplyr\", \"tidyverse\", \"patchwork\",\n                   \"classInt\", \"viridis\", \"leaflet\",\n                   \"spData\", \"cowplot\", \"ggspatial\"))",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#assessment",
+    "href": "index.html#assessment",
+    "title": "Spatial Data Analysis in R",
+    "section": "Assessment",
+    "text": "Assessment\nThis module does not carry its own grade. It feeds the course reto.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#module-content",
+    "href": "index.html#module-content",
+    "title": "Spatial Data Analysis in R",
+    "section": "Module Content",
+    "text": "Module Content\n\n\n\n\n\n\n\nSession\nTopic\n\n\n\n\n1\nQuarto for Spatial Reporting, Coordinates, and CRS\n\n\n2\nsf Objects and Basic Mapping\n\n\n3\nChoropleths, Classification, and Interactive Maps\n\n\n4\nSpatial Joins, Measurement, and Buffers\n\n\n5\nRasters: Continuous Surfaces and Zonal Statistics\n\n\nOpt.\nCreating a Website with GitHub Pages and Quarto\n\n\n\nSession dates are set by the course calendar; see Canvas.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#books-and-references",
+    "href": "index.html#books-and-references",
+    "title": "Spatial Data Analysis in R",
+    "section": "Books and References",
+    "text": "Books and References\n\nLovelace, Robin, Jakub Nowosad, and Jannes Muenchow. Geocomputation with R. r.geocompx.org — the standard reference, free online.\nPebesma, Edzer, and Roger Bivand. Spatial Data Science: With Applications in R. r-spatial.org/book — by the author of sf.\nGimond, Manuel. Intro to GIS and Spatial Analysis. mgimond.github.io/Spatial — strongest on the conceptual side.\nHijmans, Robert. Spatial Data Science with R and terra. rspatial.org — by the author of terra.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#academic-integrity",
+    "href": "index.html#academic-integrity",
+    "title": "Spatial Data Analysis in R",
+    "section": "Academic Integrity",
+    "text": "Academic Integrity\nThe use of artificial intelligence is permitted within the university’s ethical guidelines and applicable law, under one condition: every submission includes an appendix stating which AI tools were used, for what purpose, and with which prompts. Undisclosed AI use is academic dishonesty.\nAny act of academic dishonesty will result in a failing grade on the work in question, and will be reported to the academic administration.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#attendance",
+    "href": "index.html#attendance",
+    "title": "Spatial Data Analysis in R",
+    "section": "Attendance",
+    "text": "Attendance\nAttendance follows the course policy set by the coordinating instructors. Students with a justified reason for missing a session should email the instructor beforehand.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#students-with-special-needs",
+    "href": "index.html#students-with-special-needs",
+    "title": "Spatial Data Analysis in R",
+    "section": "Students with Special Needs",
+    "text": "Students with Special Needs\nThe university does not discriminate based on disability. Students with approved accommodations must inform their instructors at the beginning of the term. Please see the institutional website for the complete policy.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
+    ]
+  },
+  {
+    "objectID": "session1/session1_landing.html",
+    "href": "session1/session1_landing.html",
+    "title": "1 Quarto for Spatial Reporting, Coordinates, and CRS",
+    "section": "",
+    "text": "Lecture\n\n\n\n\nOpen Slides in a New Window\n\n\nReading\nLovelace, Nowosad, and Muenchow. Geocomputation with R. Ch. 2, Geographic data in R. (link)\nGimond, Manuel. Intro to GIS and Spatial Analysis. Ch. 9, Coordinate Systems. (link)\nLovelace, Nowosad, and Muenchow. Geocomputation with R. Ch. 7, Reprojecting geographic data. (link)",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>1 Quarto for Spatial Reporting, Coordinates, and CRS</span>"
+    ]
+  },
+  {
+    "objectID": "session2/session2_landing.html",
+    "href": "session2/session2_landing.html",
+    "title": "2 sf Objects and Basic Mapping",
+    "section": "",
+    "text": "Lecture\n\n\n\n\nOpen Slides in a New Window\n\n\nReading\nGimond, Manuel. Intro to GIS and Spatial Analysis. Ch. 2, Feature Representation. (link)\nPebesma, Edzer. Simple Features for R. Vignette 1. (link)\nLovelace, Nowosad, and Muenchow. Geocomputation with R. Ch. 8, Geographic data I/O. (link)",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>2 sf Objects and Basic Mapping</span>"
+    ]
+  },
+  {
+    "objectID": "session3/session3_landing.html",
+    "href": "session3/session3_landing.html",
+    "title": "3 Choropleths, Classification, and Interactive Maps",
+    "section": "",
+    "text": "Lecture\n\n\n\n\nOpen Slides in a New Window\n\n\nReading\nGimond, Manuel. Intro to GIS and Spatial Analysis. Ch. 5, Statistical Maps. (link)\nGimond, Manuel. Intro to GIS and Spatial Analysis. Ch. 6, Pitfalls to Avoid. (link)\nGimond, Manuel. Intro to GIS and Spatial Analysis. Ch. 7, Good Map Making Tips. (link)\nLovelace, Nowosad, and Muenchow. Geocomputation with R. Ch. 9, Making maps with R. (link)",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>3 Choropleths, Classification, and Interactive Maps</span>"
+    ]
+  },
+  {
+    "objectID": "session4/session4_landing.html",
+    "href": "session4/session4_landing.html",
+    "title": "4 Spatial Joins, Measurement, and Buffers",
+    "section": "",
+    "text": "Lecture\n\n\n\n\nOpen Slides in a New Window\n\n\nReading\nLovelace, Nowosad, and Muenchow. Geocomputation with R. Ch. 4, Spatial data operations. (link)\nGimond, Manuel. Intro to GIS and Spatial Analysis. Ch. 8, Spatial Operations and Vector Overlays. (link)\nLovelace, Nowosad, and Muenchow. Geocomputation with R. Ch. 5, Geometry operations. (link)",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>4 Spatial Joins, Measurement, and Buffers</span>"
+    ]
+  },
+  {
+    "objectID": "session5/session5_landing.html",
+    "href": "session5/session5_landing.html",
+    "title": "5 Rasters: Continuous Surfaces and Zonal Statistics",
+    "section": "",
+    "text": "Lecture\n\n\n\n\nOpen Slides in a New Window\n\n\nReading\nLovelace, Nowosad, and Muenchow. Geocomputation with R. Ch. 6, Raster-vector interactions. (link)\nGimond, Manuel. Intro to GIS and Spatial Analysis. Ch. 10, Map Algebra. (link)\nHijmans, Robert. Spatial Data Science with R and terra. (link)",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>5 Rasters: Continuous Surfaces and Zonal Statistics</span>"
+    ]
+  },
+  {
+    "objectID": "session6/session6_landing.html",
+    "href": "session6/session6_landing.html",
+    "title": "Optional: Creating a Website with GitHub Pages and Quarto",
+    "section": "",
+    "text": "Lecture\n\n\n\n\nOpen Slides in a New Window\n\n\nReading\nQuarto. Creating a Website. (link)\nQuarto. Publishing to GitHub Pages. (link)\nGitHub. GitHub Pages Documentation. (link)",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Optional: Creating a Website with GitHub Pages and Quarto</span>"
+    ]
+  }
+]

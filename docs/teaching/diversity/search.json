@@ -1,0 +1,152 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Diversity in a Globalized World",
+    "section": "",
+    "text": "Course Information\nCourse Title: Diversity in a Globalized World\nGroup: Gpo 105\nDuration: 5 sessions (Semana Tec)\nSchedule: Monday to Friday, 13:10 – 15:50\nLocation: Aulas 11201",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#instructor",
+    "href": "index.html#instructor",
+    "title": "Diversity in a Globalized World",
+    "section": "Instructor",
+    "text": "Instructor\nBogdan Popescu\nE-Mail: bgpopescu@tec.mx\nOffice Hours: By appointment",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#course-description",
+    "href": "index.html#course-description",
+    "title": "Diversity in a Globalized World",
+    "section": "Course Description",
+    "text": "Course Description\nGlobalization is usually described in aggregate: trade grew, incomes rose, the world became more connected. Aggregates hide the interesting part. The same process that made a country richer on average made particular places poorer, moved particular people across borders, and left particular groups living apart from each other.\nThis course looks at four of those consequences in turn, and it looks at them with data rather than assertion. We begin with who paid for globalization: the towns that lost factories to Chinese import competition, and the newer question of where AI is landing. We then ask what those losses did to politics, tracing the argument that economic dislocation feeds populism and weakens democratic institutions. The third session follows people who move — why they leave, what they send home, and what economists actually know about the effect of migration on wages. The fourth comes back to Mexico and asks the question the course title implies but the first three sessions never answer: who lives next to whom, and whether people of different backgrounds ever end up close enough to meet.\nRunning underneath all four is a second course about evidence. You will see the same moves repeatedly: a map that reveals something an average conceals, two economists reaching opposite conclusions from one event, a correlation that three different mechanisms would produce. By Friday you will have built one of these arguments yourself.\nNo background in economics, statistics, or programming is required. You will learn enough R to make maps and graphs, and nothing beyond that.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#learning-outcomes",
+    "href": "index.html#learning-outcomes",
+    "title": "Diversity in a Globalized World",
+    "section": "Learning Outcomes",
+    "text": "Learning Outcomes\nUpon completion of this course, students will be able to:\n\nDescribe the uneven geography of globalization — where trade shocks, migration, remittances, and AI exposure actually land — and explain why a national average often describes nobody.\nExplain the main mechanisms connecting economic change to political backlash, and distinguish economic from cultural accounts of populism.\nExplain why people migrate, why development can raise emigration before lowering it, and what the evidence says about migration and wages.\nMeasure how unevenly two groups are distributed across a city, and say why the answer depends on the unit of analysis chosen.\nRead a claim critically — state what a figure asks you to believe, name what else could have produced it, and say what the data cannot show.\nProduce a short empirical report in Quarto containing maps and graphs made in R, with an interpretation written in their own words and an honest declaration of how AI was used.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#the-sessions",
+    "href": "index.html#the-sessions",
+    "title": "Diversity in a Globalized World",
+    "section": "The Sessions",
+    "text": "The Sessions\n\n\n\nDay\nSession\nQuestion\n\n\n\n\nMonday\nWho Paid for Globalization?\nWho paid for globalization?\n\n\nTuesday\nPopulism and Democratic Erosion\nWhat did those losses do to politics?\n\n\nWednesday\nPeople on the Move\nWhy do people leave, and what follows them back?\n\n\nThursday\nWho Lives Next to Whom\nDo different people ever actually meet?\n\n\nFriday\nFinal Presentations\nWhat did your team find?",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#assessment",
+    "href": "index.html#assessment",
+    "title": "Diversity in a Globalized World",
+    "section": "Assessment",
+    "text": "Assessment\nThe final grade has three components:\n\nTeam report — 50%\nFinal presentation — 25%\nContributions to class — 25%\n\nTeam report. In teams of three, you produce one Quarto report containing two to three maps, one simple graph, one more complex graph, an interpretation in your own words, and a table declaring your use of AI. Worked examples and the datasets are linked from the session pages. Due Friday at 13:10, the start of the final session.\nFinal presentation. Each team presents its report on Friday. Ten minutes, plus questions. Show your maps and say what they mean; do not read from the slide.\nContributions to class. The average of attendance, participation in the in-class exercises, and progress on the report.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#worked-example-reports",
+    "href": "index.html#worked-example-reports",
+    "title": "Diversity in a Globalized World",
+    "section": "Worked Example Reports",
+    "text": "Worked Example Reports\nThree finished reports built from this course’s data. They are the model for your own — open one before you write anything, and copy its structure.\n\nThe China Shock — three maps, a simple graph, a complex graph. The cleanest template.\nWhose jobs? — the same data asking a question the original authors did not.\nAsk or delegate? — global AI use, and an honest section on who the data actually describes.\n\nWhat has to be yours is the question, the choice of variables, and the interpretation. The structure you may take.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#reading",
+    "href": "index.html#reading",
+    "title": "Diversity in a Globalized World",
+    "section": "Reading",
+    "text": "Reading\nEach session lists readings as Required or Recommended. Required readings should be done before the session that assigns them. Given that this is a one-week intensive course, the required list is deliberately short: one item per session. The required articles are in the shared readings folder.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#software",
+    "href": "index.html#software",
+    "title": "Diversity in a Globalized World",
+    "section": "Software",
+    "text": "Software\nYou will need R, RStudio and Quarto installed before Monday, or a free Posit Cloud account if the installation gives you trouble — it runs RStudio in your browser with nothing to install.\nEach session page lists the slide decks from the research workshop to work through that evening. Between them they cover everything the report needs and nothing more: loading a data file, making a graph, making a map, and splitting a graph into panels. The workshop’s statistics and regression decks are not part of this course.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#use-of-ai",
+    "href": "index.html#use-of-ai",
+    "title": "Diversity in a Globalized World",
+    "section": "Use of AI",
+    "text": "Use of AI\nYou may use AI in this course, and you must declare it. Every report ends with a short table naming what you used it for, what you asked, and how you checked the answer.\nTwo rules apply throughout. Never submit code or prose you cannot explain — you will be asked. And use AI for the mechanical parts, not the judgement: fixing an error message is a good use, deciding what your research question is or what your map means is not.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
+    ]
+  },
+  {
+    "objectID": "session1/lecture1_landing.html",
+    "href": "session1/lecture1_landing.html",
+    "title": "1 Who Paid for Globalization? The China Shock and AI",
+    "section": "",
+    "text": "Lecture\n\n\n\n\nOpen in New Window\n\n\nData\n\nChina Shock data\nAI data\n\n\n\nReading\nAutor, D. H., Dorn, D., & Hanson, G. H. (2016). “The China Shock: Learning from Labor-Market Adjustment to Large Changes in Trade.” Annual Review of Economics, 8, 205–240. (PDF)\n\n\nR and Quarto\n\nLecture 2 — Essential Tools for Writing a Paper — install R, RStudio and Quarto, then render your first HTML document\nLecture 3 — Operations and Objects in R — objects, vectors, classes — skip the installation slides, you did those",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>1 Who Paid for Globalization?</span>"
+    ]
+  },
+  {
+    "objectID": "session2/lecture2_landing.html",
+    "href": "session2/lecture2_landing.html",
+    "title": "2 Populism and Democratic Erosion",
+    "section": "",
+    "text": "Lecture\n\n\n\n\nOpen in New Window\n\n\nData\n\nDemocracy data\n\n\n\nReading\nBermeo, N. (2016). “On Democratic Backsliding.” Journal of Democracy, 27(1), 5–19. (PDF)\n\n\nR and Quarto\n\nLecture 6 — Working with Data in R — data frames, loading an .rds file, relative paths, installing packages\nLecture 7 — Dplyr and Basic Visualization — filtering and selecting, and your first ggplot",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>2 Populism and Democratic Erosion</span>"
+    ]
+  },
+  {
+    "objectID": "session3/lecture3_landing.html",
+    "href": "session3/lecture3_landing.html",
+    "title": "3 People on the Move",
+    "section": "",
+    "text": "Lecture\n\n\n\n\nOpen in New Window\n\n\nData\n\nMigration data\n\n\n\nReading\nClemens, M. A. (2011). “Economics and Emigration: Trillion-Dollar Bills on the Sidewalk?” Journal of Economic Perspectives, 25(3), 83–106. (PDF)\n\n\nR and Quarto\n\nLecture 13 — Data Visualization in R 1 — the grammar of graphics, and geom_sf() — this is how you make a map\nLecture 14 — Data Visualization in R 2 — aesthetics and colour scales",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>3 People on the Move</span>"
+    ]
+  },
+  {
+    "objectID": "session4/lecture4_landing.html",
+    "href": "session4/lecture4_landing.html",
+    "title": "4 Who Lives Next to Whom",
+    "section": "",
+    "text": "Lecture\n\n\n\n\nOpen in New Window\n\n\nData\n\nMexican municipio data\n\n\n\nReading\nArceo-Gómez, E. O., & Campos-Vázquez, R. M. (2014). “Race and Marriage in the Labor Market: A Discrimination Correspondence Study in a Developing Country.” American Economic Review, 104(5), 376–380. (PDF)\n\n\nR and Quarto\n\nLecture 15 — Data Visualization in R 3 — facets — how your simple graph becomes the complex one\nLecture 8 — Visualizing Data Distributions in R — histograms and bar charts. Optional, if you have the appetite",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>4 Who Lives Next to Whom</span>"
+    ]
+  },
+  {
+    "objectID": "session5/lecture5_landing.html",
+    "href": "session5/lecture5_landing.html",
+    "title": "5 Final Presentations",
+    "section": "",
+    "text": "What happens today\nTwo things: we close the course, and your team presents its report.\n\n\nYour report is due at 13:10\nSubmit both files on Canvas:\n\nthe rendered .html\nthe .qmd that produced it\n\nThe .qmd is not optional. It is how I see that the report is yours.\n\n\nThe presentation\nTen minutes per team, plus questions.\nStructure it the way your report is structured:\n\nThe question — one sentence. What did you want to know?\nThe maps — show them. Say where the dark areas are and what that means.\nThe graph — what relationship did you find?\nWhat you cannot say — the limitation that most threatens your conclusion.\nOne thing that surprised you.\n\nShow your figures and talk about them. Do not read from the slide, and do not put the R code on screen.\n\n\nQuestions you should expect\n\nWhat is one row in your data?\nWhy did you choose that colour scale? What would a different one have shown?\nYour two variables move together. Name something other than causation that would produce that pattern.\nWhich line of your code did AI write, and what does it do?",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>5 Final Presentations</span>"
+    ]
+  }
+]

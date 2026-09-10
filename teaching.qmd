@@ -18,6 +18,8 @@ My teaching philosophy focuses on developing critical thinking skills, and acqui
 | Course |   Time Offered           |
 |:-------|:-------------------------|
 | [Corruption](/teaching/corruption/index.html){target="_blank"} | Tecnológico de Monterrey, Fall 2026, Undergraduate |
+| [Diversity and Globalization](/teaching/diversity/index.html){target="_blank"} | Tecnológico de Monterrey, Fall 2026, Undergraduate |
+| [Short GIS](/teaching/gis2/index.html){target="_blank"} | Tecnológico de Monterrey, Fall 2026, Undergraduate |
 | [Logic and Science](/teaching/logic/index.html){target="_blank"} | Tecnológico de Monterrey, Fall 2026, Undergraduate |
 | [Technology and Society](/teaching/econ_development/index.html){target="_blank"} | Tecnológico de Monterrey, Spring 2026, Undergraduate |
 | [Text Analysis in Python](/teaching/text_analysis/index.html){target="_blank"} | John Cabot, Spring 2025, Undergraduate |
