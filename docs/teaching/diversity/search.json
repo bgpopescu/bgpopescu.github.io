@@ -74,7 +74,7 @@
     "href": "index.html#reading",
     "title": "Diversity in a Globalized World",
     "section": "Reading",
-    "text": "Reading\nEach session has one required article, listed on that session’s page. We read it together in the second half of the session, and you finish it at home if you need to. Given that this is a one-week intensive course the list is deliberately short. The required articles are in the shared readings folder.\nA twenty-question quiz at the start of Friday’s session covers all four articles, and it is worth a quarter of your grade.",
+    "text": "Reading\nEach session has one required article, listed on that session’s page. We read it together in the second half of the session, and you finish it at home if you need to. Given that this is a one-week intensive course the list is deliberately short. Every article is in the folder in English and in Spanish — read whichever you prefer. The required articles are in the shared readings folder.\nA twenty-question quiz at the start of Friday’s session covers all four articles, and it is worth a quarter of your grade.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
     ]
@@ -104,7 +104,7 @@
     "href": "session1/lecture1_landing.html",
     "title": "1 Who Paid for Globalization? The China Shock and AI",
     "section": "",
-    "text": "Lecture\n\n\n\n\nOpen in New Window\n\n\nData\n\nChina Shock data\nAI data\n\n\n\nReading\nWe read this article together in the second half of the session, in pairs, section by section: guided reading slides.\nAutor, D. H., Dorn, D., & Hanson, G. H. (2016). “The China Shock: Learning from Labor-Market Adjustment to Large Changes in Trade.” Annual Review of Economics, 8, 205–240. (PDF)\n\n\nHow to read an academic article\nA short deck on reading papers without reading every word: the multi-pass strategy, how to read a figure, and how to use AI on a paper without letting it read for you.\nOpen the slides\n\n\nOptional: R and Quarto\nOnly if you want to make your figures in R.\n\nLecture 2 — Essential Tools for Writing a Paper — install R, RStudio and Quarto, then render your first HTML document\nLecture 3 — Operations and Objects in R — objects, vectors, classes — skip the installation slides, you did those",
+    "text": "Lecture\n\n\n\n\nOpen in New Window\n\n\nData\n\nChina Shock data\nAI data\n\n\n\nReading\nWe read this article together in the second half of the session, in pairs, section by section: guided reading slides.\nAutor, D. H., Dorn, D., & Hanson, G. H. (2016). “The China Shock: Learning from Labor-Market Adjustment to Large Changes in Trade.” Annual Review of Economics, 8, 205–240. (PDF) · (PDF en español)\n\n\nHow to read an academic article\nA short deck on reading papers without reading every word: the multi-pass strategy, how to read a figure, and how to use AI on a paper without letting it read for you.\nOpen the slides\n\n\nOptional: R and Quarto\nOnly if you want to make your figures in R.\n\nLecture 2 — Essential Tools for Writing a Paper — install R, RStudio and Quarto, then render your first HTML document\nLecture 3 — Operations and Objects in R — objects, vectors, classes — skip the installation slides, you did those",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>1 Who Paid for Globalization?</span>"
     ]
@@ -114,7 +114,7 @@
     "href": "session2/lecture2_landing.html",
     "title": "2 Populism and Democratic Erosion",
     "section": "",
-    "text": "Lecture\n\n\n\n\nOpen in New Window\n\n\nData\n\nDemocracy data\n\n\n\nReading\nWe read this article together in the second half of the session.\nBermeo, N. (2016). “On Democratic Backsliding.” Journal of Democracy, 27(1), 5–19. (PDF)\n\n\nOptional: R and Quarto\nOnly if you want to make your figures in R.\n\nLecture 6 — Working with Data in R — data frames, loading an .rds file, relative paths, installing packages\nLecture 7 — Dplyr and Basic Visualization — filtering and selecting, and your first ggplot",
+    "text": "Lecture\n\n\n\n\nOpen in New Window\n\n\nData\n\nDemocracy data\n\n\n\nReading\nWe read this article together in the second half of the session.\nBermeo, N. (2016). “On Democratic Backsliding.” Journal of Democracy, 27(1), 5–19. (PDF) · (PDF en español)\n\n\nOptional: R and Quarto\nOnly if you want to make your figures in R.\n\nLecture 6 — Working with Data in R — data frames, loading an .rds file, relative paths, installing packages\nLecture 7 — Dplyr and Basic Visualization — filtering and selecting, and your first ggplot",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>2 Populism and Democratic Erosion</span>"
     ]
@@ -124,7 +124,7 @@
     "href": "session3/lecture3_landing.html",
     "title": "3 People on the Move",
     "section": "",
-    "text": "Wednesday 16 September is Independence Day, so this session is optional.\n\nLecture\n\n\n\n\nOpen in New Window\n\n\nData\n\nMigration data\n\n\n\nReading\nWe read this article together in the second half of the session, in pairs, section by section: guided reading slides.\nClemens, M. A. (2011). “Economics and Emigration: Trillion-Dollar Bills on the Sidewalk?” Journal of Economic Perspectives, 25(3), 83–106. (PDF)\nThe PDF is the working-paper version of the same article (CGD Working Paper 264), so its page numbers differ from the journal’s.\n\n\nOptional: R and Quarto\nOnly if you want to make your figures in R.\n\nLecture 13 — Data Visualization in R 1 — the grammar of graphics, and geom_sf() — this is how you make a map\nLecture 14 — Data Visualization in R 2 — aesthetics and colour scales",
+    "text": "Wednesday 16 September is Independence Day, so this session is optional.\n\nLecture\n\n\n\n\nOpen in New Window\n\n\nData\n\nMigration data\n\n\n\nReading\nWe read this article together in the second half of the session, in pairs, section by section: guided reading slides.\nClemens, M. A. (2011). “Economics and Emigration: Trillion-Dollar Bills on the Sidewalk?” Journal of Economic Perspectives, 25(3), 83–106. (PDF) · (PDF en español)\nThe PDF is the working-paper version of the same article (CGD Working Paper 264), so its page numbers differ from the journal’s.\n\n\nOptional: R and Quarto\nOnly if you want to make your figures in R.\n\nLecture 13 — Data Visualization in R 1 — the grammar of graphics, and geom_sf() — this is how you make a map\nLecture 14 — Data Visualization in R 2 — aesthetics and colour scales",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>3 People on the Move</span>"
     ]
@@ -134,7 +134,7 @@
     "href": "session4/lecture4_landing.html",
     "title": "4 Who Lives Next to Whom",
     "section": "",
-    "text": "Lecture\n\n\n\n\nOpen in New Window\n\n\nData\n\nMexican municipio data\n\n\n\nReading\nWe read this article together in the second half of the session, in pairs, section by section: guided reading slides.\nArceo-Gómez, E. O., & Campos-Vázquez, R. M. (2014). “Race and Marriage in the Labor Market: A Discrimination Correspondence Study in a Developing Country.” American Economic Review, 104(5), 376–380. (PDF)\nThe PDF is the longer working-paper version (MPRA Paper 48000, 2013). It reports the same experiment in more detail than the five-page journal article.\n\n\nOptional: R and Quarto\nOnly if you want to make your figures in R.\n\nLecture 15 — Data Visualization in R 3 — facets — how your simple graph becomes the complex one\nLecture 8 — Visualizing Data Distributions in R — histograms and bar charts. Optional, if you have the appetite",
+    "text": "Lecture\n\n\n\n\nOpen in New Window\n\n\nData\n\nMexican municipio data\n\n\n\nReading\nWe read this article together in the second half of the session, in pairs, section by section: guided reading slides.\nArceo-Gómez, E. O., & Campos-Vázquez, R. M. (2014). “Race and Marriage in the Labor Market: A Discrimination Correspondence Study in a Developing Country.” American Economic Review, 104(5), 376–380. (PDF) · (PDF en español)\nThe PDF is the longer working-paper version (MPRA Paper 48000, 2013). It reports the same experiment in more detail than the five-page journal article.\n\n\nOptional: R and Quarto\nOnly if you want to make your figures in R.\n\nLecture 15 — Data Visualization in R 3 — facets — how your simple graph becomes the complex one\nLecture 8 — Visualizing Data Distributions in R — histograms and bar charts. Optional, if you have the appetite",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>4 Who Lives Next to Whom</span>"
     ]
