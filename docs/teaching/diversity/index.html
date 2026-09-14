@@ -150,9 +150,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
+    <h2 id="toc-title">On this page</h2>
    
-  <ul class="collapse">
+  <ul>
   <li><a href="#course-information" id="toc-course-information" class="nav-link active" data-scroll-target="#course-information">Course Information</a></li>
   <li><a href="#instructor" id="toc-instructor" class="nav-link" data-scroll-target="#instructor">Instructor</a></li>
   <li><a href="#course-description" id="toc-course-description" class="nav-link" data-scroll-target="#course-description">Course Description</a></li>
@@ -211,10 +211,8 @@ Office Hours: By appointment</p>
 </section>
 <section id="course-description" class="level2">
 <h2 class="anchored" data-anchor-id="course-description">Course Description</h2>
-<p>Globalization is usually described in aggregate: trade grew, incomes rose, the world became more connected. Aggregates hide the interesting part. The same process that made a country richer on average made particular places poorer, moved particular people across borders, and left particular groups living apart from each other.</p>
-<p>This course looks at four of those consequences in turn, and it looks at them with data rather than assertion. We begin with <strong>who paid for globalization</strong>: the towns that lost factories to Chinese import competition, and the newer question of where AI is landing. We then ask what those losses did to <strong>politics</strong>, tracing the argument that economic dislocation feeds populism and weakens democratic institutions. The third session follows <strong>people who move</strong> — why they leave, what they send home, and what economists actually know about the effect of migration on wages. The fourth comes back to Mexico and asks the question the course title implies but the first three sessions never answer: <strong>who lives next to whom</strong>, and whether people of different backgrounds ever end up close enough to meet.</p>
-<p>Running underneath all four is a second course about evidence. You will see the same moves repeatedly: a map that reveals something an average conceals, two economists reaching opposite conclusions from one event, a correlation that three different mechanisms would produce. By Friday you will have built one of these arguments yourself.</p>
-<p>No background in economics, statistics, or programming is required. You will learn enough R to make maps and graphs, and nothing beyond that.</p>
+<p>Globalization made the world richer on average. Averages hide the interesting part. The same process that raised a country’s income closed particular factories, pushed particular people across borders, and left particular groups living apart. This week we go looking for those people and places in the data: <strong>who paid</strong> for competition from China, and where AI is landing now; what those losses did to <strong>politics</strong>; why people <strong>leave home</strong>, and what they send back; and finally, in Mexico, <strong>who lives next to whom</strong>.</p>
+<p>Underneath runs a second course, about evidence. The same moves come up every day: a map that shows what an average hides, two economists reading one event in opposite ways, a pattern that three different stories would explain equally well. By Friday your team will have built an argument like this yourselves. No economics, statistics or programming is required. Make your maps and graphs in Excel, Tableau or — ideally — R, and use AI tools such as ChatGPT if they help, as long as you say so.</p>
 </section>
 <section id="learning-outcomes" class="level2">
 <h2 class="anchored" data-anchor-id="learning-outcomes">Learning Outcomes</h2>
@@ -225,7 +223,7 @@ Office Hours: By appointment</p>
 <li><strong>Explain</strong> why people migrate, why development can <em>raise</em> emigration before lowering it, and what the evidence says about migration and wages.</li>
 <li><strong>Measure</strong> how unevenly two groups are distributed across a city, and say why the answer depends on the unit of analysis chosen.</li>
 <li><strong>Read a claim critically</strong> — state what a figure asks you to believe, name what else could have produced it, and say what the data cannot show.</li>
-<li><strong>Produce a short empirical report</strong> in Quarto containing maps and graphs made in R, with an interpretation written in their own words and an honest declaration of how AI was used.</li>
+<li><strong>Produce a short empirical report</strong> containing maps and graphs made with Excel, Tableau or R, with an interpretation written in their own words and an honest declaration of how AI was used.</li>
 </ol>
 </section>
 <section id="the-sessions" class="level2">
@@ -241,7 +239,7 @@ Office Hours: By appointment</p>
 <tbody>
 <tr class="odd">
 <td>Monday</td>
-<td><a href="./session1/lecture1_landing.html">Who Paid for Globalization?</a></td>
+<td><a href="./session1/lecture1_landing.html">The China Shock and AI</a></td>
 <td>Who paid for globalization?</td>
 </tr>
 <tr class="even">
@@ -251,12 +249,12 @@ Office Hours: By appointment</p>
 </tr>
 <tr class="odd">
 <td>Wednesday</td>
-<td><a href="./session3/lecture3_landing.html">People on the Move</a></td>
+<td><a href="./session3/lecture3_landing.html">Migration</a> — <em>optional</em></td>
 <td>Why do people leave, and what follows them back?</td>
 </tr>
 <tr class="even">
 <td>Thursday</td>
-<td><a href="./session4/lecture4_landing.html">Who Lives Next to Whom</a></td>
+<td><a href="./session4/lecture4_landing.html">Segregation</a></td>
 <td>Do different people ever actually meet?</td>
 </tr>
 <tr class="odd">
@@ -266,22 +264,109 @@ Office Hours: By appointment</p>
 </tr>
 </tbody>
 </table>
+<p>Wednesday 16 September is Independence Day, so that session is optional.</p>
 </section>
 <section id="assessment" class="level2">
 <h2 class="anchored" data-anchor-id="assessment">Assessment</h2>
-<p>The final grade has three components:</p>
+<p>The final grade has four components:</p>
 <ul>
-<li><strong>Team report — 50%</strong></li>
+<li><strong>Team report — 40%</strong></li>
 <li><strong>Final presentation — 25%</strong></li>
-<li><strong>Contributions to class — 25%</strong></li>
+<li><strong>Reading quiz — 25%</strong></li>
+<li><strong>Contributions to class — 10%</strong></li>
 </ul>
-<p><strong>Team report.</strong> In teams of three, you produce one Quarto report containing two to three maps, one simple graph, one more complex graph, an interpretation in your own words, and a table declaring your use of AI. Worked examples and the datasets are linked from the session pages. Due <strong>Friday at 13:10</strong>, the start of the final session.</p>
-<p><strong>Final presentation.</strong> Each team presents its report on Friday. Ten minutes, plus questions. Show your maps and say what they mean; do not read from the slide.</p>
+<p><strong>Team report.</strong> In teams of three, you produce one report containing two to three maps, one simple graph, one more complex graph, an interpretation in your own words, and a table declaring your use of AI. Make the figures with any tool: Excel, Tableau or, ideally, R. Worked examples and the datasets are linked from the session pages. Due <strong>Friday at 13:10</strong>, the start of the final session: submit the report as a PDF, plus the file you made the figures in. Each student’s mark is the team’s mark, adjusted by team member evaluation.</p>
+<p><strong>How the report is marked.</strong> Out of the 40 points:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 12%">
+<col style="width: 62%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Points</th>
+<th>Full marks means</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>The question</strong></td>
+<td>6</td>
+<td>One specific question, answerable with the data you have</td>
+</tr>
+<tr class="even">
+<td><strong>The figures</strong></td>
+<td>10</td>
+<td>Two to three maps, one simple graph, one more complex graph — titled, labelled, sourced, readable</td>
+</tr>
+<tr class="odd">
+<td><strong>The interpretation</strong></td>
+<td>12</td>
+<td>You say what each figure shows, in your own words, and what it means</td>
+</tr>
+<tr class="even">
+<td><strong>What you cannot say</strong></td>
+<td>8</td>
+<td>Who is counted, which unit, and one rival explanation you cannot rule out</td>
+</tr>
+<tr class="odd">
+<td><strong>AI and working file</strong></td>
+<td>4</td>
+<td>The declaration table is complete, and your file opens and produces the figures</td>
+</tr>
+</tbody>
+</table>
+<p>The two largest rows are interpretation and limits. Good figures with nothing said about them do not pass.</p>
+<p><strong>Final presentation.</strong> Each team presents its report on Friday. Ten minutes, plus questions. Show your maps and say what they mean; do not read from the slide. Out of the 25 points:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 12%">
+<col style="width: 62%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Points</th>
+<th>Full marks means</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>The question</strong></td>
+<td>4</td>
+<td>Stated in one sentence, at the start</td>
+</tr>
+<tr class="even">
+<td><strong>The figures, explained</strong></td>
+<td>7</td>
+<td>You show a figure and talk the room through it</td>
+</tr>
+<tr class="odd">
+<td><strong>What you cannot say</strong></td>
+<td>5</td>
+<td>You name the limitation that most threatens your own conclusion</td>
+</tr>
+<tr class="even">
+<td><strong>Answering questions</strong></td>
+<td>7</td>
+<td>Whoever made a choice can explain it — including where AI helped</td>
+</tr>
+<tr class="odd">
+<td><strong>Time and teamwork</strong></td>
+<td>2</td>
+<td>Ten minutes, and everyone speaks</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Reading quiz.</strong> Twenty multiple-choice questions on the four required articles, five per article. Twenty minutes, on paper, closed book, at the start of Friday’s session.</p>
 <p><strong>Contributions to class.</strong> The average of attendance, participation in the in-class exercises, and progress on the report.</p>
 </section>
 <section id="worked-example-reports" class="level2">
 <h2 class="anchored" data-anchor-id="worked-example-reports">Worked Example Reports</h2>
-<p>Three finished reports built from this course’s data. They are the model for your own — open one before you write anything, and copy its structure.</p>
+<p>Three finished reports built from this course’s data. They are the model for your own — open one before you write anything, and copy its structure. They were made in R, but the same structure works in any tool.</p>
 <ul>
 <li><a href="session1/model_report.html" target="_blank"><strong>The China Shock</strong></a> — three maps, a simple graph, a complex graph. The cleanest template.</li>
 <li><a href="session1/model_report_2.html" target="_blank"><strong>Whose jobs?</strong></a> — the same data asking a question the original authors did not.</li>
@@ -291,17 +376,18 @@ Office Hours: By appointment</p>
 </section>
 <section id="reading" class="level2">
 <h2 class="anchored" data-anchor-id="reading">Reading</h2>
-<p>Each session has <strong>one required article</strong>, listed on that session’s page and to be read before it. Given that this is a one-week intensive course the list is deliberately short. The required articles are in the shared <a href="https://www.dropbox.com/scl/fo/3nwmsn9fw4lodrsktloi7/ANihjCQCzj0kdtql8FyK_qA?rlkey=734dq8knxt0u4a83km4tcim60&amp;dl=0" target="_blank">readings folder</a>.</p>
+<p>Each session has <strong>one required article</strong>, listed on that session’s page. We read it together in the second half of the session, and you finish it at home if you need to. Given that this is a one-week intensive course the list is deliberately short. The required articles are in the shared <a href="https://www.dropbox.com/scl/fo/3nwmsn9fw4lodrsktloi7/ANihjCQCzj0kdtql8FyK_qA?rlkey=734dq8knxt0u4a83km4tcim60&amp;dl=0" target="_blank">readings folder</a>.</p>
+<p>A twenty-question quiz at the start of Friday’s session covers all four articles, and it is worth a quarter of your grade.</p>
 </section>
 <section id="software" class="level2">
 <h2 class="anchored" data-anchor-id="software">Software</h2>
-<p>You will need <strong>R</strong>, <strong>RStudio</strong> and <strong>Quarto</strong> installed before Monday, or a free <a href="https://posit.cloud" target="_blank">Posit Cloud</a> account if the installation gives you trouble — it runs RStudio in your browser with nothing to install.</p>
-<p>Each session page lists the slide decks from the <a href="https://bgpopescu.net/teaching/research_workshop/" target="_blank">research workshop</a> to work through that evening. Between them they cover everything the report needs and nothing more: loading a data file, making a graph, making a map, and splitting a graph into panels. The workshop’s statistics and regression decks are <strong>not</strong> part of this course.</p>
+<p>Use any tool you are comfortable with: <strong>Excel</strong>, <strong>Tableau</strong> or <strong>R</strong>. R is recommended, and it is what the worked examples use. If you choose R, you will need <strong>R</strong>, <strong>RStudio</strong> and <strong>Quarto</strong> installed, or a free <a href="https://posit.cloud" target="_blank">Posit Cloud</a> account if the installation gives you trouble — it runs RStudio in your browser with nothing to install.</p>
+<p>For R, each session page lists optional slide decks from the <a href="https://bgpopescu.net/teaching/research_workshop/" target="_blank">research workshop</a>. Between them they cover everything the report needs and nothing more: loading a data file, making a graph, making a map, and splitting a graph into panels. The workshop’s statistics and regression decks are <strong>not</strong> part of this course.</p>
 </section>
 <section id="use-of-ai" class="level2">
 <h2 class="anchored" data-anchor-id="use-of-ai">Use of AI</h2>
-<p>You may use AI in this course, and you must declare it. Every report ends with a short table naming what you used it for, what you asked, and how you checked the answer.</p>
-<p>Two rules apply throughout. <strong>Never submit code or prose you cannot explain</strong> — you will be asked. And use AI for the mechanical parts, not the judgement: fixing an error message is a good use, deciding what your research question is or what your map means is not.</p>
+<p>You may use AI tools such as ChatGPT in this course, and you must declare it. Every report ends with a short table naming what you used it for, what you asked, and how you checked the answer.</p>
+<p>Two rules apply throughout. <strong>Never submit code, figures or prose you cannot explain</strong> — you will be asked. And use AI for the mechanical parts, not the judgement: fixing an error message is a good use, deciding what your research question is or what your map means is not.</p>
 
 
 </section>
