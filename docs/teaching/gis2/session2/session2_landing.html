@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2 sf Objects and Basic Mapping – Spatial Data Analysis in R</title>
+<title>2 Coordinates, CRS, and Your First Map – Spatial Data Analysis in R</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -88,7 +88,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../session2/session2_landing.html"><span class="chapter-title">2 sf Objects and Basic Mapping</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../session2/session2_landing.html"><span class="chapter-title">2 Coordinates, CRS, and Your First Map</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -120,32 +120,37 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../session1/session1_landing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1 Quarto for Spatial Reporting, Coordinates, and CRS</span></a>
+  <a href="../session1/session1_landing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1 Quarto for Spatial Reporting</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../session2/session2_landing.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">2 sf Objects and Basic Mapping</span></a>
+  <a href="../session2/session2_landing.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">2 Coordinates, CRS, and Your First Map</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../session3/session3_landing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">3 Choropleths, Classification, and Interactive Maps</span></a>
+  <a href="../session3/session3_landing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">3 sf Objects and Basic Mapping</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../session4/session4_landing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">4 Spatial Joins, Measurement, and Buffers</span></a>
+  <a href="../session4/session4_landing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">4 Choropleths, Classification, and Interactive Maps</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../session5/session5_landing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">5 Rasters: Continuous Surfaces and Zonal Statistics</span></a>
+  <a href="../session5/session5_landing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">5 Spatial Joins, Measurement, and Buffers</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../session6/session6_landing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Optional: Creating a Website with GitHub Pages and Quarto</span></a>
+  <a href="../session6/session6_landing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Optional: Rasters — Continuous Surfaces and Zonal Statistics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../session7/session7_landing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Optional: Creating a Website with GitHub Pages and Quarto</span></a>
   </div>
 </li>
     </ul>
@@ -168,7 +173,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">2 sf Objects and Basic Mapping</span></h1>
+<h1 class="title"><span class="chapter-title">2 Coordinates, CRS, and Your First Map</span></h1>
 </div>
 
 
@@ -195,9 +200,9 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="reading" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="reading">Reading</h3>
+<p>Gimond, Manuel. <em>Intro to GIS and Spatial Analysis.</em> Ch. 9, Coordinate Systems. <a href="https://mgimond.github.io/Spatial/09_coordinate_systems.html" target="_blank">(link)</a></p>
+<p>Lovelace, Nowosad, and Muenchow. <em>Geocomputation with R.</em> Ch. 7, Reprojecting geographic data. <a href="https://r.geocompx.org/reproj-geo-data" target="_blank">(link)</a></p>
 <p>Gimond, Manuel. <em>Intro to GIS and Spatial Analysis.</em> Ch. 2, Feature Representation. <a href="https://mgimond.github.io/Spatial/02_feature_representation.html" target="_blank">(link)</a></p>
-<p>Pebesma, Edzer. <em>Simple Features for R.</em> Vignette 1. <a href="https://r-spatial.github.io/sf/articles/sf1.html" target="_blank">(link)</a></p>
-<p>Lovelace, Nowosad, and Muenchow. <em>Geocomputation with R.</em> Ch. 8, Geographic data I/O. <a href="https://r.geocompx.org/read-write" target="_blank">(link)</a></p>
 
 
 </section>
@@ -605,13 +610,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../session1/session1_landing.html" class="pagination-link" aria-label="1 Quarto for Spatial Reporting, Coordinates, and CRS">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">1 Quarto for Spatial Reporting, Coordinates, and CRS</span></span>
+      <a href="../session1/session1_landing.html" class="pagination-link" aria-label="1 Quarto for Spatial Reporting">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">1 Quarto for Spatial Reporting</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../session3/session3_landing.html" class="pagination-link" aria-label="3 Choropleths, Classification, and Interactive Maps">
-        <span class="nav-page-text"><span class="chapter-title">3 Choropleths, Classification, and Interactive Maps</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../session3/session3_landing.html" class="pagination-link" aria-label="3 sf Objects and Basic Mapping">
+        <span class="nav-page-text"><span class="chapter-title">3 sf Objects and Basic Mapping</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
