@@ -1089,6 +1089,7 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <li>Why the Earth’s shape forces us to think about <strong>coordinate reference systems</strong></li>
 <li><strong>Geographic</strong> vs <strong>projected</strong> systems, and what every projection distorts</li>
 <li>The CRS error you will hit, and <code>st_transform</code></li>
+<li>What an <strong><code>sf</code> dataframe</strong> is, and how <code>geom_sf()</code> reads its geometry column</li>
 <li><strong>Vector layers</strong>: points, lines, polygons, and the seven <code>sf</code> geometry types</li>
 <li>Reading a real <strong>shapefile</strong> of Mexico, and what is inside one</li>
 </ol>
@@ -1336,14 +1337,15 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <span id="cb1-6"><a href aria-label="6"></a><span class="fu">sf_use_s2</span>(<span class="cn">FALSE</span>)</span>
 <span id="cb1-7"><a href aria-label="7"></a></span>
 <span id="cb1-8"><a href aria-label="8"></a><span class="co">#Step2: Get world polygons from the spData package</span></span>
-<span id="cb1-9"><a href aria-label="9"></a>dunia <span class="ot">&lt;-</span> spData<span class="sc">::</span>world <span class="sc">%&gt;%</span> <span class="fu">st_as_sf</span>()</span>
-<span id="cb1-10"><a href aria-label="10"></a></span>
-<span id="cb1-11"><a href aria-label="11"></a><span class="co">#Step3: Draw them in one projection</span></span>
-<span id="cb1-12"><a href aria-label="12"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb1-13"><a href aria-label="13"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> dunia) <span class="sc">+</span></span>
-<span id="cb1-14"><a href aria-label="14"></a>  <span class="fu">coord_sf</span>(<span class="at">crs =</span> <span class="st">&quot;EPSG: 3857&quot;</span>) <span class="sc">+</span></span>
-<span id="cb1-15"><a href aria-label="15"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;World Mercator&quot;</span>) <span class="sc">+</span></span>
-<span id="cb1-16"><a href aria-label="16"></a>  <span class="fu">theme_minimal_grid</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-9"><a href aria-label="9"></a>dunia <span class="ot">&lt;-</span> spData<span class="sc">::</span>world <span class="sc">%&gt;%</span></span>
+<span id="cb1-10"><a href aria-label="10"></a>  <span class="fu">st_as_sf</span>()</span>
+<span id="cb1-11"><a href aria-label="11"></a></span>
+<span id="cb1-12"><a href aria-label="12"></a><span class="co">#Step3: Draw them in one projection</span></span>
+<span id="cb1-13"><a href aria-label="13"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb1-14"><a href aria-label="14"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> dunia) <span class="sc">+</span></span>
+<span id="cb1-15"><a href aria-label="15"></a>  <span class="fu">coord_sf</span>(<span class="at">crs =</span> <span class="st">&quot;EPSG: 3857&quot;</span>) <span class="sc">+</span></span>
+<span id="cb1-16"><a href aria-label="16"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;World Mercator&quot;</span>) <span class="sc">+</span></span>
+<span id="cb1-17"><a href aria-label="17"></a>  <span class="fu">theme_minimal_grid</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 </section>
@@ -1513,7 +1515,7 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 </div>
 </div>
 <div class="fragment">
-<p>You will meet this exact error in <strong>Session 5</strong>. Now you know what it means.</p>
+<p>You will meet this exact error in <strong>Session 4</strong>. Now you know what it means.</p>
 </div>
 </section>
 <section id="st_transform-is-the-fix" class="slide level2 smaller">
@@ -1692,7 +1694,7 @@ Geodetic CRS:  WGS 84</code></pre>
 <p><strong>Tip</strong></p>
 </div>
 <div class="callout-content">
-<p>The geometry column is <strong>sticky</strong>: <code>filter</code>, <code>mutate</code> and <code>select</code> all carry it along, even when you never mention it. <code>st_drop_geometry()</code> is how you deliberately let go of it.</p>
+<p><code>sf</code> tracks the geometry column <strong>by name</strong>. That is how every <code>st_</code> function knows which column to operate on, and why you never pass the coordinates around yourself.</p>
 </div>
 </div>
 </div>
@@ -2223,45 +2225,49 @@ UNIT[&quot;Degree&quot;,0.0174532925199433]]</code></pre>
 <p>We use GADM today because it is one click. Use INEGI for your reto.</p>
 </div>
 </section>
-<section id="an-sf-object-is-a-dataframe" class="slide level2">
-<h2>An <code>sf</code> Object Is a Dataframe</h2>
+<section id="the-same-thing-with-32-real-rows" class="slide level2 smaller tightcode">
+<h2>The Same Thing, With 32 Real Rows</h2>
+<p>The clinics were three rows we typed by hand. A real shapefile is the <strong>identical structure</strong> — just wider, and with polygons where we had points.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href aria-label="1"></a><span class="co">#Step1: Load sf</span></span>
-<span id="cb55-2"><a href aria-label="2"></a><span class="fu">library</span>(sf)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href aria-label="1"></a><span class="co">#Step1: Read the state boundaries</span></span>
+<span id="cb55-2"><a href aria-label="2"></a>mex_states <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">&quot;../data/gadm41_MEX_shp/gadm41_MEX_1.shp&quot;</span>, <span class="at">quiet =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb55-3"><a href aria-label="3"></a></span>
-<span id="cb55-4"><a href aria-label="4"></a><span class="co">#Step2: Read the state boundaries</span></span>
-<span id="cb55-5"><a href aria-label="5"></a>mex_states <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">&quot;../data/gadm41_MEX_shp/gadm41_MEX_1.shp&quot;</span>, <span class="at">quiet =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb55-6"><a href aria-label="6"></a></span>
-<span id="cb55-7"><a href aria-label="7"></a><span class="co">#Step3: Check what we got back</span></span>
-<span id="cb55-8"><a href aria-label="8"></a><span class="fu">class</span>(mex_states)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb55-4"><a href aria-label="4"></a><span class="co">#Step2: The same two classes, the same sf_column -- 32 rows instead of 3</span></span>
+<span id="cb55-5"><a href aria-label="5"></a><span class="fu">class</span>(mex_states)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] &quot;sf&quot;         &quot;data.frame&quot;</code></pre>
 </div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href aria-label="1"></a><span class="fu">dim</span>(mex_states)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 32 12</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href aria-label="1"></a><span class="fu">attr</span>(mex_states, <span class="st">&quot;sf_column&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] &quot;geometry&quot;</code></pre>
+</div>
+</div>
+<div class="fragment">
+<p>Nothing new to learn. You already know how to read this object.</p>
 </div>
 </section>
-<section id="an-sf-object-is-a-dataframe-1" class="slide level2" data-visibility="uncounted">
-<h2>An <code>sf</code> Object Is a Dataframe</h2>
+<section id="the-same-thing-with-32-real-rows-1" class="slide level2 smaller tightcode" data-visibility="uncounted">
+<h2>The Same Thing, With 32 Real Rows</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href aria-label="1"></a>mex_states[, <span class="fu">c</span>(<span class="st">&quot;NAME_1&quot;</span>, <span class="st">&quot;TYPE_1&quot;</span>)]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href aria-label="1"></a>mex_states[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="fu">c</span>(<span class="st">&quot;NAME_1&quot;</span>, <span class="st">&quot;TYPE_1&quot;</span>)]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Simple feature collection with 32 features and 2 fields
+<pre><code>Simple feature collection with 3 features and 2 fields
 Geometry type: MULTIPOLYGON
 Dimension:     XY
-Bounding box:  xmin: -118.3665 ymin: 14.53507 xmax: -86.71074 ymax: 32.71863
+Bounding box:  xmin: -118.3665 ymin: 21.62227 xmax: -101.8353 ymax: 32.71863
 Geodetic CRS:  WGS 84
-First 10 features:
-                NAME_1           TYPE_1                       geometry
-1       Aguascalientes           Estado MULTIPOLYGON (((-102.0659 2...
-2      Baja California           Estado MULTIPOLYGON (((-114.1228 2...
-3  Baja California Sur           Estado MULTIPOLYGON (((-109.9104 2...
-4             Campeche           Estado MULTIPOLYGON (((-91.8393 18...
-5              Chiapas           Estado MULTIPOLYGON (((-92.4664 14...
-6            Chihuahua           Estado MULTIPOLYGON (((-106.4258 2...
-7             Coahuila           Estado MULTIPOLYGON (((-100.8071 2...
-8               Colima           Estado MULTIPOLYGON (((-114.7097 1...
-9     Distrito Federal Distrito Federal MULTIPOLYGON (((-98.96683 1...
-10             Durango           Estado MULTIPOLYGON (((-104.1727 2...</code></pre>
+               NAME_1 TYPE_1                       geometry
+1      Aguascalientes Estado MULTIPOLYGON (((-102.0659 2...
+2     Baja California Estado MULTIPOLYGON (((-114.1228 2...
+3 Baja California Sur Estado MULTIPOLYGON (((-109.9104 2...</code></pre>
 </div>
+</div>
+<div class="fragment">
+<p><code>MULTIPOLYGON</code> in the geometry column, so <code>geom_sf()</code> will draw filled shapes — exactly as on the POINT / LINESTRING / POLYGON slide earlier.</p>
 </div>
 </section>
 <section id="why-that-matters" class="slide level2">
@@ -2295,15 +2301,15 @@ First 10 features:
 <h2><code>st_simplify</code>: Making Maps Render Fast</h2>
 <p>Detailed boundaries are slow to draw, and at national scale you cannot see the detail anyway.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href aria-label="1"></a><span class="co">#Step1: Simplify the boundaries (0.02 degrees is roughly 2 km)</span></span>
-<span id="cb59-2"><a href aria-label="2"></a>mex_simple <span class="ot">&lt;-</span> <span class="fu">st_simplify</span>(mex_states, <span class="at">dTolerance =</span> <span class="fl">0.02</span>)</span>
-<span id="cb59-3"><a href aria-label="3"></a></span>
-<span id="cb59-4"><a href aria-label="4"></a><span class="co">#Step2: Compare the sizes before and after</span></span>
-<span id="cb59-5"><a href aria-label="5"></a><span class="fu">format</span>(<span class="fu">object.size</span>(mex_states), <span class="at">units =</span> <span class="st">&quot;MB&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href aria-label="1"></a><span class="co">#Step1: Simplify the boundaries (0.02 degrees is roughly 2 km)</span></span>
+<span id="cb63-2"><a href aria-label="2"></a>mex_simple <span class="ot">&lt;-</span> <span class="fu">st_simplify</span>(mex_states, <span class="at">dTolerance =</span> <span class="fl">0.02</span>)</span>
+<span id="cb63-3"><a href aria-label="3"></a></span>
+<span id="cb63-4"><a href aria-label="4"></a><span class="co">#Step2: Compare the sizes before and after</span></span>
+<span id="cb63-5"><a href aria-label="5"></a><span class="fu">format</span>(<span class="fu">object.size</span>(mex_states), <span class="at">units =</span> <span class="st">&quot;MB&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] &quot;11.9 Mb&quot;</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href aria-label="1"></a><span class="fu">format</span>(<span class="fu">object.size</span>(mex_simple), <span class="at">units =</span> <span class="st">&quot;MB&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href aria-label="1"></a><span class="fu">format</span>(<span class="fu">object.size</span>(mex_simple), <span class="at">units =</span> <span class="st">&quot;MB&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] &quot;0.1 Mb&quot;</code></pre>
 </div>
@@ -2338,17 +2344,17 @@ First 10 features:
 <h2>Mapping Mexico</h2>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href aria-label="1"></a><span class="co">#Step1: Load ggplot2</span></span>
-<span id="cb63-2"><a href aria-label="2"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb63-3"><a href aria-label="3"></a></span>
-<span id="cb63-4"><a href aria-label="4"></a><span class="co">#Step2: Read the country outline</span></span>
-<span id="cb63-5"><a href aria-label="5"></a>mex_country <span class="ot">&lt;-</span> <span class="fu">st_read</span>(</span>
-<span id="cb63-6"><a href aria-label="6"></a>  <span class="st">&quot;../data/gadm41_MEX_shp/gadm41_MEX_0.shp&quot;</span>,</span>
-<span id="cb63-7"><a href aria-label="7"></a>  <span class="at">quiet =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb63-8"><a href aria-label="8"></a></span>
-<span id="cb63-9"><a href aria-label="9"></a><span class="co">#Step3: Map it -- the data is already WGS84, so no coord_sf needed</span></span>
-<span id="cb63-10"><a href aria-label="10"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb63-11"><a href aria-label="11"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> mex_country)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href aria-label="1"></a><span class="co">#Step1: Load ggplot2</span></span>
+<span id="cb67-2"><a href aria-label="2"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb67-3"><a href aria-label="3"></a></span>
+<span id="cb67-4"><a href aria-label="4"></a><span class="co">#Step2: Read the country outline</span></span>
+<span id="cb67-5"><a href aria-label="5"></a>mex_country <span class="ot">&lt;-</span> <span class="fu">st_read</span>(</span>
+<span id="cb67-6"><a href aria-label="6"></a>  <span class="st">&quot;../data/gadm41_MEX_shp/gadm41_MEX_0.shp&quot;</span>,</span>
+<span id="cb67-7"><a href aria-label="7"></a>  <span class="at">quiet =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb67-8"><a href aria-label="8"></a></span>
+<span id="cb67-9"><a href aria-label="9"></a><span class="co">#Step3: Map it -- the data is already WGS84, so no coord_sf needed</span></span>
+<span id="cb67-10"><a href aria-label="10"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb67-11"><a href aria-label="11"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> mex_country)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column">
 <div class="cell-output-display">
 <div>
@@ -2363,9 +2369,9 @@ First 10 features:
 <h2>Adding the States</h2>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href aria-label="1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb64-2"><a href aria-label="2"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> mex_simple) <span class="sc">+</span></span>
-<span id="cb64-3"><a href aria-label="3"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;States of Mexico&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href aria-label="1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb68-2"><a href aria-label="2"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> mex_simple) <span class="sc">+</span></span>
+<span id="cb68-3"><a href aria-label="3"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;States of Mexico&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column">
 <div class="cell-output-display">
 <div>
@@ -2383,16 +2389,16 @@ First 10 features:
 <h2>Zooming In</h2>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href aria-label="1"></a><span class="co">#Step1: Keep only the three peninsula states</span></span>
-<span id="cb65-2"><a href aria-label="2"></a>peninsula <span class="ot">&lt;-</span> mex_simple[</span>
-<span id="cb65-3"><a href aria-label="3"></a>  mex_simple<span class="sc">$</span>NAME_1 <span class="sc">%in%</span></span>
-<span id="cb65-4"><a href aria-label="4"></a>    <span class="fu">c</span>(<span class="st">&quot;Yucatán&quot;</span>, <span class="st">&quot;Campeche&quot;</span>,</span>
-<span id="cb65-5"><a href aria-label="5"></a>      <span class="st">&quot;Quintana Roo&quot;</span>), ]</span>
-<span id="cb65-6"><a href aria-label="6"></a></span>
-<span id="cb65-7"><a href aria-label="7"></a><span class="co">#Step2: Map them, coloured by state</span></span>
-<span id="cb65-8"><a href aria-label="8"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb65-9"><a href aria-label="9"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> peninsula,</span>
-<span id="cb65-10"><a href aria-label="10"></a>          <span class="fu">aes</span>(<span class="at">fill =</span> NAME_1))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href aria-label="1"></a><span class="co">#Step1: Keep only the three peninsula states</span></span>
+<span id="cb69-2"><a href aria-label="2"></a>peninsula <span class="ot">&lt;-</span> mex_simple[</span>
+<span id="cb69-3"><a href aria-label="3"></a>  mex_simple<span class="sc">$</span>NAME_1 <span class="sc">%in%</span></span>
+<span id="cb69-4"><a href aria-label="4"></a>    <span class="fu">c</span>(<span class="st">&quot;Yucatán&quot;</span>, <span class="st">&quot;Campeche&quot;</span>,</span>
+<span id="cb69-5"><a href aria-label="5"></a>      <span class="st">&quot;Quintana Roo&quot;</span>), ]</span>
+<span id="cb69-6"><a href aria-label="6"></a></span>
+<span id="cb69-7"><a href aria-label="7"></a><span class="co">#Step2: Map them, coloured by state</span></span>
+<span id="cb69-8"><a href aria-label="8"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb69-9"><a href aria-label="9"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> peninsula,</span>
+<span id="cb69-10"><a href aria-label="10"></a>          <span class="fu">aes</span>(<span class="at">fill =</span> NAME_1))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column">
 <div class="cell-output-display">
 <div>
@@ -2409,20 +2415,20 @@ First 10 features:
 <section id="putting-it-in-your-document" class="slide level2 smaller">
 <h2>Putting It in Your Document</h2>
 <p>Everything from this session, as one chunk in your own document:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb66"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb66-1"><a href aria-label="1"></a><span class="in">```{r}</span></span>
-<span id="cb66-2"><a href aria-label="2"></a><span class="co">#| label: fig-mexico</span></span>
-<span id="cb66-3"><a href aria-label="3"></a><span class="co">#| fig-cap: &quot;States of Mexico&quot;</span></span>
-<span id="cb66-4"><a href aria-label="4"></a><span class="co">#| fig-width: 8</span></span>
-<span id="cb66-5"><a href aria-label="5"></a><span class="co">#| fig-height: 5</span></span>
-<span id="cb66-6"><a href aria-label="6"></a><span class="co">#| cache: true</span></span>
-<span id="cb66-7"><a href aria-label="7"></a><span class="fu">library</span>(sf)</span>
-<span id="cb66-8"><a href aria-label="8"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb66-9"><a href aria-label="9"></a></span>
-<span id="cb66-10"><a href aria-label="10"></a>mex <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">&quot;../data/gadm41_MEX_shp/gadm41_MEX_1.shp&quot;</span>, <span class="at">quiet =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb66-11"><a href aria-label="11"></a>mex <span class="ot">&lt;-</span> <span class="fu">st_simplify</span>(mex, <span class="at">dTolerance =</span> <span class="fl">0.02</span>)   <span class="co"># degrees: the CRS it arrived in</span></span>
-<span id="cb66-12"><a href aria-label="12"></a></span>
-<span id="cb66-13"><a href aria-label="13"></a><span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="at">data =</span> mex)</span>
-<span id="cb66-14"><a href aria-label="14"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb70"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb70-1"><a href aria-label="1"></a><span class="in">```{r}</span></span>
+<span id="cb70-2"><a href aria-label="2"></a><span class="co">#| label: fig-mexico</span></span>
+<span id="cb70-3"><a href aria-label="3"></a><span class="co">#| fig-cap: &quot;States of Mexico&quot;</span></span>
+<span id="cb70-4"><a href aria-label="4"></a><span class="co">#| fig-width: 8</span></span>
+<span id="cb70-5"><a href aria-label="5"></a><span class="co">#| fig-height: 5</span></span>
+<span id="cb70-6"><a href aria-label="6"></a><span class="co">#| cache: true</span></span>
+<span id="cb70-7"><a href aria-label="7"></a><span class="fu">library</span>(sf)</span>
+<span id="cb70-8"><a href aria-label="8"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb70-9"><a href aria-label="9"></a></span>
+<span id="cb70-10"><a href aria-label="10"></a>mex <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">&quot;../data/gadm41_MEX_shp/gadm41_MEX_1.shp&quot;</span>, <span class="at">quiet =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb70-11"><a href aria-label="11"></a>mex <span class="ot">&lt;-</span> <span class="fu">st_simplify</span>(mex, <span class="at">dTolerance =</span> <span class="fl">0.02</span>)   <span class="co"># degrees: the CRS it arrived in</span></span>
+<span id="cb70-12"><a href aria-label="12"></a></span>
+<span id="cb70-13"><a href aria-label="13"></a><span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="at">data =</span> mex)</span>
+<span id="cb70-14"><a href aria-label="14"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="fragment">
 <p>The data stays in WGS84 and so does the map. There is only one CRS to keep track of.</p>
 </div>
@@ -2465,7 +2471,8 @@ First 10 features:
 <li><strong>Geographic</strong> systems use degrees, <strong>projected</strong> systems use metres — every projection distorts something</li>
 <li>CRS mistakes announce themselves when you <strong>combine layers</strong>; <code>st_transform</code> is the fix</li>
 <li>Keep data in <strong>WGS84</strong>; project only when you measure</li>
-<li>A shapefile is <strong>at least four files</strong>, and an <code>sf</code> object is a dataframe with a geometry column</li>
+<li>An <code>sf</code> object is a dataframe with a <strong>geometry column</strong>, and <code>geom_sf()</code> draws whatever is in it</li>
+<li>A shapefile is <strong>at least four files</strong>, and the geometry type decides what your map looks like</li>
 </ul>
 
 </section>

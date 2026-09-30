@@ -1121,21 +1121,16 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><strong>3</strong></td>
-<td style="text-align: left;"><code>sf</code> objects and mapping</td>
-<td style="text-align: left;">what a layer actually contains</td>
+<td style="text-align: left;"><code>sf</code> objects, joins, choropleths</td>
+<td style="text-align: left;">whether a map shows a rate, or just population</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><strong>4</strong></td>
-<td style="text-align: left;">choropleths and classification</td>
-<td style="text-align: left;">whether a map shows a rate, or just population</td>
+<td style="text-align: left;">joins by location, distance, buffers</td>
+<td style="text-align: left;">whether <em>nearest</em> and <em>within</em> mean what you intended</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><strong>5</strong></td>
-<td style="text-align: left;">joins, distance, buffers</td>
-<td style="text-align: left;">whether <em>nearest</em> and <em>within</em> mean what you intended</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><em>opt.</em></td>
 <td style="text-align: left;">rasters and zonal statistics</td>
 <td style="text-align: left;">whether resolution and aggregation fit the question</td>
 </tr>
@@ -1174,8 +1169,8 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <div class="fragment">
 <ul>
 <li>are the layers in <strong>degrees or metres</strong> — and are the distances therefore meaningful? <em>(today)</em></li>
-<li>does <strong>nearest</strong> mean the centroid, the boundary, or where people actually live? <em>(Session 5)</em></li>
-<li>did the join quietly <strong>duplicate</strong> municipalities? <em>(Session 5)</em></li>
+<li>does <strong>nearest</strong> mean the centroid, the boundary, or where people actually live? <em>(Session 4)</em></li>
+<li>did the join quietly <strong>duplicate</strong> municipalities? <em>(Session 4)</em></li>
 <li>what happened to the <strong>islands</strong>? <em>(today)</em></li>
 <li>is a <strong>straight line</strong> what you want, or travel time on a road?</li>
 </ul>
@@ -1752,12 +1747,12 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <span id="cb10-2"><a href aria-label="2"></a><span class="fu">install.packages</span>(<span class="st">&quot;cowplot&quot;</span>)       <span class="co"># plot themes                 (today)</span></span>
 <span id="cb10-3"><a href aria-label="3"></a><span class="fu">install.packages</span>(<span class="st">&quot;ggspatial&quot;</span>)     <span class="co"># map layers and scale bars   (today)</span></span>
 <span id="cb10-4"><a href aria-label="4"></a><span class="fu">install.packages</span>(<span class="st">&quot;patchwork&quot;</span>)     <span class="co"># plots side by side          (Session 3)</span></span>
-<span id="cb10-5"><a href aria-label="5"></a><span class="fu">install.packages</span>(<span class="st">&quot;classInt&quot;</span>)      <span class="co"># choropleth class breaks     (Session 4)</span></span>
-<span id="cb10-6"><a href aria-label="6"></a><span class="fu">install.packages</span>(<span class="st">&quot;viridis&quot;</span>)       <span class="co"># colour scales               (Session 4)</span></span>
-<span id="cb10-7"><a href aria-label="7"></a><span class="fu">install.packages</span>(<span class="st">&quot;leaflet&quot;</span>)       <span class="co"># interactive maps            (Session 4)</span></span>
-<span id="cb10-8"><a href aria-label="8"></a><span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>)         <span class="co"># rasters                     (Session 6)</span></span>
-<span id="cb10-9"><a href aria-label="9"></a><span class="fu">install.packages</span>(<span class="st">&quot;tidyterra&quot;</span>)     <span class="co"># rasters with ggplot         (Session 6)</span></span>
-<span id="cb10-10"><a href aria-label="10"></a><span class="fu">install.packages</span>(<span class="st">&quot;exactextractr&quot;</span>) <span class="co"># zonal statistics            (Session 6)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb10-5"><a href aria-label="5"></a><span class="fu">install.packages</span>(<span class="st">&quot;classInt&quot;</span>)      <span class="co"># choropleth class breaks     (Session 3)</span></span>
+<span id="cb10-6"><a href aria-label="6"></a><span class="fu">install.packages</span>(<span class="st">&quot;viridis&quot;</span>)       <span class="co"># colour scales               (Session 3)</span></span>
+<span id="cb10-7"><a href aria-label="7"></a><span class="fu">install.packages</span>(<span class="st">&quot;leaflet&quot;</span>)       <span class="co"># interactive maps            (Session 3)</span></span>
+<span id="cb10-8"><a href aria-label="8"></a><span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>)         <span class="co"># rasters                     (Session 5)</span></span>
+<span id="cb10-9"><a href aria-label="9"></a><span class="fu">install.packages</span>(<span class="st">&quot;tidyterra&quot;</span>)     <span class="co"># rasters with ggplot         (Session 5)</span></span>
+<span id="cb10-10"><a href aria-label="10"></a><span class="fu">install.packages</span>(<span class="st">&quot;exactextractr&quot;</span>) <span class="co"># zonal statistics            (Session 5)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="sf-is-worse-than-dplyr" class="slide level2 tightcode">
@@ -1883,7 +1878,7 @@ Bogdan G. Popescu <a href="https://orcid.org/0000-0002-7730-7495" class="quarto-
 <p><strong>Important</strong></p>
 </div>
 <div class="callout-content">
-<p>Set <code>embed-resources: true</code>, then send the <code>.html</code> file on its own. Nothing else needs to travel with it: no <code>_files</code> folder, no images. For anything you send to anyone this setting is not optional. We build a <code>leaflet</code> map in Session 4, which is usually when it bites.</p>
+<p>Set <code>embed-resources: true</code>, then send the <code>.html</code> file on its own. Nothing else needs to travel with it: no <code>_files</code> folder, no images. For anything you send to anyone this setting is not optional. We build a <code>leaflet</code> map in Session 3, which is usually when it bites.</p>
 </div>
 </div>
 </div>

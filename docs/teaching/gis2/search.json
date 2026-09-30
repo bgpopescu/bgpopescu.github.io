@@ -24,7 +24,7 @@
     "href": "index.html#module-description",
     "title": "Spatial Data Analysis in R",
     "section": "Module Description",
-    "text": "Module Description\nThis is the spatial module of Data Science II. Over five sessions it takes you from never having opened a shapefile to producing a complete accessibility analysis and publishing it as a report you can send to someone.\nThe other modules of this course cover large language models, APIs, web scraping, and SQL. This one covers the thing none of them touch: data that has a location. That is not a niche skill — municipio-level indicators, service coverage, census geography, and crime statistics are all spatial, and treating them as ordinary tables throws away most of what they can tell you.\nEverything is done in R, using the sf and terra packages, and written up in Quarto. You have both already; we repurpose them.",
+    "text": "Module Description\nThis is the spatial module of Data Science II. Over five sessions it takes you from never having opened a shapefile to producing a complete accessibility analysis, pulling a continuous surface into your own table, and publishing the result as a report you can send to someone.\nThe other modules of this course cover large language models, APIs, web scraping, and SQL. This one covers the thing none of them touch: data that has a location. That is not a niche skill — municipio-level indicators, service coverage, census geography, and crime statistics are all spatial, and treating them as ordinary tables throws away most of what they can tell you.\nEverything is done in R, using the sf and terra packages, and written up in Quarto. You have both already; we repurpose them.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
     ]
@@ -64,7 +64,7 @@
     "href": "index.html#module-content",
     "title": "Spatial Data Analysis in R",
     "section": "Module Content",
-    "text": "Module Content\n\n\n\n\n\n\n\nSession\nTopic\n\n\n\n\n1\nQuarto for Spatial Reporting, Coordinates, and CRS\n\n\n2\nsf Objects and Basic Mapping\n\n\n3\nChoropleths, Classification, and Interactive Maps\n\n\n4\nSpatial Joins, Measurement, and Buffers\n\n\n5\nRasters: Continuous Surfaces and Zonal Statistics\n\n\nOpt.\nCreating a Website with GitHub Pages and Quarto\n\n\n\nSession dates are set by the course calendar; see Canvas.",
+    "text": "Module Content\n\n\n\n\n\n\n\nSession\nTopic\n\n\n\n\n1\nQuarto for Spatial Reporting\n\n\n2\nCoordinates, CRS, and Your First Map\n\n\n3\nsf Essentials, Choropleths, and Interactive Maps\n\n\n4\nSpatial Joins, Measurement, and Buffers\n\n\n5\nRasters: Continuous Surfaces and Zonal Statistics\n\n\nOpt.\nsf Objects in Depth\n\n\nOpt.\nCreating a Website with GitHub Pages and Quarto\n\n\n\nSession dates are set by the course calendar; see Canvas.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
     ]
@@ -132,46 +132,46 @@
   {
     "objectID": "session3/session3_landing.html",
     "href": "session3/session3_landing.html",
-    "title": "3 sf Objects and Basic Mapping",
+    "title": "3 sf Essentials, Choropleths, and Interactive Maps",
     "section": "",
-    "text": "Lecture\n\n\n\n\nOpen Slides in a New Window\n\n\nReading\nGimond, Manuel. Intro to GIS and Spatial Analysis. Ch. 2, Feature Representation. (link)\nPebesma, Edzer. Simple Features for R. Vignette 1. (link)\nLovelace, Nowosad, and Muenchow. Geocomputation with R. Ch. 8, Geographic data I/O. (link)",
+    "text": "Lecture\n\n\n\n\nOpen Slides in a New Window\n\n\nReading\nGimond, Manuel. Intro to GIS and Spatial Analysis. Ch. 5, Statistical Maps. (link)\nGimond, Manuel. Intro to GIS and Spatial Analysis. Ch. 6, Pitfalls to Avoid. (link)\nGimond, Manuel. Intro to GIS and Spatial Analysis. Ch. 7, Good Map Making Tips. (link)\nLovelace, Nowosad, and Muenchow. Geocomputation with R. Ch. 9, Making maps with R. (link)\nLovelace, Nowosad, and Muenchow. Geocomputation with R. Ch. 8, Geographic data I/O. (link)",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>3 sf Objects and Basic Mapping</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>3 `sf` Essentials, Choropleths, and Interactive Maps</span>"
     ]
   },
   {
     "objectID": "session4/session4_landing.html",
     "href": "session4/session4_landing.html",
-    "title": "4 Choropleths, Classification, and Interactive Maps",
+    "title": "4 Spatial Joins, Measurement, and Buffers",
     "section": "",
-    "text": "Lecture\n\n\n\n\nOpen Slides in a New Window\n\n\nReading\nGimond, Manuel. Intro to GIS and Spatial Analysis. Ch. 5, Statistical Maps. (link)\nGimond, Manuel. Intro to GIS and Spatial Analysis. Ch. 6, Pitfalls to Avoid. (link)\nGimond, Manuel. Intro to GIS and Spatial Analysis. Ch. 7, Good Map Making Tips. (link)\nLovelace, Nowosad, and Muenchow. Geocomputation with R. Ch. 9, Making maps with R. (link)",
+    "text": "Lecture\n\n\n\n\nOpen Slides in a New Window\n\n\nReading\nLovelace, Nowosad, and Muenchow. Geocomputation with R. Ch. 4, Spatial data operations. (link)\nGimond, Manuel. Intro to GIS and Spatial Analysis. Ch. 8, Spatial Operations and Vector Overlays. (link)\nLovelace, Nowosad, and Muenchow. Geocomputation with R. Ch. 5, Geometry operations. (link)",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>4 Choropleths, Classification, and Interactive Maps</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>4 Spatial Joins, Measurement, and Buffers</span>"
     ]
   },
   {
     "objectID": "session5/session5_landing.html",
     "href": "session5/session5_landing.html",
-    "title": "5 Spatial Joins, Measurement, and Buffers",
+    "title": "5 Rasters — Continuous Surfaces and Zonal Statistics",
     "section": "",
-    "text": "Lecture\n\n\n\n\nOpen Slides in a New Window\n\n\nReading\nLovelace, Nowosad, and Muenchow. Geocomputation with R. Ch. 4, Spatial data operations. (link)\nGimond, Manuel. Intro to GIS and Spatial Analysis. Ch. 8, Spatial Operations and Vector Overlays. (link)\nLovelace, Nowosad, and Muenchow. Geocomputation with R. Ch. 5, Geometry operations. (link)",
+    "text": "Lecture\n\n\n\n\nOpen Slides in a New Window\n\n\nReading\nLovelace, Nowosad, and Muenchow. Geocomputation with R. Ch. 6, Raster-vector interactions. (link)\nGimond, Manuel. Intro to GIS and Spatial Analysis. Ch. 10, Map Algebra. (link)\nHijmans, Robert. Spatial Data Science with R and terra. (link)",
     "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>5 Spatial Joins, Measurement, and Buffers</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>5 Rasters --- Continuous Surfaces and Zonal Statistics</span>"
+    ]
+  },
+  {
+    "objectID": "session3/session3_sf_depth_landing.html",
+    "href": "session3/session3_sf_depth_landing.html",
+    "title": "Optional: sf Objects in Depth",
+    "section": "",
+    "text": "Lecture\n\n\n\n\nOpen Slides in a New Window\n\n\nReading\nGimond, Manuel. Intro to GIS and Spatial Analysis. Ch. 2, Feature Representation. (link)\nPebesma, Edzer. Simple Features for R. Vignette 1. (link)\nLovelace, Nowosad, and Muenchow. Geocomputation with R. Ch. 8, Geographic data I/O. (link)",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Optional: `sf` Objects in Depth</span>"
     ]
   },
   {
     "objectID": "session6/session6_landing.html",
     "href": "session6/session6_landing.html",
-    "title": "Optional: Rasters — Continuous Surfaces and Zonal Statistics",
-    "section": "",
-    "text": "Lecture\n\n\n\n\nOpen Slides in a New Window\n\n\nReading\nLovelace, Nowosad, and Muenchow. Geocomputation with R. Ch. 6, Raster-vector interactions. (link)\nGimond, Manuel. Intro to GIS and Spatial Analysis. Ch. 10, Map Algebra. (link)\nHijmans, Robert. Spatial Data Science with R and terra. (link)",
-    "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Optional: Rasters --- Continuous Surfaces and Zonal Statistics</span>"
-    ]
-  },
-  {
-    "objectID": "session7/session7_landing.html",
-    "href": "session7/session7_landing.html",
     "title": "Optional: Creating a Website with GitHub Pages and Quarto",
     "section": "",
     "text": "Lecture\n\n\n\n\nOpen Slides in a New Window\n\n\nReading\nQuarto. Creating a Website. (link)\nQuarto. Publishing to GitHub Pages. (link)\nGitHub. GitHub Pages Documentation. (link)",
