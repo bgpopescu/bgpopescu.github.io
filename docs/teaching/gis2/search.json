@@ -64,7 +64,7 @@
     "href": "index.html#module-content",
     "title": "Spatial Data Analysis in R",
     "section": "Module Content",
-    "text": "Module Content\n\n\n\n\n\n\n\nSession\nTopic\n\n\n\n\n1\nQuarto for Spatial Reporting\n\n\n2\nCoordinates, CRS, and Your First Map\n\n\n3\nsf Essentials, Choropleths, and Interactive Maps\n\n\n4\nSpatial Joins, Measurement, and Buffers\n\n\n5\nRasters: Continuous Surfaces and Zonal Statistics\n\n\nOpt.\nsf Objects in Depth\n\n\nOpt.\nCreating a Website with GitHub Pages and Quarto\n\n\n\nSession dates are set by the course calendar; see Canvas.",
+    "text": "Module Content\n\n\n\n\n\n\n\nSession\nTopic\n\n\n\n\n1\nQuarto for Spatial Reporting\n\n\n2\nCoordinates, CRS, and Your First Map\n\n\n3\nsf Essentials, Choropleths, and Interactive Maps\n\n\n4\nSpatial Joins, Measurement, and Buffers\n\n\n5\nRasters: Continuous Surfaces and Zonal Statistics\n\n\nOpt.\nCreating a Website with GitHub Pages and Quarto\n\n\n\nSession dates are set by the course calendar; see Canvas.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Course Information</span>"
     ]
@@ -144,7 +144,7 @@
     "href": "session4/session4_landing.html",
     "title": "4 Spatial Joins, Measurement, and Buffers",
     "section": "",
-    "text": "Lecture\n\n\n\n\nOpen Slides in a New Window\n\n\nReading\nLovelace, Nowosad, and Muenchow. Geocomputation with R. Ch. 4, Spatial data operations. (link)\nGimond, Manuel. Intro to GIS and Spatial Analysis. Ch. 8, Spatial Operations and Vector Overlays. (link)\nLovelace, Nowosad, and Muenchow. Geocomputation with R. Ch. 5, Geometry operations. (link)",
+    "text": "Lecture\n\n\n\n\nOpen Slides in a New Window\n\n\nPractice Quiz\nTen questions on sessions 1 to 4, with the answers in collapsed boxes. None of these traps is on the real quiz. Try each one before opening its answer.\n\n\n\n\nOpen the Practice Quiz in a New Window\n\n\nReading\nLovelace, Nowosad, and Muenchow. Geocomputation with R. Ch. 4, Spatial data operations. (link)\nGimond, Manuel. Intro to GIS and Spatial Analysis. Ch. 8, Spatial Operations and Vector Overlays. (link)\nLovelace, Nowosad, and Muenchow. Geocomputation with R. Ch. 5, Geometry operations. (link)",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>4 Spatial Joins, Measurement, and Buffers</span>"
     ]
@@ -160,23 +160,13 @@
     ]
   },
   {
-    "objectID": "session3/session3_sf_depth_landing.html",
-    "href": "session3/session3_sf_depth_landing.html",
-    "title": "Optional: sf Objects in Depth",
-    "section": "",
-    "text": "Lecture\n\n\n\n\nOpen Slides in a New Window\n\n\nReading\nGimond, Manuel. Intro to GIS and Spatial Analysis. Ch. 2, Feature Representation. (link)\nPebesma, Edzer. Simple Features for R. Vignette 1. (link)\nLovelace, Nowosad, and Muenchow. Geocomputation with R. Ch. 8, Geographic data I/O. (link)",
-    "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Optional: `sf` Objects in Depth</span>"
-    ]
-  },
-  {
     "objectID": "session6/session6_landing.html",
     "href": "session6/session6_landing.html",
     "title": "Optional: Creating a Website with GitHub Pages and Quarto",
     "section": "",
     "text": "Lecture\n\n\n\n\nOpen Slides in a New Window\n\n\nReading\nQuarto. Creating a Website. (link)\nQuarto. Publishing to GitHub Pages. (link)\nGitHub. GitHub Pages Documentation. (link)",
     "crumbs": [
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Optional: Creating a Website with GitHub Pages and Quarto</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Optional: Creating a Website with GitHub Pages and Quarto</span>"
     ]
   }
 ]
